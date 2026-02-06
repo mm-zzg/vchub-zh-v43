@@ -171,6 +171,7 @@ nav:
         - 产品概述:
                   - overview/index.md
                   - overview/version-update-notes.md
+                  - overview/support-and-assistance.md
                   - overview/system-requirements.md
                   - overview/breaking-changes.md
         - 此版新功能:
