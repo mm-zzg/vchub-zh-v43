@@ -1,6 +1,6 @@
 # MQTT SparkplugB
 
-WAGO VC Hub中的MQTT SparkplugB驱动程序基于MQTT协议设计和开发，支持满足SparkplugB协议的报文信息传输。同时系统自带一个MQTT Broker，支持用户通过系统提供的账户和密码连接，并通过MQTT SparkplugB驱动进行数据通信。
+WAGO SCADA中的MQTT SparkplugB驱动程序基于MQTT协议设计和开发，支持满足SparkplugB协议的报文信息传输。同时系统自带一个MQTT Broker，支持用户通过系统提供的账户和密码连接，并通过MQTT SparkplugB驱动进行数据通信。
 
 #### 驱动连接到MQTT Broker
 
@@ -75,7 +75,7 @@ WAGO VC Hub中的MQTT SparkplugB驱动程序基于MQTT协议设计和开发，�
    - Broker 端口：填写系统 MQTT Broker 的端口号。默认为 1884。
    - 客户端 ID：填写一个唯一的客户端标识符，用于在系统 MQTT Broker 上标识您的连接。
    - 用户名和密码：使用您在系统中获取到的账户和密码。
-   - VC HubHostIdentifier：WagoVC Hub
+   - SCADAHostIdentifier：WagoSCADA
    - GroupName：对应驱动列表中的组名称
    - NodeName：对应驱动列表组中的节点名称
 3. 连接到 MQTT Broker：使用支持SparkplguB协议的MQTT客户端，在应用程序或设备中连接到系统的 MQTT Broker。确认连接成功后，便可以开始使用客户端与MQTT SparkplugB驱动程序进行设备数据的传输。
