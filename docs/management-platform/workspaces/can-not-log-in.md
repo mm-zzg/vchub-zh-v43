@@ -12,11 +12,11 @@
 
 2. **进入用户数据目录**
 
-   - Windows 安装环境默认用户数据目录：“%ProgramData%\WAGOVisualizationAndControlHub”，一般在 “C:\ProgramData\WAGOVisualizationAndControlHub”。
+      - Windows 安装环境默认用户数据目录：“%ProgramData%\WAGOVisualizationAndControlHub”，一般在 “C:\ProgramData\WAGOVisualizationAndControlHub”。
 
-   - Linux 安装环境默认用户数据目录：/usr/share/WAGOVisualizationAndControlHub
+      - Linux 安装环境默认用户数据目录：/usr/share/WAGOVisualizationAndControlHub
 
-   - 如果您安装时修改过用户数据目录，请进入您修改的用户数据目录。
+      - 如果您安装时修改过用户数据目录，请进入您修改的用户数据目录。
 
 3. **进入工程文件夹\Workspaces**
 
