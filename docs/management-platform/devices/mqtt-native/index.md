@@ -22,7 +22,7 @@ WAGO SCADA中的MQTT Native驱动程序基于MQTT协议设计和开发，支持�
 
     ![alt text](3.png)
 
-   a. 点击“**确认**”按钮。此时该条数据将显示在当前组的节点列表页面。 
+    a. 点击“**确认**”按钮。此时该条数据将显示在当前组的节点列表页面。 
 
     ![alt text](4.png)
 
@@ -55,10 +55,10 @@ WAGO SCADA中的MQTT Native驱动程序基于MQTT协议设计和开发，支持�
 
 2. 配置客户端：在您的应用程序或设备中，配置 MQTT 客户端以连接到系统的 MQTT Broker：
 
-   - Broker 地址：填写系统 MQTT Broker 的地址。
-   - Broker 端口：填写系统 MQTT Broker 的端口号。默认为 1884。
-   - 客户端 ID：填写一个唯一的客户端标识符，用于在 MQTT Broker 上标识您的连接。
-   - 用户名和密码：使用您获取到的账户和密码。
+    - Broker 地址：填写系统 MQTT Broker 的地址。
+    - Broker 端口：填写系统 MQTT Broker 的端口号。默认为 1884。
+    - 客户端 ID：填写一个唯一的客户端标识符，用于在 MQTT Broker 上标识您的连接。
+    - 用户名和密码：使用您获取到的账户和密码。
 
 3. 连接到 MQTT Broker：使用 MQTT 客户端，在应用程序或设备中连接到系统的 MQTT Broker。确认连接成功后，便可以开始使用配置的客户端与MQTT Native驱动程序进行设备数据的传输。
 
