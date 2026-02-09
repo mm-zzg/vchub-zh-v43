@@ -6,7 +6,7 @@ Alarms are used to monitor and notify the system of abnormal conditions. Configu
 
 The following alarm types are supported:
 
-- Limit alarms: Alarms are generated when the value of the tag meets the set limit conditions. VC Hub has eight built-in limit values, four high limits and four low limits.  You can set several limit conditions at the same time. If a tag value meets more than one limit, an alarm is triggered for each limit.
+- Limit alarms: Alarms are generated when the value of the tag meets the set limit conditions. SCADA has eight built-in limit values, four high limits and four low limits.  You can set several limit conditions at the same time. If a tag value meets more than one limit, an alarm is triggered for each limit.
 
     **Example:** The high limit value of temperature is 20, the hh limit value of temperature is 40, and the current value of tag is 50, then the tag will generate 2 limit alarms, one alarm for the high limit and one alarm for the hh limit.
 
@@ -16,7 +16,7 @@ The following alarm types are supported:
 
 ## **Alarm Priority**
 
-VC Hub has four built-in alarm levels. Alarms can be categorized by alarm level for quick recognition and response.
+SCADA has four built-in alarm levels. Alarms can be categorized by alarm level for quick recognition and response.
 
 - Critical
 - High
