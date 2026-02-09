@@ -17,31 +17,31 @@ WAGO SCADA 提供Windows 64位操作系统安装包。
 
 2. 选择安装语言
 
-   ![alt text](5.png)
+      ![alt text](5.png)
 
 3. 进行端口检查，如果端口被占用，将无法继续进行安装
 
-   ![alt text](6.png)
+      ![alt text](6.png)
 
 4. 阅读并同意许可协议
 
-   ![alt text](7.png)
+      ![alt text](7.png)
 
 5. 选择安装位置，默认路径：“C:\Program Files\WAGO SCADA”
 
-   ![alt text](8.png)
+      ![alt text](8.png)
 
 6. 选择 WAGO SCADA 应用程序数据目录
 
-   ![alt text](9.png)
+      ![alt text](9.png)
 
 7. 准备安装
 
-   ![alt text](10.png)
+      ![alt text](10.png)
 
 8. 安装完成
 
-   ![alt text](11.png)
+      ![alt text](11.png)
 
 9. 完成后默认访问WAGO SCADA站点：“http://localhost:8066”，安装完成后，将进入配置引导界面。
 
@@ -49,11 +49,11 @@ WAGO SCADA 提供Windows 64位操作系统安装包。
 
 1. 创建管理员用户，请牢记此用户名和密码，接下来将使用此用户名和密码进行首次登录。
 
-   ![alt text](12.png)
+      ![alt text](12.png)
 
 2. 端口配置，配置 HTTP, HTTPS 端口，请牢记访问端口。
 
-   ![alt text](13.png)
+      ![alt text](13.png)
 
 3. 上述步骤完成后，等待程序加载完毕即可用步骤1中创建的管理员用户登录默认工程。
 
@@ -67,7 +67,7 @@ WAGO SCADA 提供Windows 64位操作系统安装包。
 
    在Windows本地用户和组中新建一个账号（如 WagoSCADASvc）：
 
-   ![alt text](14.png)
+      ![alt text](14.png)
 
 2. 设置 **服务安装目录** 权限
 
@@ -107,9 +107,9 @@ WAGO SCADA 提供Windows 64位操作系统安装包。
 
 1. 从控制面板进入软件卸载列表，找到WAGO SCADA进行卸载。
 
-   ![alt text](15.png)
+      ![alt text](15.png)
 
 2. 确认卸载将完成应用程序卸载。
 
-   ![alt text](16.png)
+      ![alt text](16.png)
 
