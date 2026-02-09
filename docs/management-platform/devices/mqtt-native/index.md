@@ -1,6 +1,6 @@
 # MQTT Native
 
-WAGO VC Hub中的MQTT Native驱动程序基于MQTT协议设计和开发，支持满足MQTT协议的报文信息传输。同时系统自带一个MQTT Broker，支持用户通过系统提供的账户和密码连接，并通过MQTT Native驱动进行数据通信。
+WAGO SCADA中的MQTT Native驱动程序基于MQTT协议设计和开发，支持满足MQTT协议的报文信息传输。同时系统自带一个MQTT Broker，支持用户通过系统提供的账户和密码连接，并通过MQTT Native驱动进行数据通信。
 
 #### 驱动连接到MQTT Broker
 
@@ -79,7 +79,7 @@ MQTT Native驱动基于MQTT协议设计和开发，接入驱动的MQTT客户端�
 
 Topic ：wsV1.0/group_name/**NBIRTH**/node_name
 
- 当成功接入 VC Hub 后，客户端可以通过此 Topic 将当前 node_name 下的所有设备配置信息和测点配置信息推送给系统。
+ 当成功接入 SCADA 后，客户端可以通过此 Topic 将当前 node_name 下的所有设备配置信息和测点配置信息推送给系统。
 
 2. **NDATA** –  传输测点数据
 
