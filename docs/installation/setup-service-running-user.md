@@ -16,25 +16,25 @@ WAGO SCADA 服务在Windows中默认登录身份为 **本地系统账户**，在
 
 1. **打开服务控制台**:
 
-   - 按 `Win + R` 打开运行窗口。
+      - 按 `Win + R` 打开运行窗口。
 
-   - 输入 `services.msc` 并按回车。
+      - 输入 `services.msc` 并按回车。
 
 2. **找到并右键点击目标服务 WAGO SCADA**:
 
-   - 在服务列表中找到你要修改的服务 WAGO SCADA。
+      - 在服务列表中找到你要修改的服务 WAGO SCADA。
 
-   - 右键点击该服务，并选择 `属性`。
+      - 右键点击该服务，并选择 `属性`。
 
 3. **设置登录信息**:
 
-   - 在属性窗口中，切换到 `登录` 选项卡。
+      - 在属性窗口中，切换到 `登录` 选项卡。
 
-   - 选择 `此账户`，然后输入账户名和密码。
+      - 选择 `此账户`，然后输入账户名和密码。
 
-   - 点击 `确定` 保存设置。
+      - 点击 `确定` 保存设置。
 
-![alt text](30.png)
+      ![alt text](30.png)
 
 ## 方法 2: 使用命令行工具（sc）
 
@@ -54,42 +54,42 @@ WAGO SCADA仅支持使用‘systemd’设置服务，大多数Linux发行版都�
 
 1. **编辑服务单元文件**: 
 
-   通常，服务单元文件位于 `/etc/systemd/system/` 或 `/lib/systemd/system/` 目录下。
+      通常，服务单元文件位于 `/etc/systemd/system/` 或 `/lib/systemd/system/` 目录下。
 
-   ```bash
-   sudo nano /etc/systemd/system/wagoscada.service
-   ```
+      ```bash
+      sudo nano /etc/systemd/system/wagoscada.service
+      ```
  
 2. **在服务单元文件中指定用户**: 
 
-   添加或修改 `[Service]` 部分中的 `User` 和 `Group` 选项来指定运行服务的用户和组。
+      添加或修改 `[Service]` 部分中的 `User` 和 `Group` 选项来指定运行服务的用户和组。
 
-   ```plain
-   [Unit]
-   Description=WagoScada-Daemon
-   After=network.target
+      ```plain
+      [Unit]
+      Description=WagoScada-Daemon
+      After=network.target
 
-   [Service]
-   WorkingDirectory=/usr/local/bin/wagoscada-4.0.3-linux-x64
-   ExecStart=/usr/local/bin/wagoscada-4.0.3-linux-x64/start.sh
-   Restart=always
-   RestartSec=10
-   SyslogIdentifier=wagoscada-log
-   User=myuser
-   Group=mygroup
+      [Service]
+      WorkingDirectory=/usr/local/bin/wagoscada-4.0.3-linux-x64
+      ExecStart=/usr/local/bin/wagoscada-4.0.3-linux-x64/start.sh
+      Restart=always
+      RestartSec=10
+      SyslogIdentifier=wagoscada-log
+      User=myuser
+      Group=mygroup
 
-   [Install]
-   WantedBy=multi-user.target graphical.target
-   ```
+      [Install]
+      WantedBy=multi-user.target graphical.target
+      ```
  
 3. **重新加载systemd配置并启动服务**: 
 
-   在编辑完单元文件后，重新加载`systemd`配置并启动服务。
+      在编辑完单元文件后，重新加载`systemd`配置并启动服务。
 
-   ```bash
-   sudo systemctl daemon-reload
-   sudo systemctl start wagoscada
-   ```
+      ```bash
+      sudo systemctl daemon-reload
+      sudo systemctl start wagoscada
+      ```
  
 ## 注意事项
 
