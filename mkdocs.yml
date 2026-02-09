@@ -194,7 +194,8 @@ nav:
                   - system-deployment/azure-cloud-deployment.md
         - 管理平台:
                   - management-platform/index.md
-                  - management-platform/license-and-activation.md
+                  - 许可证和激活:
+                            - management-platform/license-and-activation/index.md
                   - 工程:
                             - management-platform/workspaces/index.md
                             - management-platform/workspaces/multi-workspace-management.md

@@ -2,9 +2,9 @@
 
 Used to centrally manage certificates. Each type of certificate is stored independently. Includes:
 
-- **Web Server Certificate:** Used to configure secure communication between Web clients (such as browsers) and the VC Hub server.
-- **Redundancy / Networking Certificate:** Used to configure secure communication between multiple VC Hub nodes in redundancy or networking mode.
-- **MQTT Broker Certificate:** Used to configure secure communication between MQTT clients (such as field devices or VC Hub clients) and the MQTT Broker.
+- **Web Server Certificate:** Used to configure secure communication between Web clients (such as browsers) and the SCADA server.
+- **Redundancy / Networking Certificate:** Used to configure secure communication between multiple SCADA nodes in redundancy or networking mode.
+- **MQTT Broker Certificate:** Used to configure secure communication between MQTT clients (such as field devices or SCADA clients) and the MQTT Broker.
 
 ![alt text](13.png)
 
