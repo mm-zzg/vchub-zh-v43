@@ -229,6 +229,12 @@ nav:
                             - WAGO Protocol:
                                       - management-platform/devices/wago-protocol/index.md
                                       - management-platform/devices/wago-protocol/batch-operation.md
+                            - Camera:
+                                      - management-platform/devices/camera/index.md
+                                      - management-platform/devices/camera/deploying.md
+                                      - management-platform/devices/camera/external-network.md
+                                      - management-platform/devices/camera/security-settings.md
+                                      - management-platform/devices/camera/batch-operation.md          
                             - management-platform/devices/usage-of-legacy-protocols.md
                   - Assets and Tags:
                             - management-platform/assets-and-tags/index.md
