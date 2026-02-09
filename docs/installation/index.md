@@ -1,8 +1,8 @@
 # 安装和升级
 
-#### **安装环境**
+#### 安装环境
 
-WAGO VC Hub 提供Windows以及Linux环境安装包，暂不支持容器化部署，请不要在容器中运行。
+WAGO SCADA 提供Windows以及Linux环境安装包，暂不支持容器化部署，请不要在容器中运行。
 
 如果安装环境中已经安装了旧版本请先卸载旧版本。目前不支持更新式安装，每次安装前请卸载已安装版本。
 
@@ -28,15 +28,13 @@ WAGO VC Hub 提供Windows以及Linux环境安装包，暂不支持容器化部�
 
 ![alt text](2.png)
 
-
-
 **Mqtt 端口配置如下：**
 
 ![alt text](3.png)
 
 #### 版本
 
-WAGO VC Hub  采用版本号结构：“主版本号.次版本号.修订版本号”。工程数据版本必须和运行程序版本一致才可以运行。
+WAGO SCADA  采用版本号结构：“主版本号.次版本号.修订版本号”。工程数据版本必须和运行程序版本一致才可以运行。
 
 #### 卸载
 
@@ -44,7 +42,7 @@ WAGO VC Hub  采用版本号结构：“主版本号.次版本号.修订版本�
 
 #### 升级
 
-在维保有效期内，可以免费升级安装维保有效期期间发布的 WAGO VC Hub  安装包。
+在维保有效期内，可以免费升级安装维保有效期期间发布的 WAGO SCADA  安装包。
 
 如果维保过期，没有续保，可以免费升级修订版本。即只要“主版本号.次版本号”与当前授权版本号一致，升级无限制。
 
@@ -52,11 +50,11 @@ WAGO VC Hub  采用版本号结构：“主版本号.次版本号.修订版本�
 
 #### 系统环境变量
 
-| **变量名**           | **描述** | **Windows环境默认值**        | **Linux环境默认值**   | **使用说明**                                                                                                                 |
-|:----------------------|:----------|:------------------------------|:-----------------------|:------------------------------------------------------------------------------------------------------------------------------|
-| WAGO_VC Hub _APP     | 安装目录 | C:\Program Files\WAGO VC Hub | /usr/local/bin        | 仅用于记录应用程序所在目录，请勿修改                                                                                          |
-| WAGO_VC Hub _DATA    | 数据目录 | C:\ProgramData\WAGOVC Hub    | /usr/share/WAGOVC Hub | 用于配置 WAGO VC Hub  应用程序数据目录。如果未配置则使用默认值。  如果想更改应用程序目录可修改此变量值，修改后重启应用配置生效。 |
-| WAGO_VC Hub _Version | 版本     | 安装程序版本                 | 安装程序版本          | 仅用于记录应用程序版本，请勿修改                                                                                              |
+| **变量名**           | **描述** | **Windows环境默认值**        | **Linux环境默认值**   | **使用说明** |
+|:----------------------|:----------|:------------------------------|:-----------------------|:-------------------|
+| WAGO_SCADA _APP     | 安装目录 | C:\Program Files\WAGO SCADA | /usr/local/bin        | 仅用于记录应用程序所在目录，请勿修改|
+| WAGO_SCADA _DATA    | 数据目录 | C:\ProgramData\WAGOSCADA    | /usr/share/WAGOSCADA | 用于配置 WAGO SCADA  应用程序数据目录。如果未配置则使用默认值。  如果想更改应用程序目录可修改此变量值，修改后重启应用配置生效。 |
+| WAGO_SCADA _Version | 版本     | 安装程序版本                 | 安装程序版本          | 仅用于记录应用程序版本，请勿修改   |
 
 #### 用户数据目录
 
@@ -66,10 +64,12 @@ Linux 安装环境用户数据目录：/usr/share/WAGOVisualizationAndControlHub
 
 #### 重启服务
 
-**Windows环境**：在系统服务中，重启 WAGO VC Hub  服务。
+**Windows环境**：在系统服务中，重启 WAGO SCADA  服务。
 
 ![alt text](4.png)
 
-**Linux环境**：`sudo systemctl restart wagoVC Hub `
+**Linux环境**：`sudo systemctl restart wagoSCADA `
 
-如果需要修改文件，可以先停止服务: `sudo systemctl stop wagoVC Hub ` 然后启动服务: `sudo systemctl start wagoVC Hub `
+如果需要修改文件，可以先停止服务: `sudo systemctl stop wagoSCADA ` 
+
+然后启动服务: `sudo systemctl start wagoSCADA `
