@@ -1,8 +1,8 @@
 # Breaking Changes
 
-#### Breaking changes in 4.2
+## Breaking changes in 4.2
 
-###### **Breaking Change 1:    角色上不再进行权限设置。** 
+#### Breaking Change 1: 角色上不再进行权限设置。
 
 - **影响范围** ：角色为非 Admin 的用户。这些用户登录后，可能会出现部分菜单不显示，或者部分功能无法使用的问题。
 - **变更说明** ：从 4.2 版本开始，角色上不再设置权限。改为在 AccessLevel 页面维护权限。之后在 Permission 页面，对各个模块进行权限配置。
@@ -16,7 +16,7 @@
  
  详见：[​Permission​](../management-platform/security/permission.md), [​Access Level​](../management-platform/security/access-level.md) 
 
-###### **Breaking Change 2:   创建项目，增加了权限控制。**
+#### Breaking Change 2: 创建项目，增加了权限控制。
 
 - **影响范围** ：角色为 Admin 和 Configurator 之外的用户。
 - **变更说明** ：从 4.2 版本开始，默认只有角色为 Admin 或 Configurator 的用户有权限进行项目的新增，复制和导入操作。其他用户无法执行这些操作。
@@ -25,7 +25,7 @@
 ![alt text](7.png)
  详见：[​Permission​](../management-platform/security/permission.md)
 
-###### **Breaking Change 3:   设计和删除项目，增加了权限控制。**
+#### Breaking Change 3: 设计和删除项目，增加了权限控制。
 
 - **影响范围** ：角色为 Admin ， Configurator 和 Operator 之外的用户。
 - **变更说明** ：从 4.2 版本开始，默认只有角色为 Admin,Configurator 或 Operator 的用户有权限设计和删除项目。其他用户无法执行这些操作。
@@ -37,37 +37,37 @@
 
  详见：[​项目属性​](../2d-visualization/project-properties/index.md)
 
-###### **Breaking Change 4:   移除了贝塞尔曲线。**
+#### Breaking Change 4: 移除了贝塞尔曲线。
 
 - **影响范围** ：使用到了贝塞尔曲线的画面。
 - **变更说明** ：从 4.2 版本开始，工具窗口中移除了贝塞尔曲线。如果画面上用到了这个控件，控件的对应区域将显示空白。
 - **解决方案** ：您可以使用直线和弧线作为替代，绘制类似扇形的形状。
 
-###### **Breaking Change 5:   移除了扇形控件。**
+#### Breaking Change 5: 移除了扇形控件。
 
 - **影响范围** ：使用到了扇形的画面。
 - **变更说明** ：从 4.2 版本开始，工具窗口中移除了扇形控件。如果画面上用到了这个控件，控件的对应区域将显示空白。
 - **解决方案** ：您可以在其他系统中绘制好贝塞尔曲线后，将其作为图片上传至WAGO VC Hub, 之后将图片添加到画面上。
 
-###### **Breaking Change 6:   移除了 XY 曲线控件。**
+#### Breaking Change 6: 移除了 XY 曲线控件。
 
 - **影响范围** ：使用到了 XY 曲线的画面。
 - **变更说明** ：从 4.2 版本开始，工具窗口中移除了 XY 曲线控件。如果画面上用到了这个控件，控件的对应区域将显示空白。
 - **解决方案** ：您可以使用自定义图表控件绘制出 XY 曲线的效果。
 
-###### **Breaking Change 7:   移除了散点图控件。**
+##### Breaking Change 7: 移除了散点图控件。
 
 - **影响范围** ：使用到了散点图的画面。
 - **变更说明** ：从 4.2 版本开始，工具窗口中移除了散点图控件。如果画面上用到了这个控件，控件的对应区域将显示空白。
 - **解决方案** ：您可以使用自定义图表控件绘制出散点图的效果。
 
-###### **Breaking Change 8:   实时和历史事件控件，不再支持添加页签。**
+#### Breaking Change 8: 实时和历史事件控件，不再支持添加页签。
 
 - **影响范围** ：实时事件控件，历史事件控件。
 - **变更说明** ：从 4.2 版本开始，实时和历史事件控件，不再支持添加自定义页签。如果用户在之前的版本上已经为事件控件设置了页签，升级到新版本后，控件上将不再显示用户自行添加的页签。
 - **解决方案** ：用户在运行页面，在控件的筛选条件中，自定义条件后进行查询。
 
-###### **Breaking Change 9: OPC UA设备添加了发现服务功能；组添加了高级配置。**  
+#### Breaking Change 9: OPC UA设备添加了发现服务功能；组添加了高级配置。 
 
 - **影响范围：** OPC UA 设备。
 - **变更说明：** 从4.2版本开始，OPC UA添加设备逻辑变化并且设备和组的数据结构也发生变化，导致之前的设备无法正常使用。
@@ -75,7 +75,7 @@
 
      详见：[​OPC UA​ ](../management-platform/devices/opc-ua/index.md)
 
-###### **Breaking Change 10: 报警表重构**
+#### Breaking Change 10: 报警表重构
 
 - **影响范围：** 报警历史数据查询
 - **变更说明：** 在 4.2 版本上，重新设计了报警历史表，旧版本升级到 4.2 版本后，历史报警控件无法查询升级之前的历史报警数据。
@@ -330,7 +330,7 @@ INNER JOIN public."ScadaAlarmMapping" c ON a."AlarmId" = c."Id" AND a."ProviderI
 INNER JOIN public."ScadaTagMapping" d ON c."TagId" = d."Id" AND c."ProviderId" = d."ProviderId" AND c."Type" = d."Type";
 ```
  
-###### **Breaking Change 11: 通过 WebRTC Streamer 配置摄像头**
+#### Breaking Change 11: 通过 WebRTC Streamer 配置摄像头
 
 - **影响范围** ： Camera 设备
 - **变更说明** ：从 4.2 版本开始，不再支持直接添加 Camera 设备，需先创建 WebRtc-Streamer ，之后在 WebRtc-Streamer 下创建 camera 设备。
@@ -338,7 +338,7 @@ INNER JOIN public."ScadaTagMapping" d ON c."TagId" = d."Id" AND c."ProviderId" =
 
  详见：[Camera](../management-platform/devices/camera/index.md) 
  
-###### **Breaking Change 12: 由于创建 camera 的方式发生了变更， Camera 控件需重新选择 camera 设备后才能正常播放监控画面**
+#### Breaking Change 12: 由于创建 camera 的方式发生了变更， Camera 控件需重新选择 camera 设备后才能正常播放监控画面
 
 - **影响范围** ：画面上的 Camera 控件
 - **变更说明** ：因为从 4.2 版本开始， Camera 设备的添加方式发生了变化，所以需要在 camera 控件上重新选择需要播放的设备。且运行时不再支持切换设备，不再支持历史视频的播放。
@@ -346,7 +346,7 @@ INNER JOIN public."ScadaTagMapping" d ON c."TagId" = d."Id" AND c."ProviderId" =
 
  详见：[Camera](../management-platform/devices/camera/index.md) 
 
-###### **Breaking Change 13: System.Tag.readHistory函数，添加了新的参数**
+#### Breaking Change 13: System.Tag.readHistory函数，添加了新的参数
 
 - **影响范围** ：使用了 System.Tag.readHistory 函数的所有地方
 - **变更说明** ：从 4.2 版本开始，在 System.Tag.readHistory 函数的参数中，添加了新的聚合模式查询，支持按固定点数返回查询结果。
@@ -354,13 +354,13 @@ INNER JOIN public."ScadaTagMapping" d ON c."TagId" = d."Id" AND c."ProviderId" =
 
  详见：[​System.Tag.readHistory​ ](../appendix/system-function/system-tag/system-tag-readhistory.md)
 
-###### **Breaking Change 14: 设备列表中移除了倍福**
+#### Breaking Change 14: 设备列表中移除了倍福
 
 - **影响范围** ：使用倍福驱动进行数采的设备
 - **变更说明** ：从 4.2 版本开始，设备列表中移除了倍福驱动。
 - **解决方案：** 使用其他驱动，进行数据采集。
 
-###### **Breaking Change 15: 系统函数 System.UI.currentPage 调整为 System.Page**
+#### Breaking Change 15: 系统函数 System.UI.currentPage 调整为 System.Page
 
 - **影响范围** ：画面中使用到 System.UI.currentPage.* 相关函数的脚本
 - **变更说明** ： System.UI.currentPage.* 函数相对其他函数多一个层级。从 4.2 版本开始， System.UI.currentPage 调整为 System.Page
@@ -368,7 +368,7 @@ INNER JOIN public."ScadaTagMapping" d ON c."TagId" = d."Id" AND c."ProviderId" =
 
  详见：[​System.Page.setPropertyValue​](../appendix/system-function/system-page/system-page-setpropertyvalue.md) ,[​System.Page.getPropertyValue​](../appendix/system-function/system-page/system-page-getpropertyvalue.md) 
 
-###### **Breaking Change 16: 系统函数System.UI.openPopup参数修改**
+#### Breaking Change 16: 系统函数System.UI.openPopup参数修改
 
 - **影响范围：** 画面中使用到 System.UI.openPopup 相关函数的脚本
 - **变更说明：** 从 4.2 版本开始 System.UI.openPopup 函数的参数结构进行了调整：
@@ -379,30 +379,30 @@ INNER JOIN public."ScadaTagMapping" d ON c."TagId" = d."Id" AND c."ProviderId" =
 
  详见：[​System.UI.openPopup​ ](../appendix/system-function/system-ui/system-ui-openpopup.md)
 
-###### **Breaking Change 17: 脚本中，实时趋势的 yAxis 下的 series  修改为  axes**
+#### Breaking Change 17: 脚本中，实时趋势的 yAxis 下的 series  修改为  axes
 
 - **影响范围** ：画面中通过脚本对到实时趋势的 y 轴进行修改的地方。
 - **变更说明** ：从 4.2 版本开始 ,yAxis 下的 series  修改为  axes 
 - **解决方案** ：脚本执行不会出错，但在脚本编辑器中会提示错误，需要手动将属性名称由  series  修改为 axes 。
 
-###### **Breaking Change 18: 脚本中，柱状图的 refreshRate 参数修改为 refreshFrequency**
+#### Breaking Change 18: 脚本中，柱状图的 refreshRate 参数修改为 refreshFrequency
 - **影响范围** ：画面中通过脚本修改柱状图刷新频率的地方。
 - **变更说明** ：从 4.2 版本开始 ,refreshRate 修改为 refreshFrequency
 - **解决方案** ：脚本执行不会出错，但在脚本编辑器中会提示错误，需要手动将属性名称由  refreshRate  修改为 refreshFrequency 。
 
-###### **Breaking Change 19: 脚本中，柱状图 series 下的  barSpacing  调整为  barGap**
+#### Breaking Change 19: 脚本中，柱状图 series 下的  barSpacing  调整为  barGap
 
 - **影响范围** ：画面中通过脚本对柱状图的系列进行修改的地方。
 - **变更说明** ： 从 4.2 版本开始 ,series 下的  barSpacing  调整为  barGap
 - **解决方案** ：脚本执行不会出错，但在脚本编辑器中会提示错误，需要手动将属性名称由 barSpacing  修改为  barGap 。
 
-###### **Breaking Change 20: 脚本中，日历控件的 calendarBackgroundColor 参数调整为pickerBackgroundColor**
+#### Breaking Change 20: 脚本中，日历控件的 calendarBackgroundColor 参数调整为pickerBackgroundColor
 
 - **影响范围** ：画面中通过脚本修改日历控件的背景色的地方。   
 - **变更说明** ：从 4.2 版本开始 ,calendarBackgroundColor 调整为 pickerBackgroundColor
 - **解决方案** ：脚本执行不会出错，但在脚本编辑器中会提示错误，需要手动将属性名称由  calendarBackgroundColor  修改为  pickerBackgroundColor 。
 
-###### **Breaking Change 21: 通过脚本操作历史趋势图时，部分参数做了调整。**
+#### Breaking Change 21: 通过脚本操作历史趋势图时，部分参数做了调整。
 
 - **影响范围** ：画面中通过脚本修改历史趋势图属性的地方。
 - **变更说明** ：从 4.2 版本开始 , 对如下参数进行了调整。
@@ -415,13 +415,13 @@ INNER JOIN public."ScadaTagMapping" d ON c."TagId" = d."Id" AND c."ProviderId" =
    -  yAxis 中的 series 替换为 axes
 - **解决方案** ：原写法在执行时仍然会按照预期结果执行成功，但在脚本编辑器中会提示错误，需要按照新格式进行修改。
 
-###### **Breaking Change 22: 通过脚本操作饼图时，部分参数做了调整。**
+#### Breaking Change 22: 通过脚本操作饼图时，部分参数做了调整。
 
 - **影响范围：** 画面中通过脚本修改饼图属性的地方。
 - **变更说明：** 从 4.2 版本开始， type 改为 style ； refreshRate 改为 refreshFrequency
 - **解决方案** ：原写法在执行时仍然会按照预期结果执行成功，但在脚本编辑器中会提示错误，需要按新格式修改。
 
-###### **Breaking Change 23: 通过脚本操作历史检索控件时，部分参数做了调整。**
+#### Breaking Change 23: 通过脚本操作历史检索控件时，部分参数做了调整。
 
 - **影响范围：** 画面中通过脚本修改历史检索控件属性的地方。
 - **变更说明** ：从 4.2 版本开始，对参数进行了如下调整：
@@ -433,25 +433,25 @@ INNER JOIN public."ScadaTagMapping" d ON c."TagId" = d."Id" AND c."ProviderId" =
    -  新增 queryMode
 - **解决方案** ：原写法在执行时仍然会按照预期结果执行成功，但在脚本编辑器中会提示错误，需要按新格式修改。
 
-###### **Breaking Change 24: 通过脚本操作仪表盘控件时，部分参数做了调整。**
+#### Breaking Change 24: 通过脚本操作仪表盘控件时，部分参数做了调整。
 
 - **影响范围** ：画面中通过脚本修改仪表盘控件属性的地方。
 - **变更说明** ： 从 4.2 版本开始， rangeColor 调整为 intervalColor 。
 - **解决方案** ：原写法在执行时仍然会按照预期结果执行成功，但在脚本编辑器中会提示错误，需要按新格式修改。
 
-###### **Breaking Change 25: 通过脚本操作下拉框控件时，部分参数做了调整。**
+#### Breaking Change 25: 通过脚本操作下拉框控件时，部分参数做了调整。
 
 - **影响范围** ：画面中通过脚本修改下拉框控件属性的地方。
 - **变更说明** ：从 4.2 版本开始， datasource 下的 name 调整为 text
 - **解决方案** ：原写法在执行时仍然会按照预期结果执行成功，但在脚本编辑器中会提示错误，需要按新格式修改。
 
-###### **Breaking Change 26: 通过脚本操作单选按钮时，部分参数做了调整。**
+#### Breaking Change 26: 通过脚本操作单选按钮时，部分参数做了调整。
 
 - **影响范围：** 画面中通过脚本修改单选按钮控件属性的地方。
 - **变更说明：** 从 4.2 版本开始， datasource 下的 name 调整为 text
 - **解决方案：** 原写法在执行时仍然会按照预期结果执行成功，但在脚本编辑器中会提示错误，需要按新格式修改。
 
-###### **Breaking Change 27: OpenAPI历史报警接口返回值做了调整。**
+#### Breaking Change 27: OpenAPI历史报警接口返回值做了调整。
 
 - **影响范围** : 集成OpenAPI的历史报警接口的第三方应用程序
 - **变更说明** : 从4.2版本开始，报警类型、等级、状态做了调整
@@ -471,12 +471,12 @@ INNER JOIN public."ScadaTagMapping" d ON c."TagId" = d."Id" AND c."ProviderId" =
 | RateChange | RateOfChange |
 
 | 原等级 | 现等级   |
-|：--------|：----------|
+|:--------|:----------|
 | Mid    | Medium   |
 | Urgent | Critical |
 
 | 原状态 | 现状态          |
-|：--------|：-----------------|
+|:--------|:-----------------|
 | UnAck  | Active,Unacked  |
 | Acked  | Active,Acked    |
 | Rtnun  | Cleared,Unacked |
