@@ -10,11 +10,11 @@ WAGO SCADA中的WAGO Protocol驱动支持与WAGO PLC的基本连接。系统自�
 
 2. 在新增页面中输入 **设备名称**。
 
-   ![alt text](1.png)
+      ![alt text](1.png)
 
 3. 点击 **“确认”** 按钮。此时该条数据将显示在WAGO Protocol的设备列表页面。请注意状态一栏，仅表示驱动程序的启停状态，并不代表和设备的真正连接状态。
 
-   ![alt text](2.png)
+      ![alt text](2.png)
 
 ## 配置字段
 
@@ -37,26 +37,26 @@ WAGO SCADA中的WAGO Protocol驱动支持与WAGO PLC的基本连接。系统自�
 
 2. 配置Cloud Connectivity
 
-   - 使用网络浏览器打开您WAGO设备的WBM（Web-based Management，基于Web的管理工具）。
-   - 输入 **Username** 和 **Password**，以便在PFC上进行身份验证。点击 **Submit**。
-   - 在 **Configuration** 下选择 **Cloud Connectivity** 菜单项，点击 **Connection1**。
-   - 在右侧的配置中，勾选 **Enabled**，启用当前连接。
-   - 从 **Cloud platform** 下拉列表中选择 **MQTT AnyCloud**。
-   - 在 **Hostname** 字段中输入您的WAGO SCADA程序发布的IP地址。
-   - 在 **Port** 字段中输入1884。
-   - 在 **Client ID** 中输入设备标识，**需和上述WAGO Protocol设备列表中新增的设备名称保持一致**，用于在 MQTT Server 上标识您的连接。
-   - 勾选 **Clean session**，启用清除会话。
-   - 在 **User** 中输入连接MQTT Server的用户名，**使用上述WAGO Protocol设备列表中新增的设备信息中的用户名**。
-   - 在 **Password** 输入输入连接MQTT Server的密码，**使用上述WAGO Protocol设备列表中新增的设备信息中的密码**。
-   - 在 **Data protocol** 下拉列表中选择WAGO Protocol 1.5。
-   - 点击 **Submit**，并重启设备。
-   - 稍等片刻后在WBM的 **Cloud Connectivity** 下检查连接状态，Cloud connection则会显示connected。
+      - 使用网络浏览器打开您WAGO设备的WBM（Web-based Management，基于Web的管理工具）。
+      - 输入 **Username** 和 **Password**，以便在PFC上进行身份验证。点击 **Submit**。
+      - 在 **Configuration** 下选择 **Cloud Connectivity** 菜单项，点击 **Connection1**。
+      - 在右侧的配置中，勾选 **Enabled**，启用当前连接。
+      - 从 **Cloud platform** 下拉列表中选择 **MQTT AnyCloud**。
+      - 在 **Hostname** 字段中输入您的WAGO SCADA程序发布的IP地址。
+      - 在 **Port** 字段中输入1884。
+      - 在 **Client ID** 中输入设备标识，**需和上述WAGO Protocol设备列表中新增的设备名称保持一致**，用于在 MQTT Server 上标识您的连接。
+      - 勾选 **Clean session**，启用清除会话。
+      - 在 **User** 中输入连接MQTT Server的用户名，**使用上述WAGO Protocol设备列表中新增的设备信息中的用户名**。
+      - 在 **Password** 输入输入连接MQTT Server的密码，**使用上述WAGO Protocol设备列表中新增的设备信息中的密码**。
+      - 在 **Data protocol** 下拉列表中选择WAGO Protocol 1.5。
+      - 点击 **Submit**，并重启设备。
+      - 稍等片刻后在WBM的 **Cloud Connectivity** 下检查连接状态，Cloud connection则会显示connected。
 
-   **注意**：请不要勾选 **Use Compression**，因为这会导致WAGO Protocol驱动无法正常处理数据；另外对于上述列表中其他未提及的字段，虽然勾选这些项目不会影响WAGO SCADA的功能使用，但WAGO SCADA尚未实现相应的功能。
+      **注意**：请不要勾选 **Use Compression**，因为这会导致WAGO Protocol驱动无法正常处理数据；另外对于上述列表中其他未提及的字段，虽然勾选这些项目不会影响WAGO SCADA的功能使用，但WAGO SCADA尚未实现相应的功能。
 
 3. 连接到 MQTT Server：确认连接成功后，便可以开始使用配置的客户端与WAGO Protocol驱动进行设备数据的传输。
 
-   ![alt text](3.png)
+      ![alt text](3.png)
 
 ## 启用TLS安全连接
 

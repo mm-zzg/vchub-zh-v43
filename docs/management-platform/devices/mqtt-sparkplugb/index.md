@@ -10,25 +10,25 @@ WAGO SCADA中的MQTT SparkplugB驱动程序基于MQTT协议设计和开发，支
 
 2. 在新增页面中输入 **组名称**。
 
-   ![alt text](1.png)
+      ![alt text](1.png)
 
 3. 点击“**确认**”按钮。此时该条数据将显示在MQTT SparkplugB的设备列表页面。
 
-   ![alt text](2.png)
+      ![alt text](2.png)
 
 4. 在操作一栏中点击“**添加节点**”，输入节点名称，为当前组添加一个新的节点。
 
 **节点**：节点代表具体设备的实体，具有唯一标识符，用于区分各个设备。
 
-   ![alt text](3.png)
+      ![alt text](3.png)
 
 5. 点击**“确认”**按钮。此时该条数据将显示在当前组的节点列表页面。
 
-   ![alt text](4.png)
+      ![alt text](4.png)
 
 6. 在启用状态一栏点击启用按钮，启用该节点。
 
-   ![alt text](5.png)
+      ![alt text](5.png)
 
 #### 配置字段
 
@@ -72,13 +72,13 @@ WAGO SCADA中的MQTT SparkplugB驱动程序基于MQTT协议设计和开发，支
 
 2. 配置客户端：在您的应用程序或设备中，配置边缘节点(SparkplugB Node)以连接到系统的Sparkplug Application：
 
-   - Broker 地址：填写系统 MQTT Broker 的地址。
-   - Broker 端口：填写系统 MQTT Broker 的端口号。默认为 1884。
-   - 客户端 ID：填写一个唯一的客户端标识符，用于在系统 MQTT Broker 上标识您的连接。
-   - 用户名和密码：使用您在系统中获取到的账户和密码。
-   - SCADAHostIdentifier：WagoSCADA
-   - GroupName：对应驱动列表中的组名称
-   - NodeName：对应驱动列表组中的节点名称
+      - Broker 地址：填写系统 MQTT Broker 的地址。
+      - Broker 端口：填写系统 MQTT Broker 的端口号。默认为 1884。
+      - 客户端 ID：填写一个唯一的客户端标识符，用于在系统 MQTT Broker 上标识您的连接。
+      - 用户名和密码：使用您在系统中获取到的账户和密码。
+      - SCADAHostIdentifier：WagoSCADA
+      - GroupName：对应驱动列表中的组名称
+      - NodeName：对应驱动列表组中的节点名称
 
 3. 连接到 MQTT Broker：使用支持SparkplguB协议的MQTT客户端，在应用程序或设备中连接到系统的 MQTT Broker。确认连接成功后，便可以开始使用客户端与MQTT SparkplugB驱动程序进行设备数据的传输。
 
@@ -90,15 +90,15 @@ WAGO SCADA中的MQTT SparkplugB驱动程序基于MQTT协议设计和开发，支
 
 1. 创建一个I/O变量。
 
-   ![alt text](6.png)
+      ![alt text](6.png)
 
 2. 在变量的编辑界面，点击数据源的 **设置** 按钮。
 
-   ![alt text](7.png)
+      ![alt text](7.png)
 
 3. 选择需要绑定的组、节点、设备和目录，并勾选数据类型匹配的测点。
 
-   ![alt text](8.png)
+      ![alt text](8.png)
 
 4. 点击“**确认**”按钮，完成配置。
 
