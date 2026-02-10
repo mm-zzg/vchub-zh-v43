@@ -1,61 +1,55 @@
-# Tag Group
+# 变量组
 
-The primary purpose of tag groups is to organize tags into groups, allowing the tags within each group to be pushed to the real-time display at a consistent refresh rate. This mechanism is designed to enhance the performance of the system's real-time pages by reducing the frequency at which the client processes tag values. By decreasing the frequency of server-client interactions, especially when the client has limited performance capabilities, this helps prevent page crashes due to excessive refresh operations.
+变量组的主要作用是对变量进行分组，组内的变量按照统一的刷新频率推送到实时画面。变量组的主要作用是为了提升系统的实时组态画面刷新性能，根据实际需求，降低客户端变量值的处理频率，防止在客户端性能不佳的情况下，频繁的和服务器交互，导致画面崩溃。
 
-In VC Hub, a default tag group named "Default" is automatically created by the system. This group is configured to enable both value change and periodic push, with the periodic frequency set to 500ms.
+WAGO SCADA中，会默认创建一个名为“Default”的变量组，该变量组默认配置为数值变化和周期性推送同时开启，周期性频率设置为500ms。
 
-When creating a tag, you need to assign it to an already existing tag group.
+在创建变量的时候需要为变量选择已经创建的变量组。
 
-## **Refresh Types**
+## 刷新类型
 
-Two types of refresh are supported: value change and periodical.
+支持数值变化和周期性两种刷新类型。
 
-#### **Value Change**
+#### 数值变化
 
-The tag value is pushed to the page whenever it changes.
+变量的值发生变化时，就会将变量值推送到画面。
 
-#### **Periodical**
+#### 周期性
 
-The tag value is pushed to the page at regular intervals, based on the set period.
+按照设置的周期，将变量值定时推送到画面。
 
-## **How to Use**
+## 如何使用
 
-You can manage tag groups on the "Tags" -> "Tag Group" page.  The built-in tag group cannot be deleted.
+在“变量”->“变量组”页面，管理变量组。内置的变量组不支持删除。
 
 ![alt text](7.png)
 
-## **Query**
+#### 查询
 
-By default,tag groups are sorted in descending order based on creation time. 
+变量组默认以 **创建时间** 倒序排列，用户可以根据需要，自定义排序。
 
-Users can customize the sorting as needed. The search box in the upper right corner allows users to perform a fuzzy search based on the tag group name.
+用户可以通过右上角输入框，对变量组名称进行模糊查询。
 
-## **Add**
+#### 新增
 
-Users can add a new tag group by clicking the "Add" button in the upper right corner and filling in the tag group information in the pop-up window. 
+用户点击右上角”新增”按钮，在弹窗中填入变量组信息后，可以新增变量组。
 
 ![alt text](8.png)
 
-| **Name**     | **Description**                                                                                                                       |
-|--------------|---------------------------------------------------------------------------------------------------------------------------------------|
-| Name         | The name of the tag group, the name can not be repeated. The tag will be associated with this name when it is bound to the tag group. |
-| Description  | Description information of the tag group, optional.                                                                                   |
-| Refresh Type | Controls how the tag is pushed to the screen, categorized into value change and periodical.                                           |
+| **配置** | **描述**                                                              |
+|:----------|:-----------------------------------------------------------------------|
+| 名称     | 变量组的名称，名称不可重复，必填项。变量在绑定变量组时，以该名称进行关联。 |
+| 描述     | 变量组描述信息，可选填。                                                |
+| 刷新类型 | 控制变量如何推送到画面，分为数值变化和周期性。                          |
 
-## **Edit**
+## 修改
 
-You can modify the information of the tag group by clicking the "Edit" button of any data in the tag group list. In the Edit popup window of the tag group, the paths of all the tags that use this tag group will be displayed.
+点击变量组列表任意数据的“修改”按钮，可以修改变量组的信息。在变量组的修改弹窗中会显示使用了该变量组的所有变量路径。
+
+注意：修改变量组名称后，已使用了该变量组的变量，其变量组信息会丢失，请谨慎修改变量组名称。
 
 ![alt text](9.png)
 
-Note: If you change the name of a tag group, the information of the tag group will be lost for the tags that have already been used in the group, so please be careful to change the name of the tag group.
+#### 删除
 
-## **Delete**
-
-Click the Delete button of the tag group to delete the tag group. 
-
-Note: When the tag group is deleted, the tag group information of the tags bound to the tag group will be lost, so please be careful when deleting the tag group.
-
-
-
-
+点击变量组的删除按钮，对变量组进行删除。注意，当变量组被删除后，绑定该变量组的变量，其变量组信息会丢失，请谨慎删除。
