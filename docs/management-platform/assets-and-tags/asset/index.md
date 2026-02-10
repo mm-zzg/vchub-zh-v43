@@ -79,10 +79,6 @@ WAGO SCADA中可以有任意数量的资产，用户可以将变量创建到任�
 
 注意，在对该 **Json** 文件中的内容不是特别理解的情况下，不建议对其进行修改。
 
-###### 导出 *Json* 示例
-
-![车间资产_20240123161724.json](https://docs.wagoscada.cn/wiki/api/wiki/editor/QHXVK91b/6rrAGavR/resources/space%3ANGeB7iWY?token=W.hvidhG3qYSJtXR-79QaBwtgPbEQG92771E41ORcDKFhPlotZua_O4aWxwlRSiBlkbKcGDKnyvRoiO7ieN9BkWFgo)
-
 #### 导入
 
 通过页面右上角的”导入”按钮，用户可以将 **Json** 文件再次导入到系统，如当前系统中存在重名的资产，则会提示用户修改名称。
