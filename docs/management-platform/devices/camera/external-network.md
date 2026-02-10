@@ -60,13 +60,13 @@ Coturn 服务器目前没有官方的 Windows 版本，因为它的设计和开�
 
 1. **使用 Windows Subsystem for Linux (WSL)**
 
-   - 在 Windows 10 或 Windows 11 上启用 WSL，并安装一个 Linux 发行版（例如 Ubuntu）。详情请参照微软官方文档： [安装 WSL](https://learn.microsoft.com/zh-cn/windows/wsl/install)。
+      - 在 Windows 10 或 Windows 11 上启用 WSL，并安装一个 Linux 发行版（例如 Ubuntu）。详情请参照微软官方文档： [安装 WSL](https://learn.microsoft.com/zh-cn/windows/wsl/install)。
 
-   - 后续步骤请参照上文 **Linux**。
+      - 后续步骤请参照上文 **Linux**。
 
 2. **使用 Docker for Windows**
 
-   - 部署步骤请参照下文 **Docker**。
+      - 部署步骤请参照下文 **Docker**。
 
 #### Docker
 

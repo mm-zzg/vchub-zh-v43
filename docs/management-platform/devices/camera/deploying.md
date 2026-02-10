@@ -127,7 +127,7 @@ docker run -p 8000:8000 -it mpromonet/webrtc-streamer -o
 
     ![alt text](20.png)
 
-点击应用，然后点击确认
+    点击应用，然后点击确认
 
 7. 然后在服务列表选中服务，点击右键启动
 
