@@ -1,48 +1,61 @@
-# Creating Tags
+# 创建变量
 
-Tags can only be created in the Asset window.
+变量只能在资产窗口中进行创建。
 
-You can create tags in two different ways:
+您可以通过两种不同的方式创建变量：
 
-- In the menu at the top of the asset tree, click the Add icon and select the type of tag you want to create from the expanded menu. What you add here will be displayed in the root node, e.g. "Temperature" in the image below. 
+- 在资产树顶部的菜单中，单击“添加”图标，在展开的菜单中选择要创建的变量类型。此处添加的内容会显示在根节点，例如下图的“温度”。
 
-    ![alt text](1.png)
+![alt text](1.png)
 
-- In the Asset window, right-click on a catalog under the Instances tab or a model under the Models tab, and select the type of tag you want to create from the pop-up menu. The new tag will be displayed under the corresponding catalog or model as its child node.
+- 在资产树窗口中，在 **实例页签下的目录** 或者 **模型页签下的模型** 上右击鼠标，在弹出的菜单中选择要创建的变量类型。新增的变量会显示在对应的目录或者模型下，作为其子节点。
 
-    ![alt text](2.png)  ![alt text](3.png) 
+| ![alt text](2.png) | ![alt text](3.png) |
+|:---------------|:--------------|
 
+## 新增变量
 
-## **Add new tag**
+1. 选择要新增的变量，例如内存变量，会打开如下新增弹窗。新增页面，默认只显示“**基本信息**”和“**值**”这两个配置信息，其他配置均处于未启用状态，在弹窗顶部 开启对应的配置后，才会在下图的新增界面上显示对应的配置项信息。
 
-1. Select the tag you want to add, such as a memory tag, and the Add popup window will be opened as below. On the Add popup window, only "Basic Information" and "Value" are displayed by default, and all other configurations are not enabled. You can turn on the corresponding configurations at the top of the popup window, and then the corresponding configurations will be displayed on the Add popup window as shown below.
     ![alt text](4.png)
-2.  Set each configuration item, click the **"OK"** button at the bottom right corner after setting, the tag will be displayed in the asset window. 
 
-**Note:** If you configure a configuration item (e.g. history) and then close it and save the tag, the next time you enable the configuration on the tag, it will automatically display the last configured content. 
+2. 设置各配置项，设置完成点击右下角的“确认”按钮，该变量将显示在资产窗口。
 
-## **Edit Tag**
+**说明**：如果配置了某个配置项（例如：历史存储） 后又将其关闭 并保存了变量， 则下次在该变量上再次启用该配置时，会 自动显示上次已 配置的内容。 
 
-1. You can right-click on the tag and click "Edit" button in the popup menu, or double-click on the tag to open the edit window.<br>
-    ![alt text](5.png)<br>
+
+## 编辑变量
+
+1. 您可以在变量上右击鼠标，在弹出的菜单中点击”编辑“按钮进行编辑，也可以双击变量打开编辑窗口，进行编辑。
+
+    ![alt text](5.png)
+
+    **名称** 和 **数据类型默认情况下** 不支持修改。点击名称后面的编辑按钮后，名称变为可编辑状态。
+
     ![alt text](6.png)
-The name and data type are not support edit by default. After clicking the Edit button behind the name, the name becomes editable. <br>
+
+2. 编辑完成点击右下角的“确认”按钮，完成编辑。
+
+## 重命名变量
+
+1. 要重命名变量，请右键单击变量，然后选择 **重命名** 选项；也可以慢双击该变量，使其进入重命名状态。
+
     ![alt text](7.png)
-2.  Click the **"OK"** button at the bottom right corner to finish editing.
 
-## **Rename Tag**
+2. 光标现在将在变量名称内闪烁，您可以键入新名称。
 
-1. To rename a tag, right-click on the label and select the Rename option; you can also double-click on the tag to rename it.<br>
-    ![alt text](8.png)
-2. The cursor will now blink inside the tag name and you can type in the new name.<br>
-    ![creating-tag](../../../../assets/images/creating-tag.gif)
+    ![alt text](8.gif)
 
-## **Copy and paste tag**
+## 复制、粘贴变量
 
-1. To copy a tag, right-click on the tag and select the Copy option.<br>
+1. 要复制变量，请右键单击标签，然后选择 **复制** 选项。
+
     ![alt text](9.png)
-2. The copied tag can be pasted.<br>
-    Tags copied under the Instance tab can only be pasted into the directory of the Instance tab; tags copied under the Model tab can only be pasted under Model.<br>
-    Just right-click on the corresponding file and select Paste.<br>
-    ![alt text](10.png)
 
+2. 复制后的变量可以进行粘贴。
+
+    在实例页签下复制的变量，只能粘贴到实例页签的目录下；在模型页签下复制的变量，只能粘贴到模型下。
+
+    在对应的文件上右击选择粘贴即可。
+
+    ![alt text](10.png)

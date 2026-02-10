@@ -1,80 +1,108 @@
-# I/O Tag Binding Data Source
+# I/O变量绑定数据源
 
-I/O tags can be bound to data sources. You can either bind a fixed data source path directly or use a parameterized method to bind a dynamic path.
+I/O变量可以绑定数据源，可以直接绑定一个固定的数据源路径，也可以使用参数化的方式绑定一个动态路径。
 
-## Direct Binding
+## 直接绑定
 
-1. In the I/O tag add and edit window, click the data source binding button to open the data source binding popup.
-    ![alt text](11.png)
-2. In the popup, select a device, configure the parameters, and then click the "OK" button to complete the binding, as shown in the image below.
-    ![alt text](12.png)
-3. After completing the binding, you can see the specific data source path information in the tag's add and edit window, as shown in the red box in the image below.
-    ![alt text](13.png)
+在I/O变量的新增和修改界面，点击数据源的绑定按钮, 弹出数据源绑定弹窗。
 
-**Notes**：  
+![alt text](11.png)
 
-1. Binding to different data sources will display different data source path parameters. 
-2. In the data source text box, the left side of the "=" represents the parameter name, and the right side represents the parameter value. You can modify the parameter value, but it is not recommended to modify the parameter name, as changing the parameter name will invalidate the binding path. 
-3. Please ensure that the content on both sides of the "=" in the data source input field matches the case of the fields on the configuration page. Otherwise, the data source binding may fail. It is recommended not to modify the parameter name on the left side of the "=". 
+在弹窗中，选择一个设备，配置参数后，点击确认按钮，完成绑定。例如下图所示。
 
-    Example: Data Source Parameter Field: <br>
-    ![alt text](14.png) <br>
-    Configuration Page Field: <br>
-    ![alt text](15.png) 
+![alt text](12.png)
 
+完成绑定后，在变量的新增和编辑窗口，可以看到具体的数据源路径信息，如下图红框所示：
 
-#### Data Source Binding Path Parameters
+![alt text](13.png)
 
-| **DataSource Type** | **Paremeters**  |
-|---------------------|-----------|
-| **OPC UA**          | - DataSourceType <br>- Path <br>- NodeId <br>- DisplayName <br>- DeviceName <br>- GroupName <br>- DataType <br>- IndexOfArrayStr         |
-| **Modbus TCP**      | - DataSourceType <br>- DeviceName <br>- FrameName <br>- DataType <br>- Address <br>- Bit (Only Bool tag displays this parameter) |
-| **Modbus RTU**      | - DataSourceType <br>- DeviceName <br>- FrameName <br>- DataType <br>- Address <br>- Bit (Only Bool tag displays this parameter) |
-| **MQTT Native**     | - DataSourceType <br>- Tag <br>- Address <br>- DataType <br>- DeviceName <br>- GroupName <br>- NodeName                              |
-| **MQTT SparkplugB** | - DataSourceType <br>- Tag -<br> Address <br>- DataType <br>- DeviceName <br>- GroupName <br>- NodeName                              |
-| **SIEMENS S7**      | - DataSourceType <br>- DeviceName <br>- Area <br>- DbNumber <br>- DataType <br>- BitOffset <br>- CharLength <br>- AddressOffset          |
-| **WAGO Protocol**   | - DataSourceType <br>- Path <br>- Tag <br>- DataType <br>- DeviceName                                                        |
+**说明**：  
+1. 绑定到不同的数据源，会显示不同的数据源路径参数。 
 
-## Parameterized Binding
+2. 数据源文本框中，=左侧表示参数名，=右侧表示参数值。可以修改参数值，不建议修改参数名，修改参数名将导致绑定路径失效。 
 
-I/O tags created under a model or instance support parameterized binding. After the data source text box, a settings button will be displayed. From the settings popup, you can select the parameters that need to be replaced.
+3. 请确保数据源输入框中，=左右两侧的内容，与配置页面字段的大小写需一致，否则可能导致数据源绑定失败。建议不要修改=左侧的参数名。  
+
+示例如下：  
+
+数据源参数字段：  
+
+![alt text](14.png) 
+
+配置页面字段：  
+
+![alt text](15.png) 
+
+#### 数据源绑定路径参数
+
+| **数据源类型**      | **参数**                                                                                                     |
+|---------------------|--------------------------------------------------------------------------------------------------------------|
+| **OPC UA**          | - DataSourceType - Path - NodeId - DisplayName - DeviceName - GroupName - DataType - IndexOfArrayStr         |
+| **Modbus TCP**      | - DataSourceType - DeviceName - FrameName - DataType - Address - Bit (Only Bool tag displays this parameter) |
+| **Modbus RTU**      | - DataSourceType - DeviceName - FrameName - DataType - Address - Bit (Only Bool tag displays this parameter) |
+| **MQTT Native**     | - DataSourceType - Tag - Address - DataType - DeviceName - GroupName - NodeName                              |
+| **MQTT SparkplugB** | - DataSourceType - Tag - Address - DataType - DeviceName - GroupName - NodeName                              |
+| **SIEMENS S7**      | - DataSourceType - DeviceName - Area - DbNumber - DataType - BitOffset - CharLength - AddressOffset          |
+| **WAGO Protocol**   | - DataSourceType - Path - Tag - DataType - DeviceName                                                        |
+
+## 参数化绑定
+
+在**模型**或者**实例**下创建的I/O变量才支持参数化绑定。在数据源文本框后面会显示设置按钮，从设置弹窗中选择需要替换的参数。
 
 ![alt text](16.png)
 
-#### Example
+#### 示例：
 
-The factory has 10 motors, each with the same tags. The only difference is that each motor is connected to a different data source. We want Motor 1 to connect to Device 1, Motor 2 to connect to Device 2, and so on, up to Motor 10 connecting to Device 10.
+**工厂有 10个电机，电机下具有相同的变量，唯一的区别是电机连接到不同的数据源。我们希望电机1连接到Device1, 电机2连接到Device2,...电机10连接到Device10。**
 
-For batch creation of devices, please refer to the following section.<br>
-     - [Batch operation of Modbus TCP Devices](../../../devices/modbus-tcp/batch-operation.md)<br>
-     - [Batch operation of Modbus RTU Devices](../../../devices/modbus-rtu/batch-operation.md)<br>
-     - [Batch operation of OPC UA Devices](../../../devices/opc-ua/batch-operation.md)<br>
-     - [Batch operation of MQTT Native Devices](../../../devices/mqtt-native/batch-operation.md)<br>
-     - [Batch operation of MQTT SparkplugB Devices](../../../devices/mqtt-sparkplugb/batch-operation.md)<br>
-     - [Batch operation of SIEMENS S7 Devices](../../../devices/siemens-s7/batch-operation.md)<br>
-     - [Batch operation of WAGO Protocol Devices](../../../devices/wago-protocol/batch-operation.md)
+**批量创建设备请参考如下章节。**
 
-1. In the **"Devices" -> Modbus TCP list**, batch create 10 Modbus TCP devices with names from **Device1** to **Device10**. Only the **DeviceName** and **Host** will differ, while other configurations remain the same.
-2. On the **"Models"** tab, create a new model called **"Motor"**, which includes one custom parameter, **"No"**, representing the motor number.<br>
+- [批量操作Modbus TCP设备](../../../devices/modbus-tcp/batch-operation.md)
+- [批量操作Modbus RTU设备](../../../devices/modbus-rtu/batch-operation.md)
+- [批量操作OPC UA设备](../../../devices/opc-ua/batch-operation.md) 
+- [批量操作MQTT Native设备](../../../devices/mqtt-native/batch-operation.md) 
+- [批量操作MQTT SparkplugB设备](../../../devices/mqtt-sparkplugb/batch-operation.md)
+- [批量操作SIEMENS S7设备](../../../devices/siemens-s7/batch-operation.md) 
+- [批量操作WAGO Protocol设备](../../../devices/wago-protocol/batch-operation.md)
+- [批量操作Camera设备](../../../devices/camera/batch-operation.md) 
+
+1. 在“设备”->Modbus TCP列表中批量创建10个modbus tcp设备，名称为Device1~Device10。只有DeviceName和Host不同，其他配置相同。
+
+2. 在“模型”页签下，新建一个模型“Motor”，该模型包含1个自定义参数“No”,表示电机编号。
+
     ![alt text](17.png)
-3. Right-click on the **"Motor"** model and create an I/O tag named **"Power"**.<br>
+
+3. 鼠标右击该模型，创建I/O变量 “功率”。
+
     ![alt text](18.png)
-4. After binding a data source to the tag, click the settings button for the data source parameters. This will display the list of custom parameters for the tag's associated model, **"Motor"**.<br>
+
+4. 为变量绑定一个数据源后点击数据源参数的设置按钮，显示变量所属模型“电机”的自定义参数列表。
+
     ![alt text](19.png)
-    You can replace the parameter values with the model's custom property, which are referenced using `{}`. When creating an instance, the custom property values will replace the parameters in the path.<br>
+
+    可以将参数值替换为模型的自定义属性，模型的自定义属性通过 {} 引用。在创建实例时使用自定义参数值替换路径中的参数。
+
     ![alt text](20.png)
-5. After the tag is created, switch to the **"Instance"** tab. Create a folder named **"Motor"** and then add instances under this folder using the **"Motor"** model.<br>
+
+5. 变量创建完成后。切换到“实例”页签，创建一个名为Motor的文件夹，在文件夹下使用模型“Motor”添加实例。
+
     ![alt text](21.png)
-6. In the **Add** window, select the **Motor** model. Click the **"Batch Generate"** setting button, set the **"Quantity"** to 10, and set the **"Starting Index"** to 1.<br>
+
+6. 在添加实例窗口，模型选择 **Motor,** 点击“批量实例”的设置按钮，“数量”设置10，“起始序号”设置为1。
+
     ![alt text](22.png)
-7. Next, we will set the custom parameter **No** for each instance. We will bind **Motor_1** to **Device1**, set the **No** value of all **Motor_1** instances to 1, and so on for the other instances.
-    For example:
-    - **Motor_1** -> Device1, **No** = 1
-    - **Motor_2** -> Device2, **No** = 2
-    - And so on, until **Motor_10** -> **Device10**, **No** = 10.<br>
+
+7. 接着我们为每个实例设置自定义参数No。我们将Motor_1绑定到Device1上，所有Motor_1的No值设置为1，依次类推。
+
     ![alt text](23.png)
-8. Once the settings are complete, click the **"OK"** button. This will generate 10 instances under the **Motor** directory. Each instance will contain the same tag: **Power**.<br>
+
+8. 设置完成，点击“确认”按钮，会在Motor目录下，生成10个实例。实例下包含相同的变量：功率。
+
     ![alt text](24.png)
-9. You can use a label control to bind the "Text" property to the tag's **DataSource** property and view the path. This allows you to dynamically display the data source path associated with the tag.<br>
-    ![io-binding](../../../../assets/images/io-binding.gif)
-10. The final result achieves batch binding of tags. All tags of Motor 1 are bound to Device 1, all tags of Motor 2 are bound to Device 2, and so on, with all tags of Motor 10 bound to Device 10.
+
+9. 可以通过文本控件，将文本内容绑定到变量的DataSource属性上，查看路径。
+
+    ![alt text](25.gif)
+
+10. 最终实现了变量的批量绑定。**电机1的所有变量绑定到Device1, 电机2的所有变量绑定到Device2,...电机10的所有变量绑定到Device10。**
+
