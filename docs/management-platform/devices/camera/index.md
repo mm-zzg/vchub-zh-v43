@@ -6,7 +6,7 @@ WAGO SCADA支持通过标准协议与网络摄像头集成。系统通过**RTSP*
 
 如果想成功管理和使用camera设备，请先部署WebRTC Streamer服务，详见 [部署WebRTC Streamer服务](deploying.md)。
 
-**注：如果SCADA部署在外网环境（也就是外网可以访问），想在外网也可以查看Camera设备实时视频，需要部署Coturn穿透服务。详见 [known-link] 。** 
+**注：如果SCADA部署在外网环境（也就是外网可以访问），想在外网也可以查看Camera设备实时视频，需要部署Coturn穿透服务。详见 [外网播放Camera](external-network.md) 。** 
 
 ## 配置WebRTC Streamer
 
