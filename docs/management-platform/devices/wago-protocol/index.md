@@ -34,12 +34,13 @@ WAGO SCADA中的WAGO Protocol驱动支持与WAGO PLC的基本连接。系统自�
 在使用WAGO Protocol驱动之前，您需要先连接上MQTT Borker。请按照以下步骤进行连接：
 
 1. 获取账户和密码：点击设备的"**查看**"按钮，可以看到系统提供的用户名和密码。
+
 2. 配置Cloud Connectivity
 
    - 使用网络浏览器打开您WAGO设备的WBM（Web-based Management，基于Web的管理工具）。
-   - 输入**Username** 和 **Password**，以便在PFC上进行身份验证。点击 **Submit**。
+   - 输入 **Username** 和 **Password**，以便在PFC上进行身份验证。点击 **Submit**。
    - 在 **Configuration** 下选择 **Cloud Connectivity** 菜单项，点击 **Connection1**。
-   - 在右侧的配置中，勾选**Enabled**，启用当前连接**。**
+   - 在右侧的配置中，勾选 **Enabled**，启用当前连接。
    - 从 **Cloud platform** 下拉列表中选择 **MQTT AnyCloud**。
    - 在 **Hostname** 字段中输入您的WAGO SCADA程序发布的IP地址。
    - 在 **Port** 字段中输入1884。
@@ -81,15 +82,15 @@ __*__ __将__ __[server IP]__ __替换成__ __WAGO SCADA__ __所部署的服务�
 
 1. 创建一个I/O变量。
 
-   ![alt text](5.png)
+      ![alt text](5.png)
  
 2. 在变量的编辑界面，点击数据源的 **设置** 按钮。
 
-   ![alt text](6.png)
+      ![alt text](6.png)
 
 3. 选择需要绑定的测点。
 
-   ![alt text](7.png)
+      ![alt text](7.png)
 
 4. 点击“**确认**”按钮，完成配置。
 
