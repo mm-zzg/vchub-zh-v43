@@ -236,31 +236,31 @@ nav:
                                       - management-platform/devices/camera/security-settings.md
                                       - management-platform/devices/camera/batch-operation.md          
                             - management-platform/devices/usage-of-legacy-protocols.md
-                  - Assets and Tags:
+                  - 资产和变量:
                             - management-platform/assets-and-tags/index.md
                             - management-platform/assets-and-tags/aggregation-modes.md
-                            - Asset:
+                            - 资产:
                                       - management-platform/assets-and-tags/asset/index.md
-                                      - Models and Instances:
+                                      - 模型和实例:
                                                 - management-platform/assets-and-tags/asset/model-and-instance/index.md
                                                 - management-platform/assets-and-tags/asset/model-and-instance/batch-instantiate-models.md
                                                 - management-platform/assets-and-tags/asset/model-and-instance/referencing-and-override.md
-                                      - Asset Tree:
+                                      - 资产树:
                                                 - management-platform/assets-and-tags/asset/asset-tree/index.md
-                                                - Batch Operation:
+                                                - 批量操做:
                                                           - management-platform/assets-and-tags/asset/asset-tree/batch-operation/index.md
                                                           - management-platform/assets-and-tags/asset/asset-tree/batch-operation/batch-add.md
                                                           - management-platform/assets-and-tags/asset/asset-tree/batch-operation/batch-update.md
                                                           - management-platform/assets-and-tags/asset/asset-tree/batch-operation/export-and-import.md
-                            - Tag:
+                            - 变量:
                                       - management-platform/assets-and-tags/tag/index.md
-                                      - Tag Type:
+                                      - 变量类型:
                                                 - management-platform/assets-and-tags/tag/tag-type/index.md
                                                 - management-platform/assets-and-tags/tag/tag-type/system-tag.md
-                                      - Creating Tags:
+                                      - 创建变量:
                                                 - management-platform/assets-and-tags/tag/creating-tags/index.md
                                                 - management-platform/assets-and-tags/tag/creating-tags/io-tag-binding-data-source.md
-                                      - Tag Properties:
+                                      - 变量属性:
                                                 - management-platform/assets-and-tags/tag/tag-properties/index.md
                                                 - management-platform/assets-and-tags/tag/tag-properties/alarm.md
                                                 - management-platform/assets-and-tags/tag/tag-properties/history.md

@@ -1,89 +1,84 @@
-# Referencing and Override
+# 引用与重写
 
-## **References**
+## 引用
 
-References in the VC Hub system refer generically to relationships between models and instances, and instances refer generically to model instances and instances.
+引用在 **WAGO SCADA** 系统中泛指 **模型** 与 **实例** 间的关系，实例泛指 **模型实例** 和 **实例**。
 
-References can occur in multiple hierarchies, so there may also be a reference relationship between two instances.
+引用可以发生在 **多层级** 中，因此两个 **实例** 之间也可能存在引用关系。
 
-Below we use an example to illustrate the relationship between them.
+下面我们用一个示例来说明它们之间的关系。
 
-Assumption:
+假设：
 
-- There is a "Motor" model under the Model module, and there is an "Power" tag under "Motor";
-- There is a "Line" model under the Model module, and a model instance "Motor Instance" of the "Motor" model under "Line";
-- Under the Instance module, there is an instance of the "Line" model, named "Line Instance".
+- 模型模块下存在1个“电机”模型，“电机”下有一个“瞬时功率”变量；
+- 模型模块下存在1个“产线”模型，“产线”下有一个“电机”模型的模型实例“电机实例”；
+- 实例模块下存在1个“产线”模型的实例，命名为“产线实例”。
 
-The relationship of each object is shown in the figure below:
+各对象关系如下图所示：
 
-![alt text](29.png)
+![alt text](30.svg)
 
+#### 电机
 
-#### **Motor**
+“电机”模型下存在子集“瞬时功率”变量，整个“电机”都是独立存在的，它不依赖于任何对象。
 
-There is a subset of "instantaneous power" tags under the "motor" model, and the whole "motor" is independent, it does not depend on any object.
+#### 产线与电机
 
-#### **Line and Motor**
+“产线”模型下存在子集“电机实例”实例，因为“电机实例”引用自“电机”模型，所以“电机实例”下同样也会存在“电机”模型下的“瞬时功率”变量，“产线”模型下的“瞬时功率”变量与“电机”模型下的“瞬时功率”变量存在引用关系。
 
-There is a subset of "Motor Instance" instances under the "Line" model, and since "Motor Instance" references the "Motor Since "Motor Instance" references the "Motor" model, the "Instantaneous Power" tag from the "Motor" model also exists under the "Motor Instance". The "Instantaneous Power" tag under the "Line" model is referenced to the "Instantaneous Power" tag under the "Motor" model. The "Instantaneous Power" tag in the " Line" model is referenced to the "instantaneous power" tag in the "Motor" model.
+“电机实例”引用自“电机”模型。
 
-#### **The "Motor Instance" is referenced from the "Motor" model.**
+“电机实例”下的“瞬时功率”变量引用自“电机”模型下的瞬时功率对象。
 
-The Instantaneous Power tag under the Motor instance is referenced from the Instantaneous Power object under the Motor model.
+## 产线实例与产线
 
-**Production Line Instances and Production Lines**
+“产线实例”实例引用自“产线”模型，“产线实例”下会存在“电机实例”，且会将“电机实例”下的“瞬时功率”变量引用过来。
 
-The "Line Instance" instance is referenced from the "Line" model, and there will be a "Motor Instance" under the "Line Instance". The "Motor Instance" will exist under the "Line Instance" and will reference the "Instantaneous Power" tag under the "Motor Instance".
+“产线实例”引用自“产线”模型。
 
-The "Line Instance" is referenced from the "Line" model.
+“产线实例”下的“电机实例”引用自“产线”下的“电机实例”。
 
-The "Motor Instance" under "Line Instance" is referenced from the "Motor Instance" under "Line".
+“产线实例”下的“电机实例”下的“瞬时功率”变量引用自引用自“产线”下的“电机实例”下的“瞬时功率”变量。
 
-The "Instantaneous Power" tag under "Motor Instance" under "Line Instance" is referenced from the "Motor Instance" under "Line". The "Instantaneous power" tag under "Motor instance" under "Line" is referenced from the "Instantaneous power" tag under "Motor instance" under "Line".
+#### 引用对象之间的影响
 
-#### **Influence between referenced objects**
+两者存在引用关系的情况下，除了引用对象会把被引用对象下的子集对象带过来以外，同样的，当被引用对象对自己的子集进行新增和删除操作，都会作用到引用对象，例如：
 
-When there is a reference relationship between two objects, besides the referencing object will bring over the subset objects under the referenced object, similarly, when the referenced object adds and deletes its own subset, it will affect the referencing object, for example:
+- 当在“电机”模型下，添加一个名为“开关状态”的变量时，“产线”模型下“电机实例”中都会自动添加一个“开关状态”的变量，又因为“产线实例”下“电机实例”引用自“产线”模型下“电机实例”，所以“产线实例”下“电机实例”中也会添加一个“开关状态”的变量。
+- 当删除“电机”模型下的“瞬时功率”时，“产线”模型下“电机实例”中也会将“瞬时功率”变量删除，与此同时，连带着“产线实例”下的“瞬时功率”也会被删除。
 
-When you add a tag named "Switch State" under the "Motor" model, the "Motor Instance" under the "Line" model will be automatically added. A tag named "Switch State" is automatically added to the "Motor Instance" under the "Line" model, because the "Motor Instance" under the "Line Instance" is referenced from the "Line Instance" model. Because "motor instance" under "Line instance" is referenced from "motor instance" under "production line" model, a "switch state" tag is also added to "motor instance" under "Line instance". A tag for "Switch State" is also added to the "Motor Instance" under "Line Instance".
+“产线”模型中，“电机实例”是引用自“电机”模型创建的，我们无法对“电机实例”的所有子集进行新增、删除操作，同样，“产线实例”时引用自“产线”模型创建的，我们也无法对“产线实例”的子集做任何新增、删除操作。这种情况下，我们要修改一个实例下的节点，必须要在其根引用模型下进行操作，例如我们想在“产线实例”下“电机实例”中添加一个“日耗能”的变量，那么我只需要在“电机”模型下添加即可，程序会自动同步引用数据。
 
-When the "Instantaneous power" under the "Motor" model is deleted, the "Instantaneous power" tag is also added to the "Motor instance" under the "Line" model. The "Instantaneous power" tag is deleted from the "Motor instance" in the "Line" model, and the "Instantaneous power" in the "Line instance" is also deleted at the same time.
+## 重写
 
-"The "Motor Instance" in the "Line" model is created by reference to the "Motor" model. Similarly, the "Line Instance" is referenced from the "Line" model, so we can't do anything to the subset of "Line Instance". Similarly, the "Line Instance" was created by referencing the "Line" model, so we cannot add or delete any subsets of the "Line Instance". In this case, if we want to modify a node under an instance, we have to operate under its root reference model. For example, if we want to add a tag "Daily Energy Consumption" to "Motor Instance" under "Line Instance", then I want to add a tag "Daily Energy Consumption" to "Motor Instance". For example, if we want to add a tag "Daily Energy Consumption" to the "Motor Instance" of the "Instance", we only need to add it under the "Motor" model, and the program will automatically synchronize the referenced data.
+上述中，介绍了引用的定义，而重写的概念就发生在引用与被引用的节点之间。
 
-## **Override**
+![alt text](31.svg)
+如图所示，“产线实例”下的“瞬时功率”引用自“产线”模型下的“瞬时功率”，“产线”模型下的“瞬时功率”引用自“电机”模型下的瞬时功率，总体上，实现了一个2层的引用关系。
 
-![alt text](30.png)
+我们下面以“瞬时功率Out”、“瞬时功率Middle”，“瞬时功率In”来代指它们（这里的代指没有任何意义，仅为了方便讲解）。
 
+假设我们在创建“瞬时功率In”时，配置的初始值是50，配置的单位是“W”，那么我们在初始化“瞬时功率Out”、“瞬时功率Middle”时，它们的初始值也会是50，配置的单位也会是“W”，以此为前提的情况下：
 
-In the above, the definition of reference is introduced, and the concept of rewriting occurs between the reference and the referenced node.
+1. 这时我们修改“瞬时功率In”的初始值为100，因为“瞬时功率Middle”引用自“瞬时功率In”，那么“瞬时功率Middle”的初始值会被同步为100，又因为“瞬时功率Out”引用自“瞬时功率Middle”，那么“瞬时功率Middle”的初始值也会被同步为100；
+2. 我们修改“瞬时功率Middle”的初始值为80，又因为“瞬时功率Out”引用自“瞬时功率Middle”，那么“瞬时功率Middle”的初始值也会被同步为80，“瞬时功率Middle”的初始值就处于重写状态，此时如果再对“瞬时功率In”的值进行修改，将不会同步到“瞬时功率Middle”上，也不会传递同步到“瞬时功率Out”上，但此时修改“瞬时功率In”的单位的话，同步仍然会被进行；
+3. 我们再修改“瞬时功率Out”的初始值为200后，那么它的初始值就会处于重写状态，无论对“瞬时功率Middle”和“瞬时功率In”的初始值如何更新，都不会影响到“瞬时功率Out”的初始值。
 
-As shown in the figure, the "instantaneous power" under the "line instance" is referenced from the "instantaneous power" under the "line" model, and the "instantaneous power" under the "line" model is referenced from the "motor" model. The "instantaneous power" under the "line" model is referenced from the "instantaneous power" under the "motor" model, which, in general, realizes a 2-tier referencing Overall, a 2-layer referencing relationship is realized.
+总结而言，重写只存在于引用和被引用之间，当对引用对象中的配置修改后，被引用对象修改该配置，就不会同步到引用对象，反之，当配置引用对象中的配置为被特殊修改，那么被引用对象修改的配置将会同步到引用对象中。
 
-We use "Instantaneous Power Out", "Instantaneous Power Middle", and "Instantaneous Power In" to refer to them (the references do not have any meaning here, and are only for (there is no meaning in the substitution here, it is only for the sake of explanation).
+#### 如何解除重写
 
-Suppose we create "Instantaneous Power In" with an initial value of 50 and a unit of "W", then we initialize "Instantaneous Power Out", When we initialize "Instantaneous Power Out" and "Instantaneous Power Middle", their initial value will also be 50, and the unit of configuration will also be "W", under this premise:
-
-1. At this time we modify the initial value of "Instantaneous Power In" to 100, because "Instantaneous Power Middle" referenced from "Instantaneous Power In", then The initial value of "Instantaneous Power Middle" will be synchronized to 100, and since "Instantaneous Power Out" is referenced from "Instantaneous Power Middle", then The initial value of "Instantaneous Power Middle" is also synchronized to 100;
-2. We modify the initial value of "Instantaneous Power Middle" to 80, and because "Instantaneous Power Out" is referenced from "Instantaneous Power Middle", then the initial value of "The initial value of "Instantaneous Power Middle" will also be synchronized to 80, and the initial value of "Instantaneous Power Middle" will be in a rewrite state. At this time, if the value of "Instantaneous power In" is modified, it will not be synchronized to "Instantaneous power Middle", nor will it be synchronized to "Instantaneous power Out", but if the unit of "Instantaneous power In" is modified, the value of "Instantaneous power Out" will be synchronized to "Instantaneous power Out". However, if we change the unit of "In", the synchronization will still be performed;
-3. If we modify the initial value of "Instantaneous Power Out" to 200, its initial value will be rewritten, and no matter how the initial values of "Instantaneous Power Middle" and "Instantaneous Power In" are updated, the synchronization will still be carried out; however, if we modify the unit of "Instantaneous Power In", the synchronization will still be carried out. No matter how the initial values of "Instantaneous Power Middle" and "Instantaneous Power In" are updated, the initial value of "Instantaneous Power Out" will not be affected.
-
-In summary, override only exists between the reference and the referenced, when the configuration of the referenced object is modified, the referenced object to modify the configuration, it will not be synchronized to the referenced object, on the contrary, when the configuration of the referenced object is configured for the configuration of the special modification, then the referenced object to modify the configuration will be synchronized to the referenced object.
-
-#### **How to override**
-
-When a reference object is overridden, a "green dot" is displayed on the right side of the input box, as shown in the initial value in the following figure.
-
-![alt text](31.png)
-
-Users need to lift the override, directly click on the "green dot" will be grayed out, the initial value will be reset to the initial value of the referenced object, the following figure is the initial value of the referenced object is 0, then it will be reset to 0. 
+当引用对象重写后，输入框右侧会显示“绿点”标识，如下图中初始值所示。
 
 ![alt text](32.png)
 
-
-There is a special case where the initial value of "Instantaneous Power Out" is inherited from the initial value of "Instantaneous Power Middle", which is 100, and we want to rewrite the initial value of "Instantaneous Power Out" to 100. We want to rewrite the initial value of "Instantaneous Power Out" to 100, so how do we uninherit the relationship between them?
-
-In this case, it is not effective to change the initial value of "Instantaneous Power Out" to 100. The rewrite flag in the configuration popup window - "gray dot on the right side of the configuration item" provides an active rewrite status change function. Users can click on the "Gray Dot" to change it to green.
+用户如需解除重写，直接点击“绿点”将其置为灰色即可，初始值则会重置为被引用对象中的初始值，下图中被引用对象中的初始值为0，那么则被重置为0。
 
 ![alt text](33.png)
+
+有一种特殊情况，“瞬时功率Out”的初始值继承自“瞬时功率Middle”的初始值100，我们想要将“瞬时功率Out”的初始值重写为100，解除它们之间的继承关系该如何做？
+
+这时，我们直接修改“瞬时功率Out”的初始值为100是无效的，配置弹窗中的重写标识——“配置项右侧灰点”提供了主动重写状态变更功能，用户可以直接点击“灰点”，将其置为绿色即可。
+
+![alt text](34.png)
 
