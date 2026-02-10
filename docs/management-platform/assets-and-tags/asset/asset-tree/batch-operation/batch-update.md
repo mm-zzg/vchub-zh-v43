@@ -1,112 +1,119 @@
-# Batch Update
+# 批量更新
 
-After batch creating data on the **Model** or **Instance** page, you can update the detailed settings for the tags. This includes configurations such as alarm settings for tags and binding the data source paths for the tags.
+在模型或者实例页面下，批量创建数据后，可以对变量的详细设置进行更新。例如变量的报警配置、变量绑定的数据源路径等。
 
-## Export Tags
+## 导出变量
 
-1. In the batch operation window of the **Model** or **Instance**, click the "Batch Operation" button.
-    ![alt text](14.png)
-    ![alt text](15.png)
-2. In the batch operation popup, click the "Export Tags" button.
+1. 在模型或实例的批量操作窗口中，点击“批量操作”按钮。
+
     ![alt text](16.png)
-3. After clicking, a tag selector will pop up, allowing you to add the tags to be exported into the "Selected List". If a directory or instance is selected, it means that all tags under that directory or instance node (including the current node and all its child nodes) are selected. When a directory or instance is selected, an asterisk (*) is used to indicate all tags under it.
+
     ![alt text](17.png)
-4. Click the "OK" button to open the property selection window, where you can choose the tag properties to be exported. The exported file will be in Excel format. Please refer to the **Tag Configuration Excel**.
+
+2. 在批量操作弹窗中，点击”导出变量“按钮。
+
     ![alt text](18.png)
 
-## Import Tags
+3. 点击后，会弹出变量选择器，将需要导出的变量加入到”选中列表“。如果选择的是目录或者实例，则表示选中该目录或实例节点（包含当前节点及其所有子节点）下的所有变量。目录和实例选中后，以*表示其下所有变量。
 
-After modifying the exported tag file, click the "Import Tags" button in the batch operation pop-up to import the tags.
+    ![alt text](19.png)
 
-![alt text](19.png)
+4. 点击”确认“按钮，弹出属性选择窗口，可以选择需要的变量属性进行导出。导出文件为excel格式。
 
-**Notes:**
+    ![alt text](20.png)
 
-- This operation will match the tags in the asset using the data in the path column of the Excel file, overriding the tag configurations. It does not support adding or deleting tags.
-- For configurations that do not need to be updated, you can either delete the corresponding columns in the Excel file or set the values of the corresponding columns to empty.
-- Tags referenced from the Type will have their modified configurations overwritten during the import tag configuration operation.
+## 导入变量
 
-## Tag Configuration Excel
+导出的变量文件修改完成后，在批量操作弹窗中，点击”导入变量“按钮，将变量导入。
 
- Tag configuration form contains all the configuration items of the tag (except thename and data type), the user in the export of the tag configuration, modify the contents of the form, and then import the tag configuration, tag configuration can be realized in a batch update.
+![alt text](21.png)
 
- Some of these configurations are complex configurations, which will be a complex object in actual storage. In ta g c onfiguration excel, we use a regular string to simplify it: *Key1=Value1,Key2=Value2,Key3=Value3.*
+**注意：**
 
-**An example:**
-
- Need to be configured in a column at the same time **Name, Age, Address**  three field values, then only need to fill in the cell *Name = Tom, Age = 18, Address= Unknow* can be.
-
- Complex objects for the collection of cases, it is only necessary to multiple object string to ";" can be separated, such as:
-
-*Name=Tom,Age=18,Address=Unknow; Name=Peter, Age=19,Address=Unknow*
-
-**Note** : Key and Value values in  complex configurations do not support '='.
-
- Complex configurations encountered in the following tables will first be commented as"Complex Configuration" or "Complex Collection Configuration" in the description.
-
-| **Type**                   | **Columnnames**                    | **Description**    |
-|----------------------------|-------------------------------------|-----------------------------------------------|
-| Path                       | Path                                | The complete path of the tag, when importing tag configuration, the system will match the tags in the asset based on the path .    |
-| Basic  configuration       | Description                         | Tag description configuration, users can fill in any string according to their needs.  |
-|                            | TagGroup                            | The tag group configuration of the tag needs to correspond to the data name of the tag group module when modifying, otherwise it will cause the tag function to fail.   |
-|                            | InitialValue                        | When initializing tags, the default value is pushed. When modifying, the type ofthe tag should be considered, such as a Double type tag, which cannot be changed to a string.   |
-|                            | EngineeringLowLimit                 | Theoretical minimum value for numeric tag. Other types of tags do not apply. Paired with engineering high limit, it  will participate in tag operations.     |
-|                            | EEngineeringHighLimit               | Theoretical  maximum value for numeric tag. Other types of tags do not apply. Paired with engineering low limit, it  will participate in tag operations.   |
-|                            | Unit                                | Numeric tags can be configured and input strings can be customized.    |
-|                            | CanWrite                            | Enter True or False to configure the tag as writable.   |
-| I/O Tag Data Source        | DataSource                          | I/O tags can be configured to bind to specific device data source .  |
-| Expression Tag Data Source | SourceTag                           | The expression tag is configurable and can be directly inputted as p ath or selected as a tag. Only one tag can be selected .    |
-|                            | Expression(Read)                    | Only expression tags display this property. Required, defaults to displaying{Source}, where {Source} represents the value of the source tag. The new value obtained by calculating the source tag through an expression can be used as the read value of the current tag.   |
-|                            | Expression(Write)                   | Only expression tags display this property. Required, defaults to displaying{Value}, where {Value} represents the original value of the source tag. This expression determines the value that should be written to the tag.     |
-| History                    | HistoryRecordEnabled                | Whether the tag records history can be filled in True or False. When updating the history configuration of tags, the system will use this column as the initial judgment basis. That is to say, if this column does not exist in the import file, the system will not recognize the data in the "history"related column and update it to the tag.    When exporting, all "history" related columns in the table will exist.If you need to update the history during import, please ensure that all"history" related columns exist in the table, otherwise it may cause configuration errors.  |
-|                            | HistoryRecordMode                   | Historymode, optional fields:   -  Changed:Storage upon tag change -  Timer:Storage based on fixed intervals    |
-|                            | HistoryRecordStoragePeriod          | The storage period to be filled in when the history mode is Timer.     |
-|                            | HistoryRecordStoragePeriodUnit      | When the history mode is Timer, the storage period unit that needs to be filled in is used in conjunction with the "History Storage Period".    Optional fields:   -  Milliseconds -  Seconds -  Minutes -  Hours -  Days -  Weeks -  Months -  Years    |
-|                            | HistoryRecordTimeoutFallbackEnabled | History storage compression mode, optional:   -  Off:Close -  Change:Change compression  -  Slope:Slope compression    |
-|                            | HistoryRecordFallbackInterval       | When the history compression mode is changed to change compression, it needs to be filled in, and can be optionally filled in:   -  Absolute:Absolute value  -  Percentage:percentage  |
-|                            | HistoryRecordFallbackIntervalUnit   | When selecting the compression mode of tag compression or slope compression, it is necessary to configure and fill in a positive number.   |
-|                            | HistoryRecordCompressMode           | When the history mode is tag storage or when the history mode is periodic storage and the compression mode is not Off, it can be configured. Select True or False to indicate whether it is turned on or off.    |
-|                            | HistoryRecordCompressType           | When the history record timeout compensation is enabled as True, it needs to be configured and any positive number should be filled in.    |
-|                            | HistoryRecordCompressValue          | When the historical record timeout replenishment is set to True, it needs to be configured with a replenishment interval, which is used in conjunction withthe historical record timeout replenishment interval.    Optional fields:   -  Milliseconds -  Seconds -  Minutes -  Hours -  Days -  Weeks -  Months -  Years  |
-| Data Aacquisition Deadband | DeadbandEnabled                     | Whether the tag has a collection deadband enabled, you can choose to fill in True or False. When updating the collection deadband configuration of tags, the system will use this column as the initial judgment basis. That is to say, ifthis column does not exist in the import file, the system will not recognizethe data in the "deadband " related column and update it to the tag.   When exporting, all "deadband " related columns in the table will exist. If you need to update the collection deadband during import, please ensure that all "deadband " related columns exist in the table, otherwise it may cause configuration errors.    |
-|                            | DeadbandMode                        | Collect deadband detection mode, optional to fill in:   -  Absolute:Absolute value  -  Percentage:percentage     |
-|                            | Deadband                            | Collect the specific value of the deadband  range and fill in a positive number.   -  When the deadband mode is Absolute, it represents the deadband value , -  When the deadband  mode is Percentage, it represents the percentage of deadband. If 1 is filled in, it is 1%.      |
-| Scale                      | ScaleEnabled                        | Whether to enable range scale for numerical or Bool tags can be filled in as True or False. When updating the range scale configuration of a tag, the system will use this column as the initial judgment basis. That is to say, if this column does not exist in the import file, the system will not recognize the data in the range scale related column being updated to the tag.   When exporting, all range scale related columns in the table will exist. If range scale needs to be updated during import, please ensure that all range scale related columns exist in the table, otherwise it may cause configuration errors.   |
-|                            | ScaleMode                           | Range scale calculation method, optional to fill in:   -  Linear: can be selected when the tag type is number -  Square: Square root, can be selected when the tag type is number -  Reverse: Reverse, can be selected when the tag type is bool   |
-|                            | ScaleMin                            | When the range scale mode is Linear or Square, it needs to be configured to participate in the calculation of range scale and fill in any numerical value.   |
-|                            | ScaleMax                            | When the range scale mode is Linear or Square, it needs to be configured to participate in the calculation of range scale and fill in any value greater than the minimum range scale value.  |
-|                            | ScaleMinRaw                         | When the range scale mode is Linear or Square, it needs to be configured to participate in the calculation of range scale and fill in any numerical value.   |
-|                            | ScaleMaxRaw                         | When the range scale mode is Linear or Square, it needs to be configured to participate in the calculation of range scale and fill in any value greater than the minimum original value of range scale.   |
-| E vent                     | EventEnabled                        | Whether the tag opens an event, you can choose to fill in True or False. When updating the event configuration of tags, the system will use this column as the initial judgment basis. That is to say, if this column does not exist in the import file, the system will not recognize the data in the"event" related column being updated to the tag.    When exporting, all "event" related columns in the table will exist. If an event needs to be updated during import, please ensure that all"event" related columns exist in the table, otherwise it may cause configuration errors.   |
-|                            | EventSetValue                       | You can choose to fill in True or False. When filled in as True, writing a value to the tag will trigger an event log.    |
-|                            | EventSetValueLog                    | When the write value of the event tag is set to True, it can be configured and filled in any string.  |
-|                            | EventValueChanged                   | Bool type tags are configurable and can be filled in either True or False. When filled in as True, an event log will be triggered when the value of the bool tag changes.  |
-| S imulate                  | SimulationEnabled                   | Whether the tag is enabled for simulation, you can choose to fill in True or False.When updating the simulation configuration of tags, the system will use this column as the initial judgment basis. That is to say, if this column does not exist in the import file, the system will not recognize the data in the"simulate" related column being updated to the tag.    When exporting, all simulation related columns in the table will exist. If you need to update the simulation during import, please ensure that all simulation related columns exist in the table, otherwise it may cause configuration errors.  |
-|                            | SimulationType                      | Simulation method, optional to fill in:   -  Fixed:Fixed  -  Random:Random, optional for numerical, Boolean, and character tags  -  Increment:Incremental, optional for numerical tags  -  Decrement:Decrement, numerical tags can be optionally matched  -  Reverse:Reverse, Boolean tag optional  -  Cycle:Loop, optional for character type tags  -  CurrentTime: Real time value, optional temporal tag    |
-|                            | SimulationInitialValue              | When the simulation type is Fixed, Random, Increment, Decrement, Reverse, Cycle,it can be configured, and the corresponding type of value needs to be filled in according to the tag value type. For example, numerical tags can only be filled in with numerical values, otherwise the tag will encounter runtime errors after updating.   |
-|                            | SimulationValueMin                  | When the simulation type is: Random, Increment, or Increment, it can be configuredand any value can be filled in.    |
-|                            | SimulationValueMax                  | When the simulation type is: Random, Increment, and Increment can be configured,fill in any value greater than the minimum simulation value.   |
-|                            | SimulationDecimals                  | When the simulation type is Fixed, Random, Increment, and Increment, and the tagis of Double type, it can be configured and can be filled with values rangingfrom 0 to 16.  |
-|                            | SimulationChangeFrequency           | When the simulation type is: Random, Increment, Decrement, Reverse, Cycle, it canbe configured and a positive integer can be filled in.    |
-|                            | SimulationChangeAmplitude           | When the simulation type is: Increment, Decrement can be configured, and any value can be filled in.      |
-|                            | SimulationSimulationValue           | When the tag is of String type and the simulation mode is Cycle or Random, it can be configured to fill in the string used for character type tag simulation operations. For example, if it is necessary to simulate random push of a, b,c, then the cell can be filled with "a, b, c" (without double quotation marks)   |
-| Custom Properties          | CustomEnabled                       | Whether the tag has custom properties enabled, you can choose to fill in True or False. When updating the custom attribute configuration of a tag, the system will use this column as the initial judgment basis. That is to say, if this column does not exist in the import file, the system will not recognize the data in the "custom attribute" related column and update it to the tag.   When exporting, all columns related to "custom properties " will exist inthe table. If you need to update custom properties  during import, please ensure that all columns related to "custom properties " exist in the table, otherwise it may cause configuration errors.    |
-|                            | CustomArray                         | **Complex set configuration **   Each custom propertie  has 2 fields to fill in:   -  Key:The name of the custom propertie -  Value:Custom propertie  value     |
-| Alarm                      | AlarmEnabled                        | Whether the tag has enabled the alarm property, you can choose to fill in True or False. When updating the alarm attribute configuration of a tag, the system will use this column as the initial judgment basis. That is to say, if this column does not exist in the import file, the system will not recognize thedata in the "alarm" related column being updated to the tag.    When exporting, all alarm related columns in the table will exist. If alarm properties need to be updated during import, please ensure that all alarm related columns exist in the table, otherwise it may cause configuration errors.                                                                                                                                                                      |
-|                            | AlarmLimitInclusive                 | When the tag type is a numerical tag, it can be configured and can be optionally filled in:   -  Open:Open Inclusive   -  Closed:Closed Inclusive      |
-|                            | AlarmLimitDelay                     | Complex configuration    Can be configured when the tag type is a numerical tag.   -  ActiveDelayenabled:Enable activation delay  -  ActiveDelay:Activation delay time (ms)  -  RecoveryDelayenabled:Enable recovery delay  -  RecoveryDelay:Recovery delay time (ms)  |
-|                            | AlarmRateOfChangeDelay              | Complex configuration    Can be configured when the tag type is a numerical tag.  -  ActiveDelayenabled:Enable activation delay  -  ActiveDelay:Activation delay time (ms)  -  RecoveryDelayenabled:Enable recovery delay  -  RecoveryDelay:Recovery delay time (ms)   |
-|                            | AlarmEquivalentDelay                | Complexc onfiguration    Can be configured when the tag type is numeric or character tag.   -  ActiveDelayenabled:Enable activation delay  -  ActiveDelay:Activation delay time (ms)  -  RecoveryDelayenabled:Enable recovery delay  -  RecoveryDelay:Recovery delay time (ms)   |
-|                            | AlarmSettings 1... n                | Complex configuration   Due to the fact that the number of alarm configurations in the system can be customized by users to increase or decrease, and due to the complexity of alarm configuration items, Excel adopts a multi column approach to display alarm configurations, with column names named "AlarmConfiguration+Number". For example, if a tag opens a limit alarm and an equivalent alarm, then when exporting, there will be "AlarmConfiguration 1" and "Alarm Configuration 2" in the table,storing limit alarm configuration and equivalent alarm configuration respectively.   |
+- 该操作会通过Excel中的路径列的数据匹配资产中的变量，覆盖变量的配置，不支持新增和删除；
+- 不需要更新的配置，可在Excel中删除对应列，或者将对应的列的值设置为空；
+- 由模型引用过来的变量，在进行导入变量配置操作时，会对修改的配置进行重写。
 
 
-**Detailed Description of Alarm Configuration**
+## 变量配置Excel
 
-| **Alarm Type** | **Tag Type** | **Description**    |
-|---------------------------|-------------------------|---------------------------------------------------|
-| Limit Alarm               | Number                | -  Key:Limit alarm number, from low 4 to high 4 corresponds to 1-8  <br>-  Enabled:Enable current limit alarm <br>-  Name:Alarm name  <br>-  Limit:Alarm limit  <br>-  Priority:Alarm level, Low, Medium, High, Critical <br>-  DeadBand:Alarm Deadband  <br>-  DeadBandMode:Alarm Deadband Mode  <br>-  AckMode:Alarm confirmation mode, Auto - automatic, Manual - manual (no confirmation required), ManualNeedInfo - manual (confirmation required)  <br>-  Description:Alarm Description  <br>-  AlarmType: Required as Limit                                                                                                                                                                                                                                                                                                                                                            |
-| Change Rate Alarm         | Number                  | -  Enabled:Enable the current rate of change alarm <br>-  Name:Alarm name  <br>-  Rate:Change rate (%)  <br>-  Cycle:Cycle  <br>-  CycleUnit:Cycle unit, optional to fill in Milliseconds, Seconds, Minutes, Hours, Days,Weeks, Months, Years  <br>-  Priority:Alarm level,  Low,  Medium, High , Critical <br>-  AckMode:Alarm confirmation mode, Auto <br>- automatic, Manual - manual (no confirmation required), ManualNeedInfo - manual (confirmation required)  <br>-  Description:Alarm Description  <br>-  AlarmType: Required as RateChange                                                                                                                                                                                                                                                                                                                                          |
-| Equivalent Alarm          | Number,String           | -  Enabled:Enable the current equivalent alarm  <br>-  Name:Alarm name  <br>-  Value:Value  <br>-  Priority:Alarm level,  Low,  Medium, High , Critical <br>-  AckMode:Alarm confirmation mode, Auto - automatic, Manual - manual (no confirmation required), ManualNeedInfo - manual (confirmation required)  <br>-  Description:Alarm Description  <br>-  AlarmType: Required as Equivalent                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
-| Bool Jump Alarm           | Bool                    | -  TrueToFalseName:Enable on to off alarm  <br>-  TrueToFalseName:On to Off Alarm Name <br>-  TrueToFalsePriority:On to Off Alarm Level, Low,  Medium, High , Critical <br>-  TrueToFalseAckMode:On to Off Alarm Confirmation Mode, Auto - Automatic, Manual - Manual (no confirmation required), ManualNeedInfo - Manual (confirmation required)  <br>-  TrueToFalseDescription:On to Off Alarm Description  <br>-  FalseToTrueName:Enable off to on alarm  <br>-  FalseToTrueName:Alarm name from off to on  <br>-  FalseToTruePriority:Switch off to on alarm level, Low,  Medium, High , Critical <br>-  FalseToTrueAckMode:Switch off to on alarm confirmation mode, Auto - automatic, Manual - manual(no confirmation required), ManualNeedInfo - manual (confirmation required)  <br>-  FalseToTrueDescription:Alarm description from off to on  <br>-  AlarmType: Required as BooleanJump |
+变量配置表格中包含了变量的所有配置项（名称和数据类型除外），用户在导出变量配置后，修改表格内容，再导入变量配置，可实现变量配置的批量更新。
 
+其中部分配置为复杂配置，在实际的存储时会是一个复杂的对象，在变量配置Excel中，我们采用了一种有规律的字符串来简化它：*Key1=Value1,Key2=Value2,Key3=Value3*。
+
+**举个例子**：
+
+需要在一列中同时配置 **Name**，**Age**，**Address** 三个字段的值时，则只需要在单元格填入 *Name=Tom,Age=18,Address=Unknow* 即可。
+
+复杂对象为集合的情况，则只需要将多个对象字符串以“;”分隔即可，如：
+
+*Name=Tom,Age=18,Address=Unknow;Name=Peter,Age=19,Address=Unknow*
+
+**注意**：复杂配置中的Key和Value值不支持'='
+
+在下列表格里，如遇到复杂配置，将在描述中首先注释为“复杂配置”或“复杂集合配置”。
+
+| **分类**         | **列名**                 | **描述**  |
+|:------------------|:--------------------------|:-------------|
+| 路径             | 路径                     | 变量的完整路径，在导入变量配置时，系统将根据路径匹配资产中的变 |
+| 基础配置         | 描述                     | 变量的描述配置，用户可根据需要填入任意字符串。  |
+|                  | 变量组                   | 变量的变量组配置，修改时需与变量组列表中的名称对应，否则会导致变量功能失效。   |
+|                  | 初始值                   | 初始化变量时，推送的默认值，修改时需考虑变量的类型，如Double类型的变量，不可将此值改为字符串。    |
+|                  | 工程下限                 | 数值型变量理论最小值，其它类型的变量填入不生效，与工程上限配对使用，会参与变量的运算。 |
+|                  | 工程上限                 | 数值型变量理论最大值，其它类型的变量填入不生效，与工程下限配对使用，会参与变量的运算。  |
+|                  | 单位                     | 数值型变量可配置，可自定义输入字符串。 |
+|                  | 可写                     | 输入True或者False，用于配置该变量时候可写。 |
+| I/O变量数据源    | 数据源                   | I/O变量可配置，绑定具体的设备数据源。  <br>填写规则请参考 [I/O变量绑定数据源](../../../tag/creating-tags/io-tag-binding-data-source.md)。   |
+| 表达式变量数据源 | 源变量路径               | 表达式变量可配置， 可以直接输入变量Path或选择变量。只可填选一个变量。  |
+| 历史记录    | 表达式（读值）             | 只有表达式变量才显示该属性。必填，默认显示 {Source} ， {Source}代表源变量的值。可以将源变量通过表达式计算后获取的新值作为当前变量的读到的值。   |
+|                  | 表达式（写值）             | 只有表达式变量才显示该属性。必填，默认显示 {Value} ， {Value} 表示源原变量的原始值。此表达式确定应写入变量的值。      |
+|          | 历史记录开启             | 变量是否记录历史，可选填True或False。系统在更新变量的历史记录配置时，会以该列作为初始判断依据，也就是说，如果该列没有存在于导入文件中，系统将不会识别“历史记录”相关列中的数据更新到变量。  在导出时，表格中的列会存在所有“历史记录”相关列，如在导入时需要更新历史记录，请确保“历史记录”相关列都存在于表格中，否则可能会导致配置错误。 |
+|                  | 历史记录模式             | 历史记录模式，可选填：  <br>- Changed：变存 <br>- Timer：周期存     |
+|                  | 历史记录存储周期         | 当历史记录模式为Timer时，需要填写的存储周期。    |
+|                  | 历史记录存储周期单位     | 当历史记录模式为Timer时，需要填写的存储周期单位，与“历史记录存储周期”配合使用。  可选填：  <br>- Milliseconds <br>- Seconds <br>- Minutes <br>- Hours <br>- Days <br>- Weeks <br>- Months <br>- Years    |
+|                  | 历史记录压缩模式         | 历史记录存储压缩模式，可选填：  <br>- Off：关闭 <br>- Change：变化压缩 <br>- Slope：斜率压缩   |
+|                  | 历史记录压缩类型         | 当历史记录压缩模式为变化压缩时需要填写，可选填：  <br>- Absolute：绝对值 <br>- Percent：百分比                      |
+|                  | 历史记录值               | 当压缩模式选择变化压缩或斜率压缩时需要配置，填写 正数。  |
+|                  | 历史记录超时补值开启     | 当历史记录模式为变存时或历史记录模式为周期存且压缩模式不为Off时可配置，选填True或者False，代表开启或关闭。   |
+|                  | 历史记录超时补值间隔     | 当历史记录超时补值开启为True时需配置，填写任意正数。   |
+|                  | 历史记录超时补值间隔单位 | 当历史记录超时补值开启为True时需配置，补值间隔，配合历史记录超时补值间隔使用。  可选填：  <br>- Milliseconds <br>- Seconds <br>- Minutes <br>- Hours <br>- Days <br>- Weeks <br>- Months <br>- Years  |
+| 采集死区         | 死区开启                 | 变量是否开启采集死区，可选填True或False。系统在更新变量的采集死区配置时，会以该列作为初始判断依据，也就是说，如果该列没有存在于导入文件中，系统将不会识别“死区”相关列中的数据更新到变量。  在导出时，表格中的列会存在所有“死区”相关列，如在导入时需要更新采集死区，请确保“死区”相关列都存在于表格中，否则可能会导致配置错误。  |
+|                  | 死区模式                 | 采集死区判断模式，可选填：  <br>- Absolute：绝对值 <br>- Percent：百分比   |
+|                  | 死区值                   | 采集死区判断死区范围具体值，填写正数。  <br>- 当死区模式为Absolute，代表死区值； <br>- 当死区模式为Percent，代表死区百分比，如填写1则为1%。  |
+| 量程转换         | 量程转换开启             | 数值型或布尔型变量是否开启量程转换，可选填True或False。系统在更新变量的量程转换配置时，会以该列作为初始判断依据，也就是说，如果该列没有存在于导入文件中，系统将不会识别“量程转换”相关列中的数据更新到变量。  <br>在导出时，表格中的列会存在所有“量程转换”相关列，如在导入时需要更新量程转换，请确保“量程转换”相关列都存在于表格中，否则可能会导致配置错误。   |
+|                  | 量程转换模式             | 量程转换计算方式，可选填：  <br>Linear：线性，在变量类型为数值型时可选择  <br>Square：开平方，在变量类型为数值型时可选择  <br>Reverse：取反，在变量类型为布尔型时可选择      |
+|                  | 量程转换最小值           | 当量程转换模式为Linear或Square需配置，参与量程转换的计算，填入任意数值。   |
+|                  | 量程转换最大值           | 当量程转换模式为Linear或Square需配置，参与量程转换的计算，填入大于量程转换最小值的任意数值。   |
+|                  | 量程转换最小原始值       | 当量程转换模式为Linear或Square需配置，参与量程转换的计算，填入任意数值。  |
+|                  | 量程转换最大原始值       | 当量程转换模式为Linear或Square需配置，参与量程转换的计算，填入大于量程转换最小原始值的任意数值。    |
+| 事件             | 事件开启                 | 变量是否开启事件，可选填True或False。系统在更新变量的事件配置时，会以该列作为初始判断依据，也就是说，如果该列没有存在于导入文件中，系统将不会识别“事件”相关列中的数据更新到变量。 <br>在导出时，表格中的列会存在所有“事件”相关列，如在导入时需要更新事件，请确保“事件”相关列都存在于表格中，否则可能会导致配置错误。|
+|                  | 事件变量写值开启         | 可选填True或False，填写为True时，对该变量写值时会触发事件日志。  |
+|                  | 事件变量写值日志         | 当事件变量写值开启为True时可配置，填入任意字符串。  |
+|                  | 事件布尔值跳变开启       | 布尔类型变量可配置，可选填True或False，填写为True时，该布尔变量的值发生改变时，会触发事件日志。    |
+| 模拟             | 模拟开启                 | 变量是否开启模拟，可选填True或False。系统在更新变量的模拟配置时，会以该列作为初始判断依据，也就是说，如果该列没有存在于导入文件中，系统将不会识别“模拟”相关列中的数据更新到变量。  <br>在导出时，表格中的列会存在所有“模拟”相关列，如在导入时需要更新模拟，请确保“模拟”相关列都存在于表格中，否则可能会导致配置错误。   |
+|                  | 模拟类型                 | 模拟方式，可选填：  <br>- Fixed：固定 - Random：随机，数值型、布尔型、字符型变量可选配 <br>- Increment：递增，数值型变量可选配 <br>- Decrement：递减，数值型变量可选配 <br>- Reverse：取反，布尔型变量可选配 <br>- Cycle：循环，字符型变量可选配 <br>- CurrentTime：实时值，时间性变量可选配    |
+|                  | 模拟初始值               | 当模拟类型为：Fixed、Random、Increment、Decrement、Reverse、Cycle时可配置，需要根据变量值类型填写对应类型的值，如数值型变量只可填写数值，否则更新后变量会发生运行错误。  |
+|                  | 模拟最小值               | 当模拟类型为：Random、Increment、Decrement可配置，填入任意数值。    |
+|                  | 模拟最大值               | 当模拟类型为：Random、Increment、Decrement可配置，填入大于模拟最小值的任意数值。  |
+|                  | 模拟小数位               | 当模拟类型为：Fixed、Random、Increment、Decrement，且变量为Double类型时可配置，可填写0到16的数值。    |
+|                  | 模拟变化频率             | 当模拟类型为：Random、Increment、Decrement、Reverse、Cycle可配置，可填写一个正整数。  |
+|                  | 模拟变化幅度             | 当模拟类型为：Increment、Decrement可配置，可填写任意数值。   |
+|                  | 模拟值                   | 当变量为String类型时，且模拟类型为：Cycle、Random时可配置，填入字符型变量模拟运算时使用的字符串，例如，需要模拟随机推送a,b,c，那么单元格内可填入“a,b,c”(不含双引号)   |
+| 自定义属性       | 自定义属性开启           | 变量是否开启自定义属性，可选填True或False。系统在更新变量的自定义属性配置时，会以该列作为初始判断依据，也就是说，如果该列没有存在于导入文件中，系统将不会识别“自定义属性”相关列中的数据更新到变量。  <br>在导出时，表格中的列会存在所有“自定义属性”相关列，如在导入时需要更新自定义属性，请确保“自定义属性”相关列都存在于表格中，否则可能会导致配置错误。  |
+|                  | 自定义属性集合           | **复杂集合配置**  <br>每个自定义属性存在2个字段需要填写：  <br>- Key：自定义属性的名称 <br>- Value：自定义属性值     |
+| 报警             | 报警开启                 | 变量是否开启报警属性，可选填True或False。系统在更新变量的报警属性配置时，会以该列作为初始判断依据，也就是说，如果该列没有存在于导入文件中，系统将不会识别“报警”相关列中的数据更新到变量。  <br>在导出时，表格中的列会存在所有“报警”相关列，如在导入时需要更新报警属性，请确保“报警”相关列都存在于表格中，否则可能会导致配置错误。  |
+|                  | 报警限值区间包含模式     | 当变量类型为数值型变量时可配置，可选填：  <br>- Open：开区间 <br>- Closed：闭区间    |
+|                  | 报警限值延时             | **复杂配置**  <br>当变量类型为数值型变量时可配置。  <br>- ActiveDelayEnabled：开启激活延时 <br>- ActiveDelay：激活延时时间(ms) <br>- RecoveryDelayEnabled：开启恢复延时 <br>- RecoveryDelay：恢复延时时间(ms)   |
+|                  | 报警变化率延时           | **复杂配置**  <br>当变量类型为数值型变量时可配置。  <br>- ActiveDelayEnabled：开启激活延时 <br>- ActiveDelay：激活延时时间(ms) <br>- RecoveryDelayEnabled：开启恢复延时 <br>- RecoveryDelay：恢复延时时间(ms)   |
+|                  | 报警等值延时             | **复杂配置**  <br>当变量类型为数值型和字符型变量时可配置。  <br>- ActiveDelayEnabled：开启激活延时 <br>- ActiveDelay：激活延时时间(ms) <br>- RecoveryDelayEnabled：开启恢复延时 <br>- RecoveryDelay：恢复延时时间(ms) |
+|          | 报警配置1...n     |**复杂配置** <br>因系统中报警配置的数量可由用户自定义增加、减少，且由于报警配置项比较复杂，所以Excel中采用了多列的方式展示报警配置，列名以”报警配置+序号“命名，例如一个变量开启了一条限值报警和一条等值报警，那么导出时，表格中会存在”报警配置1“和”报警配置2“，分别存储限值报警配置和等值报警配置。 |
+
+## 报警配置详细说明
+
+| **报警类型** | **变量类型**  | **描述**   |
+|:--------------|:---------------|:------------------| 
+| 限值报警     | 数值型        | - Key：限制报警编号，**低4** 到 **高4** 对应1-8 <br>- Enabled：开启当前限值报警 <br>- Name：报警名称 <br>- Limit：报警限值 <br>- Priority：报警级别，Low——低级、Mid——中级、High——高级、Critical——紧急 <br>- DeadBand：报警死区 <br>- DeadBandMode：报警死区模式 <br>- AckMode：报警确认模式，Auto——自动、Manual——手动（无需确认）、ManualNeedInfo——手动（需确认） <br>- Description：报警描述 <br>- AlarmType：必填为Limit  | 
+| 变化率报警   | 数值型        | - Enabled：开启当前变化率报警 <br>- Name：报警名称 <br>- Rate：变化率(%) <br>- Cycle：周期 <br>- CycleUnit：周期单位，可选填Milliseconds、Seconds、Minutes、Hours、Days、Weeks、Months、Years <br>- Priority：报警级别，Low——低级、Mid——中级、High——高级、Critical——紧急 <br>- AckMode：报警确认模式，Auto——自动、Manual——手动（无需确认）、ManualNeedInfo——手动（需确认） <br>- Description：报警描述 <br>- AlarmType：必填为RateChange   | 
+| 等值报警     | 数值型、字符型 | - Enabled：开启当前等值报警 <br>- Name：报警名称 <br>- Value：值 <br>- Priority：报警级别，Low——低级、Mid——中级、High——高级、Critical——紧急 <br>- AckMode：报警确认模式，Auto——自动、Manual——手动（无需确认）、ManualNeedInfo——手动（需确认） <br>- Description：报警描述 <br>- AlarmType：必填为Equivalent | 
+| 布尔报警     | 布尔型        | - TrueToFalseName：开启开到关报警 <br>- TrueToFalseName：开到关报警名称 <br>- TrueToFalsePriority：开到关报警级别，Low——低级、Mid——中级、High——高级、Critical——紧急 <br>- TrueToFalseAckMode：开到关报警确认模式，Auto——自动、Manual——手动（无需确认）、ManualNeedInfo——手动（需确认） <br>- TrueToFalseDescription：开到关报警描述 <br>- FalseToTrueName：开启关到开报警 <br>- FalseToTrueName：关到开报警名称 <br>- FalseToTruePriority：关到开报警级别，Low——低级、Mid——中级、High——高级、Critical——紧急 - FalseToTrueAckMode：关到开报警确认模式，Auto——自动、Manual——手动（无需确认）、ManualNeedInfo——手动（需确认） <br>- FalseToTrueDescription：关到开报警描述 <br>- AlarmType：必填为BooleanJump |
 
