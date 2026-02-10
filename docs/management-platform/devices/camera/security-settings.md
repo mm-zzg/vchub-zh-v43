@@ -2,15 +2,16 @@
 
 采用默认安装方式安装的WebRtc Streamer采用的是Http的方式，当我们需要使用SSL时，就需要进行额外的操作。
 
-WebRtc Streamer支持用**Https**的方式部署。
+WebRtc Streamer支持用 **Https** 的方式部署。
 
-#### 获取Https证书
+## 获取Https证书
 
 我们可以使用官方机构颁发的证书，也可以自己生成开发证书。
 
-###### **如何生成开发证书？**
+#### 如何生成开发证书？
 
 1. 可以使用OpenSSL生成
+
 2. 也可以借助第三方网站生成
 
 在 **Windows** 中可以使用以下步骤通过OpenSSL生成证书（在 **Linux** 中，将 “copy” 替换为 “cp” ，将 “type” 替换为 “cat”即可）：
@@ -38,7 +39,7 @@ xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 -----END RSA PRIVATE KEY-----
 ```
  
-#### 部署WebRtc Streamer为Https
+## 部署WebRtc Streamer为Https
 
 将上一步生成的server.pem 文件放置在webrtc streamer程序的根目录。
 
@@ -65,7 +66,7 @@ nullLogger level:4
 HTTP Listen at 7443s
 ```
  
-#### 常见问题
+## 常见问题
 
 如果 OpenSSL 配置设置不正确，服务器将不会开启。在 'civetweb.conf' 中配置错误日志文件以获取更多信息：
 
