@@ -1,243 +1,242 @@
-# Asset Tree
+# 资产树
 
-Within the editor, click on the Assets window to switch to the asset tree list. All tag information is created and maintained in the Assets window. Click the Expand icon to view the subordinate elements, and click the Collapse icon to collapse all child elements under the node.
+在编辑器内，点击 **资产** 窗口切换到资产树列表。所有的 **变量** 信息都在资产窗口中进行创建和维护。单击“展开”图标, 查看下级元素，单击“折叠”图标将该节点下的所有子元素折叠起来。
 
 ![alt text](1.png)
 
+节点类型的图标说明：
 
-Icon description of the node type：
+| **图标**  | **说明**   |
+|:--------|:------------|
+|![alt text](2.png) | 文件夹     |
+|![alt text](3.png) | 模型       |
+|![alt text](4.png) | 实例       |
+|![alt text](5.png) | 集合       |
+|![alt text](6.png) | I/O变量    |
+|![alt text](7.png) | 内存变量   |
+|![alt text](8.png) | 表达式变量 |
+|![alt text](9.png) | 属性       |
 
-| **Icon**                                                                                                                                                                                                                              | **Description** |
-|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------|
-| ![alt text](2.png)| Folder          |
-| ![alt text](3.png)| Model           |
-| ![alt text](4.png)| Instance        |
-| ![alt text](5.png)| Set             |
-| ![alt text](6.png) | I/O Tag         |
-| ![alt text](7.png)| Memory Tag      |
-| ![alt text](8.png) | Expression Tag  |
-| ![alt text](9.png) | Attribute       |
-
-## **Toolbar** 
+## 工具栏
 
 ![alt text](10.png)
 
-| Icon |Description |
-|----------------------------------|-----------------------------------------|
-| ![alt text](11.png) | When this icon is clicked, the top toolbar converts to a query box. <br> ![alt text](12.png) <br>After entering the search keyword in the query box, the list below will filter out all nodes with this keyword in their name.   Nodes at different levels will be displayed flat in the list. <br>![alt text](13.png) <br> Click on the left side of the "All" behind the drop-down button to display the filter conditions, you can filter by conditions.  <br>![alt text](14.png)  |
-| ![alt text](15.png) | The asset drop-down box allows you to toggle the assets in the current project at will                                                                                                                                                               |
-| ![alt text](16.png) | The Refresh button, when clicked, reloads the list in the Asset Selection box on the left, and the data in the Asset Tree list below.  |
-|![alt text](17.png) | Add button, when clicked it will bring up the Add menu, in which you can select what you need to add. The data added here will be displayed in the root node.  Instances and Models tabs, different categories for additions.   <br>**Instance tab**   <br>![alt text](18.png)   <br>**Model tab**  <br> ![alt text](19.png)  |---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------| |
-| ![alt text](20.png) | Click and select the export and import operations.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
-|![alt text](21.png) | Set the columns that are displayed in the asset tree.  Instances and Models tabs, the columns that can be displayed are different. <br> **Instance tab** <br> ![alt text](22.png) <br> **Model tab** <br> ![alt text](23.png)  |----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|                                                                                        |
+|图标     | 说明   | 
+|:--------------------|:----------------------------| 
+|![alt text](11.png) | 点击该图标后，顶部工具栏会转换为查询框。  <br>![alt text](12.png)  <br>在查询框内输入搜索关键字后，下方列表会筛选出名称中包含此关键字的所有节点。  不同层级的节点都将平铺显示在列表中。  <br>![alt text](13.png)  点击左侧”全选“后面的下拉按钮，显示筛选条件，可以按条件筛选。  <br>![alt text](14.png)|
+|![alt text](15.png)| 通过资产下拉框，可以任意切换当前工程中的资产   |
+|![alt text](16.png) | 刷新按钮，点击后，重新加载左侧资产选择框中的列表，以及下方资产树列表中的数据。   |
+|![alt text](17.png) | 新增按钮，点击后会弹出新增菜单，在菜单中选择需要添加的内容。此处新增的数据将显示在 **根节点**。  <br>实例和模型选项卡，新增的类别不同。  <br>**实例选项卡：** <br>![alt text](18.png)  <br>**模型选项卡：** <br>![alt text](19.png)|
+|![alt text](20.png) | 点击后选择导出、导入操作。 |
+|![alt text](21.png) | 设置资产树中显示的列。  <br>实例和模型选项卡，可显示的列不同。  <br>**实例选项卡：**  <br>![alt text](22.png) <br>**模型选项卡：**  <br>![alt text](23.png) |
 
-## Batch Operation
+## 批量操作
 
-The user can click the "More" button in the upper right corner of the editor and select "Batch Operation".
+用户可点击编辑器右上角的更多按钮，选择批量操作。
 
 ![alt text](24.png)
 
-## **Right-click Menu**
+## 右键菜单
 
-You can right-click on individual nodes in the asset tree to perform various operations. Different types of nodes will have different right-click menus.
+您可以右键单击资产树中的各个节点来执行各种操作。不同类型的节点将具有不同的右键菜单。
 
-#### **Model tab**
+#### 模型选项卡
 
-###### **Folder right-click menu**
+###### 文件夹右键菜单
 
 ![alt text](25.png)
 
-- Add Folder: Click on "Add Folder" to open the folder creation window.
-- Add Model: Clickon "Add Model" to open the model creation window.
-- Copy: Click the Copy button, the paste button on the top of the list will become clickable, and the paste option will be displayed in the context menu of all folders. You can paste the contents of the current folder and all its children into the target path.
-- Paste: When a copy operation has been performed on a folder or model, the paste button is displayed in the right-click menu of the folder.
-- Delete: Click the Delete button to bring up the Delete confirmation window. Click the OK button in the window to delete the node and all its children.
-- Rename: Click on this button to change the current node to edit status. The renamed folder cannot be renamed with other nodes under the current hierarchy. It should be noted that after renaming a folder, the paths of the child nodes under it will be changed.
-- Copy Path: Click to copy the path of the current node. After copying, you can paste the path directly into the text input box.
+-  新增文件夹：点击“新增文件夹”，弹出文件夹新增窗口。
+-  新增模型：点击“新增模型“，弹出模型新增窗口。
+-  复制：点击复制按钮，列表上方的粘贴按钮变为可点状态，所有文件夹的右键菜单中显示粘贴选项。可以将当前文件夹及其所有子节点内容粘贴到目标路径下。
+-  粘贴：当对文件夹或者模型进行了复制操作后，文件夹右键菜单显示粘贴按钮。
+-  删除：点击删除按钮，弹出删除确认窗口。在窗口中点击确定按钮将该节点及其子节点全部删除。
+-  重命名：点击后当前节点变为编辑状态。重新命名后的文件夹不可以和当前层级下的其他节点重名。需要说明的是，文件夹重命名后，其下的子节点的路径都会随之改变。
+-  复制路径：点击后复制当前节点的路径。复制后可以将该路径直接粘贴到文本输入框内。
 
-###### **Model right-click menu**
+###### 模型右键菜单
 
 ![alt text](26.png)
 
-- Add Memory Tag: Click it to bring up the Add Memory Tag window.
-- Add I/O Tag: Click to bring up the Add I/O Tag window.
-- Add Expression Tag: Click to bring up the Add Expression Tag window.
-- Add Instance: Click it to bring up the Add Instance window.
-- Add Set: Click it to bring up the Add Set window.
-- Edit: Click it to bring up the editing window of the model. All contents are supported to be modified.
-- Copy: Click the Copy button, the Paste button on the top of the list becomes clickable, and the Paste option is displayed in the context menu of all folders. The model can only be copied and pasted under the folder or the model root node.
-- Delete: Click the Delete button to bring up the delete confirmation window. Click OK button in the window to delete the node and all its children.
-- Rename: After clicking this button, the current node will be changed to edit status and you can rename the model. The renamed model cannot be renamed with other nodes under the current hierarchy. It should be noted that after renaming, the paths of the child nodes under it will be changed.
-- Copy Path: Click to copy the path of the current node. After copying, you can paste the path directly into the text input box.
+-  新增内存变量：点击后弹出新增内存变量窗口。
+-  新增 I/O 变量：点击后弹出新增 I/O 变量窗口。
+-  新增表达式变量：点击后弹出新增表达式变量窗口。
+-  新增实例：点击后弹出新增实例窗口。
+-  新增集合：点击后弹出新增集合窗口。
+-  编辑：点击后弹出模型的编辑窗口。所有内容均支持修改。
+-  复制：点击复制按钮，列表上方的粘贴按钮变为可点状态，所有文件夹的右键菜单中显示粘贴选项。模型复制后只可粘贴到文件夹下或者模型根节点下。
+-  删除：点击删除按钮，弹出删除确认窗口。在窗口中点击确定按钮将该节点及其子节点全部删除。
+-  重命名：点击后当前节点变为编辑状态，可以重新命名模型。重新命名后的模型不可以和当前层级下的其他节点重名。需要说明的是，重命名后，其下的子节点的路径都会随之改变。
+-  复制路径：点击后复制当前节点的路径。复制后可以将该路径直接粘贴到文本输入框内。
 
-###### **Right-click menu for tags under the model**
+###### 模型下变量的右键菜单
 
 ![alt text](27.png)
 
-- Edit: Click it to bring up the edit window of the tag. The content is the same as the Add window. In the editing window, the name and data type cannot be modified, while others can be modified.
-- Delete: Click the Delete button to bring up the Delete Confirmation window. Click OK button to delete the tag.
-- Rename: After clicking the button, the node will change to edit status and you can rename the tag. The renamed tag cannot be renamed with other nodes under the current hierarchy. It should be noted that the path of the tag will be changed after renaming.
-- Copy Path: Click to copy the path of the current node. After copying, you can paste the path directly into the text input box.
+-  编辑：点击后弹出变量的编辑窗口。内容同新增窗口。在编辑窗口中，名称和数据类型不可修改，其他可修改。
+-  删除：点击删除按钮，弹出删除确认窗口。在窗口中点击确定按钮将该变量删除。
+-  重命名：点击后该节点变为编辑状态，可以重新命名变量。重新命名后的变量不可以和当前层级下的其他节点重名。需要说明的是，重命名后，变量的路径会随之改变。
+-  复制路径：点击后复制当前节点的路径。复制后可以将该路径直接粘贴到文本输入框内。
 
-###### **Right-click menu for set under model**
+######  模型下集合的右键菜单
 
 ![alt text](28.png)
 
-- Delete: Click the Delete button to bring up the Delete Confirmation window. Click the OK button in the window to delete the node.
-- Rename: After clicking, the node changes to edit status and you can rename the set. The renamed name cannot be renamed with other nodes under the current hierarchy. It should be noted that the path of the set will be changed after renaming.
-- Copy Path: Click to copy the path of the current node. After copying, you can paste the path directly into the text input box.
+-  删除：点击删除按钮，弹出删除确认窗口。在窗口中点击确定按钮将该节点删除。
+-  重命名：点击后该节点变为编辑状态，可以重新命名集合。重新命名后的名称不可以和当前层级下的其他节点重名。需要说明的是，重命名后，集合的路径会随之改变。
+-  复制路径：点击后复制当前节点的路径。复制后可以将该路径直接粘贴到文本输入框内。
 
-###### **Right-click menu for instances under model**
+######  模型下实例的右键菜单
 
 ![alt text](29.png)
 
-- Edit: Click it to bring up the edit window of the tag. The content is the same as the Add window. All attributes can be modified. When the model is changed, the content of the customized attributes will be changed accordingly.
-- Delete: Click the Delete button to bring up the Delete Confirmation window. Click OK button in the window to delete the instance and its children nodes.
-- Rename: Click on this node to change to edit status, you can rename the instance. The renamed instance cannot be renamed with other nodes under the current hierarchy. It should be noted that the path of the instance will be changed after renaming.
-- Copy Path: Click to copy the path of the current node. After copying, you can paste the path directly into the text input box.
+-  编辑：点击后弹出变量的编辑窗口。内容同新增窗口。所有属性均可修改。模型变更后，自定义属性的内容会随之变更。
+-  删除：点击删除按钮，弹出删除确认窗口。在窗口中点击确定按钮将该实例及其子节点全部删除。
+-  重命名：点击后该节点变为编辑状态，可以重新命名实例。重新命名后的实例不可以和当前层级下的其他节点重名。需要说明的是，重命名后，实例的路径会随之改变。
+-  复制路径：点击后复制当前节点的路径。复制后可以将该路径直接粘贴到文本输入框内。
 
-######  **Right-click menu for tags under instance**
+######  实例下变量的右键菜单
 
 ![alt text](30.png)
 
-- Edit: Click it to bring up the edit window of the tag. The content is the same as the Add window. In the editing window, the name and data type can not be modified, while others can be modified.
-- Copy Path: click it to copy the path of the current node. After copying, you can paste the path directly into the text input box.
+-  编辑：点击后弹出变量的编辑窗口。内容同新增窗口。在编辑窗口中，名称和数据类型不可修改，其他可修改。
+-  复制路径：点击后复制当前节点的路径。复制后可以将该路径直接粘贴到文本输入框内。
 
-###### **Right-click menu for set under instance**
+######  实例下集合的右键菜单
 
 ![alt text](31.png)
 
-- Copy Path: Copy the path of the current node after clicking. After copying, you can paste the path directly into the text input box.
+-  复制路径：点击后复制当前节点的路径。复制后可以将该路径直接粘贴到文本输入框内。
 
-#### **Instance tab**
+#### 实例选项卡
 
-###### **Folder right-click menu**
+###### 文件夹右键菜单
 
 ![alt text](32.png)
 
-- Add Folder: Click it to bring up the Add Folder window.
-- Add Instance: Click it to bring up the Add Instance window.
-- Add Memory Tag: Click it to bring up the Add Memory Tag window.
-- Add I/O Tag: Click to bring up the Add I/O Tag window.
-- Add Expression Tag: Click it to bring up the Add Expression Tag window.
-- Copy: Click the Copy button, the Paste button above the list becomes clickable, and the Paste option is displayed in the context menu of all folders. You can paste the contents of the current folder and all its sub-nodes to the target path.
-- Paste: When a copy operation is performed on any node under the Instance tab, the Paste button is displayed in the right-click menu of the folder.
-- Delete: Click the Delete button to bring up the Delete confirmation window. Clicking the OK button in the window deletes the node and all its children.
-- Rename: Clicking on the node changes the node to edit status and allows you to rename the folder. The renamed folder cannot be renamed with other nodes under the current hierarchy. It should be noted that after renaming the folder, the paths of the child nodes under it will be changed.
-- Copy Path: Click to copy the path of the current node. After copying, you can paste the path directly into the text input box.
-- Export Tag Configuration: Click this button to export the configuration information of all tags under the current node. Each configuration item is divided into one sheet, for example, one sheet for basic attributes, one sheet for events, and one sheet for alarms, including limit alarms, equal alarms, rate of change alarms, and switch alarms.
+-  新增文件夹：点击后弹出新增文件夹窗口。
+-  新增实例：点击后弹出新增实例窗口。
+-  新增内存变量：点击后弹出新增内存变量窗口。
+-  新增 I/O 变量：点击后弹出新增 I/O 变量窗口。
+-  新增表达式变量：点击后弹出新增表达式变量窗口。
+-  复制：点击复制按钮，列表上方的粘贴按钮变为可点状态，所有文件夹的右键菜单中显示粘贴选项。可以将当前文件夹及其所有子节点内容粘贴到目标路径下。
+-  粘贴：当对实例页签下的任意节点进行了复制操作后，文件夹右键菜单显示粘贴按钮。
+-  删除：点击删除按钮，弹出删除确认窗口。在窗口中点击确定按钮将该节点及其子节点全部删除。
+-  重命名：点击后节点变为编辑状态，可以重新命名文件夹。重新命名后的文件夹不可以和当前层级下的其他节点重名。需要说明的是，文件夹重命名后，其下的子节点的路径都会随之改变。
+-  复制路径：点击后复制当前节点的路径。复制后可以将该路径直接粘贴到文本输入框内。
+-  导出变量配置 ：点击后将当前节点下所有变量的配置信息进行导出。每个配置项分为一个 sheet 。例如基础属性一个 sheet,  事件一个 sheet 。对于报警，每种报警类型一个 sheet ，包括限值报警、等值报警、变化率报警、开关量报警。
 
-###### **Instance right-click menu**
+######  实例右键菜单
 
 ![alt text](33.png)
 
-- Edit: Click it to bring up the edit window of the tag. The content is the same as the Add window. All attributes can be modified. When the model is changed, the content of the customized attributes will be changed accordingly. 
-- Copy: Click the Copy button, the Paste button above the list becomes clickable and the Paste option is displayed in the context menu of all folders. You can paste the contents of the current folder and all its sub-nodes under the target path.
-- Paste: When a copy operation is performed on any node under the Instance tab, the Paste button is displayed in the right-click menu of the folder.
-- Delete: Click the Delete button to bring up the Delete confirmation window. Clicking the OK button in the window deletes the node and all its children.
-- Rename: After clicking, the node changes to edit status and you can rename the instance. The renamed instance cannot be renamed with other nodes under the current hierarchy. It should be noted that after renaming the instance, the paths of the child nodes under it will be changed.
-- Copy Path: Click to copy the path of the current node. After copying, you can paste the path directly into the text input box.
-- Export Tag Configuration: Click this button to export the configuration information of all tags under the current node. Each configuration item is divided into one sheet, for example, one sheet for basic attributes, one sheet for events, and one sheet for alarms, including limit alarms, equal alarms, rate of change alarms, and switch alarms.
+-  编辑：点击后弹出变量的编辑窗口。内容同新增窗口。所有属性均可修改。模型变更后，自定义属性的内容会随之变更。
+-  复制：点击复制按钮，列表上方的粘贴按钮变为可点状态，所有文件夹的右键菜单中显示粘贴选项。可以将当前文件夹及其所有子节点内容粘贴到目标路径下。
+-  粘贴：当对实例页签下的任意节点进行了复制操作后，文件夹右键菜单显示粘贴按钮。
+-  删除：点击删除按钮，弹出删除确认窗口。在窗口中点击确定按钮将该节点及其子节点全部删除。
+-  重命名：点击后该节点变为编辑状态，可以重新命名实例。重新命名后的实例不可以和当前层级下的其他节点重名。需要说明的是，实例重命名后，其下的子节点的路径都会随之改变。
+-  复制路径：点击后复制当前节点的路径。复制后可以将该路径直接粘贴到文本输入框内。
+-  导出变量配置 ：点击后将当前节点下所有变量的配置信息进行导出。每个配置项分为一个 sheet 。例如基础属性一个 sheet,  事件一个 sheet 。对于报警，每种报警类型一个 sheet ，包括限值报警、等值报警、变化率报警、开关量报警。
 
-###### **Right-click menus for tags not under an instance**
+######  非实例下变量的右键菜单
 
 ![alt text](34.png)
 
-- Edit: Click it to bring up the edit window of the tag. The content is the same as the Add window. In the editing window, the name and data type cannot be modified, but others can be modified.
-- Copy: Click Copy button to paste the current tag into the instance root node or folder. The name of the pasted tag remains unchanged. If there is a file with the same name in the current hierarchy, the suffix of the new tag name after pasting will be automatically added 1. For example, if the name of the copied tag is A, and there already exists a node with the name A under the current node that needs to be pasted, the name of the tag after pasting will be displayed as A1.
-- Delete: Click the Delete button to bring up the Delete Confirmation window. Click OK button in the window to delete the tag.
-- Rename: After clicking, the node becomes editable and can be renamed. The renamed name cannot be renamed with other nodes under the current hierarchy.
-- Copy Path: Click to copy the path of the current node. After copying, you can paste the path directly into the text input box.
-- Export Tag Configuration: Click this button to export the configuration information of all tags under the current node. Each configuration item is divided into one sheet, for example, one sheet for basic attributes, one sheet for events, and one sheet for alarms, including limit alarms, equal alarms, rate of change alarms, and switch alarms.
+-  编辑：点击后弹出变量的编辑窗口。内容同新增窗口。在编辑窗口中，名称和数据类型不可修改，其他可修改。
+-  复制：点击复制按钮，可以将当前变量粘贴到实例根节点或者文件夹下。粘贴后的变量名称不变。如果在当前层级存在同名文件，则粘贴后的新变量名称后缀自动加 1 。例如复制的变量名称为 A ，在当前需要粘贴的节点下，已经存在一个名称为 A 的节点，则粘贴后的变量名称显示为 A1 。
+-  删除：点击删除按钮，弹出删除确认窗口。在窗口中点击确定按钮将该变量删除。
+-  重命名：点击后该节点变为编辑状态，可以重命名。重新命名后的名称不可以和当前层级下的其他节点重名。
+-  复制路径：点击后复制当前节点的路径。复制后可以将该路径直接粘贴到文本输入框内。
+-  导出变量配置 ：点击后将当前节点下所有变量的配置信息进行导出。每个配置项分为一个 sheet 。例如基础属性一个 sheet,  事件一个 sheet 。对于报警，每种报警类型一个 sheet ，包括限值报警、等值报警、变化率报警、开关量报警。
 
-###### **Right-click menu for tag under instances**
+######  实例下变量的右键菜单
 
 ![alt text](35.png)
 
-- Edit: Click it to bring up the edit window of the tag. The content is the same as the Add window. In the editing window, the name and data type can not be modified, while others can be modified.
-- Copy Path: click it to copy the path of the current node. After copying, you can paste the path directly into the text input box.
-- Export Tag Configuration: click it to export the configuration information of all tags under the current node. Each configuration item is divided into one sheet, for example, one sheet for basic attributes, one sheet for events, and one sheet for alarms, including limit alarms, equal alarms, rate of change alarms, and switch alarms.
+-  编辑：点击后弹出变量的编辑窗口。内容同新增窗口。在编辑窗口中，名称和数据类型不可修改，其他可修改。
+-  复制路径：点击后复制当前节点的路径。复制后可以将该路径直接粘贴到文本输入框内。
+-  导出变量配置 ：点击后将当前节点下所有变量的配置信息进行导出。每个配置项分为一个 sheet 。例如基础属性一个 sheet,  事件一个 sheet 。对于报警，每种报警类型一个 sheet ，包括限值报警、等值报警、变化率报警、开关量报警。
 
-###### **Right-click menu for instances under instances**
+######  实例下实例的右键菜单
 
 ![alt text](36.png)
 
-- Edit: Click it to bring up the edit window of the tag. The content is the same as the Add window. In the editing window, the name and data type can not be modified, while others can be modified.
-- Copy Path: click it to copy the path of the current node. After copying, you can paste the path directly into the text input box.
-- Export Tag Configuration: click it to export the configuration information of all tags under the current node. Each configuration item is divided into one sheet, for example, one sheet for basic attributes, one sheet for events, and one sheet for alarms, including limit alarms, equal alarms, rate of change alarms, and switch alarms.
+-  编辑：点击后弹出实例的编辑窗口。内容同新增窗口。所有属性均可修改。模型变更后，自定义属性的内容会随之变更。
+-  复制路径：点击后复制当前节点的路径。复制后可以将该路径直接粘贴到文本输入框内。
+-  导出变量配置 ：点击后将当前节点下所有变量的配置信息进行导出。每个配置项分为一个sheet。例如基础属性一个sheet, 事件一个sheet。对于报警，每种报警类型一个sheet，包括限值报警、等值报警、变化率报警、开关量报警。
 
-###### **Right-click menu for sets under instances** 
+######  实例下集合的右键菜单
 
 ![alt text](37.png)
 
-- Generate: Click on it to bring up the editing window for the collection. Set the name of the prefix to be generated and the quantity. The quantity only supports inputting positive integers.
-- Copy Path: Click it to copy the path of the current node. After copying, you can paste the path directly into the text input box.
-- Export Tag Configuration: click to export the configuration information of all tags under the current node. Each configuration item is divided into one sheet, for example, one sheet for basic attributes, one sheet for events, and one sheet for alarms, including limit alarms, equal alarms, rate of change alarms, and switch alarms.
+-  编辑：点击后弹出集合的编辑窗口。设置要生成的前缀名称以及数量。数量仅支持输入正整数。
+-  复制路径：点击后复制当前节点的路径。复制后可以将该路径直接粘贴到文本输入框内。
+-  导出变量配置 ：点击后将当前节点下所有变量的配置信息进行导出。每个配置项分为一个 sheet 。例如基础属性一个 sheet,  事件一个 sheet 。对于报警，每种报警类型一个 sheet ，包括限值报警、等值报警、变化率报警、开关量报警。
 
-###### **Right-click menu for instances under sets**
+###### 集合 下实例的右键菜单
 
 ![alt text](38.png)
 
-- Edit: Click it to bring up the edit window.
-- Delete: Click the Delete button to bring up the Delete Confirmation window. Click the OK button in the window to delete the data.
-- Copy Path: Click to copy the path of the current node. After copying, you can paste the path directly into the text input box.
-- Export Tag Configuration: Click this button to export the configuration information of all tags under the current node. Each configuration item is divided into one sheet, for example, one sheet for basic attributes, one sheet for events, and one sheet for alarms, including limit alarms, equal alarms, rate of change alarms, and switch alarms.
+-  编辑：点击后弹出编辑窗口。
+-  删除：点击删除按钮，弹出删除确认窗口。在窗口中点击确定按钮将该数据 删除。
+-  复制路径：点击后复制当前节点的路径。复制后可以将该路径直接粘贴到文本输入框内。
+-  导出变量配置 ：点击后将当前节点下所有变量的配置信息进行导出。每个配置项分为一个 sheet 。例如基础属性一个 sheet,  事件一个 sheet 。对于报警，每种报警类型一个 sheet ，包括限值报警、等值报警、变化率报警、开关量报警。
 
-## **Shortcuts**
+## 快捷操作
 
-#### Double-click the node to open the edit window
+####  双击节点进入编辑界面
 
-Double-click on the Tag, Model, and Instance nodes in the asset tree to open the corresponding edit window.
+在资产树上双击变量、模型、实例节点，打开对应的编辑界面 。
 
-#### Double-click to change value
+####  双击改值
 
-Double click on the value of a tag in the asset tree, the value will be changed to edit status, you can modify the value of the tag, input the value and then press the Enter key or click on the area outside the input box to complete the saving of the value.
+在资产树上双击变量的值，值变为编辑状态，可以修改变量的值，输入值后按回车键或者点击输入框之外区域，完成值的保存。
 
 ![alt text](39.png)
 
-Only tags which enabled  "Writable" support double-clicking to write values.
+只有开启了”可写“属性的变量才支持双击写值。
 
 ![alt text](40.png)
 
-In addition to the tag values that support double-click modification, the alarm information of the tag also supports double-click modification of the value of the limit alarm and the value of the equal value alarm.
+除了变量值支持双击修改，变量的报警信息中，**限值报警** 的值和 **等值报警** 的值也支持双击修改。
 
 ![alt text](41.png)
 
-#### **Shortcut Keys**
+#### 快捷键
 
-The Asset Tree supports the following shortcut key operations:
+资产树支持以下快捷键操作：
 
-- Ctrl+c: Copy
-- Ctrl+v: Paste
-- Del: Delete
-- Enter: Enter the query content and press enter to execute the query operation.
+-  Ctrl+c ：复制
+-  Ctrl+v ：粘贴
+-  Del ：删除
+-  Enter ：输入查询内容后按 enter 键执行查询操作
 
-#### **Multi-select Delete**
+####  多选删除
 
-Support pressing Ctrl key to select multiple nodes and delete them together.
+支持按 Ctrl 键选择多个节点后一起删除。
 
-Select nodes of any level to delete together. If the parent node is selected, the child nodes will be deleted together.
+选择任意层级的节点一起删除。如果选择了父节点，则子节点会一起被删除。
 
-Attribute nodes are not supported to be selected individually and then deleted.
+属性节点不支持单独选择后进行删除。
 
-## **Tag Identification**
+## 变量标识
 
-Tag configuration can be visualized in the asset tree.
+变量配置在资产树中可以直观地显出来示。
 
-We can click on the Settings icon and check the "Status" box to display the status column.
+我们可以点击设置图标，勾选”状态”将状态列显示出来。
 
 ![alt text](42.png)
 
-The status column of a tag will visualize the status of the tag's partial configuration. Dark icons represent configured and light icons represent unconfigured.
+变量的状态列，将会直观的展示出变量部分配置的状态。深色图标代表已配置，浅色图标代表未配置。
 
 ![alt text](43.png)
 
-The status icons are described below:
+状态图标描述如下：
 
-| **Icon**                                                                                                                                                                                                                              | **Description**                                                                           |
-|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------|
-| ![alt text](44.png) | This icon is displayed when the tag has alarm configuration turned on.                    |
-| ![alt text](45.png) | This icon is displayed when history storage is enabled for the tag.                       |
-| ![alt text](46.png) | This icon is displayed when range conversion is enabled for the tag.                      |
-| ![alt text](47.png) | This icon is displayed when the tag is configured with any of the rewrite configurations. |
+| **图标** | **说明**       |
+|:----------------------|:---------------------|
+|![alt text](44.png) | 当变量开启了报警配置时，显示此图标             |
+|![alt text](45.png)| 当变量开启了历史存储时，显示此图标             |
+|![alt text](46.png)| 当变量开启了量程转换时，显示此图标             |
+|![alt text](47.png)| 当该变量配置存在任意一个重写配置时，显示此图标 |
 
