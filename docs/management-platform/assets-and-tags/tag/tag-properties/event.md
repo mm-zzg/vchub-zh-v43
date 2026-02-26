@@ -1,32 +1,28 @@
-# Event
+# 事件
 
- By configuring the event properties of tags, the system can monitor issues that may require operator attention, such as equipment failures, out-of-range temperatures, and abnormal pressures. Events can also be audited and monitored,which can prevent security issues such as unauthorized access and data leakage.
+通过配置变量的事件属性，系统可以监测到可能需要操作员关注的问题，如设备故障、温度超出范围、压力异常等。还可以通过对事件进行审计和监控，可以防止未授权访问和数据泄露等安全问题。
 
-## **How to Enable**
+## 如何启用
 
-   In the add or edit  pop-up window of the tag, there is an event switch at the top, which is turned on for event setting.
+在变量的编辑弹窗中，顶部有事件开关，开启后进行事件设置。
 
 ![alt text](21.png)
 
- Different data types can set different categories of events.
+不同的数据类型可以设置不同类别的事件 。
 
 ![alt text](22.png)
 
-| **Data Type** | **Set Value** | **Value Changed** |
-|---------------|--------------------|-------------------|
-| Integer       | √                  | X                 |
-| Double        | √                  | X                 |
-| Bool          | √                  | √                 |
-| String        | √                  | X                 |
-| DateTime      | √                  | X                 |
+| **数据类型** | **变量写值** | **布尔值跳变** |
+|:--------------|:--------------|:----------------|
+| Integer      | √            | X              |
+| Double       | √            | X              |
+| Bool         | √            | √              |
+| String       | √            | X              |
+| DateTime     | √            | X              |
 
-| **Name**      | **Description**                                                                                            |
-|---------------|------------------------------------------------------------------------------------------------------------|
-| Set Value     | After checking this option, an event will be recorded whenever a write operation is performed on this tag. |
-| Value Changed | After checking this option, an event will be recorded whenever the value of the Boolean tag changes.       |
+| **配置**   | **描述**                                        |
+|:------------|:-------------------------------------------------|
+| 变量写值   | 勾选后，当对该变量进行写值操作时，会记录一条事件。 |
+| 布尔值跳变 | 勾选后，当布尔变量的值发生改变后，会记录一条事件。 |
 
-**Note:** The events recorded on the tag can be viewed in the Real-time Event and Historical Event. Set Value  can be viewed in "Operation Event" and the Value Changed  can be viewed in "Status Event". 
-
-
-
-
+**说明**：变量上记录的事件，可以通过实时事件和历史事件进行查看。变量赋值可在“操作事件”中查看，布尔量跳变在“状态事件”中查看。

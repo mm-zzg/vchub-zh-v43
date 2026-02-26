@@ -1,38 +1,38 @@
-# Scale
+# 量程转换
 
- In many cases, the data collected by the device does not meet the actual display requirements, for example, we need to collect the instantaneous power of amotor, the unit of collection is W, and the instantaneous power unit that needs to be displayed on the page  is Kw, then we can convert the collected value to the target value through scale.
+在很多情况下，设备采集的数据并不能满足实际显示要求，例如我们需要采集一台电机的瞬时功率，采集的单位是W，而画面需要展示的瞬时功率单位是Kw，那么我们就可以通过量程转换，将采集值转化为目标值。
 
- Currently,only I/O tags support scale , and the data type must be Integer,Double or Bool.
+目前仅 **I/O变量** 支持量程转换，且数据类型需为Integer、Double或Bool。
 
-**How to Enable**
- In the add or edit  pop-up window of the tag, there is a switch for scale  at the top, which can be turned on to set the specific rules for scale.
+## 如何启用
+
+在变量的设置弹窗中，顶部有 **量程转换** 的开关，开启后设置量程转换的具体规则。
 
 ![alt text](17.png)
 
- When the switch is turned on, the range conversion configuration will be automatically displayed in the popup window, users can set the range conversion configuration according to the actual needs, and click the **"OK"**  button after the setting is completed.
+打开后，弹窗中会自动显示量程转换配置项，用户可以根据实际需求，对量程转换配置进行设置，设置完成后点击”确认“按钮即可。
+
 ![alt text](18.png)
 
-| **Name** | **Description**                                                                                                                                                                                                                                                                         |
-|----------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Mode     | There  are 3 modes:  -  Linear:This mode is displayed when the data type of the tag is Integer, Double. -  Square: This mode is displayed when the data type of the tag is Integer,Double. - Re verse:This mode is displayed when the data type of the tag is Bool.                     |
-| Raw      | Configurable when the mode is Linear or Square.   <br>![alt text](19.png) |
-| Value    | Configurable when the mode is Linear or Square.  <br>![alt text](20.png)  |
+| **配置** | **描述** |
+|:----------|:------------------------------------|
+| 模式     | 量程转换配置模式分为3种：  <br>- 线性：当变量的数据类型为Integer、Double时，显示该模式。 <br>- 开平方：当变量的数据类型为Integer、Double时，显示该模式。 <br>- 取反：当变量的数据类型为Bool时，显示该模式。                                                               |
+| 原始值   | 在模式为 **线性** 或 **开平方** 时可配置。  <br>![alt text](19.png) |
+| 值       | 在模式为 **线性** 或 **开平方** 时可配置。  <br>![alt text](20.png) |
 
-## **Formula**
+## 量程转换公式
 
-#### **Linear**
+#### 线性
 
- Displayed value = Min value + (Current raw value - Min raw value) * (Max value  - Min value) \ (Max raw value - Min raw value )
+*显示值 = 最小值 +（当前原始值 - 最小原始值）* * *（最大值 - 最小值）\ (最大原始值 - 最小原始值 )*
 
-#### **Square**
+####  开方
 
- Displayed value = Min value + √(Current raw value -Min raw value) * (Max value - Min value)\ √(Max raw value - Min raw value ) 
+*显示值 = 最小值 + √(当前原始值 - 最小原始值）* * *（最大值 - 最小值）\ √ (最大原始值 - 最小原始值 )*
 
- **Note:**  √  means square
+说明： √表示开平方
 
-#### **Reverse**
+#### 取反
 
--  When the captured value is True, the actual displayed value is False;
--  When the captured value is False, the actual display value is True.
-
-
+- 当采集到的值为True时，实际显示值为False；
+- 当采集到的值为False时，实际显示值为True。
