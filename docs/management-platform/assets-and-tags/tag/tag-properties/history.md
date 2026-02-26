@@ -1,69 +1,66 @@
-# History
+# 历史记录
 
-In the industrial world, in addition to monitoring the real-time status of a device, it is often necessary to record historical data, such as the energy consumption of a device, in order to analyze the production status and optimize the production efficiency.
+在工业领域中，我们除了监控设备的实时状态外，经常需要记录设备的历史数据，例如设备的能耗，用来分析生产状态，以便优化生产效率。
 
-In VC Hub, tags are an important medium for receiving device values and issuing commands. In order to make the storage of historical values more realistic and to reduce server hardware storage consumption, tags support various recording modes.
+在WAGO SCADA中，变量是用来接收设备值和下发指令的重要媒介, 为了使历史值的存储更加符合现实场景，且减少服务器硬件存储消耗，变量支持多种记录模式。
 
-## **How to Enable**
+## 如何启用
 
-In the editing popup window of the tag, there is a history switch at the top of the popup window, turn it on to set the history.
+在变量的编辑弹窗中，顶部有 **历史记录** 的开关，开启后进行历史记录设置。
 
 ![alt text](9.png)
 
-When you turn it on, the popup window will automatically display the history configuration items, users can set the history according to the actual needs, click **"** **OK** **"** button after finishing the settings.
+打开后，弹窗中会自动显示历史记录配置项，用户可以根据实际需求，对历史记录进行设置，设置完成后点击”确认“按钮即可。
 
 ![alt text](10.png)
 
-| **Name**          | **Description**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
-|-------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Mode              | There are 2 modes:  <br>- On Change: Store when the value of the tag changes. <br>- Periodic: Store the value of the tag according to the set storage period. <br>- Raw: Store using the original values.    |
-| Compression Mode  | Only Integer and Double type tags can be configured. The compression rule reduces the amount of data actually stored in the database to reduce the load on the server hard disk while meeting the production requirements.  <br>There are two types of compression modes:  <br>- **Delta compression**: calculates the deadband by compressing the type and value, subtracting the current value from the last stored value of the tag, and if the difference is within the deadband, it will not be stored. <br>  ![alt text](11.png)  <br>- **Slope Compression**: Calculated using the value, mostly used for tags that need to observe historical values on chart-like controls. For example, slope compression can be used to make a trend chart appear smoother. The larger the value, the more pronounced the smoothing effect, but the higher the compression level.  <br> ![alt text](12.png)|
-| Compression Type  | Configurable when the compression mode is Tag Compression, there are two types: Absolute, Percentage.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
-| Value             | The base number for the compression rule calculation.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  |
-| Storage Period    | Configurable when the compression mode is cycle storage, it can be used with the cycle unit, for example, if the cycle is set to "1" and the cycle unit is set to "minutes", then every 1 minute, take the latest value of the tag to judge whether to store it or not.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
-| Timeout Fallback  | Whether to enable timeout value. You need to set the timeout interval. The system will judge whether a new value has been stored in the interval, if no new value is stored in the interval, the last stored value will be stored again in the database with the current time.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         |
-| Fallback Interval | The time interval for timeout makeup, used in conjunction with the time unit.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| **配置** | **描述**  |
+|:----------|:----------------|
+| 模式     | 包含2种模式：  <br>- 变存：变量的值发生变化时进行存储。 <br>- 周期存：按照设置的存储周期进行存储。 <br>- 原始值：按照原始值进行存储。|
+| 压缩模式 | 只有 Integer 和 Double 型变量可配置，通过压缩规则，在满足生产需求的前提下，减少实际存储到数据库中数据的数量，以减少服务器硬盘负荷。  <br>压缩模式分为两种：  <br>- 变化压缩：通过 **压缩类型** 和 **值** 来计算死区，用变量的上一笔存储值减去当前值，如果差值在死区范围之内，则不会存储。  <br>![alt text](11.png)  <br>- 斜率压缩：使用 **值** 来计算，多用于需要在图表类控件上观测历史值的变量。例如通过斜率压缩可以使趋势图展现的更加平滑。**值** 越大，平滑效果越明显，但压缩级别也会越高。  <br>![alt text](12.png) |
+| 压缩类型 | 当压缩模式为变化压缩时可配置，分为两种：绝对值、百分比。 |
+| 值       | 压缩规则计算时的基数。  |
+| 存储周期 | 在模式为周期存时可配置，配合周期单位使用，例如周期设为“1”，周期单位设为“分”，则每过1分钟，取变量最新一笔值判断是否存储。|
+| 超时补值 | 是否开启超时补值。开启后需设置补值间隔。系统会判断该期间间内是否存储了新值，如果在此期间没有存储新值，则会将上一笔存储值用当前时间在数据库中再存储一次。 |
+| 补值间隔 | 超时补值的时间间隔，和时间单位一起使用。 |
 
-## **Change Compression Calculation Rules**
+## 变化压缩计算规则
 
-#### **Compression type is absolute**
+#### 压缩类型为绝对值
 
-|new value - last stored value | is greater than the value, greater is stored, otherwise ignored.
+|新值 -上一笔存储值| 是否大于 **值**，大于则存储，反之则忽略。
 
 ![alt text](13.png)
 
-#### **Compression type is percentage**
+#### 压缩类型为百分比
 
-|new value - last stored value| is greater than deadband, greater is stored, otherwise ignored. Deadband = Value * (Engineering Upper Limit - Engineering Lower Limit) /100
+|新值-上一笔存储值| 是否大于 **死区**，大于则存储，反之则忽略。死区= 值 * (工程上限-工程下限) /100
 
 ![alt text](14.png)
 
-## **Slope Compression Calculation Rules**
+## 斜率压缩计算规则
 
-Every time the value of a tag is changed, the upper and lower slope values are calculated. These slope values are stored in memory and are ultimately used to determine when to store the new value. The calculations used are as follows:
+每次变量的值更改时，都会计算斜率上限和斜率下限值。这些斜率值存储在内存中，最终用于确定何时存储新值。使用的计算如下：
 
-**Upper Slope Rate**
+**上坡率**
 
-(((new value + value in history configuration) - last stored value) / (new value timestamp - last value timestamp))
+(((新值  **+**  历史记录配置中的 **值**) **-**  上一笔存储值 ) **/**  (新值时间戳  **-**  上一笔值时间戳 ))
 
-**Down slope rate**
+**下坡率**
 
-(((new value - value in history log configuration) - last stored value) / (new value timestamp - previous value timestamp))
+(((新值  **-**  历史记录配置中的 **值** ) **-**  上一笔存储值 ) **/**  (新值时间戳  **-**  上一笔值时间戳 ))
 
-**How to judge**
+**判断方式**
 
-The algorithm stores new values only under the following conditions:
+该算法仅在以下条件下存储新值：
 
-- When using this method, the system always stores the first value on the tag because subsequent values require an initial value to calculate the slope.
-- If the newly computed upper slope is less than the previously computed downslope rate value, the system stores the new value.
-- If the newly calculated lower slope is greater than the previously calculated upper slope rate value, the system stores the new value.
-- The system always stores a value when the mass on the tag changes.
+-  使用该方法时，系统始终将第一个值存储在变量上，因为后续值需要一个初始值来计算斜率。
+-  如果新计算的上限斜率低于先前计算的下坡率值，系统将存储新值。
+-  如果新计算的下坡大于先前计算的上坡率值，系统将存储新值。
+-  当变量上的质量发生变化时，系统始终存储一个值。
 
-If a new value is not stored, the system compares the newly calculated slope value to the previously calculated value:
+如果未存储新值，系统会将新计算的坡度值与之前计算的值进行比较：
 
-- If the new lower slope is less than the previous upper slope, the new upper slope is used for future comparisons.
-- If the new lower slope is greater than the previous lower slope, the new lower slope will be used for future comparisons.
-
-
-
+-  如果新的上坡率小于以前的上坡率，则新的上坡率将用于将来的比较。
+-  如果新的较低坡度大于以前的较低坡度，则新的较低坡度将用于将来的比较。
 

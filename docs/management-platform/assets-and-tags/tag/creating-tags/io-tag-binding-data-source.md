@@ -35,8 +35,8 @@ I/O变量可以绑定数据源，可以直接绑定一个固定的数据源路�
 
 #### 数据源绑定路径参数
 
-| **数据源类型**      | **参数**                                                                                                     |
-|---------------------|--------------------------------------------------------------------------------------------------------------|
+| **数据源类型**      | **参数**  |
+|:---------------------|:-------------------|
 | **OPC UA**          | - DataSourceType - Path - NodeId - DisplayName - DeviceName - GroupName - DataType - IndexOfArrayStr         |
 | **Modbus TCP**      | - DataSourceType - DeviceName - FrameName - DataType - Address - Bit (Only Bool tag displays this parameter) |
 | **Modbus RTU**      | - DataSourceType - DeviceName - FrameName - DataType - Address - Bit (Only Bool tag displays this parameter) |
@@ -47,7 +47,7 @@ I/O变量可以绑定数据源，可以直接绑定一个固定的数据源路�
 
 ## 参数化绑定
 
-在**模型**或者**实例**下创建的I/O变量才支持参数化绑定。在数据源文本框后面会显示设置按钮，从设置弹窗中选择需要替换的参数。
+在 **模型** 或者 **实例** 下创建的I/O变量才支持参数化绑定。在数据源文本框后面会显示设置按钮，从设置弹窗中选择需要替换的参数。
 
 ![alt text](16.png)
 
