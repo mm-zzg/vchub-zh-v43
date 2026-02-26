@@ -72,7 +72,8 @@ I/O变量可以绑定数据源，可以直接绑定一个固定的数据源路�
 
 - [批量操作WAGO Protocol设备](../../../devices/wago-protocol/batch-operation.md)
 
-- [批量操作Camera设备](../../../devices/camera/batch-operation.md) <br>
+- [批量操作Camera设备](../../../devices/camera/batch-operation.md) 
+<br>
 
 1. 在“设备”->Modbus TCP列表中批量创建10个modbus tcp设备，名称为Device1~Device10。只有DeviceName和Host不同，其他配置相同。
 
@@ -111,6 +112,6 @@ I/O变量可以绑定数据源，可以直接绑定一个固定的数据源路�
 9. 可以通过文本控件，将文本内容绑定到变量的DataSource属性上，查看路径。
 
     ![alt text](25.gif)
-    
+
 10. 最终实现了变量的批量绑定。**电机1的所有变量绑定到Device1, 电机2的所有变量绑定到Device2,...电机10的所有变量绑定到Device10。**
 
