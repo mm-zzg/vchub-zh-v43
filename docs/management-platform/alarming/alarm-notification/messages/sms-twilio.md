@@ -1,38 +1,42 @@
 # SMS(Twilio)
 
-This configuration is used to define the content of SMS notifications sent via Twilio when an alarm is triggered. By customizing the SMS message, you can ensure that recipients quickly understand and respond to the alarm information.
+该配置用于定义在报警触发时，通过Twilio发送的短信通知所包含的内容。通过此设置，可以自定义短信正文，以确保接收者能够快速理解和响应报警信息。
 
-## Create Notification Content SMS(Twilio)
+## 创建通知内容 
 
-1. Click "**Alarming**"->"**Alarm Notifications** "->" **Messages**" to enter the notification message list page.
-    ![alt text](2.png)
-2. Click the "**Add**" button. In the new pop-up window, select "SMS(Twilio)".
-    ![alt text](8.png)
-3. Click "Next" to enter the detailed configuration window. 
-    ![alt text](9.png)
-4. Once the setup is complete, click **"Send Test"** to check if the sms is sent successfully.
-5. If the test is successful, click the **"OK"** button to add the data.
+1. 点击“**报警**”->"**报警通知**"->"**通知内容**"，进入通知内容列表页面。
 
-**Properties**
+![alt text](2.png)
 
-| **Name**    | **Description**  |
-|-------------|-------------------|
-| Name        | The name of the notification message is required. The name is unique and cannot be repeated.|
-| Description | The subject of the email received.|
-| message     | The content received in the sms is configured through the content settings button.   Clicking this button will bring up a content parameter dialog. The parameters set here will be replaced with actual values when an alarm occurs. To insert a parameter into the content, click in the content window to place the cursor, then click the parameter settings button. From the parameter list, select the desired parameter by clicking on it, and it will be automatically inserted at the cursor's position.  <br>**Message Parameters**  <br> ![alt text](10.png) <br> **Note:** **urlPath (alarm address parameter)** is used to construct the URL for the alarm information, which consists of the server address, port number, and the specific page path. The detailed explanation is as follows: <br> 1. **Server address and port number:** `http://localhost:4300` This means that the request will be sent to a server named "**localhost**" and accessed via port number "**4300**". When adding a new entry, the current server address and port will be automatically retrieved. <br>2. **Page path:** `/#/alarm/` This path is fixed and points to the alarm confirmation page. <br>3. **Specific path:** `{urlPath}` This is a placeholder representing the specific alarm parameter path. When receiving an actual message, this placeholder will be replaced with the real alarm parameters. |
-| Send Test   | After the above configuration, click the 'Send Test' button and a new window will pop up. Enter the mobile phone number for receiving the test SMS in the new window, select the SMS service that has been created, and click the 'Send' button to check whether the SMS can be received correctly.  ![alt text](11.png) |
+2. 点击“**新增**”按钮。在新增弹窗中选择SMS(Twilio)。
 
-## How to use the Twilio Notification Service
+![alt text](14.png)
 
-In the alarm notification rules, you will select the notification service.
+3. 点击下一步，进入详细配置界面。
 
-1. Click on **"Alarming" -> "Alarm Notifications" -> "Rules"** to enter the notification rules list page.
-2. Click the **"New"** button in the upper right corner of the list.
-3. In the pop-up window, click the **'+SMS'** button to add a new sms notification rule.In the notification message dropdown, select the previously created notification message.
+![alt text](15.png)
 
-    ![alt text](7.png)
+4. 设置完成，点击“发送测试“，测试是否成功发送。
 
-**Note:** Notification content and notification service must match. For example, when you select the notification **service** for SMS(Twilio), you should also select SMS(Twilio) as the notification **message**. 
+5. 测试成功后，点击'**确认**'按钮，添加该数据。
 
+**属性**
 
+| **名称** | **描述** |
+|:----------|:-------------|
+| 名称     | 通知内容的名称，必填项，名称唯一、不可重复。|
+| 描述     | 通知内容的描述信息，可选填。|
+| 内容     | 短信接收到的内容。  点击内容的设置按钮，弹出内容参数弹窗。此处设置的参数，在报警发生时，将使用真实值进行替换。在内容窗口中点击鼠标，之后再点击参数的设置按钮，在参数列表中单击所需参数，该参数将自动插入到光标所在的位置。  <br>**内容参数**  <br>![alt text](16.png)  <br>**说明：**  <br>**urlPath（报警地址参数）** 用于构造报警信息的URL，它由服务器地址、端口号和具体的页面路径组成。具体解释如下：  <br>1. **服务器地址和端口号**： <br>`http://localhost:4300` <br>这表示请求将被发送到一个名为"localhost"的服务器，并通过端口号"4300"进行访问，在新增的时候会自动获取当前服务器地址和端口。 <br>2. **页面路径**： <br>`/#/alarm/` <br>此路径是固定的，指向报警确认页面。 <br>3. **具体路径**： <br>`{urlPath}` <br>这是一个占位符，表示具体的报警参数路径。在实际接收短信时，会将此占位符替换为实际的报警参数。 |
+| 发送测试 | 完成上述配置后，点击‘发送测试’按钮，将弹出一个新窗口。在新窗口中输入用于接收测试短信的手机号码，并选择已创建的SMS(Twilio)类型的通知服务，点击‘发送’按钮即可检查短信是否能正确接收。  <br>![alt text](17.png) |
 
+## 通知内容应用
+
+在报警的 **通知规则** 中将选择通知内容。
+
+1. 点击“**报警**”->"**报警通知**"->"**通知规则**"，进入通知规则列表页面。
+2. 点击列表右上角的“新增“按钮。
+3. 在新增弹窗中点击通知的'**+SMS**'按钮，新增一个短信通知规则，在通知内容下拉列表中选择创建好的通知内容。
+
+**说明**：通知内容和通知服务必须匹配。例如，选择 SMS(Twilio)类型的通知服务时，通知类型也应选择 SMS(Twilio)。 
+
+![alt text](18.png)

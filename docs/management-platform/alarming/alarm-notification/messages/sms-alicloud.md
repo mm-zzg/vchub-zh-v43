@@ -1,37 +1,44 @@
 # SMS(Ali Cloud)
 
-This configuration is used to define what is included in the SMS notification sent via Ali Cloud when an alarm is triggered.
+该配置用于定义在报警触发时，通过Ali Cloud发送的短信通知所包含的内容。
 
-## Create Notification Content SMS(Ali Cloud)
+#### 创建通知内容
 
-1. Click "**Alarming**"->" **Alarm Notifications** "->" **Messages**" to enter the notification message list page.
+1. 点击“**报警**”->"**报警通知**"->"**通知内容**"，进入通知内容列表页面。
+
     ![alt text](2.png)
-2. Click the "**Add**" button. In the new pop-up window, select "SMS(Ali Cloud)".
-    ![alt text](12.png)
-3. Click "Next" to enter the detailed configuration window. 
-    ![alt text](13.png)
-4. Once the setup is complete, click **"Send Test"** to check if the sms is sent successfully.
-5. If the test is successful, click the **"OK"** button to add the data.
 
-**Properties**
+2. 点击“**新增**”按钮。在新增弹窗中选择Email(Ali Cloud)。
 
-| **Name**      | **Description**              |
-|---------------|-------------------------------|
-| Name          | The name of the notification message is required. The name is unique and cannot be repeated.- |
-| Description   | The subject of the email received. -|
-| Sign Name     | The signature name successfully applied for in the Ali Cloud SMS service.  ![alt text](14.png) |
-| Template Code | The template code successfully applied for in Ali Cloud SMS Template Code.  ![alt text](15.png) |
-| Send Test     | After the above configuration, click the 'Send Test' button and a new window will pop up. Enter the mobile phone number for receiving the test SMS in the new window, select the SMS service that has been created, and click the 'Send' button to check whether the SMS can be received correctly.![alt text](16.png)|
+    ![alt text](8.png)
 
-## How to use the Ali Cloud Notification Service
+3. 点击下一步，进入详细配置界面。
 
-In the alarm notification rules, you will select the notification service.
+    ![alt text](9.png)
 
-1. Click on **"Alarming" -> "Alarm Notifications" -> "Rules"** to enter the notification rules list page.
-2. Click the **"New"** button in the upper right corner of the list.
-3. In the pop-up window, click the **'+SMS'** button to add a new sms notification rule.In the notification message dropdown, select the previously created notification message.
+4. 设置完成，点击“发送测试”，测试是否成功发送。
 
-    ![alt text](7.png)
+5. 测试成功后，点击'**确认**'按钮，添加该数据。
 
-**Note:** Notification content and notification service must match. For example, when you select the notification **service** for SMS(Ali Cloud), you should also select SMS(Ali Cloud) as the notification **message**. 
+**属性**
+
+| **名称**     | **描述**   |
+|:--------------|:---------------|
+| 名称         | 通知内容的名称，必填项，名称唯一、不可重复。|
+| 描述         | 通知内容的描述信息，可选填。 |
+| 短信签名名称 | 在阿里云短信服务中成功申请的签名名称。<br>![alt text](10.png)|
+| 短信模板Code | 在阿里云短信模板管理中成功申请的模板Code。<br>![alt text](11.png) |
+| 发送测试     | 完成上述配置后，点击‘发送测试’按钮，将弹出一个新窗口。在新窗口中输入用于接收测试短信的手机号码，并选择已创建的SMS(Ali Cloud)类型的通知服务，点击‘发送’按钮即可检查短信是否能正确接收。  <br>![alt text](12.png) |
+
+#### 通知内容应用
+
+在报警的**通知规则**中将选择通知内容。
+
+1. 点击“**报警**”->"**报警通知**"->"**通知规则**"，进入通知规则列表页面。
+2. 点击列表右上角的“新增”按钮。
+3. 在新增弹窗中点击通知的'**+SMS**'按钮，新增一个短信通知规则，在通知内容下拉列表中选择创建好的通知内容。
+
+**说明**：通知内容和通知服务必须匹配。例如，选择 SMS(Ali Cloud)类型的通知服务时，通知类型也应选择 SMS(Ali Cloud)。
+
+![alt text](13.png)
 
