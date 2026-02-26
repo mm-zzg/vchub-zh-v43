@@ -1,42 +1,46 @@
-# Alarm Group
+# 报警组
 
-Alarm groups are used to categorize alarms with similar characteristics or relevance. For example, all alarms from the same production line or equipment can be grouped together into an alarm group, making management and monitoring more convenient.
+报警组用于将具有相似特性或相关性的报警进行归类。例如，将同一条生产线或同一设备的所有报警归为一个报警组，这样便于管理和监控。
 
-In **Realtime Alarm control**, users can filter or sort alarms based on these alarm groups. For instance, the interface can be set to display alarms from only a specific alarm group. This is particularly important in large systems, as it reduces information overload and enhances the efficiency of operators.
+在实时报警控件中，用户可以根据报警组来筛选或过滤报警信息。例如，可以在界面上只显示某个报警组的报警，这在大型系统中尤为重要，因为它减少了信息的冗余，提升了操作员的工作效率。
 
-![alt text](11.png)
+![alt text](12.png)
 
-## How to use？
+## 如何使用
 
-#### Add
+#### 新增
 
-1. In the “Alarming” -> “Alarm Groups” page, click the “Add” button to create a new alarm group.
-    ![alt text](12.png)
-2. In the pop-up window, set the alarm group’s name, and click the “Add” button to add tags to the alarm group.
-    ![alt text](13.png)
+1. 在“报警”->“报警”组页面，点击“新增”按钮创建报警组。
 
-| **Name**    | **Description**                                                        |
-|-------------|------------------------------------------------------------------------|
-| Name        | The name of the alarm group. The name must be unique and is required.。 |
-| Description | Description of the alarm group. It is optional.                        |
-| Tag         | Assign tags to this alarm group.                                       |
+![alt text](13.png)
 
-#### Search
-
-By default, alarm groups are sorted in descending order based on the creation time. Users can customize the sorting as needed.
-
-Users can use the search box in the upper right corner to search by alarm group name or tag path. When searching by tag path, the results will display all alarm groups associated with the tag.
-
-#### Edit
-
-Click the “Edit” button on any entry in the alarm group list to modify the alarm group information. In the edit pop-up window, all tag paths associated with the alarm group will be displayed.
-
-**Note:** After modifying the alarm group name, the tags that were using this group will lose their group information. Please be cautious when modifying the name.
+2. 在新增弹窗，设置报警组的名称，点击变量的“新增”按钮为该报警组添加变量。
 
 ![alt text](14.png)
 
-#### **Delete**
+| **配置** | **描述**                          |
+|:----------|:-----------------------------------|
+| 名称     | 报警组的名称，名称不可重复，必填项。 |
+| 描述     | 报警组描述信息，可选填。            |
+| 变量     | 设置属于该报警组的变量。           |
 
-Click the delete button to remove an alarm group. 
+3. 设置完成，点击“确认”按钮完成新增。
 
-**Note:** When an alarm group is deleted, the tags bound to this group will lose their group information. Please be cautious when deleting.
+#### 查询
+
+报警组默认以 **创建时间** 倒序排列，用户可以根据需要，自定义排序。
+
+用户可以通过右上角输入框，按照报警组名称或变量路径进行模糊查询。当按变量路径查询时，查询结果显示该变量所属的所有报警组。
+
+#### 修改
+
+点击报警组列表任意数据的“修改”按钮，可以修改报警组的信息。在报警组的修改弹窗中会显示使用了该报警组的所有变量路径。
+
+注意：修改报警组名称后，已使用了该报警组的变量，其报警组信息会丢失，请谨慎修改报警组名称。
+
+![alt text](15.png)
+
+#### 删除
+
+点击报警组的删除按钮，对报警组进行删除。注意，当报警组被删除后，绑定该报警组的变量，其报警组信息会丢失，请谨慎删除。
+

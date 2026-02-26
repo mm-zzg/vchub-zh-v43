@@ -1,113 +1,109 @@
-# Alarming
+# 报警
 
-Alarms are used to monitor and notify the system of abnormal conditions. Configured on a tag, a new alarm is generated if the latest value of the tag meets the set alarm conditions.
+报警用于监控和通知系统中出现的异常情况。在变量上配置，如果变量的最新值满足已设置的报警条件时，则生成新的报警。
 
-## **Alarm Types**
+## 报警类型
 
-The following alarm types are supported:
+支持以下报警类型：
 
-- Limit alarms: Alarms are generated when the value of the tag meets the set limit conditions. SCADA has eight built-in limit values, four high limits and four low limits.  You can set several limit conditions at the same time. If a tag value meets more than one limit, an alarm is triggered for each limit.
+- 限值报警：当变量值满足设置的限值条件时产生报警。WAGO SCADA 内置了8个限值，4个高限，4个低限。您可以同时设置多个限值条件。当变量值满足多个限值条件时，会针对每个限值触发一个报警。
 
-    **Example:** The high limit value of temperature is 20, the hh limit value of temperature is 40, and the current value of tag is 50, then the tag will generate 2 limit alarms, one alarm for the high limit and one alarm for the hh limit.
+    举例：温度上限值为20，温度上上限值为40，当前变量值为50，则该变量会生成2条限值报警，一条温度上限的报警和一条温度上上限的报警。
 
-- Rate of Change Alarm: An alarm is generated when the rate of change of the tag value exceeds the set rate of change.
-- Equivalent Alarm: Generates an alarm when the tag value is equal to the preset alarm value.
-- Boolean Alarm: Generates an alarm when the state of a Boolean quantity changes. For example, an alarm is generated when it changes from true to false.
+- 变化速率报警：当变量值的变化速率超过设置的变化率时产生报警。
+- 等值报警：当变量值等于预设的报警值时产生报警。
+- 开关量报警：当布尔量的状态发生变化时产生报警。例如从true变为false时产生报警。
 
-## **Alarm Priority**
+## 报警优先级
 
-SCADA has four built-in alarm levels. Alarms can be categorized by alarm level for quick recognition and response.
+WAGO SCADA内置了4个报警等级。通过报警等级可以对报警进行分类，便于快速识别和响应。
 
-- Critical
-- High
-- Medium
-- Low 
+- 紧急
+- 高级
+- 中级
+- 低级
 
-## **Alarm Status**
+## 报警状态
 
-Alarm status consists of Active and Acknowledged.
+报警状态由活动状态和确认状态组成。
 
-- Active, Unacked
-- Active, Acked
-- Cleared, Unacked
-- Cleared, Acked
+- 激活，未确认
+- 激活，已确认
+- 已清除，未确认
+- 已清除，已确认
 
-#### **Active Status**
+#### 活动状态
 
-All alarms start in the "Active" state and end in the "Cleared" state.
+所有报警都从“活动”状态开始，然后到“已清除”状态结束。
 
-- Active: The alarm is currently active.
-- Cleared: Returns from an alarm state to a normal value and no longer meets the set alarm conditions.
+- 激活：当前正在报警。
+- 已清除：由报警状态恢复到正常值，不再满足设置的报警条件。
 
-#### **Acknowledged Status**
+#### 确认状态
 
-You can acknowledge an alarm that has been generated. Acknowledgement is simply a sign that the relevant person is aware of the alarm and will deal with it.
+可以对已产生的报警进行确认。确认只是一个标志，表明相关人员已经知晓并会处理该报警。
 
-- Unacked: The alarm has not been marked as "Acknowledged".
+- 未确认：报警尚未标记为“已确认”。
+- 已确认： 报警已标记为“已确认”。
 
-- Acked: The alarm has been marked as "Acknowledged".
+#### 报警确认方式
 
-#### **Alarm Acknowledgement Method**
+自动确认：报警产生后，如果之后 又恢复正常值 ，系统自动确认此条报警。自动确认后该条报警从实时报警控件中消失。但是自动确认的报警，也可以在报警恢复正常前，随时进行手工确认。
 
-Automation: If an alarm is generated and then returns to normal, the system will automatically acknowledge the alarm. The alarm disappears from the real-time alarm control after auto acknowledgement. However, you can also manually acknowledge an automatically acknowledged alarm at any time before the alarm returns to normal.
+手动（需 确认） ：报警产生后，必须 人工手动确认，且确认时需要输入确认信息。
 
-Manual (Requires Confirmation): After an alarm is generated, it must be manually acknowledged and the acknowledgement information needs to be entered when the alarm is acknowledged.
+手动（无需 确认） ：报警产生后，必须 人工手动确认，无需输入确认信息。
 
-Manual (No Confirmation): After the alarm is generated, it must be manually acknowledged manually and no acknowledgement information needs to be entered.
+说明：需要手动确认的报警，在未确认前， 即便当前报警值 已恢复至 正常值 ，也不会从实时报警控件中消失。 
+## 报警搁置
 
-**Note:** Alarms that require manual acknowledgement will not disappear from the real-time alarm control until they are acknowledged, even if the current alarm value has returned to normal. 
+搁置可用于在一段时间内暂时忽略警报，例如维护期。
 
-## **Shelve Alarm**
+搁置是对已选的报警路径下的报警进行忽略，防止其创建新的报警。按照报警 路径进行搁置，相同路径的多个 报警数据，勾选其中一条进行 搁置，其他相同路径的所有 报警会一起被搁置，且 在搁置列表中只会显示为一条数据。
 
-Shelving alarm can be used to temporarily ignore an alarm for a period, such as a maintenance period.
+每个搁置的报警都需设置搁置时长。在搁置期结束时，会判断该条报警的最新值，从而显示该条报警的报警状态。
 
-Shelving alarm ignore alarms under the selected alarm path to prevent them from creating new alarms. Shelving according to the alarm path, for multiple alarms with the same path, check one of them to shelve, all other alarms with the same path will be shelved together and will only be shown as one data in the shelve list.
+此外，被搁置的报警将从实时报警控件的”实时“列表中消失，显示在”搁置“列表中。
 
-Each shelved alarm needs to have a shelving time set. At the end of the shelving period, the latest value of the alarm will be determined, thereby displaying the alarm status of the alarm.
+## 报警死区
 
-In addition, the shelved alarms will disappear from the "real-time" list of the real-time alarm control and appear in the "shelved" list.
+报警死区的作用主要是针对测量值达到报警条件后的容差，防止由于测量值在阈值附近微小波动，导致不必要的报警信息产生。
 
-## **Alarm Deadband**
+死区配置只对报警恢复那侧 增加了限制 ，对于报警产生不做限制 。
 
-Alarm deadband is a tolerance for the measurement value after it reaches the alarm condition, to prevent unnecessary alarm messages from being generated due to small fluctuations of the measurement value near the threshold value.
-
-The deadband configuration only adds restrictions on the side of the alarm recovery, but not on the alarm generation.
-
-For example, if you set a limit alarm of >=50, and the deadband is set to 1, then the alarm will be generated as long as it is >=50, but it will not disappear until <50-1. Of course, if the direction of the alarm is reversed, and a limit alarm is set for <=50, and the deadband is set to 1, then the alarm will be generated as soon as it is <=50, but the alarm will not disappear until it is >50+1.
+比如设置一个 >=50 就要报警的限值报警，死区设置为 1 。那么只要 >=50 时就会产生报警，但是要到 <50-1 报警才会消失。当然如果报警方向反过来，设置一个 <=50 就要报警的限值报警，死区设置也为 1 ，那么只要 <=50 就产生报警，但是要到 >50+1 的时候报警才会消失。
 
 ![alt text](1.png)
 
-####  **Alarm Delay**
+## 报警延时
 
-The role of alarm delay is mainly for transient fluctuation or noise after the value of the tag reaches the alarm condition, to prevent the alarm from being only momentary and not continuous, so you need to wait for a while.
+报警延迟的作用主要是针对变量 值到达报警条件后的瞬时波动或噪声，防止报警只是瞬间的，而不是持续的，所以需要等待一段时间。
 
-All types of alarms have delayed alarm configurations, including switching type alarms.
+所有的类型的报警都有延迟报警配置，包括开关量类型的报警。
 
-Delayed alarm configurations are categorized into activation delays and recovery delays in seconds.
+延迟报警配置分为激活延迟和恢复延迟，单位为秒。
 
-Activation delay means that when an alarm condition is met, instead of generating the alarm immediately, this alarm is generated only after a certain period if the alarm still meets the conditions for generation. Conversely, recovery delay means that when the alarm reaches the recovery condition, the alarm is not resumed immediately, but you need to wait for a certain period to arrive, and if the alarm still meets the recovery condition, then the alarm will be resumed.
+激活延迟是指当报警条件达到时，不是立马就产生报警，而是经过一定时间后，如果报警还是满足产生条件，才产生这个报警。反之，恢复延迟是指当报警达到恢复条件时，不是立马恢复报警，而是需要等待一定时间到达后，如果报警依然满足恢复条件，才恢复报警。
 
-## **Configuring Alarms**
+## 配置报警
 
-Configure alarms on tags. See "Management->Assets and Tags->Tag->Tag Properties->Alarm" for details.
-
-When alarm configuration is enabled on a tag, the corresponding chart will be displayed in the tag tree, so you can quickly identify which tags have alarm configuration enabled.
+在变量上配置报警。详见[报警](../assets-and-tags/tag/tag-properties/alarm.md)。
 
 ![alt text](2.png)
 
-**View Real-Time Alarm Data**
-
-You can use the **Realtime Alarm** control to view alarm data. 
+变量开启了报警配置后，在变量树中会显示对应的图表，您可以快速辨别出哪些变量开启了报警配置。
 
 ![alt text](3.png)
 
-**View Historical Alarm Data**
+## 查看实时报警数据
 
-You can view alarm data using the **Historical Alarm** control.
+可以使用 [实时报警](../../2d-visualization/controls/alarm/real-time-alarm/index.md) 控件进行报警数据的查看。
 
 ![alt text](4.png)
 
+## 查看历史报警数据
 
+可以使用 [历史报警](../../2d-visualization/controls/alarm/historical-alarm/index.md) 控件进行报警数据的查看。
 
-
+![alt text](5.png)
 
