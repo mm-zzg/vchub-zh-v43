@@ -272,21 +272,21 @@ nav:
                                       - management-platform/assets-and-tags/tag/tag-group.md
                                       - management-platform/assets-and-tags/tag/quality.md
 
-                  - Alarming:
+                  - 报警:
                             - management-platform/alarming/index.md
                             - management-platform/alarming/stale-alarm.md
                             - management-platform/alarming/history-storage.md
                             - management-platform/alarming/alarm-group.md
-                            - Alarm Notification:
+                            - 报警通知:
                                       - management-platform/alarming/alarm-notification/index.md
-                                      - Services:
+                                      - 通知服务:
                                                 - management-platform/alarming/alarm-notification/services/index.md
                                                 - management-platform/alarming/alarm-notification/services/email.md
                                                 - management-platform/alarming/alarm-notification/services/sms-twilio.md
                                                 - management-platform/alarming/alarm-notification/services/sms-alicloud.md
                                                 - management-platform/alarming/alarm-notification/services/wecom.md
                                                 - management-platform/alarming/alarm-notification/services/dingtalk.md
-                                      - Messages:
+                                      - 通知内容:
                                                 - management-platform/alarming/alarm-notification/messages/index.md
                                                 - management-platform/alarming/alarm-notification/messages/email.md
                                                 - management-platform/alarming/alarm-notification/messages/sms-twilio.md
@@ -297,7 +297,7 @@ nav:
                                       - management-platform/alarming/alarm-notification/rules.md
                                       - management-platform/alarming/alarm-notification/failed.md
                                       - management-platform/alarming/alarm-notification/acknowledge-alarm.md
-                  - Scripts:
+                  - 脚本:
                             - management-platform/scripts/index.md
                             - management-platform/scripts/service-script.md
                             - management-platform/scripts/custom-function.md
