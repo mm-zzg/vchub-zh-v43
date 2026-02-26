@@ -72,19 +72,15 @@ I/O变量可以绑定数据源，可以直接绑定一个固定的数据源路�
 
 - [批量操作WAGO Protocol设备](../../../devices/wago-protocol/batch-operation.md)
 
-- [批量操作Camera设备](../../../devices/camera/batch-operation.md) 
+- [批量操作Camera设备](../../../devices/camera/batch-operation.md) <br>
 
-<br>
 1. 在“设备”->Modbus TCP列表中批量创建10个modbus tcp设备，名称为Device1~Device10。只有DeviceName和Host不同，其他配置相同。
-
 2. 在“模型”页签下，新建一个模型“Motor”，该模型包含1个自定义参数“No”,表示电机编号。
 
     ![alt text](17.png)
-
 3. 鼠标右击该模型，创建I/O变量 “功率”。
 
     ![alt text](18.png)
-
 4. 为变量绑定一个数据源后点击数据源参数的设置按钮，显示变量所属模型“电机”的自定义参数列表。
 
     ![alt text](19.png)
@@ -92,26 +88,20 @@ I/O变量可以绑定数据源，可以直接绑定一个固定的数据源路�
     可以将参数值替换为模型的自定义属性，模型的自定义属性通过 {} 引用。在创建实例时使用自定义参数值替换路径中的参数。
 
     ![alt text](20.png)
-
 5. 变量创建完成后。切换到“实例”页签，创建一个名为Motor的文件夹，在文件夹下使用模型“Motor”添加实例。
 
     ![alt text](21.png)
-
 6. 在添加实例窗口，模型选择 **Motor,** 点击“批量实例”的设置按钮，“数量”设置10，“起始序号”设置为1。
 
     ![alt text](22.png)
-
 7. 接着我们为每个实例设置自定义参数No。我们将Motor_1绑定到Device1上，所有Motor_1的No值设置为1，依次类推。
 
     ![alt text](23.png)
-
 8. 设置完成，点击“确认”按钮，会在Motor目录下，生成10个实例。实例下包含相同的变量：功率。
 
     ![alt text](24.png)
-
 9. 可以通过文本控件，将文本内容绑定到变量的DataSource属性上，查看路径。
 
     ![alt text](25.gif)
-
 10. 最终实现了变量的批量绑定。**电机1的所有变量绑定到Device1, 电机2的所有变量绑定到Device2,...电机10的所有变量绑定到Device10。**
 
