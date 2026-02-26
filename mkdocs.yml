@@ -282,15 +282,15 @@ nav:
                                       - 通知服务:
                                                 - management-platform/alarming/alarm-notification/services/index.md
                                                 - management-platform/alarming/alarm-notification/services/email.md
-                                                - management-platform/alarming/alarm-notification/services/sms-twilio.md
                                                 - management-platform/alarming/alarm-notification/services/sms-alicloud.md
+                                                - management-platform/alarming/alarm-notification/services/sms-twilio.md
                                                 - management-platform/alarming/alarm-notification/services/wecom.md
                                                 - management-platform/alarming/alarm-notification/services/dingtalk.md
                                       - 通知内容:
                                                 - management-platform/alarming/alarm-notification/messages/index.md
                                                 - management-platform/alarming/alarm-notification/messages/email.md
-                                                - management-platform/alarming/alarm-notification/messages/sms-twilio.md
                                                 - management-platform/alarming/alarm-notification/messages/sms-alicloud.md
+                                                - management-platform/alarming/alarm-notification/messages/sms-twilio.md
                                                 - management-platform/alarming/alarm-notification/messages/wecom.md
                                                 - management-platform/alarming/alarm-notification/messages/dingtalk.md
                                       - management-platform/alarming/alarm-notification/schedules.md
