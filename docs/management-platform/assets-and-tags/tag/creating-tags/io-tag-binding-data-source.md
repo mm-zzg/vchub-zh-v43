@@ -22,7 +22,7 @@ I/O变量可以绑定数据源，可以直接绑定一个固定的数据源路�
 
 2. 数据源文本框中，=左侧表示参数名，=右侧表示参数值。可以修改参数值，不建议修改参数名，修改参数名将导致绑定路径失效。 
 
-3. 请确保数据源输入框中，=左右两侧的内容，与配置页面字段的大小写需一致，否则可能导致数据源绑定失败。建议不要修改=左侧的参数名。  
+3. 请确保数据源输入框中，=左右两侧的内容，与配置页面字段的大小写需一致，否则可能导致数据源绑定失败。建议不要修改=左侧的参数名。
 
 示例如下：  
 
@@ -38,13 +38,13 @@ I/O变量可以绑定数据源，可以直接绑定一个固定的数据源路�
 
 | **数据源类型**      | **参数**  |
 |:---------------------|:-------------------|
-| **OPC UA**          | - DataSourceType - Path - NodeId - DisplayName - DeviceName - GroupName - DataType - IndexOfArrayStr         |
-| **Modbus TCP**      | - DataSourceType - DeviceName - FrameName - DataType - Address - Bit (Only Bool tag displays this parameter) |
-| **Modbus RTU**      | - DataSourceType - DeviceName - FrameName - DataType - Address - Bit (Only Bool tag displays this parameter) |
-| **MQTT Native**     | - DataSourceType - Tag - Address - DataType - DeviceName - GroupName - NodeName                              |
-| **MQTT SparkplugB** | - DataSourceType - Tag - Address - DataType - DeviceName - GroupName - NodeName                              |
-| **SIEMENS S7**      | - DataSourceType - DeviceName - Area - DbNumber - DataType - BitOffset - CharLength - AddressOffset          |
-| **WAGO Protocol**   | - DataSourceType - Path - Tag - DataType - DeviceName                                                        |
+| **OPC UA**          | - DataSourceType <br>- Path <br>- NodeId <br>- DisplayName <br>- DeviceName <br>- GroupName <br>- DataType <br>- IndexOfArrayStr         |
+| **Modbus TCP**      | - DataSourceType <br>- DeviceName <br>- FrameName <br>- DataType <br>- Address <br>- Bit (Only Bool tag displays this parameter) |
+| **Modbus RTU**      | - DataSourceType <br>- DeviceName <br>- FrameName <br>- DataType <br>- Address <br>- Bit (Only Bool tag displays this parameter) |
+| **MQTT Native**     | - DataSourceType <br>- Tag <br>- Address <br>- DataType <br>- DeviceName <br>- GroupName <br>- NodeName  |
+| **MQTT SparkplugB** | - DataSourceType <br>- Tag <br>- Address <br>- DataType <br>- DeviceName <br>- GroupName <br>- NodeName  |
+| **SIEMENS S7**      | - DataSourceType <br>- DeviceName <br>- Area <br>- DbNumber <br>- DataType <br>- BitOffset <br>- CharLength <br>- AddressOffset          |
+| **WAGO Protocol**   | - DataSourceType <br>- Path <br>- Tag <br>- DataType <br>- DeviceName   |
 
 ## 参数化绑定
 
