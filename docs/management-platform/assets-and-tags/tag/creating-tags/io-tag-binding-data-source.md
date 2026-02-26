@@ -16,7 +16,8 @@ I/O变量可以绑定数据源，可以直接绑定一个固定的数据源路�
 
 ![alt text](13.png)
 
-**说明**：  
+**说明**： 
+ 
 1. 绑定到不同的数据源，会显示不同的数据源路径参数。 
 
 2. 数据源文本框中，=左侧表示参数名，=右侧表示参数值。可以修改参数值，不建议修改参数名，修改参数名将导致绑定路径失效。 
@@ -58,13 +59,21 @@ I/O变量可以绑定数据源，可以直接绑定一个固定的数据源路�
 **批量创建设备请参考如下章节。**
 
 - [批量操作Modbus TCP设备](../../../devices/modbus-tcp/batch-operation.md)
+
 - [批量操作Modbus RTU设备](../../../devices/modbus-rtu/batch-operation.md)
+
 - [批量操作OPC UA设备](../../../devices/opc-ua/batch-operation.md) 
+
 - [批量操作MQTT Native设备](../../../devices/mqtt-native/batch-operation.md) 
+
 - [批量操作MQTT SparkplugB设备](../../../devices/mqtt-sparkplugb/batch-operation.md)
+
 - [批量操作SIEMENS S7设备](../../../devices/siemens-s7/batch-operation.md) 
+
 - [批量操作WAGO Protocol设备](../../../devices/wago-protocol/batch-operation.md)
+
 - [批量操作Camera设备](../../../devices/camera/batch-operation.md) 
+
 
 1. 在“设备”->Modbus TCP列表中批量创建10个modbus tcp设备，名称为Device1~Device10。只有DeviceName和Host不同，其他配置相同。
 
