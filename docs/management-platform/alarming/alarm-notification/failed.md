@@ -1,24 +1,22 @@
-# Failed
+# 执行异常
 
-In VC Hub, when a notification rule fails to execute, a message is logged in the failed List. By default, all failed data from the last 7 days are displayed, and the user can query the list for a time span of up to 1 year. If there is an failed message in the list, an icon will be displayed in the upper right corner of the menu; the icon will disappear only when there is no any failed message in the list. In addition, users can resend or delete these anomalies in order to better manage and resolve the anomalies in the system.
+在WAGO SCADA中，当通知规则执行失败时，会在执行异常列表中记录一条信息。默认情况下，显示最近7天内的所有异常数据，用户可以查询的时间跨度最长为1年。如果列表中存在异常信息，菜单右上角将显示一个提示图标；只有当列表中没有任何异常信息时，该图标才会消失。此外，用户可以对这些异常信息进行重发或删除操作，以便更好地管理和解决系统中的异常情况。
 
-## View
+## 查看
 
-Click “**Alarming**” -> “**Alarm Notifications**” -> “**Failed**” to enter the failed list page, where you can view the alarm rules for failed.
+点击“**报警**”->"**报警通知**"->"**执行异常**"，进入执行异常列表页面，可以查看执行异常的报警规则。
 
 ![alt text](16.png)
 
-## Resend
+## 重发
 
-Check the alarm rules that need to be resend in the list, and then click the “Resend” button in the upper right corner to re-execute the alarm rules.
+在列表中勾选需要重发的报警规则，然后点击右上角的”重发“按钮，会重新执行该报警规则。
 
 ![alt text](17.png)
 
-## Delete
+## 删除
 
-Check the alarm rules that need to be delete in the list, and then click the “Delete” button in the upper right corner to delete the alarm rules.
+在列表中勾选需要删除发的报警规则，然后点击右上角的”删除“按钮，可以删除这些异常信息。
 
 ![alt text](18.png)
-
-
 

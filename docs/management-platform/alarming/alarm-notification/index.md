@@ -1,33 +1,34 @@
-# Alarm Notification
+# 报警通知
 
-This feature aims to enhance the response efficiency of safety management. When an alarm is triggered by the on-site environment, the system will automatically generate an alert and promptly notify the responsible personnel via email or SMS. By delivering accurate alarm information, it ensures that relevant personnel can quickly grasp the on-site situation and make timely decisions to reduce potential risks and losses.
+该功能旨在提升安全管理的响应效率。当现场环境触发报警时，系统将自动生成报警，并及时通过邮件或短信的方式通知相关责任人员。通过精准的报警信息推送，确保相关人员能够在第一时间掌握现场情况，快速做出应对决策，减少潜在风险和损失。
 
-## Seven Steps to Alarm Notification
+## 报警通知的7个步骤
 
-#### User 
+#### 用户
 
-Setting up contact information for users is the first step in sending alarm notifications. You can add contact information for users when creating them.
+为用户设置联系信息是发送报警通知的第一步，可在创建用户的时候为其添加联系信息。
 
-#### User Groups
+#### 用户组
 
-The second step in sending alarm notifications is to create user groups. When an alarm is triggered, the notification will be sent to the designated user group, and the users within that group will receive the alarm notification information.
+发送报警通知的第二步是创建用户组。当触发报警的，它会被发送到指定的用户组，组内的用户将收到报警通知信息。
 
-#### Alarm Notification Service
+#### 通知服务
 
-The notification service is the third step in sending alarm notifications, used to configure the types of notifications (email, SMS) and their corresponding services.
+通知服务是发送报警通知的第三步，用来配置发送的通知类型(电子邮件、短信)及其对应服务。
 
-#### Alarm Notification Message
+#### 通知内容
 
-The notification content is the fourth step in sending alarm notifications, used to set the content of the email or SMS that will be sent.
+通知内容是发送报警通知的第四步，用来设置发送的邮件或短信内容。
 
-#### Alarm Notification Schedule
+#### 通知排程
 
-The notification scheduling is the fifth step in sending alarm notifications, used to set the time periods during which users will receive alarm notifications.
+通知排程是发送报警通知的第五步，用来设置用户在哪些时段接收报警通知。
 
-#### Alarm Notification Rules
+#### 通知规则
 
-The notification rule is the sixth step in sending alarm notifications, used to set the conditions for sending alarms, selecting the notification service, recipients, and scheduling.
+通知规则是发送报警通知的第六步，用来设置报警的发送条件，选择通知服务、接收人和排程。
 
-#### Add Alarm Rule To A Tag
+#### 给变量添加报警规则
 
-The last step of the alarm notification is to select the notification rule for each alarm of the tag. When an alarm occurs for the tag, the alarm content will be generated according to this notification rule.
+报警通知的最后一步，在变量的每条报警上选择通知规则，当变量发生报警时，按此通知规则发生报警内容。
+
