@@ -305,9 +305,9 @@ nav:
                             - management-platform/scripts/log-configuration.md
                   - 组网:
                             - management-platform/networking/index.md
-                  - Databases:
+                  - 数据库:
                             - management-platform/databases/index.md
-                            - Database Connection:
+                            - 数据库连接:
                                       - management-platform/databases/database-connection/index.md
                                       - management-platform/databases/database-connection/mysql.md
                                       - management-platform/databases/database-connection/sql-server.md
@@ -315,22 +315,22 @@ nav:
                                       - management-platform/databases/database-connection/sqlite.md
                                       - management-platform/databases/database-connection/influxdb.md
                                       - management-platform/databases/database-connection/query-exceptions.md
-                            - History Database:
+                            - 历史库:
                                       - management-platform/databases/history-database/index.md
-                                      - Create History Database:
+                                      - 创建历史库:
                                                  - management-platform/databases/history-database/create-history-database/index.md
                                                  - management-platform/databases/history-database/create-history-database/data-partitioning-and-deletion.md
                                                  - management-platform/databases/history-database/create-history-database/pre-processed.md
                                       - management-platform/databases/history-database/create-duplicated-history-database.md
                                       - management-platform/databases/history-database/create-remote-history-database.md
-                            - Database Table Reference:
+                            - 数据库表结构参考:
                                       - management-platform/databases/database-table-reference/index.md
-                                      - Tag Table Reference:
+                                      - 变量历史库:
                                                 - management-platform/databases/database-table-reference/tag-table-reference/index.md
                                                 - management-platform/databases/database-table-reference/tag-table-reference/relational-database-table-schema.md
                                                 - management-platform/databases/database-table-reference/tag-table-reference/influxDB-table-schema.md
 
-                  - Redundancy:
+                  - 冗余:
                             - management-platform/redundancy/index.md
                             - management-platform/redundancy/configuration.md
                             - management-platform/redundancy/synchronization.md

@@ -1,2 +1,4 @@
-# Tag Table Reference
-When a tag is enabled for historical recording, the VC Hub system automatically creates the corresponding table based on the historical repository configuration assigned to the asset that the tag belongs to. This ensures that historical data is stored in the appropriate structure, aligned with the asset's configuration.
+# 变量历史库
+
+当变量开启历史记录时，会根据变量所属的资产上设置的历史库配置，来创建对应的表存储历史数据。
+
