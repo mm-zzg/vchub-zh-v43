@@ -1,194 +1,194 @@
-# Networking
+# 组网
 
-The networking module allows multiple VC Hub instances to be connected to form a decentralized distributed cluster.
+组网模块可以让多个SCADA节点连接起来，组成一个去中心化的分布式集群。
 
-The Networking module provides the following features:
+组网模块提供了以下的功能：
 
-- A web socket-based tunnel network over which VC Hub instances can send and receive data.
-- Cross-node remote asset tree access, other VC Hub instances can access the remote asset tree associated with the current VC Hub instance.
-- Incoming connection security configuration based on white list or manual auditing, incoming connections can also be disabled.
-- SSL support, incoming connections must start a secure connection when SSL is enabled, and incoming connections will not be successfully accessed until the certificate for the incoming connection has been audited.
+- 一个基于web socket 的隧道网络，SCADA节点之间可以通过这个隧道网络收发数据。
+- 跨节点远程资产树访问，其他SCADA实例可以访问当前SCADA实例关联的远程资产树。
+- 基于白名单或者手动审核的入站连接安全配置，也可以随时禁用入站连接，提高连接安全性。
 
-**Note:** For the network to be formed, all the nodes must have the exact same version. Otherwise, some functions may malfunction.
+**说明**：形成组网的多个节点，版本必须完全一致，否则会导致部分功能异常。
 
-## Data communication between networked servers
+## 组网的服务器之间数据互通
 
-In a network setup, server A and server B are connected, and server B and server C are also connected. This configuration allows server A to view the asset information of server C.
+服务器A和服务器B形成了组网，服务器B又和服务器C形成了组网，那么在服务器A也能看到服务器C的资产信息。
 
-## Networking Configuration Steps
+## 组网配置步骤
 
-The steps below will guide you through the configuration process for networking. We'll use Node A and Node B as an example.
+以下步骤将帮助您快速了解组网的配置流程，希望对您有所帮助。以节点A和节点B配置组网为例。
 
-**Example 1: No root certificate uploaded to the Trust Store of Node A and Node B**
+**示例1：节点A和节点B的Trust Store中未上传对方节点的授信证书**
 
-Step 1: On Node A,go to "Node" → "Certificate Management", configure the *Redundancy and Networking Certificate*.
+步骤1：在节点A的“节点”->“证书管理”页面，设置冗余、组网证书。
 
-Step 2: On Node A,navigate to "Node" → "Networking" → "General Settings", enable *Networking*. Keep "Require Two Way Authentication" disabled.
+步骤2：在节点A的“节点”->“组网”的“通用配置”页面，开启组网。“需要双向认证”不开启。
 
-Step 3: On Node B,go to "Node" → "Certificate Management", configure the *Redundancy and Networking Certificate*.
+步骤3：在节点B的“节点”->“证书管理”页面，设置冗余、组网证书。
 
-Step 4: On Node B,navigate to "Node" → "Networking" → "General Settings", enable *Networking*.
+步骤4：在节点B的“节点”->“组网”的“通用配置”页面，开启组网。
 
-Step 5: On Node A, navigate to "Node" → "Networking" → "Outgoing Connections", create a new connection to Node B , the outgoing address should be set to the identifier of Node B, such as its node name or host address.
+步骤5：在节点A的“节点”->“组网”页面的“出站连接”页面，新建一个出站连接，出站地址为节点B的地址(例如：节点名称或Host等)。
 
-Step 6: On Node B, navigate to "Node" → "Networking" → "Incoming Connections", under the certificate list, approve Node A’s certificate. Once approved, Node A will appear in the incoming connections list.
+步骤6：在节点B的“节点”->“组网”的“入站连接”页面，在证书列表中允许节点A的证书。允许后，在入站连接列表中将显示节点A的信息。
 
-Step 7: On Node B, approve Node A’s connection from the incoming connection list. Once approved, the networking connection between Node A and Node B is established.
+步骤7：在节点B的“节点”->“组网”的“入站连接”页面，在入站连接列表中允许节点A的连接。此时节点A和节点B形成组网。
 
-**Note:** If “Require Two Way Authentication“ is enabled on Node A, after step 5, Node B’s certificate will appear in Node A’s *Outgoing Certificate List*. You must approve it before continuing with the following steps. 
+**说明**：如果节点A开启了“需要双向认证”，完成上述第5步后，在“出站连接”页面的证书列表中会显示节点B的证书，允许该证书后，再继续后续步骤。
 
+**示例2：已在节点A和节点B的Trust Store中上传了对方节点的授信证书**
 
-**Example 2: Networking root certificates already uploaded to the Trust Store of Node A and Node B**
+步骤1：在节点A的“节点”->“证书管理”页面，设置冗余、组网证书。
 
-Step1: On Node A, go to  "Node" → "Certificate Management", configure the *Redundancy and Networking Certificate*.
+步骤2：在节点A的“节点”->“组网”的“通用配置”页面，开启组网。“需要双向认证”不开启。
 
-Step 2: On Node A, navigate to "Node" → "Networking" → "General Settings", enable *Networking*. Keep "Require Two Way Authentication" disabled.
+步骤3：在节点B的“节点”->“证书管理”页面，设置冗余、组网证书。
 
-Step 3: On Node B, go to  "Node" → "Certificate Management", configure the *Redundancy and Networking Certificate*.
+步骤4：在节点B的“节点”->“组网”的“通用配置”页面，开启组网。
 
-Step 4: On Node B, navigate to "Node" → "Networking" → "General Settings", enable *Networking*.
+步骤5：在节点A的“节点”->“组网”页面的“出站连接”页面，新建一个出站连接，出站地址为节点B的地址(例如：节点名称或Host等)。
 
-Step 5: On Node A, navigate to "Node" → "Networking" →  "Outgoing Connections", create a new connection to Node B , the outgoing address should be set to the identifier of Node B, such as its node name or host address.
+步骤6：在节点B的“节点”->“组网”的“入站连接”页面
 
-Step 6: On Node B, navigate to "Node" → "Networking" →  "Incoming Connections",
+- 如果节点A的组网证书的根证书，存在于节点B的trust store中，则证书会被自动允许，不显示在证书列表中，仅在入站连接列表中显示节点A的信息。
+- 如果节点A的组证书的根证书，不存在于节点B的trust store中，在证书列表中显示节点A的证书，允许证书后，在入站连接列表中将显示节点A的信息。
 
-- If the root certificate of Node A’s networking certificate exists in Node B’s Trust Store, the certificate will be automatically trusted and won’t appear in the certificate list. Node A will appear directly in the incoming connection list.
-- If the root certificate is not present, Node A’s certificate will appear in the certificate list. Approve it to establish trust and display Node A in the incoming connection list.
+步骤7：在节点B的“节点”->“组网”的“入站连接”页面，在入站连接列表中允许节点A的连接。此时节点A和节点B形成组网。
 
-Step 7: On Node B, approve Node A’s connection from the incoming connection list to complete the networking setup.
+**说明**：如果节点A开启了“需要双向认证”，完成上述第5步后，  <br>- 如果节点B的组网证书的根证书，不存在于节点A的trust store中，在节点A的“出站连接”页面的证书列表中会显示节点B的证书，允许该证书后，再继续后续步骤。 <br>- 如果节点B的组网证书的根证书，存在于节点A的trust store中，则在节点A的出站连接页面，节点B的证书无需手动允许，会被自动允许，且不显示在证书列表中。之后可以继续后续步骤。
 
- **Note:** 
- 
- If “Require Two Way Authentication“  is enabled on Node A:     
-    - If Node B’s root certificate is not in Node A’s Trust Store, its certificate will appear in Node A’s *Outgoing Certificate List* after step 5. Approve it to proceed.    
-    - If Node B’s root certificate **is** in Node A’s Trust Store, the certificate will be automatically trusted and won’t appear in the certificate list. 
+## 组网通用配置
 
-## **Basic Network Configuration**
-
-After clicking "**Node**" > "**Networking**", users can see the general configuration page of networking. 
+用户点击“**节点**”>“**组网**”后可以看到组网的通用配置页面。
 
 ![alt text](1.png)
 
-| **Configuration Item**         | **Description**  |
-|--------------------------------|-----------------|
-| Enabled                        | Uncheck the box to disable the networking function.  |
-| Port                           | Default 8099, the listening port for networking.|
-| Require Two Way Authentication | Performs two-way TLS authentication. If true, you need to approve the remote node's certificate in the outgoing list before approving this node's certificate in the remote node's incoming list. |
-| Allow Incoming Connections     | Unchecked, all incoming connections will be denied.|
-| Connection Policy              | The connection policy options for incoming connections are as follows: <br> 1. Approved Only: Default policy, when the incoming connection is established, the incoming connection cannot be used to send and receive data. Users can find the corresponding incoming connection on the IncomingConnection Management page and click Approve before the incoming connection can be used to send and receive data. <br>2. Unrestricted: If you select Unrestricted, the incoming connection can be used to send and receive data directly after the connection is established. <br>3. Specified Node Names: When the node name of the incoming connection is included in the Specified Node Names list, the incoming connection can send and receive data directly after it is created. |
-| Specified Node Names           | The list of node names, hidden by default. This configuration is visible when the user selects Specified Node Names in the connection policy. When the node name of the incoming connection is included in the list of specified node names, this incoming connection can send and receive data directly after it is created. |
-| Ping Rate(ms)                  | In milliseconds, the frequency of heartbeats sent to the remote connection after the incoming connection is created. |
-| Ping Timeout(ms)               | In milliseconds, the timeout for sending heartbeats to the remote connection after the incoming connection is created.|
-| Missed Pings                   | In milliseconds, the maximum number of heartbeat failures after an incoming connection is created, and the incoming connection is determined to be unavailable. |
+| **配置项**       | **说明**  |
+|:------------------|:-------------|
+| 启用             | 启用后，组网和冗余功能才生效。|
+| 端口             | 默认8099, 组网监听端口。|
+| 需要双向认证     | 执行双向 TLS 身份验证。如果为 “true”，在当前节点的出站列表中需要信任对方节点的证书。|
+| 允许入站连接     | 取消勾选后，所有入站连接都会被拒绝。|
+| 连接策略         | 入站连接的审核策略，连接策略选项如下：  <br>1. 仅授权：默认策略，当入站连接建立后，入站连接无法被用来收发数据。用户在入站连接管理页面找到对应的入站连接，然后点击允许后，入站连接才可以收发数据。 <br>2. 无限制：选择无限制后，入站连接建立后可以直接收发数据。 <br>3. 指定节点名称：当入站连接的节点名称包含在指定节点名称的列表中，这个入站连接创建后可以直接收发数据。 |
+| 指定节点名称     | 节点名称的列表，默认隐藏。用户在连接策略中选择了指定节点名称后，这个配置可见。当入站连接的节点名称包含在指定节点名称的列表中，这个入站连接创建后可以直接收发数据。 |
+| 心跳频率         | 单位毫秒，入站连接创建后，向远程连接发送心跳的频率。 |
+| 心跳超时         | 单位毫秒，入站连接创建后，向远程连接发送心跳的超时时间。|
+| 心跳失败最大次数 | 单位毫秒，入站连接创建后，心跳失败的次数超过最大次数后，这个入站连接会被判定为不可用。|
 
-## **Outgoing Connections**
+## 出站连接管理
 
-When the current node needs to connect to another node, you can create an outgoing connection from the current node.
+当前节点需要连接到另一个节点时，可以在当前节点创建一个出站连接。
 
-**Note:** For clarity, the current node is referred to as **Node A**, and the other node is referred to as **Node B** in the following sections. 
+**注意：** *为了便于描述，在下文中用* ***节点A*** *表示当前节点，用* ***节点B*** *表示另一个节点。*
 
-**Add Outgoing Connection**: Click "Add" button to pop up the Add window, fill in the address and port of the remote VC Hub node and confirm, an outgoing connection will be created.
+新增出站连接：点击“**新增**”按钮后会弹出新增窗口，填入另一个节点的地址和端口后确认，一个出站连接即创建完成。
 
 ![alt text](2.png)
 
+| **配置项**       | **说明**  |
+|:------------------|:-----------------------|
+| 启用             | 取消勾选后该出站连接被禁用                                                         |
+| 地址             | 远程SCADA进程的网络地址                                                            |
+| 端口             | 默认8099, 远程SCADA节点的组网监听端口,                                             |
+| 描述             | 该出站连接的描述信息。                                                              |
+| 心跳频率         | 单位毫秒，入站连接创建后，向远程连接发送心跳的频率。                                  |
+| 心跳超时         | 单位毫秒，入站连接创建后，向远程连接发送心跳的超时时间。                              |
+| Http连接超时     | 单位毫秒，默认10000，http请求连接远程SCADA进程的超时时间。                            |
+| Http读写超时     | 单位毫秒，默认10000，http请求发送数据到远程SCADA进程的超时时间。                      |
+| 心跳失败最大次数 | 单位毫秒，入站连接创建后，心跳失败的次数超过最大次数后，这个入站连接会被判定为不可用。 |
 
+在出站连接页面用户可以看到当前已经创建的出站连接，以及出站连接的状态。
 
 ![alt text](3.png)
 
-| **Configuration item**   | **Description**                                                                                                                                                          |
-|--------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Enabled                  | Uncheck to disable this outgoing connection.                                                                                                                             |
-| Host                     | The network address of the remote VC Hub process.                                                                                                                        |
-| Port                     | Default 8099, the listening port of the remote VC Hub node.                                                                                                              |
-| Description              | Information about the outgoing connection.                                                                                                                               |
-| Ping Rate(ms)            | In milliseconds, the frequency of heartbeats sent to the remote connection after the incoming connection is created.                                                     |
-| Ping Timeout(ms)         | In milliseconds, the timeout for sending a heartbeat to the remote connection after the incoming connection is created.                                                  |
-| Http Connect Timeout(ms) | In milliseconds, default 10000, the timeout for http requests to connect to a remote VC Hub process.                                                                     |
-| Http Read Timeout(ms)    | Unit milliseconds, default 10000, timeout time for http request to send data to remote VC Hub process.                                                                   |
-| Missed Pings             | After the incoming connection is created and the number of heartbeat failures exceeds the maximum number, this incoming connection will be determined to be unavailable. |
+#### 操作出站连接列表
 
-On the outgoing connections page, users can view all currently created outgoing connections as well as their statuses.
+在 **节点A** 上添加出站连接，出站连接地址填写 **节点B** 的节点名称或Host。
+
+添加后，在出站连接列表显示的内容，会随着 **节点A** 的“通用配置”的不同而不同，分为以下两种情况：
+
+1. 如果在 **节点A** 的组网的通用配置中未开启“需要双向认证”，在出站连接页面仅显示出站连接列表。
 
 ![alt text](4.png)
 
-###### Managing Outgoing Connection Status
+刚创建出站连接后，节点的出站连接的状态显示为 **Faulted**。
 
-When adding an outgoing connection on **Node A**, the connection address should be set to the **node name** or **host** of **Node B**.
+出站连接列表中的数据的状态，取决于在 **节点B** 的入站连接页面对证书和入站连接进行的操作。
 
-After the connection is added, the information displayed in the outgoing connection list will vary depending on the **"General Settings"** of **Node A**, and can be categorized into the following two cases:
+只有在 **节点B** 的入站连接页面，对证书和入站连接全部允许，在出站连接中，出站地址的状态才会显示为Running。
 
-1. If "Require Two Way Authentication" is disabled on **Node A**, only the  “Outgoing Connections“ list is displayed.
-   ![alt text](4.png)
-   Just after creating an outgoing connection, the status of the node's outgoing connection is shown as **Faulted**.
-   The status of the data in the "Outgoing Connections" list depends on the operations performed on the ”Incoming Connections” page of **Node B**  for both certificates and incoming connections.
-   The status of the outgoing address is displayed as **Running** only if the certificate and the incoming connection are all approved on **Node B's** "Incoming Connections" page.
-1. If "Require Two Way Authentication" is enabled on **Node A** , both the  “Outgoing Connections“ list and the "Certificate" list will be shown.
-   ![alt text](5.png)
-   In this case, you must first **allow Node B’s certificate** in the certificate list on Node A’s outgoing connections page. Only after that will Node A appear in the incoming connection list on Node B.
-   The status of Node A’s outgoing connection will be shown as **"Running"** only when all the following conditions are met:
-      1. On Node A’s "Outgoing Connections" page, Node B’s  certificate in the "Certificate" list has been approved.
-      2. On Node B’s "Incoming Connections" page:
-         - Node A’s certificate has been approved .
-         - Node A’s incoming connection has been approved.
+2. 如果在 **节点A** 的组网的通用配置中开启了”需要双向认证“，在出站连接页面显示出站连接列表和证书列表。
 
-**Outgoing Connection Actions:** On the **outgoing connections list**, the following actions are available for each outgoing connection:
+![alt text](5.png)
 
-   - **Enable**: Activates the outgoing connection.
-   - **Edit**: Opens a dialog window to modify the outgoing connection configuration.
-   - **Delete**: Removes the outgoing connection.After deletion, if this node was part of a connected network with other nodes, the connection will be terminated.
+这种情形下，需要先在 **节点A** 的 **出站连接** 页面的证书列表中允许 **节点B** 的证书后，在 **节点B** 的入站连接列表中才显示当前节点的信息。
 
-**Certificate Actions:** On the **certificate list**, the following actions are available for each certificate:
+在同时满足下列条件时，**节点A** 的出站地址的状态才会显示为Running。
 
-   - **Allow**: Accepts the certificate and enables connection with the corresponding outgoing node.
-   - **Reject**: Denies the certificate.Once rejected, the node will no longer be able to establish a network connection with this node.
-   - **Delete**: Removes the certificate entry. After deletion, the node will not be able to join the network.
-   - **View**: Opens a dialog window displaying detailed information about the certificate.
+   a. 在 **节点A** 的出站连接页面，在证书列表中允许了 **节点B** 的证书
+   b. 在 **节点B** 的入站连接页面，在证书列表中允许 **节点A** 的证书，在入站连接列表中允许 **节点A** 的连接
 
-#### **Incoming Connections**
+**操作出站连接：** 在 **出站连接列表** 中，可以对出站连接进行启用，修改和删除。
 
-After Node B is added as an outgoing address on Node A, information about **Node A** will appear in both the certificate list and the incoming connection list on **Node B’s Incoming Connections** page.
+- **启用：** 启用出站连接。
+- **修改：** 点击后弹出修改窗口，可以修改出站连接配置。
+- **删除：** 删除该出站连接节点。删除后，如果该节点已和其他节点形成了组网，则组网会断开。
 
-Once Node A’s certificate and incoming connection are allowed on Node B’s side, a network connection between the two nodes will be established.
+**操作证书：** 在 **证书列表** 中，可以对证书进行允许，拒绝，查看和删除操作。
 
-Example:
+- **允许：** 允许该出站节点的证书。
+- **拒绝：** 拒绝该出站节点的证书。拒绝后，无法和此节点形成组网。
+- **删除：** 删除此条数据。删除后，无法和此节点形成组网。
+- **查看：** 点击证书的查看按钮，弹出查看窗口，可以查看该证书的详细信息。
 
-1. Node A creates an outgoing connection and specifies Node B as the target address.On Node B, navigate to ”Incoming Connections”. 
-   You will see Node A’s certificate listed with a default status of “Pending Approval.”
-   ![alt text](6.png)
-2. On Node B’s "Incoming Connections" page, click **“Approve”** for Node A’s certificate. After approval, Node A will appear in the incoming connections list with a connection status of **“Pending Approval.”**
-   ![alt text](7.png)
-3. Approve the incoming connection for Node A. At this point, the networking between Node A and Node B is established.
-4. On Node A, the outgoing connection to Node B will now show a status of **“Running.”**
+## 入站连接管理
 
-**Note:**
+在节点A上添加节点B作为出站地址后，在 **节点B** 的 **入站连接** 页面的证书列表和入站连接列表中显示 **节点A** 的信息。
 
-If “Require Two Way Authentication” is enabled in Node A's "General Settings" page, you must first approve Node B’s certificate in Node A’s “Outgoing Certificate“ List. Only after that should you approve Node A’s certificate and connection in Node B’s “Incoming Connections“ page.Networking between Node A and Node B will only be successfully established after mutual certificate approval.
+在入站连接页面 **允许节点A的证书和入站连接** 后，形成组网。
+
+**举例说明：**
+
+1. 当节点A创建一个出站连接，地址填写B节点的信息。在节点B的入站连接页面可以看到节点A的证书，证书的默认状态为“待审核”。
+
+![alt text](6.png)
+
+2. 在节点B的入站连接页面的证书列表中，“允许”节点A的证书后，入站连接列表中会显示一条节点A的入站连接。默认状态为”待审核”。
+
+![alt text](7.png)
+
+3. 在入站连接列表中，允许节点A，完成组网。
+
+4. 此时，节点A的出站连接列表中，节点B的状态显示为“Running”。
+
+**说明：**
+
+如果在上述节点A的通用配置中开启了“需要双向认证”，需先在节点A的出站连接的证书列表中允许节点B的证书后，再在节点B的入站连接列表中允许节点A的证书和连接，之后节点A和节点B才能形成组网。
 
 ![alt text](8.png)
 
-#### Managing Incoming Connection Status
+#### 操作入站连接列表
 
-**Certificate Actions:** On the certificate list of the Incoming Connections page, the following actions are available:
+**操作证书：** 在入站连接页面的 **证书列表** 中，我们可以对证书进行如下操作：允许，删除，查看，拒绝。
 
--  **Approve**: When a connection is created, the associated certificate is initially in a Pending state. You must manually approve the certificate by clicking Approve.
+- 允许：创建连接后，证书默认待审核状态，需手动允许该证书。
 
 ![alt text](9.png)
 
-Once approved, the certificate status will change to Approved.
+允许后，证书状态显示为“允许”。
 
 ![alt text](10.png)
 
--  **Deny**: You can click the Deny button to change the status of an already approved certificate to Denied. Once a certificate is rejected, all incoming or outgoing connections associated with it will be terminated immediately.
+- 拒绝：点击证书列表中的拒绝按钮，可以将已经允许的证书的状态修改为“拒绝”，当一个证书的状态被设置为“拒绝”后，和这个证书关联的所有的入站或出站连接都会被中断。
+- 查看：点击证书的查看按钮，弹出查看窗口，可以查看该证书的详细信息。
+- 删除：点击证书列表中的删除按钮后，会从证书列表移除该证书。需要注意的是，如果此时某个远程节点正在使用这个证书尝试与当前节点建立连接，那这个证书删除后会被立即重新创建出来。
+
+**操作入站连接：** 需先在入站连接的证书列表中允许节点的证书后，才会在入站连接列表中显示该节点的入站连接信息，从而对其进行操作。
 
 ![alt text](11.png)
 
-- **View**: Click the View button to open a popup displaying the certificate’s detailed information and attributes.
-- **Delete**: Click the Delete button to remove the certificate from the list. If a remote node is actively using the deleted certificate to initiate a connection, the certificate will be re-created automatically upon the next connection attempt.
-
-**Incoming Connection Actions:** The incoming connection information for a node will only appear in the Incoming Connection List after its certificate has been approved in the certificate list. Once the certificate is allowed, you can perform operations on the corresponding incoming connection.
-
-1. **Approve**: Newly created incoming connections are in the Pending state by default. After clicking Approve, the connection status updates to Approved.
-2. **Deny**: Clicking Deny in the connection list changes the status to Denied.
-3. **Delete**: Clicking Delete removes the incoming connection from the list.
-    - If the certificate is in the Approved state and the remote node has not enabled ”Require Mutual Authentication”, the incoming connection will be automatically recreated after deletion.
-    - If  ”Require Mutual Authentication” is enabled on the remote node and its outgoing certificate is also approved, the incoming connection will also be automatically recreated after deletion.
+- 允许：入站连接默认状态为“待审核”，点击允许后，状态会更新成“允许”。
+- 拒绝：点击入站连接列表中的拒绝按钮后，入站连接的状态会更新成拒绝。
+- 删除：点击入站连接列表中的删除按钮将已经创建的入站连接删除。
+   - 如果入站列表中，该节点的证书处于允许状态，该节点未开启“需要双向认证”，那么该节点的入站连接删除后会被立即重新创建出来。
+   - 如果入站列表中，该节点的证书处于允许状态，该节点开启了“需要双向认证”且在该节点出站列表的证书列表中，允许了证书，那么该节点的入站连接删除后会被立即重新创建出来。
