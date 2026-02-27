@@ -1,29 +1,33 @@
-# Create History Database
+# 创建历史库
 
-1. On the "**Databases**" -> "History Database" screen, click the "Add" button.
-    ![alt text](1.png)
-2.  In the following popup window, select History Database and click "Next" button.
-    ![alt text](2.png)
-3. Fill in the configuration and click "OK" button to save.
-    ![alt text](3.png)
+1. 在“**数据库**”->“**历史库**”页面，点击“**新增**”按钮。
 
-     **Note**: When InfluxDB is selected , there is no configuration for partitioning, pre-processing, and data cleaning (InfluxDB itself has the above configurations,  VC Hub does not provide this configuration). 
+![alt text](1.png)
 
-    When data of type InfluxDB is selected for the database connection, the following screen is displayed:
+2. 在弹出的如下窗口中，选择历史库，点击“下一步”按钮。
 
-    ![alt text](4.png)
+![alt text](2.png)
 
-**Configuration description**
+3. 填写配置，点击“确认”按钮进行保存。
 
-| **Configuration items** | **Description**                                                                                                              |
-|--------------------------------------|--------------------------------------------------------------------------------------------------------------------------------|
-| Name                                 | Name of the history database.                                                                                                  |
-| Description                          | Description Information of the history database.                                                                               |
-| Database Connection                  | The database connection used for this configuration, derived from data created by the Database Connections page.               |
-| Enable Partitioning                  | Whether or not to partition the stored historical data for storage.                                                            |
-| Partition Size                       | The size of the data storage partition. According to the partitioning rules, data with the same rules will be stored together. |
-| Enable Pre-Processed                 | Whether to enable preprocessing.                                                                                               |
-| Pre-Processing Window Size(min)      | The time window interval for preprocessing historical data.                                                                    |
-| Enable Data Pruning                  | Whether or not to delete historical data that exceeds the data purge time configuration.                                       |
-| Prune Range                          | Data retention time, data exceeding this configuration will be deleted.                                                        |
+![alt text](3.png)
 
+**说明**：当“数据库连接”选择 **InfluxDB类型** 的数据库时，将无分区、预处理、数据清理配置（InfluxDB自身具有以上配置，WAGO SCADA不提供此配置）。
+
+当数据库连接选择InfluxDB类型的数据时，新增界面如下：
+
+![alt text](4.png)
+
+**配置说明**
+
+| **配置项**          | **说明**   |
+|:---------------------|:-------------------|
+| 名称                | 历史库名称。  |
+| 描述                | 历史库配置描述说明信息。   |
+| 数据库连接          | 此配置使用的数据库连接，来源于 [数据库连接](../database-connection/index.md) 页面创建的数据。  |
+| 开启分区            | 是否对存储的历史数据进行分区存储。   |
+| 分区大小            | 数据存储分区大小。按照分区规则，相同规则的数据将存储在一起。 |
+| 开启预处理          | 是否开启预处理。  |
+| 预处理时间窗口(min) | 历史数据预处理时的时间窗口间隔。   |
+| 开启数据清理        | 是否对超出数据清理时间配置的历史数据进行删除。 |
+| 数据清理时间        | 数据保留时间，超过该配置的数据将被删除。  |

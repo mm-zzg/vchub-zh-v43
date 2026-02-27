@@ -1,20 +1,24 @@
-# Create a Duplicated History Database
+# 创建双历史库
 
-1. On the "**Databases**" -> "**History Database**" page, click the "Add" button. 
+1. 在“**数据库**”->“**历史库**”页面，点击“**新增**”按钮。
+
     ![alt text](1.png)
-2.  In the following pop-up window, select the Duplicated History Database and click "Next" button.
+
+2. 在弹出的如下窗口中，选择双历史库，点击“下一步”按钮。
+
     ![alt text](2.png)
-3. Fill in the configuration and click "OK" button to save. 
+
+3. 填写配置，点击“确认”按钮进行保存。
+
     ![alt text](3.png)
 
-**Configuration** ** Description**
+**配置说明**
 
-| **Configuration Item** | **Description**    |
-|----------------------------------|---|
-| Name                             | Name of the history database.|
-| Description                      | Description Information of the history database.|
-| Database Connection 1            | The database connection used for this configuration, derived from the history database configured on the History databse list page. |
-| Database Connection 2            | The database connection used for this configuration, derived from the history database configured on the History databse list page.|
-| Enable Hierarchical Query        | Whether or not to hierarchize historical data queries.   <br> **Off**: All historical data query database connection 1, when database connection 1 fails query database connection 2   <br>**On**: All historical data query according to the query configuration, respectively query database connection 1 and database connection 2, when database connection 1 fails query database connection 2 |
-| Master Database Query Range      | Historical data queries with query time within this configuration range will query database connection 1.|
-
+| **配置项**       | **说明**   |
+|:------------------|:--------------|
+| 名称             | 历史库名称。|
+| 描述             | 历史库配置描述说明信息。 |
+| 数据库连接1      | 此配置使用的数据库连接，来源于历史库页面配置的 **历史库。**  |
+| 数据库连接2      | 此配置使用的数据库连接，来源于历史库页面配置的 **历史库。**  |
+| 开启分级查询     | 是否对历史数据查询进行分级处理。  <br>关闭：所有的历史数据查询数据库连接1，当数据库连接1失效时查询数据库连接2  <br>开启：所有历史数据查询按照查询配置，分别查询数据库连接1和数据库连接2，当数据库连接1失效时查询数据库连接2 |
+| 主数据库查询范围 | 查询时间在此配置范围内的历史数据查询，将查询数据库连接1。  |

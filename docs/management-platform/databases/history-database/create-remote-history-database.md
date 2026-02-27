@@ -1,20 +1,24 @@
-# Create a Remote History Database
+# 创建远端历史库
 
-1. On the "**Databases**" -> "**History Database**" screen, click the "Add" button.
+1. 在”**数据库**“->”**历史库**“页面，点击“**新增**”按钮。
+
     ![alt text](1.png)
-2. In the following popup window, select the Remote History Database and click "Next" button. 
-    ![alt text](5.png)
-3. Fill in the configuration and click **"OK** **"** button to save.  
+
+2. 在弹出的如下窗口中，选择远端历史库，点击“下一步”按钮。
+
     ![alt text](4.png)
 
-**Configuration Description**
+3. 填写配置，点击“确认”按钮进行保存。
 
-| **Configuration Item** | **Description**  |
-|--------------------------------------------|---------|
-| Name                                       | Name of the history database.|
-| Description                                | Description Information of the history database.|
-| Remote Node Name                           | The remote node in the networking configuration.  |
-| Remote Database                            | TThe name of the history database and duplicated history database created in the History Database List page in the remote node. |
-| Allow Storage                              | Whether the history data of the local node can be stored in the configured remote node.                                         |
-| Max Bundle Size(Unit: Thousand)            | The number of historical data to be sent in a single request to the remote history database.                                    |
+    ![alt text](5.png)
 
+**配置说明**
+
+| **配置项**                 | **说明**    |
+|:----------------------------|:------------------|
+| 名称                       | 历史库名称。 |
+| 描述                       | 历史库配置描述说明信息。 |
+| 远端节点名称               | 组网配置中的远端节点。  |
+| 远端历史库     | 远端节点中历史库列表页面中创建的的 **历史库** 和 **双历史库** 名称。 |
+| 允许存储      | 是否可以将本地节点的历史数据存储到配置的远端节点中。 |
+| 单次最大发送点数(单位: 千) | 单次请求远端历史库，发送的历史数据数量。   |
