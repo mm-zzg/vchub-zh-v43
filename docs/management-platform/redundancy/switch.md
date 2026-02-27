@@ -1,40 +1,40 @@
-# Automatic Runtime Page Switchover Between Primary and Backup
+# 运行画面主备自动切换
 
-If a browser opens the configuration screen after a redundant node has been configured, the configuration screen checks the operating status of the current node and the redundant node and issues a heartbeat packet to both nodes. If the running status of the current node is Standby and the running status of the redundant node is Running, the current running screen will trigger a master/standby switchover, and the address of the real-time screen will be switched to the address of the redundant node automatically.
+WAGO SCADA在配置冗余节点后，如果有浏览器打开了组态画面，组态画面会检查当前节点的运行状态以及冗余节点的运行状态，并且会向两个节点发行心跳包。如果当前节点的运行状态是Standby且冗余节点的运行状态是Running, 此时当前运行画面就会触发主备切换，实时画面的地址会自动切换到冗余节点的地址。
 
-The following is the scenes that will trigger the screen to switch between master and backup.
+以下是会触发画面主备切换的场景。
+
+![alt text](14.png)
+
+| **当前节点类型** | **主节点状态**        | **备节点状态**        | **触发画面切换** |
+|:------------------|:-----------------------|:-----------------------|:------------------|
+| 主节点           | Standby或者心跳无响应 | Running且心跳正常响应 | 是               |
+| 主节点           | Running且心跳正常响应 | Standby或者心跳无响应 | 否               |
+| 备节点           | Standby或者心跳无响应 | Running且心跳正常响应 | 否               |
+| 备节点           | Running且心跳正常响应 | Standby或者心跳无响应 | 是               |
+
+## 画面主备切换地址配置
+
+实时画面发生主备切换时会优先使用冗余节点的公共地址进行跳转。公共地址可以在“网络"->”节点配置"页面的**公共地址**上进行配置。
 
 ![alt text](15.png)
 
-| **Current node type** | **Master node status**      | **Standby node status**        | **Trigger screen switchover** |
-|-----------------------|----------------------------------------|-------------------------------------------|-------------------------------|
-| Master node           | Standby or no heartbeat response       | Running and heartbeat responding normally | Yes                           |
-| Master node           | Running with normal heartbeat response | Standby or no heartbeat response          | No                            |
-| Backup node           | Standby or no heartbeat response       | Running and heartbeat responding normally | No                            |
-| Backup node           | Running with normal heartbeat response | Standby or no heartbeat response          | Yes                           |
+若配置了公共地址，主备切换时会优先使用公共地址进行跳转。如果没有配置公共地址，则会使用冗余配置中的主节点地址或者冗余的连接的远程IP地址进行跳转。
 
-#### Master and backup page switch address configuration
+## 主备切换场景
 
-The public address of the redundant node will be prioritized for jumping when the real-time screen is switched between master and standby. The public address can be configured in "Networking"->"Node Settings" page. 
+**场景一：未配置公共地址，主备切换时，使用当前运行服务器的地址作为切换后的网址。**
 
-![alt text](image.png)
+1. 服务器A作为主服务器，地址为http://pc-test-serverA:8060
+2. 服务器B作为主服务器，地址为http://pc-test-serverB:8060
+3. 服务器A和服务器B形成冗余
+4. 服务器A上查看SCADA的运行画面，此时服务器A宕机，服务器B运行，运行画面的地址显示为http://pc-test-serverB:8060
 
-If the public address is configured, the public address will be prioritized for jumping during the master/standby switchover. If the public address is not configured, the master node address in the redundant configuration or the remote IP address of the redundant connection will be used for jumping.
+**场景二：配置了公共地址，主备切换时，使用当前运行节点所设置的公共地址作为切换后的网址。**
 
-#### **Scenarios for Master-Backup Switchover**
-
-###### **Scenario 1: No public address is configured, and the address of the currently running server is used as the URL after the switchover when the master and backup are switched over.**
-
-1. Server A serves as the primary server with the address `http://pc-test-serverA:8060`
-2. Server B serves as the primary server, and the address is `http://pc-test-serverB:8060`.
-3. Server A and Server B form a redundancy
-4. View the VC Hub operation spage on Server A. At this time, Server A is down, Server B is running, and the address of the operation screen is displayed as `http://pc-test-serverB:8060`
-
-###### **Scenario 2: A public address is configured, and when the master and backup are switched over, the public address set by the current running node is used as the URL after the switchover.**
-
-1. Server A acts as the master server, and the address is `http://pc-test-serverA:8060`
-2. Server B acts as the master server with the address `http://pc-test-serverB:8060`
-3. Server A and Server B form redundancy
-4. The public address of Server A and Server B is set to `https://testserver.com:8066`
-5. View the VC Hub operation page on Server A. At this time, Server A is down, Server B is running, and the address of the operation screen is displayed as `https://testserver.com:8066`.
+1. 服务器A作为主服务器，地址为http://pc-test-serverA:8060
+2. 服务器B作为主服务器，地址为http://pc-test-serverB:8060
+3. 服务器A和服务器B形成冗余
+4. 服务器A和服务器B的公共地址设置为：https://testserver.com:8066
+5. 服务器A上查看SCADA的运行画面，此时服务器A宕机，服务器B运行，运行画面的地址显示为https://testserver.com:8066
 
