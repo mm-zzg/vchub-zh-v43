@@ -58,21 +58,14 @@ I/O变量可以绑定数据源，可以直接绑定一个固定的数据源路�
 
 **批量创建设备请参考如下章节。**
 
- - [批量操作Modbus TCP设备](../../../devices/modbus-tcp/batch-operation.md)
-
- - [批量操作Modbus RTU设备](../../../devices/modbus-rtu/batch-operation.md)
-
- - [批量操作OPC UA设备](../../../devices/opc-ua/batch-operation.md) 
-
- - [批量操作MQTT Native设备](../../../devices/mqtt-native/batch-operation.md) 
-
- - [批量操作MQTT SparkplugB设备](../../../devices/mqtt-sparkplugb/batch-operation.md)
-
- - [批量操作SIEMENS S7设备](../../../devices/siemens-s7/batch-operation.md) 
-
- - [批量操作WAGO Protocol设备](../../../devices/wago-protocol/batch-operation.md)
-
- - [批量操作Camera设备](../../../devices/camera/batch-operation.md) 
+- [批量操作Modbus TCP设备](../../../devices/modbus-tcp/batch-operation.md)
+- [批量操作Modbus RTU设备](../../../devices/modbus-rtu/batch-operation.md)
+- [批量操作OPC UA设备](../../../devices/opc-ua/batch-operation.md) 
+- [批量操作MQTT Native设备](../../../devices/mqtt-native/batch-operation.md) 
+- [批量操作MQTT SparkplugB设备](../../../devices/mqtt-sparkplugb/batch-operation.md)
+- [批量操作SIEMENS S7设备](../../../devices/siemens-s7/batch-operation.md) 
+- [批量操作WAGO Protocol设备](../../../devices/wago-protocol/batch-operation.md)
+- [批量操作Camera设备](../../../devices/camera/batch-operation.md) 
 
 1. 在“设备”->Modbus TCP列表中批量创建10个modbus tcp设备，名称为Device1~Device10。只有DeviceName和Host不同，其他配置相同。
 
