@@ -304,7 +304,7 @@ nav:
                             - management-platform/scripts/schedule.md
                             - management-platform/scripts/log-configuration.md
                   - 组网:
-                            - management-platform/networking/idnex.md
+                            - management-platform/networking/index.md
                   - Databases:
                             - management-platform/databases/index.md
                             - Database Connection:
