@@ -24,7 +24,7 @@ SQLite、SQLServer、PostgreSQL、MySQL这4种传统关系型数据库共享同�
 
 | 列名称   | 数据类型 | 描述|
 |:----------|:----------|:-----------------|
-| Id       | BigInt   | 自增 Id。被表**ScadaTagMapping**、**ScadaTagHistory**、**ScadaTagHistory_X_X_X** 所引用 |
+| Id       | BigInt   | 自增 Id。被表 **ScadaTagMapping**、**ScadaTagHistory**、**ScadaTagHistory_X_X_X** 所引用 |
 | Node     | String   | 数据来源节点的节点名称       |
 | Provider | String   | 资产绑定的历史库的历史库名称或报警历史库名称  |
 
@@ -34,7 +34,7 @@ SQLite、SQLServer、PostgreSQL、MySQL这4种传统关系型数据库共享同�
 
 | 列名称         | 数据类型 | 描述     |
 |:----------------|:----------|:---------------|
-| Id             | BigInt   | 自增 Id，被表**ScadaTagHistory**、**ScadaTagHistory_X_X_X** 所引用           |
+| Id             | BigInt   | 自增 Id，被表 **ScadaTagHistory**、**ScadaTagHistory_X_X_X** 所引用           |
 | Tag            | String   | 变量名称      |
 | Type           | TinyInt  | 变量存储的数据类型  1: Integer 2: String 3: Double 4: Boolean 5: DateTime |
 | ProviderId     | BigInt   | 来源 ScadaProviderMapping 的 Id   |
@@ -60,7 +60,7 @@ SQLite、SQLServer、PostgreSQL、MySQL这4种传统关系型数据库共享同�
 | DateTimeVal | DateTime | 如果变量的数据类型是DateTime，则保存变量的值，否则为Null |
 | Timestamp   | BigInt   | 变量值记录时的时间戳(毫秒)                             |
 
-## ScadaTagPreProcessed_{P**rovideId**}_{**WindowSize**}_{**DateKey**}
+## **ScadaTagPreProcessed_**{**ProvideId**}_{**WindowSize**}_{**DateKey**}
 
 当历史库开启预处理时，会对原始数据表 **ScadaTagHistory** Or **ScadaTagHistory**_{**ProvideId**}_{**PartitonSize**}_{**DateKey**}的原始数据进行预处理
 
@@ -69,21 +69,21 @@ SQLite、SQLServer、PostgreSQL、MySQL这4种传统关系型数据库共享同�
 | 列名称           | 数据类型 | 描述 |
 |:------------------|:----------|:----------|
 | TagId            | BigInt   | 来源 ScadaTagMapping 的 Id  |
-| Category         | Int      | 采样类型 <br>1: Min <br>2: Max <br>3: Avg(IntegerVal 列存储的是 Count，Double 列存储的是 Avg 值) <br>4: Last <br>5: First <br>7: Count <br>11: CountOn And CountOff(IntegerVal 列存储的是 CountOn 值，Double 列存储的是 CountOff 值) <br>12: DurationOn And DurationOff(IntegerVal 列存储的是 DurationOn 值，Double 列存储的是 DurationOff 值)              |
-| Timestamp        | BigInt   | 预处理数据对应时间 <br>例如预处理时间为 2 分钟 <br>那么 Tag 值存储时间除以 2*60*2000 取整，之后乘以 2*60*2000 得到的值 为 Timestame 值  <br>例如预处理采样时间窗口为2分钟：  <br>那么2028-08-01 01:00:00 ~ 2028-08-01 01:02:00之间的原始数据统计的时间就是2028-08-01 01:00:00，然后转换为时间戳                                             |
+| Category         | Int      | **采样类型** <br>1: Min <br>2: Max <br>3: Avg(IntegerVal 列存储的是 Count，Double 列存储的是 Avg 值) <br>4: Last <br>5: First <br>7: Count <br>11: CountOn And CountOff(IntegerVal 列存储的是 CountOn 值，Double 列存储的是 CountOff 值) <br>12: DurationOn And DurationOff(IntegerVal 列存储的是 DurationOn 值，Double 列存储的是 DurationOff 值)              |
+| Timestamp        | BigInt   | 预处理数据对应时间 <br>例如预处理时间为 2 分钟 <br>那么 Tag 值存储时间除以 2*60*2000 取整，之后乘以 2*60*2000 得到的值 为 Timestame 值  <br>例如预处理采样时间窗口为2分钟：  <br>那么`2028-08-01 01:00:00 ~ 2028-08-01 01:02:00`之间的原始数据统计的时间就是`2028-08-01 01:00:00`，然后转换为时间戳                                             |
 | Quality          | Int      | 质量位 |
-| IntegerVal       | BigInt   | 如果变量的数据类型是Integer，则保存变量的值，否则为Null  <br>当采样类型为Avg时，此列存储的时这个采样区间该变量原始数据的数量  <br>当采样类型为Count时，此列存储的时这个采样区间该变量原始数据的数量  <br>当采样类型为CountOn And CountOff时，此列存储的是CountOn的值  <br>当采样类型为DurationOn And DurationOff时，此列存储的是DurationOn的值 |
-| DoubleVal        | Double   | 如果变量的数据类型是Double，则保存变量的值，否则为Null  <br>当采样类型为Avg时，此列存储的时这个采样区间该变量原始数据的平均值  <br>当采样类型为CountOn And CountOff时，此列存储的是CountOff的值  <br>当采样类型为DurationOn And DurationOff时，此列存储的是DurationOff的值   |
-| BoolVal          | Boolean  | 如果变量的数据类型是4 Boolean，则保存变量的值，否则为Null |
-| StringVal        | String   | 如果变量的数据类型是2 String，则保存变量的值，否则为Null|
-| DateTimeVal      | DateTime | 如果变量的数据类型是5 DateTime，则保存变量的值，否则为Null   |
+| IntegerVal       | BigInt   | - 如果变量的数据类型是Integer，则保存变量的值，否则为`Null`  <br>- 当采样类型为`Avg`时，此列存储的时这个采样区间该变量原始数据的数量  <br>- 当采样类型为`Count`时，此列存储的时这个采样区间该变量原始数据的数量  <br>- 当采样类型为`CountOn And CountOff`时，此列存储的是CountOn的值  <br>- 当采样类型为`DurationOn And DurationOff`时，此列存储的是DurationOn的值 |
+| DoubleVal        | Double   |- 如果变量的数据类型是Double，则保存变量的值，否则为`Null`  <br>- 当采样类型为`Avg`时，此列存储的时这个采样区间该变量原始数据的平均值  <br>- 当采样类型为`CountOn And CountOff`时，此列存储的是**CountOff的值  <br>- 当采样类型为`DurationOn And DurationOf`f时，此列存储的是DurationOff的值   |
+| BoolVal          | Boolean  | 如果变量的数据类型是4 Boolean，则保存变量的值，否则为`Null` |
+| StringVal        | String   | 如果变量的数据类型是2 String，则保存变量的值，否则为`Null`|
+| DateTimeVal      | DateTime | 如果变量的数据类型是5 DateTime，则保存变量的值，否则为`Null` |
 | CollectTimestamp | BigInt   | 当前采样类型数据来源的记录时间(如无采用 Timestamp 相同值) |
 
 ## 说明
 
 #### ProviderId
 
-ScadaProviderMapping的主键Id，在ScadaTagHistory，ScadaTagMapping等表中表现为ProviderId
+`ScadaProviderMapping`的主键Id，在`ScadaTagHistory，ScadaTagMapping`等表中表现为`ProviderId`
 
 #### WindowSize
 
@@ -95,10 +95,10 @@ ScadaProviderMapping的主键Id，在ScadaTagHistory，ScadaTagMapping等表中�
 
 | 分区类型 | 计算逻辑  |
 |:----------|:-----------|
-| day      | 历史数据变量值记录 UTC 时间 <br>按 yyyyMMdd 格式化 <br>例: 20241105   |
+| day      | 历史数据变量值记录 UTC 时间 <br>按 `yyyyMMdd` 格式化 <br>例: 20241105   |
 | week     | 历史数据变量值记录 UTC 时间 <br>按照星期一作为每周起始。从每年的 1 月 1 日开始计算周排序(排序索引从 1 开始) <br>例: 202445 |
-| month    | 历史数据变量值记录 UTC 时间 <br>yyyyMM <br>例: 202411   |
-| quarter  | 历史数据变量值记录 UTC 时间 <br>按 yyyy{季度按照 1~4}格式化 <br>例: 20244   |
+| month    | 历史数据变量值记录 UTC 时间 <br>`yyyyMM` <br>例: 202411   |
+| quarter  | 历史数据变量值记录 UTC 时间 <br>按 `yyyy`{季度按照 1~4}格式化 <br>例: 20244   |
 | halfyear | 历史数据变量值记录 UTC 时间 <br>按 yyyy{上半年 1，下半年 2}格式化 <br>例: 20242                                            |
-| year     | 历史数据变量值记录 UTC 时间 <br>按 yyyy 格式化 <br>例: 2024 |
+| year     | 历史数据变量值记录 UTC 时间 <br>按 `yyyy` 格式化 <br>例: 2024 |
 

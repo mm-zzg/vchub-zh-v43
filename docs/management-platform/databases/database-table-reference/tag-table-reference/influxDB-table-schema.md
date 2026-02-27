@@ -23,6 +23,6 @@ InflxuDB由于其与传统的关系型数据库结构不一致，所以其表结
 | DV     | Field  | float   | 当T="3"时，该列存储对应值，否则为Null  |
 | BV     | Field  | boolean | 当T="4"时，该列存储对应值，否则为Null   |
 | BIV    | Field  | integer | 当T="4"时，该列存储对应值 true存1 false存0，否则为Null   |
-| DTV    | Field  | string  | 当T="5"时，该列存储对应值   <br>会将时间转换为UTC时间后，按照yyyy-MM-ddTHH:mm:ss.fffZ格式化为字符串存入，否则为Null |
+| DTV    | Field  | string  | 当T="5"时，该列存储对应值   <br>会将时间转换为UTC时间后，按照`yyyy-MM-ddTHH:mm:ss.fffZ`格式化为字符串存入，否则为Null |
 | SV     | Field  | string  | 当T="2"时，该列存储对应值，否则为Null    |
 
