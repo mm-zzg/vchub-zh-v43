@@ -1,49 +1,49 @@
-# Schedule
+# 时间表
 
-The schedule is a tool used in the system to manage and schedule script execution. The schedule allows you to view the last execution time and execution result of multiple scripts. In the schedule list, the execution time and execution result of the most recent script are displayed on the right page. Users can manipulate the schedule by using the Add, Modify, and Delete buttons, and edit the specific information of the schedule in the Add and Modify windows. In addition, users can view logs and schedules, and the View Schedules page gives them the option to view all the schedules created in the system and display their activity schedules on the calendar control.
-
-![alt text](13.png)
- 
-
-## **To add a new schedule**
-
-1. On the "**Scripts**"->"**Service Script**" page, click the Schedule tab, and then click the Add button at the top right corner of the list to create a schedule. 
-    ![alt text](14.png)
-
-| **Name**             | **Description**                                                                                                                                                                                                                                                                                                                                                                                                                             |
-|----------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Name                 | Schedule name                                                                                                                                                                                                                                                                                                                                                                                                                               |
-| Description          | Description information of the schedule                                                                                                                                                                                                                                                                                                                                                                                                     |
-| Timezone             | The time zone in which the schedule will be executed.                                                                                                                                                                                                                                                                                                                                                                                       |
-| Type                 | The schedule is divided into regular and periodic.                                                                                                                                                                                                                                                                                                                                                                                          |
-| Recurrence Pattern   | Sets the execution period of the schedule. The period options vary depending on the type selected.                                                                                                                                                                                                                                                                                                                                          |
-| Effective Time Range | Configure the time period during which the schedule is valid.  If a time range is specified, the schedule will only be executed within that period.  - The **start time** and **end time** are both empty by default. - If the **start time** is empty, the schedule will be triggered immediately once the trigger conditions are met. - If the **end time** is empty, the schedule remains permanently effective with no expiration date. |
-
-2.Click ➕ to add a specific activity. 
+时间表是系统中用于管理和调度脚本执行的工具，通过时间表可以查看多个脚本的上次执行时间和执行结果。在时间表列表中，最近一个脚本的执行时间和执行结果显示在右侧页面。用户可以通过新增、修改、删除按钮操作时间表，并在新增和修改窗口中编辑时间表的具体信息。此外，用户可以查看日志和排程，通过查看排程页面可以选择查看系统内创建的所有时间表，并在日历控件上显示其活动计划。
 
 ![alt text](15.png)
 
-3.When the setting is completed, click the **"OK"** button to save. The data is displayed in the schedule list.
+#### 新增时间表
 
-![alt text](16.png)
+1. 在“**脚本**”->“**服务脚本**”页面，点击“**时间表**”页签，在列表右上角点击“**新增**”按钮进行创建。
 
-**Viewing the schedule**
+    ![alt text](16.png)
 
-Click the "View Schedule" button of the timesheet to view the execution plan and results of the timesheet. 
+    | **属性** | **说明**  |
+    |:----------|:--------------|
+    | 名称     | 时间表名称 |
+    | 描述     | 时间表的描述信息 |
+    | 时区     | 按照那个时区来执行  |
+    | 类型     | 分为常规和周期性  |
+    | 任务周期 | 设置时间表的执行周期。所选的类型不同，对应的周期选项也不同。  |
+    | 生效时段 | 设置时间表的生效时间段。如果设置了时间，则时间表在该时间段内有效。  <br>- 开始和结束时间默认均为空。 <br>- 开始时间为空表示满足触发器的触发条件时即触发时间表的执行。 <br>- 结束时间为空表示时间表永久有效，无结束日期。 |
 
-![alt text](17.png)
+2. 点击➕，添加具体的活动。
 
-There are three execution status for an activity.
+    ![alt text](17.png)
 
-   - Success
-   - Failed
-   - Not executed
+3. 设置完成，点击”确认“按钮进行保存。该数据显示在时间表列表内。
 
-Activities can be visually distinguished by their color.
+    ![alt text](18.png)
 
-For successful activities, the background color is **green**;
+#### 查看时间表的排程
 
-For successful activities, the background color is **red** ;
+点击时间表的”**查看排程**”按钮，可以查看时间表的执行计划以及执行结果。
 
-For activities that were not executed, the background color is **purple**;
+![alt text](19.png)
+
+活动有三种执行状态。
+
+- 执行成功
+- 执行失败
+- 未执行
+
+可以通过颜色进行直观分辨。
+
+执行成功的活动，背景色为 **绿色**；
+
+执行失败的活动，背景色为 **红色**；
+
+未执行的活动，背景色为 **紫色**；
 

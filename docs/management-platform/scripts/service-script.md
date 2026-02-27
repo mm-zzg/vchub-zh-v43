@@ -1,77 +1,75 @@
-# Service Script
+# 服务脚本
 
-A service script is a script that runs on a server and is usually designed to perform a specific task or maintenance operation to ensure the proper functioning of the system. 
+服务脚本是一种在服务器上运行的脚本，它通常被设计用于执行特定任务或维护操作，以确保系统的正常运行。这些脚本可以根据其执行方式和目的被分为三类：
 
-These scripts can be categorized into three types based on how they are executed and for what purpose: 
-
-1. Tag Changed
-2. Periodical
-3. Schedule
-
-![alt text](2.png)
-
-## Add Scripts
-
-#### **Tag Changed**
-
-Tag changed are scripts that are executed when the conditions selected in a trigger change.
-
-On the "**Scripts**" -> "**Service Script**" screen, click the "**Tag Changed**" tab, and then click the "Add" button at the upper-right corner of the list to create the script.
+1. 变量变化
+2. 周期性
+3. 时间表
 
 ![alt text](3.png)
 
-| **Property** | **Description**                                                                                                                                                                                                                                                           |
-|--------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Name         | The name of the script.                                                                                                                                                                                                                                                   |
-| Tag List     | The tag to be bound.                                                                                                                                                                                                                                                      |
-| Trigger      | Used to set what conditions trigger this script to contain:  <br>- **Value Changed**: the script will be triggered when the value of any tag in the tag list changes. <br>- **Timestamp Changed**: The script is triggered when the timestamp of any tag in the tag list changes. |
-| Timezone     | Sets the time zone according to which the script is executed.                                                                                                                                                                                                             |
-| Record Log   | Whether to record script logs.                                                                                                                                                                                                                                            |
-| Script       | Write a script to be executed.                                                                                                                                                                                                                                            |
+## 新增脚本
 
-New scripts are disabled by default, you need to enable them manually to execute the scripts.
+#### 变量变化
+
+变量变化是指当触发器中所选条件变化时，执行相应的脚本操作。
+
+在”**脚本**“->”**服务脚本**“页面，点击"**变量变化**"页签，在列表右上角点击“**新增**”按钮进行创建。
 
 ![alt text](4.png)
 
-If "Record Log" is enabled, click the "View Log" button of the script to display the detailed log information. 
+| **属性** | **说明**  |
+|:----------|:--------------------|
+| 名称     | 脚本的名称。  |
+| 变量列表 | 需要绑定的变量。 |
+| 触发器   | 用于设置什么条件下触发该脚本，包含：  - **值变化：** 变量列表中任意变量的值发生变化就触发脚本。 - **时间戳变化：** 变量列表中任意变量的时间戳发生变化就触发脚本。 |
+| 时区     | 设置脚本按照哪个时区的时间执行。 |
+| 记录日志 | 是否记录脚本日志。  |
+| 脚本     | 编写要执行的脚本。 |
+
+新增的脚本默认是“**禁用**”状态，需要手动启用，启用后脚本才会正常执行。
 
 ![alt text](5.png)
 
-#### **Periodical**
-
-Periodical scripts are scripts that are triggered at a set frequency and executed on the server backend.
+如果开启了“记录日志“，点击该脚本的”查看日志“按钮，显示详细的日志信息。
 
 ![alt text](6.png)
 
-On the "**Scripts**" -> "**Service Script**" page, click the "Periodical" tab, and then click the "Add" button on the upper right corner of the list. 
+#### 周期性
 
-| **Attribute**  | **Description**                                               |
-|----------------|---------------------------------------------------------------|
-| Name           | The name of the script.                                       |
-| Frequency (ms) | How often the script is executed.                             |
-| Timezone       | Sets the time zone according to which the script is executed. |
-| Record Log     | Whether to record script logs.                                |
-| Script         | Write the script to be executed.                              |
+周期性脚本是按照设定频率定时触发的脚本，在服务器后端执行。
 
-The default state of the periodic script is "disabled", you need to enable it manually, and the script will be executed normally after it is enabled. 
+在”**脚本**“->”**服务脚本**“页面，点击"**周期性**"页签，在列表右上角点击“**新增**”按钮。
 
 ![alt text](7.png)
 
-If Record Log is enabled, you can view the execution log of the periodic script by clicking View Log. 
+| **属性** | **描述**                        |
+|:----------|:---------------------------------|
+| 名称     | 脚本的名称。                     |
+| 频率(ms) | 执行脚本的频率。                 |
+| 时区     | 设置脚本按照哪个时区的时间执行。 |
+| 记录日志 | 是否记录脚本日志。               |
+| 脚本     | 编写要执行的脚本。               |
+
+周期性脚本创建完成后默认“**禁用**”状态，需要手动启用，启用后脚本才会正常执行。
 
 ![alt text](8.png)
 
-#### **Schedule**
+如果开启了记录日志，点击查看日志也能查看周期性脚本的执行日志
 
-See [Schedule](schedule.md) for details.
+![alt text](9.png)
 
-#### Import/Export Scripts
+#### 时间表
 
-Click the export button in the upper right corner of the list to open the export window, where you can select the scripts to be exported.
+详见 [时间表](schedule.md)。
+
+## 导入/导出脚本
+
+点击列表右上角的 **导出** 按钮，弹出导出窗口，可以选择需要导出的脚本。
 
 ![alt text](10.png)
 
-Click the import button to import the previously exported file again.
+点击 **导入** 按钮，可以将导出的文件再次导入。
 
-![alt text](9.png)
+![alt text](11.png)
 
