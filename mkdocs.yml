@@ -374,9 +374,10 @@ nav:
                                       - management-platform/open-api/test-with-postman/subscribe.md 
                   - 诊断:
                             - management-platform/diagnostics/index.md
-        - 2D Visualization:
+        - 2D 组态:
                   - 2d-visualization/index.md
-                  - 2d-visualization/editor-introduction.md
+                  - 编辑器介绍:
+                            - 2d-visualization/editor-introduction/index.md
                   - Page:
                             - 2d-visualization/page/index.md
                             - 2d-visualization/page/page-type.md

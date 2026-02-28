@@ -1,57 +1,59 @@
-# 2D Visualization
+# 2D组态
 
-Through the 2D visualization interface, users can intuitively understand and control each part of the industrial automation system, and improve the operation and management efficiency. It is widely used in factory automation, energy management, building automation and other fields to help users realize the functions of equipment monitoring, data analysis and remote operation.
+通过2D组态界面，用户可以直观地了解和控制工业自动化系统中的各个部分，提高操作和管理效率。它广泛应用于工厂自动化、能源管理、楼宇自控等领域，帮助用户实现设备监控、数据分析和远程操作等功能。
 
-The following are some of the main functions of 2D visualization:
+以下是2D组态的一些主要功能：
 
-## **Controls**
+## 控件
 
-The 2D visualization editor has a variety of built-in controls, such as drawing elements, buttons, charts, and so on. Each control has several properties to control its appearance, behavior and data. For example, a rectangle has a background property and a label has text and font properties. 
+2D组态编辑器具有各种内置控件，例如绘图元素、按钮、图表等。每个控件都有多个属性来控制其外观、行为和数据。例如，矩形具有背景属性，文本标签具有文本、字体属性。
 
 ![alt text](1.png)
 
 ![alt text](2.png)
 
-## **Page**
+## 画面
 
-There are two basic window configurations to define the behavior of the window:
+有2种基本的窗口配置来定义窗口的行为方式：
 
-Page : A page that fills the entire window.
+- 画面 ：  填充整个窗口的画面。
+- 弹窗 ： 弹出窗口是当用户执行单击鼠标等操作时出现（弹出）的窗口。 弹出窗口通常保持在当前窗口的顶部，直到关闭，使用户能够在返回上一个窗口之前快速选择选项或设置。
 
-Popup : A popup window is a window that appears (pops up) when the user performs an action such as clicking the mouse. Pop-ups typically remain at the top of the current window until it closes, allowing the user to quickly select options or settings before returning to the previous window.
+下面是一个画面示例，点击用户按钮时，弹出用户信息弹窗。
 
 ![alt text](3.png)
 
-## **Template**
+## 画面模板
 
-Using template can greatly reduce design and development time. Instead of designing each screen from scratch, you can build on an existing template  to add and refine them. This saves a lot of time and cost.
+使用画面模板可以大大缩短设计和开发时间。你不需要从零开始设计每个画面，而是可以基于现有的模板进行补充和完善。这样可以节省大量的时间和成本。
 
-Template simplify the maintenance process when updates or modifications need to be made to a page. Simply making changes to a template can be automatically applied to all pages created based on that template, rather than having to modify each page individually.
+当需要对画面进行更新或修改时，画面模板可以简化维护流程。只需对模板进行修改，就可以自动应用到所有基于该模板创建的画面上，而不需要逐个修改每一个画面。
 
-You can design templates according to your needs. You can adjust the layout, change colors and fonts, etc. to meet specific design requirements and user needs. 
+可以根据自己的需求进行模板设计。你可以调整布局、更改颜色和字体等，以满足特定的设计要求和用户需求。
 
 ![alt text](4.png)
 
-## **Images**
+## 图片
 
-In addition to the built-in controls, you can support the use of SVG, PNG , JPEG, GIF, BMP, and JPG format images on the page.
+除内置控件外，还支持在画面上使用 SVG、PNG 、JPEG 、GIF、BMP、JPG格式的图片。
 
-## **SVG**
+#### 矢量图片
 
-Scalable Vector Graphics (SVG) have several advantages over other image types. Because they are vector images, they can be scaled without loss of sharpness or resolution. To use a picture in VC Hub, simply drag the picture directly onto the page where you want it to appear.
+与其他图片类型相比，可缩放矢量图片 （SVG） 具有多个优点。因为它们是矢量图，所以可以在不损失清晰度或分辨率的情况下进行缩放。要在 WAGO SCADA中使用图片，只需将图片直接拖到您希望它出现的画面位置。
 
 ![alt text](5.png)
 
-## **Binding**
+## 绑定
 
-Binding is a mechanism that allows properties on controls to change based on changes in values elsewhere in VC Hub. For example, the value of tag can be bound to a Gauge or a LED Diaplay. The power of binding comes from the variety of binding types.
+绑定是一种机制，它允许控件上的属性根据WAGO SCADA中其他位置的值的更改而更改。例如，Tag 的值可以绑定到仪表或数码管上。绑定的力量来自于绑定类型的多样性。
 
-Binding types:
+单击以下链接以获取有关绑定类型的完整信息：
 
-- [SQL Query](property-binding/sql-query.md) 
-- [Tag](property-binding/tag.md)
-- [Property](property-binding/property.md)
-- [Expression](property-binding/expression.md) 
-- [Dynamic Tag](property-binding/dynamic-tag.md) 
-- [Dynamic Cell](property-binding/dynamic-cell.md)
-- [Bidirectional Bindings](property-binding/bidirectional-bindings.md)
+- [变量](property-binding/tag.md)
+- [属性](property-binding/property.md)
+- [表达式](property-binding/expression.md)
+- [动态变量](property-binding/dynamic-tag.md)
+- [动态单元格](property-binding/dynamic-cell.md) 
+- [SQL Query](property-binding/sql-query.md)
+- [双向绑定](property-binding/bidirectional-bindings.md)
+
