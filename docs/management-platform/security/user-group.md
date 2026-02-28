@@ -1,45 +1,48 @@
-# User Group
+# 用户组
 
-Used to group users who receive alarm notifications. Each group contains specific users. When an alarm occurs, notifications are sent to the corresponding users according to the rules .
+用于对接收报警通知的用户进行分组，每个组内含有特定的用户。当发生报警时，按照 [通知规则](../alarming/alarm-notification/rules.md)，给对应的用户发送报警通知。
 
-## Create and Manage User Group
+## 创建和管理用户组
 
-#### Add
+#### 新增
 
-1. On the "Security" -> "User Group" page, click the "Add" button to create a new user group.
-    ![alt text](4.png)
-2. In the pop-up window, set the name of the user group and click the "Add" button to add users to the group.
-    ![alt text](5.png)
+1. 在“权限”->"用户组"页面，点击“新增”按钮创建用户组。
 
-| **Configuration** | **Description**                                                             |
-|-------------------|-----------------------------------------------------------------------------|
-| Name              | The name of the user group, which must be unique and is a required field.   |
-| Description       | Optional field for describing the user group.                               |
-| Users             | Assign users to this user group. A user can belong to multiple user groups. |
+![alt text](4.png)
 
-3.Once all settings are completed, click the "OK" button to complete the creation.
+2. 在新增弹窗，设置用户组的名称，点击“新增”按钮为该用户组添加用户。
 
-#### Search
+![alt text](5.png)
 
-User groups are sorted by default in descending order of creation time, but users can customize the sorting as needed. Users can also perform a fuzzy search by user group name using the input field in the upper-right corner.
+| **配置** | **描述**                                           |
+|----------|----------------------------------------------------|
+| 名称     | 用户组的名称，名称不可重复，必填项。                  |
+| 描述     | 用户组描述信息，可选填。                             |
+| 用户     | 设置属于该用户组的用户。一个用户可以属于多个用户组。 |
 
-#### Edit
+3. 设置完成，点击“确认”按钮完成新增。
 
-Click the "Edit" button on any user group in the list to modify the group's information. In the user group edit dialog, all users associated with the group will be displayed.
+#### 查询
 
-**Note:** If the user group name is changed, any alarm notification rules that use this group will lose their association with the group. Please be cautious when modifying the user group name.
+用户组默认以**创建时间**倒序排列，用户可以根据需要，自定义排序。
+
+用户可以通过右上角输入框，按照用户组名称进行模糊查询。
+
+#### 修改
+
+点击用户组列表任意数据的“修改“按钮，可以修改用户组的信息。在用户组的修改弹窗中会显示使用了该用户组的所有用户信息。
+
+注意：修改用户组名称后，已使用了该用户组的报警通知规则，其用户组信息会丢失，请谨慎修改用户组名称。
 
 ![alt text](6.png)
 
-#### Delete
+#### 删除
 
-Click the "Delete" button to remove a user group. 
+点击用户组的删除按钮，对用户组进行删除。注意，当用户组被删除后，使用该用户组的报警通知规则，其用户组信息会丢失，请谨慎删除。
 
-**Note:** When a user group is deleted, any alarm notification rules that use this group will lose their user group information. Please be cautious when deleting a user group.
+## 如何使用用户组
 
-## How to Use User Group
-
-In the "Alarming" -> "Alarm Notifications" section, select a user group as the recipient for alarm notifications under "**Rules**." For more details, refer to the **Alarming->Alarm Notifications->Rules**.
+在“报警”->"报警通知"的“通知规则”中，选择用户组作为报警通知的接收人。详见 [通知规则](../alarming/alarm-notification/rules.md)。
 
 ![alt text](7.png)
 

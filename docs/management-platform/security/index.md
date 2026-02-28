@@ -1,23 +1,19 @@
-# Security
+# 权限
 
-The purpose of security is to control access and operational rights to the system, applications, or resources.  By setting security , it is possible to ensure that only authorized users or roles are able to perform specific operations, thus increasing system security and data protection.
+权限的作用是控制对系统、应用程序或资源的访问和操作权限。通过设置权限，可以确保只有授权的用户或角色能够执行特定的操作，从而提高系统的安全性和数据的保护性。
 
- VC Hub implements privilege management by setting up access levels .
+WAGO SCADA通过access level，实现权限管理。
 
- The following are a few important effects of setting permissions:
+以下是设置权限的几个重要作用：
 
-1.  Access Control: Privilege settings can restrict the access rights of users or roles to the system or application. For example, only specific users or roles are allowed to view, edit or delete certain sensitive data or functions.
-2.  Data Protection: Permission settings allow you to control read, write, and modify access to data. Only users or roles with appropriate permissions can access ormodify protected data, thus ensuring data integrity and confidentiality.
-3.  System Security: Permission settings prevent unauthorized users or roles from performing malicious operations or accessing sensitive system functions. Only authorized users or roles can perform specific system-level operations,protecting the system from potential security threats.
-4.  Role Management: With permission settings, you can define different user roles and assign specific permissions to each role. This simplifies the permission management process and improves the scalability and flexibility of the system.
+1. 访问控制：权限设置可以限制用户或角色对系统或应用程序的访问权限。例如，只允许特定的用户或角色查看、编辑或删除某些敏感数据或功能。
+2. 数据保护：通过权限设置，可以控制对数据的读取、写入和修改权限。只有拥有适当权限的用户或角色才能访问或修改受保护的数据，从而确保数据的完整性和保密性。
+3. 系统安全：权限设置可以防止未经授权的用户或角色执行恶意操作或访问敏感的系统功能。只有经过授权的用户或角色才能执行特定的系统级操作，保护系统免受潜在的安全威胁。
+4. 角色管理：通过权限设置，可以定义不同的用户角色，并为每个角色分配特定的权限。这样可以简化权限管理过程，提高系统的可扩展性和灵活性。
 
- In summary, setting security  helps organizations and managers to ensure the security of VC Hub systems and data, as well as to ensure that users or roles can only perform the actions they need to perform, thus achieving a reasonable access control and protection mechanism .
+总之，设置权限可以帮助组织和管理者确保WAGO SCADA系统和数据的安全性，同时确保用户或角色只能执行其需要的操作，从而实现合理的访问控制和保护机制。
 
-Set security  under the "Security " menu.
+在“权限”菜单下，进行权限设置。
 
 ![alt text](1.png)
-
-
-
-
 

@@ -1,33 +1,33 @@
-# Roles and Users
+# 角色和用户
 
-VC Hub provides 3 built-in roles.
+WAGO SCADA提供3个内置的角色。
 
-- Admin: Has all privileges.  
-- Configurator: The only difference from Admin is that Admin cannot be selected for the role when creating a user.  
-- Operator: Can only view the running page of the project and view the devices.
+- Admin：具有所有权限。  
+- Configurator：和Admin唯一的区别是，在创建用户时，角色不能选择Admin。  
+- Operator：只能查看项目的运行画面以及查看设备。
 
-## **Creating Roles**
+## 创建角色
 
-You can add other roles in the Roles page.
+您可以在角色页面添加其他角色。
 
-1. Click ”Security” > ”Role” in the menu.
-2. Click the Add button on the Role list page to create a role.
+1. 在菜单中点击 **“权限”>“角色”**。
+2. 在角色列表页面点击新增按钮，创建角色。
 
 ![alt text](2.png)
 
-**Configurations:**
+**属性**
 
-| **Name**     | **Description**                                                                                                                                                           |
-|--------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Role Name    | The name of this role.                                                                                                                                                    |
-| Description    | The description of this role.                                                                                                                                                    |
-| Startup Page | You can configure a startup page for a role when the role can only view the running page of a specific project. Select a page from all project pages as the startup page. |
+| **名称** | **描述**  |
+|:----------|:------------|
+| 名字角色 | 此角色的名称。 |
+| 启动画面 | 当某个角色只能查看特定项目的运行画面时，可以为该角色配置启动画面。从所有的项目画面中选择一个画面作为启动画面。 |
 
-## **Creating Users**
+## 创建用户
 
-When you log in for the first time, the first user created during installation is displayed in the user list. You can add other users on the users list page.
+首次登录后，在用户列表中会显示安装时创建的首个用户。可以在用户页面添加其他用户。
 
-1. Click "Security"> "User".
-2. Click the Add button on the user list page to create a user.  Only one role can be set for a user. 
+1. 点击 **“权限”>“用户”**。
+2. 在用户列表页面点击新增按钮，创建用户。 用户仅支持设置一个角色。 
 
 ![alt text](3.png)
+

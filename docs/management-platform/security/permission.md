@@ -1,73 +1,67 @@
 # Permission
 
-It is used to carry out permission control for the operations of the management platform and the addition of new projects. 
+用于对管理平台的操作和项目的新增进行权限控制。点击菜单栏“权限”->“Permission”，可进入权限配置页。用户可根据需要灵活配置权限。
 
-Click "Security" -> "Permission" in the menu bar, and you can enter the permission configuration page. Users can flexibly configure permissions according to their needs.
+包含6个类别：
 
-It includes six categories:
+1. **创建项目权限**
+2. **设计项目权限**
+3. **删除项目权限**
+4. **配置权限**
+5. **查看权限**
+6. **安全权限**
 
-1. **Create Project Permission**
-2. **Design Project Permission**
-3. **Delete Project Permission**
-4. **Configure Permission**
-5. **View Permission**
-6. **Security Permission**
+| **类别**     | **说明** | **默认权限**    |
+|--------------|-----------|--------------------------|
+| 创建项目权限 | 用于 **新增、复制** 和 **导入** 项目。  <br>![alt text](9.png)  | Authenticated/Roles/Admin  Authenticated/Roles/Configurator |
+| 设计项目权限 | 创建项目后，可以设计项目的初始权限。如果后续在项目上重新设置了该权限，则以项目的实际配置为准。  <br>![alt text](10.png) | Authenticated/Roles/Admin  Authenticated/Roles/Configurator |
+| 删除项目权限 | 创建项目后，可以删除项目的初始权限。如果后续在项目上重新设置了该权限，则以项目的实际配置为准。  ![alt text](11.png) | Authenticated/Roles/Admin  Authenticated/Roles/Configurator |
+| 配置权限     | 用于管理平台的权限控制。用于 **查看** 和 **操作** 除“权限”菜单外的其他页面。   | Authenticated/Roles/Admin  Authenticated/Roles/Configurator |
+| 查看权限     | 用于管理平台的权限控制。用于 **查看** 除“权限”菜单外的其他页面。  | Authenticated/Roles/Operator                                |
+| 安全权限     | 用于管理平台的权限控制。用于 **查看和操作** “权限”菜单相关页面。  | Authenticated/Roles/Admin     |
 
-| **Category**              | **Description**                                                                                                                                                                                                                                                                                                                                                                                                                                         | **Default permissions**                                     |
-|---------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------|
-| Create Project Permission | It is used for **adding** new projects, **copying** projects and **importing** projects. ![alt text](9.png) | Authenticated/Roles/Admin  Authenticated/Roles/Configurator |
-| Design Project Permission | After creating a project, it is used as the initial permissions for designing the project. If the permissions are later modified within the project, the updated project-specific settings will take precedence.  ![alt text](10.png)| Authenticated/Roles/Admin  Authenticated/Roles/Configurator |
-| Delete Project Permission | After creating a project, it is used as the initial permissions for deleting the project.  If the permissions are later modified within the project, the updated project-specific settings will take precedence. ![alt text](11.png)| Authenticated/Roles/Admin  Authenticated/Roles/Configurator |
-| Configure Permission      | It is used for permission control of the admin console. It allows users to **view** and **operate** on pages other than the "Permission" menu.                                                                                                                                                                                                                                                                                                    | Authenticated/Roles/Admin  Authenticated/Roles/Configurator |
-| View Permission           | It is used for the permission control of the admin console. It is used to **view** other pages except the "Permission" menu.                                                                                                                                                                                                                                                                                                                      | Authenticated/Roles/Operator                                |
-| Security Permission       | It is used for the permission control of the admin console and for **viewing and operating** the pages related to the "Permission" menu.                                                                                                                                                                                                                                                                                                          | Authenticated/Roles/Admin                                   |
+**说明**：  <br>1. 以上默认权限中的 **Admin, Configurator, Operator** 为系统 **内置角色**。 <br>2. 以下页面称之为 **管理平台**。  <br>![alt text](12.png)
 
- **Notes:**  
- 
- 1. **Admin, Configurator, and Operator** among the above default permissions are **system-built-in roles**.
- 2. The following page is referred to as the admin console.
+## 配置权限
 
- ![alt text](12.png)
+1. **配置Access Level**
 
-#### **Configure Permission**
-
-1. **Configure the Access Level**
-
-    **Method 1**: Manually enter the path in the Access Level textarea.
+    **方式一**：在Access Level文本框中手动输入路径。
 
     ![alt text](13.png)
 
-    In order to avoid manual input errors, you can go to the Access Level page, copy the path, and then paste it on the Permission page.
+    为了避免手动输入错误，您可前往Access Level页面，复制路径后，在Permission页面进行粘贴。
 
     ![alt text](14.png)
 
-    **Method 2:** Click the settings button on the right side of the Access Level textarea.
+    **方式二**：点击Access Level输入框右侧的设置按钮。
 
     ![alt text](15.png)
 
-    In the Access Level pop-up window, select the required permissions.
+    在弹出的Access Level弹窗中，选择需要的权限。
 
     ![alt text](16.png)
 
-    **Note: Each node in the Access Level can be selected independently.**
+    **说明：Access Level中的每个节点均可独立选择。**
 
-    For example, as shown in the following figure.
+    例如下图所示
 
     ![alt text](17.png)
 
-    After clicking the “OK” button, the following path will be displayed in the Access Level textarea of the corresponding category on the Permission page:
+    点击确认按钮后，会在Permission页面对应类别的Access Level文本框中显示以下路径：
 
     ![alt text](18.png)
 
-    **Note:** If all the content in the Access Level textarea is deleted, "**Authenticated**" will be automatically filled in. This means that any user who successfully logs in will have this permission.
+    **说明：** 如果将Access Level文本框的内容全部删除后，会自动填充 **Authenticated**。这意味着任何成功登录的用户，都将拥有该项权限。
 
-2. **Set the matching strategy**
+2. **设置匹配策略**
 
-    The matching strategy is set to "Match Any" by default. Users can adjust it according to the actual situation, and only one matching strategy is supported for selection.
+    匹配策略默认选择“满足任一”, 用户可根据实际情况进行调整，仅支持选择一种匹配策略。
 
-| **Matching Strategy** | **Description**                                                                                    |
-|-----------------------|----------------------------------------------------------------------------------------------------|
-| Match All             | Users must have all access levels in order to possess the corresponding permissions.               |
-| Match Any             | Users can have the corresponding permissions as long as they possess any one of the access levels. |
+    | **匹配策略** | **说明**                                                   |
+    |:--------------|:------------------------------------------------------------|
+    | 满足所有     | 用户必须拥有所有授权级别，才能拥有相应权限。                 |
+    | 满足任一     | 用户拥有所设的access level中任一授权级别，即可拥有相应权限。 |
 
-3.**Click the "OK" button to save.**
+3. **点击“确认”按钮，进行保存。**
+

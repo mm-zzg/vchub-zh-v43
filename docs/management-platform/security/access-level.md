@@ -1,14 +1,14 @@
 # Access Level
 
-It is used to maintain and manage the Access Level of the platform. Click "Security" -> "Access Level" in the menu bar, and you can enter the Access Level configuration page. Users can flexibly configure the Access Level according to their needs.
+用于维护管理平台的Access Level。点击菜单栏“权限”->“Access Level”，可进入Access Level配置页。用户可根据需要灵活配置Access Level。
 
-By assigning different Access Levels, it is possible to precisely control whether users have the right to access specific resources.
+通过分配不同的Access Level级别，能够精确的控制用户是否有权访问特定的资源。
 
-**Note:** Roles added or deleted in the Access Level will not affect the role data in the "Role" list. They are independent of each other.
+**注意：** 在Access Level中添加或删除的角色不会影响 “角色” 列表中的角色数据，它们彼此相互独立。
 
 ![alt text](19.png)
 
-The Access Level is displayed in a tree structure in the system. By default, five levels are reserved.
+Access Level在系统中以树状结构展示。默认预留了五个级别。
 
 - Authenticated
 - Authenticated/Roles 
@@ -16,152 +16,158 @@ The Access Level is displayed in a tree structure in the system. By default, fiv
 - Authenticated/Roles/Configurator
 - Authenticated/Roles/Operator
 
-| **Levels**                       | **Description**                                                                                                                                                                                                                                                                                             |
-|----------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Authenticated                    | By default, users who have successfully logged in are assigned the "Authenticated" access level.                                                                                                                                                                                                            |
-| Authenticated/Roles              | You can add sub-levels under this level, but only one level of sub-levels can be added. For levels other than the "Authenticated/Roles" level, you can nest them to any depth according to your needs. These levels should correspond to the role names expected to be obtained from the Identity Provider. |
-| Authenticated/Roles/Admin        | System built-in role.                                                                                                                                                                                                                                                                                       |
-| Authenticated/Roles/Configurator | System built-in role.                                                                                                                                                                                                                                                                                       |
-| Authenticated/Roles/Operator     | System built-in role.                                                                                                                                                                                                                                                                                       |
+| **级别**    | **说明** |
+|:--------------------|:-------------------|
+| Authenticated                    | 登录成功的用户，默认都拥有"Authenticated"级别。    |
+| Authenticated/Roles              | 可以在该级别下添加子级别，但只能添加一级子级别。“Authenticated/Roles”级别外的级别，可以根据您的需求进行任意深度的嵌套。这些级别应与预期从Identity Provider处获得的角色名称相对应。 |
+| Authenticated/Roles/Admin        | 系统内置角色。    |
+| Authenticated/Roles/Configurator | 系统内置角色。     |
+| Authenticated/Roles/Operator     | 系统内置角色。   |
 
-## Customize Access Level
+## 自定义Access Level
 
-It supports users to perform operations of adding, modifying and deleting Access Levels according to their needs.
+支持用户根据需要对Access Level进行新增修改删除操作。
 
-**Note:**  
+**注意：** 
 
-1. The Access Level will only be truly saved after you click the "Save" button.
-2. Clicking the "Cancel" button will restore the content to the last saved version.
+1. 点击保存按钮后，Access Level才会真正保存。 
 
-## Add Access Level
+2. 点击取消按钮，将恢复至上一次的保存内容。 
 
-It supports users to create their own Access Level.
+## 新增Access Level
 
-1. Right-click on the parent level where you need to add a new Access Level to open the drop-down menu.
+支持用户创建自己的Access Level。
+
+1. 右键点击需要新增Access Level的父级别，打开下拉菜单。
 
     ![alt text](20.png)
 
-2. Click the "Add" button to open the add pop-up window.
-3. Enter the name and description of the newly added Access Level.
+2. 点击新增按钮，打开新增弹窗。
+
+3. 输入新增Access Level的名称和描述。
 
     ![alt text](21.png)
 
-4. Click the "OK" button in the pop-up window, and the new level will be inserted into the first level under the currently selected level.
-5. Click the "Save" button on the page to save the modified content.
+4. 点击弹窗确认按钮，新级别将插入到当前所选级别下的第一级。
+5. 点击页面的”保存”按钮，保存修改的内容。
 
-**Note:**  
+**注意：**  
 
-1. When adding a new Access Level, if there is already an Access Level with the same name (case-insensitive) at the same level, the addition operation will fail. 
-2. Access Levels at different levels can have the same name. 
-3. The "Authenticated/Roles" level only supports one level of sub-levels. For levels other than the "Authenticated/Roles" level, you can add sub-levels with any number of tiers according to your needs. 
+1. 新增Access Level时，如果同一级别已存在同名的Access Level(不区分大小写)，新增操作将会失败。
+2. 不同级别可以同名。 
+3. Authenticated/Roles级别仅支持一级子级别，“Authenticated/Roles”级别外的级别，可以根据您的需求添加任意多层级的子级。 
 
-## Refresh Access Level
+## 刷新Access Level
 
-The refresh operation is only supported at the "Authenticated/Roles" level. This will synchronize the role list of the Identity Provider of the "Local" type to this location.
+仅Authenticated/Roles级别上支持刷新操作，这将把Local类型的Identity Provider的角色列表同步到此处。
 
-The content that the user has added under this level will not be affected by the refresh.
+用户在该级别下已添加的内容不会受到刷新的影响。
 
-1. Right-click on the "Authenticated/Roles" level to open the drop-down menu.
+1. 右键点击Authenticated/Roles级别，打开下拉菜单。
 
     ![alt text](22.png)
 
-2. Click the "Refresh" button, and all the roles under the role list will be automatically synchronized.
+2. 点击“刷新“按钮，将自动同步角色列表下的所有角色。
 
     ![alt text](23.png)
 
-3. Click the "Save"  button on the page, and the Access Level will be saved.
+3. 点击页面的保存按钮，Access Level将会被保存。
 
-**Note:** 
+**注意：**  
 
-1. Only "Authenticated/Roles" supports refreshing. 
-2. After refreshing, if there are roles with the same name at the same level, the existing roles will be retained.
+1. 仅Authenticated/Roles支持刷新。 
 
-## Modify Access Level
+2. 刷新后，如果同级别下存在同名角色，则会保留已存在的角色。 
 
-It supports modifying the existing Access Level.
+## 修改Access Level
 
-1. Right-click on the Access Level that needs to be modified to open the drop-down menu.
+支持对已有的Access Level进行修改。
+
+1. 右键点击需要修改的Access Level，打开下拉菜单。
 
     ![alt text](24.png)
 
-2. Click the "Edit" button to open the modification pop-up window.
+2. 点击修改按钮，打开修改弹窗。
 
     ![alt text](25.png)
 
-3. Modify the Access Level or the description.
-4. Click the "OK" button in the pop-up window to save the modified content.
-5. Click the "Save" button on the page to save the access level tree.
+3. 修改Access Level或描述。
 
-**Note:** Both "**Authenticated**" and "**Authenticated/Roles**" do not support modification.
+4. 点击弹窗"确认"按钮，保存修改的内容。
 
-## Delete Access Level
+5. 点击页面的保存按钮，对access level树进行保存。
 
-It supports the deletion operation of the existing Access Level.
+**注意：Authenticated** 和 **Authenticated/Roles** 不支持修改。
 
-1. Right-click on the Access Level that needs to be deleted to open the drop-down menu.
+## 删除Access Level
+
+支持对已有的Access Level进行删除操作。
+
+1. 右键点击需要删除的Access Level，打开下拉菜单。
 
     ![alt text](26.png)
 
-2. Click the "Delete" button to perform the deletion.
+2. 点击删除按钮，进行删除。
 
-**Note:** 
+**注意：**  
 
-1. Both "Authenticated" and "Authenticated/Roles" do not support deletion. 
-2. After deletion, the current level and all its sub-levels will be deleted together. 
+1. Authenticated和Authenticated/Roles不支持删除。 
+2. 删除后，当前级别及其所有子级别，将一同被删除。 
 
-## Copy Access Level
+## 复制Access Level
 
-It supports the copying operation of the existing Access Level.
+支持对已有的Access Level进行复制操作。
 
-1. Right-click on the Access Level that needs to be copied to open the drop-down menu.
-2. Click the "Copy" button, and the Access Level is successfully copied. (The current Access Level and its sub-levels will be copied together.)
+1. 右键点击需要复制的Access Level，打开下拉菜单。
+2. 点击复制按钮，Access Level复制成功。（当前Access Level及其子级别，将一同被复制。）
 
     ![alt text](27.png)
 
-3. Right-click on the Access Level where you want to paste, and click the "Paste" button in the right-click menu. The copied Access Level and its sub-levels will be copied under the currently selected Access Level.
-4. Click the "Save" button on the page, and the Access Level will be saved.
+3. 右键点击需要粘贴的Access Level，在右键菜单中点击“粘贴”按钮，被复制的Access Level及其子级别，将被复制到当前所选的Access level下。
+4. 点击页面的保存按钮，Access Level将被保存。
 
-**Note:**  
+**注意：**  
 
-1. Both "Authenticated" and "Authenticated/Roles" do not support copying. 
-2. "Authenticated/Roles" only supports first-level sub-levels. Therefore, the sub-levels under "Authenticated/Roles" do not support the paste operation.
+1. Authenticated和Authenticated/Roles不支持复制 
 
-## Cut Access Level
+2. Authenticated/Roles仅支持一级子级别，所以Authenticated/Roles下的子级别不支持粘贴操作。
 
-It supports the cut operation of the existing Access Level.
+## 剪切Access Level
 
-1. Right-click on the Access Level that needs to be cut to open the drop-down menu.
-2. Click the "Cut" button, and the Access Level is successfully cut. (The current Access Level and its sub-levels will be cut together.)
+支持对已有的Access Level进行剪切操作。
+
+1. 右键点击需要剪切的Access Level，打开下拉菜单。
+2. 点击剪切按钮，Access Level剪切成功。（当前Access Level及其子级别，将一同被剪切。）
 
     ![alt text](28.png)
 
-3. Right-click on the Access Level where you want to paste, click the "Paste" button in the right-click menu, and the cut Access Level and its sub-levels will be pasted under the currently selected Access Level.
+3. 右键点击需要粘贴的Access Level，在右键菜单中点击”粘贴”按钮，被剪切的Access Level及其子级别，将被剪切到当前所选的Access level下。
 
     ![alt text](29.png)
 
-4. Click the "Save" button on the page, and the Access Level will be saved.
+4. 点击页面的保存按钮，Access Level将被保存。
 
-**Note:**  
+**注意：**  
 
-1. Both "Authenticated" and "Authenticated/Roles" do not support cutting. 
-2. "Authenticated/Roles" only supports first-level sub-levels. Therefore, the sub-levels under "Authenticated/Roles" do not support the paste operation.
+1. Authenticated和Authenticated/Roles不支持剪切。 
+2. Authenticated/Roles仅支持一级子级别，所以Authenticated/Roles下的子级别不支持粘贴操作。
 
-## Quick Copy
+## 快捷复制
 
-In order to avoid manual input errors, we support the quick copying of the Access Level path on the Access Level page, allowing you to paste it wherever needed.
+为了避免手动输入错误，我们支持在Access Level页面快捷复制Access level路径，以便在需要的地方进行粘贴。
 
 ![alt text](30.png)
 
-## Export Access Level Configuration
+## 导出Access Level配置
 
-1. Click the "Export" button to export the data.
+1. 点击“导出”按钮，将数据导出。
 
-    ![alt text](31.png)
+![alt text](31.png)
 
-## Import Access Level Configuration
+## 导入Access Level配置
 
-1. Click the "Import" button to import the exported data.
+1. 点击“导入”按钮，将导出的数据进行导入。
 
     ![alt text](32.png)
 
-2. After the import is completed, click the "Save" button on the page to save the imported content.
+2. 导入完成后点击页面的“保存”按钮，保存导入的内容。
