@@ -8,9 +8,9 @@
 
 第三方应用程序将客户端 ID 和客户端密钥发送到 `token_endpoint` URL（具体的方式为：使用POST请求，在请求体Body中放入client_id、client_secret以及grant_type三个参数，其中grant_type参数的值必须是client_credentials，例如：
 
-``` Plain Text
-grant_type=client_credentials&client_id=your_client_id&client_secret=your_client_secret
-```
+ ``` Plain Text
+ grant_type=client_credentials&client_id=your_client_id&client_secret=your_client_secret
+ ```
  
 ），服务器随后返回访问令牌，随后第三应用程序就可以使用这个access_token访问被授权的WAGO SCADA Open API了。
 
