@@ -378,18 +378,19 @@ nav:
                   - 2d-visualization/index.md
                   - 编辑器介绍:
                             - 2d-visualization/editor-introduction/index.md
-                  - Page:
+                  - 画面:
                             - 2d-visualization/page/index.md
                             - 2d-visualization/page/page-type.md
                             - 2d-visualization/page/page-parameter-passing.md
                             - 2d-visualization/page/navigation.md
                             - 2d-visualization/page/resolution-adaptation.md
-                            - 2d-visualization/page/page-permission.md                    
-                  - 2d-visualization/page-template.md
+                            - 2d-visualization/page/page-permission.md
+                  - 编辑器介绍:
+                            - 2d-visualization/page-template/index.md
                   - Sql Query:
                             - 2d-visualization/sql-query/index.md
                             - 2d-visualization/sql-query/create-sql-query.md
-                            - Sql Query Example:
+                            - Sql Query 例子:
                                       - 2d-visualization/sql-query/sql-query-example/index.md
                                       - 2d-visualization/sql-query/sql-query-example/query.md
                                       - 2d-visualization/sql-query/sql-query-example/scalar-query.md
