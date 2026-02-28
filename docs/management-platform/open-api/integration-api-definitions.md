@@ -1,17 +1,17 @@
-# Integration API definitions
+# 集成接口定义
 
 ## GET /api/v1/scripts/execute
 
-Execute the custom script and return the result.
+执行用户自定义函数，并返回自定义函数的执行结果
 
-Protocol: Https
+协议: Https
 
-Request Payload(Json):
+请求负载(Json):
 
-| Name       | Type      | Description                                                                                                           |
-|------------|-----------|-----------------------------------------------------------------------------------------------------------------------|
-| scriptName | String    | The custom script name                                                                                                |
-| parameters | dynamic[] | The parameter list of the custom script, the paremeter type must much the actucl paramter type of the  custom script. |
+| 名称       | 类型      | 描述  |
+|:------------|:-----------|:---------------------|
+| scriptName | String    | 自定义函数名称     |
+| parameters | dynamic[] | 自定义函数的参数列表，参数的类型必须与实际系统函数的参数类型一致 |
 
-Response Payload(JsonObject): The execution result of the custom script.
+响应负载(JsonObject): 自定义函数的执行结果
 

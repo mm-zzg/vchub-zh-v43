@@ -1,50 +1,60 @@
-# API Document (Swagger)
+# API 文档(Swagger)
 
-When you enter the VC Hub host address in the browser and append the suffix "swagger" (e.g.,  [https://example.com/swagger](https://example.com/swagger),  [http://localhost:8066/swagger](http://localhost:8066/swagger)), it will navigate to the Open API documentation page. This page lists all the Open API definitions for VC Hub.
+在浏览器中输入 WAGO SCADA 主机地址并加上后缀 “swagger”（例如：https://example.com/swagger, http://localhost:8066/swagger），将会导航到 Open API 文档页面。该页面列出了所有WAGO SCADA的Open API 定义。
 
 ![alt text](2.png)
 
+我们可以通过 Swagger 调用和测试这些Open API
 
+1. 点击“授权”按钮以输入访问令牌。有关访问令牌的信息，请参考 [Open Id Connect](open-id-connect.md) 部分。请注意，输入访问令牌时，访问令牌应格式化为“Bearer {access_token}”。
 
-We can use Swagger to invoke and test these Open APIs.
-
-1. Click the "Authorize" button to enter the access token. For access token, we can refer to the chapter **Open Id Connect**.  Please to noted when enter the access token, the access token should be formated as "Bearer  {access_token}".
   ![alt text](3.png)
+
   ![alt text](4.png)
-2. Click the down arrow icon to expand the API detail panel
+
+2. 点击箭头展开API详情
+
   ![alt text](5.png)
+
   ![alt text](6.png)
-3. Click the "Try it out", then click the "Execute" button to invoke the API, the 
+
+3. 点击 “Try it out”, 然后点击 “Execute” 调用API
+
   ![alt text](7.png)
+
   ![alt text](8.png)
-4. The server response with data of API result.
+
+4. 服务端返回API的结果
+
   ![alt text](9.png)
 
-## How to Specify the Response Language?
+## 如何指定返回的语言？
 
-When calling the API, include the following field in your HTTP request headers: `Accept-Language: zh-CN` or `Accept-Language: en-US`
+在调用 API 时，请在 HTTP 请求头（Headers）中添加如下字段：`Accept-Language: zh-CN` 或 `Accept-Language: en-US`
 
-The system determines the response language in the following priority order:
+当您调用 API 时，系统将按以下优先级顺序决定响应语言：
 
-1. **Accept-Language header**: If set to `zh-CN` or `en-US`, the system will strictly return messages in the specified language.
-2. **User session cookie**: If `Accept-Language` is not set, the system will read the language flag from the session cookie (e.g., `lang=en-US`).
-3. **Default language**: If both values are missing or invalid, the system defaults to English (`en-US`).
+1. **Accept-Language header**：若传入 `zh-CN` 或 `en-US`，系统将严格按此返回对应语言内容。
 
-**Supported Languages:**
+2. **用户会话 Cookie**：若未设置 Accept-Language ，系统将读取当前用户会话 Cookie 中的语言标识（如 `lang=en-US`）作为响应语言。
 
-- `zh-CN`: Simplified Chinese
-- `en-US`: American English
+3. **默认语言**：若以上两者均为空或无效，系统将默认使用英文（`en-US`）作为响应语言。
 
-**Example:** The application serves both Chinese and American users. If you need to obtain detailed information about a certain user, to avoid communication barriers caused by language differences, the system returns error messages based on the user’s language preference when an API call fails.
+**支持的语言：**
 
-**Chinese user request:**
+- `zh-CN`：简体中文
+- `en-US`：美式英语
+
+**示例：**应用同时面向中国和美国用户。假设您需要获取某个用户的详细信息，为了避免因语言差异造成的沟通障碍，当 API 调用失败时，系统会根据用户的语言偏好返回相应的错误信息。
+
+**中国用户访问：**
 
 ```json
 GET api/v1/user/999
 Accept-Language: zh-CN
 ```
  
-**Response:**
+**返回:** 
 
 ```json
 {
@@ -52,17 +62,18 @@ Accept-Language: zh-CN
 }
 ```
  
-**American user request:**
+**美国用户访问：**
 
 ```json
 GET api/v1/user/999
 Accept-Language: en-US
 ```
  
-**Response:**
+**返回：**
 
 ```json
 {
   "message": "User does not exist"
 }
 ```
+ 

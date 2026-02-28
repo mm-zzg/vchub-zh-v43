@@ -1,602 +1,571 @@
-# Asset API Definitions
+# 资产接口定义
 
 ## GET /api/v1/assets
 
-Description: Get All Assets, the assets means the root trees
+读取所有资产树 
 
-Protocol: Https
+协议: Https
 
-Request Payload: NA 
+请求负载: NA 
 
-Response Payload(JsonArray):
+响应负载(JsonArray):
 
-| Name        | Type   | Description       |
-|-------------|--------|-------------------|
-| id          | String | Asset id          |
-| name        | String | Asset name        |
-| description | String | Asset description |
+| 名称        | 类型   | 描述       |
+|:-------------|:--------|:------------|
+| id          | String | 资产树编号 |
+| name        | String | 资产树名称 |
+| description | String | 资产树描述 |
 
 ## POST /api/v1/assets
 
-Create new Asset
+创建资产树
 
-Protocol: Https
+协议: Https
 
-Request Payload(JsonObject):
+请求负载(JsonObject):
 
-| Name        | Type   | Description       |
-|-------------|--------|-------------------|
-| name        | String | Asset name        |
-| description | String | Asset description |
+| 名称        | 类型   | 描述       |
+|:-------------|:--------|:------------|
+| name        | String | 资产树名称 |
+| description | String | 资产树描述 |
 
-Response Payload: NA
+响应负载: NA
 
 ## PUT /api/assets/{id}
 
-Update asset by id. 
+更新资产树 
 
-Protocol: Https
+协议: Https
 
-Request Payload(JsonObject):
+请求负载(JsonObject):
 
-| Name        | Type   | Description       |
-|-------------|--------|-------------------|
-| name        | String | Asset name        |
-| description | String | Asset description |
+| 名称        | 类型   | 描述       |
+|:-------------|:--------|:------------|
+| name        | String | 资产树名称 |
+| description | String | 资产树描述 |
 
 Response Body: NA
 
 ## DELETE /api/v1/assets/{id}
 
-Delete asset tree by asset tree id
+删除资产树
 
-Protocol: Https
+协议: Https
 
- Request Payload(JsonObject):
+请求负载(JsonObject):
 
-| Name        | Type   | Description       |
-|-------------|--------|-------------------|
-| name        | String | Asset name        |
-| description | String | Asset description |
+| 名称        | 类型   | 描述       |
+|:-------------|:--------|:------------|
+| name        | String | 资产树名称 |
+| description | String | 资产树描述 |
 
 Response Body: NA
 
+## GET /api/v1/assetModels
 
+读取所有资产模型
 
-## GET /api/v1/assetModel
+协议: Https
 
-Get asset models 
+请求负载(QueryString):
 
-Protocol: Https
+| 名称       | 类型   | 描述   |
+|:------------|:--------|:--------|
+| parentPath | String | 父路径 |
 
-Request Payload(QueryString):
+响应负载(JsonArray)
 
-| Name       | Type   | Description                                     |
-|------------|--------|-------------------------------------------------|
-| parentPath | String | The parent path used to filter the asset models |
-
-Response Payload(JsonArray)
-
-| Name       | Type   | Description                    |
-|------------|--------|--------------------------------|
-| treeName   | String | Asset tree name                |
-| parentPath | String | Parent path of Asset model     |
-| name       | String | Asset model name               |
-| type       | String | Asset type (Type,Instance,Tag) |
-| path       | String | Full path of asset model       |
-
-
+| 名称       | 类型   | 描述                         |
+|:------------|:--------|:------------------------------|
+| treeName   | String | 资产树名称                   |
+| parentPath | String | 模型父路径                   |
+| name       | String | 模型名称                     |
+| type       | String | 资产类型 (Type,Instance,Tag) |
+| path       | String | 模型路径                     |
 
 ## POST /api/assetModels
 
-Create new asset model
+创建资产模型
 
-Protocol: Https
+协议: Https
 
-Request Payload(QueryString):
+请求负载(QueryString):
 
-| Name       | Type   | Description                |
-|------------|--------|----------------------------|
-| parentPath | String | Parent path of Asset model |
-| name       | String | Asset model name           |
+| 名称       | 类型   | 描述           |
+|:------------|:--------|:----------------|
+| parentPath | String | 资产模型父路径 |
+| name       | String | 资产模型名称   |
 
-Response Payload: NA
-
-
+响应负载: NA
 
 ## PUT /api/assetModels/{modelPath}
 
-Update Asset model path model path
+更新资产树模型
 
-Protocol: Https
+协议: Https
 
-Request Payload(QueryString):
+请求负载(QueryString):
 
-| Name       | Type   | Description                |
-|------------|--------|----------------------------|
-| parentPath | String | Parent path of Asset model |
-| name       | String | Asset model name           |
+| 名称       | 类型   | 描述           |
+|:------------|:--------|:----------------|
+| parentPath | String | 资产模型父路径 |
+| name       | String | 资产模型名称   |
 
-Response Payload: NA
-
-
+响应负载: NA
 
 ## DELETE /api/v1/assetModels/{modelPath}
 
-Delete Asset mdoel by model path.
+删除资产树模型
 
-Protocol: Https
+协议: Https
 
-Request Payload: NA
+请求负载: NA
 
-Response Payload: NA
-
-
+响应负载: NA
 
 ## GET /api/v1/assetModels/{modelPath}/properties
 
-Get properties of the Asset model by model path, the properties means the child items of the Asset model 
+通过资产树模型路径读取模型属性列表，这里的属性是指模型的子元素 
 
-Protocol: Https
+协议: Https
 
-Request Payload: NA; 
+请求负载: NA; 
 
-Respose Payload(JsonArray):
+响应负载(JsonArray):
 
-| Name        | Type               | Description                                                                                                           |
-|-------------|--------------------|-----------------------------------------------------------------------------------------------------------------------|
-| treeName    | String             | Asset tree name                                                                                                       |
-| parentPath  | String             | Parent path of Asset model                                                                                            |
-| name        | String             | Asset model name                                                                                                      |
-| path        | String             | Full path of model property                                                                                           |
-| modelPath   | String             | the model path of model instance, only has value when the property type is Instance                                   |
-| type        | String             | Asset type (nstance,Tag)                                                                                              |
-| tagType     | String             | Tag type (IO,Memory,Expression,System)                                                                                |
-| valueType   | String             | Tag value type (Unknown,Integer,String,Double,Bool,DateTime), only has value when the type of current property is Tag |
-| description | String             | The model property description                                                                                        |
-| properties  | AssetModelProperty | The child properties of current property                                                                              |
-
-
+| 名称        | 类型                 | 描述   |
+|:-------------|:----------------------|:---------------------|
+| treeName    | String               | 资产树名称|
+| parentPath  | String               | 模型父路径 |
+| name        | String               | 模型属性名称|
+| path        | String               | 模型路径  |
+| modelPath   | String               | 模型实例的模型路径，只有当前属性的类型是模型实例的时候不为空                                |
+| type        | String               | 资产类型 (Instance,Tag)                                                                    |
+| tagType     | String               | 变量类型 (IO,Memory,Expression,System), 只有当前属性的类型是变量时不为空                   |
+| valueType   | String               | 变量值类型 (Unknown,Integer,String,Double,Bool,DateTime), 只有当前属性的类型是变量时不为空 |
+| description | String               | 模型属性描述|
+| properties  | AssetModelProperty[] | 当前模型实例的属性列表  |
 
 ## POST /api/v1/assetModels/{modelPath}/properties
 
-Create new Asset model property 
+创建资产模型属性
 
-Protocol: Https
+协议: Https
 
-Request Payload(JsonObject):
+请求负载(JsonObject):
 
-| Name        | Type   | Description                                                                                                           |
-|-------------|--------|-----------------------------------------------------------------------------------------------------------------------|
-| name        | String | Asset model property name                                                                                             |
-| type        | String | Asset type (Instance,Tag)                                                                                             |
-| modelPath   | String | the model path of model instance, only has value when the property type is Instance                                   |
-| tagType     | String | Tag type (IO,Memory,Expression,System), only has value when the type of current property is Tag                       |
-| valueType   | String | Tag value type (Unknown,Integer,String,Double,Bool,DateTime), only has value when the type of current property is Tag |
-| description | String | The model property description                                                                                        |
+| 名称        | 类型   | 描述 |
+|:-------------|:--------|:---------|
+| name        | String | 资产模型属性名称   |
+| type        | String | 资产类型 (Instance,Tag)    |
+| modelPath   | String | 模型实例的模型路径，只有当前属性的类型是模型实例的时候不为空     |
+| tagType     | String | 变量类型 (IO,Memory,Expression,System), 只有当前属性的类型是变量时不为空                   |
+| valueType   | String | 变量值类型 (Unknown,Integer,String,Double,Bool,DateTime), 只有当前属性的类型是变量时不为空 |
+| description | String | 模型属性描述 |
 
-Response Payload: NA
-
-
+响应负载: NA
 
 ## POST /api/v1/assetModels/{modelPath}/properties/batch
 
-Create new Asset model properties by batch
+批量创建资产模型属性
 
-Protocol: Https
+协议: Https
 
-Request Payload(JsonArray):
+请求负载(JsonArray):
 
-| Name        | Type   | Description                                                                                                           |
-|-------------|--------|-----------------------------------------------------------------------------------------------------------------------|
-| name        | String | Asset model property name                                                                                             |
-| type        | String | Asset type (Instance,Tag)                                                                                             |
-| modelPath   | String | the model path of model instance, only has value when the property type is Instance                                   |
-| tagType     | String | Tag type (IO,Memory,Expression,System), only has value when the type of current property is Tag                       |
-| valueType   | String | Tag value type (Unknown,Integer,String,Double,Bool,DateTime), only has value when the type of current property is Tag |
-| description | String | The model property description                                                                                        |
+| 名称        | 类型   | 描述  |
+|:-------------|:--------|:----------|
+| name        | String | 资产模型属性名称    |
+| type        | String | 资产类型 (Instance,Tag)     |
+| modelPath   | String | 模型实例的模型路径，只有当前属性的类型是模型实例的时候不为空     |
+| tagType     | String | 变量类型 (IO,Memory,Expression,System), 只有当前属性的类型是变量时不为空                   |
+| valueType   | String | 变量值类型 (Unknown,Integer,String,Double,Bool,DateTime), 只有当前属性的类型是变量时不为空 |
+| description | String | 模型属性描述 |
+
+响应负载: NA
 
 ## PUT /api/v1/assetModels/{modelPath}/properties/{name}
 
-Update asset model property by the model path and name  
+更新资产模型属性
 
-Protocol: Https
+协议: Https
 
-Request Payload(JsonObject):
+请求负载(JsonObject):
 
-| Name        | Type   | Description                    |
-|-------------|--------|--------------------------------|
-| name        | String | Asset model property name      |
-| description | String | The model property description |
+| 名称        | 类型   | 描述             |
+|:-------------|:--------|:------------------|
+| name        | String | 资产模型属性名称 |
+| description | String | 资产模型属性描述 |
 
-Response Payload: NA
-
-
+响应负载: NA
 
 ## DELETE /api/v1/assetModels/{modelPath}/properties/{name}
 
-Delete asset model property by model path and name 
+删除模型属性
 
-Protocol: Https
+协议: Https
 
-Request Payload: NA 
+请求负载: NA 
 
-Response Payload: NA
-
-
+响应负载: NA
 
 ## GET /api/v1/assetInstances
 
-Get asset instances 
+读取资产实例
 
-Protocol: Https
+协议: Https
 
-Request Payload(QueryString):
+请求负载(QueryString):
 
-| Name       | Type   | Description                                        |
-|------------|--------|----------------------------------------------------|
-| parentPath | String | The parent path used to filter the asset instances |
+| 名称       | 类型   | 描述       |
+|:------------|:--------|:------------|
+| parentPath | String | 实例父路径 |
 
-Response Payload:
+响应负载:
 
-| Name       | Type   | Description                               |
-|------------|--------|-------------------------------------------|
-| treeName   | String | Asset tree name                           |
-| parentPath | String | The parent path of current asset instance |
-| name       | String | Asset model instance name                 |
-| type       | String | Asset type (Folder,Instance)              |
-| modelPath  | String | The model path of current instance        |
-
-
+| 名称       | 类型   | 描述                       |
+|:------------|:--------|:----------------------------|
+| treeName   | String | 资产树名称                 |
+| parentPath | String | 资产实例父路径             |
+| name       | String | 资产实例名称               |
+| type       | String | 资产类型 (Folder,Instance) |
+| modelPath  | String | 模型路径                   |
 
 ## POST /api/v1/assetInstances
 
-Create asset instance 
+创建资产实例
 
-Protocol: Https
+协议: Https
 
-Request Payload:(JsonObject)
+请求负载:(JsonObject)
 
-| Name       | Type   | Description                                   |
-|------------|--------|-----------------------------------------------|
-| parentPath | String | The parent path of current asset instance     |
-| name       | String | Asset instance name                           |
-| modelPath  | String | The referenced model path of current instance |
-
-
+| 名称       | 类型   | 描述             |
+|:------------|:--------|:-----------------|
+| parentPath | String | 资产实例父路径   |
+| name       | String | 资产实例名称     |
+| modelPath  | String | 资产实例模型路径 |
 
 ## PUT /api/v1/assetInstances/{path}
 
-Update asset instance by path  
+更新资产实例 
 
-Protocol: Https
+协议: Https
 
-Request Payload:(JsonObject)
+请求负载:(JsonObject)
 
-| Name       | Type   | Description                               |
-|------------|--------|-------------------------------------------|
-| parentPath | String | The parent path of current asset instance |
-| name       | String | Asset instance name                       |
+| 名称       | 类型   | 描述           |
+|:------------|:--------|:----------------|
+| parentPath | String | 资产实例父路径 |
+| name       | String | 资产实例名称   |
 
-Response Payload: NA
+响应负载: NA
 
 ## DELETE /api/v1/assetInstances/{path}
 
-Delete asset instance by path 
+删除资产实例
 
-Protocol: Https
+协议: Https
 
-Request Payload: NA 
+请求负载: NA 
 
-Response Payload: NA
+响应负载: NA
 
 
 
 ## GET /api/v1/assetInstances/{path}/properties
 
-Get properties of asset instance by instance path, the properties means the child items of asset instance. 
+读取资产实例属性列表
 
-Protocol: Https
+协议: Https
 
-Request Payload: NA 
+请求负载: NA 
 
-Response Payload:
+响应负载:
 
-| Name        | Type               | Description                                                                                                           |
-|-------------|--------------------|-----------------------------------------------------------------------------------------------------------------------|
-| treeName    | String             | Asset tree name                                                                                                       |
-| parentPath  | String             | Parent path of current asset instance property                                                                        |
-| name        | String             | Asset instance name                                                                                                   |
-| path        | String             | Full path of instance property                                                                                        |
-| modelPath   | String             | The referenced model path of current instance property, only has value when the type of current property is Instance  |
-| type        | String             | Asset type (Instance,Tag)                                                                                             |
-| tagType     | String             | Tag type (IO,Memory,Expression,System), only has value when the type of current property is Tag                       |
-| valueType   | String             | Tag value type (Unknown,Integer,String,Double,Bool,DateTime), only has value when the type of current property is Tag |
-| description | String             | The instance property description, only has value when the type of current property is Tag                            |
-| properties  | AssetModelProperty | The child properties of current property                                                                              |
-
-
+| 名称        | 类型               | 描述  |
+|:-------------|:--------------------|:-----------|
+| treeName    | String             | 资产树名称|
+| parentPath  | String             | 资产模型实例属性父路径   |
+| name        | String             | 资产实例名称|
+| path        | String             | 资产实例路径|
+| modelPath   | String             | 资产实例的模型路径   |
+| type        | String             | 资产类型 (Instance,Tag)    |
+| tagType     | String             | 变量类型 (IO,Memory,Expression,System), 只有当前属性的类型是变量时不为空                   |
+| valueType   | String             | 变量值类型 (Unknown,Integer,String,Double,Bool,DateTime), 只有当前属性的类型是变量时不为空 |
+| description | String             | 变量描述 |
+| properties  | AssetModelProperty | 实例子属性列表    |
 
 ## GET /api/v1/tags
 
-Get asset tags that includes normal tags and tags within instance 
+读取变量列表
 
-Protocol: Https
+协议: Https
 
-Request Payload(QueryString):
+请求负载(QueryString):
 
-| Name       | Type   | Description                         |
-|------------|--------|-------------------------------------|
-| parentPath | String | The parent path used to filter tags |
+| 名称       | 类型   | 描述       |
+|:------------|:--------|:------------|
+| parentPath | String | 变量父路径 |
 
-Response Payload(JsonArray):
+响应负载(JsonArray):
 
-| Name        | Type   | Description                                                                                                           |
-|-------------|--------|-----------------------------------------------------------------------------------------------------------------------|
-| treeName    | String | Asset tree name                                                                                                       |
-| parentPath  | String | Parent path of current item                                                                                           |
-| name        | String | Asset instance name                                                                                                   |
-| path        | String | Full path of tag                                                                                                      |
-| modelPath   | String | The reference model path of current instance property, only has value when the type of current item is Instance       |
-| type        | String | Asset type (Folder,Instance,Tag)                                                                                      |
-| tagType     | String | Tag type (IO,Memory,Expression,System), only has value when the type of current property is Tag                       |
-| valueType   | String | Tag value type (Unknown,Integer,String,Double,Bool,DateTime), only has value when the type of current property is Tag |
-| description | String | The tag description, only has value when the type of current item is Tag                                              |
-
-
+| 名称        | 类型   | 描述  |
+|:-------------|:--------|:----------|
+| treeName    | String | 资产树名称 |
+| parentPath  | String | 父路径  |
+| name        | String | 变量名称 |
+| path        | String | 变量路径   |
+| modelPath   | String | 模型实例的模型路径，只有当前元素的资产类型是资产模型实例时不为空                            |
+| type        | String | 资产类型 (Folder,Instance,Tag)    |
+| tagType     | String | 变量类型 (IO,Memory,Expression,System), 只有当前属性的类型是变量时不为空                   |
+| valueType   | String | 变量值类型 (Unknown,Integer,String,Double,Bool,DateTime), 只有当前属性的类型是变量时不为空 |
+| description | String | 变量描述  |
 
 ## POST  /api/v1/tags
 
-Create new asset Tag 
+创建变量
 
-Protocol: Https
+协议: Https
 
-Request Payload(JsonObject):
+请求负载(JsonObject):
 
-| Name        | Type   | Description                                                                                                           |
-|-------------|--------|-----------------------------------------------------------------------------------------------------------------------|
-| parentPath  | String | Parent path of current tag                                                                                            |
-| name        | String | Asset instance name                                                                                                   |
-| type        | String | Asset type (Folder,Instance,Tag)                                                                                      |
-| tagType     | String | Tag type (IO,Memory,Expression,System)                                                                                |
-| valueType   | String | Tag value type (Unknown,Integer,String,Double,Bool,DateTime), only has value when the type of current property is Tag |
-| description | String | The tag description                                                                                                   |
-
-
+| 名称        | 类型   | 描述  |
+|:-------------|:--------|:-----------|
+| parentPath  | String | 变量父路径 |
+| name        | String | 变量名称  |
+| type        | String | 资产类型 (Folder,Instance,Tag)                                                             |
+| tagType     | String | 变量类型 (IO,Memory,Expression,System)                                                     |
+| valueType   | String | 变量值类型 (Unknown,Integer,String,Double,Bool,DateTime), 只有当前属性的类型是变量时不为空 |
+| description | String | 变量描述  |
 
 ## PUT /api/v1/tags/{path}
 
-Update Tag by path 
+更新变量
 
-Protocol: Https
+协议: Https
 
-Request Payload(JsonObject):
+请求负载(JsonObject):
 
-| Name        | Type   | Description                |
-|-------------|--------|----------------------------|
-| parentPath  | String | Parent path of current tag |
-| name        | String | Asset instance name        |
-| description | String | The tag description        |
+| 名称        | 类型   | 描述       |
+|:-------------|:--------|:------------|
+| parentPath  | String | 变量父路径 |
+| name        | String | 变量名称   |
+| description | String | 变量描述   |
 
 ## DELETE /api/v1/tags/{path}
 
-Delete tag by path 
+删除变量
 
-Protocol: Https
+协议: Https
 
-Request Payload: NA 
+请求负载: NA 
 
-Response Payload: NA
-
-
+响应负载: NA
 
 ## GET /api/v1/tags/{path}/configuration
 
-Get tag configuration
+读取变量配置
 
-Protoco: Https
+协议: Https
 
-Request Payload: NA
+请求负载: NA
 
-Response Payload(JsonObject):
+响应负载(JsonObject):
 
-| Name        | Type                         | Description                   |
-|-------------|------------------------------|-------------------------------|
-| name        | String                       | Tag name                      |
-| tagGroup    | String                       | Tag group                     |
-| description | String                       | Description of the tag        |
-| value       | ValueConfigurationModel      | Value configuration           |
-| alarm       | AlarmConfigurationModel      | Alarm configuration           |
-| history     | HistoricalConfigurationModel | history configuartion         |
-| deadband    | DeadbandConfigurationModel   | Deadband configuration        |
-| scale       | ScaleConfigurationModel      | Scale configuration           |
-| event       | EventConfigurationModel      | Event configuration           |
-| simulate    | SimulationConfigurationModel | Simulation configuration      |
-| custom      | CustomConfigurationModel     | Custom property configuration |
+| 名称        | 类型                         | 描述           |
+|:-------------|:------------------------------|:----------------|
+| name        | String                       | 变量名称       |
+| tagGroup    | String                       | 变量组         |
+| description | String                       | 描述           |
+| value       | ValueConfigurationModel      | 值配置         |
+| alarm       | AlarmConfigurationModel      | 报警配置       |
+| history     | HistoricalConfigurationModel | 历史记录配置   |
+| deadband    | DeadbandConfigurationModel   | 采集死区配置   |
+| scale       | ScaleConfigurationModel      | 量程转换配置   |
+| event       | EventConfigurationModel      | 事件配置       |
+| simulate    | SimulationConfigurationModel | 模拟配置       |
+| custom      | CustomConfigurationModel     | 自定义属性配置 |
 
-Value Configuration Model(ValueConfigurationModel)
+值配置模型定义(ValueConfigurationModel)
 
-| Name                 | Type    | Description                                    |
-|----------------------|---------|------------------------------------------------|
-| valueType            | String  | Data type(Integer,String,Double,Bool,DateTime) |
-| initialValue         | Dynamic | Initial value                                  |
-| engineeringLowLimit  | Double  | Engineering low limit                          |
-| engineeringHighLimit | Double  | Engineering high limit                         |
-| unit                 | String  | Unit                                           |
-| writable             | Boolean | Writable tag value                             |
-| dataSource           | String  | Data source                                    |
-| dataSourcePath       | String  | Data source path                               |
-| readExpression       | String  | Read expression                                |
-| writeExpression      | String  | Write expression                               |
+| 名称                 | 类型    | 描述   |
+|:----------------------|:---------|:-------------------------|
+| valueType            | String  | 数据类型(Integer,String,Double,Bool,DateTime) |
+| initialValue         | Dynamic | 初始值     |
+| engineeringLowLimit  | Double  | 工程下限    |
+| engineeringHighLimit | Double  | 工程上限    |
+| unit                 | String  | 单位      |
+| writable             | Boolean | 可写   |
+| dataSource           | String  | 数据源     |
+| dataSourcePath       | String  | 原变量路径   |
+| readExpression       | String  | 表达式(读值)  |
+| writeExpression      | String  | 表达式(写值)  |
 
-Alarm Configuration Model(AlarmConfigurationModel)
+报警配置模型定义(AlarmConfigurationModel)
 
-| Name              | Type                                | Description                        |
-|-------------------|-------------------------------------|------------------------------------|
-| limitAlarm        | LimitAlarmConfigurationModel        | Limit alram configuration          |
-| rateOfChangeAlarm | RateOfChangeAlarmConfigurationModel | Rate of change alarm configuration |
-| equivalentAlarm   | EquivalentAlarmConfigurationModel   | Equivalent alarm configuration     |
-| booleanAlarm      | BooleanAlarmConfigurationModel      | Boolean alarm configuration        |
+| 名称              | 类型                                | 描述           |
+|:-------------------|:-------------------------------------|:----------------|
+| limitAlarm        | LimitAlarmConfigurationModel        | 限值报警配置   |
+| rateOfChangeAlarm | RateOfChangeAlarmConfigurationModel | 变化率报警配置 |
+| equivalentAlarm   | EquivalentAlarmConfigurationModel   | 等值报警配置   |
+| booleanAlarm      | BooleanAlarmConfigurationModel      | 开关报警配置   |
 
-Limit Alarm Configuration Model(LimitAlarmConfigurationModel)
+限值报警配置模型定义(LimitAlarmConfigurationModel)
 
-| Name               | Type              | Description             |
-|--------------------|-------------------|-------------------------|
-| activeDelayEnabled | Boolean           | Enable activation delay |
-| activeDelay        | Integer           | Activation delay time   |
-| resumeDelayEnabled | Boolean           | Enable resume delay     |
-| resumeDelay        | Integer           | Resume delay time       |
-| inclusive          | String            | Inclusion mode          |
-| limitAlarms        | LimitAlarmModel[] | List of limit alarms    |
+| 名称               | 类型              | 描述         |
+|:--------------------|:-------------------|:--------------|
+| activeDelayEnabled | Boolean           | 启用激活延迟 |
+| activeDelay        | Integer           | 激活延时     |
+| resumeDelayEnabled | Boolean           | 启用恢复延时 |
+| resumeDelay        | Integer           | 恢复延时     |
+| inclusive          | String            | 区间包含模式 |
+| limitAlarms        | LimitAlarmModel[] | 限值报警列表 |
 
-Limit Alarm Model(LimitAlarmModel)
+限值报警模型定义(LimitAlarmModel)
 
-| Name             | Type    | Description                                                                             |
-|------------------|---------|-----------------------------------------------------------------------------------------|
-| enabled          | Boolean | Enable limit alarm                                                                      |
-| type             | String  | Type(H ,H2 , H3,H4,L,L2,L3,L4)                                                          |
-| name             | String  | Limit alarm name                                                                        |
-| priority         | String  | Priority(Low,Medium,High,Critical)                                                      |
-| limit            | Double  | Limit value                                                                             |
-| deadband         | Double  | Deadband value                                                                          |
-| deadbandMode     | String  | Deadband mode                                                                           |
-| ackMode          | String  | Acknowledgement mode(Automatic,Manual (No Confirmation),Manual (Requires Confirmation)) |
-| notificationRule | String  | Notification rule                                                                       |
-| description      | String  | Alarm description                                                                       |
+| 名称             | 类型    | 描述   |
+|:------------------|:---------|:---------------------------|
+| enabled          | Boolean | 启用     |
+| type             | String  | 类型(H ,H2 , H3,H4,L,L2,L3,L4)     |
+| name             | String  | 名称     |
+| priority         | String  | 级别(Low,Medium,High,Critical)   |
+| limit            | Double  | 限值  |
+| deadband         | Double  | 死区值   |
+| deadbandMode     | String  | 死区模式   |
+| ackMode          | String  | 确认模式(Automatic,Manual (No Confirmation),Manual (Requires Confirmation)) |
+| notificationRule | String  | 通知规则  |
+| description      | String  | 描述  |
 
-Rate Of Change Alarm Configuration Model(RateOfChangeAlarmConfigurationModel)
+变化率报警配置模型定义(RateOfChangeAlarmConfigurationModel)
 
-| Name               | Type                     | Description                   |
-|--------------------|--------------------------|-------------------------------|
-| activeDelayEnabled | Boolean                  | Enable activation delay       |
-| activeDelay        | Integer                  | Activation delay time         |
-| resumeDelayEnabled | Boolean                  | Enable resume delay           |
-| resumeDelay        | Integer                  | Resume delay time             |
-| rateOfChangeAlarms | RateOfChangeAlarmModel[] | List of rate of change alarms |
+| 名称               | 类型                     | 描述           |
+|:--------------------|:--------------------------|:----------------|
+| activeDelayEnabled | Boolean                  | 启用激活延迟   |
+| activeDelay        | Integer                  | 激活延时       |
+| resumeDelayEnabled | Boolean                  | 启用恢复延时   |
+| resumeDelay        | Integer                  | 恢复延时       |
+| rateOfChangeAlarms | RateOfChangeAlarmModel[] | 变化率报警列表 |
 
-Rate Of Change Alarm Model(RateOfChangeAlarmModel)
+变化率报警模型定义(RateOfChangeAlarmModel)
 
-| Name             | Type    | Description                                                                             |
-|------------------|---------|-----------------------------------------------------------------------------------------|
-| enabled          | Boolean | Enable rate of change alarm                                                             |
-| name             | String  | Rate of change alarm name                                                               |
-| priority         | String  | Priority(Low,Medium,High,Critical)                                                      |
-| changeRate       | Double  | Change rate(%)                                                                          |
-| cycle            | Double  | Cycle time                                                                              |
-| cycleUnit        | String  | Cycle unit(Msec,Sec,Min,Hour,Day,Week,Month,Year)                                       |
-| ackMode          | String  | Acknowledgement mode(Automatic,Manual (No Confirmation),Manual (Requires Confirmation)) |
-| notificationRule | String  | Notification rule                                                                       |
-| description      | String  | Alarm description                                                                       |
+| 名称             | 类型    | 描述   |
+|:------------------|:---------|:-------------------|
+| enabled          | Boolean | 启用    |
+| name             | String  | 名称      |
+| priority         | String  | 级别(Low,Medium,High,Critical)      |
+| changeRate       | Double  | 变化率(%)     |
+| cycle            | Double  | 周期    |
+| cycleUnit        | String  | 周期单位(Msec,Sec,Min,Hour,Day,Week,Month,Year)                             |
+| ackMode          | String  | 确认模式(Automatic,Manual (No Confirmation),Manual (Requires Confirmation)) |
+| notificationRule | String  | 通知规则    |
+| description      | String  | 描述     |
 
-Equivalent Alarm Configuration Model(EquivalentAlarmConfigurationModel)
+等值报警配置模型定义(EquivalentAlarmConfigurationModel)
 
-| Name               | Type                   | Description               |
-|--------------------|------------------------|---------------------------|
-| activeDelayEnabled | Boolean                | Enable activation delay   |
-| activeDelay        | Integer                | Activation delay time     |
-| resumeDelayEnabled | Boolean                | Enable resume delay       |
-| resumeDelay        | Integer                | Resume delay time         |
-| equivalentAlarms   | EquivalentAlarmModel[] | List of equivalent alarms |
+| 名称               | 类型                   | 描述         |
+|:--------------------|:------------------------|:--------------|
+| activeDelayEnabled | Boolean                | 启用激活延迟 |
+| activeDelay        | Integer                | 激活延时     |
+| resumeDelayEnabled | Boolean                | 启用恢复延时 |
+| resumeDelay        | Integer                | 恢复延时     |
+| equivalentAlarms   | EquivalentAlarmModel[] | 等值报警列表 |
 
-Equivalent Alarm Model(EquivalentAlarmModel)
+等值报警模型定义(EquivalentAlarmModel)
 
-| Name             | Type    | Description                                                                             |
-|------------------|---------|-----------------------------------------------------------------------------------------|
-| enabled          | Boolean | Enable equivalent alarm                                                                 |
-| name             | String  | Equivalent alarm name                                                                   |
-| priority         | String  | Priority(Low,Medium,High,Critical)                                                      |
-| Value            | Dynamic | Alarm value                                                                             |
-| ackMode          | String  | Acknowledgement mode(Automatic,Manual (No Confirmation),Manual (Requires Confirmation)) |
-| notificationRule | String  | Notification rule                                                                       |
-| description      | String  | Alarm description                                                                       |
+| 名称             | 类型    | 描述     |
+|:------------------|:---------|:---------------|
+| enabled          | Boolean | 启用      |
+| name             | String  | 名称   |
+| priority         | String  | 级别(Low,Medium,High,Critical)  |
+| Value            | Dynamic | 值      |
+| ackMode          | String  | 确认模式(Automatic,Manual (No Confirmation),Manual (Requires Confirmation)) |
+| notificationRule | String  | 通知规则  |
+| description      | String  | 描述      |
 
-Boolean Alarm Configuration Model(BooleanAlarmConfigurationModel)
+开关报警配置模型定义(BooleanAlarmConfigurationModel)
 
-| Name               | Type                |                         |
-|--------------------|---------------------|-------------------------|
-| activeDelayEnabled | Boolean             | Enable activation delay |
-| activeDelay        | Integer             | Activation delay time   |
-| resumeDelayEnabled | Boolean             | Enable resume delay     |
-| resumeDelay        | Integer             | Resume delay time       |
-| booleanAlarms      | BooleanAlarmModel[] | List of boolean alarms  |
+| 名称               | 类型                | 描述         |
+|:--------------------|:---------------------|:--------------|
+| activeDelayEnabled | Boolean             | 启用激活延迟 |
+| activeDelay        | Integer             | 激活延时     |
+| resumeDelayEnabled | Boolean             | 启用恢复延时 |
+| resumeDelay        | Integer             | 恢复延时     |
+| booleanAlarms      | BooleanAlarmModel[] | 开关报警列表 |
 
-Boolean Alarm Model(BooleanAlarmModel)
+开关报警模型定义(BooleanAlarmModel)
 
-| Name             | Type    | Description                                                                             |
-|------------------|---------|-----------------------------------------------------------------------------------------|
-| enabled          | Boolean | Enable boolean alarm                                                                    |
-| type             | String  | Alarm type                                                                              |
-| name             | String  | Alarm name                                                                              |
-| priority         | String  | Priority(Low,Medium,High,Critical)                                                      |
-| ackMode          | String  | Acknowledgement mode(Automatic,Manual (No Confirmation),Manual (Requires Confirmation)) |
-| notificationRule | String  | Notification rule                                                                       |
-| description      | String  | Alarm description                                                                       |
+| 名称             | 类型    | 描述    |
+|:------------------|:---------|:-------------|
+| enabled          | Boolean | 启用    |
+| type             | String  | 类型        |
+| name             | String  | 名称    |
+| priority         | String  | 级别(Low,Medium,High,Critical)  |
+| ackMode          | String  | 确认模式(Automatic,Manual (No Confirmation),Manual (Requires Confirmation)) |
+| notificationRule | String  | 通知规则  |
+| description      | String  | 描述    |
 
-Historical Configuration Model(HistoricalConfigurationModel)
+历史记录配置模型定义(HistoricalConfigurationModel)
 
-| Name                 | Type    | Description                                                   |
-|----------------------|---------|---------------------------------------------------------------|
-| mode                 | String  | Mode(On Change,Periodic)                                      |
-| storagePeriod        | Integer | Storage period                                                |
-| storagePeriodUnit    | String  | Storage period unit(Msec,Sec,Min,Hour,Day,Week,Month,Year)    |
-| compressionMode      | String  | Compression mode(Off,Delta Compression,Slope Compression)     |
-| compressionType      | String  | Compression type(Absolute,Percent)                            |
-| value                | Double  | Value                                                         |
-| timeoutFallback      | Boolean | Timeout fallback                                              |
-| fallbackInterval     | Integer | Fallback interval                                             |
-| fallbackIntervalUnit | String  | Fallback interval unit(Msec,Sec,Min,Hour,Day,Week,Month,Year) |
+| 名称                 | 类型    | 描述   |
+|:----------------------|:---------|:--------|
+| mode                 | String  | 模式(On Change,Periodic)   |
+| storagePeriod        | Integer | 存储周期  |
+| storagePeriodUnit    | String  | 储存周期单位(Msec,Sec,Min,Hour,Day,Week,Month,Year) |
+| compressionMode      | String  | 压缩模式(Off,Delta Compression,Slope Compression)   |
+| compressionType      | String  | 压缩类型(Absolute,Percent)  |
+| value                | Double  | 值   |
+| timeoutFallback      | Boolean | 超时补值  |
+| fallbackInterval     | Integer | 补值间隔        |
+| fallbackIntervalUnit | String  | 补值间隔单位(Msec,Sec,Min,Hour,Day,Week,Month,Year) |
 
-Deadband Configuration Model(DeadbandConfigurationModel)
+采集死区配置模型定义(DeadbandConfigurationModel)
 
-| Name          | Type    | Description            |
-|---------------|---------|------------------------|
-| mode          | String  | Mode(Absolute,Percent) |
-| deadbandValue | Integer | Deadband value         |
+| 名称          | 类型    | 描述                   |
+|:---------------|:---------|:------------------------|
+| mode          | String  | 模式(Absolute,Percent) |
+| deadbandValue | Integer | 死区值                 |
 
-Scale Configuration Model(ScaleConfigurationModel)
+量程转换配置模型定义(ScaleConfigurationModel)
 
-| Name     | Type   | Description                        |
-|----------|--------|------------------------------------|
-| mode     | String | Scale model(Linear,Square,Reverse) |
-| rawMin   | Double | Minimum raw value                  |
-| rawMax   | Double | Maximum raw value                  |
-| valueMin | Double | Minimum scaled value               |
-| valueMax | Double | Maximum scaled value               |
+| 名称     | 类型   | 描述                        |
+|:----------|:--------|:-----------------------------|
+| mode     | String | 模式(Linear,Square,Reverse) |
+| rawMin   | Double | 最小原始值                  |
+| rawMax   | Double | 最大原始值                  |
+| valueMin | Double | 最小值                      |
+| valueMax | Double | 最大值                      |
 
-Event Configuration Model(EventConfigurationModel)
+事件配置模型定义(EventConfigurationModel)
 
-| Name                | Type    | Description                   |
-|---------------------|---------|-------------------------------|
-| setValueEnabled     | Boolean | Enable variable write value   |
-| setValue            | String  | Value to set                  |
-| valueChangedEnabled | Double  | Enable value change detection |
+| 名称                | 类型    | 描述       |
+|:---------------------|:---------|:------------|
+| setValueEnabled     | Boolean | 变量写值   |
+| setValue            | String  | 值         |
+| valueChangedEnabled | Double  | 布尔值跳变 |
 
-Simulation Configuration Model(SimulationConfigurationModel)
+模拟配置模型定义(SimulationConfigurationModel)
 
-| Name            | Type    | Description                                                                 |
-|-----------------|---------|-----------------------------------------------------------------------------|
-| type            | String  | Simulation type(Fixed,Random,Increment,Decrement,Reverse,Cycle,CurrentTime) |
-| initialValue    | Dynamic | Initial simulation value                                                    |
-| simulationValue | String  | Simulation value                                                            |
-| value           | Dynamic | Value                                                                       |
-| minValue        | Double  | Minimum value                                                               |
-| maxValue        | Double  | Maximum value                                                               |
-| decimals        | Integer | Number of decimal places                                                    |
-| changeFrequency | Integer | Frequency of value change                                                   |
-| changeAmplitude | Double  | Amplitude of value change                                                   |
+| 名称            | 类型    | 描述  |
+|:-----------------|:---------|:-------------------------|
+| type            | String  | 类型(Fixed,Random,Increment,Decrement,Reverse,Cycle,CurrentTime) |
+| initialValue    | Dynamic | 初始值       |
+| simulationValue | String  | 模拟值     |
+| value           | Dynamic | 值     |
+| minValue        | Double  | 最小值      |
+| maxValue        | Double  | 最大值      |
+| decimals        | Integer | 小数位      |
+| changeFrequency | Integer | 变化频率        |
+| changeAmplitude | Double  | 变化幅度    |
 
-Custom Configuration Model(CustomConfigurationModel)
+自定义属性配置模型定义(CustomConfigurationModel)
 
-| Name    | Type          | Description               |
-|---------|---------------|---------------------------|
-| customs | CustomModel[] | List of custom properties |
+| 名称    | 类型          | 描述           |
+|:---------|:---------------|:----------------|
+| customs | CustomModel[] | 自定义属性列表 |
 
-Custom Model(CustomModel)
+自定义属性模型定义(CustomModel)
 
-| Name  | Type    | Description           |
-|-------|---------|-----------------------|
-| name  | String  | Custom property name  |
-| value | Dynamic | Custom property value |
-
-
-
+| 名称  | 类型    | 描述 |
+|:-------|:---------|:------|
+| name  | String  | 名称 |
+| value | Dynamic | 值   |

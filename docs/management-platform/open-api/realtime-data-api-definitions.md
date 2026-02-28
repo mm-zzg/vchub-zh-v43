@@ -1,223 +1,223 @@
-# Realtime Data API Definitions
+# 实时数据接口定义
 
-#### GET /api/v1/tagValues
+## GET /api/v1/tagValues
 
-Get tag values by tag list
+读取实时变量值
 
-Protocol: Https
+协议: Https
 
-Request Payload(QueryString):
+请求负载(QueryString):
 
-| Name | Type     | Description       |
-|------|----------|-------------------|
-| path | String[] | The tag path list |
+| 名称 | 类型     | 描述     |
+|:------|:----------|:----------|
+| path | String[] | 变量列表 |
 
-Response Payload(JsonArray):
+响应负载(JsonArray):
 
-| Name     | Type    | Description            |
-|----------|---------|------------------------|
-| path     | String  | The tag path           |
-| property | string  | The property name      |
-| value    | Dynamic | The property value     |
-| quality  | String  | The quality of the tag |
+| 名称    | 类型     | 描述     |
+|:---------|:----------|:----------|
+| path    | String   | 变量路径 |
+| value   | Dynamic  | 变量值   |
+| time    | DateTime | 时间戳   |
+| quality | String   | 质量     |
 
-#### GET /api/v1/tagProperties
+## POST /api/v1/tagValues
 
-Get properies by property path list.
+实时变量写值，支持批量写
 
-Protocol: Https
+协议: Https
 
-Request Payload(QueryString):
+请求负载(KeyValue List):
 
-| Name | Type     | Description                                                                                                  |
-|------|----------|--------------------------------------------------------------------------------------------------------------|
-| path | String[] | The property path list, the property path is composed of tag path and property name.(e.g. Default:tag1#unit) |
+| 名称  | 类型    | 描述   |
+|:-------|:---------|:--------|
+| key   | String  | 变量名 |
+| value | Dynamic | 变量值 |
 
-Response Payload(JsonArray):
-
-| Name    | Type     | Description            |
-|---------|----------|------------------------|
-| path    | String   | The tag path           |
-| value   | Dynamic  | The tag value          |
-| time    | DateTime | The timestamp          |
-| quality | String   | The quality of the tag |
-
-#### POST /api/v1/tagValues
-
-Write tag values, support batch write.
-
-protocol: Https
-
-Request Payload(Key-value pair list):
-
-| Name  | Type    | Description    |
-|-------|---------|--------|
-| key   | String  | The tag name |
-| value | Dynamic | The tag value |
-
-Note: This payload request is a list of key-value pair list, as shown below.
+注意：这边的请求负载是一个如下所示的键值对
 
 ![alt text](12.png)
 
-Response Payload(JsonObject):
+响应负载(JsonObject):
 
-| Name         | Type                | Description                                                                                                                                                                                                                                                                                                                                                                                                                      |
-|--------------|---------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| totalCount   | Integer             | Total count of request tag values                                                                                                                                                                                                                                                                                                                                                                                                |
-| successCount | Integer             | The successful tag count to be written                                                                                                                                                                                                                                                                                                                                                                                           |
-| successCount | Integer             | The failed  tag count to be written                                                                                                                                                                                                                                                                                                                                                                                              |
-| data         | Key-value Pair List | A key-value list shows every result of tag write result, for tag failed to be written, an error message is returned. The following demonstrates the structure of the key-value pair list.  ![alt text](13.png) |
+| 名称         | 类型           | 描述   |
+|:--------------|:----------------|:----------------|
+| totalCount   | Integer        | 变量总数   |
+| successCount | Integer        | 写值成功的数量   |
+| successCount | Integer        | 写值失败的数量     |
+| data         | Key Value List | 一个键值对列表，表示每个变量写值的结果，对于写值失败的变量返回错误消息。键值对的结构如下所示：  <br>![alt text](13.png) |
+
+## GET /api/v1/tagProperties
+
+读取变量属性列表
+
+协议:: Https
+
+请求负载(QueryString):
+
+| 名称 | 类型     | 描述    |
+|:------|:----------|:-------------------|
+| path | String[] | 属性路径列表, 属性路径由变量路径和属性名称组成.(e.g. Default:tag1#unit) |
+
+响应负载(JsonArray):
+
+| 名称     | 类型    | 描述     |
+|:----------|:---------|:----------|
+| path     | String  | 变量路径 |
+| property | string  | 属性名   |
+| value    | Dynamic | 属性值   |
 
 ## TagValues /ws/v1/realtimeData
 
-Get realtime tag values. The first response in the session provides the complete set of real-time alarms, followed by incremental updates with new alarms.
+读取实时变量值
 
-Request Payload(JsonArray):
+协议: WebSocket
 
-| Name | Type     | Description       |
-|------|----------|-------------------|
-| path | String[] | The tag path list |
+请求负载(JsonArray):
 
-Response Payload(JsonArray):
+| 名称 | 类型     | 描述     |
+|:------|:----------|:----------|
+| path | String[] | 变量列表 |
 
-| Name    | Type     | Description            |
-|---------|----------|------------------------|
-| path    | String   | The tag path           |
-| value   | Dynamic  | The tag value          |
-| time    | DateTime | The timestamp          |
-| quality | String   | The quality of the tag |
+响应负载(JsonArray):
 
-#### TagProperties /ws/v1/realtimeData
+| 名称    | 类型     | 描述     |
+|:---------|:----------|:----------|
+| path    | String   | 变量路径 |
+| value   | Dynamic  | 变量值   |
+| time    | DateTime | 时间戳   |
+| quality | String   | 质量     |
 
-Get properies by property path list.
+## TagProperties /ws/v1/realtimeData
 
-Protocol: WebSockets
+读取实时变量属性列表
 
-Request Payload(JsonArray):
+协议: WebSockets
 
-| Name | Type     | Description                                                                                                  |
-|------|----------|--------------------------------------------------------------------------------------------------------------|
-| path | String[] | The property path list, the property path is composed of tag path and property name.(e.g. Default:tag1#unit) |
+请求负载(JsonArray):
 
-Response Payload(JsonArray):
+| 名称 | 类型     | 描述   |
+|:------|:----------|:---------------|
+| path | String[] | 属性路径列表, 属性路径由变量路径和属性名称组成.(e.g. Default:tag1#unit) |
 
-| Name    | Type     | Description            |
-|---------|----------|------------------------|
-| path    | String   | The tag path           |
-| value   | Dynamic  | The tag value          |
-| time    | DateTime | The timestamp          |
-| quality | String   | The quality of the tag |
+响应负载(JsonArray):
 
-#### Alarms /ws/v1/realtimeData
+| 名称     | 类型    | 描述     |
+|:----------|:---------|:----------|
+| path     | String  | 变量路径 |
+| property | string  | 属性名   |
+| value    | Dynamic | 属性值   |
 
-Get realtime alarms
+## Alarms /ws/v1/realtimeData
 
-Protocol: WebSockets
+读取实时报警
 
-Request Payload:NA
+协议: WebSockets
 
-Response Payload(JsonArray):
+请求负载:NA
 
-| Name         | Type     | Description                                        |
-|--------------|----------|----------------------------------------------------|
-| eventId      | String   | The id of the history record                       |
-| path         | String   | The tag path                                       |
-| type         | String   | The alarm type (Limit, LimitHigh1, LimitHigh2… )   |
-| priority     | String   | The alarm priority (Low,Mid,High,Urgent)           |
-| status       | Status   | The alarm status( UnAck,Acked, Rtun, Norm)         |
-| value        | Dynamic  | The tag value tiggered alarm                       |
-| valueType    | String   | The value type of tag value                        |
-| description  | String   | The alrm description                               |
-| ackTime      | DateTime | The acknowledge time of the alarm                  |
-| ackNotes     | String   | The notes of the alarm                             |
-| recoveryTime | DateTime | The recovery time                                  |
-| operator     | String   | The user who acknownlege the alarm                 |
-| isShelved    | Boolean  | A flag indicate whether the alarm is shelved       |
-| ackMode      | String   | The acknownledge mode (Auto,Manual,ManualNeedInfo) |
-| activeTime   | DateTime | The alarm active time.                             |
+响应负载(JsonArray):
 
-#### IncrementAlarms /ws/v1/realtimeData
+| 名称         | 类型     | 描述                                       |
+|:--------------|:----------|:--------------------------------------------|
+| eventId      | String   | 报警事件编号                               |
+| path         | String   | 变量路径                                   |
+| type         | String   | 报警类型 (Limit, LimitHigh1, LimitHigh2… ) |
+| priority     | String   | 报警等级 (Low,Mid,High,Urgent)             |
+| status       | Status   | 报警状态( UnAck,Acked, Rtun, Norm)         |
+| value        | Dynamic  | 变量值                                     |
+| valueType    | String   | 变量值类型                                 |
+| description  | String   | 报警描述                                   |
+| ackTime      | DateTime | 报警确认时间                               |
+| ackNotes     | String   | 报警确认备注                               |
+| recoveryTime | DateTime | 报警恢复时间                               |
+| operator     | String   | 报警确认人                                 |
+| isShelved    | Boolean  | 表示报警是否被搁置                         |
+| ackMode      | String   | 报警确认类型 (Auto,Manual,ManualNeedInfo)  |
+| activeTime   | DateTime | 报警激活时间                               |
 
-Get incremented realtime alarms.The session initially returns the full set of real-time alarm data, and subsequently pushes incremental updates of alarm changes.
+## IncrementAlarms /ws/v1/realtimeData
 
-Protocol: WebSockets
+读取实时增量报警。会话首次返回全量实时报警数据，后续以增量方式推送报警的更新数据。
 
-Request Payload:NA
+协议: WebSockets
 
-Response Payload((JsonArray):
+请求负载:NA
 
-| Name  | Type                | Description                                                                                            |
-|-------|---------------------|--------------------------------------------------------------------------------------------------------|
-| IsAll | Bool                | A flag indicator whether the data is full data or incremented data                                     |
-| Data  | Key-value pair list | The key-value pair list. The key represents event id and the value represents alarm detail(AlarmModel) |
+响应负载(JsonArray):
+
+| 名称  | 类型                | 描述   |
+|:-------|:---------------------|:------------|
+| IsAll | Bool                | 一个标记，表示当前返回的结果是全量还是增量的数据    |
+| Data  | Key-value pair list | 一个key-value键值对，key表示事件Id, value表示报警详情(AlarmModel) |
 
 AlarmModel
 
-| Name         | Type     | Description                                        |
-|--------------|----------|----------------------------------------------------|
-| eventId      | String   | The id of the history record                       |
-| path         | String   | The tag path                                       |
-| type         | String   | The alarm type (Limit, LimitHigh1, LimitHigh2… )   |
-| priority     | String   | The alarm priority (Low,Mid,High,Urgent)           |
-| status       | Status   | The alarm status( UnAck,Acked, Rtun, Norm)         |
-| value        | Dynamic  | The tag value tiggered alarm                       |
-| valueType    | String   | The value type of tag value                        |
-| description  | String   | The alrm description                               |
-| ackTime      | DateTime | The acknowledge time of the alarm                  |
-| ackNotes     | String   | The notes of the alarm                             |
-| recoveryTime | DateTime | The recovery time                                  |
-| operator     | String   | The user who acknownlege the alarm                 |
-| isShelved    | Boolean  | A flag indicate whether the alarm is shelved       |
-| ackMode      | String   | The acknownledge mode (Auto,Manual,ManualNeedInfo) |
-| activeTime   | DateTime | The alarm active time.                             |
+| 名称         | 类型     | 描述                                       |
+|:--------------|:----------|:--------------------------------------------|
+| eventId      | String   | 报警事件编号                               |
+| path         | String   | 变量路径                                   |
+| type         | String   | 报警类型 (Limit, LimitHigh1, LimitHigh2… ) |
+| priority     | String   | 报警等级 (Low,Mid,High,Urgent)             |
+| status       | Status   | 报警状态( UnAck,Acked, Rtun, Norm)         |
+| value        | Dynamic  | 变量值                                     |
+| valueType    | String   | 变量值类型                                 |
+| description  | String   | 报警描述                                   |
+| ackTime      | DateTime | 报警确认时间                               |
+| ackNotes     | String   | 报警确认备注                               |
+| recoveryTime | DateTime | 报警恢复时间                               |
+| operator     | String   | 报警确认人                                 |
+| isShelved    | Boolean  | 表示报警是否被搁置                         |
+| ackMode      | String   | 报警确认类型 (Auto,Manual,ManualNeedInfo)  |
+| activeTime   | DateTime | 报警激活时间                               |
 
-#### ShelvedAlarms /ws/v1/realtimeData
+## ShelvedAlarms /ws/v1/realtimeData
 
-Get current shelved alarms
+读取实时搁置报警
 
-Protocol: WebSockets
+协议: WebSockets
 
-Request Payload:NA
+请求负载:NA
 
-Response Payload(JsonArray):
+响应负载(JsonArray):
 
-| Name           | Type   | Description                               |
-|----------------|--------|-------------------------------------------|
-| eventId        | String | The id of the history record              |
-| path           | String | The tag path                              |
-| expirationTime | String | The expiration time of the shelved alarm. |
-| priority       | String | The alarm priority (Low,Mid,High,Urgent)  |
-| operator       | String | The user who acknownlege the alarm        |
+| 名称           | 类型   | 描述                           |
+|:----------------|:--------|:--------------------------------|
+| eventId        | String | 报警事件编号                   |
+| path           | String | 变量路径                       |
+| expirationTime | String | 过期时间                       |
+| priority       | String | 报警等级 (Low,Mid,High,Urgent) |
+| operator       | String | 报警确认人                     |
 
-#### POST /api/v1/alarms/ack
+## POST /api/v1/alarms/ack
 
-Acknownledge the alarm
+确认报警
 
-Protocol: Https
+协议:: Https
 
-Request Payload(JsonObject):
+请求负载(JsonObject):
 
-| Name     | Type   | Description                              |
-|----------|--------|------------------------------------------|
-| eventId  | String | The id of the history record             |
-| path     | String | The tag path                             |
-| operator | String | The user who acknownlege the alarm       |
-| notes    | String | The nodes of current acknownledge action |
+| 名称     | 类型   | 描述         |
+|:----------|:--------|:--------------|
+| eventId  | String | 报警事件编号 |
+| path     | String | 报警路径     |
+| operator | String | 报警确认人   |
+| notes    | String | 报警确认备注 |
 
-#### POST /api/v1/alarms/batchAck
+## POST /api/v1/alarms/batchAck
 
-Acknownledge the alarms
+批量确认报警
 
-Protocol: Https
+协议: Https
 
-Request Payload(JsonArray):
+请求负载(JsonArray):
 
-| Name     | Type   | Description                              |
-|----------|--------|------------------------------------------|
-| eventId  | String | The id of the history record             |
-| path     | String | The tag path                             |
-| operator | String | The user who acknownlege the alarm       |
-| notes    | String | The nodes of current acknownledge action |
+| 名称     | 类型   | 描述         |
+|:----------|:--------|:--------------|
+| eventId  | String | 报警编号     |
+| path     | String | 报警路径     |
+| operator | String | 报警确认人   |
+| notes    | String | 报警确认备注 |
 
-Response Payload: NA
+响应负载: NA
 
