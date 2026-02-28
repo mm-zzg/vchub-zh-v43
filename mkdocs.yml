@@ -385,7 +385,7 @@ nav:
                             - 2d-visualization/page/navigation.md
                             - 2d-visualization/page/resolution-adaptation.md
                             - 2d-visualization/page/page-permission.md
-                  - 编辑器介绍:
+                  - 画面模板:
                             - 2d-visualization/page-template/index.md
                   - Sql Query:
                             - 2d-visualization/sql-query/index.md
