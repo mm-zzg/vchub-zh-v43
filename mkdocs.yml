@@ -351,10 +351,14 @@ nav:
                                       - management-platform/security/identity-provider/azure-AD-integration.md
                                       - management-platform/security/identity-provider/integrates-with-OAuth0.md
                             - management-platform/security/open-api.md
-                  - management-platform/node-configuration.md
-                  - management-platform/certificate-management.md
-                  - management-platform/mqtt-broker.md
-                  - management-platform/trust-store.md
+                  - 节点配置:
+                            - management-platform/node-configuration/index.md   
+                  - 证书管理:
+                            - management-platform/certificate-management/index.md
+                  - MQTT Broker:
+                            - management-platform/mqtt-broker/index.md                          
+                  - Trust Store:
+                            - management-platform/trust-store/index.md
                   - Open API:
                             - management-platform/open-api/index.md
                             - management-platform/open-api/api-document(Swagger).md
@@ -363,13 +367,13 @@ nav:
                             - management-platform/open-api/historical-data-api-definitions.md
                             - management-platform/open-api/realtime-data-api-definitions.md
                             - management-platform/open-api/integration-api-definitions.md
-                            - Test With Postman:
+                            - 使用Postman进行测试:
                                       - management-platform/open-api/test-with-postman/index.md
                                       - management-platform/open-api/test-with-postman/get-access-token.md
                                       - management-platform/open-api/test-with-postman/invoke.md
                                       - management-platform/open-api/test-with-postman/subscribe.md 
-
-                  - management-platform/diagnostics.md
+                  - 诊断:
+                            - management-platform/diagnostics/index.md
         - 2D Visualization:
                   - 2d-visualization/index.md
                   - 2d-visualization/editor-introduction.md

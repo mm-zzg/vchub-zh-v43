@@ -1,100 +1,93 @@
-# Diagnostics
+# 诊断
 
-Diagnostic module is usually a tool for operation and maintenance personnel to carry out system diagnosis and troubleshooting, and is mainly used to query server status, logs and other information.
+诊断模块通常情况下是运维人员进行系统诊断、故障排除的工具，主要用于查询服务器状态、日志等信息。
 
-You can view related log data under the "Diagnostics" menu.
+您可以在“诊断”菜单下，查看相关日志数据。
 
-![alt text](23.png)
+![alt text](1.png)
 
+## 监测面板
 
-## **Dashboard**
+监测面板用于实时监测和展示各项关键指标和数据，帮助用户更好地了解系统运行情况，并及时发现和解决可能存在的问题。
 
-The dashbaord is used to monitor and display the key indicators and data in real time to help users better understand the system operation and find and solve possible problems in time.
+监测的指标：
 
-Indicators to be monitored:
+- CPU平均利用率
+- Memory利用率
+- Memory使用
 
-- CPU Average Utilization
-- Memory Utilization
-- Memory Utilization
+#### CPU利用率
 
-#### **CPU Average Utilization**
+通过数值和折线图查看当前CPU使用状态。当CPU利用率超过100%时，并不是代表CPU超负荷运算，而是和CPU的核心数量相关，比如服务器CPU有8个核心，那么CPU利用率的百分比基数就是800%。
 
-View the current CPU average utilization status through numerical values and line graphs. When the CPU average utilization exceeds 100%, it does not mean that the CPU is overloaded, but it is related to the number of cores of the CPU, for example, if the server CPU has 8 cores, then the percentage base of CPU utilization is 800%.
+![alt text](2.png)
 
-![alt text](24.png)
+#### Memory利用率
 
+通过数值和折线图查看当前服务器内存使用百分比。
 
-#### **Memory Utilization**
+![alt text](3.png)
 
-View the current server memory utilization percentage by value and line graph.
+#### Memory使用
 
-![alt text](25.png)
+通过图中的具体内存使用数值，可以清楚地查看当前服务器内存使用了多少MB。
 
+![alt text](4.png)
 
-#### **Memory Usage**
+## 系统日志
 
-With the specific memory usage values in the graph, you can clearly see how many MB of server memory is currently being used.
+用户可在“诊断”->“系统日志”页面，查看程序记录的系统日志。
 
-![alt text](26.png)
+| **图标** | **等级** |
+|:-----------|:----------|
+| ![alt text](5.png)| Debug    |
+| ![alt text](6.png) | Info     |
+| ![alt text](7.png) | Warn     |
+| ![alt text](8.png) | Error    |
 
+![alt text](9.png)
 
-## **System Logs**
+用户点击任意数据右侧的“详情”按钮查看具体日志内容。
 
-You can view the system logs recorded by the program on the System Logs page.
+#### 筛选
 
-| **Icon**       | **Level** |
-|------------------|-----------|
-| ![alt text](27.png)| Debug     |
-| ![alt text](28.png)| Info      |
-| ![alt text](29.png)| Warn      |
-| ![alt text](30.png)| Error     |
+- 时间范围：默认范围为当日零点~次日零点，用户可根据需求，修改时间范围进行筛选查询，但是时间跨度不可超过24小时。
+- 日志等级：用户可通过日志等级筛选日志，目前支持4个等级，Debug、Info、Warn、Error，在选择All的条件下，将查询所有等级的日志。
+- 日志内容：用户可输入日志内容关键字进行模糊匹配。
 
-![alt text](31.png)
+在输入条件后点击”查询“按钮即可。
 
+#### 导出
 
-Users can click on the "Details" button to the right of any data to view the specific log content.
+用户可通过点击导出按钮，导出当前筛选条件下查询出的所有数据，下载为Excel文件。
 
-**Filter**
+## 性能日志
 
-- Time Range: the default range is from 00:00 of the current day to 00:00 of the next day, users can modify the time range for filtering query according to their needs, but the time span cannot exceed 24 hours.
-- Log Level: Users can filter logs by log level, currently supports 4 levels, Debug, Info, Warn, Error, under the condition of selecting All, logs of all levels will be queried.
-- Log content: Users can input the keywords of log content for fuzzy matching.
+在"诊断"->"性能日志"页面，可以查看核心模块的执行效率。
 
-Click "Query" button after inputting conditions.
+默认关闭，开启后查看性能日志。
 
-**Export**
+![alt text](10.png)
 
-Users can click the Export button to export all the data queried under the current filtering conditions and download it as an Excel file.
+## 运行时状态
 
-## **Performance Logs**
+在“诊断”->“运行时状态”页面，可以查看模块的执行状态。点击右侧的“Detail”按钮，查看详细信息。
 
-On the Performance Logs page, you can view the execution efficiency of core modules. 
+![alt text](11.png)
 
-![alt text](32.png)
+## 日志配置
 
+用于配置系统日志的存储策略。
 
-## **Running Status**
+系统默认的存储策略为只记录Error类型的日志，且仅保留7天。您可根据需要自行修改，修改时应该考虑硬盘大小，不建议将日志保存天数设置过长。
 
-You can view the execution status of a module on the Runninge Status page. Click the "Detail" button on the right to view the details.
+![alt text](12.png)
 
-![alt text](33.png)
+## 事件配置
 
+用于配置变量事件的存储策略。此处记录的事件可在“实时事件”和“历史事件”控件上进行展示。
 
-## **Log Configuration**
+默认事件过期天数为180天，系统会按照设置的过期天数定时清理陈旧数据。
 
-You can configure the storage policy of system logs.
-
-The default storage policy is to record only Error type logs and keep them for 7 days only. You can change it according to your needs. When you change it, you should consider the size of the hard disk, and it is not recommended to set the number of days to keep the logs too long. 
-
-![alt text](34.png)
-
-
-## **Event Configuration**
-
-Used to configure the storage policy of tag events. The events recorded here can be displayed on the "Real-time Events" and "Historical Events" controls.
-
-The default event expiration date is 180 days, and the system will clean up the stale data regularly according to the set expiration date. 
-
-![alt text](35.png)
-
+![alt text](13.png)
 
