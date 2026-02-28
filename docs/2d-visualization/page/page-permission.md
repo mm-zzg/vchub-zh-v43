@@ -1,70 +1,80 @@
-# Page Permission
+# 画面权限
 
-You can set up security for your pages in VC Hub. After security is set, only users who meet the security requirements can view the running page.
+您可以在WAGO SCADA 中为画面设置安全性。设置安全性后，只有满足该安全性要求的用户，才能成功查看该画面的运行画面。
 
-Once the page is created, there will be an initial permission: Authenticated.
+画面创建后，会有一个 **初始权限**：Authenticated.
 
-## How to set page permissions
+## 画面权限设置方式：
 
-- Set permissions in bulk
-- Set permissions for individual page
+- 批量设置权限
+- 为单个画面设置权限
 
-## Set permissions in bulk
+## 批量设置画面权限
 
-1. In the editor's "Project" window, right-click the "Pages" node, and in the pop-up menu, click the "Set Permissions" button.<br>
-   ![alt text](46.png)
-2. In the pop-up **Page Permissions** window, select a page from the left side of the window. By default, no pages are selected. Multiple pages can be selected. Clicking the **"Clear"** button in the page area will remove all selected pages.
-   ![alt text](47.png)
-3. After selecting a page, configure permissions for the selected pages in the **Permissions** area on the right side of the pop-up window. <br>
-   Clicking the **"Clear"** button in the permissions area will remove all selected permissions.
-    - **Matching Strategy**：Single selection only. Default option: "Match All"，can be modified.
-          - **"Match All"**: The user must have **all** assigned permissions to view the page.
-          - **"Match Any"**: The user only needs **one** of the assigned permissions to view the page.
-    - **Permissions**：Set permissions for these pages in the **Permissions Tree**. By default, no permissions are selected. **Multiple selections are supported**, but a parent node and its child nodes cannot be selected simultaneously.
-4. Once the configuration is complete, click the **"Save"** button to apply the changes.
-   For example, in the image below, the **Authenticated/Roles/Aconfigurator** permission is assigned to the **Demo1, Alarms, and History** pages.
-   ![alt text](48.png)
-5. After clicking the **Save** button, the pop-up window will remain open, and the page and permissions will be reset to a cleared state, allowing you to continue selecting other pages to set their permissions.
-6. To view the permissions already assigned to a page, click the **"View"** button in the page area to check the configured permissions for each page.
-   ![alt text](49.png)
+1. 在编辑器的“项目”窗口中，右击“画面”节点，在弹出的菜单中点击“设置权限”按钮。
 
-**Notes:**  
-
-1. Directory nodes do not require permission settings. 
-2. When setting permissions in batch mode, selecting pages will **not** display their existing permissions in the permissions area on the right. To view the assigned permissions, please use the **"View"** button in the page area. 
-
-## Set permissions for individual page
-
-1. In the editor's **"Project"** window, right-click a single page in the page tree, and in the pop-up menu, click the **"Set Permissions"** button.<br>
-   ![alt text](50.png)
-2. In the pop-up **Access Level** window, set permissions for the page. The window will **default to displaying the currently assigned permissions and matching strategy** for the page, which can be modified as needed.
    ![alt text](51.png)
-3. Once the configuration is complete, click the **"OK"** button to finalize the permission settings for the page.
 
-**Example 1:**
+2. 在弹出的画面权限窗口中，在窗口左侧选择画面，默认所有画面均不选中。画面支持多选。点击画面区域的“清空”按钮，可以清除所有已选画面。
 
-If the user's permissions match the page permissions, they will be able to view the running page.
-
-1. Create a user with the role: Operator.
-2. Create a page (PageA) and set its permissions: `Authenticated/Roles/Operator`.
-3. This user viewed the running page of Page A and was able to view it successfully.
-
-**Example 2:**
-
-The page's access level path is included in the user's access level path, so the user has the right to view the running page.
-
-1. Create a user and set the access level through Identity Provider → User Grants to: `Authenticated/PlantA/TeamLeader`
-2. Create a page (PageA) and set its permission to: `Authenticated/PlantA`.
-3. This user viewed the running page of Page A and was able to view it successfully.
-
-**Example 3:**
-
-The user's access level path is included in the page's access level path, the user does not have the right to view the running page.
-
-1. Create a user and set the access level through Identity Provider → User Grants to: `Authenticated/PlantA`
-2. Create a page (PageA) and set its permission to: `Authenticated/PlantA/TeamLeader`.
-3. This user viewed the running page of Page A and does not have permission to view the running page.
    ![alt text](52.png)
 
+3. 选择画面后，在弹窗右侧的权限区域为所选画面设置权限。点击权限区域的“清空”按钮，可以清除所有已选权限。
 
+   - **匹配策略**：只能单选。默认选择“满足所有”，可以修改。
+      - 当选择“满足所有”时，用户需具有该画面设置的所有权限时，才能查看该画面的运行画面；
+      - 当选择“满足任一”时，用户只需具有该画面设置的其中一个权限，就可以查看该画面的运行画面。
+   - **权限**：在权限树上为这些画面设置权限。默认所有权限均不选中。支持多选。不可以同时选择父节点及其子节点。
+
+4. 设置完成，点击“保存”按钮，进行保存。例如下图，为画面Demo1,Alarms,History设置了 **Authenticated/Roles/车间主管** 的权限。
+
+   ![alt text](53.png)
+
+5. 点击保存按钮后，弹窗不会关闭，画面和权限重新处于清空状态，可以继续选择其他画面为其设置权限。
+6. 如果想查看画面已设置的权限，可以点击画面区域的“查看”按钮，查看每个画面已设置的权限。
+
+   ![alt text](54.png)
+
+**说明：**  
+
+1. 目录节点无需设置权限。 
+2. 在进行批量设置时，勾选画面后，不会在右侧的权限区域显示这些区域已经设置的权限，请通过画面区域的“查看”按钮进行查看。
+
+## 为单个画面设置权限
+
+1. 在编辑器的“项目”窗口中，在画面树上右击单个画面，在弹出的菜单中点击“设置权限”按钮。
+
+   ![alt text](55.png)
+
+2. 在弹出的Access Level弹窗中，为该画面设置权限。会默认显示该画面已设置的权限和匹配策略。可以重新设置。
+
+   ![alt text](56.png)
+
+3. 设置完成，点击“确认”按钮，完成对该画面的权限设置。
+
+**示例1：**
+
+用户的权限和画面权限一致，查看运行画面。
+
+1. 创建一个用户，用户的角色为：操作工。
+2. 创建一个画面A，为画面设置权限。画面权限为：Authenticated/Roles/操作工
+3. 该用户查看画面A的运行画面，可以成功查看。
+
+**示例2：**
+
+画面的access level路径包含在用户的accesss level路径内，用户有权查看画面。
+
+1. 创建一个用户，通过Identity Provider->User Grants将用户的access level设置为：Authenticated/车间A/组长
+2. 创建一个画面A，为画面设置权限。画面权限为：Authenticated/车间A
+3. 该用户查看画面A的运行画面，可以成功查看。
+
+**示例3：**
+
+用户的access level路径包含在画面的accesss level路径内，用户无权查看画面。
+
+1. 创建一个用户，通过Identity Provider->User Grants将用户的access level设置为：Authenticated/车间A
+2. 创建一个画面A，为画面设置权限。画面权限为：Authenticated/车间A/组长
+3. 该用户查看画面A的运行画面，无权限查看。
+
+![alt text](57.png)
 
