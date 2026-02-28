@@ -1,32 +1,32 @@
-# Test Login and Logout
+# 登录测试
 
-##  Login Test
+配置完Identity Provider后，可以通过登录测试，测试该Identity Provider下的用户是否可以成功登录系统。
 
-After configuring the Identity Provider, you can use the **Login Test** to verify whether users under this Identity Provider can successfully log into the system.
+## 登录测试
 
-##  Login Test
+1. 点击“Security”->“Identity Provider”菜单。
 
-1. Click the ”Security“->”Identity Provider“  menu。
+    ![alt text](18.png)
 
-    ![alt text](../1.png)
+2. 在Identity Provider列表的操作栏中，点击某一条数据的“登录测试”。
 
-2. In the Identity Provider list, click the **"Login Test"** button in the action column for a specific entry.
+    ![alt text](19.png)
 
-    ![alt text](39.png)
+3. 会在浏览器的新窗口打开登录界面。
 
-3. A new browser window will open with the login page.。
-4. Use the username and password of the currently selected Identity Provider to log in.
-5. If the login is successful, you will be redirected back to the Identity Provider Login Test page, where the response result will be displayed.
+4. 使用当前所选的Identity Provider的用户名和密码进行登录。
 
-    ![alt text](40.png)
+5. 如果登录成功，您将返回到Identity Provider的登录测试页面，并显示返回结果。
 
-## Test Logout 
+    ![alt text](20.png)
 
-After testing the login, you may not want to remain logged in. You can use the test logout feature to sign out.
+## 登出测试
 
-After clicking the **"Test Logout "** button, the current page will display the Identity Provider list.
+测试登录后，您不希望始终保持登录状态。您可以使用测试登出功能进行注销。
 
-![alt text](41.png)
+点击”测试登出“按钮后，当前页面会显示Identity Provider列表。
+
+![alt text](21.png)
 
 
 

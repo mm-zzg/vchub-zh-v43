@@ -336,7 +336,7 @@ nav:
                             - management-platform/redundancy/synchronization.md
                             - management-platform/redundancy/switch.md
 
-                  - Security:
+                  - 权限:
                             - management-platform/security/index.md
                             - management-platform/security/roles-and-users.md
                             - management-platform/security/user-group.md

@@ -1,12 +1,13 @@
-# Troubleshooting
+# 疑难解答
 
-## How to Log into the System When an OpenID Connect Identity Provider Becomes Invalid
+## OpenID Connect类型的Identity Provider无效后，如何登录系统s
 
-If an incorrect configuration of the OpenID Connect Identity Provider prevents login, follow these steps:
+如果OpenID Connect类型的Identity Provider配置错误导致无法登录时，可以进行如下操作：
 
-1. Open a web browser and enter the login page URL for VC Hub, for example:http://localhost:8066/#/login, go to the login page of VC Hub.
+1. 在浏览器中输入WAGO SCADA的登录页面的地址 ，例如：http://localhost:8066/#/login，进入WAGO SCADA的登录页面。
 
-      **localhost:8066** refers to the server address and port where **VC Hub** is deployed.
+      其中 **localhost:8086** 为WAGO SCADA部署服务器的地址和端口。
 
-2. Log in using a user account created within **VC Hub**.
-3. Modify the **Identity Provider** configuration as needed.
+2. 使用WAGO SCADA内创建的用户进行登录。
+
+3. 修改Identity Provider的配置。
