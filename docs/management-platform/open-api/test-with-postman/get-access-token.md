@@ -1,51 +1,27 @@
-# Get Access token
+# 获取access_token
 
-Before testing the Open API, we should first acquire the access token.
+在测试 Open API 之前，我们应该先获取访问令牌（access token）
 
-1. Log in VC Hub, navigate to the **Security->OIDC Server(Open API)** page, and create a new pair of client ID and client secret.  For details about the API credential management page, refer to chapter **"Secutity -> OIDC Server(Open API) Registrations"**. 
+1. 登录 SCADA，进入 API 凭据管理页面，并创建一对新的客户端 ID 和客户端密钥（client ID 和 client secret）。关于API授权管理可以参考 [OpenID Connect客户端](../../security/open-api.md)
 
     ![alt text](1.png)
 
+2. 点击 **API权限** 按钮并给新创建的客户端ID附上所有的权限。
+
     ![alt text](2.png)
 
-2. Click the "Open API" link and grant all permissions to the new client id.
+3. 打开 Postman 应用程序，点击菜单创建一个 HTTP 请求，如下图所示。
 
     ![alt text](3.png)
 
+4. 创建一个针对 URL `https://localhost:8043/.well-known/openid-configuration` 的 GET 请求。点击“Send”按钮发送请求，并从响应中提取 Token URL。请注意，Open API 仅支持 HTTPS 协议。HTTPS 的默认端口是 8043，可以在节点设置页面进行配置。关于节点配置，可以参考 [节点配置](../../node-configuration/index.md)
+
     ![alt text](4.png)
 
-
-
-
-
-3.  Open the Postman application and create an HTTP request by clicking the menu, as shown in the screenshot below.
+5. 输入在 API 凭据页面注册的客户端 ID 和客户端密钥，如下例所示。将 `grant_type` 设置为 `"client_credentials"`，然后点击“Send”按钮。访问令牌（access token）可以从 HTTP 响应中提取。请注意，请求体格式必须为 `x-www-form-urlencoded`。
 
     ![alt text](5.png)
 
-
-
-4. Create a GET request for the URL `https://localhost:8043/.well-known/openid-configuration.` Send the request by clicking the **Send** button, and extract the **Token URL** from the response. Note that the Open API only supports HTTPS protocol. The default port of https is 8043 and it can be configured on node settings page.  For the node settings page,  refer to chapter **"Node Configuration"**.
-
+6. 以上的示例展示了订阅实时变量步骤，对于其他的类型的实时数据可以参考下面示例中的payload中的target字段代表实时数据API的方法名称。您可以通过将target值替换为在实时数据API定义文档中指定的方法名称，来调用其他WebSocket API。
 
     ![alt text](6.png)
-
-
-
-5. Create a POST request with the token url retrived from the previous step.
-
-    ![alt text](7.png)
-
-
-
-6.  Enter the client ID and client secret registered on API credentials page,  as shown in the example below. Set the grant_type to "client_credentials", then click the send button. The access token can be extracted from the HTTP response. Note that the request body format must be  **x-www-form-urlencoded.**
-
-    ![alt text](8.png)
-
-| **Key**       | **Description**                                                                         |
-|---------------|-----------------------------------------------------------------------------------------|
-| client_id     | The client id registered in the API credentials management page                         |
-| client_secret | The client secret registered in the API credentials management page                     |
-| grant_type    | The grant type of the open id request. Only the "client_credentials" value is supported |
-
-
-

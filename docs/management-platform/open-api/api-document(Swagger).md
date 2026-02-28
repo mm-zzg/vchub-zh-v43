@@ -8,25 +8,25 @@
 
 1. 点击“授权”按钮以输入访问令牌。有关访问令牌的信息，请参考 [Open Id Connect](open-id-connect.md) 部分。请注意，输入访问令牌时，访问令牌应格式化为“Bearer {access_token}”。
 
-  ![alt text](3.png)
+    ![alt text](3.png)
 
-  ![alt text](4.png)
+    ![alt text](4.png)
 
 2. 点击箭头展开API详情
 
-  ![alt text](5.png)
+    ![alt text](5.png)
 
-  ![alt text](6.png)
+    ![alt text](6.png)
 
 3. 点击 “Try it out”, 然后点击 “Execute” 调用API
 
-  ![alt text](7.png)
+    ![alt text](7.png)
 
-  ![alt text](8.png)
+    ![alt text](8.png)
 
 4. 服务端返回API的结果
 
-  ![alt text](9.png)
+    ![alt text](9.png)
 
 ## 如何指定返回的语言？
 
