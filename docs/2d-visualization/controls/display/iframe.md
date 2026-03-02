@@ -1,36 +1,33 @@
 # IFrame
 
-The IFrame control is used to embed another web page in the current web page to render the content of the URL page.
+IFrame控件用于在当前网页中嵌入另一个网页，进行网址页面内容的呈现。
 
-![alt text](28.png)
+![alt text](27.png)
 
+**属性**
 
+| 名称 | 描述  |
+|:----------|:---------|
+| 名字     | 此控件的名称。    |
+| X        | 控件左侧距画布左侧的距离，单位px。|
+| Y        | 控件顶部距画布顶部的距离，单位px。  |
+| W        | 控件的宽度，单位px。 |
+| H        | 控件的高度，单位px。   |
+| Iframe   | 设置Iframe内嵌的网址。可以点击绑定按钮绑定相关URL地址，或者直接在输入框中填写URL地址。  <br>![alt text](28.png) |
+| 边框     | 设置边框色和边框粗细。  |
 
-**Properties**
+**动作**
 
-| **Name** | **Description**   |
-|----------|---------|
-| Name     | The name of this control.|
-| X        | The distance between the left side of the control and the left side of the canvas. |
-| Y        | The distance between the top of the control and the top of the canvas.  |
-| W        | The width of the control. |
-| H        | The height of the control. |
-| Iframe   | Set the URL embedded in the Iframe. You can click the bind button to bind the relevant URL address, or directly fill in the URL address in the input box.   <br>![alt text](29.png)|
-| Border   | Set the border color and border thickness. |
+允许您基于某种条件执行特定的动作。请参阅“[动作](../../event/index.md)”页上各种动作的完整描述。
 
-**Event**
+**示例**
 
-Allows you to perform specific events based on certain conditions. See the full description of each event on the **2D Visualization-> Event** page.
+通过IFrame，打开google页面。
 
-**Example**
+![alt text](29.png)
 
-Through IFrame, open the google page.
-
-![alt text](30.png)
-
-| **Property**     | **Value**                                        |
-|------------------|--------------------------------------------------|
-| Border color     | dcdcdc                                           |
-| Border thickness | 2                                                |
-| URL              | [https://www.google.cn/](https://www.google.cn/) |
-
+| 属性 | 值                                           |
+|:----------|:--------------------------------------------------|
+| 边框色   | 6ec800                                           |
+| 边框粗细 | 2                                                |
+| 链接地址 | [https://www.google.cn/](https://www.google.cn/) |

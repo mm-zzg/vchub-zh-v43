@@ -1,71 +1,71 @@
-# Value Display
+# 值显示
 
-Value display control is used to display data, which can display numerical, boolean, string and datatime data.
+值显示控件用于显示数据，可以显示数值型、布尔型、字符型、datatime型数据。
 
 ![alt text](11.png)
 
-**Properties**
+**属性**
 
-| **Name**   | **Describe**     |
-|-------|---------|
-| Name | The name of this control.  |
-| X  | The distance between the left side of the control and the left side of the canvas.  |
-| Y | The distance between the top of the control and the top of the canvas.  |
-| W | The width of the controlx. |
-| H  | Height of the control.  |
-| ![alt text](12.png) | The angle of the control. |
-| Data   | The data received by the control.  <br> -Text: What needs to be displayed. You can enter it manually or click the binding button to bind.   <br> -Units: Sets the unit of the displayed data. You can enter it manually or click the Bind button to bind it. <br> - Format: The content format is expected to be displayed. You can enter it manually or click the settings button and double-click to select the desired format. |
-| Fill  | The fill color of the control.  <br>![alt text](13.png) |
-| Font  | Set the font of the control content. Including font , font size, font color, bold, italic, underline, horizontal alignment, vertical alignment.|
-| Right Click Menu | Setting the context menu on the control allows you to set the background color, border color, font type, font size, font color, bold, and skew of the menu. You can configure actions for the context menu, including navigation, set value, set property, and script.  On the running page, right-click on the control to display the context menu.  |
+| 名称   | 描述   |
+|:------------|:--------------|
+| 名字  | 此控件的名称。 |
+| X    | 控件左侧距画布左侧的距离，单位px。  |
+| Y   | 控件顶部距画布顶部的距离，单位px。  |
+| W    | 控件的宽度，单位px。  |
+| H   | 控件的高度，单位px。    |
+| ![alt text](12.png) | 控件的角度。  |
+| 数据 | 控件接收的数据。  <br>- 文本：需要显示的内容。可以手动输入，也可以点击绑定按钮进行绑定。 <br>- 单位：设置显示的数据的单位。可以手动输入，也可以点击绑定按钮进行绑定。<br>- 格式：期望显示的内容格式。可以手动输入，也可以点击设置按钮，双击选择需要的格式。|
+| 填充    | 控件的填充色。  ![alt text](13.png) |
+| 字体   | 设置控件内容的字体。包括字体型号、字体大小、字体颜色、加粗、倾斜、下划线、水平对齐方式、垂直对齐方式。 |
+| 右键菜单  | 在控件上设置右键菜单，可以设置菜单的背景色、边框色、字体型号、字体大小、字体颜色、加粗、倾斜。可以为右键菜单配置对应的动作，包括：导航，变量赋值，属性赋值和执行脚本。  在运行页面，在控件上单击鼠标右键，显示右键菜单。**(4.2.1及其以上版本，支持此功能)**  |
 
-**Animation**
+**动画**
 
-Allow you to execute specific animations based on certain conditions. Please refer to the complete description of various animations on the **2D Visualization-> Animation** page.
+允许您基于某种条件执行特定的动画。请参阅“[动画](../../animation.md)”页上各种动画的完整描述。
 
-**Event**
+**动作**
 
-Allow you to perform specific event based on certain conditions. Please refer to the complete description of various events on the **2D Visualization-> Event** page.
+允许您基于某种条件执行特定的动作。请参阅“[动作](../../event/index.md)”页上各种动作的完整描述。
 
-**Example 1**
+**示例1**
 
-Display the temperature of the current working environment.
+显示当前工作环境温度。
 
-![alt text](14.png)
+![alt text](14.png) 
 
-| **Property** | **Value**     |
-|--------------|--------------|
-| Fill         | 2c2c2c |
-| Text         | Binding tag: Demo:temperature  <br>![alt text](15.png) |
-| Units        | ℃    |
-| Font         | Calibri, 16, ffffff, horizontal right, vertical center |
+| 属性 | 值  |
+|:----------|:----------------|
+| 填充色   | 2c2c2c  |
+| 文本     | 绑定变量：@区域:温度  <br>![alt text](15.png) |
+| 单位     | ℃    |
+| 字体     | 微软雅黑,16, ffffff, 水平居右, 垂直居中 |
 
-**Example 2**
+**示例2**
 
-Display the system time.
+显示系统时间。
 
 ![alt text](16.png)
 
-| **Property** | **Value**                                               |
-|--------------|---------------------------------------------------------|
-| Text         | Binding tag: System:Server.CurrentDateTime              |
-| Format       | yyyy-MM-dd HH:mm:ss                                     |
-| Font         | Calibri, 16, 6ec800, horizontal center, vertical center |
+| 属性 | 值                                |
+|:----------|:----------------------------------------|
+| 文本     | 绑定变量：System:Server.CurrentDateTime |
+| 格式     | yyyy-MM-dd HH:mm:ss                    |
+| 字体     | Calibri,16, 6ec800，水平居中, 垂直居中  |
 
-**Example 3**
+**示例3**
 
-View Celsius and Fahrenheit temperatures via the right-click menu.
+通过右键菜单，查看摄氏温度和华氏温度。
 
 ![alt text](17.png)
 
-| **Property**     | **Value**         |
-|------------------|------------|
-| Text             | expression：  <br>const value = tag('@Demo:temperature');  <br>if(property('ValueDisplay1#units') === '℃'){      <br>return value;  <br>}  <br>return (value * 9 / 5) + 32; |
-| Format           | #,##0.# |
-| Font             | Calibri,16, 6ec800，horizontal center, vertical center |
-| Right Click Menu | Add two right-click menus: Celsius, Fahrenheit.  In the Fahrenheit action, set the property binding, which displays the value of the control's UNITS property, to set its value to ℉  <br>![alt text](18.png)  In the Celsius action, set the property binding, which displays the value of the control's units property, to set its value to °C  <br>![alt text](19.png) |
+| 属性 | 值  |
+|:----------|:----------|
+| 文本     | 绑定表达式：  const value = tag('@Demo:temperature');  if(property('值显示1#units') === '℃'){      return value;  }  return (value * 9 / 5) + 32;   |
+| 格式     | #,##0.#    |
+| 字体     | Calibri,16, 6ec800，水平居中, 垂直居中   |
+| 右键菜单 | 添加两个右键菜单：摄氏度，华氏度。  <br>在华氏度的动作中，设置属性绑定，绑定值显示控件的units属性，将其值设置℉  <br>![alt text](18.png) <br>在摄氏度的动作中，设置属性绑定，绑定值显示控件的units属性，将其值设置℃  <br>![alt text](19.png) |
 
-Click the Preview button on the page, and on the preview page, right-click the control to toggle the context menu and view the display.
+点击画面的预览按钮，在预览画面上，右击该控件，切换右键菜单，查看显示效果。
 
-![value-display](../../../assets/images/value-display.gif)
+![alt text](2.gif)
 

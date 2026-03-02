@@ -1,74 +1,73 @@
-# Label
+# 文本标签
 
-The Label control is used to display text, either static text or, through property binding, dynamic content.
+文本标签控件用来显示文本，可以是静态文本，也可以通过属性绑定，显示动态内容。
 
 ![alt text](1.png)
 
-**Properties**
+**属性**
 
-| **Name** | **Description**  |
-|-----------------|----|
-| Name | The name of this control.| X | Distance of the left side of the control from the left side of the canvas. |
-| Y  | The distance from the top of the control to the top of the canvas. |
-| W | Width of the control.  |
-| H   | The height of the control. |
-| ![alt text](3.png) |The angle of the control.|
-| Text  | The content displayed by the control.  |
-| Background | The background color of the control. <br>![alt text](2.png)  |
-| Border | The border color of the control.  <br>![alt text](4.png) |
-| Border Thickness  | The border thickness of the control.  |
-| Shadow | Sets the shadow effect of the control. You can set the outer shadow and inner shadow. <br> **Outer**   <br>**- Enable**: Whether to enable the shadow effect  <br>**- Color**: Used to set the shadow color <br> **- X**: Controls how far the shadow is shifted horizontally.  <br>`X = 10` → shadow moves 10px to the right  <br>`X = -5` → shadow moves 5px to the left <br>**- Y**: Controls how far the shadow is shifted vertically.  <br>`Y = 8` → shadow moves 8px downward  <br>`Y = -3` → shadow moves 3px upward <br> **- Blur**: Controls how soft or sharp the edges of the shadow appear. Higher values make the shadow more blurry and spread out. <br> **Inner**  <br>**- Enable**: Whether to enable the shadow effect  <br>**- Color**: Used to set the shadow color <br>**- X**: Controls how far the shadow is shifted horizontally.  <br>`X = 10` → shadow moves 10px to the right  <br>`X = -5` → shadow moves 5px to the left <br>**- Y**: Controls how far the shadow is shifted vertically.  <br>`Y = 8` → shadow moves 8px downward  <br>`Y = -3` → shadow moves 3px upward <br>**- Blur**: Controls how soft or sharp the edges of the shadow appear. Higher values make the shadow more blurry and spread out. <br>  **- Spread**: Controls how much the shadow **expands or contracts** from the shape. |
-| Font | Sets the font of the text content. This includes font, font size, font color, bold, italic, underline, horizontal alignment, and vertical alignment. |
-| Right Click Menu  | Setting the context menu on the control allows you to set the background color, border color, font type, font size, font color, bold, and skew of the menu. You can configure actions for the context menu, including navigation, set value, set property, and script.  On the running page, right-click on the control to display the context menu. |
+| **名称**  | **描述**  |
+|------------------|------------|
+| 名字   | 此控件的名称。 |
+| X    | 控件左侧距画布左侧的距离，单位px。  |
+| Y   | 控件顶部距画布顶部的距离，单位px。 |
+| W   | 控件的宽度，单位px。  |
+| H   | 控件的高度，单位px。  |
+|![alt text](2.png) | 控件的角度。 |
+| 文本   | 控件显示的内容。  |
+| 填充  | 控件的背景色。  <br>![alt text](3.png) |
+| 边框    | 控件的边框色。  <br>![alt text](4.png)  |
+| 边框粗细   | 控件的边框粗细。  |
+| 阴影   | 设置控件的阴影效果。可以设置外阴影和内阴影。 <br> **外阴影**   <br>- **启用**：是否启用阴影效果  <br>- **颜色**：用于设置阴影颜色  <br>- **X**：控制阴影在水平方向上的偏移量。  <br>`X = 10` → 阴影往右移了10像素  <br>`X = -5` → 阴影往左移了5像素  <br>- **Y**：控制阴影在垂直方向上的偏移量。  <br>`Y = 8` → 阴影往下移了8像素  <br>`Y = -3` → 阴影往上移了3像素   <br>- **模糊**：控制阴影的模糊程度，模糊值越大，边缘越柔和、越“自然”。 - **内阴影** <br>- **启用**：是否启用阴影效果 <br>- **颜色**：用于设置阴影颜色  <br>- **X**：控制阴影在水平方向上的偏移量。  <br>`X = 10` → 阴影往右移了10像素  <br>`X = -5` → 阴影往左移了5像素 <br>- **Y**：控制阴影在垂直方向上的偏移量。  <br>`X = 8` → 阴影往下移了8像素  <br>`Y = -3` → 阴影往上移了3像素  <br>- **模糊**：控制阴影的模糊程度，模糊值越大，边缘越柔和、越“自然”。<br>- **扩散**：控制阴影的大小 |
+| 字体  | 设置文本内容的字体。包括字体型号、字体大小、字体颜色、加粗、倾斜、下划线、水平对齐方式、垂直对齐方式。|
+| 右键菜单   | 在控件上设置右键菜单，可以设置菜单的背景色、边框色、字体型号、字体大小、字体颜色、加粗、倾斜。可以为右键菜单配置对应的动作，包括：导航，变量赋值，属性赋值和执行脚本。  在运行许页面，在控件上单击鼠标右键，显示右键菜单。**(4.2.1及其以上版本，支持此功能)** |
 
-**Animation**
+**动画**
 
-Allows you to perform specific animations based on certain conditions. See the  **2D Visualization-> Animation** page for a complete description of the various animations.
+允许您基于某种条件执行特定的动画。请参阅“[动画](../../animation.md)”页上各种动画的完整描述。
 
-**Event**
+**动作**
 
-Allows you to perform a specific event based on certain conditions. See the **2D Visualization-> Event** page for a complete description of the various events.
+允许您基于某种条件执行特定的动作。请参阅“[动作](../../event/index.md)”页上各种动作的完整描述。
 
-**Example 1**
+**示例1**
 
-Displays a static text. 
+显示一段静态文本。
 
 ![alt text](5.png)
 
-| **Name**   | **Description**                                |
-|------------|------------------------------------------------|
-| Background | ace9ac                                         |
-| Text       | Demo Screen                                    |
-| Font       | Calibri,16, Horizontal center, Vertical center |
+| 名称 | 描述                       |
+|:----------|:--------------------------------|
+| 背景     | ace9ac                         |
+| 文本     | 演示画面                       |
+| 字体     | Calibri,16, 水平居中, 垂直居中 |
 
-**Example 2**
+**示例2**
 
-Use text to display the operating status of the device.
+使用文本显示设备的运行状态。
 
 ![alt text](6.png)
 
-| **Name** | **Description**                                                              |
-|----------|------------------------------------------------------------------------------|
-| Text     | Binding expression: "Device operational status: "+tag('@area:device1status') |
-| Font     | Calibri, 16, font color f0672e, horizontal left, vertical center             |
+| 名称 | 描述                                          |
+|:----------|:---------------------------------------------------|
+| 文本     | 绑定表达式："设备运行状态:"+tag('@区域:设备1状态') |
+| 字体     | Calibri, 16, 字体颜色f0672e，水平居左, 垂直居中    |
 
-**Example 3**
+**示例3**
 
-When the user right clicks on the label , the following context menu pops up
+当用户右键点击一个水泵温度的文本标签 时，弹出如下右键菜单
 
 ![alt text](7.png)
 
-**Properties：**
+控件属性：
 
-| **Name**         | **Description**  |
-|------------------|--------------|
-| Text             | Pump temperature |
-| Font             | Calibri, 16, #000000, Horizontal center, Vertical center|
-| Right Click Menu | Add the following 2 right-click menus: <br> ![alt text](8.png)  <br> - View Historical Chart: Click on the Action button, select “Navigation” in the Action Settings window, and select a pop-up window that displays the historical chart of the pump.          <br>Note: The pop-up window needs to be pre-configured.  <br>![alt text](9.png) <br> - Set Alarm Limits: Click the Action button and select “Set Value” in the Action Setting window. Select “Demo:temperature#Alarm. Limit”. Select ‘NumberInput1#value’ for the new value. <br> When you click on this context menu, it takes the value entered in the numberinput,set it as the limit value of Demo:temperature#Alarm.High.  <br>![alt text](10.png) |
+| **名称** | **描述**   |
+|----------|------------|
+| 文本     | 水泵温度   |
+| 字体     | Calibri, 16, 字体颜色000000，水平居左, 垂直居中  |
+| 右键菜单 | 增加如下2个右键菜单： <br>![alt text](8.png) <br>- 查看历史曲线：点击动作按钮，在动作设置窗口选择“导航”，选择一个弹窗，该弹窗用于显示水泵的历史趋势图。说明，需预先配置好该弹窗。  <br>![alt text](9.png)  <br>- 设置报警限值：点击动作按钮，在动作设置窗口选择“变量赋值”。变量选择”@Demo:temperature#Alarm.高温报警.Limit”。新值选择”数字输入框1#value”。  <br>点击该右键菜单时，会将数字输入框中输入的值，设置为变量@Demo:temperature#Alarm.高温的报警限值。  <br>![alt text](10.png) |
 
-Click the preview button on the page, click the label control on the preview page, and then click “View Historical Chart” in the right-click menu to display the following effect:
+点击画面的预览按钮，在预览页面点击该label控件，在右键菜单中点击“查看历史曲线”，显示效果如下：
 
-![label](../../../assets/images/label.gif)
-
-
+![alt text](1.gif)
 

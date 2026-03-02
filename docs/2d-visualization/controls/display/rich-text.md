@@ -1,49 +1,45 @@
-# Rich Text
+# 富文本
 
-Rich Text controls allow you to apply rich styles, formatting and multimedia elements to text. Compared to plain text, rich text can include font styles, colors, bold, italic, underline and other text styles, as well as insert tables, links and more.
+富文本控件允许您在文本中应用丰富的样式、格式和多媒体元素。与纯文本相比，富文本可以包含字体样式、颜色、加粗、斜体、下划线等文本样式，同时还可以插入表格、链接等。
 
-VC Hub's built-in rich text editor supports two editing modes: Markdown and WYSIWYG(what you see is what you get).
+WAGO SCADA内置的富文本编辑器支持两种编辑模式：Markdown、所见即所得。
 
-**Markdown Mode**
+## Markdown 模式
 
-- Markdown is a lightweight markup language for formatting plain text and adding structure and style.
-- In Markdown mode, you can use simple symbols and tags to represent different text styles, such as headings, bold, italics, links, and so on.
-- The editor converts the Markdown syntax into rich text format to display the desired styles when previewing or publishing.
-- Markdown mode is suitable for users who are familiar with Markdown syntax and provides more control and flexibility.
+- Markdown 是一种轻量级的标记语言，用于格式化纯文本并添加结构和样式。
+- 在 Markdown 模式下，你可以使用简单的符号和标记来表示不同的文本样式，例如标题、粗体、斜体、链接等。
+- 编辑器会将 Markdown 语法转换为富文本格式，以便在预览或发布时显示所期望的样式。
+- Markdown 模式适合熟悉 Markdown 语法的用户，它提供了更多的控制和灵活性。
 
-**WYSIWYG Mode**
+## 所见即所得模式
 
-- WYSIWYG mode allows you to see the final formatting directly in the editor, just as you would in a regular text processing program.
-- In WYSIWYG mode, you can apply different styles, such as fonts, sizes, colors, alignments, etc. via toolbars, shortcuts or right-click menus.
-- WYSIWYG mode is more intuitive and easier to use, and there's no need to memorize or understand specific markup syntax.
+- 所见即所得模式允许你直接在编辑器中看到最终的格式化效果，就像在一个常规的文本处理软件中一样。
+- 在所见即所得模式下，你可以通过工具栏、快捷键或右键菜单来应用不同的样式，例如字体、大小、颜色、对齐方式等。
+- 所见即所得模式更加直观和易于使用，无需记忆或了解特定的标记语法。
 
-Whether you choose Markdown or WYSIWYG mode depends on your personal preferences and usage scenarios. If you are used to Markdown syntax, or need more control and flexibility, then Markdown mode may be better for you. If you prefer to edit text intuitively and see results instantly, then WYSIWYG mode may be more suitable for you.                           
+选择 Markdown 模式还是所见即所得模式取决于您的个人偏好和使用场景。如果您习惯使用 Markdown 语法，或者需要更多的控制和灵活性，那么 Markdown 模式可能更适合您。如果您更喜欢直观地编辑文本并即时看到结果，那么所见即所得模式可能更适合您。
 
-**Properties**
+**属性**
 
-| **Name**         | **Description**   |
-|------------------|---------------------|
-| Name             | The name of this control. |
-| X                | Distance of the left side of the control from the left side of the canvas.  |
-| Y                | The distance from the top of the control to the top of the canvas.  |
-| W                | Width of the control.    |
-| H                | The height of the control.   |
-| Background       | The background color of the rich text control. |
-| Text             | Set the content and format of the text. Click the Edit button to bring up the Rich Text Editor, which allows you to edit the text within the editor.  The editing window is as follows:  <br>![alt text](31.png)  <br> ![alt text](32.png) Title   <br>![alt text](33.png) Bold  <br>![alt text](34.png) Italic <br>![alt text](35.png) Set the color of the text <br>![alt text](36.png) Show strikethrough on selected text <br>![alt text](37.png) Insert a dividing line between two lines of text <br>![alt text](38.png) Highlighting quoted content <br>![alt text](39.png) Unordered list. Each piece of content is identified by a symbol or specific tag, rather than being numbered sequentially.   Unordered lists serve to highlight the equality between items and provide an easy way to list related content.   <br>Example:   <br>![alt text](40.png) <br>![alt text](41.png)Ordered list. Used to present a sequential content format where each item is labeled with a number and numbered in the order in which it appears in the list. The purpose of an ordered list is to make the relationships between items clearer and to provide structured and organized information.   <br>Example:<br> ![alt text](42.png) <br>![alt text](43.png) To-Do List. A format used to record and organize pending tasks. <br>Example:  <br>![alt text](44.png) <br>![alt text](45.png)Indent. Select the text you want to indent, then use the Tab key or the Indent button to move it to the right. Indentation works when Unorganized, Ordered, or To-Do Lists are enabled.  <br>![alt text](46.png) Reduce Indent. Select the text you want to reduce the indentation, then use the Shift+Tab keys or the Reduce Indent button to move it back to its original position. Reduce Indentation works when Unordered, Ordered, or To-Do List is enabled.  <br>![alt text](47.png) <br>![alt text](48.png)Insert URL  <br>![alt text](49.png) Insert code for short code snippets.  <br>![alt text](50.png) Insert code, suitable for inserting longer code snippets.|
-| Border Color     | The border color of the rich text.   |
-| Border Thickness | The border thickness of the rich text.   |
+| 名称 | 描述    |
+|:----------|:---------------------|
+| 名字     | 此控件的名称。     |
+| X        | 控件左侧距画布左侧的距离，单位px。     |
+| Y        | 控件顶部距画布顶部的距离，单位px。     |
+| W        | 控件的宽度，单位px。    |
+| H        | 控件的高度，单位px。    |
+| 背景     | 富文本控件的背景色。   |
+| 文本     | 设置文本的内容和格式。点击编辑按钮，弹出富文本编辑器，可以在编辑器内对文本进行编辑。  <br>编辑窗口如下：   <br>![alt text](30.png)   <br>![alt text](31.png) 标题  <br>![alt text](32.png) 字体加粗  <br>![alt text](33.png) 字体倾斜 <br>![alt text](34.png) 设置文字的颜色 <br>![alt text](35.png) 在选中的文本上显示删除线 <br>![alt text](36.png) 在两行文本之间插入分割线  <br>![alt text](37.png) 突出引用的内容  <br>![alt text](38.png) 无序列表。每个内容都以符号或特定的标记进行标识，而不是按照顺序编号。无序列表的作用是突出项目之间的平等性，并提供一个简单的方式来列举相关的内容。<br>例如：  <br>![alt text](39.png) <br>![alt text](40.png) 有序列表。用于呈现按顺序排列的内容格式，每个项目都以数字作为标记，并按照其在列表中的顺序进行编号。有序列表的作用是使项目之间的关系更清晰，并提供结构化和有序的信息。<br>例如：  <br>![alt text](41.png) <br>![alt text](42.png) 待办列表。用于记录和组织待完成任务的格式。<br>例如：  <br>![alt text](43.png) <br>![alt text](44.png) 缩进。选中要缩进的文本，然后使用Tab键或缩进按钮，将其向右移动。在启用了无序、有序或待办列表的情况下，缩进功能才生效。 <br>![alt text](45.png) 减少缩进。选中要减少缩进的文本，然后使用Shift+Tab键或减少缩进按钮，将其移回原来的位置。在启用了无序、有序或待办列表的情况下，减少缩进功能才生效。  <br>![alt text](46.png) 插入表格  <br>![alt text](47.png) 插入URL  <br> ![alt text](48.png) 插入代码，适用于简短的代码片段。<br>![alt text](49.png)插入代码，适用于插入较长的代码片段。   <br>**如何退出代码模式：在 Markdown 模式下，在格式外按回车即可； 在WYSIWYG 模式下，按ctrl+回车** |
+| 边框颜色 | 富文本的边框颜色。   |
+| 边框粗细 | 富文本的边框粗细。   |
 
-**Note:** How to exit the code mode: in Markdown mode, press enter outside the formatting; in WYSIWYG mode, press ctrl + enter.
+**动作**
 
-**Event**
+允许您基于某种条件执行特定的动作。请参阅“[动作](../../event/index.md)”页上各种动作的完整描述。
 
-Allows you to perform a specific event based on certain conditions. See the**2D Visualization-> Event** page for a complete description of the various events.
+**示例**
 
-Example
+通过富文本，显示设备的相关信息。
 
-Displaying information about a device via rich text.
-
-![alt text](51.png)
-
-
+![alt text](50.png)
 

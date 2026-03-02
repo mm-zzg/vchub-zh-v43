@@ -1,77 +1,77 @@
-# LED Display
+# 数码管
 
-In industrial automation equipment, used to monitor and display various parameters, status and fault information.
+工业自动化设备中，用于监控和显示各种参数、状态和故障信息
 
 ![alt text](20.png)
 
-**Properties**
+**属性**
 
-| **Name** | **Description** |
-|--------|--------------|
-| Name | The name of this control.  |
-| X | The distance between the left side of the control and the left side of the canvas.|
-| Y | The distance between the top of the control and the top of the canvasx.  |
-| W  | The width of the control. |
-| H | The height of the control. |
-| ![alt text](21.png) | The angle of the control. |
-| Data  | Data received by the control.  <br>- Text: The content that needs to be displayed. You can enter it manually or click the bind button to bind.   <br>-  Format: The format of content expected to be displayed. You can enter it manually, or you can click the settings button and double-click to select the required format.  |
-| Fill | The fill color of the control. |
-| Border| Set the border color and border thickness. |
-| Font   | Sets the font for the control's content. Including font type, font size, font color, bold, italic, underline, horizontal alignment, and vertical alignment. |
-| Right Click Menu    | Setting the context menu on the control allows you to set the background color, border color, font type, font size, font color, bold, and skew of the menu. You can configure actions for the context menu, including navigation, set value, set property, and script.  On the running page, right-click on the control to display the context menu. |
+| 名称   | 描述   |
+|:----------|:-----------|
+| 名字    | 此控件的名称。    |
+| X  | 控件左侧距画布左侧的距离，单位px。  |
+| Y   | 控件顶部距画布顶部的距离，单位px。 |
+| W   | 控件的宽度，单位px。  |
+| H   | 控件的高度，单位px。   |
+| ![alt text](21.png) | 控件的角度。 |
+| 数据   | 控件接收的数据。  <br>- 文本：需要显示的内容。可以手动输入，也可以点击绑定按钮进行绑定。  <br>- 格式：期望显示的内容格式。可以手动输入，也可以点击设置按钮，双击选择需要的格式。  |
+| 填充  | 控件的填充色。  |
+| 边框  | 设置边框色和边框粗细。|
+| 字体   | 设置控件内容的字体。包括字体型号、字体大小、字体颜色、加粗、倾斜、下划线、水平对齐方式、垂直对齐方式。 |
+| 右键菜单  | 在控件上设置右键菜单，可以设置菜单的背景色、边框色、字体型号、字体大小、字体颜色、加粗、倾斜。可以为右键菜单配置对应的动作，包括：导航，变量赋值，属性赋值和执行脚本。  在运行页面，在控件上单击鼠标右键，显示右键菜单。**(4.2.1及其以上版本，支持此功能)**  |
 
-**Animation**
+**动画**
 
-Allows you to perform specific animations based on certain conditions. See full descriptions of various animations on the **2D Visualization-> Animation** page.
+允许您基于某种条件执行特定的动画。请参阅“[动画](../../animation.md)”页上各种动画的完整描述。
 
-**Event**
+**动作**
 
-Allows you to perform specific event based on certain conditions. See the full description of each event on the **2D Visualization-> Event** page.
+允许您基于某种条件执行特定的动作。请参阅“[动作](../../event/index.md)”页上各种动作的完整描述。
 
-**Example 1**
+**示例1**
 
-Displays the  status of the device.
+显示设备的运行状态。
 
 ![alt text](22.png)
 
-| **Property**     | **Value**                                                |
-|------------------|----------------------------------------------------------|
-| Fill             | 2a2a2a                                                   |
-| Border color     | 808080                                                   |
-| Border thickness | 4                                                        |
-| Text             | Area.Status                                             |
-| Font             | e9bf2b, bold, horizontally centered, vertically centered |
+| 属性 | 值                       |
+|:---------|:-------------------------------|
+| 填充色   | 2a2a2a                        |
+| 边框色   | 808080                        |
+| 边框粗细 | 4                             |
+| 文本     | @区域.运行状态                |
+| 字体颜色 | e9bf2b，加粗，水平居中，垂直居中 |
 
-**Example 2**
+**示例2**
 
-Displays the temperature of the workshop.
+显示车间的温度。
 
 ![alt text](23.png)
 
-| **Property**     | **Value**  |
-|------------------|----------------|
-| Fill             | c0c0c0 |
-| Border color     | f06868 |
-| Border thickness | 2 |
-| Text             | Bind Expression：tag('Area:temperature')+"℃"  <br>![alt text](24.png) |
-| Font             | 18, bold, ff0000, horizontally centered, vertically centered|
+| 属性 | 值                            |
+|:----------|:-----------------------------------|
+| 填充颜色 | c0c0c0                            |
+| 边框颜色 | f06868                            |
+| 边框粗细 | 2                                 |
+| 文本     | 绑定表达式：tag('@区域:温度')+"℃"  |
+| 字体颜色 | 18，加粗，ff0000, 水平居中，垂直居中 |
 
-**Example 3**
+**示例3**
 
-The start/stop status of the device is controlled and displayed via the right-click menu.
+通过右键菜单控制设备的启停状态并显示。
 
-![alt text](25.png)
+![alt text](24.png)
 
-| **Property**     | **Value**  |
-|------------------|-------------|
-| Fill             | c0c0c0|
-| Border color     | f06868  |
-| Border thickness | 2  |
-| Text             | Expression: <br> let a =tag('Demo:status'); <br> if (a)  <br>{   <br>return "Running"; //When the value of the tag is true, the content of the control displays Running.  <br>}  <br>else  <br>{      <br>return "Stopped";//When the value of the tag is false, the content of the control displays Stopped.  <br>}  |
-| Font             | 18, bold, ff0000, horizontally centered, vertically centered |
-| Right Click Menu | Create 2 right-click menus: Start, Stop.  Setting the Start action: when this menu is clicked, set the value of the tag "Demo:status" to 1   <br>![alt text](26.png)  Setting the Stop action: when this menu is clicked, set the value of the tag "Demo:status" to 0   <br>![alt text](27.png)|
+| 属性 | 值 |
+|:----------|:----------|
+| 填充颜色 | c0c0c0  |
+| 边框颜色 | f06868  |
+| 边框粗细 | 2  |
+| 文本     | 绑定表达式：  let a =tag('@Demo:status');  if (a)  {   return "Running"; //变量值为true时，控件内容显示Running  }  else  {      return "Stopped";//变量值为true时，控件内容显示Stopped  }  |
+| 字体颜色 | 18，加粗，ff0000, 水平居中，垂直居中 |
+| 右键菜单 | 创建2个右键菜单：开启，关机。  <br>设置开机动作：点击该菜单时，将变量@Demo:status的值设置为1  <br>![alt text](25.png) <br>设置关机动作：点击该菜单时，将变量@Demo:status的值设置为0  <br>![alt text](26.png) |
 
-Click the Preview button on the page, and then click the right-click menu of the control on the Preview page to see what the control displays. When you click the Start menu, the device is turned on and the control displays Running, when you click the Stop menu, the device is turned off and the control displays Stopped.
+点击画面的预览按钮，在预览页面点击控件的右键菜单，查看控件的显示内容。当点击开机菜单时，开启设备，控件显示Running，当点击关机菜单时，关闭设备，控件显示Stopped。
 
-![led-display](../../../assets/images/led-display.gif)
+![alt text](3.gif)
 
