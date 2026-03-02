@@ -396,30 +396,31 @@ nav:
                                       - 2d-visualization/sql-query/sql-query-example/scalar-query.md
                                       - 2d-visualization/sql-query/sql-query-example/update-query.md
                             - 2d-visualization/sql-query/supported-data-types.md
-                  - Controls:
+                  - 控件:
                             - 2d-visualization/controls/index.md
-                            - Drawing:
+                            - 绘图:
                                       - 2d-visualization/controls/drawing/index.md
                                       - 2d-visualization/controls/drawing/shape.md
                                       - 2d-visualization/controls/drawing/fill-stroke.md
-                            - Input:
+                            - 输入:
                                       - 2d-visualization/controls/input/index.md
                                       - 2d-visualization/controls/input/dropdown.md
                                       - 2d-visualization/controls/input/text-input.md
                                       - 2d-visualization/controls/input/slider.md
                                       - 2d-visualization/controls/input/datetime-input.md
                                       - 2d-visualization/controls/input/number-input.md
-                            - Display:
+                            - 显示:
                                       - 2d-visualization/controls/display/index.md
                                       - 2d-visualization/controls/display/label.md
                                       - 2d-visualization/controls/display/value-display.md
                                       - 2d-visualization/controls/display/led-display.md
+                                      - 2d-visualization/controls/display/camera.md
                                       - 2d-visualization/controls/display/iframe.md
                                       - 2d-visualization/controls/display/rich-text.md
-                                      - 2d-visualization/controls/display/page-container.md
                                       - 2d-visualization/controls/display/3d-viewer.md
+                                      - 2d-visualization/controls/display/page-container.md
                                       - 2d-visualization/controls/display/ruler.md
-                            - Button:
+                            - 按钮:
                                       - 2d-visualization/controls/button/index.md
                                       - 2d-visualization/controls/button/button.md
                                       - 2d-visualization/controls/button/menu.md
@@ -428,7 +429,7 @@ nav:
                                       - 2d-visualization/controls/button/toggle-button.md
                                       - 2d-visualization/controls/button/2-state-button.md
                                       - 2d-visualization/controls/button/multi-state-button.md
-                            - Chart:
+                            - 图表:
                                       - 2d-visualization/controls/chart/index.md
                                       - 2d-visualization/controls/chart/realtime-chart.md
                                       - 2d-visualization/controls/chart/historical-chart.md
@@ -437,23 +438,23 @@ nav:
                                       - 2d-visualization/controls/chart/custom-curve.md
                                       - 2d-visualization/controls/chart/gauge.md
                                       - 2d-visualization/controls/chart/custom-chart.md          
-                            - Alarm:
+                            - 报警:
                                       - 2d-visualization/controls/alarm/index.md
-                                      - Real-time Alarm:
+                                      - 实时报警:
                                                 - 2d-visualization/controls/alarm/real-time-alarm/index.md
                                                 - 2d-visualization/controls/alarm/real-time-alarm/alarm-filter.md
                                                 - 2d-visualization/controls/alarm/real-time-alarm/alarm-ack.md
                                                 - 2d-visualization/controls/alarm/real-time-alarm/shelve-alarm.md
                                                 - 2d-visualization/controls/alarm/real-time-alarm/details.md
-                                      - Historical Alarm:
+                                      - 历史报警:
                                                 - 2d-visualization/controls/alarm/historical-alarm/index.md
                                                 - 2d-visualization/controls/alarm/historical-alarm/filter.md
                                                 - 2d-visualization/controls/alarm/historical-alarm/details.md
-                            - Event:
+                            - 事件:
                                       - 2d-visualization/controls/event/index.md
                                       - 2d-visualization/controls/event/realtime-event.md
                                       - 2d-visualization/controls/event/historical-event.md
-                            - Table:
+                            - 表格:
                                       - 2d-visualization/controls/table/index.md
                                       - 2d-visualization/controls/table/table.md
                                       - 2d-visualization/controls/table/historical-data-table.md

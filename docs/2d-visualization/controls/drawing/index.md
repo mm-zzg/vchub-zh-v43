@@ -1,18 +1,18 @@
-# Drawing
+# 绘图
 
- VC Hub comes with a set of drawing tools. Using the drawing tools, you can create your own shapes, such as lines, rectangles, polygons, etc. The following drawing controls are included.
+WAGO SCADA 自带一套绘图工具。使用绘图工具，您可以创建自己的形状，例如直线、矩形、多边形等。
 
- The following drawing controls are included:
+包含以下绘图控件：
 
--  Ellipse
--  Rect
--  Rounded Rect
--  Line
-- Horizontal Line
-- Vertical Line
--  Arc
--  Arrow
-- Polyline
--  Polygon
--  Pipe
+- 椭圆
+- 矩形
+- 圆角矩形
+- 直线
+- 水平线
+- 垂直线
+- 弧线
+- 箭头
+- 折线
+- 多边形
+- 管道
 

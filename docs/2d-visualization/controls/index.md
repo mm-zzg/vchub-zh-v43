@@ -18,87 +18,91 @@
 
 **输入** 
 
-- [日历](input/datetime-input.md)
+- [下拉框](input/dropdown.md) 
 
-- [下拉框](input/dropdown.md)  
+- [文本输入框](input/text-input.md)
 
-- [数字输入框](input/number-input.md)  
+- [滑动条](input/slider.md)
 
-- [滑动条](input/slider.md)  
+- [日历](input/datetime-input.md) 
 
-- [文本输入框](input/text-input.md) 
+- [数字输入框](input/number-input.md)   
 
 **显示**  
 
-- [3D 查看器](display/3d-viewer.md) 
-
-- [IFrame](display/iframe.md) 
-
 - [文本标签](display/label.md) 
-
-- [数码管](display/led-display.md) 
-
-- [画面容器](display/page-container.md) 
-
-- [富文本](display/rich-text.md) 
-
-- [刻度尺](display/ruler.md) 
 
 - [值显示](display/value-display.md) 
 
-**按钮** 
+- [数码管](display/led-display.md) 
 
-- [2-State Button](button/2-state-button.md) 
+- [Camera](display/camera.md)
 
-- [按钮](button/button.md) 
+- [IFrame](display/iframe.md) 
 
-- [复选框](button/checkbox.md) 
+- [富文本](display/rich-text.md) 
+
+- [3D 查看器](display/3d-viewer.md)
+
+- [画面容器](display/page-container.md) 
+
+- [刻度尺](display/ruler.md) 
+
+**按钮**
+
+- [按钮](button/button.md)
 
 - [导航菜单](button/menu.md)
 
-- [Multi-State Button](button/multi-state-button.md)
+- [复选框](button/checkbox.md) 
 
 - [单选按钮](button/radio-button.md)
 
 - [Toggle Button](button/toggle-button.md)
 
+- [2-State Button](button/2-state-button.md) 
+
+- [Multi-State Button](button/multi-state-button.md)
+
 **图表**  
 
-- [柱状图](chart/bar-chart.md) 
+- [实时趋势](chart/realtime-chart.md) 
 
-- [自定义图表](chart/custom-chart.md) 
+- [历史趋势](chart/historical-chart.md)
+
+- [柱状图](chart/bar-chart.md)
+
+- [饼图](chart/pie-chart.md)  
 
 - [自定义曲线](chart/custom-curve.md) 
 
 - [仪表盘](chart/gauge.md) 
 
-- [历史趋势](chart/historical-chart.md) 
-
-- [饼图](chart/pie-chart.md) 
-
-- [实时趋势](chart/realtime-chart.md) 
+- [自定义图表](chart/custom-chart.md)
 
 **报警**  
 
-- [历史报警](alarm/historical-alarm/index.md) 
-
 - [实时报警](alarm/real-time-alarm/index.md)  
 
-**事件**   
+- [历史报警](alarm/historical-alarm/index.md) 
 
-- [历史事件](event/historical-event.md)  
+**事件**     
 
 - [实时事件](event/realtime-event.md) 
 
+- [历史事件](event/historical-event.md)
+
 **表格**  
+
+- [表格](table/table.md)
 
 - [历史检索](table/historical-data-table.md) 
 
-- [报表查看器](table/report-viewer.md)  
-
-- [表格](table/table.md)  
-
 - [变量列表](table/tag-list.md) 
+
+- [报表查看器](table/report-viewer.md)    
+
+
 
 
 
