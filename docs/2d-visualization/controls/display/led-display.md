@@ -67,9 +67,9 @@
 | 填充颜色 | c0c0c0  |
 | 边框颜色 | f06868  |
 | 边框粗细 | 2  |
-| 文本     | 绑定表达式：  let a =tag('@Demo:status');  if (a)  {   return "Running"; //变量值为true时，控件内容显示Running  }  else  {      return "Stopped";//变量值为true时，控件内容显示Stopped  }  |
+| 文本     | 绑定表达式：  let a =tag(`@Demo:status`);  <br>if (a)  <br>{   <br>return "Running"; //变量值为true时，控件内容显示Running  <br>}  <br>else  <br>{      <br>return "Stopped";//变量值为true时，控件内容显示Stopped  <br>}  |
 | 字体颜色 | 18，加粗，ff0000, 水平居中，垂直居中 |
-| 右键菜单 | 创建2个右键菜单：开启，关机。  <br>设置开机动作：点击该菜单时，将变量@Demo:status的值设置为1  <br>![alt text](25.png) <br>设置关机动作：点击该菜单时，将变量@Demo:status的值设置为0  <br>![alt text](26.png) |
+| 右键菜单 | 创建2个右键菜单：开启，关机。  <br>设置开机动作：点击该菜单时，将变量“Demo:status”的值设置为1  <br>![alt text](25.png) <br>设置关机动作：点击该菜单时，将变量“Demo:status”的值设置为 0  <br>![alt text](26.png) |
 
 点击画面的预览按钮，在预览页面点击控件的右键菜单，查看控件的显示内容。当点击开机菜单时，开启设备，控件显示Running，当点击关机菜单时，关闭设备，控件显示Stopped。
 

@@ -2,7 +2,7 @@
 
 用于显示在“设备”->“Camera”列表配置的camera的监控视频。
 
-![alt text](90.png)
+![alt text](94.png)
 
 **属性**
 
@@ -14,9 +14,9 @@
 | W        | 控件的宽度，单位px。  |
 | H        | 控件的高度，单位px。 |
 | Camera   | 为控件选择Camera设备。该Camera在 **“设备”->"Camera"** 页面创建，支持绑定。  |
-| 启用PTZ  | 开启后，鼠标悬浮在控件上显示PTZ控制面板。需确保绑定的摄像头已正确配置Onvif服务。  <br>可以控制摄像头按照所设的方向进行转动，点击一次，转动一下。   <br>![alt text](91.png)  摄像头向上转动 <br>![alt text](92.png)  摄像头向下转动 <br>![alt text](93.png)  摄像头向右转动 <br>![alt text](94.png)  摄像头向左转动 <br>![alt text](95.png)  将摄像头复位   <br>![alt text](96.png)  将镜头拉近     <br>![alt text](97.png)  将镜头拉远  |
-| 启用截图 | 开启后，鼠标悬浮在控件上显示截图按钮。  <br>![alt text](98.png)  点击按钮，可将当前画面保存为图片。 |
-| 查看坐标 | 开启后，鼠标悬浮在控件上显示坐标查看按钮。  <br>![alt text](99.png)  点击按钮，显示camera的当前坐标。 |
+| 启用PTZ  | 开启后，鼠标悬浮在控件上显示PTZ控制面板。需确保绑定的摄像头已正确配置Onvif服务。  <br>可以控制摄像头按照所设的方向进行转动，点击一次，转动一下。   <br>![alt text](95.png)  摄像头向上转动 <br>![alt text](96.png)  摄像头向下转动 <br>![alt text](97.png)  摄像头向右转动 <br>![alt text](98.png)  摄像头向左转动 <br>![alt text](99.png)  将摄像头复位   <br>![alt text](100.png)  将镜头拉近     <br>![alt text](101.png)  将镜头拉远  |
+| 启用截图 | 开启后，鼠标悬浮在控件上显示截图按钮。  <br>![alt text](102.png)  点击按钮，可将当前画面保存为图片。 |
+| 查看坐标 | 开启后，鼠标悬浮在控件上显示坐标查看按钮。  <br>![alt text](103.png)  点击按钮，显示camera的当前坐标。 |
 
 **动作**
 
@@ -26,23 +26,23 @@
 
 查看车间1的实时生产情况。
 
-![alt text](100.png)
+![alt text](104.png)
 
-1. 在**“设备”->"Camera"**页面，新建一个视频名称。详见 [Camera](../../../management-platform/devices/camera/index.md) 页面。
+1. 在 **“设备”->“Camera”** 页面，新建一个视频名称。详见 [Camera](../../../management-platform/devices/camera/index.md) 页面。
 2. 在画面上插入一个“Camera”控件。
 3. 为控件设置Camera，选择：**Streamer1/车间1**。
 4. 点击画面的运行按钮，查看视频。
 5. 将鼠标移至控件上，显示操作按钮。
 
-![alt text](101.png)
+![alt text](105.png)
 
 |样式| 描述|
 |:----------|:---------------------------------|
-| ![alt text](102.png)| 播放按钮 |
-| ![alt text](103.png) | 暂停按钮                        |
-| ![alt text](104.png)| 声音设置按钮                    |
-| ![alt text](105.png) | 全屏按钮                        |
-|![alt text](106.png)| 画中画按钮，点击后开始画中画模式 |
+| ![alt text](106.png)| 播放按钮 |
+| ![alt text](107.png) | 暂停按钮                        |
+| ![alt text](108.png)| 声音设置按钮                    |
+| ![alt text](109.png) | 全屏按钮                        |
+|![alt text](110.png)| 画中画按钮，点击后开始画中画模式 |
 
 ## 自动播放策略
 

@@ -49,7 +49,7 @@
 | 属性 | 值                                |
 |:----------|:----------------------------------------|
 | 文本     | 绑定变量：System:Server.CurrentDateTime |
-| 格式     | yyyy-MM-dd HH:mm:ss                    |
+| 格式     | `yyyy-MM-dd HH:mm:ss`                    |
 | 字体     | Calibri,16, 6ec800，水平居中, 垂直居中  |
 
 **示例3**
@@ -60,7 +60,7 @@
 
 | 属性 | 值  |
 |:----------|:----------|
-| 文本     | 绑定表达式：  const value = tag('@Demo:temperature');  if(property('值显示1#units') === '℃'){      return value;  }  return (value * 9 / 5) + 32;   |
+| 文本     | 绑定表达式：  const value = tag(`@Demo:temperature`);  <br>if(property('值显示1#units') === '℃'){<br>      return value;  <br>}  <br>return (value * 9 / 5) + 32;   |
 | 格式     | #,##0.#    |
 | 字体     | Calibri,16, 6ec800，水平居中, 垂直居中   |
 | 右键菜单 | 添加两个右键菜单：摄氏度，华氏度。  <br>在华氏度的动作中，设置属性绑定，绑定值显示控件的units属性，将其值设置℉  <br>![alt text](18.png) <br>在摄氏度的动作中，设置属性绑定，绑定值显示控件的units属性，将其值设置℃  <br>![alt text](19.png) |
