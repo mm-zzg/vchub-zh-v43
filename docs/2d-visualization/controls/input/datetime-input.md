@@ -1,59 +1,68 @@
-# Datetime Input
+# 日历
 
-The Datetime Input control is used to set the date and format the date.
+日历控件用于设置日期，并对日期进行格式化。
 
-![alt text](15.png)
+![alt text](16.png)
 
-**Properties**
+**属性**
 
-| **Name**      | **Description**  |
-|--------------|------------------|
-| Name              | The name of this control. |
-| X                 | Distance of the left side of the control from the left side of the canvas.|
-| Y                 | The distance from the top of the control to the top of the canvas. |
-| W                 | Width of the control. |
-| H                 | The height of the control. |
-| Date              | Sets the date displayed on the control. |
-| Picker Type       | Sets the format of the content displayed by the control, which contains Datetime and Date.  When **Datetime** is selected, the year, month, day, hour, minute and second can be selected on the control;  <br>![alt text](16.png)  <br>When **Date** is selected, only the year, month and day can be selected.  <br>![alt text](17.png)   |
-| Format            | Format the date, you can drop down to select the preset format, or you can input your own.   <br>![alt text](18.png)  Click to bring up the Format pop-up window, and double-click in the pop-up window to select the format.  |
-| Background        | The background color of the control.    <br>![alt text](19.png)|
-| Picker Background | The background color of the control's popup calendar window.  <br>![alt text](20.png) |
-| Border Color      | The border color of the control.  |
-| Border Thickness  | The border thickness of the control. |
-| Font              | Sets the font of the control. This includes font , font size, font color, bold, and italic. |
+| **名称**   | **描述** |
+|------------|--------------------|
+| 名字       | 此控件的名称。 |
+| X          | 控件左侧距画布左侧的距离，单位px。  |
+| Y          | 控件顶部距画布顶部的距离，单位px。    |
+| W          | 控件的宽度，单位px。   |
+| H          | 控件的高度，单位px。  |
+| 日期       | 设置控件上显示的日期。   |
+| 选择器类型 | 设置日历显示的内容格式，包含Datetime和Date。  <br>当选择Datetime时，控件上可以选择年月日时分秒； <br>![alt text](17.png)  <br>当选择Date时，只能选择年月日。  <br>![alt text](18.png) |
+| 格式       | 对日期进行格式化，可下拉选择预设的格式，也可自行输入。   <br>![alt text](19.png) 点击弹出格式窗口，在弹窗中双击选择格式。 |
+| 背景       | 控件的背景色。  <br>![alt text](20.png) |
+| 选择器背景 | 控件弹出日历窗口的背景色。  <br>![alt text](21.png)|
+| 边框颜色   | 控件的边框颜色。   |
+| 边框粗细   | 控件的边框粗细。  |
+| 字体       | 设置控件的字体。包括字体型号、字体大小、字体颜色、加粗、倾斜。 |
 
-**Event**
+**动作**
 
-Allows you to perform a specific event based on certain conditions. See the **2D Visualization-> Event** page for a complete description of the various events.
+允许您基于某种条件执行特定的动作。请参阅“[动作](../../event/index.md)”页上各种动作的完整描述。
 
-**Example**
+**示例**
 
-Display the current system time with the Datetime Input control.
+通过日历控件显示当前系统时间。
 
-![alt text](21.png)
+![alt text](22.png)
 
-1. Insert a Datetime Input control on the page.
-2. Set the following properties for the control.
+1. 在画面上插入一个日历控件。
+2. 为控件设置如下属性。
 
-| **Property**        | **Value**                                     |
-|---------------------|-----------------------------------------------|
-| Background          | 03172c                                        |
-| Calendar Background | eff0f2                                        |
-| Border Color        | 12b5ac                                        |
-| Border Thickness    | 2                                             |
-| Fonts               | Digital Numbers, 18, bold, font color: 12b5ac |
-| Picker Type         | Datetime                                      |
-| Formatting          | a `h:mm:ss`                                     |
+    | **属性**   | **值**                                 |
+    |:------------|:----------------------------------------|
+    | 背景色     | 03172c                                 |
+    | 日历背景色 | eff0f2                                 |
+    | 边框色     | 12b5ac                                 |
+    | 边框粗细   | 2                                      |
+    | 字体       | Digital Numbers，18，加粗，字体颜色12b5ac |
+    | 选择器类型 | Datetime                               |
+    | 格式       | a h:mm:ss                              |
 
-3.Set event for the control, event type is "LifeCycle" -> "Loaded".
-    ![alt text](22.png)
-4.Turn on the "Enable" button and enter the following script into the Script Editor: 
+3. 为控件设置动作，动作类型为“生命周期”->"加载"。
+
+    ![alt text](23.png)
+
+4. 开启“启用”按钮，在脚本编辑器内容输入如下脚本：
+
     ```typescript
     const data = await System.Tag.read('@System:Server.CurrentDateTime')
-    const calendar = await System.UI.findControl('Datetime Input 1');
+    const calendar = await System.UI.findControl('日历1');
     calendar.value = data.value;
     calendar.applyChanges();
     ```
-5.On the running page, view what the Datetime Input control displays.
-    ![alt text](23.png)
+ 
+5. 在运行页面，查看日历控件显示内容。
+
+    ![alt text](24.png)
+
+
+
+
 

@@ -1,48 +1,55 @@
-# Dropdown
+# 下拉框
 
-When the user selects an option, you can perform a specific action, such as updating data, opening a page, and so on. You can set the list contents manually in the properties of the control.
+当用户选择一个选项时，可以执行特定的操作，例如更新数据，打开画面等。您可以在控件的属性中手动设置列表内容。
 
 ![alt text](1.png)
 
-**Properties**
+**属性**
 
-| **Name**         | **Description**                |
-|------------------|--------------|
-| Name             | The name of this control.  |
-| X                | Distance of the left side of the control from the left side of the canvas.|
-| Y                | The distance from the top of the control to the top of the canvas.  |
-| W                | Width of the control. |
-| H                | The height of the control. |
-| Dropdown Name    | The name of the drop-down option.  <br>![alt text](2.png)|
-| Dropdown Value   | The value of the drop-down option.  <br>![alt text](3.png)|
-| Selected Text    | The text of the currently selected dropdown option. |
-| Selected Value   | The value of the currently selected dropdown option. |
-| Selected Color   | The background color of a dropdown option that is displayed in the dropdown list when the option is selected. |
-| Hover Color      | The background color of the dropdown list when the mouse is hovered over a dropdown option. |
-| Maximum rows     | The number of rows to display in the dropdown list before the scrollbar is displayed.   |
-| Row Height       | Determines the height in px of each option in the dropdown list.  |
-| Fill Color       | The fill color of the dropdown box. <br> ![alt text](4.png)  |
-| Border Color     | The border color of the dropdown box.    <br> ![alt text](5.png)|
-| Border thickness | The border thickness of the dropdown box.   |
-| Shadow           | Sets the shadow effect of the control. You can set the outer shadow and inner shadow.  <br> **Outer**   <br>**- Enable**: Whether to enable the shadow effect  <br>**- Color**: Used to set the shadow color <br> **- X**: Controls how far the shadow is shifted horizontally.  <br>`X = 10` → shadow moves 10px to the right  <br>`X = -5` → shadow moves 5px to the left <br>**- Y**: Controls how far the shadow is shifted vertically.  <br>`Y = 8` → shadow moves 8px downward  <br>`Y = -3` → shadow moves 3px upward <br> **- Blur**: Controls how soft or sharp the edges of the shadow appear. Higher values make the shadow more blurry and spread out. <br> **Inner**  <br>**- Enable**: Whether to enable the shadow effect  <br>**- Color**: Used to set the shadow color <br>**- X**: Controls how far the shadow is shifted horizontally.  <br>`X = 10` → shadow moves 10px to the right  <br>`X = -5` → shadow moves 5px to the left <br>**- Y**: Controls how far the shadow is shifted vertically.  <br>`Y = 8` → shadow moves 8px downward  <br>`Y = -3` → shadow moves 3px upward <br>**- Blur**: Controls how soft or sharp the edges of the shadow appear. Higher values make the shadow more blurry and spread out. <br>  **- Spread**: Controls how much the shadow **expands or contracts** from the shape. |
-| Font             | The font of the dropdown box. Includes font type, font size, font color, bold, slant, and underline settings.|
+| **名称** | **描述**  |
+|:----------|:---------------|
+| 名字     | 此控件的名称。    |
+| X        | 控件左侧距画布左侧的距离，单位px。 |
+| Y        | 控件顶部距画布顶部的距离，单位px。 |
+| W        | 控件的宽度，单位px。 |
+| H        | 控件的高度，单位px。 |
+| 下拉名称 | 下拉选项的名称。  <br>![alt text](2.png) |
+| 下拉值   | 下拉选项的值。  <br>![alt text](3.png) |
+| 选中文本 | 当前选中的下拉选项的文本内容。 |
+| 选中值   | 当前选中的下拉选项的值。  |
+| 选中颜色 | 选中某个下拉选项后，该选项在下拉列表显示的背景颜色。|
+| 悬浮颜色 | 鼠标悬浮在某个下拉选项上时，该选项在下拉列表显示的背景颜色。|
+| 最大行数 | 在显示滚动条之前要在下拉列表中显示的行数。|
+| 行高     | 确定下拉列表中每个选项的高度，单位px。 |
+| 填充色   | 下拉框的填充色。  <br>![alt text](4.png)|
+| 边框颜色 | 下拉框的边框颜色。  <br>![alt text](5.png) |
+| 边框粗细 | 下拉框的边框粗细。 |
+| 阴影     | 设置控件的阴影效果。可以设置外阴影和内阴影。  <br> **外阴影**   <br>- **启用**：是否启用阴影效果  <br>- **颜色**：用于设置阴影颜色  <br>- **X**：控制阴影在水平方向上的偏移量。  <br>`X = 10` → 阴影往右移了10像素  <br>`X = -5` → 阴影往左移了5像素  <br>- **Y**：控制阴影在垂直方向上的偏移量。  <br>`Y = 8` → 阴影往下移了8像素  <br>`Y = -3` → 阴影往上移了3像素   <br>- **模糊**：控制阴影的模糊程度，模糊值越大，边缘越柔和、越“自然”。 <br>**内阴影** <br>- **启用**：是否启用阴影效果 <br>- **颜色**：用于设置阴影颜色  <br>- **X**：控制阴影在水平方向上的偏移量。  <br>`X = 10` → 阴影往右移了10像素  <br>`X = -5` → 阴影往左移了5像素 <br>- **Y**：控制阴影在垂直方向上的偏移量。  <br>`X = 8` → 阴影往下移了8像素  <br>`Y = -3` → 阴影往上移了3像素  <br>- **模糊**：控制阴影的模糊程度，模糊值越大，边缘越柔和、越“自然”。<br>- **扩散**：控制阴影的大小|
+| 字体     | 设置的下拉选项的字体。包括字体型号、字体大小、字体颜色、加粗、倾斜、下划线设置。  |
 
-**Event**
+**动作**
 
-Allows you to perform a specific event based on certain conditions. See the **2D Visualization-> Event** page for a complete description of the various events.
+允许您基于某种条件执行特定的动作。请参阅“[动作](../../event/index.md)”页上各种动作的完整描述。
 
-**Example**
+**示例**
 
-Opens the specified page when an option is selected in the drop-down list.
+在下拉列表中选择某个选项时，打开指定的画面。
 
 ![alt text](6.png)
 
+在控件的动作属性中，选择”值变化“，在脚本中编写如下内容：
+
+![alt text](7.png)
+
 ```js
-// Opens Page1 when the value of the drop-down option is 1, and opens Page2 when the value of the drop-down option is 2.
+// 当下拉选项的值为1时打开画面1，当下拉选项的值为2时打开画面2。
 if (Context.currentEvent.newValue == '1') {
-    System.Page.open('Page1');
+    System.UI.open('画面1');
 }
 else if(Context.currentEvent.newValue == '2') {
-    System.Page.open('Page2');
+    System.UI.open('画面2');
 }
 ```
+ 
+
+

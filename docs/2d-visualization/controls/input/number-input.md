@@ -1,50 +1,53 @@
-# Number Input
+# 数字输入框
 
- The Number  Input  is used to display numbers and also to send down numeric values.
+数字输入框控件用于显示数字，也可以下发数值。
 
-![alt text](24.png)
+![alt text](25.png)
 
-**Properties**
+**属性**
 
-| **Name**              | **Description**       |
-|-----------------------|-------------|
-| Name                  | The name of this control. | X                     | Distance of the left side of the control from the left side of the canvas. |
-| Y                     | The distance from the top of the control to the top of the canvas. |
-| W                     | Width of the control.  |
-| H                     | The height of the control. |
-| Value                 | The value displayed in the Input Number . |
-| Decimals              | Used to set the number of decimal places for the value displayed and entered in the Input Number , and the lack of which is automatically complemented by 0. |
-| Boundary Value        | Sets whether or not bounds are enabled. When enabled, the control can only enter values between the maximum and minimum values.  <br> - **Min**: Sets the minimum value allowed to be entered on the control  <br> - **Max**: Sets the maximum value allowed to be entered on the control  |
-| Out-of-bounds Prompts | Sets whether to enable out-of-bounds prompts. When enabled, you can set the content of the out-of-bounds hint.    <br>![alt text](25.png) <br>Example:  <br>![alt text](26.png)  <br>**Note** :The out-of-bounds hint must be enabled for the boundary value to take effect. |
-| Fill                  | The background color of the Input Number.  <br>![alt text](27.png)|
-| Border Color          | The border color of the Input Number .  |
-| Border Thickness      | The border thickness of the Input Number .   |
-| Shadow                | Sets the shadow effect of the control. You can set the outer shadow and inner shadow.   <br> **Outer**   <br>- **Enable**: Whether to enable the shadow effect  <br>- **Color**: Used to set the shadow color <br> - **X**: Controls how far the shadow is shifted horizontally.  <br>`X = 10` → shadow moves 10px to the right  <br>`X = -5` → shadow moves 5px to the left <br>- **Y**: Controls how far the shadow is shifted vertically.  <br>`Y = 8` → shadow moves 8px downward  <br>`Y = -3` → shadow moves 3px upward <br> - **Blur**: Controls how soft or sharp the edges of the shadow appear. Higher values make the shadow more blurry and spread out. <br> **Inner**  <br>- **Enable**: Whether to enable the shadow effect  <br>- **Color**: Used to set the shadow color <br>- **X**: Controls how far the shadow is shifted horizontally.  <br>`X = 10` → shadow moves 10px to the right  <br>`X = -5` → shadow moves 5px to the left <br>**- Y**: Controls how far the shadow is shifted vertically.  <br>`Y = 8` → shadow moves 8px downward  <br>`Y = -3` → shadow moves 3px upward <br>- **Blur**: Controls how soft or sharp the edges of the shadow appear. Higher values make the shadow more blurry and spread out. <br> - **Spread**: Controls how much the shadow **expands or contracts** from the shape. |
-| Font                  | Sets  the font of the control. Includes font , font size, font color, bold, italic, and horizontal alignment.   |
+| **名称** | **描述**   |
+|:----------|:------------|
+| 名字     | 此控件的名称。  |
+| X        | 控件左侧距画布左侧的距离，单位px。  |
+| Y        | 控件顶部距画布顶部的距离，单位px。 |
+| W        | 控件的宽度，单位px。   |
+| H        | 控件的高度，单位px。  |
+| 值       | 数字输入框内显示的值。 |
+| 小数位   | 用于设置数字输入框内显示和输入的数值小数位的位数，不足自动补0。   |
+| 边界值   | 设置是否启动界限。启用时，控件只能输入介于最大值和最小值之间的数值。  | 最小值 | 设置控件上允许输入的最小值 | |--------|----------------------------| | 最大值 | 设置控件上允许输入的最大值 |    |
+| 越界提示 | 设置是否启用越界提示。启用时，可以设置越界提示内容。 ![alt text](26.png)  错误提示效果：  ![alt text](27.png)| 说明：越界提示必须在边界值启用时才会生效。 | |------------------------------------------|   |
+| 填充     | 数字输入框的背景色。  ![alt text](28.png) |
+| 边框颜色 | 数字输入框的边框颜色。   |
+| 边框粗细 | 数字输入框的边框粗细。  |
+| 阴影     | 设置控件的阴影效果。可以设置外阴影和内阴影。  <br> **外阴影**   <br>- **启用**：是否启用阴影效果  <br>- **颜色**：用于设置阴影颜色  <br>- **X**：控制阴影在水平方向上的偏移量。  <br>`X = 10` → 阴影往右移了10像素  <br>`X = -5` → 阴影往左移了5像素  <br>- **Y**：控制阴影在垂直方向上的偏移量。  <br>`Y = 8` → 阴影往下移了8像素  <br>`Y = -3` → 阴影往上移了3像素   <br>- **模糊**：控制阴影的 **模糊程度**，模糊值越大，边缘越柔和、越“自然”。 <br>**内阴影** <br>- **启用**：是否启用阴影效果 <br>- **颜色**：用于设置阴影颜色  <br>- **X**：控制阴影在水平方向上的偏移量。  <br>`X = 10` → 阴影往右移了10像素  <br>`X = -5` → 阴影往左移了5像素 <br>- **Y**：控制阴影在垂直方向上的偏移量。  <br>`X = 8` → 阴影往下移了8像素  <br>`Y = -3` → 阴影往上移了3像素  <br>- **模糊**：控制阴影的 **模糊程度**，模糊值越大，边缘越柔和、越“自然”。<br>- **扩散**：控制阴影的大小|
+| 字体     | 设置控件的字体。包括字体型号、字体大小、字体颜色、加粗、倾斜，以及水平对齐方式。|
 
-**Event**
+**动作**
 
- Allows you to perform a specific event  based on certain conditions. See the **2D Visualization-> Event** page for a complete description of the various events.
+允许您基于某种条件执行特定的动作。请参阅“[动作](../../event/index.md)”页上各种动作的完整描述。
 
-**Example**
+**示例**
 
-Modify the factory workshop temperature via a input number control.
+通过数字输入框修改工厂车间温度。
 
-![alt text](28.png)
+![alt text](29.png)
 
-1. Add a input number  control to the page.
-2. Set the properties of the control.
+1. 在画面上添加数字输入控件。
 
-| **Property**          | **Value** |
-|-----------------------|-----|
-| Fill                  | eff0f2 |
-| Border color          | rgba(128,128,128,0)   |
-| Border thickness      | 1|
-| Value                 | Binding tag (Factory1: Temperature) |
-| Decimals              | 1 |
-| Boundary value        | Enabled.  <br>- **Min**: -40 （lowest temperature allowed in the work shop） <br>- **Max**: 85 （highest temperature allowed in the work shop） | 
-| Out-of-bounds prompts | Enabled  , set the content of the out-of-bounds prompt: The temperature of plant 1 is out of range, please enter a value between -40 and 85. |
-| Font                  | Microsoft Black, 18, bold, font color fd9903, right align  |
+2. 设置控件属性。
 
-3.Set the "Value Changed" -> "Set Value " in the event  property of the input number control to send a value to a tag to change the factory floor temperature. 
-    ![alt text](29.png)
+    | 属性     | 值  |
+    |:----------|:------------|
+    | 填充     | eff0f2   |
+    | 边框颜色 | rgba(128,128,128,0)    |
+    | 边框粗细 | 1    |
+    | 值       | 绑定变量（工厂1:温度） |
+    | 小数位   | 1    |
+    | 边界值   | 启用状态  <br>- **最小值**：-40（车间允许的最低温度） <br>- **最大值**：85（车间允许的最高温度）  |
+    | 越级提示 | 启用状态，设置越界提示内容：厂间1温度超过范围，请输入-40～+85之间的值。  |
+    | 字体     | 微软雅黑，18， 加粗，字体颜色fd9903，右对齐   |
+
+3. 数字输入框架控件的动作属性中设置“值变化”->“变量赋值”，将值下发到变量上，从而改变工厂车间温度。
+
+    ![alt text](30.png)
