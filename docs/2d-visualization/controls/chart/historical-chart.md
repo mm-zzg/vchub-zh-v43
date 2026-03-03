@@ -161,7 +161,7 @@
  
 5. 在运行页面上，在趋势图上右击鼠标，点击AddMarkLine，弹出AddMarkLine弹窗，设置参考参考线样式后点击确定按钮，完成添加。
 
-![alt text](34.gif)
+    ![alt text](34.gif)
 
 6. 在运行页面上，在趋势图上右击鼠标，点击DeleteMarkLine，输入要删除的参考线的名称，删除该参考线。
 
