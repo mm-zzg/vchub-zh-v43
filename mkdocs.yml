@@ -461,10 +461,10 @@ nav:
                                       - 2d-visualization/controls/table/tag-list.md
                                       - 2d-visualization/controls/table/report-viewer.md          
                             - 2d-visualization/controls/modify-control-properties.md                           
-                  - Libraries:
+                  - 图库:
                             - 2d-visualization/libraries/index.md
                             - 2d-visualization/libraries/svg-editor.md
-                  - Symbol:
+                  - 图符:
                             - 2d-visualization/symbol/index.md
                             - 2d-visualization/symbol/symbol-libraries.md
                             - 2d-visualization/symbol/create-symbol.md

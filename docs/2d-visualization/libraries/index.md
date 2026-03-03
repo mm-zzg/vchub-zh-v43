@@ -1,152 +1,165 @@
-# Libraries
+# 图库
 
-Manage pictures in the "Library" window. Supports uploading images in SVG, PNG, JPEG, GIF and JPG formats. Images can be used in pages, templates or symbols.
+在”图库“窗口中对图片进行管理。支持上传 SVG、PNG 、JPEG 、GIF、JPG 格式的图片。图片可以在画面，模板和图符中使用。
 
 ![alt text](1.png)
 
-## Add Pictures
+## 添加图片
 
-Click the New button on the right side of the library to add it.
+点击图库右侧的新增按钮进行添加。
 
 ![alt text](2.png)
 
-## Add Library
+## 新增图库
 
-You can add pictures according to your preferences and actual needs. After clicking "Add"->"Add Library" in the library window, a new library will be automatically created, and the library name will be in editing mode.
+您可以根据自己的喜好和实际需求添加图片。在图库窗口点击“新增”->“新增图库”后，会自动创建一个图库，且库名处于编辑状态。
 
 ![alt text](3.png)
 
-You can modify the library name. After modification, click the Add button in the library.
+您可以修改库名，修改完成后，单击库内的添加按钮。
 
 ![alt text](4.png)
 
-The Open dialog window will appear. Just find your image on your local system, you can select multiple, and click the "Open" button of the dialog box to upload the selected image.
+将出现“打开”对话框窗口。只需在本地系统上找到您的图片，可以多选，然后单击对话框的“打开”按钮即可上传所选图片。
 
 ![alt text](5.png)
 
-## Import Library
+## 导入图库
 
-When you already have a large number of pictures locally, you can import these materials into the library by importing an external library. Just compress these classified files into zip files, and then click "Add" -> "Import  Library" in the library window to pop up the import window.
+当您本地已存在大量图片，可以通过导入图库的方式将这些素材导入到图库中。只需将这些已分类好的文件压缩为 zip 文件，然后点击图库窗口的“新增”->“导入图库”，弹出导入窗口。
 
 ![alt text](6.png)
 
-Click the "Upload zip file" button and the "Open" dialog window will appear. Simply find your zip file on your local system, you can select multiple files, and click the "Open" button of the dialog box to upload the selected files.
+点击“上传zip文件”按钮，将出现“打开”对话框窗口。只需在本地系统上找到您的 zip 文件，可以多选，然后单击对话框的“打开”按钮即可上传所选文件。
 
 ![alt text](7.png)
 
-After uploading, the name of the uploaded zip file will be used as the library name, and the corresponding pictures will be displayed under the corresponding library .
+上传后，会以上传的 zip 文件的名称作为库名， 对应的图片显示在相应的库下。
 
 ![alt text](8.png)
 
-**Note:** Only pictures directly displayed at the next level of the zip will be imported. For example, all the contents in the “others“ directory as shown below will not be imported.
+**注意：** 只有直接显示在 zip 下一级的图片才会被导入。例如下图 others 目录下的所有内容将不会被导入。
 
 ![alt text](9.png)
 
-## Reference System Library
+## 引用系统库
 
-VC Hub has built-in rich picture materials. After clicking "Add"->"Reference System Library" in the library window, users can view and choose which built-in materials to add to the library.
+WAGO VC Hub 内置了丰富的图片素材，在图库窗口点击“新增”->“引用系统库”后，用户可以查看并选择将哪些内置素材添加到图库中。
 
 ![alt text](10.png)
 
-After adding to the library:
+添加到图库后：
 
 ![alt text](11.png)
 
-**Note:** The referenced system pictures do not support editing and deletion. If you no longer want to use it, you can click the delete button of the library to delete the reference. Deleting a system library does not actually delete the library, but deletes the reference relationship, which can be referenced again later.
+**注意：** 引用的系统图片不支持编辑和删除。若不想继续使用，可以点击库的删除按钮，删除引用。系统库的删除不是真正的删除库，而是删除引用关系，后续可以再次引用。
 
 ![alt text](12.png)
 
-## Use Pictures
+## 使用图片
 
-1. Upload pictures to the library.
-2. Drag pictures from the library directly onto the page.
+1. 将图片上传到图库中。
+2. 从图库中将图片直接拖拽到画面上。
 
 ![alt text](13.png)
 
-**Path**
+**图片路径**
 
-When an image is added to a page, the path is displayed in the properties. **Path format:** LibraryName.ImageName
+将图片添加到画面后，在属性中会显示图片的路径。**路径**：图库名称.图片名称。
 
-If the image is from the system library, a `$` symbol will appear at the beginning of the path. **Path format:** *$.LibraryName.ImageName*
+如果是系统库的图片，会在路径的最前面显示。**路径**：图库名称.图片名称。
 
-Image paths support binding.
+图片路径支持绑定。
 
-**Example:** Display different images based on device operating status
+**示例**：当设备处于不同的运行状态时，显示不同的图片。
 
-**Steps:**
+**步骤**：
 
-1. Draw two buttons on the page,name them **"Run"** and **"Stop"**.
-2. Set mouse pressed event for the buttons. 
-     - For the **Run** button: When pressed, modify the tag `@Region:Motor1.RunningStatus` to `1`, indicating that the device is turned on.
-     - For the **Stop** button: When pressed, modify the tag `@Region:Motor1.RunningStatus` to `0`, indicating that the device is stopped.
+1. 在画面上绘制两个按钮，名称分别为：**运行，停止**。
+
+2. 为运行按钮设置鼠标按下动作。
+
+    - 对于 **运行** 按钮：按下时，将标签 `@Region:Motor1.RunningStatus` 的值修改为 `1`，表示设备已开启。
+
+    - 对于 **停止** 按钮：按下时，将标签 `@Region:Motor1.RunningStatus` 的值修改为 `0`，表示设备已停止。
+
     ![alt text](14.png)
-3. Add a label to the page, set its “Text” to **"Running Status:"**.
-4. Insert an Image from the System Library to the page. Click the **binding button** for the image path and write the following expression:
+
+3. 在画面上绘制一个文本框，内容设置为：**运行状态**。
+
+4. 从系统库中拖入一个图片到画面上。点击画面路径的 **绑定按钮**，编写如下表达式：
+
     ![alt text](15.png)
-5. Click the **Preview** button to open the preview page.When clicking the **Run** button, it will appear **green**.When clicking the **Stop** button, it will appear **red**.
-    ![library](../../assets/images/library.gif)
 
-**Check Reference**
+5. 点击预览按钮，在预览页面，点击运行按钮时，按钮显示为绿色，点击停止按钮时，按钮显示为红色。
 
-You can quickly check the citation relationships of an image to determine where the image is used. The method is to right-click the mouse on the picture and click "Check References". A reference list will pop up showing detailed reference information.
+    ![alt text](1.gif)
+
+**查看图片引用**
+
+您可以快速查看图片的引用关系，以确定图片被哪些地方使用。方法是在图库的图片上右击鼠标，点击“检查引用”，将会弹出引用列表, 显示详细的引用信息。
 
 ![alt text](16.png)
 
 ![alt text](17.png)
 
-**Scale Pictures**
+**缩放图片**
 
-After selecting a picture, you can drag the mouse to zoom in and out of the picture.
+选中图片后，可以拖动鼠标对图片进行缩放。
 
-![library1](../../assets/images/library1.gif)
+![alt text](2.gif)
 
-For SVG format images, holding down the **Shift** key and then pulling the four top corners of the image to scale the image will perform an isometric zoom.
-![library2](../../assets/images/library2.gif)
+对于 **SVG** 格式图片，按住 **Shift键** 后拉动图片的四个顶角，对图片进行缩放，将进行 **等比缩放**。
 
-**Move Pictures**
+![alt text](3.gif)
 
-You can modify the image's path. To move the image to another library, click and drag the image to the target library, thereby changing its library.
+**移动图片**
 
-![library3](../../assets/images/library3.gif)
+您能修改图片的路径。要将图片移动到其他图库，请点击拖动图片并移动到目标库上，实现更改图库。
 
-**Notes：**  
+![alt text](4.gif)
 
-1. Moving images into the system library is not supported. 
-2. Images in the system library can be dragged into user-created libraries. Dragging an image is equivalent to copying it to the target library, and the original image in the system library remains unaffected.
+**注意:** 
 
-## Copy/Paste Pictures
+1. 不支持将图片移动至系统库。
 
-Right-click on an image in the gallery and select the **Copy** option to duplicate the image. Both system library images and user-uploaded images support copying.
+2. 系统库中的图片可以拖拽到用户自行创建的图库中。拖拽操作相当于将图片复制到目标图库，系统库内的原始图片不会受到影响。
+
+## 复制/粘贴图片
+
+在图库中右击图片，点击 **复制** 选项，可以对图片进行复制。系统库的图片和用户自己上传的图片，均支持复制。
 
 ![alt text](18.png)
 
-After copying, click the "..." button in the top-right corner of the library, or right-click on a blank area in the library to paste.
+复制后，点击图库右上角的“...”按钮或者图库的空白处，进行粘贴。
 
 ![alt text](19.png)
 
 ![alt text](20.png)
 
-**Note:** The copied image can only be pasted into user-created libraries. Pasting into the system library is not supported.
+**说明**：只能将复制的图片粘贴到用户自行创建的图库中，系统库不支持粘贴。 
 
-## Export Pictures
+## 导出图片
 
-#### Export Library
+#### 导出图库
 
-Click the export button behind the library to export the materials in the library.
+在图库后面点击导出按钮，可以将图库内的素材进行导出。
 
 ![alt text](21.png)
 
-In the export window, you can select the pictures you want to export.
+在导出窗口中，可以选择需要导出的图片。
 
 ![alt text](22.png)
 
-#### Export Project
+#### 导出项目
 
-When exporting a project, the system library will not be exported, but other libraries will. When importing the exported project into another project, if the exported project uses images from the system library, you need to reference the system library again after the project is imported, otherwise the used system library images will appear as broken images on the page.
+导出项目时不会导出系统库，其他的图库会。将导出的项目在另一个工程导入时，如果导出的项目使用了系统库的图片，工程导入后需再次引用一下系统库，否则画面上已用到的系统库图片将显示为破裂的图片。
 
 ![alt text](23.png)
 
-#### Export Workspace
+#### 导出工程
 
-When exporting a workspace, all libraries will be exported together. When importing the exported workspace into other node, open the project page under the workspace, and the pictures used on the page can be displayed normally.
+导出工程时，会将所有图库一起导出。将导出的工程在其他节点导入时，打开工程下的项目画面，画面上使用的图片均可以正常显示。
+
+
 

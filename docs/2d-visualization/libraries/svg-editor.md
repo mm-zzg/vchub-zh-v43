@@ -1,21 +1,21 @@
-# SVG Editor
+# SVG编辑器
 
-The SVG editor is used to edit the SVG images in the library, including background color, border color, visibility, position, size, text, etc.
+SVG编辑器用于对图库中的SVG图形进行编辑，包括背景色，边框色，可见性，位置，尺寸，文本等。
 
-## How to open the SVG editor
+## 如何打开SVG编辑器
 
-There are four ways to open the SVG editor as follows:
+有如下4种方式，可以打开SVG编辑器。
 
-- In the library, double-click the SVG format image
-- Right-click on the SVG format image in the library, and click "Edit" in the menu
-- Double-click the SVG format image on the page
-- Right-click on the SVG format image on the page, and click "Edit" in the menu
+- 在图库中，双击SVG格式的图片
+- 在图库的SVG格式图片上右击鼠标，在菜单中点击”编辑“
+- 在画面上双击SVG格式的图片
+- 在画面中的SVG格式图片上右击鼠标，在菜单中点击”编辑“
 
-The interface of the SVG editor is as follows:
+SVG编辑器界面如下：
 
 ![alt text](24.png)
 
-## Supported element types for editing
+## 支持编辑的元素类型
 
 - rect
 - circle
@@ -27,209 +27,214 @@ The interface of the SVG editor is as follows:
 - text
 - group
 
-Element types that are not supported for editing will be displayed in gray color in the object window.
+不支持编辑的元素类型，在对象窗口中会显示为灰色。
 
 ![alt text](25.png)
 
-## Element properties
+## 元素属性
 
 #### rect
 
 ![alt text](26.png)
 
-**Properties**
+**属性**
 
-| **Name**     | **Description**                                                                              |
-|--------------|----------------------------------------------------------------------------------------------|
-| Name         | The name of this control.                                                                    |
-| X            | The distance from the left side of the control to the left side of the page, the unit is px. |
-| Y            | The distance from the top side of the control to the top side of the page, the unit is px.   |
-| W            | The width of the control, the unit is px.                                                    |
-| H            | The height of the control, the unit is px.                                                   |
-| RX           | The radius of the rounded corners in the horizontal direction of the rectangle.              |
-| RY           | The radius of the rounded corners in the vertical direction of the rectangle.                |
-| Fill Color   | The fill color of the rectangle.                                                             |
-| Border Color | The border color of the rectangle.                                                           |
-| Border Width | The border width of the rectangle.                                                           |
+| **名称** | **描述**                         |
+|:----------|:----------------------------------|
+| 名字     | 此控件的名称。                    |
+| X        | 控件左侧距画布左侧的距离，单位px。 |
+| Y        | 控件顶部距画布顶部的距离，单位px。 |
+| W        | 控件的宽度，单位px。               |
+| H        | 控件的高度，单位px。               |
+| RX       | 矩形水平方向上圆角的半径。        |
+| RY       | 矩形垂直方向上圆角的半径。        |
+| 填充     | 矩形的填充色。                    |
+| 边框颜色 | 矩形的边框颜色。                  |
+| 边框粗细 | 矩形的边框粗细。                  |
 
 #### circle
 
 ![alt text](27.png)
 
-**Properties**
+**属性**
 
-| **Name**     | **Description**                                                               |
-|--------------|-------------------------------------------------------------------------------|
-| Name         | The name of this control.                                                     |
-| CX           | The position of the center point in the horizontal direction, the unit is px. |
-| CY           | The position of the center point in the vertical direction, the unit is px.   |
-| R            | The radius of the circle, the unit is px.                                     |
-| Fill Color   | The fill color of the control.                                                |
-| Border Color | The border color of the control.                                              |
-| Border Width | The border width of the control.                                              |
+| **名称** | **描述**                       |
+|:----------|:--------------------------------|
+| 名字     | 此控件的名称。                  |
+| CX       | 圆心在水平方向上的位置，单位px。 |
+| CY       | 圆心在垂直方向上的位置，单位px。 |
+| R        | 圆的半径，单位px。               |
+| 填充     | 控件的填充色。                  |
+| 边框颜色 | 控件的边框颜色。                |
+| 边框粗细 | 控件的边框粗细。                |
 
 #### ellipse
 
 ![alt text](28.png)
 
-**Properties**
+**属性**
 
-| **Name**     | **Description**                                                       |
-|--------------|-----------------------------------------------------------------------|
-| Name         | The name of this control.                                             |
-| CX           | The horizontal position of the center of the ellipse, the unit is px. |
-| CY           | The vertical position of the center of the ellipse, the unit is px.   |
-| RX           | The horizontal radius of the ellipse, the unit is px.                 |
-| RY           | The vertical radius of the ellipse, the unit is px.                   |
-| Fill Color   | The fill color of the control.                                        |
-| Border Color | The border color of the control.                                      |
-| Border Width | The border width of the control.                                      |
+| **名称** | **描述**                             |
+|:----------|:--------------------------------------|
+| 名字     | 此控件的名称。                        |
+| CX       | 椭圆的圆心在水平方向上的位置，单位px。 |
+| CY       | 椭圆的圆心在垂直方向上的位置，单位px。 |
+| RX       | 椭圆在水平方向上的半径，单位px。       |
+| RY       | 椭圆在垂直方向上的半径，单位px。       |
+| 填充     | 控件的填充色。                        |
+| 边框颜色 | 控件的边框颜色。                      |
+| 边框粗细 | 控件的边框粗细。                      |
 
 #### line
 
 ![alt text](29.png)
 
-**Properties**
+**属性**
 
-| **Name**     | **Description**                                                                        |
-|--------------|----------------------------------------------------------------------------------------|
-| Name         | The name of this control.                                                              |
-| X1           | The horizontal  coordinate of the starting point of the straight line, the unit is px. |
-| Y1           | The vertical coordinate of the starting point of the straight line, the unit is px.    |
-| X2           | The horizontal coordinate of the end point of the straight line, the unit is px.       |
-| Y2           | The vertical coordinate of the end point of the straight line, the unit is px.         |
-| Border Color | The border color of the control.                                                       |
-| Border Width | The border width of the control.                                                       |
+| **名称** | **描述**                               |
+|:----------|:----------------------------------------|
+| 名字     | 此控件的名称。                          |
+| X1       | 直线起始点的水平（X 轴）坐标，单位px。     |
+| Y1       | 直线起始点的垂直方向（Y 轴）坐标，单位px。 |
+| X2       | 直线终点的水平（X 轴）坐标，单位px。       |
+| Y2       | 直线终点的垂直方向（Y 轴）坐标，单位px。   |
+| 边框颜色 | 控件的边框颜色。                        |
+| 边框粗细 | 控件的边框粗细。                        |
 
 #### polyline
 
 ![alt text](30.png)
 
-**Properties**
+**属性**
 
-| **Name**     | **Description**                                                                                                                                                                      |
-|--------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Name         | The name of this control.                                                                                                                                                            |
-| Points       | A series of coordinate points, in the form of  <br>x1, y1  <br>x2, y2  <br>x3, y3 <br>…  <br>It will start from the first point and then connect the subsequent points one by one to form a broken line. |
-| Border Color | The border color of the control.                                                                                                                                                     |
-| Border Width | The border width of the control.                                                                                                                                                     |
+| **名称** | **描述**   |
+|:----------|:-----------|
+| 名字     | 此控件的名称。|
+| 点       | 一串坐标点，其形式为   <br>x1， y1   <br>x2， y2   <br>x3， y3   <br>…  <br>会从第一个点开始，依次连接后面的点，形成一条折线。 |
+| 边框颜色 | 控件的边框颜色。|
+| 边框粗细 | 控件的边框粗细。|
 
 #### polygon
 
 ![alt text](31.png)
 
-**Properties**
+**属性**
 
-| **Name**     | **Description**  |
-|--------------|------------------|
-| Name         | The name of this control. |
-| Points       | A series of coordinate points, in the form of  <br>x1, y1  <br>x2, y2  <br>x3, y3 <br>…  <br>It starts from the first point and connects the subsequent points one by one.   Unlike polyline, polygon will automatically connect the last point back to the first point, forming a closed area. |
-| Fill Color   | The fill color of the control.  |
-| Border Color | The border color of the control. |
-| Border Width | The border width of the control. |
+| **名称** | **描述**    |
+|:----------|:-------------|
+| 名字     | 此控件的名称。|
+| 点       | 一串坐标点，其形式为   <br>x1， y1   <br>x2， y2   <br>x3， y3   <br>…  <br>会从第一个点开始，依次连接后面的点，和 polyline 不同，polygon 会自动把最后一个点连回第一个点，形成闭合区域。 |
+| 填充     | 控件的填充色。 |
+| 边框颜色 | 控件的边框颜色。  |
+| 边框粗细 | 控件的边框粗细。|
 
 #### path
 
 ![alt text](32.png)
 
-**Properties**
+**属性**
 
-| **Name**     | **Description**   |
-|--------------|------------------|
-| Name         | The name of this control.  |
-| D            | The d attribute is a string containing a series of commands and coordinates. These commands and coordinates define the shape of the path.  Common commands are:  <br>- **M**: Moves to a specified point. M10,10: Move to the (10, 10) point. <br>- **L**: Draws a line to a specified point. L100,100: draws a line from (10, 10) to (100, 100) <br>- **C**: Draws a cubic Bezier curve. C40,10, 65,10, 95,50: Draws a cubic Bezier curve with control points (40, 10) and (65, 10) and an endpoint (95, 50). <br>- **S**: Draws a smooth Bezier curve. S150,150, 200,100: Draws a smooth cubic Bessel curve with control points automatically derived and ending at (200, 100). <br>- **Q**: Draws a quadratic Bezier curve. Q50,10, 90,50: Draws a quadratic Bezier curve with a control point of (50, 10) and an end point of (90, 50). <br>- **T**: Draws a smooth quadratic Bezier curve. T150,150: draws a smooth quadratic Bessel curve with control points calculated automatically and ending at (150, 150). <br>- **Z**: Closes the path (returns to the starting point). Z: Close the path and return to the starting point |
-| Fill Color   | The fill color of the control.  |
-| Border Color | The border color of the control.  |
-| Border Width | The border width of the control.  |
+| **名称** | **描述**  |
+|:----------|:---------------|
+| 名字     | 此控件的名称。 |
+| D        | “D”属性是一个包含一系列指令和坐标值的字符串。这些指令和坐标值决定了路径的形状。  常见的指令有：  <br>- **M**：移动到指定位置。M10,10：移动到（10，10）点。  <br>- **L**：绘制一条线至指定位置。L100，100：从（10，10）点绘制一条线至（100，100）点。  <br>- **C**：绘制一个三次贝塞尔曲线。C40，10， 65，10， 95，50：绘制一个带有控制点（40，10）和（65，10）以及终点（95，50）的三次贝塞尔曲线。  <br>- **S**：绘制一条平滑的贝塞尔曲线。S150，150， 200，100：绘制一条带有自动计算的控制点并以（200，100）点结束的平滑三次贝塞尔曲线。  <br>- **Q**：绘制一个二次贝塞尔曲线。Q50，10， 90，50：绘制一个带有控制点（50，10）和终点（90，50）的二次贝塞尔曲线。  <br>- **T**：绘制一条平滑的二次贝塞尔曲线。T150，150：绘制一条带有自动计算的控制点并以（150，150）点结束的平滑二次贝塞尔曲线。  <br>- **Z**：闭合路径（返回起始点）。Z：闭合路径并返回起始点。 |
+| 填充     | 控件的填充色。|
+| 边框颜色 | 控件的边框颜色。 |
+| 边框粗细 | 控件的边框粗细。 |
 
 #### text
 
 ![alt text](33.png)
 
-**Properties**
+**属性**
 
-| **Name** | **Description** |
-|----------|------|
-| Name     | The name of this control.                                                            |
-| X        | The distance from the left of the control to the left of the canvas, the unit is px. |
-| Y        | The distance from the top of the control to the top of the canvas, the unit is px.   |
-| Text     | Set the text content to be displayed.                                                |
-| Font     | Set font style, font size, bold, italic, underline, font color.                      |
+| **名称** | **描述**                                         |
+|:----------|:--------------------------------------------------|
+| 名字     | 此控件的名称。                                    |
+| X        | 控件左侧距画布左侧的距离，单位px。                 |
+| Y        | 控件顶部距画布顶部的距离，单位px。                 |
+| 文本     | 文本内容。                                        |
+| 字体     | 设置字体样式，字体大小，加粗，倾斜，下划线，字体颜色。 |
 
 #### group
 
 ![alt text](34.png)
 
-**Properties**
+**属性**
 
-| **Name** | **Description**           |
-|----------|---------------------------|
-| Name     | The name of this control. |
+| **名称** | **描述**      |
+|:----------|:---------------|
+| 名字     | 此控件的名称。 |
 
-## Examples
+## 示例
 
-**Example 1**: Modify the color of some elements in the SVG.
+**示例1：** 手动修改 SVG 图片中元素的颜色。
 
-1. Double-click on an SVG image in the library, for example, A.svg.
+1. 双击图库中的一张svg图片，例如下图的A.svg
 
     ![alt text](35.png)
 
-2. In the object window of the SVG editor, select a path element.
+2. 在SVG编辑器中的对象窗口中，选中一个path元素
 
     ![alt text](36.png)
 
-3. Change the fill color to green and save as A1
+3. 将填充色修改为绿色并另存为A1
 
     ![alt text](37.png)
 
-4. View the saved images in the library and see the modified effects.
+4. 在图库中查看保存后的图片，显示修改后的效果。
 
     ![alt text](38.png)
 
-**Example 2** By using property binding, the color of elements in the SVG image can be dynamically changed.
+**示例2：** 通过属性绑定，动态改变 SVG 图片中元素的颜色。
 
-1. Add an SVG image from the library to the page.
+1. 从图库中添加一个 SVG 图片到画面上
 
     ![alt text](39.png)
 
-2. Double-click on this image to open the SVG editor.
-3. Inside the SVG editor, select an element and click the binding button for its fill color.
+2. 双击该图片，打开 SVG 编辑器
+
+3. 在 SVG 编辑器内，选择一个元素，点击其填充色的绑定按钮
 
     ![alt text](40.png)
 
-4. Bind a numeric tag and set the following color range.
+4. 绑定一个数值型变量，并设置如下颜色区间。
 
     ![alt text](41.png)
 
-5. After saving, close the SVG editor. Click the preview button on the page to view the preview effect of the image. You will find that as the tag values change, the SVG image presents different color effects.
+5. 保存后关闭 SVG 编辑器，点击画面的预览按钮，查看图片的预览效果，会发现随着变量值的变化，SVG 图片呈现不同的颜色效果。
 
-    ![svg-editor](../../assets/images/svg-editor.gif)
+    ![alt text](5.gif)
 
-**Example 3**: Through the custom properties of the SVG image, the operating status of different devices can be reflected.
+**示例3：** 通过属性 SVG 图片的自定义属性，反应不同设备的运行状态。
 
-1. From the library, add an SVG image to the page. This image serves as an indicator light to reflect the operating status of the device.
+1. 从图库中添加一个 SVG 图片到画面上，该图片用作反应设备运行状态的指示灯
 
     ![alt text](42.png)
 
-2. Double-click on this image to open the SVG editor.
-3. Inside the SVG editor, click on the root node of the image and add a custom property named "motorNo" to it, which will be used as the device number.
+2. 双击该图片，打开 SVG 编辑器
+
+3. 在 SVG 编辑器内，点击图片的根节点，为其添加一个自定义属性 motorNo,用作设备编号
 
     ![alt text](43.png)
 
-4. Click on the elements, such as path1 in the above image, and bind a dynamic property to the fill color for it. This is used to display the operating status of Motor1, Motor2, and Motor3, and set the corresponding fill color for the status values.
+4. 点击元素，例如上图的 path1, 为其填充色绑定动态属性，用于显示 Motor1,Motor2，Motor3 的运行状态，并为状态值设置对应的填充色。
 
     ![alt text](44.png)
 
-5. Save and close the SVG editor. Add a dropdown box on the page and set its text content and values as follows.
+5. 保存并关闭SVG编辑器，在画面上添加一个下拉框，将其下拉内容的 **文本** 和 **值** 设置为下图所示内容。
 
     ![alt text](45.png)
 
-6. Bind the custom property of SVG to the selectedValue property of the dropdown.
+6. 将SVG的自定义属性绑定到下拉框的 selectedValue 属性。
 
     ![alt text](46.png)
 
     ![alt text](47.png)
 
-7. Click the preview button, on the running page, when switching the dropdown options, the SVG image will display different colors according to the running status of the corresponding device.
+7. 点击预览按钮，在运行页面，切换下拉选项时，SVG 图片会根据对应设备的运行状态，显示不同的颜色。
 
-    ![svg-editor1](../../assets/images/svg-editor1.gif)
+    ![alt text](6.gif)
+
+
+
