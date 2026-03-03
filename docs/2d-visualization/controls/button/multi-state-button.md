@@ -35,9 +35,9 @@ Multi-State Button 是一种可在两个以上状态之间切换的按钮控件�
 3. 控制值也绑定到变量：“Demo:status”
 4. 按钮属性如下：
 
-![alt text](42.png)
+    ![alt text](42.png)
 
 5. 在运行页面点击按钮来控制设备的运行状态，查看按钮样式。
 
-![alt text](43.gif)
+    ![alt text](43.gif)
 
