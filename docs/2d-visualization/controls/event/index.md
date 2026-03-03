@@ -1,15 +1,16 @@
-# Event
-It is used to display event information.
+# 事件
 
-Type of event
+用于显示事件信息。
 
- - Operation events: Record various operations or configurations of the system, such as issuing commands.
- - Security events: Record security-related events in the system, including login, logout and access control.
- - Status events: Record events of various state changes, including changes in tag quality and changes in bool values.
- - System events:Record events of system running status and behavior, which can be used to analyze issues related to system performance, faults, etc. For example: system start/stop, service program start/stop, etc.
+#### 事件类型
 
-Include the following controls: 
+- 操作事件：记录对组态系统进行的各种操作或配置，例如下发命令等。
+- 安全事件：记录系统中发生的安全相关事件，包含登录登出和访问控制。
+- 状态事件：记录各种状态变化的事件，包括变量的质量位变化和布尔值的变化。
+- 系统运行事件：记录系统运行状态和行为的事件，可以用于分析系统的性能、故障等方面的问题。例如：系统的启停、服务程序的启停等。
 
- 
-- [Real Time Event ](event/realtime-event.md)
-- [Historical Event](event/historical-event.md)
+包含以下控件：
+
+- [实时事件](realtime-event.md) 
+
+- [历史事件](historical-event.md)
