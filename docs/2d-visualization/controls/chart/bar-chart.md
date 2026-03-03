@@ -1,47 +1,48 @@
-# Bar Chart
+# 柱状图
 
-A bar chart is used to compare the numerical differences between different categories or components. It consists of a series of rectangular bars, where the height of each bar represents the value associated with each category or component.
+柱状图用于比较不同类别或组成部分的数值差异。它由一系列长方形柱子组成，每个柱子的高度表示相应类别或组成部分的数值大小。
 
-![alt text](26.png)
+![alt text](37.png)
 
-**Properties**
+**属性**
 
-| **Name**          | **Description**  |
-|-------------------|--------------|
-| Name              | The name of this control.  |
-| X                 | The distance between the left side of the control and the left side of the canvas, in pixels. |
-| Y                 | The distance between the top of the control and the top of the canvas, in pixels.    |
-| W                 | The width of the control, in pixels.  |
-| H                 | The height of the control, in pixels.  |
-| Data              | Click the Bind button to bind data to the bar chart. Double-click the tag in the Select Tag window to bind it.  <br>![alt text](27.png) Click the dataset button to set default data for the bar chart.         <br>![alt text](28.png) Click the binding button to bind variables, properties, or write expressions for the cells in the dataset. |   |
-| Refresh Frequency | - Frequency(s): Refresh the data on the bar chart at this frequency. | 
-| Style             | Set the display style of the bar chart: vertical or horizontal. Displayed vertically by default.  |
-| Color             | - **Background**: The overall background color of the control.  <br>- **Grid**: The line color of the grid.   <br>- **Border**: The border color of the bar.   <br>- **X Axis**: The axis color of the X-axis.<br>- **Y Axis**: The axis color of the Y-axis.  <br>- **Series Colors**: Set the colors for different series in a bar chart, with the default being the colors displayed on the color palette.   <br>- **Bar Interval Color**: You can set value ranges. When the corresponding value of the bar is in different value ranges, the bar will display different colors.  <br>**Note:** Once the bar interval colors are set, the interval colors take precedence over the series colors. |
-| Margin            | Set the spacing between the control and its selection box. Ensure that the chart is displayed clearly and sufficient space is reserved for chart elements, such as legend.    |
-| Series            | - **Bar Width(px)**: The width of the bars.                     <br>- **Bar Gap(%)**: The space between bars of different series. |  
-| X Axis            | Set the style of the text displayed on the X-axis, including font, font size, bold, italic, and font color.     |
-| Y Axis            | Set the style of the Y-axis.  <br>- **Show Y Axis**: Control the display and hiding of the Y axis. Default Display.  <br>- **Show Grid**: Control the display and hiding of the grid.   <br>- **Grid(s)**: Set the number of dividing lines inserted on the Y-axis. <br>- **Range**: Set the display and hiding of Y-axis range. Selected by default.  When this item is selected, the upper and lower limits of the Y-axis need to be set.    <br>- **Auto Range**: The range of the Y-axis changes dynamically according to the range of bar values. If checked, the value range of the Y-axis will be automatically determined. If unchecked, the specified upper and lower bounds will be used. <br>- **Decimals**: Set the number of decimal places displayed on the Y-axis tick values. <br>- **Font**: Set the font, font size, bold, italics, and font color of the text displayed on the Y axis.    |
-| Legend            | Set the style of the pie chart's legend. <br>- **Show**: Controls the display and hiding of the legend. Default display. <br>- **Position**: Set the display position of the legend.                        <br>- **Font**: Set the legend font, font size, bold, italic, and font color.    |
-| Label             | Sets the style for the numerical value displayed on each bar.  <br>- **Show**: Control the display and hiding of label values. Hidden by default.  <br>- **Position**: Set the display position of the label value.                          <br>- **Decimals**: The number of decimal places displayed for bar values.               <br>- **Font**: Set the font, font size, bold, italics, and font color of the legend.  |
+| 名称 | 描述  |
+|:----------|:-------------|
+| 名字     | 此控件的名称。  |
+| X        | 控件左侧距画布左侧的距离，单位px。  |
+| Y        | 控件顶部距画布顶部的距离，单位px。  |
+| W        | 控件的宽度，单位px。 |
+| H        | 控件的高度，单位px。   |
+| 数据     | ![alt text](38.png)  点击此按钮为柱状图设置默认数据。  <br>![alt text](39.png)  点击绑定按钮为数据集里的单元格绑定变量、属性或编写表达式。 | 
+| 刷新频率 | - 频率(s)：按此频率对柱状图上的数据进行刷新。  |
+| 样式   | 设置柱状图的展现样式：柱状图或堆叠柱状图。柱状图的方向：垂直或水平。默认显示垂直柱状图。|
+| 颜色     | - **背景**：控件的整体背景色。 <br>- **栅格**：栅格的线条颜色。 <br>- **边框**：柱子的外边框颜色。 <br>- **X轴**：X轴的轴线颜色。 <br>- **Y轴**：Y轴的轴线颜色。 <br>- **系列颜色**：设置柱状图不同系列的颜色，默认显示色卡的颜色。 <br>- **柱体区间颜色**：可以设置数值区间。当柱体的对应数值处于不同的数值区间时，柱体显示不同的颜色。  <br>**说明**：一旦设置柱体区间颜色后，区间颜色优先级高于系列颜色。 ||
+| 边距     | 设置柱状图与其选中框之间的间距。确保图表能清晰显示，并为图表元素（如图例）预留足够的空间。  |
+| 系列     | - **柱子宽度**：柱子的宽度。<br>- **柱子间距**：不同系列之间的距离。 |
+| X轴      | 设置X轴显示的文字的样式，包括字体、字体大小、粗体、斜体、字体颜色。 |
+| Y轴      | 设置Y轴的样式。<br>- **显示Y轴**：控制Y轴的显示、隐藏。默认显示。<br>- **显示栅格**：控制栅格的显示、隐藏。默认显示。  <br>- **分度数**：设置在Y轴上插入的分割线数量。   <br>- **显示范围**：设置Y轴量程的显示、隐藏。默认选中。  该项处于选中状态时，需设置Y轴的上限和下限。<br>- **自动显示刻度值**：Y轴的量程根据柱子的值的范围动态变化。如果选中，则将自动确定Y轴的值范围。如果未选中，则将使用指定的上限和下限。 <br>**说明**：显示范围和自动显示刻度值，只能2选1。<br>- **小数位**：设置Y轴的刻度值上显示的小数位数。<br>- **字体**：设置Y轴显示的文字的字体、字体大小、粗体、斜体、字体颜色。  |
+| 图例     |- **显示**：控制图例的显示、隐藏。默认显示。<br>- **位置**：设置图例的显示位置。<br>- **字体**：设置图例的字体、字体大小、粗体、斜体、字体颜色。 |
+| 标注值   | 设置每个柱子上显示的数值的样式。<br>- **显示**：控制标注值的显示、隐藏。默认显示。 <br>- **位置**：设置标注值的显示位置。 <br>- **小数位**：标注值显示的小数位数。 <br>- **字体**：设置标注值的字体、字体大小、粗体、斜体、字体颜色。 |
 
-**Event**
+**动作**
 
-Allows you to perform specific events based on certain conditions. See the full description of each event on the **2D Visualization-> Event** page.
+允许您基于某种条件执行特定的动作。请参阅“[动作](../../event/index.md)”页上各种动作的完整描述。
 
-**Example**
+**示例**
 
-Use a bar chart to display the daily production capacity of the production line.
+使用柱状图来显示不同工厂的不同产线的日产能。
 
-1. Insert a bar chart on the page.
-2. Set the properties of the bar chart.
+1. 在画面上插入一个柱状图。
+2. 设置柱状图的属性。
 
-| **Property**       | **Value** |
-|--------------------|---------------|
-| Bar Interval Color | Set to the following:  <br>![alt text](29.png)|
-| Label              | Turn on and position: is Top.  <br>![alt text](30.png)  |
-| Y Axis Range       | 0~100   |
-| Data               | Click the **Dataset** button to configure the dataset.  <br>![alt text](31.png) <br>![alt text](32.png)  <br>After completing the setup, click the **Bind** button to perform dynamic cell binding.  <br>![alt text](33.png)  <br>![alt text](34.png)|
+    | 属性     | 值 |
+    |:--------------|:----------------|
+    | 柱体区间颜色 | 设置为以下内容：  ![alt text](40.png)  |
+    | 标注值       | 开启。位置：上。 |
+    | Y轴范围      | 0~100  |
+    | 数据         | 点击数据集按钮，设置数据集。  <br>![alt text](41.png) <br>![alt text](42.png)    <br>设置完成后，点击绑定按钮进行 [动态单元格](../../property-binding/dynamic-cell.md) 绑定。  <br>![alt text](43.png) <br>![alt text](44.png) |
 
-3.Click the Preview button to preview.
-    ![alt text](35.png)
+3. 点击预览按钮进行预览。
+
+    ![alt text](45.png)
 
