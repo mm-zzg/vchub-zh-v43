@@ -1,46 +1,46 @@
-# Tag List
+# 变量列表
 
-The tag list is used to display the names and current values of multiple tags.
+变量列表用于显示多个变量的名称和当前值。
 
-![alt text](30.png)
+![alt text](31.png)
 
-**Properties**
+**属性**
 
-| **Name**          | **Description**          |
-|-------------------|----------------|
-| Name              | The name of this control. |
-| X                 | The distance between the left side of the control and the left side of the canvas.   |
-| Y                 | The distance between the top of the control and the top of the canvas.   |
-| W                 | The width of the control.  |
-| H                 | The height of the control. |
-| Data              | Click the Bind button to bind data to the control. Double-click the tag in the Select Tag window to bind it. After binding a tag, if the data type of the bound tag is numeric, you can click the Set button to set the number of decimal places displayed by the tag.                 |
-| Refresh Frequency | Set the update frequency of this control's data. The frequency can only be set when enabled.   |
-| Fill              | Set the background color of the content display area. <br>- **Background**: Set background color of the control.   <br>- **Odd Rows**: Set background color of the add rows.  <br>- **Even Rows**: Set background color of the even rows. | 
-| Border            | Set the border color and border thickness.   |
-| Font              | Set font type, font size, bold, italic, and font color.    |
+| **名称** | **描述**  |
+|:----------|:------------------------|
+| 名字     | 此控件的名称。 |
+| X        | 控件左侧距画布左侧的距离，单位px。  |
+| Y        | 控件顶部距画布顶部的距离，单位px。   |
+| W        | 控件的宽度，单位px。   |
+| H        | 控件的高度，单位px。  |
+| 数据     | 点击绑定按钮为控件绑定数据。在选择变量窗口双击变量进行绑定。绑定变量后，如果绑定的变量数据类型是数值型，则可以点击设置按钮设置该变量显示的小数位数。 
+| 刷新频率 | 设置该控件数据的更新频率。在启用的情况下才可以设置频率。 |
+| 填充     | 设置内容显示区域的背景色。<br>- **背景**：设置整个控件的背景色。<br>- **奇数行**：设置奇数行背景色。<br>- **偶数行**：设置偶数行背景色。   |
+| 边框     | 设置边框色和边框粗细。  |
+| 字体     | 设置字体型号、字体大小、粗体、倾斜、字体颜色。  |
 
+**动作**
 
-**Event**
+允许您基于某种条件执行特定的动作。请参阅 “[动作](../../event/index.md)” 页上各种动作的完整描述。
 
-Allows you to perform specific events based on certain conditions. See the full description of each event on the **2D Visualization-> Event** page.
+**示例**
 
-**Example**
+查看产线的产能。
 
-Check the production line capacity.
+1. 在画面上插入一个“变量列表”控件。
+2. 设置控件的属性。
 
-1. Insert a "Tag List" control on the page.
-2. Set the control's properties.
+    | **属性** | **值** |
+    |:----------|:-----------------------|
+    | 背景     | f48256 |
+    | 奇数行   | 95c78c  |
+    | 偶数行   | 84d0e0  |
+    | 边框     | 008080 |
+    | 字体     | 微软雅黑, 16, ffffff  |
+    | 数据     | 点击数据的绑定按钮，双击绑定变量。  <br>![alt text](32.png) |
+    | 刷新频率 | 开启，将频率设置为1秒。  |
 
-| **Property**      | **Value**    |
-|-------------------|-------------------------------------|
-| Background        | f48256    |
-| Odd Rows          | 95c78c  |
-| Even Rows         | 84d0e0  |
-| Border            | 008080   |
-| Font              | Microsoft Yahei, 16, ffffff   |
-| Data              | Click the data binding button and double-click the binding tag.  <br>![alt text](31.png) |
-| Refresh Frequency | Turn on, set frequency to 1 second.  |
+3. 查看显示效果。
 
-3.Check the display effect.<br>
-    ![alt text](32.png)
+    ![alt text](33.png)
 

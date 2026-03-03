@@ -1,44 +1,44 @@
-# Historical Data Table
+# 历史检索
 
-This control is used to query and display historical data of tags.
+历史检索控件用于查询和显示变量的历史数据。
 
-![alt text](24.png)
-**Properties**
+![alt text](23.png)
 
-| **Name**     | **Description** |
-|--------------|-----------|
-| Name         | The name of this control.  |
-| X            | The distance between the left side of the control and the left side of the canvas.   |
-| Y            | The distance between the top of the control and the top of the canvas.    |
-| W            | The width of the control.  |
-| H            | The height of the control.  |
-| Time Range   | Query based on the specified time period. <br>![alt text](25.png) <br>- **Last**:Set the time range for data display.   <br>- **Custom**: Set the start time and end time to customize the time range for data display. |  
-| Query Mode   | Query according to the selected query mode, which includes: Raw, Fixed Points, and Periodic.  <br>- **Raw**: Retrieves all raw historical data within the selected time range.  <br>- **Fixed Points**: Requires setting the number of points. The selected time range is divided into corresponding time intervals based on the set number of points, and one data point is selected from each interval according to the specified aggregation mode. - <br>**Periodic**: Requires setting a period. The selected time range is divided into corresponding time intervals based on the set period, and one data point is selected from each interval according to the specified aggregation mode. |
-| Data         | Click the data binding button to open the dataset binding variable. Only tag with history storage enabled can be bound. <br>![alt text](26.png) |
-| Sort         | Set control sorting rules.  <br>- **Time Desc**: Sort in descending order by the time of tag value. <br>- **Time Asc**: Sort in ascending order by the time of tag value.  | 
-| Show         | Sets which buttons are displayed on the control.  <br>![alt text](27.png)  |
-| Button Style | Sets the color of the button used on the control.  <br>![alt text](28.png) |
-| Border       | Set border color and border thickness. |
-| Fill         | Set the background color of the content display area.  <br>- **Header**: Set background color of the header.    <br>- **Body**: Set background color of the body.      <br>- **Odd Rows**: Set background color of the add rows.  <br>- **Even Rows**: Set background color of the even rows. |
-| Table Header |  Set the font type, font size, bold, italic, font color, and horizontal alignment of the header. | 
-| Table Body   |  Set the font type, font size, bold, italic, font color, and horizontal alignment of the body. |
+**属性**
 
-**Event**
+| **名称** | **描述** |
+|:----------|:-------------------|
+| 名字     | 此控件的名称。|
+| X        | 控件左侧距画布左侧的距离，单位px。|
+| Y        | 控件顶部距画布顶部的距离，单位px。 |
+| W        | 控件的宽度，单位px。 |
+| H        | 控件的高度，单位px。 |
+| 时间范围 | 按照设置的时间段进行查询。  <br>![alt text](24.png) <br>- **最近**：设置数据展示的时间范围。<br>- **自定义**：设置开始时间和结束时间，自定义数据展示的时间范围 |
+| 查询方式 | 按照设置的查询方式进行查询。包含：原始值，固定点数，周期性。  <br>- **原始值**：查询所选时间段内的所有原始历史数据。<br>- **固定点数**：需设置点数。表示将该时间范围按照设置的点数切分为对应的时间片，从每个时间片内按照设置的聚合模式筛选一笔数据。<br>- **周期性**：需设置周期。表示将该时间范围按照设置的周期切分为对应的时间片，从每个时间片内按照设置的聚合模式筛选一笔数据。   |
+| 数据     | 点击数据的绑定按钮，打开数据集绑定变量。只能绑定开启了历史存储的变量。<br>  ![alt text](25.png)  <br>![alt text](26.png) |
+| 排序     | 设置控件排序规则。<br>- **时间倒叙**：按照变量值的时间倒序排序<br>- **时间正序**：按照变量值的时间正序排序 |
+| 显示     | 设置控件上显示的按钮以及网格。 <br>![alt text](27.png)   |
+| 按钮样式 | 设置控件上显示的按钮的颜色。  <br>![alt text](28.png)   |
+| 边框     | 设置边框颜色和边框粗细    |
+| 填充     | 设置内容显示区域的背景颜色。<br>- **表头**：设置表头背景色<br>- **表体**：设置表体背景色<br>- **奇数行**：设置奇数行背景色 <br>- **偶数行**：设置偶数行背景色 |
+| 表头     | 字体：设置表头字体型号、字体大小、加粗、倾斜、字体颜色，水平对齐方式。 |
+| 表体     | 字体：设置表体字体型号、字体大小、加粗、倾斜、字体颜色，水平对齐方式。 | 
 
-Allows you to perform specific events based on certain conditions. See the full description of each event on the **2D Visualization-> Event** page.
+**动作**
 
-**Example**
+允许您基于某种条件执行特定的动作。请参阅 “[动作](../../event/index.md)” 页上各种动作的完整描述。
 
-View the average temperature per hour over the last 24 hours.
+**示例**
 
-1. Insert a "Historical Data Table" control on the page.
-2. Set the time range and aggregation mode.
+查看过去2小时内，每10分钟的平均能耗。
 
-| Time Range       | Last 24 hours |
-|------------------|---------------|
-| Query Mode       | Periodic      |
-| Aggregation Mode | Avg           |
-| Period           | 1 hour        |
+1. 在画面上插入一个“历史检索”控件。
+2. 查询范围选择最近2小时。
+3. 查询方式选择周期性，聚合模式选择Avg，周期选择10分。
 
-3.Click the "Preview" button on the page to see the preview effect.
-    ![alt text](29.png)
+    ![alt text](29.png) 
+
+4. 点击数据的绑定按钮，在弹窗中点击”选择变量“按钮，在资产树中点击变量“区域:能耗”。
+5. 点击画面的 **预览** 按钮，查看预览效果。
+
+    ![alt text](30.png) 
