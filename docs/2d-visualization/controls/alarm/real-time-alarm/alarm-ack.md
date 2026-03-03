@@ -1,46 +1,42 @@
-# Alarm Acknowledge
+# 报警确认
 
-After the alarm occurs, the alarm can be acknowledged. There are three acknowledge modes, which are configured in the alarm attributes of the tag window.
+报警发生后可以对报警进行确认。有3种确认模式，在变量窗口的报警属性中进行配置。
 
-- Automatic
-- Manual ( Requires Confirmation)
-- Manual (No Confirmation)
+- 自动
+- 手动（需确认）
+- 手动（无需确认）
 
-## **Acknowledge Mode**
+## 确认模式
 
-In the alarm configuration of the tag, set the **Ack Mode** for the alarm.
+#### 自动
 
-![alt text](22.png)
+报警产生后，如果之后又 恢复至 正常值 ，系统自动确认此条报警。自动确认后该条报警从实时报警控件中消失。自动确认的报警，也可以在报警恢复至 正常值之 前，随时进行手工确认。
 
-#### **Automatic**
+#### 手动（需确认）
 
-After the alarm is generated, if it returns to normal value later, the system automatically acknowledges this alarm. Once automatically acknowledged, the alarm disappears from the real-time alarm control. Automatically acknowledged alarms can also be manually acknowledged at any time before the alarm returns to normal value.
+报警产生后，必须人工手动确认并输入确认信息 ，否则即便当前报警已经恢复正常，也不会从实时报警控件中消失。
 
-#### **Manual (Requires Confirmation)**
-
-After the alarm is generated, it must be confirmed manually.And enter the confirmation information. Otherwise, even if the current alarm has returned to normal, it will not disappear from the real-time alarm control.
-
-After selecting the alarm, click the confirmation button, and the confirmation window will pop up. After entering the confirmation information, the confirmation will be completed. After confirmation, the alarm disappears from the real-time alarm control. 
+选择报警后点击确认按钮，会弹出确认窗口，输入确认信息后，才完成确认。确认后该条 报警从实时报警控件中消失。
 
 ![alt text](20.png)
 
-#### **Manual (No Confirmation)**
+#### 手动（无需确认）
 
-After the alarm is generated, it must be confirmed manually, otherwise even if the current alarm has returned to normal, it will not disappear from the real-time alarm control.
+报警产生后，必须人工手动确认，否则即便当前报警已经恢复正常，也不会从实时报警控件中消失。
 
-After selecting the alarm, click the confirmation button to complete the confirmation. After confirmation, the alarm disappears from the real-time alarm control.
+选择报警后点击确认按钮，完成确认。确认后该条 报警从实时报警控件中消失。
 
 ![alt text](21.png)
 
-## **How to Ackonwledge**
+## 如何确认
 
-1. On the real-time alarm control, after checking the alarm, click the “Acknowledge” button at the bottom right corner of the control to acknowledge it.
+1. 在实时报警控件上，勾选报警后，点击控件右下角的”确认“按钮，进行确认。
+
+    ![alt text](22.png)
+
+2. 直接点击等级按钮，进行确认。
 
     ![alt text](23.png)
-
-2. Acknowledge by clicking directly on the "Priority" button.
-
-    ![alt text](24.png)
 
 
 

@@ -1,8 +1,9 @@
-# Alarm
-It is used to display alarm information.
-Include the following controls:
+# 报警
 
-- [Real Time Alarm](alarm/real-time-alarm/index.md)
-- [Historical Alarm](alarm/historical-alarm/index.md)
+用于显示警报信息。
 
+包含以下控件：
 
+- [实时报警](real-time-alarm/index.md)  
+
+- [历史报警](historical-alarm/index.md) 

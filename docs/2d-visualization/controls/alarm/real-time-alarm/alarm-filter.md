@@ -1,43 +1,44 @@
-# Alarm Filter
+# 报警筛选
 
-By default, all alarms in the system are displayed on the control, including the remote alarm data of the network. You can filter the data according to the conditions on the control.
+默认情况下，系统内的所有报警都显示在控件上，包括组网的远端报警数据。您可以在控件上按照条件对数据进行筛选。
 
-Both editor and running pages support data filtering.
+设计时和运行时页面均支持数据筛选。
 
-## Filter Data On Editor 
+## 设计时数据筛选
 
-Data filtering can be performed in the "Properties" -> "Filter" of the control. After the filter set here, the data is filtered and displayed according to the set conditions on the running page.
+在控件的”属性“->”筛选条件“中可以进行数据筛选。此处设置了筛选条件后，在运行页面，按照已设置的条件进行数据筛选和显示。
 
 ![alt text](16.png)
 
-#### **Filter by status**
+#### 按状态筛选
 
-It can be filtered according to the status of the alarm. For example, only unacked alarms can be displayed on the control by enabling the "Active, Unacked " and "Cleared, Unacked " properties.
+可以根据报警的状态进行筛选。例如，可以通过启用”激活，未确认“和 “已清除，未确认”属性，在控件上仅显示未确认的报警。
 
-#### **Filter by priority**
+#### 按等级筛选
 
-It can be filtered according to the priority of the alarm. For example, only these two levels of alarms can be displayed on the control by enabling the "Critical" and "High" .
+可以根据报警的等级进行筛选。例如，可以通过启用”紧急“和 “高级”属性，在控件上仅显示这两个等级的报警。
 
-#### **Filter by type**
+#### 按类型筛选
 
-It can be filtered according to the type of alarm. For example, you can enable the "off-> on" and "on-> off" properties to display only the alarm of bool jump on the control.
+可以根据报警的类型进行筛选。例如，可以通过启用”关- >开“和 “开->关”属性，在控件上仅显示布尔值跳变的报警。
 
-#### **Filter by alarm group**
+#### 按报警组筛选
 
-You can filter based on the alarm group. For example, if you select the alarm group "Line1," the control will display the alarm information for the tags within that group.
+可以根据报警组进行筛选。例如，选择报警组"Line1"，则在控件上值显示该报警组内的变量的报警信息。
 
-## **Filter Data On Running Page**
+## 运行时数据筛选
 
-On the running page, there are three places for data filtering.
+在运行页面，有3处地方可以进行数据筛选。
 
 ![alt text](17.png)
 
-1. Enter the query content in the search box, fuzzy search for the input content in all columns of the control.
-2. Click the filter button to filter the data. The filter conditions are the same as the design page, including: alarm status, alarm priority, and alarm type. Click the reset button to restore the filter to the filter set on the design page.
-3. Filter the data in the panel. The options that have been enabled in the filter criteria are displayed by default. You can quickly disable filters by clicking the option. For example, the following figure only shows the alarm of "Active, Unacked".
+1.  在搜索框中输入查询内容，在控件的 所有列中对输入的内容进行模糊 查找。
+2. 点击筛选按钮进行数据筛选，筛选条件同设计页面，包含：报警状态、报警等级、报警类型、报警组。点击重置按钮，将筛选条件恢复到设计页面设置的筛选条件。
+3. 在折叠面板中进行数据筛选。此处默认显示在筛选条件中已经启用的选项。可以点击选项快速禁用筛选条件。例如下图仅显示“激活，未确认”的报警。
 
-![alt text](18.png)
+    ![alt text](18.png)
 
-**Note:** Enabling or disabling options in the filter panel only controls whether the data is displayed in the control; it does not prevent the data from being queried or affect the enabled/disabled status of options in the filter criteria.   For example, in the filter panel, only "Active, Unacked" enabled, but all options remain enabled in the filter criteria. 
-![alt text](19.png)
+**说明**：筛选面板中选项的启用/禁用，仅表示是否在控件中显示数据，并不代表不查询数据，不会影响筛选条件中各选项的启用/禁用状态。  例如在筛选面板中，只有“激活，未确认”启用，但在筛选条件中，所有选项均处于启用状态。 
+
+![alt text](19.png) 
 
