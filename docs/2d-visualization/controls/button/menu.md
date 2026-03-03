@@ -1,76 +1,70 @@
-# Menu
+# 导航菜单
 
-The  menu control is used to facilitate quick navigation for users. Supports up to secondary menus.
+导航菜单控件用于方便用户进行快速导航。最多支持二级菜单。
 
 ![alt text](8.png)
 
+**属性**
 
+| 名称 |描述  |
+|:----------|:---------------|
+| 名字     | 此控件的名称。   |
+| X        | 控件左侧距画布左侧的距离，单位px。 |
+| Y        | 控件顶部距画布顶部的距离，单位px。   |
+| W        | 控件的宽度，单位px。|
+| H        | 控件的高度，单位px。  |
+| 布局     | 设置菜单的整体布局方式。包含水平、垂直、内嵌。   |
+| 一级     | 设置一级菜单的显示样式。  <br>- **W**：一级菜单的宽度，单位px。<br>- **H**：一级菜单的高度，单位px。<br>- **字体**：设置一级菜单的字体。包括字体型号、字体大小、加粗、倾斜、水平对齐方式、垂直对齐方式。 <br>可以为菜单设置不同操作状态下的颜色效果。状态包括：默认、悬浮、选中。  <br>可以为每种状态设置背景色和字体颜色。  <br>![alt text](9.png) |
+| 二级     | 设置二级菜单的显示样式 <br>- **W**：二级菜单的宽度，单位px。  <br>- **H**：二级菜单的高度，单位px。   <br>- **字体**：设置二级菜单的字体。包括字体型号、字体大小、加粗、倾斜、水平对齐方式、垂直对齐方式。 <br>可以为菜单设置不同操作状态下的颜色效果。状态包括：默认、悬浮、选中。  <br>可以为每种状态设置背景色和字体颜色。 <br>![alt text](10.png)|
+| 导航内容 | 设置各级菜单的名称以及导航画面。  <br>![alt text](11.png)  |
 
-**Properties**
+## 设置菜单
 
-| **Name**   | **Description**  |
-|------------|--------|
-| Name       | The name of this control.  |
-| X          | The distance between the left side of the control and the left side of the canvas. |
-| Y          | The distance between the top of the control and the top of the canvas.  |
-| W          | The width of the control.  |
-| H          | The height of the control.  |
-| Layout     | Sets the overall layout of the menu. Including horizontal, vertical and inline. |
-| Primary    | Set the display style of the primary menu.  <br>- **W**: The width of the primary menu. <br>- **H**: The height of the primary menu. <br>- **Font**: Set the font of the primary menu. Including font type, font size, bold, italic, horizontal alignment, and vertical alignment. <br>You can set color effects for menus in different operating states. Status includes: default, hover, selected.  The background color and font color can be set for each status.   ![alt text](9.png)|
-| Secondary  | Set the display style of the secondary menu.  <br>- **W**: The width of the secondary menu. <br>- **H**: The height of the secondary menu. <br>- **Font**: Set the font of the secondary menu. Including font type, font size, bold, italic, horizontal alignment, and vertical alignment. <br>You can set color effects for menus in different operating states. Status includes: default, hover, selected.  ![alt text](10.png)  <br>The background color and font color can be set for each status. |
-| Navigation | Set the names of menus at each level and the navigation page. ![alt text](11.png)    |
+在导航内容中您可设置菜单个数、名称和画面导航功能。
 
-## **setting menu**
+**设置菜单名称**
 
-In the navigation content, you can set the number, name and page navigation function of the menus.
+将鼠标移至菜单上，菜单显示编辑框，在编辑框内点击鼠标，进入编辑状态，可以设置菜单名称。
 
-**Set menu name**
+![alt text](12.gif)
 
-Move the mouse over the menu, and the menu will display an editing box. Click the mouse in the editing box to enter the editing state, and you can set the menu name.
+**新增菜单**
 
-![menu](../../../assets/images/menu.gif)
-
-**New menu**
-
-Right-click on the menu to display the operation options. Click the option to perform the corresponding operation. 
-
-![alt text](12.png)
-
-**Note:** Only primary menus support the addition operation.
-
-**Setup navigation**
-
-Click the settings button on the right side of the menu item to pop up the navigation settings window.
-
-![alt text](14.png)
+在菜单上右击，显示操作选项，点击选项后进行对应的操作。
 
 ![alt text](13.png)
 
+**说明**：只有一级菜单才支持新增操作。 
 
-**Event**
+**设置导航**
 
-Allows you to perform specific events based on certain conditions. See the full description of each event on the **2D Visualization-> Event** page.
+点击菜单项右侧的设置按钮，弹出导航设置窗口。
 
-**Example**
-
-Use the navigation menu to display information about individual components of the photovoltaic power system.
+![alt text](14.png)
 
 ![alt text](15.png)
 
-1. Add a menu control to a page.
-2. The content of the menu in the setting control is: (only set as a primary menu) home page, photovoltaic panels, fans, combiner boxes, inverter boxes, energy storage boxes, and circuit diagrams.
+**动作**
 
-    ![alt text](16.png)
+允许您基于某种条件执行特定的动作。请参阅“[动作](../../event/index.md)”页上各种动作的完整描述。
 
-3. Set the navigation screen for each menu. Take the "Home" menu setting as an example to perform navigation settings.
-4. In the navigation window, select the page to be navigated and set the opening position to the replace.
+**示例**
+
+使用导航菜单显示光伏电力系统的各个组件信息。
+
+![alt text](16.png)
+
+1. 在一个画面上新增一个导航菜单控件。
+2. 设置控件中导航菜单内容为：（仅设置为一级菜单）主页、光伏板、风机、汇流箱、逆变箱、储能箱、线路图。
 
     ![alt text](17.png)
 
-5. By analogy, set the navigation page of other menus.
-6. In the running page, click the home page menu in the menu control to jump to the content of "Home Page"; click the photovoltaic panel menu again to display the content of the "photovoltaic panel" screen.
+3. 为每个菜单设置导航画面，以“主页”菜单设置为例，进行导航设置。
+4. 在导航窗口中，选择需要导航的画面，设置打开位置为替换窗口。
 
-    ![menu-1](../../../assets/images/menu-1.gif)
+    ![alt text](18.png)
 
+5. 以此类推，设置其他菜单的导航画面。
+6. 在运行界面，点击导航菜单控件中主页菜单，则跳转显示“主页”的内容；再次点击光伏板菜单，显示“光伏板”画面内容。
 
-
+    ![alt text](19.gif)
