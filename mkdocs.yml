@@ -502,16 +502,23 @@ nav:
                   - 项目属性:
                             - 2d-visualization/project-properties/index.md
                             - 2d-visualization/project-properties/customize-login-page.md
-        - 3D Visualization:
+        - 3D 组态:
                   - 3d-visualization/index.md
-                  - 3d-visualization/introduction-to-scene-editor.md
-                  - 3d-visualization/introduction-to-model-editor.md
-                  - 3d-visualization/page-visualization.md
-                  - 3d-visualization/animation.md
-                  - 3d-visualization/event.md
-                  - 3d-visualization/convert-3d-models-to-glb-format.md
-                  - 3d-visualization/lighting-settings.md
-                  - 3D Low Code Example:
+                  - 场景编辑器:
+                            - 3d-visualization/introduction-to-scene-editor/index.md
+                  - 模型编辑器:
+                            - 3d-visualization/introduction-to-model-editor/index.md
+                  - 画面组态:
+                            - 3d-visualization/page-visualization/index.md
+                  - 动画:
+                            - 3d-visualization/animation/index.md
+                  - 动作:          
+                            - 3d-visualization/event/index.md
+                  - 如何将3D模型转换为 GLB 格式:
+                            - 3d-visualization/convert-3d-models-to-glb-format/index.md
+                  - 光源设置:
+                            - 3d-visualization/lighting-settings/index.md
+                  - 3D 低代码示例:
                             - 3d-visualization/3d-low-code-example/index.md
                             - 3d-visualization/3d-low-code-example/find-3dview.md
                             - 3d-visualization/3d-low-code-example/getscene.md
