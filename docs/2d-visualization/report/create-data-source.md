@@ -1,48 +1,56 @@
-# Create Data Source
+# 创建数据源
 
-Data connection is the first step before any data analysis. The built-in report designer of VC Hub seamlessly integrates with VC Hub's historical database as well as enterprise SQL databases such as MySQL, SQL Server, Oracle, etc. This chapter will provide detailed instructions on how to use VC Hub's historical tags as data sources for reports.
+数据连接是进行所有数据分析之前的首要步骤。WAGO SCADA内置的报表设计器可无缝对接SCADA的历史数据库以及企业的SQL数据库，例如MySQL、
 
-1. Double click the mouse on the report and open the design window.
-2. In the design pop-up window, click the "Add" button in the upper right corner of the data source list.
+SQLServer、Oracle等。本章将详细介绍如何将WAGO SCADA的历史变量作为报表的数据源。
+
+1. 在创建的报表上双击鼠标，弹出设计窗口。
+
     ![alt text](8.png)
-3. On the new page, keep all default values and enter the following information in the following fields (Note: The following data are only examples, please fill in according to the actual situation).
+
+2. 在设计弹窗中，点击数据源列表右上角的”新增“按钮。
+
     ![alt text](9.png)
-     - Name: Capacity
-     - Query Mode: Raw
-     - Tag: 
-         - Region:Capacity.Production Line 1
-         - Region:Capacity.Production Line 2
-         - Region:Capacity.Production Line 3 
-         - Region:Capacity.Production Line 4 
-         - Region:Capacity.Production Line 5 
-         - Region:Capacity.Production Line 6
 
-4. Click the **"OK"** button. At this time, the data will be displayed on the data source list page.
+3. 在新增页面，保留所有默认值，并在以下字段中输入如下信息（说明：以下数据仅为示例，请根据实际情况填写）。
 
-**Configuration**
+    ![alt text](10.png)
 
-| **Name**    | **Description**  |
-|-------------|------------------|
-| Name        | The name of the data source.   |
-| Description | Description of the data source.   |
-| Query Mode  | Pull down to select the query mode, including: Raw，Fixed Points，Periodic.  When selecting the **Fixed Points**, the **Aggregation Mode** and **Points** must be set.   <br>![alt text](10.png)   <br>When selecting the **Periodic**, the **Aggregation Mode** and **Period** must be set.   <br>![alt text](11.png)|
-| Tag         | Set the tags required for the data source. Multiple selections are allowed.  <br>**Note:** Only tags with "history" turned on can be selected. |
+    名称：产能
 
-5.Switch to the "Report Designer" page and click the Settings button.
-    ![alt text](12.png)
-6.The created data source information is automatically displayed in the report designer's data sources and datasets.
+    描述：空
+
+    查询方式：原始值
+
+    变量：区域:产能.产线1,区域:产能.产线2,区域:产能.产线3,区域:产能.产线4,区域:产能.产线5,区域:产能.产线6
+
+4. 单击**“确认”**按钮。此时该条数据将显示在数据源列表页面。
+
+    **配置字段**
+
+    | **名称** | **描述** |
+    |:----------|:------------|
+    | 名称     | 数据源的名称。 |
+    | 描述     | 数据源的描述信息。|
+    | 查询方式 | 下拉选择采样类型，包含：原始值、固定点数、周期性。  <br>当选择 **固定点数** 时，需设置 **聚合模式** 和 **点数**。 <br>![alt text](11.png)  <br>当选择 **周期性** 时，需设置 **聚合模式** 和 **周期**。  <br>![alt text](12.png) |
+    | 变量     | 设置数据源所需的变量，可多选。  <br>**说明**：只能选择开启了“历史记录”的变量。 |
+
+5. 切换至”报表设计器“页面，点击设置按钮。
+
     ![alt text](13.png)
 
-**Note:**
+6. 在报表设计器的数据源和数据集中，自动显示创建的数据源信息。
 
-1. The dataset contains only 3 fields:  
-     - path 
-     - time 
-     - value 
-2. When the data source is automatically created, two parameters are automatically created for each data source: start date and end date. The end date defaults to **today**; the start date is **(current date - 7 days)**. 
+    ![alt text](14.png)
 
-![alt text](14.png) 
+说明：  
 
+1. 数据集仅包含3个字段：  
+    - path 
+    - time 
+    - value  
 
+2. 在自动创建数据源的同时，会自动为每个数据源创建两个参数：开始日期、结束日期。结束日期默认 **当天**；开始日期为 **（当前日期-7天）**。  
 
+    ![alt text](15.png)
 

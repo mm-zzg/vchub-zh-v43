@@ -1,61 +1,54 @@
-# Export/Import Reports
+# 导出/导入报表
 
-You can use the export and import functions of reports to implement operations such as data backup, recovery, sharing, and migration. You can export a single report or all reports in a report tree.
+您可以通过报表的导出、导入功能，来实现数据的备份、恢复、共享、迁移等操作。您可以导出单个报表，也可以导出报表树的所有报表。
 
-## Export
+## 导出
 
-**Export all reports:** Right-click the root node of the report and click Export.
+**导出所有报表：** 在报表的根节点上右击鼠标，点击导出。
 
 ![alt text](17.png)
 
-**Export a single report:** Right-click the mouse on a single report and click Export.
+**导出单个报表：** 在单个报表上右击鼠标，点击导出。
 
 ![alt text](18.png)
 
-**Note:**  
+**说明：**  
 
-1. The exported report file will be automatically stored in the "Download" directory of your computer. 
-2. When exporting multiple reports, each report appears as a separate zip file. 
+1. 导出的报表文件会自动存储在您电脑的“下载”目录下。 
 
-## Import
+2. 导出多个报表时，每个报表显示为一个独立的 zip 文件。
 
-You can only right-click the root node of the report and click Import to complete the import operation.
+## 导入
+
+只能在报表的根节点上右击鼠标，点击导入，完成导入操作。
 
 ![alt text](19.png)
 
-**Note:** Because the report involves tag information, in order to ensure that the report can run normally after being imported into a new project or project, the tag data must also be imported, and the tag paths must be completely consistent.
+**说明**：因为报表中涉及变量信息，为了确保导入到新的工程或项目后，报表能正常运行，需将变量数据也进行导入，且变量路径需完全一致。
 
-**Example**
+**示例**
 
-Import reports from workspace A to workspace B.
+将报表从A工程导入B工程。
 
-1. Export a report under the report node of workspace A: daily production capacity.
+1. 在A工程的报表节点下导出一个报表：日产能。
 
     ![alt text](20.png)
 
-2. In the assets window, export the tags used in the report. Select the asset to which the tag in the report belongs and click the "Export" button. For example: the asset to which the tag used in the report belongs is: Default.
+2. 在资产窗口中，导出报表中使用到的变量。选择报表中变量的所属资产，点击“导出”按钮。例如：报表中使用的变量的所属资产为：产线1。
 
     ![alt text](21.png)
 
-3. Open workspace B in the workspace list, right-click the mouse under the report node of workspace B, and click Import to import the report in step 1.
+3. 在工程列表中打开B工程，在B工程的报表节点下，右击鼠标，点击导入，导入步骤1的报表。
 
-4. Import the tags used in the report into workspace B, and keep the tag paths consistent.
+4. 将报表中使用的变量导入B工程，且变量路径保持一致。
 
-     - Create a new asset in the asset list of workspace B named ”Production Line 1”.
+    - 在B工程的资产列表中创建一个新的资产：产线1。
 
     ![alt text](22.png)
 
-     - Select "Production Line 1" in the asset window and click the Import button to import the data in step 2.
+    - 在资产窗口选择“产线1”，点击导入按钮，导入步骤2的数据。
 
     ![alt text](23.png)
 
-5. View the imported report in the report viewer and the report can be displayed successfully.
-
-
-
-
-
-
-
-
+5. 在报表查看器中查看导入的报表，报表可以成功显示。
 
