@@ -1,87 +1,90 @@
-# Bidirectional Bindings
+# 双向绑定
 
-Bidirectional binding refers to the automatic synchronization between a control's property and a tag, dynamic tag, or another property. 
+双向绑定指的是控件的属性与变量、间接变量、属性之间的自动同步。
 
-This means when the data source changes, the control's style or value updates automatically，when the user modifies the control's style or value, the data source is also updated automatically.
+这意味着，当数据源发生变化时，控件样式或值会自动更新；当用户修改控件样式或者值时，也会自动更新数据源。
 
-## Controls and Properties that Support Bidirectional Binding
+## 支持双向绑定的控件及其属性
 
-| **Control**    | **Property**                 |
-|----------------|------------------------------|
-| Text Input     | Text                         |
-| Number Input   | Value                        |
-| Slider         | Value                        |
-| Checkbox       | Selected                     |
-| Radio Button   | Selected Text/Selected Value |
-| Dropdown       | Selected Text/Selected Value |
-| Datetime Input | Date                         |
+| **控件**   | **属性**        |
+|:------------|:-----------------|
+| 文本输入框 | 文本            |
+| 数字输入框 | 值              |
+| 滑动条     | 值              |
+| 复选框     | 选中            |
+| 单选按钮   | 选中文本/选中值 |
+| 下拉框     | 选中文本/选中值 |
+| 日历       | 日期            |
 
-## Bidirectional Tag Bindings
+## 双向绑定变量
 
-In the property binding window, after selecting a tag, you can enable the **"Bidirectional "** option. After enabling bidirectional binding, a fallback option can be set. If the property change fails, it will revert to the last valid value.
+在属性绑定窗口，选择变量后，可以勾选“**双向绑定**”。开启双向绑定后，可以设置回退，当属性更改失败时，回退到上一次的有效值。
 
-![alt text](51.png)
+![alt text](56.png)
 
-**Example**
+**示例**
 
-Number input control and tag are bound in both directions.
+数字输入框和变量进行双向绑定。
 
-1. Draw a number input control on the page.
-2. Click the bind button on the "Value" property of the control.
-
-    ![alt text](52.png)
-
-3. After selecting the tag in the "Property Binding" window, check the “Bidirectional ” box and click the "OK" button to complete the binding.
-
-    ![alt text](53.png)
-
-4. On the running page, when the value of the tag changes, the value displayed in the number input control changes synchronously; clicking the **Enter** key after entering the value in the number input control will write the entered value back to the bound tag.
-
-## Bidirectional Property Bindings
-
-In the property binding window, after selecting a property, you can enable the **"Bidirectional"** option. After enabling bidirectional binding, a fallback option can be set. If the property change fails, it will revert to the last valid value.
-
-![alt text](54.png)
-
-**Example**
-
-The number input and slider are bound in both directions.
-
-1. Draw a number input and a slider control on the page.
-2. Click the bind button of the "Value" property of the number input.
-
-    ![alt text](55.png)
-
-3. In the "Property Binding" window, select the **value** property of the slider, check the “Bidirectional” box, and click the "OK" button to complete the binding.
-
-    ![alt text](56.png)
-
-4. On the running page, when the value of the slide changes, the value displayed in the number input changes synchronously; when you enter a value in the number input and click the **Enter** key, the value of the slide changes accordingly.
-
-    ![bidirectional](../../assets/images/bidirectional.gif)
-
-## Bidirectional Dynamic Tag Bindings
-
-In the property binding window, after selecting a dynamic tag, you can enable the **"Bidirectional"** option. After enabling bidirectional binding, a fallback option can be set. If the property change fails, it will revert to the last valid value.
-
-![alt text](60.png)
-
-**Example**
-
-The text input is bound to an dynamic tag to display the running status of different motors. When a different motor is selected in the drop-down box, the running status of the motor is displayed in the text input, and the running status of the motor can be modified.
-
-1. Draw a text input, a dropdown, and 2 text label controls on the page.
+1. 在画面上绘制一个数字输入框。
+2. 点击控件的“值”属性的绑定按钮。
 
     ![alt text](57.png)
 
-2. The dropdown options are set to: Motor 1, Motor 2, Motor 3.
-3. Click the bind button of the "Text" property of the text input control.
+3. 在属性弹窗中选择变量后，勾选“双向绑定”，点击确认按钮，完成绑定。
 
     ![alt text](58.png)
 
-4. After selecting ”Dynamic Tag“ in the property binding window, make the following settings, check “Bidirectional ”, and click the ”OK“ button to complete the binding.
+4. 在运行页面，当变量的值发生变化时，数字输入框内显示的值同步变化；在数字输入框输入值后点击回车键，会将输入的值回写到绑定的变量上。
 
-    ![alt text](59.png)
+## 双向绑定属性
 
-5. On the running page, when the options in the dropdown  change, the value of the text input  changes. When Motor 1 is selected, the text input displays the running status of Motor 1, and when Motor 2 is selected, the text input displays the running status of Motor 2.
-6. Entering **true** or **false** in the text input and clicking the Enter key will modify the operating status of the currently selected motor.
+在属性绑定窗口，选择属性后，可以勾选“**双向绑定**”。开启双向绑定后，可以设置回退，当属性更改失败时，回退到上一次的有效值。
+
+![alt text](59.png)
+
+**示例**
+
+数字输入框和滑动条进行双向绑定。
+
+1. 在画面上绘制一个数字输入框和一个滑动条控件。
+2. 点击数字输入框的“值”属性的绑定按钮。
+
+    ![alt text](60.png)
+
+3. 在属性弹窗中选择滑动条的 **value** 属性后，勾选“双向绑定”，点击“确认”按钮，完成绑定。
+
+    ![alt text](61.png)
+
+4. 在运行页面，当滑动条的值发生变化时，数字输入框内显示的值同步变化；在数字输入框输入值后点击回车键，滑动条的值随之变化。
+
+    ![alt text](62.gif)
+
+## 双向绑定动态变量
+
+在属性绑定窗口，选择动态变量后，可以勾选“双向绑定”。开启双向绑定后，可以设置回退，当属性更改失败时，回退到上一次的有效值。
+
+![alt text](63.png)
+
+**示例**
+
+文本输入框绑定间接变量，用来显示不同的电机的运行状态，当下拉框选择不同的电机时，在文本输入框内显示该电机的运行状态，并且可以修改电机的运行状态。
+
+1. 在画面上绘制一个文本输入框，一个下拉框，2 个文本标签控件。
+
+    ![alt text](64.png)
+
+2. 下拉框控件的下拉选项设置为：电机 1，电机 2，电机 3。
+3. 点击文本输入框的“文本”属性的绑定按钮。
+
+    ![alt text](65.png)
+
+4. 在属性弹窗中选择间接变量后，进行如下设置，勾选“双向绑定”，点击“确认”按钮，完成绑定。
+
+    ![alt text](66.png)
+
+5. 在运行页面，当下拉框的选项发生变化时，文本输入框的值随之变化。选择电机 1 时，文本输入框显示电机1的运行状态，选择电机 2 时，文本输入框显示电机 2 的运行状态。
+6. 在文本输入框内输入 **true** 或者 **false**, 点击回车键，会修改当前所选电机的运行状态。
+
+
+

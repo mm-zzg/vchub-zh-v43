@@ -1,64 +1,65 @@
-# Dynamic Cell
+# 动态单元格
 
-Dynamic cell binding allows you to link cells within a dataset to Tags or properties, enabling you to easily make one or more cells within the dataset dynamic.
+动态单元格绑定允许您将数据集内的单元格绑定到 Tag 或属性上，使您能够轻松地使数据集中的一个或多个单元格动态化。
 
-Currently, supported controls include: Bar Chart, Pie Chart, and Custom Curve.
+目前支持的控件有：柱状图、饼图、自定义曲线。
 
-## Setting Datatable
+## 数据集设置
 
-For example, in the case of a pie chart, click the dataset button next to the data.
-
-![alt text](37.png)
-
-A dataset window will pop up as shown below.
-
-![alt text](38.png)
-
-#### Add Data
-
-- If no row is selected, clicking the "Add Row" button will add a new row at the end of the list.
-- If you click on a specific row, making it the selected row, clicking the "Add Row" button will insert a new row below the selected row.
-
-You can double-click the text box to edit the content.
-
-![alt text](39.png)
-
-#### View Datatable
-
-In the datatablet pop-up, clicking the "Display JSON" button will display the data structure of the dataset. When you want to manipulate the data property of the control through scripts, you can refer to this JSON format and make modifications based on it.
-
-![alt text](40.png)
-
-### Delete Data
-
-When you click on the row that needs to be deleted, that row will be in the selected state. Clicking the "Delete Row" button will delete that row. If no row is selected, the "Delete Row" button will be grayed out and disabled.
-
-![alt text](41.png)
-
-#### Dynamic Cell Binding
-
-Click the binding button for the data.
+ 以饼图为例，点击数据后面的数据集按钮。
 
 ![alt text](42.png)
 
-A binding window will pop up as shown below.
+弹出如下数据集窗口。
 
 ![alt text](43.png)
 
-There are two ways to add cell bindings:
+#### 新增数据
 
-**Method 1**: Click to select a specific cell in the DataTable, then click “Add Binding.” At this point, the cell binding list will increase by one entry. The **Row** column indicates the row index of the cell in the DataTable, the **Column** column indicates the column index of the cell in the DataTable, and the **Value** column indicates the binding content.
+- 如若未选中某一行，此时点击“新增行”按钮，将在列表末尾新增一行；
+- 如果鼠标点击了某行，该行处于选中状态，此时点击“新增行”按钮，将在该行的下方新增一行；
+
+双击文本框，可编辑内容。
 
 ![alt text](44.png)
 
-Click the binding button in the **Value** column to open the settings window. Here, you can bind the cell to a variable, property, or write an expression.
+#### 查看数据集
+
+在数据集弹窗中，点击“显示JSON”按钮可以展示数据集的数据结构。当您想通过脚本操作控件的数据集(data)属性时，可以参照此Json格式，在此基础啊上进行修改。
 
 ![alt text](45.png)
 
-**Method 2**: When no cell in the DataTable is selected, you can also directly click the "Add Binding" button. This will add a blank row to the cell binding list, where you can manually enter the row and column information and the corresponding data from the DataTable.
+#### 删除数据
 
-For example, in the cell bindings shown below, the set row is 0, the column is **Name**, corresponding to **Electricity** in the DataTable.
+鼠标点击需要删除的行，此时该行处于选中状态，点击“删除行”按钮，可以删除该行。当未选中任何行时，“删除行”按钮处于灰色不可点状态。
 
 ![alt text](46.png)
 
-Once the setup is complete, on the runtime page, the values that were bound will replace the values in the Datatable.
+## 动态单元格绑定
+
+点击数据的绑定按钮。
+
+![alt text](47.png)
+
+弹出如下绑定窗口。
+
+![alt text](48.png)
+
+有如下两种方式添加单元格绑定：
+
+**方式1：** 单击选中 Datatable 里某个单元格，再点击“新增绑定”，此时单元格绑定列表会增加一条数据，**Row** 列表示该单元格在 Datatable 里的行索引，**Column** 列表示该单元格在 Datatable 里的列索引，**Value** 列表示绑定内容。
+
+![alt text](49.png)
+
+点击 **Value** 列的绑定按钮，弹出设置窗口。 可以为该单元格绑定变量、属性或者编写表达式。
+
+![alt text](50.png)
+
+**方式2：** 在未选中 Datatable 里某个单元格时，您也可以直接点击“新增绑定”按钮，在单元格绑定列表中将增加一条空白行，你可以手动输入行、列信息和 Datatable 中的数据进行对应。
+
+例如下图中，单元格绑定中，设置的行为 0，列为 Name, 对应 Datatable 中的 A。
+
+![alt text](51.png)
+
+设置完成后，在运行页面，会议绑定的值替换掉 Datatable 中的值。
+
