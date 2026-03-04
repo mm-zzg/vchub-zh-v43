@@ -16,5 +16,5 @@ await scene.camera.flyPath ({
 
 在按钮上编写上述代码，点击按钮，可以开启摄像机飞行动画
 
-![flypath](../../../assets/images/flypath.gif)
+![alt text](1.gif)
 

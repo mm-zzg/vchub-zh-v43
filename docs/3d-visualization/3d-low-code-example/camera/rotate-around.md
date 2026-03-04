@@ -17,5 +17,5 @@ scene.camera.rotateAround({
 
 在按钮上编写上述代码，点击按钮，可以开启摄像机环绕动画。
 
-![rotate](../../../assets/images/rotate.gif)
+![alt text](4.gif)
 

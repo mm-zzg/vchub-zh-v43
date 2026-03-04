@@ -19,7 +19,7 @@ await scene.camera.lookAt({
 
 在按钮上编写上述代码，点击按钮，使摄像机从场景中任意位置聚焦到模型。
 
-![lookat](../../../assets/images/lookat.gif)
+![alt text](2.gif)
 
 #### 使用方式2:
 
@@ -38,8 +38,7 @@ await scene.camera.lookAt({
 
 在按钮上编写上述代码，点击按钮，使摄像机聚焦到模型并停留在固定位置。
 
-
-![lookat1](../../../assets/images/lookat1.gif)
+![alt text](3.gif)
 
 
 
