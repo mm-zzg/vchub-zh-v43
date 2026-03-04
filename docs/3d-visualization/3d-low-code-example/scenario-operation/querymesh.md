@@ -17,11 +17,11 @@ console.log(mash)
 
 在按钮上编写上述代码，点击按钮，可以查询场景中名为 chariot 的模型包括组
 
-![1](../../../assets/images/3d_lowcode_SOperation_querymesh1.gif)
+![alt text](60.gif)
 
 查询到的模型可以使用其所有方法和属性：
 
-![alt text](3d_lowcode_SOperation_querymesh2.png)
+![alt text](61.png)
 
 
 

@@ -11,6 +11,7 @@ scene.stopFirstPersonControls();//关闭第一人称模式
 **示例：**
 
 在按钮上编写上述代码，点击按钮,关闭已经开启的第一人称模式。
-![1](../../../assets/images/3d_lowcode_SOperation_stopfirstpersoncontrols1.gif)
+
+![alt text](80.gif)
 
 

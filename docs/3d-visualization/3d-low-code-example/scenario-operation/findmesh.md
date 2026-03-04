@@ -12,19 +12,16 @@ const mash = await scene.findMesh({
 })
 console.log(mash)
 ```
- 
-
 
 **示例：**
 
-在按钮上编写上述代码，点击按钮，可以查询场景中名为 chariot的第一个符合的模型
+在按钮上编写上述代码，点击按钮，可以查询场景中名为 chariot 的第一个符合的模型
 
-
-![1](../../../assets/images/3d_lowcode_SOperation_findmesh1.gif)
+![alt text](32.gif)
 
 查询到的模型可以使用其所有方法和属性：
 
-![alt text](3d_lowcode_SOperation_findmesh2.png)
+![alt text](33.png)
 
 
 

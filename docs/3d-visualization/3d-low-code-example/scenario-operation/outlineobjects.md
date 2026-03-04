@@ -14,4 +14,4 @@ scene.outlineObjects = [roboticArm02];
 
 在按钮上编写上述代码，点击按钮，对传入的模型进行勾边。
 
-![1](../../../assets/images/3d_lowcode_SOperation_outlineobjects1.gif)
+![alt text](50.gif)

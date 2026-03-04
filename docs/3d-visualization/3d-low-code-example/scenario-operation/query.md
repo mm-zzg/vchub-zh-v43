@@ -21,5 +21,5 @@ const mash = await scene.query({
 
 在按钮上编写上述代码，点击按钮，可以查询创建的立方体的信息
 
-![1](../../../assets/images/3d_lowcode_SOperation_query1.gif)
+![alt text](51.gif)
 

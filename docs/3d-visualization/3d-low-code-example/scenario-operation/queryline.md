@@ -19,11 +19,11 @@ console.log(mash) //输出所有查询到的结果
 
 在按钮上编写上述代码，点击按钮，可以查询场景中名字包含line 的模型包括组
 
-![1](../../../assets/images/3d_lowcode_SOperation_queryline1.gif)
+![alt text](58.gif)
 
 查询到的模型可以使用其所有方法和属性：
 
-![alt text](3d_lowcode_SOperation_queryline2.png)
+![alt text](59.png)
 
 
 

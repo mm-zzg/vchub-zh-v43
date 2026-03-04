@@ -17,4 +17,4 @@ scene.openFirstPersonControls({
 
 在按钮上编写上述代码，点击按钮，从第一人称视角初始位置开始下落至指定高度。
 
-![1](../../../assets/images/3d_lowcode_SOperation_openfirstpersoncontrols1.gif)
+![alt text](49.gif)

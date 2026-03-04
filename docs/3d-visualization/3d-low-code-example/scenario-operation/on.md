@@ -28,7 +28,7 @@ if(chariot.userData.off)//判断是否订阅事件
 
 在按钮上编写上述代码，点击on按钮，订阅click事件，点击off按钮取消订阅。
 
-![1](../../../assets/images/3d_lowcode_SOperation_on1.gif)
+![alt text](48.gif)
 
 
 

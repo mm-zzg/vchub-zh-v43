@@ -20,6 +20,6 @@ scene.setOutlineOption({
 
 在按钮上编写上述代码，点击按钮，修改勾边的参数，对模型进行勾边。
 
-![1](../../../assets/images/3d_lowcode_SOperation_setoutlineoption1.gif)
+![alt text](78.gif)
 
 

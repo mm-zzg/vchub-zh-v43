@@ -12,4 +12,4 @@ view.applyChanges();//应用更改(Tips:背景相关的设置设置了之后需�
 
 在按钮上编写上述代码，点击按钮，可以修改场景的天空盒。
 
-![1](../../../assets/images/3d_lowcode_SOperation_skybox1.gif)
+![alt text](79.gif)
