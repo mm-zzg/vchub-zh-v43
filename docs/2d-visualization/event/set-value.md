@@ -1,21 +1,21 @@
-# Set Value
+# 变量赋值
 
-Assign the values of properties on the same page to tags.
+将当前画面上的控件属性值或者画面的自定义属性，赋给变量。
 
-**Example**
+**示例**
 
-Assign the width of the rectangle to the tag: memory.
+将矩形的宽度，赋值给变量：宽度。
 
 ![alt text](3.png)
 
-1. Draw a rectangle control and a value display control on the page.
-2. Value display control binding tag: memory.
-3. On the rectangular control, set the event and select the mouse pressed event.
-4. Turn on the "Enable" button and select "Set Value" as the operation type.
-5. Enter the tag path in "Tag" or click the binding icon after the tag and select the tag: Default.memory from the tag selector.
-6. Click the binding icon behind "New Value" and select the width property of the rectangle in the pop-up properties window.
-7. Security group is not set.
-8. Click the **"OK"** button.
-9. Click the "Preview" button on the page to view the running effect.
+1. 在画面上绘制一个矩形控件和一个值显示控件。
+2. 值显示控件绑定变量：width。
+3. 在矩形控件上，设置动作，选择鼠标按下事件。
+4. 开启“启用”按钮，操作类型选择“变量赋值”。
+5. 在“变量”中输入变量路径或者单击变量后面的绑定图标，然后从变量选择器中选择变量：宽度。
+6. 在“新值”中单击后面的绑定图标 ，在弹出的属性窗口中选择矩形的width属性。
+7. 安全组不设置。
+8. 点击“**确认**”按钮。
+9. 点击画面的“预览”按钮，查看运行效果。
 
-**Note:** Manual input is also supported in the text boxes for tags and new values.
+**说明**：变量和新值的文本框内也支持手动输入内容。 

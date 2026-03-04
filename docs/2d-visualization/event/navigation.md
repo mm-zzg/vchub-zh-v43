@@ -1,7 +1,7 @@
-# Navigation
+# 导航
 
-Simply select a page from the page list. When the trigger condition for the event is met, the selected page will open. Different opening positions can be set for pages of different types.
+只需从画面列表中选择一个画面，当满足动作的触发条件时，即可打开该画面。当画面类型不同时，可以设置不同的画面打开位置。
 
 ![alt text](2.png)
 
-For a description of its functions, see **Page->Navigation**.
+具有的功能描述，详见 [画面导航](../page/navigation.md)。

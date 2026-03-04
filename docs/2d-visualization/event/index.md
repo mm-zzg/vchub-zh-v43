@@ -1,46 +1,46 @@
-# Event
+# 动作
 
-Trigger other operations or programs in the system in response to a specific event. 
+通过动作触发系统中的其他操作或程序，以响应该动作并执行相应任务。
 
-In VC Hub, configure specific events in the "Event" column of the page or control.
+WAGO SCADA中，在画面或者控件的“动作”栏中设置具体动作。
 
 ![alt text](1.png)
 
-## **How to trigger an event**
+## 如何触发动作
 
-Specific events can be triggered by the following events.
+可以通过以下操作触发特定的动作。
 
-#### Mouse Event
+#### 鼠标事件
 
-All controls support mouse events.
+所有控件均支持鼠标事件。
 
-Mouse events refer to triggering specific events when the user uses the mouse to operate the page or controls. Include:
+鼠标事件是指当用户使用鼠标对画面或者控件进行操作时，触发特定的动作。包含：
 
-- Pressed
-- Released
-- Entered
-- Exited
+- 鼠标按下
+- 鼠标抬起
+- 鼠标进入
+- 鼠标离开
 
-#### Property Change
+#### 属性变化
 
-When the value of the control's properties (currently only the value property is supported) changes, a specific event is triggered.
+当控件的属性值（目前仅支持值属性）发生变化时，触发特定的动作。
 
-Property change events are supported only for the following controls:
+以下控件才支持属性变化事件：
 
-- Dropdown
-- Text Input
-- Slider
-- Datetime Input
-- Number Input
-- Label
-- Value Display
-- LED Display
-- Checkbox
-- Radio Button
+- 下拉框
+- 文本输入框
+- 滑动条
+- 日历
+- 数字输入框
+- 文本标签
+- 值显示
+- 数码管
+- 复选框
+- 单选按钮
 
-#### Lifetime
+#### 生命周期
 
-All controls support lifetime events.
+所有控件均支持生命周期标事件。
 
-When a page or control is loaded or destroyed, a specific event is triggered.
+当画面或者控件被加载或者销毁时，触发特定的动作。
 

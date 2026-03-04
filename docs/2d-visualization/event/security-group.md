@@ -1,14 +1,11 @@
-# Security Group
+# 安全组
 
-To set the required security group, click the Security Group drop-down button and select one or more roles in the expanded list. After selecting groups, they will be displayed in the selection box.
+若要设置所需的安全组，在动作弹窗中点击安全组的下拉按钮，在展开的列表中选择一个或多个角色。选择角色后，它们将被显示在选择框内。
 
-![alt text](12.png)
+![alt text](16.png)
 
-Once a security group is set for an event, when the event is triggered by running the page, a login window will pop up, requiring the user to authenticate. Only users who belong to the role of the set security group have permission to perform this event.
+一旦为某一动作设置了安全组，则在运行页面触发该动作时，会弹出登录窗口，要求用户进行身份验证。只有属于所设安全组的角色下的用户才有权限执行该动作。
 
-![alt text](13.png)
+![alt text](17.png)
 
-**Note:** The security group  is only effective when authentication is performed using a Local-type Identity Provider.
-
-
-
+**说明**：安全组功能仅在使用 Local 类型的 Identity Provider 进行身份验证时生效。
