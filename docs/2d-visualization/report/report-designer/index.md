@@ -1,27 +1,27 @@
-# Report Designer
+# 报表设计器
 
-On the design page of the report, click the settings button of "Report Designer" to enter the editor page of the designer.
+在报表的设计页面，点击”报表设计器”的设置按钮，进入设计器的编辑器页面。
 
 ![alt text](1.png)
 
-## Introduction to the Report Designer
+## 报表设计器介绍
 
-The operation interface consists of the top **menu bar**, **toolbar**, **toolbox on the left**, **design area in the middle** , **property setting panel** and **data binding panel**on the right , as shown in the figure below.
+操作界面由顶部的 **菜单栏** 、**工具栏** 、**左边的工具箱** 、**中间的设计区** 、右边的 **属性设置面板** 和 **数据绑定面板** 等部分构成，如下图所示。
 
 ![alt text](2.png)
 
-| **Serial number** | **Area name**       | **Description**  |
-|-------------------|---------------------|----------------|
-| A                 | Menu Bar                                 | Including menu buttons, undo, restore, save, save as, preview operation buttons and start, report, query panel function menus.  |
-| B                 | Tool bar                                 | Commonly used shortcut operations.  |
-| C                 | Tool box                                 | The toolbox contains report control elements that can be used in reports, such as tables, matrix tables, charts, etc. in:  <br>- Menu button  <br>![alt text](3.png)  <br>Equivalent to the expand/collapse switch of the tool box. When you expand the toolbox, you can see the name of each toolbox element; collapse toolbox to leave more space for the design area.  <br>- Element management  <br>![alt text](4.png)  <br>The constituent elements of the report are displayed in a tree directory. When an element node is selected, the settings panel on the right will switch to the property setting options for the corresponding element.  <br>- Group management <br>![alt text](5.png) <br>Display the data grouping information of the current moment table, and perform grouping management and operation.   |
-| D                 | Design Area                              | The middle part of the designer interface is the workspace for report design. You can drag and drop report elements from the toolbox to the design area and set their options.  After turning on the ruler, you can adjust the size of the design area by dragging the edge of the ruler.  <br>![alt text](6.png) |
-| E                 | Property settings and data binding panel | Property settings, data binding panel and report information settings, click to switch settings.  - Property setting panel: Set various properties of the currently selected element in the report or design area. Depending on the type of the current element in the design area, the option settings will change.  - Data binding panel: Set the data set and data set query parameters used by the report.  - Report information setting panel: Set report information.  <br> Click on the ![alt text](7.png) ,you can collapse/expand the side panel. This button not only exists in the designer, but also exists when previewing the report. Click to expand/collapse the side panel during preview. |
-| F                 | Other settings                           | Other settings include grid switches, grid settings, scaling, size units, and property setting modes.  <br> ![alt text](8.png) Grid switch, turned on by default, click to turn off grid mode.  <br>![alt text](9.png) Set grid size, alignment and auto-alignment.  <br>![alt text](10.png) Turns the ruler on or off in the canvas.   <br>![alt text](11.png) Set the zoom of the design area.  <br>![alt text](12.png)The unit of the design ruler.  <br>![alt text](13.png) You can choose basic attribute setting mode or advanced attribute setting mode.  After selecting advanced attribute settings, the panel will display all options available for the current element; selecting basic attribute setting mode can hide less commonly used options. | 
+| **序号** | **区域名称**           | **说明**   |
+|:----------|:------------------------|:---------------|
+| A        | 菜单栏                 | 包括菜单按钮、撤销、恢复、保存、另存为、预览操作按钮和开始、报表、查询面板功能菜单。|
+| B        | 工具栏                 | 常用快捷操作。  |
+| C        | 工具箱                 | 工具箱包含报表可以使用的报表控件元素，如表格、矩表、图表等。其中：  <br>- 菜单按钮  <br>![alt text](3.png)  相当于工具箱的展开/收起开关。展开工具箱时，可以看到每个工具箱元素的名称；收起  工具箱时，可为设计区留出更多空间。  <br>- 元素管理  <br>![alt text](4.png)  以树形目录展示报表的构成元素，选中某个元素节点时，右侧的设置面板将切换为对  应元素的属性设置选项。  <br>- 分组管理  <br>![alt text](5.png) 显示当前矩表的数据分组信息，并进行分组管理与操作。|
+| D        | 设计区                 | 设计器界面的中间部分，是报表设计的工作区。您可以从工具箱拖放报表元素至设计区，然后设置其选项。  开启标尺后，可以通过拖动标尺边缘调整设计区大小。  ![alt text](6.png)|
+| E        | 属性设置和数据绑定面板 | 属性设置、数据绑定面板以及报表信息设置，单击可进行切换设置。  <br>- 属性设置面板：设置报表或设计区当前选中元素的各项属性，根据设计区当前元素类型不同，选项设置内容会有变化。  <br>- 数据绑定面板：设置报表使用的数据集和数据集查询参数。  <br>- 报表信息设置面板：设置报表信息。  <br>单击右侧的  <br>![alt text](7.png)   <br>可以折叠/展开侧面板，此按钮不仅在设计器中存在，在预览报表时也会存在，单击可展开/收起预览时的侧面板。  |
+| F        | 其他设置               | 其他设置包括网格开关、网格设置、缩放、尺寸单位和属性设置模式。  <br>![alt text](8.png)网格开关，默认为开启状态，单击可关闭网格模式。<br>![alt text](9.png) 设置网格大小、对齐及自动对齐。   <br>![alt text](10.png)  开启或关闭画布中的标尺。 <br>![alt text](11.png) 设置设计区的缩放。  <br>![alt text](12.png)  设计标尺的单位。   <br>![alt text](13.png) 可选择基础属性设置模式或高级属性设置模式。选择高级属性设置后，面板将显示当前元素可用的所有选项；选择基础属性设置模式，则可隐藏不常用的选项。 |
 
-## Set report global properties
+## 设置报表全局属性
 
-When you click the gray area in the design area so that no report elements are selected in the design area, the property setting panel on the right displays the global setting properties of the entire report.
+单击设计区的灰色区域，使设计区不选任何报表元素时，右侧的属性设置面板显示的是整个报表的全局设置属性。
 
 ![alt text](14.png)
 

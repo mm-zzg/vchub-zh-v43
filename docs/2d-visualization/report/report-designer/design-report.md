@@ -1,12 +1,10 @@
-# Design Report
+# 设计报表
 
-For detailed usage of each control in the report designer, please refer to the following address.
+报表设计器内各控件的详细使用方法，请参阅以下地址。
 
- [https://developer.mescius.com/activereportsnet/docs/versions/v16/online/overview.html](https://developer.mescius.com/activereportsnet/docs/versions/v16/online/overview.html) 
+[ActiveReports 16 User Guide](https://help.grapecity.com.cn/3870289.html) 
 
-After the design is completed, click the "Preview" button in the designer menu bar to view the preview effect of the report.
+设计完成，点击设计器菜单栏中的“预览”按钮，可以查看报表的预览效果。
 
 ![alt text](15.png)
-
-
 
