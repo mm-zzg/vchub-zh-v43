@@ -469,19 +469,19 @@ nav:
                             - 2d-visualization/symbol/create-symbol.md
                             - 2d-visualization/symbol/symbol-libraries.md
                             - 2d-visualization/symbol/how-to-use.md
-                  - Report:
+                  - 报表:
                             - 2d-visualization/report/index.md
-                            - Report Designer:
+                            - 报表设计器:
                                       - 2d-visualization/report/report-designer/index.md
                                       - 2d-visualization/report/report-designer/design-report.md
                             - 2d-visualization/report/create-data-source.md
                             - 2d-visualization/report/view-report.md
                             - 2d-visualization/report/export-and-import-reports.md
-                  - Function:
+                  - 函数:
                             - 2d-visualization/function/index.md
                             - 2d-visualization/function/expression-function.md
                             - 2d-visualization/function/page-function.md
-                  - Property Binding:
+                  - 属性绑定:
                             - 2d-visualization/property-binding/index.md
                             - 2d-visualization/property-binding/tag.md
                             - 2d-visualization/property-binding/property.md
