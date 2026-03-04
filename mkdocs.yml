@@ -471,10 +471,10 @@ nav:
                             - 2d-visualization/symbol/how-to-use.md
                   - 报表:
                             - 2d-visualization/report/index.md
+                            - 2d-visualization/report/create-data-source.md
                             - 报表设计器:
                                       - 2d-visualization/report/report-designer/index.md
                                       - 2d-visualization/report/report-designer/design-report.md
-                            - 2d-visualization/report/create-data-source.md
                             - 2d-visualization/report/view-report.md
                             - 2d-visualization/report/export-and-import-reports.md
                   - 函数:
