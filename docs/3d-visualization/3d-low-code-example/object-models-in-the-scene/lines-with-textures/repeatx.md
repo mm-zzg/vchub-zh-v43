@@ -5,19 +5,18 @@
 
 # repeatX
 
-**Description: Modify the number of repetitions of texture line images in the x direction**
+**描述：修改贴图线图片在x方向的重复次数**
 
 ```typescript
-const view = await System.UI.findControl('3DViewer1')// Obtain a 3D viewer control named "3DViewer1" in the page
-const scene = await view.getScene()// Get the scene in the 3D viewer control
-const tube = await scene.findTube({name:'Tube1'})// Find model
-tube.repeatX = 5// Modify the number of repetitions of the image in the x direction
+const view = await System.UI.findControl('3D查看器1');// 获取画面中名为“3D查看器1”的3D查看器控件
+const scene = await view.getScene(); // 获取3D查看器控件中的场景
+const tube = await scene.findTube({ name: 'Tube1' });//查找模型
+tube.repeatX=5;//修改图片在x方向的重复次数
 ```
  
-**Example:**
+**示例：**
 
-Write the above code on the button, click the button to modify the number of repetitions of the image in the x direction. 
-
+在按钮上编写上述代码，点击按钮，可以修改图片在x方向的重复次数。
 
 
 

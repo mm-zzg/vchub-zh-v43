@@ -1,16 +1,16 @@
 # src
 
-**Description: Modify the link to the embedded page**
+**描述：修改内嵌页面的链接**
 
 ```typescript
-const view = await System.UI.findControl('3DViewer1')// Obtain a 3D viewer control named "3DViewer1" in the page
-const scene = await view.getScene()// Get the scene in the 3D viewer control
-const webview = await scene.findWebView({name:'Webview1'})// Find model
-webview.src = 'http://localhost:8066/#/console/projects/project'// Modify the src of embedded pages
+const view = await System.UI.findControl('3D查看器1');// 获取画面中名为“3D查看器1”的3D查看器控件
+const scene = await view.getScene(); // 获取3D查看器控件中的场景
+const webview = await scene.findWebView({ name: 'Webview1' });//查找模型
+webview.src='http://www.scadaforweb.com/ ';//修改内嵌页面的src
 ```
  
-**Example:**
+**示例：**
 
-Write the above code on the button, click the button to modify the link of the embedded page. 
+在按钮上编写上述代码，点击按钮，可以修改内嵌页面的链接。
 
 ![1](../../../../assets/images/3d_lowcode_object_ePage_src1.gif)

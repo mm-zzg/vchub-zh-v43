@@ -1,28 +1,27 @@
 # createLine
 
-**Description**: Create lines to enter the scene
+**描述：** 创建线进入场景中
 
 ```typescript
-const view=await System.UI.findControl('3DViewer1')// Obtain a 3D viewer control named "3DViewer1" in the page
-const scene=await view. getScene()// Get the scene in the 3D viewer control
-const linePaths=[
-{x: -20, y: -10, z: 0},
-{x: 60, y: 40, z: 0},
-{x: 60, y: -10, z: 0},
-{x: 60, y: -10, z: 20},
-]// Line vertex coordinates
-const line=scene.createLine({
-name: 'line',//The name of the created line
-points: linePaths,//Create vertex coordinates
-color: 'rgba(255,255,255)',//The color of the created line
-width: 1,//Create the width of the line, default to 1
-curve: true,//Whether the created line is a curve, default to false
-dashed: true//Whether the created line is a dashed line, default to false
+const view = await System.UI.findControl('3D查看器1'); // 获取画面中名为“3D查看器1”的3D查看器控件
+const scene = await view.getScene(); // 获取3D查看器控件中的场景
+const linePaths = [
+    { x: -20, y: -10, z: 0 },
+    { x: 60, y: 40, z: 0 },
+    { x: 60, y: -10, z: 0 },
+    { x: 60, y: -10, z: 20 },
+]; //线条顶点坐标
+const line =scene.createLine({
+    name: 'line', //创建的线条名字
+    points:linePaths, //创建顶点坐标
+    color: 'rgba(189, 16,224)', //创建的线条颜色
+    width:1, //创建线的宽度，默认1
+    curve: true, //创建的线条是否为曲线，默认false
+    dashed:true //创建的线条是否为虚线，默认false
 })
 ```
- 
-**Example:**
+**示例：**
 
-Write the above code on the button, click the button to create a line to the scene
+在按钮上编写上述代码，点击按钮，可以创建线 进入场景中
 
-![3d_lowcode_SOperation_createline1](../../../assets/images/3d_lowcode_SOperation_createline1.gif)
+![alt text](10.gif)

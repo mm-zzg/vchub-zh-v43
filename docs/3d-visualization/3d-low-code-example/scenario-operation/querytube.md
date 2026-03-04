@@ -1,27 +1,27 @@
 # queryTube
 
-**Description**: Query the texture curves that meet the conditions in the scene
+**描述：** 查询场景中符合条件的贴图曲线
 
-Query texture curves:
+查询贴图曲线：
 
 ```typescript
-const view = await System.UI.findControl('3DViewer1')// Obtain a 3D viewer control named "3DViewer1" in the page
+const view = await System.UI.findControl('3D查看器1')// 获取画面中名为“3D查看器1”的3D查看器控件
 const scene = await view.getScene();
 const mash = await scene.queryTube({
-  //Id: "3b013f32-d6b0-484e-835c-e63e75d30ecb",//To query the unique uuid of the model
-  name: 'tube',//Fuzzy query name includes image annotation of the tube
-  //User defined data content for userData
+    //id:"3b013f32-d6b0-484e-835c-e63e75d30ecb", //要查询模型的唯一uuid
+    name: 'tube', //模糊查询名字包含tube的图片标注
+    //userData  用户自定义的数据内容
 })
-console.log(mash)//Output all queried results
+console.log(mash) //输出所有查询到的结果
 ```
  
-**Example:**
+**示例：**
 
-Write the above code on the button, click the button, and you can query the models in the scene with names including tubes, including groups
+在按钮上编写上述代码，点击按钮，可以查询场景中名字包含 tube 的模型包括组
 
 ![1](../../../assets/images/3d_lowcode_SOperation_querytube1.gif)
 
-The queried model can use all its methods and properties:
+查询到的模型可以使用其所有方法和属性：
 
 ![alt text](3d_lowcode_SOperation_querytube2.png)
 

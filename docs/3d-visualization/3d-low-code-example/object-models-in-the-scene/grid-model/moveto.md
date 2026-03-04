@@ -1,26 +1,25 @@
 
 # moveTo
 
-**Description: Model displacement animation**
+**描述：模型位移动画**
 
 ```typescript
-const view = await System.UI.findControl('3DViewer1')// Obtain a 3D viewer control named "3DViewer1" in the page
-const scene = await view.getScene()// Get the scene in the 3D viewer control
+const view = await System.UI.findControl('3D查看器1');// 获取画面中名为“3D查看器1”的3D查看器控件
+const scene = await view.getScene(); // 获取3D查看器控件中的场景
 const mesh = await scene.findMesh({ name: 'Forklift' });
 const meshWorldPosition = mesh.getWorldPosition();
-mesh.moveTo({
-   worldPosition: { x: meshWorldPosition.x, y: meshWorldPosition.y, z: meshWorldPosition.z +10},//The world coordinates that the model needs to move to
-    duration: 3000,             // Animation duration in milliseconds
-    delay: 100,                 // Animation start delay in milliseconds
-    executions: 2,              // Number of animation executions
-    reversePlay: false,         // Whether to play in reverse
-    resetOnComplete: false      // Whether to return to initial position after completion
+box.moveTo({
+    worldPosition:{ x: meshWorldPosition.x, y: meshWorldPosition.y, z: meshWorldPosition.z +10}, //模型需要移动到的世界坐标
+    duration:500, //动画持续时间ms(默认1000)
+    repeated:1,//动画重复次数(默认0)
+    reversePlay:true, //动画是否反向播放是否重复播放(默认false)
+    delay:1000  //动画延时多久播放ms(默认0)
 })
 ```
  
-**Example:**
+**示例：**
 
-Write the above code on the button, click the button to play the model displacement animation. 
+在按钮上编写上述代码，点击按钮，可以播放模型位移动画。
 
 
 

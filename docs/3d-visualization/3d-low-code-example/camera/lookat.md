@@ -1,42 +1,43 @@
 # lookAt
 
-**Description:** The camera focuses on objects within the scene.
+**描述：摄像机聚焦于场景内的物体**
 
-#### Usage Method 1:
+#### 使用方式1:
 
 ```typescript
-const view = await System.UI.findControl('3DViewer1')// Obtain a 3D viewer control named "3DViewer1" in the page
+const view = await System.UI.findControl('3D查看器1');// 获取画面中名为“3D查看器1”的3D查看器控件
 const scene = await view.getScene();
 const mesh = await scene.findMesh({ name: 'Forklift' });
 await scene.camera.lookAt({
     object: mesh,
-    distance: 1, // The distance between the camera and the model.
-    duration: 500 // Animation duration.
+    distance: 1, // 摄像机距离模型的距离
+    duration: 500 // 动画持续时间
 });
 ```
  
-**Example:**
+**示例：**
 
-Write the above code on a button so that when the button is clicked, the camera focuses on the model from any position in the scene.
+在按钮上编写上述代码，点击按钮，使摄像机从场景中任意位置聚焦到模型。
 
 ![lookat](../../../assets/images/lookat.gif)
 
-#### Usage Method 2:
+#### 使用方式2:
 
 ```typescript
-const view = await System.UI.findControl('3DViewer1')// Obtain a 3D viewer control named "3DViewer1" in the page
+const view = await System.UI.findControl('3D查看器1');// 获取画面中名为“3D查看器1”的3D查看器控件
 const scene = await view.getScene();
 const mesh = await scene.findMesh({ name: 'Forklift' });
 await scene.camera.lookAt({
     object: mesh,
-    viewOffset: { x: 0, y: 30, z: 0 }, // Camera position after the animation ends.
-    duration: 500 // Animation duration.
+    viewOffset: { x: 0, y: 30, z: 0 }, // 动画结束后摄像机位置
+    duration: 500 // 动画持续时间
 });
 ```
  
-**Example:**
+**示例：**
 
-Write the above code on a button so that when the button is clicked, the camera focuses on the model and remains in a fixed position.
+在按钮上编写上述代码，点击按钮，使摄像机聚焦到模型并停留在固定位置。
+
 
 ![lookat1](../../../assets/images/lookat1.gif)
 

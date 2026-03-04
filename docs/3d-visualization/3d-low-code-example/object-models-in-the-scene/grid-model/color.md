@@ -1,18 +1,16 @@
 # color
-
-**Description: Change model color**
+**描述：改变模型颜色**
 
 ```typescript
-const view = await System.UI.findControl('3DViewer1')// Obtain a 3D viewer control named "3DViewer1" in the page
-const scene = await view.getScene()// Get the scene in the 3D viewer control
-const box = await scene.findMesh({name:'Box2'})// Find model
-box.color = '#011300'// Modify model color
+const view = await System.UI.findControl('3D查看器1');// 获取画面中名为“3D查看器1”的3D查看器控件
+const scene = await view.getScene(); // 获取3D查看器控件中的场景
+const box=await scene.findMesh({name:'Box2'});//查找模型
+box.color='#011300';//修改模型颜色
 ```
  
-**Example:**
+**示例：**
 
-Write the above code on the button, click the button to modify the model color.
-
+在按钮上编写上述代码，点击按钮，可以修改模型颜色。
 
 
 

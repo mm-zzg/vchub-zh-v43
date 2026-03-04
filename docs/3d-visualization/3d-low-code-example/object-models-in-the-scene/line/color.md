@@ -1,17 +1,17 @@
 # color
 
-**Description: Modify line color**
+**描述：修改线条颜色**
 
 ```typescript
-const view = await System.UI.findControl('3DViewer1')// Obtain a 3D viewer control named "3DViewer1" in the page
-const scene = await view.getScene()// Get the scene in the 3D viewer control
-const line = await scene.findLine({name:'Line1'})// Find model
-line.color = '#12b5ac'// Change the color of lines
+const view = await System.UI.findControl('3D查看器1');// 获取画面中名为“3D查看器1”的3D查看器控件
+const scene = await view.getScene(); // 获取3D查看器控件中的场景
+const line = await scene.findLine({ name: 'Line1' });//查找模型
+line.color='#12b5ac';//修改线的颜色
 ```
  
-**Example:**
+**示例：**
 
-Write the above code on the button, click the button to modify the line color.
+在按钮上编写上述代码，点击按钮，可以修改线条颜色。
 
 ![1](../../../../assets/images/3d_lowcode_object_line_color1.gif)
 

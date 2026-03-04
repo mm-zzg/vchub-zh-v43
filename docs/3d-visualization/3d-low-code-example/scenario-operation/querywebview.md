@@ -1,26 +1,27 @@
 # queryWebView
 
-**Description**: Query all embedded pages that meet the conditions in the scene
+**描述：** 查询场景中符合条件的全部内嵌页面
 
-Query embedded pages:
+查询内嵌页面：
 
 ```typescript
-const view = await System.UI.findControl('3DViewer1')// Obtain a 3D viewer control named "3DViewer1" in the page
+const view = await System.UI.findControl('3D查看器1')// 获取画面中名为“3D查看器1”的3D查看器控件
 const scene = await view.getScene();
 const mash = await scene.queryWebView({
-  //Id: "3b013f32-d6b0-484e-835c-e63e75d30ecb",//To query the unique uuid of the model
-  name: 'webView',//Fuzzy query name contains embedded pages of webView
-  //User defined data content for userData
+    //id:"3b013f32-d6b0-484e-835c-e63e75d30ecb", //要查询模型的唯一uuid
+    name: 'webView', //模糊查询名字包含webView的内嵌页面
+    //userData  用户自定义的数据内容
 })
-console.log(mash)//Output all queried results
+console.log(mash) //输出所有查询到的结果
 ```
  
-**Example:**
+**示例：**
 
-Write the above code on the button, click the button, and you can query the embedded page in the scene whose name includes webView
+在按钮上编写上述代码，点击按钮，可以查询场景中名字包含 webView 的内嵌页面
 
 ![1](../../../assets/images/3d_lowcode_SOperation_querywebview1.gif)
-The queried model can use all its methods and properties:
+
+查询到的模型可以使用其所有方法和属性：
 
 ![alt text](3d_lowcode_SOperation_querywebview2.png)
 

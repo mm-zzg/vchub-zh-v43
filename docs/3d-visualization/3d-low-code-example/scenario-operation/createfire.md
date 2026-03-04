@@ -1,28 +1,26 @@
 # createFire
 
-**Description:** Create default flame effects
+**描述：** 创建默认火焰特效
 
 ```typescript
-const view = await System.UI.findControl('3DViewer1');  // Obtain a 3D viewer control named "3DViewer1" in the page
+const view = await System.UI.findControl('3D查看器1')// 获取画面中名为“3D查看器1'”的3D查看器控件
 const scene = await view.getScene();
-const fire = scene.createFire({
-name: 'fire',//Create the name of the flame
-position: {x: 0, y: 0, z: 0},//Create the center position of the flame
-size: 100//Flame size(default of 5)
+const fire =scene.createFire({
+    name: 'fire', //创建火焰的名字
+    position: { x: 0, y: 0, z: 0 }, //创建火焰的中心位置
+    size:100 //火焰大小(默认5)
 });
 ```
  
-**Example:**
+**示例：**
 
-Write the above code on the button, click the button, and you can create a flame effect at the specified location
+在按钮上编写上述代码，点击按钮，可以在指定位置创建火焰特效
 
-![3d_lowcode_SOperation_createfire1](../../../assets/images/3d_lowcode_SOperation_createfire1.gif)
+![alt text](7.gif)
 
-Modify flame effects and turn off effects: 
+修改火焰特效和关闭特效：
 
-
-
-![alt text](3d_lowcode_SOperation_createfire2.png)
+![alt text](8.png)
 
 
 

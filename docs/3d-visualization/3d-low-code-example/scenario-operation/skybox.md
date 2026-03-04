@@ -1,15 +1,15 @@
 # skybox
 
-**Description**: Enter the name of the sky box library created by the user or the system's default sky box library name. If both the background color and background image are set, the sky box should be the main one (the sky box image must be square)
+**描述：** 传入用户创建的天空盒库名称或者系统默认天空盒库名称,如果同时设定背景色和背景图片和天空盒以天空盒为主(天空盒图片必须是正方形)
 
 ```typescript
-const view = await System.UI.findControl('3DViewer1')// Obtain a 3D viewer control named "3DViewer1" in the page
-view.skyBox='sunset'; //Enter the name of the Sky Box
-view.applyChanges(); //Apply Changes (Tips: After setting background related settings, you need to call the applyChanges() method)
+const view = await System.UI.findControl('3D查看器1'); // 获取画面中名为“3D查看器1”的3D查看器控件
+view.skyBox='sunset';//传入天空盒的名字
+view.applyChanges();//应用更改(Tips:背景相关的设置设置了之后需要调用一下需要调用applyChanges()方法)
 ```
  
-**Example:**
+**示例：**
 
-Write the above code on the button, click the button to modify the sky box of the scene.
+在按钮上编写上述代码，点击按钮，可以修改场景的天空盒。
 
 ![1](../../../assets/images/3d_lowcode_SOperation_skybox1.gif)

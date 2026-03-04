@@ -1,26 +1,28 @@
 # findMesh
 
-**Description**: Query the first model that meets the criteria in the scene
+**描述：** 查询场景中符合条件的第一个模型
 
 ```typescript
-const view = await System.UI.findControl('3DViewer1')// Obtain a 3D viewer control named "3DViewer1" in the page
+const view = await System.UI.findControl('3D查看器1')// 获取画面中名为“3D查看器1”的3D查看器控件
 const scene = await view.getScene();
 const mash = await scene.findMesh({
-  //Id: "3b013f32-d6b0-484e-835c-e63e75d30ecb",//To query the unique uuid of the model
-  name: 'chariot',//To query the name of the model
-  //User defined data content for userData
+    //id:"3b013f32-d6b0-484e-835c-e63e75d30ecb", //要查询模型的唯一uuid
+    name: 'chariot', //要查询模型的名字
+    //userData  用户自定义的数据内容
 })
 console.log(mash)
 ```
  
-**Example:**
 
-Write the above code on the button, click the button, and you can query the first matching model named chariot in the scene
+
+**示例：**
+
+在按钮上编写上述代码，点击按钮，可以查询场景中名为 chariot的第一个符合的模型
 
 
 ![1](../../../assets/images/3d_lowcode_SOperation_findmesh1.gif)
 
-The queried model can use all its methods and properties:
+查询到的模型可以使用其所有方法和属性：
 
 ![alt text](3d_lowcode_SOperation_findmesh2.png)
 

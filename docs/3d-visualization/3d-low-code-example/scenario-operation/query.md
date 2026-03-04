@@ -1,26 +1,25 @@
 # query
 
-**Description:** Query object in the scene
+**描述：** 查询场景中的物体
 
-Query:
+查询:
 
 ```typescript
-const view = await System.UI.findControl('3DViewer1')// Obtain a 3D viewer control named "3DViewer1" in the page
+const view = await System.UI.findControl('3D查看器1'); // 获取画面中名为“3D查看器1”的3D查看器控件
 const scene = await view.getScene();
 const mash = await scene.query({
-  //Id: "3b013f32-d6b0-484e-835c-e63e75d30ecb",//To query the unique uuid of the object
-  name: 'Box2',//To query the name of the object
-  type: 'Mesh',//To query the object type
-  userData: {//To query the content of the object userData: Note: Query based on the key value pairs in userData, and the key value pairs need to match exactly
-    test: "sth"
-  }
+    //id:"3b013f32-d6b0-484e-835c-e63e75d30ecb", //要查询物体的唯一uuid
+    name: 'Box2', //要查询物体的名字
+    type: 'Mesh', //要查询物体的类型
+    userData: {   //要查询物体userData的内容   注: 根据userData中的键值对进行查询,需要键值对完全匹配
+     test: "sth"
+    }
 })
-console.log(mash)
 ```
  
-**Example:**
+**示例：**
 
-Write the above code on the button, click the button to query the information of the created cube
+在按钮上编写上述代码，点击按钮，可以查询创建的立方体的信息
 
 ![1](../../../assets/images/3d_lowcode_SOperation_query1.gif)
 

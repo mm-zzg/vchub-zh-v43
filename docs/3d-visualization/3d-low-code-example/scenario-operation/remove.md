@@ -1,25 +1,24 @@
 # remove
+**描述：删除模型**
 
-**Description**: **Delete model**
-
-Query the model and delete it:
+查询模型并删除:
 
 ```typescript
-const view = await System.UI.findControl('3DViewer1')// Obtain a 3D viewer control named "3DViewer1" in the page
+const view = await System.UI.findControl('3D查看器1')// 获取画面中名为“3D查看器1”的3D查看器控件
 const scene = await view.getScene();
 const chariot = await scene.query({
-  name: 'chariot',
-})// Fuzzy query for models with chariot names, returning an array
-chariot.forEach((ele) =>scene.remove(ele))// Traverse the array and perform a delete all operation
-
+    name: 'chariot' , 
+});//模糊查询名字包含chariot的模型，返回数组
+chariot.forEach((ele)=>scene.remove(ele));//遍历数组做全部删除操作
 ```
  
-**Example:**
+**示例：**
 
-Write the above code on the button, click on the button, and delete all models with names containing charts
-
+在按钮上编写上述代码，点击按钮，将名字包含chariot的模型全部删除
 ![1](../../../assets/images/3d_lowcode_SOperation_remove1.gif)
 
-3D scene model:
+3D场景模型：
 
 ![alt text](3d_lowcode_SOperation_remove2.png)
+
+![alt text](3d_lowcode_SOperation_remove3.png)

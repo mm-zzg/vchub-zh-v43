@@ -1,30 +1,30 @@
 # findLine
 
-**Description:** Query the first line that meets the criteria in the scene
+**描述：** 查询场景中符合条件的第一条线条
 
-Find Line:
+查询线条：
 
 ```typescript
-const view = await System.UI.findControl('3DViewer1')// Obtain a 3D viewer control named "3DViewer1" in the page
+const view = await System.UI.findControl('3D查看器1')// 获取画面中名为“3D查看器1”的3D查看器控件
 const scene = await view.getScene();
 const mash = await scene.findLine({
-//Id: "3b013f32-d6b0-484e-835c-e63e75d30ecb",//To query the unique uuid of the model
-name: 'line',//Fuzzy query names containing lines
-//User defined data content for userData
+    //id:"3b013f32-d6b0-484e-835c-e63e75d30ecb", //要查询模型的唯一uuid
+    name: 'line', //模糊查询名字包含Line的线条
+    //userData  用户自定义的数据内容
 })
-console.log(mash)//Output all queried results
+console.log(mash) //输出所有查询到的结果
 ```
  
-**Example:**
+**示例：**
 
-Write the above code on the button, click the button, and you can query the first matching model in the scene whose name includes line
+在按钮上编写上述代码，点击按钮，可以查询场景中名字包含 line 的第一个符合的模型
 
 
-![1](../../../assets/images/3d_lowcode_SOperation_findline1.gif)
+![alt text](30.gif)
 
-The queried model can use all its methods and properties:
+查询到的线条可以使用其所有方法和属性：
 
-![alt text](3d_lowcode_SOperation_findline2.png)
+![alt text](31.png)
 
 
 

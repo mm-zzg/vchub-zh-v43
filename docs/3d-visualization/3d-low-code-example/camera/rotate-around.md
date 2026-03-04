@@ -1,21 +1,21 @@
 # rotateAround
 
-**Description: Camera surround animation**
+**描述：摄像机环绕动画**
 
 ```typescript
-const view = await System.UI.findControl('3DViewer1')// Obtain a 3D viewer control named "3DViewer1" in the page
+cconst view = await System.UI.findControl('3D查看器1');// 获取画面中名为“3D查看器1”的3D查看器控件
 const scene = await view.getScene();
-const mesh = await scene.findMesh({name:'chariot'});
+const mesh = await scene.findMesh({ name: 'chariot' });
 scene.camera.rotateAround({
-  obj: mesh,//The object surrounded by the camera
-  yRotateAngle: 360,//Camera surround angle
-  duration: 3000//Camera surround duration ms
+    obj: mesh, //摄像机环绕的对象
+    yRotateAngle: 360, //摄像机环绕角度
+    duration: 3000 //摄像机环绕持续时间ms
 });
 ```
  
-**Example:**
+**示例：**
 
-Write the above code on the button, click the button to activate the camera surround animation. 
+在按钮上编写上述代码，点击按钮，可以开启摄像机环绕动画。
 
 ![rotate](../../../assets/images/rotate.gif)
 

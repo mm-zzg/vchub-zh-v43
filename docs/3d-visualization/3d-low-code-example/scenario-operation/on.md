@@ -1,34 +1,32 @@
 # on
 
-**Description: Subscribe to mouse or keyboard events** (mouse event support: 'click' |'mousedown’|'mouseup' |'mouseout '|'mouseover' keyboard event support: 'keydown' |'keyup’)
+**描述：订阅鼠标或者键盘事件(** 鼠标事件支持: 'click' | 'mousedown' | 'mouseup' | 'mouseout' |'mouseover' 键盘事件支持: 'keydown' | 'keyup'**)**
 
 ```typescript
-//Script in the on button
-const view = await System.UI.findControl('3DViewer1')// Obtain a 3D viewer control named "3DViewer1" in the page
-const scene = await view.getScene();// Get Scene
-const chariot = await scene.findMesh ({name:'chariot'});// Find model
-if (!chariot.userData?.off)// Determine whether an event has already been bound.
+//on按钮中脚本
+const view = await System.UI.findControl('3D查看器1'); // 获取画面中名为“3D查看器1”的3D查看器控件
+const scene = await view.getScene();//获取场景
+const chariot = await scene.findMesh({ name: 'chariot' });//查找模型
+if(!chariot.userData?.off)//判断是否已经订阅过点击事件
 {
-  const off = chariot.on('click', ()=>{console.log(123)});// Bind the click event and return the function to cancel the event
-  chariot.userData = {off};// Save the off function in userDatd  
+    const off=chariot.on('click',()=>{console.log(123)});//绑定click事件,返回取消事件的函数
+    chariot.userData={off};//在userData保存off函数  
 }
 
 
-
-
-//Script in the off button
-const view = await System.UI.findControl('3DViewer1')// Obtain a 3D viewer control named "3DViewer1" in the page
-const scene = await view.getScene();// Get Scene
-const chariot = await scene.findMesh ({name:'chariot'});// Find model
-if (chariot.userData.off)//Determine whether to subscribe to events
+//off按钮中脚本
+const view = await System.UI.findControl('3D查看器1'); // 获取画面中名为“3D查看器1”的3D查看器控件
+const scene = await view.getScene();//获取场景
+const chariot = await scene.findMesh({ name: 'chariot' });//查找模型
+if(chariot.userData.off)//判断是否订阅事件
 {
-  chariot.userData.off();// Unsubscribe
-}  
+    chariot.userData.off();//取消订阅
+}
 ```
  
-**Example:**
+**示例：**
 
-Write the above code on the button, click the on button to subscribe to the click event, and click the off button to unsubscribe.
+在按钮上编写上述代码，点击on按钮，订阅click事件，点击off按钮取消订阅。
 
 ![1](../../../assets/images/3d_lowcode_SOperation_on1.gif)
 

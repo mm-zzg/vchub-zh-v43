@@ -1,20 +1,20 @@
 # openFirstPersonControls
 
-**Description: Enable first person mode**(Operation method: WASD operates the forward, left, backward, and right movement of the perspective; drag the mouse to rotate the perspective; spacebar to jump; query the model and delete:)
+**描述：开启第一人称模式(** 操作方式: 通过键盘的W，A，S，D键， 操作视角的前进,向左,后退,向右移动; 鼠标拖动进行视角转动; 空格键进行跳跃; 查询模型并删。**)**
 
 ```typescript
-const view = await System.UI.findControl('3DViewer1')// Obtain a 3D viewer control named "3DViewer1" in the page
+const view = await System.UI.findControl('3D查看器1'); // 获取画面中名为“3D查看器1”的3D查看器控件
 const scene = await view.getScene();
-scene.openFirstPersonControls ({
-  useCollision: true,//Whether to enable physical collision(default no)
-  startCoordinate: {x: 20, y: 100, z: 20},//First person perspective initial position(default to current camera position)
-  hight: 2.2,//Ground height(default 1.8)
-  weight: 4//Gravity (default to 1 affecting jumping)
+scene.openFirstPersonControls({
+    useCollision: true, //是否开启物理碰撞(默认否)
+    startCoordinate: { x: 20, y: 100, z: 20 }, //第一人称视角初始位置(默认当前摄像机位置)
+    hight: 2.2, //地面高度(默认1.8)
+    weight: 4 //重力(默认为1 影响跳跃)
 });
 ```
  
-**Example:**
+**示例：**
 
-Write the above code on the button, click the button, and start falling from the initial position of the first person perspective to the specified height.
+在按钮上编写上述代码，点击按钮，从第一人称视角初始位置开始下落至指定高度。
 
 ![1](../../../assets/images/3d_lowcode_SOperation_openfirstpersoncontrols1.gif)

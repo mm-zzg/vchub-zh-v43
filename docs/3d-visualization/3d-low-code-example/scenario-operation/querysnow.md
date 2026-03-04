@@ -1,23 +1,23 @@
 # querySnow
 
-**Description**: Query all eligible snow effects in the scene
+**描述：** 查询场景中符合条件的全部雪特效
 
-Query Snow:
+查询雪：
 
 ```typescript
-const view = await System.UI.findControl('3DViewer1')// Obtain a 3D viewer control named "3DViewer1" in the page
+const view = await System.UI.findControl('3D查看器1')// 获取画面中名为“3D查看器1”的3D查看器控件
 const scene = await view.getScene();
-const mash = await scene.querySnow('snow')//Query special effects with a name containing’snow’
-console.log(mash)//Output all queried results
+const mash = await scene.querySnow('snow') //查询名字包含snow的特效
+console.log(mash) //输出所有查询到的结果
 ```
  
-**Example:**
+**示例：**
 
-Write the above code on the button, click the button, and you can search for snow effects in the scene with names containing Snow
+在按钮上编写上述代码，点击按钮，可以查询场景中名字包含 snow 的雪特效
 
 ![1](../../../assets/images/3d_lowcode_SOperation_querysnow1.gif)
 
-The queried model can use all its methods and properties:
+查询到的模型可以使用其所有方法和属性：
 
 ![alt text](3d_lowcode_SOperation_querysnow2.png)
 

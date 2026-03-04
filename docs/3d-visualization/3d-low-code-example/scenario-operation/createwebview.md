@@ -1,28 +1,28 @@
 # createWebView
 
-**Description**: Generate default style embedded pages based on the incoming src link
+**描述：** 根据传入的src链接生成默认样式的内嵌页面
 
 ```typescript
-const view = await System.UI.findControl('3DViewer1')// Obtain a 3D viewer control named "3DViewer1" in the page
+const view = await System.UI.findControl('3D查看器1')// 获取画面中名为“3D查看器1”的3D查看器控件
 const scene = await view.getScene();
-const webView = scene.createWebView({
-  name: "webView" + Math.floor(Math.random() * 101),//The name of the embedded page
-  title: 'overview',//The title of the embedded page
-  src: 'http://localhost:8066/#/runtime/2407d598-5f17-400e-9ea0-0d17b7098142/d4c69ed1-5d39-45c6-99a0-8a6d758bfe80?n=Overview&sharedKey=9dc92c32-d2c3-437e-b5ca-46738bbe3197' ,//The address of the embedded page
-  size: {
-    width: 1700,
-    height: 900
-  },//The width and height of the embedded page
-  fixed: true,//always facing the camera
-  //Parent: ThreeDlElement | null//The created parent is added directly to the scene by default
+const webView =scene.createWebView({
+    name: "webView",//内嵌页面的名字
+    title: 'bing',//内嵌页面的标题
+    src: 'https://cn.bing.com/?FORM=Z9FD1',//内嵌页面的地址
+    size: {
+     width: 1000,
+     height: 800
+    }, //内嵌页面的宽高
+    fixed:true, //是否始终面向镜头
+    position:{x:0,y:0,z:0}
+    //parent:ThreeDlElement|null//创建的父级，默认直接添加进场景
 })
 ```
  
-**Example:**
+**示例：**
 
-Write the above code on the button, click the button, and you can create an embedded page at the specified location
+在按钮上编写上述代码，点击按钮，可以在指定位置创建内嵌页面
 
-
-![3d_lowcode_SOperation_createtextlabel1](../../../assets/images/3d_lowcode_SOperation_createwebview1.gif)
+![alt text](23.gif)
 
 
