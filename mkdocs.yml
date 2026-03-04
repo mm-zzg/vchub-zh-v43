@@ -466,8 +466,8 @@ nav:
                             - 2d-visualization/libraries/svg-editor.md
                   - 图符:
                             - 2d-visualization/symbol/index.md
-                            - 2d-visualization/symbol/symbol-libraries.md
                             - 2d-visualization/symbol/create-symbol.md
+                            - 2d-visualization/symbol/symbol-libraries.md
                             - 2d-visualization/symbol/how-to-use.md
                   - Report:
                             - 2d-visualization/report/index.md

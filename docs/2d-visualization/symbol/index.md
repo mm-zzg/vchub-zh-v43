@@ -1,17 +1,19 @@
-# Symbol
+# 图符
 
-Symbols are a simple yet powerful feature that can be used alongside other windows. A Symbol is a component in graphical interface design that can contain various elements, such as images, controls, label, and more, which can be operated and managed as a single unit. Symbols are reusable and can be used in multiple places. If the symbol template is modified, all instances of that symbol are updated simultaneously. This makes symbols particularly useful for displaying similar interface elements or data and simplifies the maintenance and management of the interface.
+图符是一个简单但非常强大的功能，您可以将其与其他窗口一起使用。它可以包含各种元素（如图片、控件、文本等），并作为一个整体来进行操作和管理。图符的特点是它可以在多个地方重复使用，并且如果对图符模板进行了修改，所有使用该图符的实例都会同步更新。这使得图符非常适合用于显示相似的界面元素或数据，并简化了界面的维护和管理工作。
 
-Symbols also support nesting, which involves embedding one symbol within another, similar to using controls. This approach is particularly useful for breaking a project into multiple similar widgets. For example, you can create a universal pressure gauge symbol and then embed it into symbols for tanks, motors, and compressors. By setting up the pressure gauge symbol once, you can apply it in multiple places throughout the project, avoiding repetitive work.
+图符还支持嵌套，即将一个图符嵌入到另一个图符中，这类似于控件的使用。这种方法特别适用于将项目拆解成多个类似的小部件。例如，可以创建一个通用的压力表图符，然后嵌入到油箱、电机和压缩机的图符中。这样，只需设置一次压力表图符，就能在项目中多个地方应用，避免了重复工作。
 
-## Symbol Properties
+## 图符属性
 
-Symbol properties allow each symbol instance to reference different data, enabling flexible configuration. The primary purpose of symbols is to simplify and maintain repetitive user interface elements, making correct use of symbol properties crucial.
+图符属性允许每个图符实例引用不同的数据，从而实现灵活的配置。图符的主要目的是简化和维护重复的用户界面元素，因此正确使用图符属性至关重要。
 
-**Background**
+**背景**
 
-This property is only visible in the symbol editor and is used for internal symbol settings. It will not be displayed in the symbol instances and cannot be bound to other controls, but it can be bound within the symbol editor.
+这个属性仅在图符的编辑器中可见，不会在图符的实例中显示，也不能被其他控件绑定，但可以在图符编辑器中进行属性绑定。
 
-**Custom Property**
+![alt text](1.png)
 
-Custom properties allow for personalized configuration of each symbol instance. For example, in the case of a motor symbol, you can set a `MotorNumber` parameter. This parameter can be used as a dynamic variable within the symbol instance, ensuring consistency and convenience in configuration. Properties defined in the symbol editor can be bound in the instance, but they cannot be bound within the editor itself.
+**自定义属性**
+
+自定义属性允许对每个图符实例进行个性化配置。例如，对于一个电机图符，可以设置 `MotorNumber` 参数。该参数在图符实例中可用作动态变量，确保配置的统一性和便捷性。图符编辑器中的属性在实例中可绑定，但在编辑器中不可绑定。
