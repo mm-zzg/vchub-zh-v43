@@ -490,7 +490,8 @@ nav:
                             - 2d-visualization/property-binding/dynamic-cell.md
                             - 2d-visualization/property-binding/sql-query.md
                             - 2d-visualization/property-binding/bidirectional-bindings.md 
-                  - 2d-visualization/animation.md
+                  - 控件:
+                            - 2d-visualization/animation/index.md
                   - Event:
                             - 2d-visualization/event/index.md
                             - 2d-visualization/event/navigation.md
