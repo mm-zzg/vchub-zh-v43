@@ -13,5 +13,5 @@ webview.title='test title';//修改内嵌页面的title
 
 在按钮上编写上述代码，点击按钮，可以修改内嵌页面的title。
 
-![1](../../../../assets/images/3d_lowcode_object_ePage_title1.gif)
+![alt text](2.gif)
 

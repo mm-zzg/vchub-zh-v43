@@ -21,7 +21,7 @@ html.element=div;//修改div
 
 在按钮上编写上述代码，点击按钮，可以修改自定义标注的element。
 
-![1](../../../../assets/images/3d_lowcode_object_cAnnotations_element1.gif)
+![alt text](1.gif)
 
 
 

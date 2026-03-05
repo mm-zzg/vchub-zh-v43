@@ -1,10 +1,3 @@
-
-
-
-
-
-
-
 # movePaths
 
 **描述：模型根据路径位移动画**
@@ -25,12 +18,9 @@ mesh.movePaths({
     faceForward: true, // 模型始终面向位移方向
     duration: 3000
 })
-```
- 
+``` 
 **示例：**
 
 在按钮上编写上述代码，点击按钮，可以播放模型位移动画。
-
-
 
 ![1](../../../../assets/images/3d_lowcode_object_gmodel_movepaths1.gif)

@@ -522,7 +522,7 @@ nav:
                             - 3d-visualization/3d-low-code-example/index.md
                             - 3d-visualization/3d-low-code-example/find-3dview.md
                             - 3d-visualization/3d-low-code-example/getscene.md
-                            - Scenario Operation:
+                            - 场景操作:
                                       - 3d-visualization/3d-low-code-example/scenario-operation/index.md
                                       - 3d-visualization/3d-low-code-example/scenario-operation/background.md
                                       - 3d-visualization/3d-low-code-example/scenario-operation/backgroundimg.md
@@ -572,7 +572,7 @@ nav:
                                       - 3d-visualization/3d-low-code-example/scenario-operation/stopfirstpersoncontrols.md
                                       - 3d-visualization/3d-low-code-example/scenario-operation/skybox.md
                                       - 3d-visualization/3d-low-code-example/scenario-operation/creatediffusion.md
-                            - Camera:          
+                            - 摄像机:          
                                       - 3d-visualization/3d-low-code-example/camera/index.md
                                       - 3d-visualization/3d-low-code-example/camera/flypath.md
                                       - 3d-visualization/3d-low-code-example/camera/lookat.md
@@ -581,9 +581,9 @@ nav:
                                       - 3d-visualization/3d-low-code-example/camera/rotate-around.md
                                       - 3d-visualization/3d-low-code-example/camera/pause.md
                                       - 3d-visualization/3d-low-code-example/camera/resume.md
-                            - Object models in the scene:
+                            - 场景中的物体模型:
                                       - 3d-visualization/3d-low-code-example/object-models-in-the-scene/index.md
-                                      - Basic Model:
+                                      - 基础模型:
                                                 - 3d-visualization/3d-low-code-example/object-models-in-the-scene/basic-model/index.md
                                                 - 3d-visualization/3d-low-code-example/object-models-in-the-scene/basic-model/addchildren.md
                                                 - 3d-visualization/3d-low-code-example/object-models-in-the-scene/basic-model/getchildren.md
@@ -595,20 +595,20 @@ nav:
                                                 - 3d-visualization/3d-low-code-example/object-models-in-the-scene/basic-model/position.md
                                                 - 3d-visualization/3d-low-code-example/object-models-in-the-scene/basic-model/userdata.md
                                                 - 3d-visualization/3d-low-code-example/object-models-in-the-scene/basic-model/visible.md
-                                      - Custom Annotations:
+                                      - 自定义标注:
                                                 - 3d-visualization/3d-low-code-example/object-models-in-the-scene/custom-annotations/index.md
                                                 - 3d-visualization/3d-low-code-example/object-models-in-the-scene/custom-annotations/element.md
-                                      - Embedded Page:
+                                      - 内嵌页面:
                                                 - 3d-visualization/3d-low-code-example/object-models-in-the-scene/embedded-page/index.md
                                                 - 3d-visualization/3d-low-code-example/object-models-in-the-scene/embedded-page/src.md
                                                 - 3d-visualization/3d-low-code-example/object-models-in-the-scene/embedded-page/title.md
-                                      - Grid Model:
+                                      - 网络模型:
                                                 - 3d-visualization/3d-low-code-example/object-models-in-the-scene/grid-model/index.md
-                                                - 3d-visualization/3d-low-code-example/object-models-in-the-scene/grid-model/addoutline.md
                                                 - 3d-visualization/3d-low-code-example/object-models-in-the-scene/grid-model/color.md
                                                 - 3d-visualization/3d-low-code-example/object-models-in-the-scene/grid-model/movepaths.md
                                                 - 3d-visualization/3d-low-code-example/object-models-in-the-scene/grid-model/moveto.md
                                                 - 3d-visualization/3d-low-code-example/object-models-in-the-scene/grid-model/on.md
+                                                - 3d-visualization/3d-low-code-example/object-models-in-the-scene/grid-model/addoutline.md
                                                 - 3d-visualization/3d-low-code-example/object-models-in-the-scene/grid-model/opacity.md
                                                 - 3d-visualization/3d-low-code-example/object-models-in-the-scene/grid-model/removeoutline.md
                                                 - 3d-visualization/3d-low-code-example/object-models-in-the-scene/grid-model/rotateto.md
@@ -617,27 +617,27 @@ nav:
                                                 - 3d-visualization/3d-low-code-example/object-models-in-the-scene/grid-model/scaleto.md
                                                 - 3d-visualization/3d-low-code-example/object-models-in-the-scene/grid-model/stopanimation.md
                                                 - 3d-visualization/3d-low-code-example/object-models-in-the-scene/grid-model/wireframe.md
-                                      - Image Overlays:
+                                      - 图片标注:
                                                 - 3d-visualization/3d-low-code-example/object-models-in-the-scene/image-overlays/index.md
                                                 - 3d-visualization/3d-low-code-example/object-models-in-the-scene/image-overlays/canvas.md
                                                 - 3d-visualization/3d-low-code-example/object-models-in-the-scene/image-overlays/size.md
-                                      - Line:
+                                      - 线:
                                                 - 3d-visualization/3d-low-code-example/object-models-in-the-scene/line/index.md
                                                 - 3d-visualization/3d-low-code-example/object-models-in-the-scene/line/color.md
                                                 - 3d-visualization/3d-low-code-example/object-models-in-the-scene/line/curve.md
                                                 - 3d-visualization/3d-low-code-example/object-models-in-the-scene/line/points.md
-                                      - Lines with textures:
+                                      - 带贴图的线:
                                                 - 3d-visualization/3d-low-code-example/object-models-in-the-scene/lines-with-textures/index.md
                                                 - 3d-visualization/3d-low-code-example/object-models-in-the-scene/lines-with-textures/color.md
                                                 - 3d-visualization/3d-low-code-example/object-models-in-the-scene/lines-with-textures/image.md
                                                 - 3d-visualization/3d-low-code-example/object-models-in-the-scene/lines-with-textures/points.md
                                                 - 3d-visualization/3d-low-code-example/object-models-in-the-scene/lines-with-textures/repeatx.md
                                                 - 3d-visualization/3d-low-code-example/object-models-in-the-scene/lines-with-textures/repeaty.md
-                                      - Surface:
+                                      - 面:
                                                 - 3d-visualization/3d-low-code-example/object-models-in-the-scene/surface/index.md
-                                                - 3d-visualization/3d-low-code-example/object-models-in-the-scene/surface/doubleside.md
                                                 - 3d-visualization/3d-low-code-example/object-models-in-the-scene/surface/image.md
-                                      - Text Annotation:
+                                                - 3d-visualization/3d-low-code-example/object-models-in-the-scene/surface/doubleside.md
+                                      - 文字标注:
                                                 - 3d-visualization/3d-low-code-example/object-models-in-the-scene/text-annotation/index.md
                                                 - 3d-visualization/3d-low-code-example/object-models-in-the-scene/text-annotation/fontcolor.md
                                                 - 3d-visualization/3d-low-code-example/object-models-in-the-scene/text-annotation/fontsize.md

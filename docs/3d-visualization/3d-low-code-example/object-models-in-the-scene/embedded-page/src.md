@@ -13,4 +13,4 @@ webview.src='http://www.scadaforweb.com/ ';//修改内嵌页面的src
 
 在按钮上编写上述代码，点击按钮，可以修改内嵌页面的链接。
 
-![1](../../../../assets/images/3d_lowcode_object_ePage_src1.gif)
+![alt text](1.gif)

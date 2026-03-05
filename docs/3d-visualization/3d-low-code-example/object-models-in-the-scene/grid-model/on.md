@@ -1,9 +1,3 @@
-
-
-
-
-
-
 # on
 
 **描述：订阅鼠标事件('** click' | 'mousedown' | 'mouseup' | 'mouseout' |'mouseover'**)**
@@ -25,10 +19,8 @@ if(chariot.userData.off)//判断是否订阅事件
     chariot.userData.off();//取消订阅
 }
 ```
- 
 **示例：**
 
 在按钮上编写上述代码，点击on按钮，订阅click事件，点击off按钮取消订阅。
-
 
 ![1](../../../../assets/images/3d_lowcode_object_gmodel_on1.gif)

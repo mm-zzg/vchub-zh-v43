@@ -13,18 +13,8 @@ mesh.addOutline({
     pulsePeriod: 5, // 呼吸效果
 })
 ```
- 
 **示例：**
 
 在按钮上编写上述代码，点击按钮，可以设置模型勾边及勾边参数。
-
-
-
-
-
-
-
-
-
 
 ![1](../../../../assets/images/3d_lowcode_object_gmodel_addoutline1.gif)

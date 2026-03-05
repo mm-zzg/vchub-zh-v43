@@ -1,4 +1,3 @@
-
 # moveTo
 
 **描述：模型位移动画**
@@ -16,14 +15,8 @@ box.moveTo({
     delay:1000  //动画延时多久播放ms(默认0)
 })
 ```
- 
 **示例：**
 
 在按钮上编写上述代码，点击按钮，可以播放模型位移动画。
-
-
-
-
-
 
 ![1](../../../../assets/images/3d_lowcode_object_gmodel_moveto1.gif)
