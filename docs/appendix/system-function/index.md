@@ -27,10 +27,6 @@
 - [System.Event.fail](system-event/system-event-fail.md)  
 - [System.Event.success](system-event/system-event-success.md)  
 
-**System.Function**
-
-[System.Function.runScript](system-function/system-function-runscript.md)
-
 **System.Library**  
 
 - [System.Library.getLocalImage](system-library/system-library-getlocalimage.md)
