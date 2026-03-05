@@ -19,11 +19,9 @@ ctx.font = '20px bold sans-serif';
 ctx.fillStyle = '#ff0000';
 ctx.fillText('这是一个canvas', 0, 20);//起点坐标0，20
 canvas.canvas=canvas2;//修改canvas属性
-```
- 
+``` 
 **示例：**
 
 在按钮上编写上述代码，点击按钮，可以修改canvas。
 
-
-![1](../../../../assets/images/3d_lowcode_object_overlays_canvas1.gif)
+![alt text](1.gif)

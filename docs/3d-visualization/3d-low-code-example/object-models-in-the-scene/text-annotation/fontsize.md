@@ -1,11 +1,3 @@
-
-
-
-
-
-
-
-
 # fontSize
 
 **描述：修改文本标注大小**
@@ -20,7 +12,5 @@ label.fontSize=100;//修改文本标注大小
 **示例：**
 
 在按钮上编写上述代码，点击按钮，可以修改文本标注大小。
-
-
 
 ![1](../../../../assets/images/3d_lowcode_object_textAnnotation_fontsize1.gif)

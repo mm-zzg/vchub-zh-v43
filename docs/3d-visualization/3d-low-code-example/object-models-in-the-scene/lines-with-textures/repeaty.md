@@ -1,5 +1,3 @@
-
-
 # repeatY
 
 **描述：修改贴图线图片在y方向的重复次数**
@@ -14,6 +12,5 @@ tube.repeatY=5;//修改图片在x方向的重复次数
 **示例：**
 
 在按钮上编写上述代码，点击按钮，可以修改图片在y方向的重复次数。
-
 
 ![1](../../../../assets/images/3d_lowcode_object_linetextures_repeaty1.gif)

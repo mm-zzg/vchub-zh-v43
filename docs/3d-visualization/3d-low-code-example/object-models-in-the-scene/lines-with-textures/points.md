@@ -12,7 +12,7 @@ tube.points = [{ x: Math.floor(Math.random() * 101), y: Math.floor(Math.random()
 { x: Math.floor(Math.random() * 101), y: Math.floor(Math.random() * 101), z: Math.floor(Math.random() * 101) },
 { x: Math.floor(Math.random() * 101), y: Math.floor(Math.random() * 101), z: Math.floor(Math.random() * 101) }];//修改顶点坐标
 ```
- 
+
 **示例：**
 
 在按钮上编写上述代码，点击按钮，可以修改贴图线顶点坐标。
