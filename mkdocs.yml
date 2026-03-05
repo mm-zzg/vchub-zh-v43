@@ -528,6 +528,7 @@ nav:
                                       - 3d-visualization/3d-low-code-example/scenario-operation/backgroundimg.md
                                       - 3d-visualization/3d-low-code-example/scenario-operation/createbasicmesh.md
                                       - 3d-visualization/3d-low-code-example/scenario-operation/createcanvasmarker.md
+                                      - 3d-visualization/3d-low-code-example/scenario-operation/creatediffusion.md
                                       - 3d-visualization/3d-low-code-example/scenario-operation/createfire.md
                                       - 3d-visualization/3d-low-code-example/scenario-operation/createhtmlmarker.md
                                       - 3d-visualization/3d-low-code-example/scenario-operation/createline.md
@@ -569,9 +570,8 @@ nav:
                                       - 3d-visualization/3d-low-code-example/scenario-operation/querywebview.md
                                       - 3d-visualization/3d-low-code-example/scenario-operation/remove.md
                                       - 3d-visualization/3d-low-code-example/scenario-operation/setoutlineoption.md
-                                      - 3d-visualization/3d-low-code-example/scenario-operation/stopfirstpersoncontrols.md
                                       - 3d-visualization/3d-low-code-example/scenario-operation/skybox.md
-                                      - 3d-visualization/3d-low-code-example/scenario-operation/creatediffusion.md
+                                      - 3d-visualization/3d-low-code-example/scenario-operation/stopfirstpersoncontrols.md
                             - 摄像机:          
                                       - 3d-visualization/3d-low-code-example/camera/index.md
                                       - 3d-visualization/3d-low-code-example/camera/flypath.md
