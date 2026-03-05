@@ -28,8 +28,7 @@
 <br>type? - 单个或多个类型，可选值为"H"，"H2"，"H3"，"H4"，"L"，"L2"，"L3"，"L4"，<br>"RateOfChange"，"Equivalent"，"TrueToFalse"，"FalseToTrue"
 <br>asset? - 单个或多个资产
 <br>expression? - 表达式，例1：priority == "Low"，例2：path.Contains("Device")，例<br>3：state.HasFlag("Active") && stae.HasFlag("“Unacked")
-
-<br>}
+}
 <br>-返回
 <br>[
 <br>{
