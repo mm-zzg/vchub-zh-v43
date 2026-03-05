@@ -643,6 +643,14 @@ nav:
                                                 - 3d-visualization/3d-low-code-example/object-models-in-the-scene/text-annotation/fontsize.md
                                                 - 3d-visualization/3d-low-code-example/object-models-in-the-scene/text-annotation/height.md
                                                 - 3d-visualization/3d-low-code-example/object-models-in-the-scene/text-annotation/text.md
+        - 3D 建模:
+                  - 3d-modeling/index.md
+                  - 3d-modeling/materials-and-textures.md
+                  - 3d-modeling/modeling-standards-and-precautions.md
+                  - 3d-modeling/summary-of-modeling-standards.md
+                  - 3d-modeling/pre-export-checks.md
+                  - 3d-modeling/export-model.md
+                  - 3d-modeling/model-import-into-VC-Hub.md
         - Appendix:
                   - appendix/index.md
                   - System Function:
