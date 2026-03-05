@@ -1,8 +1,8 @@
 # 系统函数
 
-在本章节，我们将介绍WAGO VC Hub中可用的所有内置脚本函数。
+在本章节，我们将介绍 WAGO SCADA 中可用的所有内置脚本函数。
 
-系统函数以System命名，您可以在下面看到许多不同类别的系统函数。
+系统函数以 System 命名，您可以在下面看到许多不同类别的系统函数。
 
 **System.Alarm**  
 
@@ -39,12 +39,13 @@
 **System.Page**  
 
 - [System.Page.getPropertyValue](system-page/system-page-getpropertyvalue.md)  
-- [System.Page.setPropertyValue](system-page/system-page-
-setpropertyvalue.md)  
+- [System.Page.setPropertyValue](system-page/system-page-setpropertyvalue.md)  
 
 **System.PTZControl**
 
-
+- [System.PTZControl.move](System-PTZControl/System-PTZControl-move.md)
+- [System.PTZControl.setPosition](System-PTZControl/System-PTZControl-setPosition.md)
+- [System.PTZControl.stop](System-PTZControl/System-PTZControl-stop.md)
 
 **System.Security** 
 
