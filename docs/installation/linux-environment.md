@@ -1,6 +1,6 @@
 # Linux环境
 
-WAGO VC Hub提供Linux环境安装包，文件名wagoscada-x.x.x-linux-x64-installer.run。
+WAGO SCADA提供Linux环境安装包，文件名wagoscada-x.x.x-linux-x64-installer.run。
 
 ## 安装步骤
 
@@ -36,7 +36,7 @@ WAGO VC Hub提供Linux环境安装包，文件名wagoscada-x.x.x-linux-x64-insta
 
     ![alt text](24.png)
 
-9. 完成后默认访问WAGO VC Hub站点：“http://localhost:8066”，安装完成后，将进入配置引导界面。
+9. 完成后默认访问WAGO SCADA站点：“http://localhost:8066”，安装完成后，将进入配置引导界面。
 
 #### 注意事项
 
@@ -130,7 +130,7 @@ WAGO VC Hub提供Linux环境安装包，文件名wagoscada-x.x.x-linux-x64-insta
     systemctl status wagoscada.service
     ```
  
-    在浏览器访问 WAGO VC Hub 站点（例如 http://localhost:8066），确认运行正常。
+    在浏览器访问 WAGO SCADA 站点（例如 http://localhost:8066），确认运行正常。
 
 ## 卸载步骤
 
