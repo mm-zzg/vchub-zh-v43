@@ -8,11 +8,12 @@
 
 ## 语法
 
-**System.Tag.subscribe(paths: Array`<string>`, callback: (value: {Time: string;Path: string;**
-
+**System.Tag.subscribe(paths: Array`<string>`, callback: (value: {**
+**Time: string;**
+**Path: string;**
 **Value: any;**
-
-**Quality: number;}=>void): () => void**
+**Quality: number;**
+**}=>void): () => void**
 
 - 参数
 
