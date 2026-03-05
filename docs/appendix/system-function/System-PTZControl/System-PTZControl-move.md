@@ -12,17 +12,17 @@
 **): Promise<void>**  
 
 - 参数    
-    
+
     streamName - WebRTC Streamer名称  
     cameraName - 摄像头名称        
     operation - 云台操作指令，可选值：
-        "Home" - 复位，                           
-        "MoveUp" - 向上移动，                           
-        “MoveDown” - 向下移动，                           
-        “MoveLeft” - 向左移动，                           
-        "MoveRight" - 向右移动，                           
-        "ZoomIn" - 放大，                           
-        “ZoomOut” - 缩小    
+            "Home" - 复位，                           
+            "MoveUp" - 向上移动，                           
+            “MoveDown” - 向下移动，                           
+            “MoveLeft” - 向左移动，                           
+            "MoveRight" - 向右移动，                           
+            "ZoomIn" - 放大，                           
+            “ZoomOut” - 缩小    
 
 - 返回  
 
