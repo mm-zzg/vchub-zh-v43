@@ -2,28 +2,29 @@
 # System.Tag.queryPropertyValues
 
 
-## Description
-Get the child nodes path, property name, and property value of a specific property for the direct(non-recursive)  child nodes under a specified parent path.
+## 描述
 
-## Grammar
-System.Tag.queryPropertyValues(tagParentPath:string,property:string): Promise<Array<{ path: string; property: string; value: any }>>
+获取指定父级路径下直接（非递归）子节点的路径、属性名称和属性值。
 
-     - Parameter
+## 语法
 
-        tagParentPath - Parent path
+**System.Tag.queryPropertyValues(tagParentPath:string,property:string): Promise`<Array<{ path: string; property: string; value: any }>>`**
 
-        property  - Property name
+- 参数
 
-     - Return
+    tagParentPath - 父级路径
 
-        Path, name, and value of the direct child node property
+    property  - 属性名称
 
-## Code Example 
+- 返回
 
-Get the paths of all direct child nodes under the path "Device: Device 1" , as well as the values of the Name property of the child nodes.
+    直接子节点的路径、属性名称、属性值
+
+## 代码示例
+
+获取路径"设备:设备1"下所有直接子节点的路径，以及子节点的 Name 属性的值。
+
 ```typescript 
-
-const tagProperties = await System.Tag.queryPropertyValues('@Device:Device1','Name');
+const tagProperties = await System.Tag.queryPropertyValues('@设备:设备1','Name');
 console.log(tagProperties);
-
 ```   

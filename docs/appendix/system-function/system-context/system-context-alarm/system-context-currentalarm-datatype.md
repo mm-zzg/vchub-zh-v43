@@ -3,14 +3,16 @@
 # System.Context.currentAlarm.dataType
 
 
-## Description
+## 描述
 
-The data type of the alarm tag.
-## Grammar
-System.Context.currentAlarm.dataType
+当前报警变量的数据类型。
 
-## Code Example                                                                                                                                                                                                                                                  
-Get the data type of the alarm tag.                                                         
+## 语法
+**System.Context.currentAlarm.dataType**
+
+##  代码示例
+
+获取当前报警变量的数据类型。
 
 ```typescript 
 const dataType = System.Context.currentAlarm.dataType;

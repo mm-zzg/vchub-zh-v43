@@ -3,14 +3,17 @@
 # System.Context.currentEvent.type
 
 
-## Description
+## 描述
       
-The type of event.
-## Grammar
-System.Context.currentEvent.type
+事件的类型。
 
-## Code Example                                                                                                                                                                                                                                                                                                          
-Get the type of the current event. 
+## 语法
+
+**System.Context.currentEvent.type**
+
+## 代码示例
+
+获取当前事件的类型。
 ```typescript 
 const type = System.Context.currentEvent.type;
 console.log(type)

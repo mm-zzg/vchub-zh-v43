@@ -2,35 +2,37 @@
 # System.Page.setPropertyValue
 
 
-## Description
-Set the value of the current page's custom property or control property.
+## 描述
 
-## Grammar
-System.Page.setPropertyValue(path: string,value: any): void 
+设置当前画面自定义属性或控件属性的值。
 
-     - Parameter 
+## 语法
 
-        path - Path of the page's custom property or control property 
+**System.Page.setPropertyValue(path: string,value: any): void**
 
-        value - New value 
+- 参数
 
-     - Return 
+    path - 画面自定义属性或控件属性的路径
+      
+    value - 属性新值
+   
+- 返回
 
-        Nothing
+    无
 
-## Code Example                                                                                                                                                                                                                                                                                                          
-Get the value of the custom property "no" on the page, and add 1 to its value each time.
+## 代码示例
+
+获取画面自定义属性“编号”的值，给其值每次加 1。
+
 ```typescript 
-const value = System.Page.getPropertyValue('#custom.no');
-System.Page.setPropertyValue('#custom.no', value > 100 ? 0 : value + 1);
-
+const value = System.Page.getPropertyValue('#custom.编号');
+System.Page.setPropertyValue('#custom.编号', value > 100 ? 0 : value + 1);
 
 ```   
-Set the text property of TextInput1 to 'WAGO VC Hub'.
+设置文本输入框 1 的 text 属性为“WAGO VC Hub”。
 
 ```typescript 
-System.Page.setPropertyValue('TextInput1#text', 'WAGO VC Hub');
-
+System.Page.setPropertyValue('文本输入框1#text', 'WAGO VC Hub');
 
 
 ```   

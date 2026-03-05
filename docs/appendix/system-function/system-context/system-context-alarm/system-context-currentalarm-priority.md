@@ -3,14 +3,14 @@
 # System.Context.currentAlarm.priority
 
 
-## Description
+## 描述
 
-The priority of the current alarm.
-## Grammar
-System.Context.currentAlarm.priority
+当前报警的优先级。
+## 语法
+**System.Context.currentAlarm.priority**
 
-## Code Example                                                                                                                                                                                                                                                                                                          
-Get the priority of the current alarm.
+## 代码示例                              
+获取当前报警的优先级。
 ```typescript 
 
 const priority = System.Context.currentAlarm.priority;

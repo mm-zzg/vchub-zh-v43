@@ -1,24 +1,26 @@
 # System.Security.changePassword
 
 
-## Description
-Change password of the currently logged in user.
+## 描述
+修改当前登录用户的密码。
 
-## Grammar
-System.Security.changePassword(oldPassword:string,newPassword:string): Promise<boolean>
+## 语法
+**System.Security.changePassword(oldPassword:string,newPassword:string): Promise`<boolean>`**
 
-     - Parameter
+- 参数
 
-        oldPassword  Old password 
+    oldPassword  旧密码 
 
-        newPassword  New password
+    newPassword  新密码
 
-     - Return
+- 返回
 
-        Whether the password was successfully changed
+    是否修改成功
 
-## Code Example       
-Change the password of the currently logged in user from "abc123" to "abc456".
+## 代码示例
+
+将当前登录用户的密码由 abc123 改为 abc456。
+
 ```typescript 
 const result = await System.Security.changePassword('abc123','abc456');
 console.log(result);

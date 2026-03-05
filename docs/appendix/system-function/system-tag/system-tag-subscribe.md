@@ -2,54 +2,48 @@
 # System.Tag.subscribe
 
 
-## Description
+## 描述
 
-Subscribing to a tag will retrieve its value, path, quality, and time when the tag changes.
-## Grammar
+订阅一个变量，变量发生变化时会获取变量的值、路径、质量位、时间。
 
-System.Tag.subscribe(paths: Array<string>, callback: (value: {
-  
-Time: string;
-  
-Path: string;
-    
-Value: any;
-    
-Quality: number;
+## 语法
 
-}=>void): () => void
+**System.Tag.subscribe(paths: Array`<string>`, callback: (value: {Time: string;Path: string;**
 
-     - Parameter
+**Value: any;**
 
-        paths - Tag paths 
+**Quality: number;}=>void): () => void**
 
-        callback - A callback function used to handle notifications of changes in tag values 
+- 参数
 
-     - Return
+     paths - 变量路径数组
 
-        Unsubscription function
+     callback - 回调函数，用于处理变量数值变化时的通知
 
-## Code Example 
+- 返回
 
-First create a tag group and select the refresh type of the tag group as "Value Change".
+     取消订阅函数
 
-![alt text](a_sf_st-subscribe1.png)
+## 代码示例
 
-Then create a tag and check the tag group you just created.
+首先创建一个变量组，并将变量组的刷新类型选择为“数值变化”。
 
-![alt text](a_sf_st-subscribe2.png)
+![alt text](1.png)
 
-Finally, when you subscribe to the "Device: Rotate" tag, you will receive the pushed data and print out the new value when the tag changes.
+然后创建一个变量，并在变量组中勾选刚刚创建的变量组。
+
+![alt text](2.png)
+
+最后订阅变量“设备：旋转”后，变量发生变化时会接收到推送的数据并打印出新的值。
+
 ```typescript 
 const unsubscript = System.Tag.subscribe(['@Device: Rotate'], (value) => {
     console.log('subscribe', value.Value);
 });
 
-// Unsubscribe after 60 seconds
+// 60秒后取消订阅
 setTimeout(() => {
     unsubscript();
 }, 1000 * 60);
-
-
 ``` 
-    Note: If the “Refresh Type“ of the tag group is set to “Periodical“, the tag values will be retrieved according to the frequency of the selected period after subscribing to the tags.
+注意：如果变量组的刷新类型选择了周期性，订阅变量后将会按照该周期的频率获取变量值。

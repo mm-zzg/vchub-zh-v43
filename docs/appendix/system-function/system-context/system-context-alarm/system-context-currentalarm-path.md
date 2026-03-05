@@ -3,14 +3,17 @@
 # System.Context.currentAlarm.path
 
 
-## Description
+## 描述
 
-The path of the alarm.
-## Grammar
-System.Context.currentAlarm.path
+当前报警的路径。
 
-## Code Example                                                                                                                                                                                                                                                                                                          
-Get the path of the alarm.
+## 语法
+
+**System.Context.currentAlarm.path**
+
+## 代码示例
+
+获取当前报警的路径。
 ```typescript 
 const path = System.Context.currentAlarm.path;
 console.log(path);

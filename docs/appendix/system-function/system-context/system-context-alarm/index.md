@@ -1,8 +1,8 @@
 # System.Context.Alarm
 
-Provides access to the triggering alarm's data.
+获取触发报警的各种值。
 
-- [​System.Context.currentAlarm.ackMode​](system-context-currentalarm-ackmode.md) 
+- [​System.Context.currentAlarm.ackMode​](system-context-currentalarm-ackmode.md)
 - [​System.Context.currentAlarm.ackNotes​](system-context-currentalarm-acknotes.md) 
 - [​System.Context.currentAlarm.ackTime​](system-context-currentalarm-acktime.md) 
 - [​System.Context.currentAlarm.ackUser​](system-context-currentalarm-ackuser.md) 

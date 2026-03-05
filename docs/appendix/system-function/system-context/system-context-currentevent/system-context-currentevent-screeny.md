@@ -3,14 +3,15 @@
 # System.Context.currentEvent.screenY
 
 
-## Description
-Obtain the vertical coordinates of the event target relative to the triggering event on the page.
+## 描述
+获取事件目标相对于触发事件在屏幕上的垂直坐标。
 
-## Grammar
-System.Context.currentEvent.screenY
+## 语法
+**System.Context.currentEvent.screenY**
 
-## Code Example                                                                                                                                                                                                                                                                                                          
-Get the vertical page coordinates of the current trigger event.
+## 代码示例
+
+获取当前触发事件在屏幕上的垂直坐标。
 ```typescript 
 const value = System.Context.currentEvent.screenY;
 console.log(value)

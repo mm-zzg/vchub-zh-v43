@@ -1,16 +1,16 @@
-
-
 # System.Context.currentAlarm.statusChangeTime
 
+## 描述
 
-## Description
+当前报警状态变化的时间。
 
-The timestamp of the current alarm's status change.
-## Grammar
-System.Context.currentAlarm.statusChangeTime
+## 语法
+**System.Context.currentAlarm.statusChangeTime**
 
-## Code Example                                                                                                                                                                                                                                                                                                          
-Get the timestamp of the current alarm's status change.
+## 代码示例   
+
+获取当前报警状态变化的时间。
+
 ```typescript 
 
 const time = System.Context.currentAlarm.statusChangeTime;

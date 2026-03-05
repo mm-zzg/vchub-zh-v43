@@ -2,9 +2,11 @@
 
 
 ## Description
-Retrieve the historical records of the current tag, including the tag's path, value, quality code, time and aggregation mode.
 
-## Grammar
+获取当前变量的历史记录，包括变量的路径、值、质量位、时间、聚合模式。
+
+## 语法
+
 ```typescript
 enum AggregationMode { "Raw", "Avg", "Max", "Min", "First", "Last", "Count", "Range", "CountOn", "CountOff", "DurationOn", "DurationOff" }
 
@@ -64,55 +66,52 @@ Parameter
 
 |  Name         | Type        | Description    |
 |:---------------|:-----------------|:----------------|
-| start         | Date or string         | Start Time    |
-| end            | Date or string       | End Time          |
-| tag            | string or `Array<string>`   | Tag(s) to query            |
-| queryMode      | QueryMode           | Query Mode           |
-| aggregationMode  | AggregationMode or `Array<AggregationMode`> | Aggregation mode(s)  required for "FixedPoints" and "Periodic" query modes      |
-| points      | number            | Points,required for "FixedPoints" query modes     |
-| period        | number          | Period,required for "Periodic" query  |
-| periodMode    | PeriodMode      | Period mode,required for "Periodic" query modes  |
-| extraOption.timeout | number    | The timeout duration for the query, measured in seconds   |
-| extraOption.noInterpolation   | boolean | Interpolation enabled? (true to disable)   |
-| extraOption.ignoreBadQuality  | boolean   | Ignore bad quality samples in data query |
-| extraOption.includeBoundingValues | boolean    | Whether to include bounding values during interpolation.  If there is no data at the start or end of the query time range,  the system will retrieve the last value within one day before the start,  and the first value within one day after the end, for interpolation |
+| start         | Date or string         | 开始时间   |
+| end            | Date or string       | 结束时间         |
+| tag            | string or `Array<string>`   | 查询的标签或者标签列表 |
+| queryMode      | QueryMode           |查询类型   |
+| aggregationMode  | AggregationMode or `Array<AggregationMode`> |单个或多个变量聚合模式。
+当查询方式为"FixedPoints"、"Periodic"时需指定 |
+| points      | number | 点数，当查询方式为"FixedPoints"时需指定 query modes  |
+| period        | number          | 周期，当查询方式为"Periodic"时需指定  |
+| periodMode    | PeriodMode      | 周期单位，当查询方式为"Periodic"时需指定|
+| extraOption.timeout | number    | 查询超时时间，单位为秒|
+| extraOption.noInterpolation   | boolean | 是否不启用插值|
+| extraOption.ignoreBadQuality  | boolean | 查询原始数据是否忽略坏质量位的数据|
+| extraOption.includeBoundingValues | boolean    | 是否在插值时包含临界值。当查询一段时间数据，首尾无数据时，会查询首部前 1 天最后一笔数据，和尾部后一天第一笔数据作为首尾的插值 |
 
 
-## Code Example
+## 代码示例
 
-Retrieve the historical records of the raw values for the tag "Device:Temperature" between 2024-08-14 00:00:00 and 2024-08-15 00:00:00.
+获取变量"设备:温度"在2024-08-14 00:00:00~2024-08-15 00:00:00之间原始值的历史记录。
 
 ```typescript 
-const value = await System.Tag.readHistory('2024-08-14 00:00:00', '2024-08-15 00:00:00', '@Device:Temperature','Raw'，{
+const value = await System.Tag.readHistory('2024-08-14 00:00:00', '2024-08-15 00:00:00', '@设备:温度','Raw'，{
   timeout: 30
 });
 console.log(value);
-
-
 ```
-Retrieve the historical records of the variable "Device:Temperature" between 2024-08-14 00:00:00 and 2024-08-15 00:00:00 using the "FixedPoints" query mode, with "Avg" as the aggregation mode and a total of 30 data points.
+获取变量"设备:温度"在2024-08-14 00:00:00~2024-08-15 00:00:00之间,查询方式为"FixedPoints"，聚合模式为"Avg"，点数为30的历史记录。
+
 ```typescript 
-const value = await System.Tag.readHistory('2024-08-14 00:00:00', '2024-08-15 00:00:00', '@Device:Temperature','FixedPoints','Avg',30, {
+const value = await System.Tag.readHistory('2024-08-14 00:00:00', '2024-08-15 00:00:00', '@设备:温度','FixedPoints','Avg',30, {
   timeout: 60,
   noInterpolation: true,
   ignoreBadQuality: true,
   includeBoundingValues: false
 });
 console.log(value);
-
-
 ```   
-Retrieve the historical records of the variable "Device:Temperature" between 2024-08-14 00:00:00 and 2024-08-15 00:00:00, using the "Periodic" query mode, with "Max" as the aggregation mode, a period of 1, and "Minute" as the period mode.
+获取变量"设备:温度"在2024-08-14 00:00:00~2024-08-15 00:00:00之间,查询方式为"Periodic"，聚合模式为"Max"，周期为1，周期单位为"Minute"的历史记录。
+
 ```typescript 
-const value = await System.Tag.readHistory('2024-08-14 00:00:00', '2024-08-15 00:00:00', '@Device:Temperature','Periodic','Max',1,'Minute', {
+const value = await System.Tag.readHistory('2024-08-14 00:00:00', '2024-08-15 00:00:00', '@设备:温度','Periodic','Max',1,'Minute', {
   timeout: 60,
   noInterpolation: true,
   ignoreBadQuality: true,
   includeBoundingValues: false
 });
 console.log(value);
-
-
 ```   
 
 

@@ -1,14 +1,17 @@
 # System.Context.currentAlarm.alarmValue
 
 
-## Description
+## 描述
 
-The alarm value of the current alarm.
-## Grammar
-System.Context.currentAlarm.alarmValue
+当前报警的报警值。
 
-## Code Example                                                                                                                                                                                                                                                 
-Get the alarm value of the current alarm.                                                         
+## 语法
+
+**System.Context.currentAlarm.alarmValue**
+
+## 代码示例
+
+获取当前报警的报警值。
 
 ```typescript 
 

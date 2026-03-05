@@ -1,26 +1,28 @@
 # System.Datatable.toDatatable
 
 
-## Description
-Transform data from third-party APIs or databases into datatable object.
+## 描述
 
-## Grammar
+将从第三方API或者数据库获取的数据转换为数据表对象。
 
-System.Datatable.toDatatable(data: Array<any>, headers?: Array< string>): Datatable
+## 语法
 
-     - Parameter
+**System.Datatable.toDatatable(data: Array`<any>`, headers?: Array`<string>`): Datatable**
 
-         data
+- 参数
 
-         headers - Column names are required if 'data' is a two-dimensional array.
+    data - 数据
 
-    - Return
+    headers - 列名称集合，data 为二维数组时需要指定列名称
 
-         Datatable object
+- 返回
 
-## Code Example      
-                                                                                                                                            
-Scenario 1: Generate a data source from an array of objects that can be used in a table.
+    数据表对象
+
+## 代码示例      
+
+场景1：将对象数组生成为表格可以使用的数据源。
+
 ```typescript 
 const table1 = await System.UI.findControl('Table1');
 table1.table = System.Datatable.toDatatable([
@@ -29,10 +31,8 @@ table1.table = System.Datatable.toDatatable([
     { studentId: 15, firstName: 'Mia', lastName: 'Gonzalez', gender: 'F', birthDate: '2001-04-06' }
 ]);
 table1.applyChanges();
-
-
 ```   
-Scenario 2: Generate a data source from a two-dimensional array that can be used in a table.
+场景2：将二维数组生成为表格可以使用的数据源。
 ```typescript 
 const table1 = await System.UI.findControl('Table1');
 table1.table = System.Datatable.toDatatable([
@@ -41,6 +41,4 @@ table1.table = System.Datatable.toDatatable([
     [15, 'Mia', 'Gonzalez', 'F', '2001-04-06']
 ], ['studentId', 'firstName', 'lastName', 'gender', 'birthDate']);
 table1.applyChanges();
-
-
 ```   

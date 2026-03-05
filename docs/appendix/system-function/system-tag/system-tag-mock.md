@@ -1,28 +1,29 @@
 # System.Tag.mock
 
 
-## Description
-Give a simulated value to the tag.
+## 描述
 
-## Grammar
+给变量一个模拟值。
 
-System.Tag.mock(path:string, value:any): void
+## 语法
 
-     - Parameter
+**System.Tag.mock(path:string, value:any): void**
 
-        path - Tag path
+- 参数
 
-        value - Simulated value 
+    path - 变量路径
 
-     - Return
+    value - 模拟的值
 
-        Nothing
+- 返回
 
-## Code Example 
+    无
 
-Generate a random integer between 0 and 99 and assign it to the tag "Device:Temperature".
+## 代码示例
+
+生成一个 0 到 99 之间的随机整数，并将其赋值给变量“设备:温度”。
+
 ```typescript 
 const value = parseInt(`${Math.random() * 100}`);
-System.Tag.mock('@Device:Temperature', value);
-
+System.Tag.mock('@设备:温度', value);
 ```   

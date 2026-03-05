@@ -1,14 +1,17 @@
 # System.Context.currentAlarm.ackMode
 
 
-## Description
-The acknowledgment mode of the current alarm.
+## 描述
+当前报警的确认模式。
 
-## Grammar
-System.Context.currentAlarm.ackMode
+## 语法
 
-## Code Example                                                                                                                                                                                                                                   
-Get the acknowledgment mode of the current alarm.
+**System.Context.currentAlarm.ackMode**
+
+## 代码示例   
+
+获取当前报警的确认模式。
+
 ```typescript 
 const mode = System.Context.currentAlarm.ackMode;
 console.log(mode);

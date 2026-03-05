@@ -3,23 +3,26 @@
 # System.Security.logout
 
 
-## Description
-Log out of the currently logged in user and return to the login page.
+## 描述
 
-## Grammar
-System.Security.logout(): Promise<void> 
+退出当前登录的用户并返回登录页面。
 
-     - Parameter 
+## 语法
 
-        Nothing 
+**System.Security.logout(): Promise`<void>`** 
 
-     - Return 
+- 参数
 
-        Nothing
+    无
 
-## Code Example
+- 返回
 
-Logout.
+    无
+
+## 代码示例
+
+退出登录。
+
 ```typescript 
 
 System.Security.logout()

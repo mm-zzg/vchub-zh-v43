@@ -1,14 +1,18 @@
 # System.Context.currentEvent.newValue
 
 
-## Description
-If it is triggered by a value change to obtain a new value.
+## 描述
 
-## Grammar
-System.Context.currentEvent.newValue
+如果是值变化触发的获取新值。
 
-## Code Example                                                                                                                                                                                                                                                                                                          
-Get the new value of the current triggering event. 
+## 语法
+
+**System.Context.currentEvent.newValue**
+
+## 代码示例
+
+获取当前触发事件的新值。 
+
 ```typescript 
 
 const newValue = System.Context.currentEvent.newValue;

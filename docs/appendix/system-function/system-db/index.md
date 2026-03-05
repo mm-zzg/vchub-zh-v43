@@ -1,5 +1,5 @@
 # System.Db
 
-The following functions are used to perform database-related operations.
+以下函数用于执行数据库相关操作。
 
-- [​System.Db.runSqlQuery​](system-db/system-db-runsqlquery.md)
+- [System.Db.runSqlQuery](system-db-runsqlquery.md)

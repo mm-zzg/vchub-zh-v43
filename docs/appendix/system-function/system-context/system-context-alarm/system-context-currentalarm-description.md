@@ -1,13 +1,13 @@
 # System.Context.currentAlarm.description
 
-## Description
-The description of the current alarm.
+## 描述
+当前报警的描述。
 
-## Grammar
-System.Context.currentAlarm.description
+## 语法
+**System.Context.currentAlarm.description**
 
-## Code Example                                                                                                                                                                                                                                                                                                          
-Get the description of the current alarm.
+## 代码示例                        
+获取当前报警的描述。
 ```typescript 
 
 const description = System.Context.currentAlarm.description;

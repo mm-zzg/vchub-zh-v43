@@ -3,14 +3,16 @@
 # System.Context.currentAlarm.alarmGroups
 
 
-## Description
-The alarm group(s) where the current alarm is located.
+## 描述
 
-## Grammar
-System.Context.currentAlarm.alarmGroups
+当前报警所在的报警组。
 
-## Code Example                                                                                                                  
-Get the alarm group(s) where the current alarm is located.
+## 语法
+**System.Context.currentAlarm.alarmGroups**
+
+## 代码示例
+
+获取当前报警所在的报警组。
 
 ```typescript 
 

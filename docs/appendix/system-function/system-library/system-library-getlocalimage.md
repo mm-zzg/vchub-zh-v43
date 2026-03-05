@@ -1,24 +1,26 @@
 # System.Library.getLocalImage
 
 
-## Description
-Get images from the local library.
+## 描述
+获取本地图库的图片。
 
-## Grammar
-System.Library.getLocalImage(path:string): Promise<string>
+## 语法
+**System.Library.getLocalImage(path:string): Promise`<string>`**
 
-Parameter
+- 参数
 
-path - The path of the image
+    path - 图片的路径
 
-Return
+- 返回
 
-base64
+    base64
 
-## Code Example                                                                                                                                                                                                                                                                                                          
-Obtain"Sun. svg" from the local library under "Scenery".
+## 代码示例
+
+获取本地图库“风景”下的“太阳.svg”。
+
 ```typescript 
 
-const base64 = await System.Library.getLocalImage('Scenery.Sun.svg');
+const base64 = await System.Library.getLocalImage('风景.太阳.svg');
 console.log(base64)
 ```   

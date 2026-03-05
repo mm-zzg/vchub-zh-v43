@@ -1,6 +1,6 @@
 # System.Utils
 
-Import external scripts, styles, and Baidu Maps.
+导入外部脚本、样式。
 
-- [​System.Utils.importScript​](system-utils/system-utils-importscript.md) 
-- [​System.Utils.importStyle​](system-utils/system-utils-importstyle.md)
+- [​System.Utils.importScript​](system-utils-importscript.md) 
+- [​System.Utils.importStyle​](system-utils-importstyle.md)

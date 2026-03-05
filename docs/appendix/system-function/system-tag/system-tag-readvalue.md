@@ -2,36 +2,33 @@
 
 # System.Tag.readValue
 
+## 描述
 
-## Description
-Read tag value(s).
+获取单个或多个变量的值。
 
-## Grammar
-System.Tag.readValue(path: string): Promise<any>
+## 语法
+**System.Tag.readValue(path: string): Promise`<any>`**
 
-System.Tag.readValue(path: Array<string>): Promise<{path: string; value: any}>
+**System.Tag.readValue(path: Array`<string>`): Promise<{path: string; value: any}>**
 
-     - Parameter
+- 参数
 
-        path - Tag path(s)
+    path - 单个或多个变量路径
 
-     - Return
+- 返回
 
-        Single tag value or multiple tag values and paths
+    单个变量的值或多个变量的值和路径
 
-## Code Example 
+## 代码示例 
 
-Get the value of the tag "Device:Temperature".
+获取变量"设备:温度"的值。
 ```typescript 
-const tagValue = await System.Tag.readValue('@Device:Temperature');
+const tagValue = await System.Tag.readValue('@设备:温度');
 console.log(tagValue);
-
-
 ```   
-Get the path and the value of the tags "Device:Temperature" and "Device:Power" .
+获取变量"设备:温度、设备:功率"的路径及其对应的值。
+
 ```typescript 
-const tags = await System.Tag.readValue(['@Device:Temperature','@Device:Power']);
+const tags = await System.Tag.readValue(['@设备:温度','@设备:功率']);
 console.log(tags);
-
-
 ```   

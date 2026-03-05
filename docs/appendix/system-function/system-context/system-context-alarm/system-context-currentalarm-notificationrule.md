@@ -2,14 +2,18 @@
 # System.Context.currentAlarm.notificationRule
 
 
-## Description
+## D描述
 
-The notification rule of the current alarm.
-## Grammar
-System.Context.currentAlarm.notificationRule
+当前报警使用的通知规则。
 
-## Code Example                                                                                                                                                                                                                                                                                                          
-Get the notification rule of the current alarm.
+## 语法
+
+**System.Context.currentAlarm.notificationRule**
+
+## 代码示例
+
+获取当前报警使用的通知规则。
+
 ```typescript 
 
 const rule = System.Context.currentAlarm.notificationRule;

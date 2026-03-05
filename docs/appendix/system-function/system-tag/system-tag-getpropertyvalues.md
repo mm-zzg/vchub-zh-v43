@@ -1,36 +1,33 @@
 # System.Tag.getPropertyValues
 
 
-## Description
-Get the specified single or multiple node paths, property names, and property values.
+## 描述
 
-## Grammar
-System.Tag.getPropertyValues(path: string): Promise<{ path: string; property: string; value: any }>
+获取指定的单个或多个节点的路径、属性名称、属性值。
 
-System.Tag.getPropertyValues(path: Array<string>): Promise<Array<{ path: string; property: string; value: any }>>
+## 语法
 
-     - Parameter
+**System.Tag.getPropertyValues(path: string): Promise<{ path: string; property: string; value: any }>System.Tag.getPropertyValues(path: Array`<string>`): Promise`<Array<{ path: string; property: string; value: any }>>`**
 
-        path - The path of a single or multiple node properties
+- 参数
 
-     - Return
+    path - 单个或多个节点属性的路径
 
-        The path, property name, and value of a single or multiple node properties
+- 返回
 
-## Code Example        
+    单个或多个节点路径、属性名称、属性值
 
-Get the path of the node "Device: Temperature" and the value of the Name property.
+## 代码示例        
+
+获取节点"设备:温度"的路径以及Name属性的值。
 
 ```typescript 
-const tagProperty = await System.Tag.getPropertyValues('@Device:Temperature#Name');
+const tagProperty = await System.Tag.getPropertyValues('@设备:温度#Name');
 console.log(tagProperty);
-
 ``` 
-Get the paths of the nodes "Device: Temperature" and "Device: Power" as well as the values of the "Name" property.
+获取节点"设备:温度"和"设备:功率"的路径以及Name属性的值。
 
 ```typescript 
-
-const tagProperties = await System.Tag.getPropertyValues(['@Device:Temperature#Name', '@Device:Power#Name']);
+const tagProperties = await System.Tag.getPropertyValues(['@设备:温度#Name', '@设备:功率#Name']);
 console.log(tagProperties);
-
 ```   

@@ -1,30 +1,35 @@
 # System.Event.success
 
 
-## Description
-Add a successful operation event to the system event, which can be queried in real-time event control or historical event control.
+## 描述
 
-## Grammar
-System.Event.success(message:string,...args: any): Promise<void> 
+给系统事件加个成功的操作事件，可在实时事件控件或历史事件控件中查询。
 
-     - Parameter 
+## 语法
 
-        message - Description of the successful event 
+**System.Event.success(message:string,...args: any): Promise`<void>`**
 
-        args - Detail of the successful event 
+- 参数 
 
-     - Return 
+    message - 成功事件的描述 
 
-        Nothing
+    args - 成功的事件的详情 
 
-## Code Example                                                                                                                                                                                                                                                                                                          
-Add a successful operation event.
+- 返回
+
+    无
+
+## 代码示例
+
+添加一条成功的操作事件。
+
 ```typescript 
-// Add operation event description.
-await System.Event.success('Lights turned off on schedule successfully.');
+// 添加成功事件描述
+await System.Event.success('定时关闭灯光成功');
 
-// Add operation event description and details.
-await System.Event.success('Lights turned off on schedule successfully.', ['Meeting Room', 'Office Area', 'Reception']);
+// 添加成功事件描述及详情
+await System.Event.success('定时关闭灯光成功', ['会议室','餐厅','前台','办公区域']);
+
 
 
 ```   

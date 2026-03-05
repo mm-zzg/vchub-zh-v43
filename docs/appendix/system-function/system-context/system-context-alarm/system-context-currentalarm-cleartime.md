@@ -3,14 +3,15 @@
 # System.Context.currentAlarm.clearTime
 
 
-## Description
-The clear time of the current alarm.
+## 描述
+当前报警的恢复时间。
 
-## Grammar
-System.Context.currentAlarm.clearTime
+## 语法
+**System.Context.currentAlarm.clearTime**
 
-## Code Example                                                                                                                                                                                                                                                      
-Get the clear time of the current alarm.
+## 代码示例
+
+获取当前报警的恢复时间。
 
 ```typescript 
 

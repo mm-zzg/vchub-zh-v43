@@ -713,6 +713,11 @@ nav:
                                       - appendix/system-function/system-page/index.md
                                       - appendix/system-function/system-page/system-page-getpropertyvalue.md
                                       - appendix/system-function/system-page/system-page-setpropertyvalue.md
+                            - System.PTZControl:
+                                      - appendix/system-function/System-PTZControl/index.md
+                                      - appendix/system-function/System-PTZControl/System-PTZControl-move.md
+                                      - appendix/system-function/System-PTZControl/System-PTZControl-setPosition.md
+                                      - appendix/system-function/System-PTZControl/System-PTZControl-stop.md           
                             - System.Security:
                                       - appendix/system-function/system-security/index.md
                                       - appendix/system-function/system-security/system-security-changepassword.md

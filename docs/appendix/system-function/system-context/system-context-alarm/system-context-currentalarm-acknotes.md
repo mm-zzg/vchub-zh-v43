@@ -1,13 +1,17 @@
 # System.Context.currentAlarm.ackNotes
 
-## Description
-The acknowledgment notes of the current alarm.
+## 描述
 
-## Grammar
-System.Context.currentAlarm.ackNotes
+当前报警的确认信息。
 
-## Code Example                                                                                                                                                                                                                                                                                                          
-Get the acknowledgment notes of the current alarm.
+## 语法
+
+**System.Context.currentAlarm.ackNotes**
+
+## 代码示例
+
+获取当前报警的确认信息。
+
 ```typescript 
 const notes = System.Context.currentAlarm.ackNotes;
 console.log(notes);

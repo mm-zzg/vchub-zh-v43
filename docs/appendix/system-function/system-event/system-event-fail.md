@@ -2,32 +2,36 @@
 # System.Event.fail
 
 
-## Description
-Add a failed operation event to the system event, which can be queried in the real-time event control or historical event control.
+## 描述
 
-## Grammar
+给系统事件加个失败的操作事件，可在实时事件控件或历史事件控件中查询。
 
-System.Event.fail(message:string,...args: any): Promise<void> 
+## 语法
 
-     - Parameter 
+**System.Event.fail(message:string,...args: any): Promise`<void>`**
 
-        message - Description of the failed event 
+- 参数
 
-        args - Details of the failed event 
+    message - 失败事件的描述 
 
-     - Return 
+    args - 失败事件的详情 
+
+- 返回 
+
+    无
 
 Nothing
 
-## Code Example   
+## 代码示例  
 
-Add a failed operation event.
+添加一条失败的操作事件。
+
 ```typescript 
 
-// Add operation event description.
-await System.Event.success('Failed to turn off the lights on schedule.');
+// 添加失败事件描述
+await System.Event.fail('定时关闭灯光失败');
 
-// Add operation event description and details.
-await System.Event.success('Failed to turn off the lights on schedule.', ['Meeting Room', 'Office Area', 'Reception']);
+// 添加失败事件描述及详情
+await System.Event.fail('定时关闭灯光失败', ['会议室','餐厅','前台','办公区域']);
 
 ```  
