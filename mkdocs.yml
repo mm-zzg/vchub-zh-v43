@@ -645,12 +645,18 @@ nav:
                                                 - 3d-visualization/3d-low-code-example/object-models-in-the-scene/text-annotation/text.md
         - 3D 建模:
                   - 3d-modeling/index.md
-                  - 3d-modeling/materials-and-textures.md
-                  - 3d-modeling/modeling-standards-and-precautions.md
-                  - 3d-modeling/summary-of-modeling-standards.md
-                  - 3d-modeling/pre-export-checks.md
-                  - 3d-modeling/export-model.md
-                  - 3d-modeling/model-import-into-VC-Hub.md
+                  - 材质与贴图:
+                            - 3d-modeling/materials-and-textures/index.md
+                  - 建模标准及注意事项:        
+                            - 3d-modeling/modeling-standards-and-precautions/index.md
+                  - 建模标准总结:
+                            - 3d-modeling/summary-of-modeling-standards/index.md
+                  - 导出前的检查:
+                            - 3d-modeling/pre-export-checks/index.md
+                  - 导出模型:          
+                            - 3d-modeling/export-model/index.md
+                  - 模型导入SCADA:
+                            - 3d-modeling/model-import-into-VC-Hub/index.md
         - Appendix:
                   - appendix/index.md
                   - System Function:
