@@ -710,9 +710,9 @@ nav:
                                       - appendix/system-function/system-event/system-event-fail.md
                                       - appendix/system-function/system-event/system-event-success.md
                             - System.Library:
-                                      - appendix/system-function/system-libraryt/index.md
+                                      - appendix/system-function/system-library/index.md
                                       - appendix/system-function/system-library/system-library-getlocalimage.md
-                                      - appendix/system-function/system-event/system-library-getsystemimage.md          
+                                      - appendix/system-function/system-library/system-library-getsystemimage.md          
                             - System.Page:
                                       - appendix/system-function/system-page/index.md
                                       - appendix/system-function/system-page/system-page-getpropertyvalue.md
