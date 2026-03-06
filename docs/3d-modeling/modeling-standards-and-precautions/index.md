@@ -150,10 +150,10 @@
   </div>
   <div style="text-align: center;">
     <p>5. 多边面示例</p>
-    <img src="33.png" style="width: 100%; height: 270px; object-fit: cover; border-radius: 4px;">
+    <img src="33.png" style="width: 100%; height: 280px; object-fit: cover; border-radius: 4px;">
   </div>
   <div style="text-align: center;">
     <p>6. 面反转示例</p>
-    <img src="34.png" style="width: 100%; height: 270px; object-fit: cover; border-radius: 4px;">
+    <img src="34.png" style="width: 100%; height: 280px; object-fit: cover; border-radius: 4px;">
   </div>
 </div>
