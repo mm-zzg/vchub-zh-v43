@@ -178,10 +178,49 @@
 </div>
 
 
-|1.废点示例|2.废线示例|
-|:--|:--|
-|![alt text](29.png)|![alt text](30.png)|
-|**3.废面示例**|**4.漏面漏缝示例**|
-|![alt text](31.png)|![alt text](32.png)|
-|**5. 多边面示例**|**6. 面反转示例**|
-|![alt text](33.png)|![alt text](34.png)|
+<style>
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  margin-top: 20px;
+}
+.grid-item {
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+}
+.grid-item img {
+  max-width: 100%;
+  height: auto;
+}
+</style>
+
+### 模型最终检查（检查部分包含：废点、废线、废面、漏面漏缝、多边面、反转面问题）
+
+<div class="grid-container">
+  <div class="grid-item">
+    <h4>1. 废点示例</h4>
+    <img src="29.png" alt="废点示例">
+  </div>
+  <div class="grid-item">
+    <h4>2. 废线示例</h4>
+    <img src="30.png" alt="废线示例">
+  </div>
+  <div class="grid-item">
+    <h4>3. 废面示例</h4>
+    <img src="31.png" alt="废面示例">
+  </div>
+  <div class="grid-item">
+    <h4>4. 漏面漏缝示例</h4>
+    <img src="32.png" alt="漏面漏缝示例">
+  </div>
+  <div class="grid-item">
+    <h4>5. 多边面示例</h4>
+    <img src="33.png" alt="多边面示例">
+  </div>
+  <div class="grid-item">
+    <h4>6. 面反转示例</h4>
+    <img src="34.png" alt="面反转示例">
+  </div>
+</div>
