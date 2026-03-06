@@ -131,96 +131,29 @@
 
 ### 模型最终检查（检查部分包含：废点、废线、废面、漏面漏缝、多边面、反转面问题）
 
-<div style="display: flex; justify-content: space-between; gap: 20px;">
-  <!-- 左列 -->
-  <div style="width: 48%; display: flex; flex-direction: column; gap: 15px;">
-    <div style="text-align: center;">
-      <p>1. 废点示例</p>
-      <div style="position: relative; width: 100%; padding-bottom: 60%; overflow: hidden;">
-        <img src="../29.png" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;">
-      </div>
-    </div>
-    <div style="text-align: center;">
-      <p>3. 废面示例</p>
-      <div style="position: relative; width: 100%; padding-bottom: 60%; overflow: hidden;">
-        <img src="../31.png" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;">
-      </div>
-    </div>
-    <div style="text-align: center;">
-      <p>5. 多边面示例</p>
-      <div style="position: relative; width: 100%; padding-bottom: 60%; overflow: hidden;">
-        <img src="../33.png" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;">
-      </div>
-    </div>
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+  <div style="text-align: center;">
+    <p>1. 废点示例</p>
+    <img src="29.png" style="width: 100%; height: 200px; object-fit: cover; border-radius: 4px;">
   </div>
-
-  <!-- 右列 -->
-  <div style="width: 48%; display: flex; flex-direction: column; gap: 15px;">
-    <div style="text-align: center;">
-      <p>2. 废线示例</p>
-      <div style="position: relative; width: 100%; padding-bottom: 60%; overflow: hidden;">
-        <img src="../30.png" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;">
-      </div>
-    </div>
-    <div style="text-align: center;">
-      <p>4. 漏面漏缝示例</p>
-      <div style="position: relative; width: 100%; padding-bottom: 60%; overflow: hidden;">
-        <img src="../32.png" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;">
-      </div>
-    </div>
-    <div style="text-align: center;">
-      <p>6. 面反转示例</p>
-      <div style="position: relative; width: 100%; padding-bottom: 60%; overflow: hidden;">
-        <img src="../34.png" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover;">
-      </div>
-    </div>
+  <div style="text-align: center;">
+    <p>2. 废线示例</p>
+    <img src="30.png" style="width: 100%; height: 200px; object-fit: cover; border-radius: 4px;">
   </div>
-</div>
-
-
-<style>
-.grid-container {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 20px;
-  margin-top: 20px;
-}
-.grid-item {
-  border: 1px solid #ccc;
-  padding: 10px;
-  text-align: center;
-}
-.grid-item img {
-  max-width: 100%;
-  height: auto;
-}
-</style>
-
-### 模型最终检查（检查部分包含：废点、废线、废面、漏面漏缝、多边面、反转面问题）
-
-<div class="grid-container">
-  <div class="grid-item">
-    <h4>1. 废点示例</h4>
-    <img src="29.png" alt="废点示例">
+  <div style="text-align: center;">
+    <p>3. 废面示例</p>
+    <img src="31.png" style="width: 100%; height: 200px; object-fit: cover; border-radius: 4px;">
   </div>
-  <div class="grid-item">
-    <h4>2. 废线示例</h4>
-    <img src="30.png" alt="废线示例">
+  <div style="text-align: center;">
+    <p>4. 漏面漏缝示例</p>
+    <img src="32.png" style="width: 100%; height: 200px; object-fit: cover; border-radius: 4px;">
   </div>
-  <div class="grid-item">
-    <h4>3. 废面示例</h4>
-    <img src="31.png" alt="废面示例">
+  <div style="text-align: center;">
+    <p>5. 多边面示例</p>
+    <img src="33.png" style="width: 100%; height: 200px; object-fit: cover; border-radius: 4px;">
   </div>
-  <div class="grid-item">
-    <h4>4. 漏面漏缝示例</h4>
-    <img src="32.png" alt="漏面漏缝示例">
-  </div>
-  <div class="grid-item">
-    <h4>5. 多边面示例</h4>
-    <img src="33.png" alt="多边面示例">
-  </div>
-  <div class="grid-item">
-    <h4>6. 面反转示例</h4>
-    <img src="34.png" alt="面反转示例">
+  <div style="text-align: center;">
+    <p>6. 面反转示例</p>
+    <img src="34.png" style="width: 100%; height: 200px; object-fit: cover; border-radius: 4px;">
   </div>
 </div>
