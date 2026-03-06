@@ -756,10 +756,8 @@ nav:
                                       - appendix/system-function/system-utils/system-utils-importscript.md
                                       - appendix/system-function/system-utils/system-utils-importstyle.md
                   - Demo工程:
-                            - appendix/system-function/index.md
-                            - System.Alarm:
-                                      - appendix/system-function/system-alarm/index.md
-                                      - appendix/system-function/system-alarm/system-alarm-query.md
-                                      - appendix/system-function/system-alarm/system-alarm-queryhistory.md
-                            - System.Context:                    
+                            - appendix/Demo-workspace/index.md
+                            - appendix/Demo-workspace/home.md
+                            - appendix/Demo-workspace/components.md
+                            - appendix/Demo-workspace/features.md                   
 
