@@ -1,6 +1,6 @@
 # 创建SQL Query
 
-在”数据请求”的“SQL Query”节点上单击鼠标右键，选择“新增”，可以创建SQL Query。
+在“数据请求”的“SQL Query”节点上单击鼠标右键，选择“新增”，可以创建SQL Query。
 
 ![alt text](5.png)
 
