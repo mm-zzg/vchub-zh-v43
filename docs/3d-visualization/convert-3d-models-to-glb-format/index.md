@@ -30,11 +30,11 @@
 
 **转换步骤：**
 
-1.将3D文件导入 **three.js** 中。
+1. 将3D文件导入 **three.js** 中。
 
     ![alt text](3d_Format4.png)
   
-2.选择 **GLB** 格式导出。
+2. 选择 **GLB** 格式导出。
 
     ![alt text](3d_Format5.png)
 
