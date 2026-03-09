@@ -61,7 +61,7 @@
 
       "username": "alex",
 
-      "email": "alex@example.com",
+      "email": `alex@example.com`,
 
       "role": "admin"
 
