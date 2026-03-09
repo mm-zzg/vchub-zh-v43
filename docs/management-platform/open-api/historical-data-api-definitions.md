@@ -76,7 +76,7 @@
 
 请求负载(JsonObject):
 
-字段说明与** GET /v1/historicalData/alarms** 相同，仅为 POST 形式
+字段说明与 **GET /v1/historicalData/alarms** 相同，仅为 POST 形式
 
 响应负载(JsonArray):
 
