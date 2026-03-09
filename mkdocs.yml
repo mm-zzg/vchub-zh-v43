@@ -238,7 +238,6 @@ nav:
                             - management-platform/devices/usage-of-legacy-protocols.md
                   - 资产和变量:
                             - management-platform/assets-and-tags/index.md
-                            - management-platform/assets-and-tags/aggregation-modes.md
                             - 资产:
                                       - management-platform/assets-and-tags/asset/index.md
                                       - 模型和实例:
@@ -271,6 +270,7 @@ nav:
                                                 - management-platform/assets-and-tags/tag/tag-properties/custom.md
                                       - management-platform/assets-and-tags/tag/tag-group.md
                                       - management-platform/assets-and-tags/tag/quality.md
+                            - management-platform/assets-and-tags/aggregation-modes.md          
 
                   - 报警:
                             - management-platform/alarming/index.md
