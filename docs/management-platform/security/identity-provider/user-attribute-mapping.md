@@ -38,7 +38,7 @@
 
       "username": "alex",
 
-      "email": "alex@example.com",
+      "email": `alex@example.com`,
 
       "user_roles": "admin"
 
