@@ -25,16 +25,16 @@ WAGO SCADA在配置冗余节点后，如果有浏览器打开了组态画面，�
 
 **场景一：未配置公共地址，主备切换时，使用当前运行服务器的地址作为切换后的网址。**
 
-1. 服务器A作为主服务器，地址为 http://pc-test-serverA:8060
-2. 服务器B作为主服务器，地址为 http://pc-test-serverB:8060
+1. 服务器A作为主服务器，地址为 `http://pc-test-serverA:8060`
+2. 服务器B作为主服务器，地址为 `http://pc-test-serverB:8060`
 3. 服务器A和服务器B形成冗余
-4. 服务器A上查看SCADA的运行画面，此时服务器A宕机，服务器B运行，运行画面的地址显示为 http://pc-test-serverB:8060
+4. 服务器A上查看SCADA的运行画面，此时服务器A宕机，服务器B运行，运行画面的地址显示为 `http://pc-test-serverB:8060`
 
 **场景二：配置了公共地址，主备切换时，使用当前运行节点所设置的公共地址作为切换后的网址。**
 
-1. 服务器A作为主服务器，地址为 http://pc-test-serverA:8060
-2. 服务器B作为主服务器，地址为 http://pc-test-serverB:8060
+1. 服务器A作为主服务器，地址为 `http://pc-test-serverA:8060`
+2. 服务器B作为主服务器，地址为 `http://pc-test-serverB:8060`
 3. 服务器A和服务器B形成冗余
-4. 服务器A和服务器B的公共地址设置为 https://testserver.com:8066
-5. 服务器A上查看SCADA的运行画面，此时服务器A宕机，服务器B运行，运行画面的地址显示为 https://testserver.com:8066
+4. 服务器A和服务器B的公共地址设置为 `https://testserver.com:8066`
+5. 服务器A上查看SCADA的运行画面，此时服务器A宕机，服务器B运行，运行画面的地址显示为 `https://testserver.com:8066`
 
