@@ -36,7 +36,7 @@ WAGO SCADA提供Linux环境安装包，文件名wagoscada-x.x.x-linux-x64-instal
 
     ![alt text](24.png)
 
-9. 完成后默认访问WAGO SCADA站点：“http://localhost:8066”，安装完成后，将进入配置引导界面。
+9. 完成后默认访问WAGO SCADA站点：`http://localhost:8066`，安装完成后，将进入配置引导界面。
 
 #### 注意事项
 
@@ -71,13 +71,16 @@ WAGO SCADA提供Linux环境安装包，文件名wagoscada-x.x.x-linux-x64-instal
     在系统中创建专用账号（如 wago_scada），禁止交互式登录，仅用于运行服务进程：
 
     ```Plain Text
+
     sudo useradd -r -s /sbin/nologin wago_scada
+
     ```
- 
     然后再通过 sudoers 文件设置免密码执行权限：
 
     ```Plain Text
+
     wago_scada ALL=(ALL) NOPASSWD: ALL
+
     ```
  
 2. 设置服务安装目录权限
@@ -85,8 +88,10 @@ WAGO SCADA提供Linux环境安装包，文件名wagoscada-x.x.x-linux-x64-instal
     将服务安装目录（如 /usr/local/bin/wagoscada）的所有权交给 wago_scada，确保其可执行，同时限制其他用户的访问：
 
     ```Plain Text
+
     sudo chown -R wago_scada:wago_scada /usr/local/bin/wagoscada
     sudo chmod -R 750 /usr/local/bin/wagoscada
+
     ```
  
    **注意**：必须在修改服务运行账号之前完成此步骤，否则服务可能缺少访问权限。
@@ -130,7 +135,7 @@ WAGO SCADA提供Linux环境安装包，文件名wagoscada-x.x.x-linux-x64-instal
     systemctl status wagoscada.service
     ```
  
-    在浏览器访问 WAGO SCADA 站点（例如 http://localhost:8066），确认运行正常。
+    在浏览器访问 WAGO SCADA 站点（例如`http://localhost:8066`），确认运行正常。
 
 ## 卸载步骤
 
