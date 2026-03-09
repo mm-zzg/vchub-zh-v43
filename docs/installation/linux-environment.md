@@ -125,13 +125,13 @@ WAGO SCADA提供Linux环境安装包，文件名wagoscada-x.x.x-linux-x64-instal
  
 5. 验证配置
 
-检查服务是否已成功以 wago_scada 账号运行，并确认站点正常访问：
+    检查服务是否已成功以 wago_scada 账号运行，并确认站点正常访问：
 
     ```typescript
     systemctl status wagoscada.service
     ```
  
-在浏览器访问 WAGO SCADA 站点（例如`http://localhost:8066`），确认运行正常。
+    在浏览器访问 WAGO SCADA 站点（例如`http://localhost:8066`），确认运行正常。
 
 ## 卸载步骤
 
