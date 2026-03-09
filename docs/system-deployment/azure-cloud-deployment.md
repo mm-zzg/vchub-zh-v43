@@ -99,7 +99,7 @@
 
 在需要还原时，用户可将WAGO SCADA服务手动停止后，将Azure VM中的应用程序数据目录替换为备份的应用程序数据目录，再重新启动WAGO SCADA服务即可。
 
-Azure提供了 [Azure Backup](https://azure.microsoft.com/en-us/products/backup)服务，该服务可配置定期进行自动备份，并提供了云存储空间。
+Azure提供了 [Azure Backup](https://azure.microsoft.com/en-us/products/backup) 服务，该服务可配置定期进行自动备份，并提供了云存储空间。
 
 Azure Backup也提供了还原功能，具体可参考 [将文件还原到 Azure 中的虚拟机](https://learn.microsoft.com/en-us/azure/backup/tutorial-restore-files)（注意：在进行还原前，仍需手动停止WAGO SCADA服务）
 
