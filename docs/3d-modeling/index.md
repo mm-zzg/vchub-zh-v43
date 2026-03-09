@@ -55,7 +55,7 @@
 
 详细演示请打开文档，按步骤操作。或点击下方链接查看。   
 
-[模型导入SCADA](model-import-into-VC-Hub.md)
+[模型导入SCADA](model-import-into-VC-Hub/index.md)
 
 
 
