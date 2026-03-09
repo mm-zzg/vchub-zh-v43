@@ -43,22 +43,22 @@
 
      c. 作用：进一步平衡整体照明，避免局部过暗。
 
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
-  <div style="text-align: center;">
-  <p style="font-weight: bold;">添加灯光前</p>
-    <img src="3d_LSettings1.png" style="width: 100%; height: 250px; object-fit: cover; border-radius: 4px;">
-  </div>
-  <div style="text-align: center;">
-  <p style="font-weight: bold;">添加灯光后</p>
-    <img src="3d_LSettings2.png" style="width: 100%; height: 250px; object-fit: cover; border-radius: 4px;">
-  </div>
-  <div style="text-align: center;">
+     <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+     <div style="text-align: center;">
+     <p style="font-weight: bold;">添加灯光前</p>
+     <img src="3d_LSettings1.png" style="width: 100%; height: 250px; object-fit: cover; border-radius: 4px;">
+     </div>
+     <div style="text-align: center;">
+     <p style="font-weight: bold;">添加灯光后</p>
+     <img src="3d_LSettings2.png" style="width: 100%; height: 250px; object-fit: cover; border-radius: 4px;">
+     </div>
+     <div style="text-align: center;"> 
+
 
 ## 使用建议与注意事项
 
 - **光源数量：** 建议总数 **≤ 50**，避免造成系统性能下降或场景卡顿。
 - **方向、强度调整：** 添加光源后，需手动调整所需角度及光照强度。
 - **天空盒影响：** 启用天空盒可能会改变整体光照氛围，需结合实际效果调整灯光强度。
-
 
 通过合理布光，可以有效提升模型在3D查看器中的视觉表现，使其拥有更自然的明暗关系与空间感。用户可根据实际场景灵活调整光源类型、位置与强度，以达到最佳效果。
