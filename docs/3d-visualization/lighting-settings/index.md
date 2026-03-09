@@ -43,9 +43,16 @@
 
      c. 作用：进一步平衡整体照明，避免局部过暗。
 
-| **添加灯光前** | **添加灯光后**|
-|---------------------|---------------------------|
-| ![alt text](3d_LSettings1.png) | ![alt text](3d_LSettings2.png) |
+<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
+  <div style="text-align: center;">
+  <p style="font-weight: bold;">添加灯光前</p>
+    <img src="3d_LSettings1.png" style="width: 100%; height: 250px; object-fit: cover; border-radius: 4px;">
+  </div>
+  <div style="text-align: center;">
+  <p style="font-weight: bold;">添加灯光后</p>
+    <img src="3d_LSettings2.png" style="width: 100%; height: 250px; object-fit: cover; border-radius: 4px;">
+  </div>
+  <div style="text-align: center;">
 
 ## 使用建议与注意事项
 
