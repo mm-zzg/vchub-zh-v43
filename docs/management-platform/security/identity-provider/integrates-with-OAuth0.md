@@ -24,7 +24,7 @@ WAGO SCADA 采用标准的 OpenID Connect 协议（OIDC），可与 Auth0 无缝
 
     ![alt text](41.png)
 
-6. 点击“**Create**”按钮进入应用详情页面，在输入项“**Allowed Callback URLs**”和 “**Allowed Logout URLs**”中，输入WAGO SCADA的登入回调地址，和登出回调地址。 WAGO SCADA的登入回调地址分别是 **https://{SCADA-host}/api/oidc/callback/signin** 和**https://{SCADA-host}/api/oidc/callback/signout**.  
+6. 点击“**Create**”按钮进入应用详情页面，在输入项“**Allowed Callback URLs**”和 “**Allowed Logout URLs**”中，输入WAGO SCADA的登入回调地址，和登出回调地址。 WAGO SCADA的登入回调地址分别是 **https://{SCADA-host}/api/oidc/callback/signin** 和 **https://{SCADA-host}/api/oidc/callback/signout**.  
 
     ![alt text](42.png)
 
