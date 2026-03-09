@@ -345,7 +345,7 @@ INNER JOIN public."ScadaTagMapping" d ON c."TagId" = d."Id" AND c."ProviderId" =
 - **变更说明** ：因为从 4.2 版本开始， Camera 设备的添加方式发生了变化，所以需要在 camera 控件上重新选择需要播放的设备。且运行时不再支持切换设备，不再支持历史视频的播放。
 - **解决方案** ：在编辑画面上，为  camera 控件上重新选择 camera 设备。
 
- 详见：[Camera](../management-platform/devices/camera/index.md) 
+ 详见：[Camera](../2d-visualization/controls/display/camera.md) 
 
 #### Breaking Change 13: System.Tag.readHistory函数，添加了新的参数
 
