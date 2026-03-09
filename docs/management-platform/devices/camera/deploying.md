@@ -133,7 +133,7 @@ docker run -p 8000:8000 -it mpromonet/webrtc-streamer -o
 
     ![alt text](21.png)
 
-8. 访问 http://localhost:8000
+8. 访问 `http://localhost:8000`
 
     ![alt text](22.png)
 
