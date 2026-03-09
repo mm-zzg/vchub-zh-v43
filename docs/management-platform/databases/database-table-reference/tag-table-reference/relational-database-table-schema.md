@@ -46,7 +46,7 @@ SQLite、SQLServer、PostgreSQL、MySQL这4种传统关系型数据库共享同�
 
 当历史库配置关闭分区时，数据存储到 **ScadaTagHistory**
 
-当历史库配置开启分区时，数据存储到存储到 **ScadaTagHistory**_{**ProvideId**}_{**PartitonSize**}_{**DateKey**}**
+当历史库配置开启分区时，数据存储到存储到 **ScadaTagHistory**_{**ProvideId**}_{**PartitonSize**}_{**DateKey**}
 
 | 列名称      | 数据类型 | 描述  |
 |:-------------|:----------|:--------------|
@@ -73,7 +73,7 @@ SQLite、SQLServer、PostgreSQL、MySQL这4种传统关系型数据库共享同�
 | Timestamp        | BigInt   | 预处理数据对应时间 <br>例如预处理时间为 2 分钟 <br>那么 Tag 值存储时间除以 2*60*2000 取整，之后乘以 2*60*2000 得到的值 为 Timestame 值  <br>例如预处理采样时间窗口为2分钟：  <br>那么`2028-08-01 01:00:00 ~ 2028-08-01 01:02:00`之间的原始数据统计的时间就是`2028-08-01 01:00:00`，然后转换为时间戳                                             |
 | Quality          | Int      | 质量位 |
 | IntegerVal       | BigInt   | - 如果变量的数据类型是Integer，则保存变量的值，否则为`Null`  <br>- 当采样类型为`Avg`时，此列存储的时这个采样区间该变量原始数据的数量  <br>- 当采样类型为`Count`时，此列存储的时这个采样区间该变量原始数据的数量  <br>- 当采样类型为`CountOn And CountOff`时，此列存储的是CountOn的值  <br>- 当采样类型为`DurationOn And DurationOff`时，此列存储的是DurationOn的值 |
-| DoubleVal        | Double   |- 如果变量的数据类型是Double，则保存变量的值，否则为`Null`  <br>- 当采样类型为`Avg`时，此列存储的时这个采样区间该变量原始数据的平均值  <br>- 当采样类型为`CountOn And CountOff`时，此列存储的是**CountOff的值  <br>- 当采样类型为`DurationOn And DurationOf`f时，此列存储的是DurationOff的值   |
+| DoubleVal        | Double   |- 如果变量的数据类型是Double，则保存变量的值，否则为`Null`  <br>- 当采样类型为`Avg`时，此列存储的时这个采样区间该变量原始数据的平均值  <br>- 当采样类型为`CountOn And CountOff`时，此列存储的是CountOff的值  <br>- 当采样类型为`DurationOn And DurationOf`f时，此列存储的是DurationOff的值   |
 | BoolVal          | Boolean  | 如果变量的数据类型是4 Boolean，则保存变量的值，否则为`Null` |
 | StringVal        | String   | 如果变量的数据类型是2 String，则保存变量的值，否则为`Null`|
 | DateTimeVal      | DateTime | 如果变量的数据类型是5 DateTime，则保存变量的值，否则为`Null` |
