@@ -38,7 +38,7 @@ WAGO SCADA中的模型和实例提供了面向对象的数据设计能力。通�
 
     ![alt text](2.png)
 
-    ![alt text](image.png)
+    ![alt text](3.png)
 
 2. 重复以上步骤，再创建一个名为“**电机**”的模型。
 
