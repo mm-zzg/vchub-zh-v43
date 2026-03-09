@@ -68,66 +68,68 @@ WAGO SCADA提供Linux环境安装包，文件名wagoscada-x.x.x-linux-x64-instal
 
 1. 创建专用服务账号
 
-在系统中创建专用账号（如 wago_scada），禁止交互式登录，仅用于运行服务进程：
+    在系统中创建专用账号（如 wago_scada），禁止交互式登录，仅用于运行服务进程：
 
-```Plain Text
-sudo useradd -r -s /sbin/nologin wago_scada
-```
+    ```typescript
+    sudo useradd -r -s /sbin/nologin wago_scada
+    ```
 
-然后再通过 sudoers 文件设置免密码执行权限：
+    然后再通过 sudoers 文件设置免密码执行权限：
 
-```Plain Text
-wago_scada ALL=(ALL) NOPASSWD: ALL
-```
+    ```typescript
+    wago_scada ALL=(ALL) NOPASSWD: ALL
+    ```
  
 2. 设置服务安装目录权限
 
-将服务安装目录（如 /usr/local/bin/wagoscada）的所有权交给 wago_scada，确保其可执行，同时限制其他用户的访问：
+    将服务安装目录（如 /usr/local/bin/wagoscada）的所有权交给 wago_scada，确保其可执行，同时限制其他用户的访问：
 
-```Plain Text
-sudo chown -R wago_scada:wago_scada /usr/local/bin/wagoscada
-sudo chmod -R 750 /usr/local/bin/wagoscada
-```
-**注意**：必须在修改服务运行账号之前完成此步骤，否则服务可能缺少访问权限。
+    ```typescript
+    sudo chown -R wago_scada:wago_scada /usr/local/bin/wagoscada
+    sudo chmod -R 750 /usr/local/bin/wagoscada
+    ```
+
+    **注意**：必须在修改服务运行账号之前完成此步骤，否则服务可能缺少访问权限。
 
 3. 修改服务运行账号
 
-指定服务以 wago_scada 身份运行：
+    指定服务以 wago_scada 身份运行：
 
-```Plain Text
-sudo systemctl edit wagoscada.service
-```
- 
-在 [Service] 部分添加：
+    ```typescript
+    sudo systemctl edit wagoscada.service
+    ```
 
-```Plain Text
-User=wago_scada
-Group=wago_scada
-```
-    
-保存后重新加载配置并重启服务：
+    在 [Service] 部分添加：
 
-```Plain Text
-sudo systemctl daemon-reexec
-sudo systemctl restart wagoscada.service
-```
+
+    ```typescript
+    User=wago_scada
+    Group=wago_scada
+    ```
+        
+    保存后重新加载配置并重启服务：
+
+    ```typescript
+    sudo systemctl daemon-reexec
+    sudo systemctl restart wagoscada.service
+    ```
  
 4. 设置应用程序数据目录权限
 
-将数据目录（如/usr/share/WAGOSCADA）的所有权交给wago_scada，确保其具有完整读写权限，同时限制其他用户的访问：
+    将数据目录（如/usr/share/WAGOSCADA）的所有权交给wago_scada，确保其具有完整读写权限，同时限制其他用户的访问：
 
-```Plain Text
-sudo chown -R wago_scada:wago_scada /usr/share/WAGOSCADA
-sudo chmod -R 750 /usr/share/WAGOSCADA
-```
+    ```typescript
+    sudo chown -R wago_scada:wago_scada /usr/share/WAGOSCADA
+    sudo chmod -R 750 /usr/share/WAGOSCADA
+    ```
  
 5. 验证配置
 
 检查服务是否已成功以 wago_scada 账号运行，并确认站点正常访问：
 
-```Plain Text
-systemctl status wagoscada.service
-```
+    ```typescript
+    systemctl status wagoscada.service
+    ```
  
 在浏览器访问 WAGO SCADA 站点（例如`http://localhost:8066`），确认运行正常。
 
