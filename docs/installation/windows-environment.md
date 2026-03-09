@@ -43,7 +43,7 @@ WAGO SCADA 提供Windows 64位操作系统安装包。
 
       ![alt text](11.png)
 
-9. 完成后默认访问WAGO SCADA站点：“http://localhost:8066”，安装完成后，将进入配置引导界面。
+9. 完成后默认访问WAGO SCADA站点：`http://localhost:8066`，安装完成后，将进入配置引导界面。
 
 #### 配置步骤
 
@@ -101,7 +101,7 @@ WAGO SCADA 提供Windows 64位操作系统安装包。
 
 5. 验证配置
 
-      访问 WAGO SCADA 站点（例如 http://localhost:8066），确认站点正常运行。
+      访问 WAGO SCADA 站点（例如`http://localhost:8066`），确认站点正常运行。
 
 #### 卸载步骤
 
