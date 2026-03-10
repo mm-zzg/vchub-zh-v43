@@ -80,7 +80,7 @@
 
 #### 如何创建应用
 
-1. 登录企业微信管理后台(  [https://work.weixin.qq.com/wework_admin/frame#apps](https://work.weixin.qq.com/wework_admin/frame#apps) )，在“应⽤管理“页面点击**创建应用**
+1. 登录企业微信管理后台(  [https://work.weixin.qq.com/wework_admin/frame#apps](https://work.weixin.qq.com/wework_admin/frame#apps) )，在“应⽤管理“页面点击 **创建应用**
 
     ![alt text](33.png)
 
