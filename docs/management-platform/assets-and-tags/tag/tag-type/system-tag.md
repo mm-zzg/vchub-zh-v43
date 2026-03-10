@@ -21,7 +21,7 @@ Server：安装了WAGO SCADA的设备。
 | UserName | 当前登录的用户名，例如：Sam | String       |
 | Role     | 当前登录的角色，例如：Admin | String       |
 
-**Server**文件夹包含以下变量：
+**Server** 文件夹包含以下变量：
 
 ![alt text](11.png)
 
