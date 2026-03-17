@@ -1,55 +1,57 @@
-# Report
+# 报表
 
-A report is a document that displays data in the form of tables, charts, etc. VC Hub has a built-in flexible and efficient report designer, including images, graphics, tables and other tools, which can be dragged and dropped way to quickly design various types of reports.
+报表是将数据以表格、图表等形式展示出来的文档。WAGO SCADA 内置了一个灵活高效的报表设计器，包含图像、图形、表格等工具，可以通过拖拽
 
-You can right-click the report node in the "Project" window and click "Add" to create it.
+的方式，快速地设计各种类型的报表。
+
+您可以在“项目“窗口的报表节点上右击鼠标，单击“新增”进行创建。
 
 ![alt text](1.png)
 
-Some common application scenarios of reports in industry are as follows:
+报表在工业上的一些常见的应用场景如下：
 
-- Production efficiency monitoring: Track and analyze the efficiency indicators of the production line, such as output, etc.
-- Quality control: Record and analyze product quality-related data, such as defective rate, etc.
-- Equipment maintenance: record and analyze equipment maintenance status, such as downtime, etc.
-- Inventory tracking: Monitor and optimize inventory status of materials and parts. For example:
-- Energy consumption analysis: record and analyze energy consumption, such as electricity, water, gas, etc.
-- Cost analysis: Analyze and manage the costs of the production process, such as labor costs, raw material costs, etc.
+- 生产效率监控：跟踪和分析生产线的效率指标，例如：产量等。
+- 质量控制：记录和分析产品质量相关数据，例如：不良率等。
+- 设备维护：记录和分析设备的维护情况，例如：停机时间等。
+- 库存跟踪：监控和优化物料和零部件的库存情况。例如：
+- 能源消耗分析：记录和分析能源消耗情况，例如：电力、水、燃气等。
+- 成本分析：分析和管理生产过程的成本，例如：人工成本、原材料成本等。
 
-The following flowchart can help you quickly understand the usage process of reports, and we hope it can be helpful to you.
+以下流程图，可以帮助您快速了解报表的使用流程，希望能为您带来帮助。
 
 ![alt text](2.png)
 
-## Data source automatically created
+## 数据源自动创建
 
-After you create a data source in a report and open the report designer, all data sources for the report are automatically added to the report designer.
+在报表中创建数据源后，打开报表设计器，该报表的所有数据源自动添加到报表设计器中。
 
-**Created Data Source:**
+**报表的数据源：**
 
 ![alt text](3.png)
 
-**Data sources displayed in the report designer:**
+**报表设计器内显示的数据源：**
 
 ![alt text](4.png)
 
-## Powerful report designer
+## 强大的报表设计器
 
-The report designer provides the ability to develop multiple report styles, and helps users easily design multiple report styles through built-in rich report controls, such as tables, matrix tables, charts and other controls.
+[报表设计器](report-designer/index.md) 提供了开发多种报表样式的能力，并通过内置的丰富的报表控件，如表格、矩表、图表等控件，帮助用户轻松设计多种报表样式。
 
 ![alt text](5.png)
 
-## Standalone report viewer
+## 独立的报表查看器
 
-You can view the designed report in the Report Viewer .
+可以在“[报表查看器](../controls/table/report-viewer.md)”中查看已设计完成的报表。
 
 ![alt text](6.png)
 
-## Supports multiple file formats
+## 支持多种文件格式
 
-In the report viewer, click the "Export" button to select the file format you want to export.
+在报表查看器中，点击“导出”按钮，可以选择期望导出的文件格式。
 
 ![alt text](7.png)
 
-Supported file formats are as follows:
+支持的文件格式如下：
 
 - Excel(*.xlsx)
 - Word(*.docx)
@@ -57,6 +59,6 @@ Supported file formats are as follows:
 - CSV(*.csv)
 - JSON(*.json)
 - XML(*.xml)
-- Image(*.tiff)
-- WEB email files (*.mht)
+- 图像(*.tiff)
+- WEB电子邮件档案(*.mht)
 

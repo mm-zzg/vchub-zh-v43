@@ -1,51 +1,47 @@
-# Real Time Event
+# 实时事件
 
-Real-time event controls are used to display events as they occur. By default, it displays all events, and the control only supports displaying the latest 2000 pieces of data. You can also set filter conditions.
+实时事件控件用于显示正在发生的事件。默认情况下，它显示所有事件，控件仅支持显示最新的2000条数据，您也可以设置筛选条件。
 
 ![alt text](1.png)
 
-You can click and drag a column's margins on the preview and run page to adjust its width. You can also sort columns in ascending or descending order by clicking the up or down arrow next to each column header.
+您可以在预览和运行画面上单击并拖动列的边距以调整其宽度。您还可以按升序或降序对列进行排序，只需单击每个列标题旁边的向上或向下箭头即可。
 
-You can also click the pause button to pause data refresh, and query and view the data in the paused state. After clicking the pause button, the resume and query buttons are displayed.
+您也可以点击暂停按钮，暂停数据刷新，在暂停的状态下对数据进行查询和查看。点击暂停按钮后，显示恢复和查询按钮。
 
-![realtime-event](../../../assets/images/realtime-event.gif)
+![alt text](1.gif)
 
-**Properties**
+**属性**
 
-| **Name**         | **Description**     |
-|------------------|------------------|
-| Name             | The name of this control.   |
-| X                | The distance between the left side of the control and the left side of the canvas.    |
-| Y                | The distance between the top of the control and the top of the canvas.  |
-| W                | The width of the control.    |
-| H                | The height of the control.   |
-| Border Color     | Set the color of the outer border of the control and the table line of the table body.    |
-| Border Thickness | Set the thickness of the outer border of the control and the table line of the table body.   |
-| Table Header     | Set the background color, font type, font size, bold, italic, and font color of the table header.   |
-| Table Body       | Set the background color, font type, font size, bold, italic, and font color of the table body.   |
-| Color            | Sets the color displayed on the control for each event type.    |
-| Button Style     | Sets the style of the buttons used on the control. Click the setting button of the button style to set it.  <br>![alt text](2.png) Pause Button.Background color, border color, font type, font size, bold, italic, and font color of the pause button.   <br>![alt text](3.png) Resume Button.Restore the button's background color, border color, font type, font size, bold, italic, and font color.  <br>![alt text](4.png) Search Button.The background color, border color, font type, font size, bold, italic, and font color of the button.    | 
-| Search Style     | Set the background color and border color of the search box, the search title and the font type, font size, bold, italic, and font color of the entered search content.  |
-| Column           | Set the column names that need to be displayed on the control.   |
-| Sort Order       | Sets how data is sorted on the control.   |
+| **名称** | **描述** |
+|:----------|:-----------|
+| 名字     | 此控件的名称。|
+| X        | 控件左侧距画布左侧的距离，单位px。  |
+| Y        | 控件顶部距画布顶部的距离，单位px。 |
+| W        | 控件的宽度，单位px。 |
+| H        | 控件的高度，单位px。 |
+| 边框颜色 | 设置控件外边框及表体的表格线颜色。   |
+| 边框粗细 | 设置控件外边框及表体的表格线的粗细。 |
+| 表头     | 设置表头的背景色、字体型号、字体大小、加粗、倾斜、字体颜色。 |
+| 表体     | 设置表体的背景色、字体型号、字体大小、加粗、倾斜、字体颜色。 |
+| 颜色     | 设置每个事件类型在控件上显示的颜色。|
+| 按钮样式 | 设置控件上使用的按钮的样式。点击按钮样式的设置按钮进行设置。  <br>![alt text](2.png)暂停按钮.暂停按钮的背景色、边框色、字体型号、字体大小、加粗、倾斜、字体颜色。<br>![alt text](3.png) 恢复按钮.恢复按钮的背景色、边框色、字体型号、字体大小、加粗、倾斜、字体颜色。<br>![alt text](4.png)查询按钮.查询按钮的背景色、边框色、字体型号、字体大小、加粗、倾斜、字体颜色。|
+| 搜索     | 设置搜索框的背景色、边框色，搜索标题以及输入的搜索内容的字体型号、字体大小、加粗、倾斜、字体颜色。|
+| 列设置   | 设置需要显示在控件上的列名。|
+| 排序方式 | 设置数据在控件上的排序方式。|
 
-**Event**
+**动作**
 
-Allows you to perform specific events based on certain conditions. See the full description of each event on the **2D Visualization-> Event** page.
+允许您基于某种条件执行特定的动作。请参阅“[动作](../../event/index.md)”页上各种动作的完整描述。
 
-**Example 1**
+**示例1**
 
-Perform data filtering on the running page.
+在运行页面进行数据过滤。
 
-1. Click the "Pause" button on the running page.
-2. Set the query conditions, select the event type: Security, and select the subtype: Login.
-3. Click the "Search" button.
+1. 在运行页面点击”暂停“按钮。
+2. 设置查询条件，事件类型中选择：操作事件，子类型选择：报警。
+3. 点击”查询“按钮。
 
-![realtime-event1](../../../assets/images/realtime-event1.gif)
-
-
-
-
+![alt text](2.gif)
 
 
 

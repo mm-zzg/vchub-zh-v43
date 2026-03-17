@@ -1,109 +1,102 @@
-# OIDC Server(Open API) Registrations
+# OpenID Connect客户端
 
- VC Hub includes a built-in OpenID Connect (OIDC) identity server, which is used to authenticate users using industry-standard OIDC protocols. 
+WAGO SCADA 内置 OpenID Connect (OIDC) 身份认证服务器，采用行业标准 OIDC 协议对用户进行认证。OIDC 服务器支持多种协议流程，适用于不同类型的应用程序：
 
-The OIDC server supports different flows in in OIDC protocols for different kinds of applications.
+- **授权码模式（Authorization Code Flow）**：适用于 Web 应用程序（服务端应用）。
+- **隐式模式（Implicit Flow）**：适用于单页应用（SPA）和移动应用程序。
+- **客户端凭证模式（Client Credentials Flow）**：适用于机器对机器（M2M）通信，无需用户交互。
+- **刷新令牌模式（Refresh Token Flow）**：用于第三方应用程序刷新访问令牌，可与其他模式（除客户端凭证模式外）配合使用。
 
-- **Authorization Code Flow**: Suitable for Web applications (server-side applications).
-- **Implicit Flow**: Suitable for Single-page applications (SPAs) and mobile applications.
-- **Client Credentials Flow**: Suitable for Machine-to-machine (M2M) communication without end-user involvement.
-- **Refresh Token Flow**: This flow is used to refresh the access token for third party application, and this flow can be used with the other flows except Client Credential Flow.
-
-Click on "**Security**"-> "**OIDC Server(Open API)**" to configure the OpenID Connect(OIDC) client registerations. 
+点击菜单"**权限**"-> "**OpenId 客户端**"，显示OIDC 客户端程序注册管理界面。
 
 ![alt text](33.png)
 
-## Register
+## 新增
 
-Click the "Register" button to add new  OpenId Client.
+点击“注册”按钮，添加Open ID客户端。
 
 ![alt text](34.png)
 
-![alt text](35.png)
+**属性**
 
-**Properties**
+| **名称**  | **描述**  |
+|:----------------------|:---------------------|
+| 客户端编号                 | API授权的客户端编号   |
+| 客户端密钥                 | API授权的客户端密钥   |
+| 重复密钥                   | 用于确认用户二次输入的密钥与第一次的密钥一致   |
+| 授权模式                   | OIDC授权模式，包括授权码模式，客户端凭据模式，隐式模式，刷新令牌模式。支持多选。当选择客户端凭据模式时，需要设置需要的API，当选择其他三种模式时，无需设置API。 |
+| 授权范围                   | 用户信息的范围。范围包括：address,email,phone,profile,roles |
+| 重定向URL                  | 登录 SCADA OIDC 登录页面时，用户将被重定向到该URL。 |
+| 登出重定向URL              | 当用户从 SCADA OIDC 端点注销时，用户将被重定向到该 URL。|
+| OpenID Connect MetaAddress | 用于自动发现身份提供方（Identity Provider, IdP）配置的一个 URL。 |
+| 描述                       | API授权的描述   |
 
-| **Name**                   | **Description**                                                                                                                                                                                                                                                                                           |
-|----------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Client Id                  | The id of client credential                                                                                                                                                                                                                                                                               |
-| Client Secret              | The secret of client credential                                                                                                                                                                                                                                                                           |
-| Repeat Secret              | The repeat secret of client credential used to ensure user enter two same secret                                                                                                                                                                                                                          |
-| Grant Type                 | OIDC authorization modes include Authorization Code Flow, Client Credentials Flow, Implicit Flow, and Refresh Token Flow. Supports multiple selections. When the Client Credentials mode is selected, the required APIs must be configured. For the other three modes, configuring APIs is not necessary. |
-|Refresh Token                 | Optional, default not selected.Use in combination with the Grant Type.|
-| Scope                      | The scopes of user info. The scope includes: address,email,phone,profile,roles                                                                                                                                                                                                                            |
-| Redirect URL               | The redirect URL. When login on VC Hub OIDC login page, the user will be redirected the Redirect URL.                                                                                                                                                                                                      |
-| Logout Redirect URL        | When user logout from VC Hub OIDC endpoint, the user will be redirected the Logout Redirect URL.                                                                                                                                                                                                           |
-| OpenID Connect MetaAddress | A URL for auto-discovery of Identity Provider (IdP) configurations.                                                                                                                                                                                                                                       |
-| Description                | The description the client credential                                                                                                                                                                                                                                                                     |
+**说明**：当注册一个新的OIDC客户端时，需要根据客户端应用程序的类型填写注册信息。
 
- **Note**：**When registerating a new open client,  the content should be based on purpose of the client application.** 
+#### 场景1：一个客户端应用程序配置为使用SCADA作为其身份认证提供方（Identity Provider），以对终端用户进行身份验证
 
-#### Scenario 1:  A client application configurated to use VC Hub as its identity provider to authenticate its end user.
+1. 注册一个OpenId 客户端。授权模式选择 **授权码模式（Authorization Code Flow）或隐式模式（Implicit Flow)**，**推荐使用授权码模式**。
+2. 配置重定向地址
 
-1. When registering an OpenID client, select the **Authorization Code Flow** or **Implicit Flow**. It is recommended to use **Authorization Code Flow** for better security.
-2. Enter the redirect url and logout redirect url of the client application. 
+     - **重定向URL（Redirect URL)，示例（以SCADA系统为例）：** http://{客户端应用主机地址}/api/oidc/callback/signin
+     - **登出重定向URL（Logout Redirect URL），示例（以SCADA系统为例）：** http://{客户端应用主机地址}/api/oidc/callback/signout
 
-     Take VC Hub as an example:
+     ![alt text](35.png)
 
-     The **Redirect URL:** http://{client-applicatoin-host}/api/oidc/callback/signin 
+3. 打开客户端应用程序的 **Identity Provider** 配置界面，输入客户端 ID、客户端密钥。
 
-     The **Logout Redirect URL:** http://{server-host}/.well-known/openid-configuration
+     以 SCADA 作为客户端应用的示例，应将前面注册的客户端应用信息填写到身份提供者页面中。
 
      ![alt text](36.png)
 
-3. Open the **Identity Provider** configuration interface in the client application.Enter the following information:Client ID,Client Secret.
+#### 场景2：客户端应用程序通过其后端发起OPEN API请求，与WAGO SCADA系统进行交互
 
-If VC Hub is the client application, you should fill in the identity provider configuration page with the client information you previously registered.
+1. 在注册OpenId 客户端时，应仅选择“客户端凭证模式（Client Credential）”这一授权类型。客户端应用程序可通过客户端ID（client id）和客户端密钥（client secret）来请求访问令牌（access token）。
 
-![alt text](37.png)
+     ![alt text](37.png)
 
-#### Scenario 2:  The client application interacts with VC Hub by making Open API requests from its backend
-
-1. When registering an **OpenID client**, you should select only the **Client Credentials Flow** as grant type.
-
-     In this mode, the **client application** can request an **access token** directly by using its:
-
-      - **Client ID**
-      - **Client Secret**
+2. 客户端应用程序注册后，点击“API权限”按钮，配置第三方应用程序可使用该凭证调用的API范围。
 
      ![alt text](38.png)
 
-2. After the client application is registered, click the "**Open API**" button to configure the which APIs third party application can use the credential to call.
+     点击“API权限”按钮后，弹出权限窗口，选择所需权限。
 
      ![alt text](39.png)
 
-     ![alt text](40.png)
+## 修改
 
-## Edit
+API授权创建后，可以点击"修改"按钮，修改API授权。
 
-After new credential created, click the "**Edit**" button to edit change the credential description.
+![alt text](40.png)
 
-![alt text](44.png)
+## API权限
 
-## Reset Secret
-
-Click the "**Reset Secret**" button to reset the secret of the credential.
+点击"API权限"按钮可以设置这个API授权的所有的API调用权限。
 
 ![alt text](41.png)
 
+## 重置密钥
+
+点击“重置密钥”按钮可以将API授权的密钥重置。
+
 ![alt text](42.png)
 
-## Delete
+## 删除
 
-Clicking the "Delete" button will remove the API authorization. Once deleted, this authorization can no longer be used to access the interface data of VC Hub.
+点击“删除”按钮可以删除该条API授权。删除后无法再使用此授权访问WAGO SCADA的接口数据。
 
 ![alt text](43.png)
 
-## Security Recommendation
+## 安全建议
 
-Given the differing use cases and security considerations of these flows, we stongly recommend registering clients that only support only one authorization flow, based on your specific application needs. Avoding registerting a client that supports mutiple flows simultaneously.
+鉴于这些授权流程的使用场景和安全性考量的差异，我们强烈建议仅根据您的特定应用需求注册支持单一授权流程的客户端。请避免注册同时支持多种流程的客户端。
 
-**Reason:** Supporting both flows in the same client might lead to security risks or configuration conflict. For example, tokens issued using client credential could bypass user authentication, potentially inroducing authorization vulnerabilities. 
+**原因**：在同一个客户端中支持多种流程可能导致安全风险或配置冲突。例如，通过客户端凭据获得的令牌可能绕过用户认证，从而引入授权漏洞。
 
-**Best Practices:**
+**最佳实践：**
 
-- If your application is intended for end-user  interactions, select the **Authorzation Code Flow**.
-- If your application is designed for server-to-sever comunication (e.g.,Open API), select the **Client Credential Flow**.The Open API of VC Hub is designed for server-to-server, as the its permissions of APIs are tied to the client ID.
+- 如果您的应用是面向终端用户交互的，请选择 **Authorization Code Flow（授权码模式）**。
+- 如果您的应用是为服务器与服务器之间通信设计的(比如集成OpenAPI)，请选择 **Client Credential Flow（客户端凭据模式）**。SCADA 的Open API 被设计用于服务器之间的通信，因为其 API 权限绑定到客户端 ID。
 
-By selecting the appropriate authorization flow, you can enhance the security of your client while ensuring your application operates in compliance with beset practices.
+通过选择合适的授权流程，您可以提高客户端的安全性，并确保您的应用符合最佳实践要求。
 

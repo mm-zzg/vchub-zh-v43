@@ -1,44 +1,57 @@
-# Dynamic Tag
+# 动态变量
 
-Dynamic tag binding is very similar to tag binding, with the key difference being that dynamic variable binding allows you to introduce any number of indirect parameters to dynamically construct the tag path. These parameters are marked with curly braces, such as {1}. Once the indirect parameters are replaced by the properties of the bound control, the binding will link to the tag path represented by those tags.
+动态变量绑定与变量绑定非常类似，区别在于您可以在动态变量绑定中引入任意数量的间接参数，动态建立变量路径。这些参数使用大括号标记，例如`{1}`。在间接参数被所绑定的控件属性替换后，绑定将链接到该变量所表示的变量路径。
 
-## Binding
+## 绑定
 
-![alt text](33.png)
+![alt text](37.png)
 
-| **Name**         | **Description**  |
-|------------------|-----------------|
-| Path             | Path of the tag with parameters |
-| Replacement list | Each line in the list corresponds to a parameter reference within **{}**. You can bind each line to any property on the current Page. To bind a parameter reference to a property, simply select the corresponding line and click the property binding button in the "Replace with" column. Then, choose a property from the property selector dialog that appears. |
+| **名称** | **描述** |
+|:----------|:-----------------|
+| 路径     | 包含参数的变量路径  |
+| 替换列表 | 列表中的每一行对应一个 **{}** 内的参数引用，每一行可以绑定到当前画面上的所有属性。  要将参数引用绑定到属性，只需选择对应的行，并点击“替换为”列中的属性绑定按钮，在弹出的属性选择器弹框中选择一个属性。 |
 
-**Example**
+**示例**
 
-There are four motors, each represented as a folder, and each motor contains a tag: Current. The tag paths for the current values of these four motors are as follows:
+存在4个电机，每个电机都是一个文件夹，电机下存在变量：电流。我们需要查看这个4个电机的电流值，变量路径分别为：
 
-```plain
-Default:Motor1.Current
-Default:Motor2.Current
-Default:Motor3.Current
-Default:Motor4.Current
-```
- 
-Instead of creating four separate controls to display the values of these four tags, we can create a single control that indirectly displays the values of different tags. For this, we only need one control to display the value (value display control) and another control (dropdown control) that allows the user to select which motor to view.
+- Default:电机1.电流
+- Default:电机2.电流
+- Default:电机3.电流
+- Default:电机4.电流
 
-1. Draw a value display control and a dropdown control on the page.
-2. Set the dropdown options for the dropdown control.
-   ![alt text](34.png)
-3. Select the value display control and click the binding button for the "Text" property.
-   ![alt text](35.png)
-4. In the pop-up property binding window, choose Dynamic Tag.
-       1. On the left side of the asset tree, select the tag **Default: Motor1.Current**.
-       2. On the right side in the path replacement section, delete **1** from the variable path and replace it with **{1}**.
-       3. In the replacement list, select that row and click the binding button to bind it to the **selectedValue** property of the dropdown control.
-       4. Click **OK** to save the binding.
-   ![alt text](36.png)
-5. In the editor, click the "Preview" button to enter the preview page.
-6. When selecting **1** in the dropdown, the path is: **Default: Motor1.Current**, and the value display control shows the current value of Motor 1.<br>
-   When selecting **2** in the dropdown, the path is: **Default: Motor2.Current**, and the value display control shows the current value of Motor 2.<br>
-   When selecting **3** in the dropdown, the path is: **Default: Motor3.Current**, and the value display control shows the current value of Motor 3.<br>
-   When selecting **4** in the dropdown, the path is: **Default: Motor4.Current**, and the value display control shows the current value of Motor 4.<br>
-   ![dynamic-tag](../../assets/images/dynamic-tag.gif)
+与其为这4个变量创建四个控件来显示变量值，我们可以创建一个控件并使其间接显示不同的变量值。对此，我们只需一个用于显示值的控件（值显示控件）和允许用户选择需要查看电机的控件（下拉框控件）。
+
+1. 在画面上绘制一个值显示控件和下拉框控件。
+2. 设置下拉框的下拉选项
+
+      ![alt text](38.png)
+
+3. 选中值显示控件，点击“文本”属性的绑定按钮。
+
+      ![alt text](39.png)
+
+4. 在弹出的属性绑定窗口，选择 **动态变量** 绑定。
+
+      a. 在左侧的资产树上选择变量 **Default:电机1.电流**。
+
+      b. 在右侧的路径替换部分，在路径中删除变量路径中的 **1**，用 **{1}** 替换它。
+
+      c. 在替换列表中，选择该行，点击绑定按钮，绑定到下拉框控件的 selectedValue 属性。
+
+      d. 点击 **确认** 按钮。
+
+      ![alt text](40.png)
+
+5. 在编辑器上点击“预览”按钮，进入预览页面。
+
+6. 在下拉框中选择 **1** 时， 路径为：**Default:电机1.电流**，此时在值显示 控件上显示电机 1 的电流值； 
+
+      在下拉框中选择 **2** 时， 路径为：**Default:电机2.电流**，此时在值显示 控件上显示电机 2 的电流值；
+
+      在下拉框中选择 **3** 时， 路径为：**Default:电机3.电流**，此时在值显示 控件上显示电机 3 的电流值； 
+
+      在下拉框中选择 **4** 时， 路径为：**Default:电机4.电流**，此时在值显示 控件上显示电机 4 的电流值；
+
+      ![alt text](41.gif)
 

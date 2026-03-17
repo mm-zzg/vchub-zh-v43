@@ -1,43 +1,46 @@
-# Text Input
+# 文本输入框
 
-The text input is used to enter any single line of text for writing values.
-
-![alt text](7.png)
-
-**Properties**
-
-| **Name**         | **Description**|   
-|-----------|--------|
-| Name             | The name of this control. | X                | Distance of the left side of the control from the left side of the canvas.|
-| Y                | The distance from the top of the control to the top of the canvas. |
-| W                | Width of the control. |
-| H                | The height of the control.  |
-| Text             | The  text to be displayed in the input text. |
-| Password         | Not enabled by default. When turned on, the text entered in the text box displays the cipher text. |
-| Fill Color       | The fill color of the input text. |
-| Border Color     | The border color of the  input text. |
-| Border Thickness | The border thickness of the  input text.  |
-| Shadow           | Sets the shadow effect of the control. You can set the outer shadow and inner shadow.  <br> **Outer**   <br>**- Enable**: Whether to enable the shadow effect  <br>**- Color**: Used to set the shadow color <br> **- X**: Controls how far the shadow is shifted horizontally.  <br>`X = 10` → shadow moves 10px to the right  <br>`X = -5` → shadow moves 5px to the left <br>**- Y**: Controls how far the shadow is shifted vertically.  <br>`Y = 8` → shadow moves 8px downward  <br>`Y = -3` → shadow moves 3px upward <br> **- Blur**: Controls how soft or sharp the edges of the shadow appear. Higher values make the shadow more blurry and spread out. <br> **Inner**  <br>**- Enable**: Whether to enable the shadow effect  <br>**- Color**: Used to set the shadow color <br>**- X**: Controls how far the shadow is shifted horizontally.  <br>`X = 10` → shadow moves 10px to the right  <br>`X = -5` → shadow moves 5px to the left <br>**- Y**: Controls how far the shadow is shifted vertically.  <br>`Y = 8` → shadow moves 8px downward  <br>`Y = -3` → shadow moves 3px upward <br>**- Blur**: Controls how soft or sharp the edges of the shadow appear. Higher values make the shadow more blurry and spread out. <br> - **Spread**: Controls how much the shadow **expands or contracts** from the shape. |
-| Font             | Sets the font of the input text. Including font, font size, font color, bold, italic, underline. Horizontal alignment: left, center, right.  |
-
-**Event**
-
-Allows you to perform a specific event based on certain conditions. See the**2D Visualization-> Event** page for a complete description of the various events.
-
-**Example**
-
-Modify a device parameter using the input text.
+文本输入框用于输入任何单行文本进行写值操作。
 
 ![alt text](8.png)
 
-1. The control appearance is as follows:
+**属性**
 
-| **Property** | **Value**                          |
-|--------------|----------------------------------------|
-| Name         | Text Input 1                           |
-| Text         | Binding tag: Area.SN                 |
-| Fill color   | 2ef6a3                                 |
-| Font         | Calibri, 22 , Bold, 000000, Left align |
+| **名称** | **描述**   |
+|:----------|:----------------|
+| 名字     | 此控件的名称。  |
+| X        | 控件左侧距画布左侧的距离，单位px。  |
+| Y        | 控件顶部距画布顶部的距离，单位px。    |
+| W        | 控件的宽度，单位px。 |
+| H        | 控件的高度，单位px。|
+| 文本     | 输入框内显示的内容。   |
+| 密文     | 默认不开启。开启后文本框中输入的内容显示密文。 |
+| 填充色   | 文本输入框的填充色。    |
+| 边框颜色 | 文本输入框的边框颜色。   |
+| 边框粗细 | 文本输入框的边框粗细。  |
+| 阴影     | 设置控件的阴影效果。可以设置外阴影和内阴影。  <br> **外阴影**   <br>- **启用**：是否启用阴影效果  <br>- **颜色**：用于设置阴影颜色  <br>- **X**：控制阴影在水平方向上的偏移量。  <br>`X = 10` → 阴影往右移了10像素  <br>`X = -5` → 阴影往左移了5像素  <br>- **Y**：控制阴影在垂直方向上的偏移量。  <br>`Y = 8` → 阴影往下移了8像素  <br>`Y = -3` → 阴影往上移了3像素   <br>- **模糊**：控制阴影的 **模糊程度**，模糊值越大，边缘越柔和、越“自然”。 <br>**内阴影** <br>- **启用**：是否启用阴影效果 <br>- **颜色**：用于设置阴影颜色  <br>- **X**：控制阴影在水平方向上的偏移量。  <br>`X = 10` → 阴影往右移了10像素  <br>`X = -5` → 阴影往左移了5像素 <br>- **Y**：控制阴影在垂直方向上的偏移量。  <br>`X = 8` → 阴影往下移了8像素  <br>`Y = -3` → 阴影往上移了3像素  <br>- **模糊**：控制阴影的 **模糊程度**，模糊值越大，边缘越柔和、越“自然”。<br>- **扩散**：控制阴影的大小|
+| 字体     | 设置的下拉选项的字体。包括字体型号、字体大小、字体颜色、加粗、倾斜、下划线设置。 |
 
-2. In the Evnet property of the control, select “Value Changed”, select  ”Set Value” as action type , tag is bound to: Area.SN,  and new value is bound to Text Input 1#text.
-3. On the running page, enter the content in the text input, and the entered content will be written to the tag: Area.SN.
+**动作**
+
+允许您基于某种条件执行特定的动作。请参阅“[动作](../../event/index.md)”页上各种动作的完整描述。
+
+**示例**
+
+通过文本输入框修改设备参数。
+
+![alt text](9.png)
+
+1. 控件外观如下：
+
+    | **属性** | **值**                             |
+    |:----------|:------------------------------------|
+    | 名称     | 文本输入框 1                       |
+    | 文本     | 绑定变量：@区域.编号                |
+    | 填充色   | 2ef6a3                             |
+    | 字体     | Calibri, 22 , 加粗,  000000，左对齐 |
+
+2. 在控件的动作属性中，选择”值变化“，在变量赋值中，变量绑定：@区域.编号，新值绑定：文本输入框 1#text。
+
+3. 在运行画面上，在文本输入框中输入内容，会将输入的内容写入变量：@区域.编号。
+

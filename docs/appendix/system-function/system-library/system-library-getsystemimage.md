@@ -1,28 +1,29 @@
 
 # System.Library.getSystemImage
 
+## 描述
 
-## Description
-Obtain images from the system library.
+获取系统图库的图片。
 
-## Grammar
-System.Library.getSystemImage(path:string): Promise<string> 
+## 语法
 
-Parameter 
+System.Library.getSystemImage(path:string): Promise`<string>`
 
-path - The path of the image  
+- 参数 
 
-Return 
+    path - 图片的路径 
 
-base64
+- 返回
 
-## Code Example                                                                                                                                                                                                                                                                                                          
-Obtain"Transformer. svg" under "Power" in the system library.
+    base64
+
+## 代码示例
+
+获取系统图库"电力"下的"变压器.svg"。
 
 ```typescript 
-const base64 = await System.Library.getSystemImage('Power.Transformer.svg');
+const base64 = await System.Library.getSystemImage('电力.变压器.svg');
 console.log(base64)
-
 
 ```   
 

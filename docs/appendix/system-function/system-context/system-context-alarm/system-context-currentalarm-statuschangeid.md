@@ -1,12 +1,14 @@
 # System.Context.currentAlarm.statusChangeId
-## Description
-The id of the current alarm's status change.
 
-## Grammar
-System.Context.currentAlarm.statusChangeId
+## 描述
+当前报警状态变化的标识。
 
-## Code Example                                                                                                                                                                                                                                                                                                          
-Get the id of the current alarm's status change.
+## 语法
+**System.Context.currentAlarm.statusChangeId**
+
+## 代码示例
+
+获取当前报警状态变化的标识。
 ```typescript 
 
 const id = System.Context.currentAlarm.statusChangeId;

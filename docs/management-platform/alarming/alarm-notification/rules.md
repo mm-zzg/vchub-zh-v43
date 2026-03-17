@@ -1,37 +1,40 @@
-# Rules
+# 通知规则
 
-Notification rules offer flexible configuration options that allow you to precisely define the conditions for sending alerts, select the type of notification service (such as email or SMS), specify the list of recipients, and set the timing of notifications. This ensures that critical information is promptly communicated to the appropriate personnel.
+通知规则提供了灵活的配置选项，使您能够详细设置报警的发送条件、通知的服务类型（如邮件、短信）、接收人列表以及通知的发送时间，从而确保重要信息能够及时传达给相关人员。
 
-## Add
+## 新增
 
-1. Click "**Alarming**" -> "**Alarm Notifications**" -> "**Rules**" to open the “Rules” list page.
+1. 在“**报警**”->"**报警通知**"->"**通知规则**"页面，进入通知规则列表页面。
+
     ![alt text](9.png)
-2. Click the "Add" button. In the pop-up window, proceed with setting the properties.
+
+2. 点击“**新增**”按钮。在新增弹窗中进行属性设置。
+
     ![alt text](10.png)
-3. After completing the settings, click the "OK" button to save.
 
-**Porperties**
+3. 设置输入后，单击‘**确认**’按钮。
 
-| **Name**       | **Description**                                                                           |
-|----------------|-------------------------------------------------------------------------------------------|
-| Name           | The name of the notification rule is required. The name is unique and cannot be repeated. |
-| Description    | Description of the notification rule, optional.                                           |
-| Alarm Criteria | Decide whether to send an alarm notification based on the Alarm Status or Shelve Status.  |
-| Rule | Includes four notification types: Email , SMS, WeCom, DingTalk. Click the corresponding button to display the respective settings interface. |
+**属性**
 
-**Detailed introduction of "Rule"**
+| **名称** | **描述** |
+|:----------|:--------------------------------|
+| 名称     | 通知规则的名称，必填项，名称唯一、不可重复。|
+| 描述     | 通知规则的描述信息，可选填。  |
+| 发送条件 | 根据报警状态或搁置状态来决定是否发送报警通知。  |
+| 通知     | 包含4种通知类型，Email，SMS，企业微信，钉钉。点击对应按钮显示对应设置界面。  | 
 
-| **Rule**       | **Description**                                                                           |
-|----------------|-------------------------------------------------------------------------------------------|
-| Email    | ![alt text](11.png)  <br> - Service: Select from the dropdown an Email (SMTP) type notification service that has been created and is currently enabled.<br> - Messages: Automatically filtered based on the selected  service, only showing Email (SMTP) type notification content that has been created and is currently enabled. <br> - Schedule: Select from the dropdown a schedule of the regular type that has been created and is currently enabled.<br> - To: Set the recipients of the email. You can select multiple user groups from the dropdown. After selecting a user group, click the "..." button to display all users within the selected group. <br> - CC: Set the email's CC recipients. You can select multiple user groups from the dropdown. After selecting a user group, click the "..." button to display all users within the selected group. <br>- BCC: Set the email's BCC recipients. You can select multiple user groups from the dropdown. After selecting a user group, click the "..." button to display all users within the selected group. <br> **Note: When logging in via OpenID Connect, if you want users to receive alarm notifications, you must manually create users in VC Hub and add them to the appropriate user groups.** |
-| SMS      | ![alt text](12.png)  <br> - Service: From the dropdown, select a notification service of the SMS (Ali Cloud) or SMS (Twilio) type that has been created and is currently enabled. <br> - Messages: Automatically filtered based on the selected notification service. For example, if you select an SMS (Ali Cloud) type notification service, only SMS (Ali Cloud) type notification content will be displayed in the notification content dropdown. <br> - Schedule: From the dropdown, select a regular type schedule that has been created and is currently enabled. <br>- Receiver: Set the recipients for the alarm notification SMS. You can select multiple user groups from the dropdown. After selecting a user group, click the "..." button to display all users within the selected group. <br> **Note: When logging in via OpenID Connect, if you want users to receive alarm notifications, you must manually create users in VC Hub and add them to the appropriate user groups.**   |
-| WeCom    | ![alt text](13.png) <br> - Services: A dropdown listing all enabled notification services of the WeCom type that have been created. <br> - Messages: Automatically filtered based on the selected service. For example, if a WeCom–type service is chosen, the “Message” dropdown will only list contents defined for WeCom. <br> - Schedules: From the dropdown, select a regular type schedule that has been created and is currently enabled. <br> - Receivers: Configure who will receive the alarm notifications. Based on the selected notification service, the recipient list is automatically populated with the appropriate options. You can multi-select recipients, choosing from WeCom groups or individual WeCom accounts.  |
-| DingTalk |![alt text](14.png)  <br>- Services: A dropdown listing all enabled notification services of the DingTalk type that have been created. <br>- Messages: Automatically filtered based on the selected service. For example, if a DingTalk–type service is chosen, the “Message” dropdown will only list contents defined for DingTalk. <br>- Schedules: From the dropdown, select a regular type schedule that has been created and is currently enabled. <br>- Receivers: Configure who will receive the alarm notifications. Based on the selected notification service, the recipient list is automatically populated with the appropriate options. You can multi-select recipients, choosing from DingTalk groups or individual DingTalk accounts. |
+**"通知"的详细介绍**
 
+| **名称** | **描述** |
+|:----------|:--------------------------------|
+|Email    | ![alt text](11.png)  <br>- 通知服务：下拉选择已创建并且处于启用状态的Email(SMTP)类型的通知服务。 <br>- 通知内容：根据通知服务自动过滤，仅显示已创建并且处于启用状态的Email(SMTP)类型的通知内容。 <br>- 通知排程：下拉选择已创建并且处于启用状态的常规类型的排程。 <br>- To: 设置邮件的接收人。下拉选择用户组，可以多选。选择用户组后，点击后方的...按钮，显示所选用户组下的所有用户。 <br>- CC: 设置邮件的抄送人。下拉选择用户组，可以多选。选择用户组后，点击后方的...按钮，显示所选用户组下的所有用户。 <br>- BCC：设置密送人员。下拉选择用户组，可以多选。选择用户组后，点击后方的...按钮，显示所选用户组下的所有用户。  <br>**说明：当使用OpenID Connect方式登录时，如果希望用户能收到报警通知，需手动在WAGO SCADA中创建用户，并将用户添加到相应的用户组中。** | 
+| SMS      | ![alt text](12.png)  <br>- 通知服务：下拉选择已创建并且处于启用状态的SMS(Ali Cloud)和SMS(Twilio)类型的通知服务。 <br>- 通知内容：根据通知服务自动过滤，例如选择了SMS(Ali Cloud)类型的通知服务，则在通知内容下拉列表中只会显示SMS(Ali Cloud)类型的通知内容。 <br>- 通知排程：下拉选择已创建并且处于启用状态的常规类型的排程。 <br>- 收件人: 设置接收报警通知短信的人员。下拉选择用户组，可以多选。选择用户组后，点击后方的...按钮，显示所选用户组下的所有用户。  <br>**说明：当使用OpenID Connect方式登录时，如果希望用户能收到报警通知，需手动在WAGO SCADA中创建用户，并将用户添加到相应的用户组中。** | 
+| 企业微信 | ![alt text](13.png)  <br>- 通知服务：下拉选择已创建并且处于启用状态的企业微信类型的通知服务。 <br>- 通知内容：根据通知服务自动过滤，例如选择了企业微信类型的通知服务，则在通知内容下拉列表中只会显示企业微信类型的通知内容。 <br>- 通知排程：下拉选择已创建并且处于启用状态的常规类型的排程。 <br>- 接收人: 设置接收报警通知的人员。根绝选择的通知服务自动显示对应内容。下拉选择接收人，可多选，可以选择微信群组，也可以选择微信账号。 | 
+| 钉钉     | ![alt text](14.png)  <br>- 通知服务：下拉选择已创建并且处于启用状态的钉钉类型的通知服务。 <br>- 通知内容：根据通知服务自动过滤，例如选择了钉钉类型的通知服务，则在通知内容下拉列表中只会显示钉钉类型的通知内容。 <br>- 通知排程：下拉选择已创建并且处于启用状态的常规类型的排程。 <br>- 接收人: 设置接收报警通知的人员。根绝选择的通知服务自动显示对应内容。下拉选择接收人，可多选，可以选择钉钉群，也可以选择钉钉账号。 |
 
-## How to use the Email Notification Rule
+## 通知规则应用
 
-Set notification rules for each alarm on the tag. When the alarm is triggered, the system will automatically send alarm notifications to the relevant personnel based on the configured notification rules.
+在变量的每条报警上设置通知规则。当该报警触发时，系统会根据设置的通知规则自动向相关人员发送报警通知。
 
 ![alt text](15.png)
 

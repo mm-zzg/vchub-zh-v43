@@ -1,24 +1,27 @@
-# Data Partitioning and Deletion
+# 数据分区和删除
 
-The history database will partition data into separate tables based on time settings so that a table does not grow indefinitely, and then delete old data to ensure that the system maintains query performance. When creating a configuration, partitioning will be enabled by default to improve query performance. Only when the query time range includes partitioned data will the appropriate partition be queried, thus avoiding querying inapplicable partitions and reducing database processing. On the other hand, the system must execute a query for each partition hit, so it is best to avoid using very large partitions, as well as partitions that are too small and have too much data fragmentation. When creating a configuration, choosing the right partition size based on the amount of business analytics data available will improve query and storage efficiency.
+历史库会根据时间设置将数据划分为单独的表，以便一个表不会无限增长，然后删除旧数据以确保系统保持查询性能。创建配置时，将默认启用分区以提高查询性能。仅当查询时间范围包含分区数据时，才会查询相应分区，从而避免查询不适用的分区并减少数据库处理。另一方面，系统必须对命中的每个分区执行查询，因此，最好避免使用非常大的分区，以及太小且数据碎片过多的分区。创建配置时，根据现有业务分析数据量选择合适的分区大小将提升查询和存储效率。
 
-The data cleanup feature will delete partitioned data (raw and preprocessed partitioned tables) whose data is older than a specific period of time
+数据清理功能将删除数据早于特定期限的分区数据（**原始表** 和 [预处理](pre-processed.md) **分区表**）
 
-**Note**: When InfluxDB is selected , there is no configuration for partitioning, pre-processing, and data cleaning (InfluxDB itself has the above configurations,  VC Hub does not provide this configuration).
+**说明**：当“数据库连接”选择 **InfluxDB类型** 的数据库时，将无分区、预处理、数据清理配置（InfluxDB自身具有以上配置，WAGO SCADA不提供此配置）。
 
-## **Data Partitioning and Deletion**
+## 数据分区和删除
 
-1. On the "**Databases**" -> "**History Database**" screen, click the "Add" button. 
-2. In the following pop-up window, select History Library and click "Next" button.
+1. 在“**数据库**”->“**历史库**”页面，点击“**新增**”按钮。
+2. 在弹出的如下窗口中，选择历史库，点击“下一步”按钮。
+
     ![alt text](5.png)
-3. Configure data partitioning and data pruning in the following screen.
+
+3. 在如下界面配置数据分区和数据清理。
+
     ![alt text](6.png)
 
-**Configuration Description**
+**配置说明**
 
-| **Configuration Item** | **Description** |
-|------------------------------|--------------------------|
-| Enable Partitioning          | Whether to partition the stored historical data. |
-| Partition size               | The size of the data storage partition. According to the partitioning rules, data with the same rules will be stored together.   <br> **Daily**: A new table will be created daily to store history records      <br> **Weekly**: A new table will be created weekly to store history records     <br> **Monthly**:  A new table will be created monthly to store history records <br> **Quarterly**: A new table will be created quarterly to store history records  <br> **Half-yearly**:  A new table will be created half-yearly to store history records<br> **Annually**:  A new table will be created annually to store history records |
-| Enable Data Pruning          | Whether or not to delete historical data that exceeds the data cleanup time configuration. |
-| Prune Range                  | The data retention time beyond which the configured data will be deleted. |
+| **配置项**   | **说明**  |
+|:--------------|:----------------|
+| 开启分区     | 是否对存储的历史数据进行分区存储   |
+| 分区大小     | 数据存储分区大小。按照分区规则，相同规则的数据将存储在一起。<br>**每天**：将每天创建一张新表存储历史记录 <br>**每周**：将每周创建一张新表存储历史记录  <br>**每月**：将每月创建一张新表存储历史记录 <br>**每季度**：将每季度创建一张新表存储历史记录 <br>**每半年**：将每半年创建一张新表存储历史记录 <br>**每年**：将每年创建一张新表存储历史记录   |
+| 开启数据清理 | 是否对超出数据清理时间配置的历史数据进行删除。 |
+| 数据清理时间 | 数据保留时间，超过该配置的数据将被删除。 |

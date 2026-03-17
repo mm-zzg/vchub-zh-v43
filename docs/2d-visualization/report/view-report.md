@@ -1,26 +1,12 @@
-# View Report
+# 查看报表
 
-You can use the " Report Viewer " control to view the designed report.
+您可以使用“[报表查看器](../controls/table/report-viewer.md)”控件，查看已经设计完成的报表。
 
-1. Insert a "Report Viewer" control on the page.
-2. In "Data" on the property bar, select the report you want to view.
-3. Click the preview button of the page to view it.
+1. 在画面上插入一个“报表查看器”控件。
+2. 在属性栏的“数据”中，选择期望查看的报表。
+3. 点击画面的预览按钮，进行查看。
 
-![alt text](16.png)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    ![alt text](16.png)
 
 
 

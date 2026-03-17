@@ -3,14 +3,17 @@
 # System.Context.currentAlarm.nodeName
 
 
-## Description
+## 描述
 
-The name of the node where the current alarm is located.
-## Grammar
-System.Context.currentAlarm.nodeName
+当前报警所在节点的名称。
 
-## Code Example                                                                                                                                                                                                                                                                                                          
-Get the name of the node where the current alarm is located.
+## 语法
+**System.Context.currentAlarm.nodeName**
+
+## 代码示例 
+
+获取当前报警所在节点的名称。
+
 ```typescript 
 
 const node = System.Context.currentAlarm.nodeName;

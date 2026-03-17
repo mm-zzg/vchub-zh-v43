@@ -1,59 +1,59 @@
-# Explanation of query exceptions
+# 查询异常情况说明
 
-## 1.Explanation of program or database crash caused by database query
+## 一、数据库查询导致程序或数据库崩溃说明
 
-If you encounter database or application crashes during data query execution, such issues are typically caused by three core factors: ​**long query time**, ​**oversized result** and ​**inefficient query conditions or poor table design**. Understanding these causes and mastering self-troubleshooting methods can significantly improve system stability and query efficiency.
+当您在执行数据查询时遇到数据库或应用程序崩溃的情况，这类问题通常由三个核心因素引发：​**查询时间过长**、**返回结果集过大** 以及 **低效的查询条件或表设计缺陷**。理解这些原因并掌握自主排查方法，可显著提升系统稳定性与查询效率。
 
-- **Long query time**: By configuring the query timeout for the corresponding database, the query can be automatically exited when the waiting time exceeds the configured time.
-- **Oversized result**: By configuring the maximum number of query points for the corresponding database, the query can be automatically exited when the number of query results exceeds the configured maximum point.
-- **Inefficient Query Conditions and Poor Table Design**: If query conditions fail to leverage indexes effectively, or table structures are poorly designed (e.g., lacking partitions or excessive normalization), the system may crash due to logical flaws even with sufficient hardware resources.
+- **查询时间过长**：通过配置对应数据库的最大查询时间可以让查询等待时间超过配置的时间时主动退出此次查询。
+- **返回结果集过大**：通过配置对应数据库的最大查询点数可以让查询结果数超过配置的最大点数时主动退出此次查询。
+- **低效的查询条件或表设计缺陷**：若查询条件未充分利用索引，或表结构设计不合理（如缺少分区、过度归一化），即使硬件资源充足，系统仍可能因逻辑缺陷而崩溃。
 
-## 2. Explanation of predictable abnormal situations in the program
+## 二、程序可预见异常情况说明
 
-#### Parameter configuration
+#### 参数配置
 
-On the "Database" -> "Database Connections" page, click the "Edit" button for a specific entry to view its detailed configuration.
+在“数据库” -> “数据库连接”页面，点击某条数据的“修改”按钮，查看其具体配置。
 
 ![alt text](22.png)
 
-The default configuration for each database is as follows:
+各数据库的默认配置如下：
 
-| **Database**   | **Max Query Points** | **Query Timeout(s)** |
-|----------------|----------------------|----------------------|
-| **MySQL**      | 5,000,000            | 30                   |
-| **SQL Server** | 5,000,000            | 30                   |
-| **PostgreSQL** | 5,000,000            | 30                   |
-| **SQLite**     | 1,000,000            | 30                   |
+| **数据库**     | **最大查询点数** | **查询超时** |
+|:----------------|:------------------|:--------------|
+| **MySQL**      | 500万            | 30秒         |
+| **SQL Server** | 500万            | 30秒         |
+| **PostgreSQL** | 500万            | 30秒         |
+| **SQLite**     | 100万            | 30秒         |
 
-## **Exception Scenarios**
+## 查询异常场景
 
-#### Query Timeout
+#### 查询超时
 
-**Trigger Conditions:** The query time exceeds the timeout configured on the database.
+**触发条件：** 查询耗费的时间超过数据库上配置的超时时间
 
-**Resolution**
+**处理方式**
 
-1. Optimize SQL queries (restrict time ranges, add indexes)
-2. Adjust timeout configuration
+1. 优化查询SQL语句、查询条件或者修改表设计如添加索引等
+2. 调整超时时间配置
 
-#### Max Data Points Exceeded
+#### 超过最大查询点数
 
-**Trigger Conditions:** The amount of data returned by the query exceeds the maximum query point limit configured on the database.
+**触发条件：** 查询返回的数据量超过数据库上配置的最大查询点数
 
-**Resolution**
+**处理方式**
 
-1. Use pagination queries (e.g., TOP, LIMIT clauses)
-2. Narrow query scope (time range/filters)
-3. Adjust maximum query point
+1. 优化查询方式，如使用top、limit分页查询，优化查询条件等
+2. 调整最大查询点数配置
 
-#### Syntax Errors
+#### 语法错误
 
-**Trigger Conditions:** Invalid SQL statement structure
+**触发条件：** SQL语句有语法错误
 
-**Resolution**
+**处理方式**
 
-Adjust the SQL query to fix any syntax errors.
+调整SQL语句，修复语法错误
 
-#### Other Exceptions
+#### 其他异常
 
-Any exceptions during query or execution will be displayed as error messages. Analyze specific error codes/messages for root cause identification.
+在查询或者执行的过程中发生的任何异常都会以错误消息提示的方式交互，您可以根据具体的错误分析具体原因并找到合适的解决方案。
+

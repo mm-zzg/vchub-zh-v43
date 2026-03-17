@@ -1,127 +1,127 @@
-# Historical Data API Definitions
+# 历史数据接口定义
 
-## GET /api/v1/historicalData/tagValues
+## GET /api/v1/historicalData/tagValuess
 
-Get historical data of tag values
+读取变量历史记录
 
-Protocol: Https
+协议: Https
 
-Request Payload(QueryString):
+请求负载(QueryString):
 
-| Name            | Type     | Description                                                                                                          |
-|-----------------|----------|----------------------------------------------------------------------------------------------------------------------|
-| startTime       | DateTime | The start time                                                                                                       |
-| endTime         | DateTime | The end time                                                                                                         |
-| queryMode       | String   | The query mode(None,Raw,FixedPoints,Periodic)                                                                        |
-| points          | Integer  | The query result count.                                                                                              |
-| interval        | integer  | The sample period. The unit is second.                                                                               |
-| period          | integer  | The sample period                                                                                                    |
-| periodMode      | String   | The sample period mode(None,Second,Minute,Hour,Day)                                                                  |
-| aggregationType | String   | The aggregation type, available values: Raw, Avg, Max, Min, First,Last,Count,CountOn,CountOff,DurationOn,DurationOff |
-| path            | String[] | The tag path list                                                                                                    |
+| 名称            | 类型     | 描述   |
+|:-----------------|:----------|:-----------------------|
+| startTime       | DateTime | 开始时间 |
+| endTime         | DateTime | 结束时间 |
+| queryMode       | String   | 查询模式(None,Raw,FixedPoints,Periodic)   |
+| points          | Integer  | 查询点数  |
+| interval        | Integer  | 采样周期(单位：秒)   |
+| period          | Integer  | 采样周期 |
+| periodMode      | Integer  | 采样周期模式(None,Second,Minute,Hour,Day)   |
+| aggregationType | String   | 采样类型 (Raw, Avg, Max, Min, First,Last,Count,CountOn,CountOff,DurationOn,DurationOff) |
+| path            | String[] | 变量列表  |
 
-Response Payload(Json Array)
+响应负载(Json Array)
 
-| Name    | Type     | Description            |
-|---------|----------|------------------------|
-| path    | String   | The tag path           |
-| value   | Dynamic  | The tag value          |
-| time    | DateTime | The timestamp          |
-| quality | String   | The quality of the tag |
+| 名称    | 类型     | 描述     |
+|:---------|:----------|:----------|
+| path    | String   | 变量路径 |
+| value   | Dynamic  | 变量值   |
+| time    | DateTime | 时间戳   |
+| quality | String   | 质量     |
 
 ## GET /v1/historicalData/alarms
 
-Get historical alarms
+读取历史报警
 
-Protocol: Https
+协议: Https
 
-Request Playload(QueryString):
+请求负载(QueryString):
 
-| Name         | Type     | Description                                                                                                                          |
-|--------------|----------|--------------------------------------------------------------------------------------------------------------------------------------|
-| providerName | String   | The history database provider name                                                                                                   |
-| startTime    | DateTime | The start time                                                                                                                       |
-| endTime      | DateTime | The end time                                                                                                                         |
-| path         | String[] | The tag path list                                                                                                                    |
-| priority     | String[] | The alarm priority list(Low,Medium,High,Critical)                                                                                    |
-| state        | String[] | The alarm sate list(Active,Unacked,Acked,Cleared)                                                                                    |
-| type         | String[] | The alarm type list(H ,H2 , H3,H4,L,L2,L3,L4,RateOfChange,Equivalent,TrueToFalse,FalseToTrue)                                        |
-| asset        | String[] | The asset list                                                                                                                       |
-| expression   | String   | Expression,Example1:priority == "Low", Example2:path.Contains("Device"), Example3:state.HasFlag("Active") &&stae.HasFlag("“Unacked") |
+| 名称         | 类型     | 描述   |
+|:--------------|:----------|:-------------|
+| providerName | String   | 历史库名称    |
+| startTime    | DateTime | 开始时间     |
+| endTime      | DateTime | 结束时间      |
+| path         | String[] | 变量列表   |
+| priority     | String[] | 优先级列表(Low,Medium,High,Critical) |
+| state        | String[] | 报警状态列表(Active,Unacked,Acked,Cleared) |
+| type         | String[] | 报警类型列表(H ,H2 , H3,H4,L,L2,L3,L4,RateOfChange,Equivalent,TrueToFalse,FalseToTrue)                           |
+| asset        | String[] | 资产列表   |
+| expression   | String   | 表达式，例1：priority == "Low"，例2：path.Contains("Device")，例3：state.HasFlag("Active") && stae.HasFlag("“Unacked") |
 
-Response Payload(JsonArray):
+响应负载(JsonArray):
 
-| Name        | Type     | Description                                                                                |
-|-------------|----------|--------------------------------------------------------------------------------------------|
-| eventId     | String   | The id of the history record                                                               |
-| path        | String   | The alarm path                                                                             |
-| name        | String   | The alarm name                                                                             |
-| type        | String   | The alarm type (H ,H2 , H3,H4,L,L2,L3,L4,RateOfChange,Equivalent,TrueToFalse,FalseToTrue ) |
-| priority    | String   | The alarm priority (Low,Medium,High,Critical )                                             |
-| eventTime   | DateTime | The time of the history record                                                             |
-| status      | Status   | The alarm status(Active,Unacked;Active,Acked;Cleared,Unacked;Cleared,Acked)                |
-| value       | Dynamic  | The tag value tiggered alarm                                                               |
-| valueType   | String   | The value type of tag value                                                                |
-| description | String   | The alrm description                                                                       |
-| ackTime     | DateTime | The acknowledge time of the alarm                                                          |
-| ackNotes    | String   | The notes of the alarm                                                                     |
-| operator    | String   | The user who acknownlege the alarm                                                         |
-| ackMode     | String   | The acknownledge mode (Auto,Manual,ManualNeedInfo)                                         |
+| 名称        | 类型     | 描述  |
+|:-------------|:----------|:-------------|
+| eventId     | String   | 历史记录编号    |
+| path        | String   | 报警路径  |
+| name        | String   | 报警名称         |
+| type        | String   | 报警类型 (H ,H2 , H3,H4,L,L2,L3,L4,RateOfChange,Equivalent,TrueToFalse,FalseToTrue ) |
+| priority    | String   | 报警等级 (Low,Medium,High,Critical )   |
+| eventTime   | DateTime | 历史记录时间      |
+| status      | Status   | 报警状态(Active,Unacked;Active,Acked;Cleared,Unacked;Cleared,Acked)                  |
+| value       | Dynamic  | 变量值  |
+| valueType   | String   | 变量值类型    |
+| description | String   | 报警描述      |
+| ackTime     | DateTime | 报警确认时间   |
+| ackNotes    | String   | 报警确认备注    |
+| operator    | String   | 报警确认人     |
+| ackMode     | String   | 报警确认类型 (Auto,Manual,ManualNeedInfo)   |
 
 ## POST /v1/historicalData/alarms
 
-Get historical alarms
+读取历史报警
 
-Protocol: Https
+协议: Https
 
-Request Playload(JsonObject):
+请求负载(JsonObject):
 
-Field descriptions are the same as **GET /v1/historicalData/alarms**, only in POST format
+字段说明与 **GET /v1/historicalData/alarms** 相同，仅为 POST 形式
 
-Response Payload(JsonArray)):
+响应负载(JsonArray):
 
-The field descriptions are consistent with the response structure of **GET /v1/historicalData/alarms.**
+字段说明与 **GET /v1/historicalData/alarms** 的响应结构一致
 
 ## GET /v1/historicalData/pagedAlarms
 
-Get paged historical alarms
+分页读取历史报警
 
-Protocol: Https
+协议: Https
 
-Request Playload(QueryString):
+请求负载(QueryString):
 
-| Name         | Type     | Description                                                                                                                          |
-|--------------|----------|--------------------------------------------------------------------------------------------------------------------------------------|
-| pageIndex    | Integer  | Current page number (starting from 1)                                                                                                |
-| pageSize     | Integer  | Number of records returned per page                                                                                                  |
-| providerName | String   | The history database provider name                                                                                                   |
-| startTime    | DateTime | The start time                                                                                                                       |
-| endTime      | DateTime | The end time                                                                                                                         |
-| path         | String[] | The tag path list                                                                                                                    |
-| priority     | String[] | The alarm priority list(Low,Medium,High,Critical)                                                                                    |
-| state        | String[] | The alarm sate list(Active,Unacked,Acked,Cleared)                                                                                    |
-| type         | String[] | The alarm type list(H ,H2 , H3,H4,L,L2,L3,L4,RateOfChange,Equivalent,TrueToFalse,FalseToTrue)                                        |
-| asset        | String[] | The asset list                                                                                                                       |
-| expression   | String   | Expression,Example1:priority == "Low", Example2:path.Contains("Device"), Example3:state.HasFlag("Active") &&stae.HasFlag("“Unacked") |
+| 名称         | 类型     | 描述|
+|:--------------|:----------|:--------------|
+| pageIndex    | Integer  | 当前页码（从 1 开始）  |
+| pageSize     | Integer  | 每页返回的数据条数  |
+| providerName | String   | 历史库名称   |
+| startTime    | DateTime | 开始时间   |
+| endTime      | DateTime | 结束时间   |
+| path         | String[] | 变量列表   |
+| priority     | String[] | 优先级列表(Low,Medium,High,Critical)    |
+| state        | String[] | 报警状态列表(Active,Unacked,Acked,Cleared)         |
+| type         | String[] | 报警类型列表(H ,H2 , H3,H4,L,L2,L3,L4,RateOfChange,Equivalent,TrueToFalse,FalseToTrue)                           |
+| asset        | String[] | 资产列表   |
+| expression   | String   | 表达式，例1：priority == "Low"，例2：path.Contains("Device")，例3：state.HasFlag("Active") && stae.HasFlag("“Unacked") |
 
-Response Payload(JsonObject):
+响应负载(JsonObjec):
 
-| Name       | Type                     | Description                                                                                                    |
-|------------|--------------------------|----------------------------------------------------------------------------------------------------------------|
-| TotalCount | Integer                  | Total number of historical alarm records                                                                       |
-| TotalPage  | Integer                  | Total number of pages of historical alarms                                                                     |
-| Data       | AssetAlarmHistoryModel[] | List of alarm data, with the same field structure as the response payload of **GET /v1/historicalData/alarms** |
+| 名称       | 类型                     | 描述     |
+|:------------|:--------------------------|:----------------|
+| TotalCount | Integer                  | 历史报警的总条数    |
+| TotalPage  | Integer                  | 历史报警的总页数    |
+| Data       | AssetAlarmHistoryModel[] | 报警数据列表，字段结构与 **GET /v1/historicalData/alarms** 的响应负载一致 |
 
 ## POST /v1/historicalData/pagedAlarms
 
-Get paged historical alarms
+分页读取历史报警
 
-Protocol: Https
+协议: Https
 
-Request Playload(JsonObject)):
+请求负载(JsonObject):
 
-Field descriptions are the same as in **GET /v1/historicalData/pagedAlarms**, but in POST format only.
+字段说明与 **GET /v1/historicalData/pagedAlarms** 相同，仅为 POST 形式
 
-Response Payload(JsonObject):
+响应负载(JsonObjec):
 
-The field descriptions are consistent with the response structure of **GET /v1/historicalData/pagedAlarms**
+字段说明与 **GET /v1/historicalData/pagedAlarms** 的响应结构一致

@@ -1,51 +1,52 @@
-# Alarm Filter
+# 报警筛选
 
-You can filter the data according to the conditions on the control. The historical alarm will only display the alarm information in the alarm history library under the current node, and the historical alarm data at the remote node will not be displayed.
+您可以在控件上按照条件对数据进行筛选。历史报警中只会显示当前节点下报警历史库中的报警信息，不会显示远端的历史报警数据。
 
-Both editor and running pages support data filtering.
+设计时和运行时页面均支持数据筛选。
 
-## Filter Data On Editor 
+## 设计时数据筛选
 
-Data filtering can be performed in the "Properties" -> "Filter" of the control. After the filter are set here, the data is filtered and displayed according to the set conditions on the running page.
+在控件的“属性”->“筛选条件”中可以进行数据筛选。此处设置了筛选条件后，在运行页面，按照已设置的条件进行数据筛选和显示。
 
 ![alt text](14.png)
 
-#### Filter by history storage
+#### 按历史库筛选
 
-It can be filtered according to the selected alarm history storage，only one history storage that created in the "Alarming"->"History Storage" page can be selected. When you select a history storage, all historical alarms in the database where the history storage is located will be displayed on the control.
+可以根据所选的报警历史库进行筛选，仅可选择一个在“报警”->“历史库”页面创建的历史库。选择历史库后，会在控件上显示该历史库所在数据库内的所有历史报警信息。
 
- For example, you can choose a historical storage that only stores Critical and High alarms. The min priority configuration of the historical library is high.
+例如，可以选择一个历史库，该历史库只存储高级和紧急的报警。历史库的最低优先级配置为高级。
 
 ![alt text](15.png)
 
-#### Filter by status
+#### 按状态筛选
 
-It can be filtered according to the status of the alarm. For example, you can enable the "Active, Acked" and "Cleared, Acked" properties to display only the acknowledged alarm on the control.
+可以根据报警的状态进行筛选。例如，可以通过启用“激活，已确认”和 “已清除，已确认”属性，在控件上仅显示已确认的报警。
 
-#### Filter by Priority
+#### 按等级筛选
 
-It can be filtered according to the priority of the alarm. For example, only these two levels of alarms can be displayed on the control by enabling the "Critical" and "High" .
+可以根据报警的等级进行筛选。例如，可以通过启用“紧急”和 “高级”属性，在控件上仅显示这两个等级的报警。
 
-#### Filter by type
+#### 按类型筛选
 
-It can be filtered according to the type of alarm. For example, you can enable the "off-> on" and "on-> off" properties to display only the alarm of bool jump on the control.
+可以根据报警的类型进行筛选。例如，可以通过启用“关- >开”和 “开->关”属性，在控件上仅显示布尔值跳变的报警。
 
-## Filter Data On Running Page
+## 运行时数据筛选
 
-On the running page, there are 4 places where you can set filter.
+在运行页面，有4处地方可以设置筛选条件。
 
 ![alt text](16.png)
 
-1. Enter the query content in the search box, fuzzy search for the input content in all columns of the control.
-2. Click the calendar control to set the time period for the query. You can query the data of the last 24 hours by default, and you can also set the query range by yourself.
+1.  在搜索框中输入查询内容，在控件的 所有列中对输入的内容进行模糊 查找。
+2. 点击日历控件，设置查询的时间段。默认查询最近24小时数据，也可以自行设置查询范围。
 
     ![alt text](17.png)
 
-3. Click the filter button to filter the data. The filter conditions are the same as the design page, including: history storage, alarm status, alarm level, and alarm type. Click the reset button to restore the filter to the filter set on the design page.
-4. Filter the data in the panel. The options that have been enabled in the filter are displayed by default. You can quickly disable filters by clicking the option. For example, the following figure only shows an alarm whose status is "Cleared, Acked" and the alarm level is "Critical" .
+3. 点击筛选按钮进行数据筛选，筛选条件同设计页面，包含：历史库、报警状态、报警等级、报警类型。点击重置按钮，将筛选条件恢复到设计页面设置的筛选条件。
+
+4. 在折叠面板中进行数据筛选。此处默认显示在筛选条件中已经启用的选项。可以点击选项快速禁用筛选条件。例如下图仅显示状态为“已清除，已确认”，报警等级为“紧急”且变量路径中包含“液位”的报警。
 
     ![alt text](18.png)
 
-**Note:** The enable/disable of options in the filter panel only indicates whether data is displayed in the control, but does not mean that the data is not queried. It will not affect the enable/disable status of options in the filtering criteria.   For example, in the filtering criteria, only 'Active, Unacked' is enabled, but in the filtering panel, all options are enabled. 
- 
+**说明**：筛选面板中选项的启用/禁用，仅表示是否在控件中显示数据，并不代表不查询数据，不会影响筛选条件中各选项的启用/禁用状态。  例如在筛选条件中，只有“激活，未确认”启用，但在筛选条件中，所有选项均处于启用状态。  
+
 ![alt text](19.png)

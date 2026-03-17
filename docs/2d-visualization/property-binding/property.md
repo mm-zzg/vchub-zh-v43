@@ -1,26 +1,29 @@
-# Property
+# 属性
 
-Property binding is to bind the properties of one control to another control. When this property changes, the new value will be pushed to the property that is bound to it.
+属性绑定是将一个控件的属性绑定到另一个控件上。当该属性发生更改时，新值将推送到设置了绑定的属性中。
 
-**Note:** Only some properties can be bound. 
+**说明**：只有部分属性可以绑定。
 
-## **Binding**
+## 绑定
 
-**Example**
+**示例**
 
-Display the value in the "Number Input " on the "Slider".
+在“滑动条”上显示“数字输入框”内的值。
 
-1. Draw a Slider" and "Number Input " on the page.
-2. Select "Slider" and click the binding button of value.
-
-    ![alt text](16.png)
-
-3. Select property , bind it to the value property of the control "NumberInput1", and click the OK button.
+1. 在画面上绘制一个“滑动条”和“数字输入框”。
+2. 选中“滑动条”，在属性中点击值的绑定按钮。
 
     ![alt text](17.png)
 
-4. Click the "Preview" button on the editor to enter the preview page.
-5. Enter a value in the Input Number and the value will be displayed on the slider.
+3. 选择属性绑定，绑定到控件“数字输入框1”的 value 属性上，点击确认按钮。
 
-    ![property-binding](../../assets/images/property-binding.png)
+    ![alt text](18.png)
+
+4. 在编辑器上点击“预览”按钮，进入预览页面。
+
+5. 在数字输入框内输入数值，该值将显示在滑动条上。
+
+    ![alt text](19.gif)
+
+
 

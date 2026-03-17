@@ -1,63 +1,69 @@
-# System Tag
+# 系统变量
 
-System tags are used to display current system related status information, such as alarm data, memory usage, performance indicators, etc. System tags cannot be deleted or modified.
+系统变量用于显示当前系统相关的状态信息，如报警数据，内存使用情况、性能指标等，系统变量不能删除或修改。
 
-You can view the detailed system tags by selecting the asset named "System" in the Asset window.
+您可以在资产窗口中，选择名为”System“的资产，查看详细的系统变量。
 
 ![alt text](9.png)
 
-The system tags contain the Client and Server directories.
+系统变量包含 **Client** 和 **Server** 目录。
 
-**Client**: The device that the user uses to log on to VC Hub, such as an office computer;
+Client：用户登录WAGO SCADA时使用的设备，如办公电脑等；
 
-**Server**: The device on which VC Hub is installed.
+Server：安装了WAGO SCADA的设备。
 
-The **Client** directory contains Username and Role. **Read-only**, not editable.
+**Client** 目录包含UserName和Role。只读，不可编辑。
 
 ![alt text](10.png)
 
-| **Name** | **Description**                             | **Data Type** |
-|----------|---------------------------------------------|---------------|
-| Username | The user name of the current login，e.g. Sam | String        |
-| Role     | The role of the current login, e.g. Admin   | String        |
+| **属性** | **描述**                  | **数据类型** |
+|:----------|:---------------------------|:--------------|
+| UserName | 当前登录的用户名，例如：Sam | String       |
+| Role     | 当前登录的角色，例如：Admin | String       |
 
-The Server folder contains the following tags:
+**Server** 文件夹包含以下变量：
 
 ![alt text](11.png)
 
-The details are shown in the following table:
+详细信息如下表所示：
 
-| **Name**                                                                                                                                                                                                   | **Description**                                                                                                                                                                                                                                                   | **Data Type** |
-|------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|---------------|
-| CurrentDateTime                                                                                                                                                                                            | The time of the server where the current system is located.                                                                                                                                                                                                       | DateTime      |
-| NodeName                                                                                                                                                                                                   | The node name of the current system.                                                                                                                                                                                                                              | String        |
-| Timezone                                                                                                                                                                                                   | The time zone of the current server.                                                                                                                                                                                                                              | String        |
-| **Alarm**                                                                                                                                                                                                  |                                                                                                                                                                                                                                                                   |               |
-| ActiveAcked                                                                                                                                                                                                | The number of alarms that are currently active and acknowledged.                                                                                                                                                                                                  | Integer       |
-| ActiveUnacked                                                                                                                                                                                              | The number of alarms that are currently active and unacknowledged.                                                                                                                                                                                                | Integer       |
-| ClearAcked                                                                                                                                                                                                 | The number of alarms that are currently in the cleared, acknowledged state.                                                                                                                                                                                       | Integer       |
-| ClearUnacked                                                                                                                                                                                               | The number of alarms that are currently in the cleared, unacknowledged state.                                                                                                                                                                                     | Integer       |
-| **Devices**(One separate folder per device type. Each device is displayed as a separate folder under each device type folder, and 2 system tags are displayed under the device folder: Connected, Enabled.) |                                                                                                                                                                                                                                                                   |               |
-| Connected                                                                                                                                                                                                  | The current connection status of the device, connected is shown as true, unconnected is shown as false.                                                                                                                                                           | Bool          |
-| Enabled                                                                                                                                                                                                    | The current enabled state of the device is shown as true for enabled and false for disabled, and can be enabled and disabled in the “Enabled State” column of the device list.  MQTT Native and WAGO Protocol devices only have the Enabled tag.                  | Bool          |
-| **Performance**                                                                                                                                                                                            |                                                                                                                                                                                                                                                                   |               |
-| AvailableDiskSpace                                                                                                                                                                                         | The available space of the disk where the current system is located, the unit is M (megabytes), accurate to 1 decimal place. For example, 1200.5 means 1200.5M.                                                                                                   | Double        |
-| CPUUtilization                                                                                                                                                                                             | CPU utilization of the current system, accurate to 3 decimal places. For example: 0.043, means 4.3%.                                                                                                                                                              | Double        |
-| DiskUtilization                                                                                                                                                                                            | The disk utilization of the current system, accurate to 3 decimal places. For example, 0.028 means 2.8%.                                                                                                                                                          | Double        |
-| MaxMemory                                                                                                                                                                                                  | The maximum operating memory of the server where the current system is located, in M (megabytes), accurate to 1 decimal place. For example, 15986, means 15986M.                                                                                                  | Double        |
-| MemoryUsage                                                                                                                                                                                                | The memory used by the current system, in M, accurate to 1 decimal place. For example, 1899 means 1899M.                                                                                                                                                          | Double        |
-| MemoryUtilization                                                                                                                                                                                          | The memory utilization of the current system, accurate to 3 decimal places. For example, 0.083 means 8.3%.                                                                                                                                                        | Double        |
-| **Redundancy**                                                                                                                                                                                             |                                                                                                                                                                                                                                                                   |               |
-| **CurrentNode**                                                                                                                                                                                           |                                                                                                                                                                                                                                                                   |               |
-| IsActive                                                                                                                                                                                                   | Whether the current node is active.                                                                                                                                                                                                                               | Bool          |
-| IsMaster                                                                                                                                                                                                   | Whether the current node is the master.                                                                                                                                                                                                                           | Bool          |
-| Mode                                                                                                                                                                                                       | The operating mode of the current node. Contains: Independent, Redundancy, Master, Backup, Unknown.                                                                                                                                                               | String        |
-| State                                                                                                                                                                                                      | The state of the current node.  If the current node is the master, the value of this state is one of Running, Standby, Connecting, Disconnected, Faulted, Other;  If the current node is a standby node, the value of this state is Standby_Cold or Standby_Warm. | String        |
-| **PeerNode**                                                                                                                                                                                              |                                                                                                                                                                                                                                                                   |               |
-| IsConnected                                                                                                                                                                                                | Whether to connect with other nodes to form redundancy.                                                                                                                                                                                                           | Bool          |
-| NodeId                                                                                                                                                                                                     | The Id of the node to connect to.                                                                                                                                                                                                                                 | String        |
+| 属性  | 描述   | 数据类型 |
+|:-------------|:--------------------|:--------------|
+| CurrentDateTime     | 当前系统所在服务器的时间。  | DateTime     |
+| NodeName   | 当前系统的节点名称。  | String       |
+| Timezone  | 当前系统所在服务器的时区。     | String       |
+| **Alarm**   |   |              |
+| ActiveAcked  | 当前处于 **激活，已确认** 状态的报警条数。   | Integer      |
+| ActiveUnacked | 当前处于 **激活，未确认** 状态的报警条数。  | Integer      |
+| ClearAcked      | 当前处于 **已清除，已确认** 状态的报警条数。   | Integer      |
+| ClearUnacked   | 当前处于 **已清除，未确认** 状态的报警条数。 | Integer      |
+| **Devices**(每个设备类型一个独立文件夹。每个设备类型文件夹下，每个设备显示为一个独立文件夹，在设备文件夹下显示2个系统变量：Connected，Enabled。)|   |              |
+| Connected   | 当前设备的连接状态，已连接显示为true，未连接显示为false。  | Bool         |
+| Enabled  | 当前设备的启用状态，已启用接显示为true，禁用显示为false。可以在设备列表的“启用状态”一列，进行启用和禁用。  <br>MQTT Native和WAGO Protocol设备只有Enabled变量。   | Bool         |
+| **Performance**  |    |              |
+| AvailableDiskSpace   | 当前系统所在磁盘的可用空间，单位为M(兆)，精确到小数点后1位。如1200.5，表示1200.5M。  | Double       |
+| CPUUtilization  | 当前系统的CPU使用率，精确到小数点后3位。如：0.043，表示4.3%。     | Double       |
+| DiskUtilization  | 当前系统的磁盘使用率，精确到小数点后3位。如：0.028，表示2.8%。    | Double       |
+| MaxMemory    | 当前系统所在服务器的最大运行内存，单位为M(兆)，精确到小数点后1位。如15986，表示15986M。 | Double       |
+| MemoryUsage    | 当前系统已使用的内存，单位为M，精确到小数点后1位。如1899，表示1899M。   | Double       |
+| MemoryUtilization  | 当前系统的内存使用率，精确到小数点后3位。如：0.083，表示8.3%。  | Double       |
+| **Redundancy**   |   |              |
+| **CurrentNode**   |  |              |
+|IsActive | 当前节点是否处于活动状态。   | Bool   | 
+| IsMaster | 当前节点是否是主节点。    | Bool   | 
+| Mode     | 当前节点的工作模式。包含：Independent(独立)，Redundancy(冗余)，Master(主服务器)，Backup(备用服务器)，Unknown(未知)。 | String |
+| State    | 当前节点的状态。  如果当前节点是主节点，则该状态的值为Running，Standby，Connecting，Disconnected，Faulted，Other的其中之一；  如果当前节点是备节点，则该状态的值为Standby_Cold(冷备)或Standby_Warm(热备)。 | String | 
+| **PeerNode**  |     |   |
+| IsConnected | 是否和其他节点连接，形成冗余。 | Bool   | 
+ | NodeId      | 连接到的节点的Id。            | String | 
 
-The system tags under the **Server** directory support editing. **Double-click** a tag or select **"Edit"** from the right-click menu to open the **edit window**.
+Server目录下的系统变量支持编辑，双击变量或者在变量的右键菜单中选择“编辑”，打开编辑窗口。
+
+![alt text](11.png)
+
+
+
+
 
 
 

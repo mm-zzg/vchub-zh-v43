@@ -1,45 +1,43 @@
 # Multi-State Button
 
-Multi-State Button is a type of button control that can switch between more than two states. Each state can be configured with its own unique appearance (color, text) and corresponding action logic.
+Multi-State Button 是一种可在两个以上状态之间切换的按钮控件。每个状态都可以配置独立的外观（颜色、文字） 和对应的动作逻辑。
 
-![alt text](35.png)
+![alt text](39.png)
 
-**Properties**
+**属性**
 
-| **Name**   | **Description**   |
-|------------|-----------|
-| Name | The name of this control. |
-| X | The distance between the left side of the control and the left side of the canvas.  |
-| Y  | The distance between the top of the control and the top of the canvas.  |
-| W | The width of the control.   |
-| H   | The height of the control. |
-| ![alt text](32.png)| The rounded corner curvature of the control. |
-| Current Value     | Match this value with the status value under the "Button" category. Based on the matching result, display the appearance of the corresponding button state. |
-| Control Value | Bind to a property that controls the status. When the corresponding button is pressed, the current value of the button will be written to the property bound to "Data" -> "Control Value". Usually, the current value and the control value will be bound to the same property.  |
-| Border | Set the border width.   |
-| Button->States    | Set the appearance style of the control when it is in different state values. You can add your own states as needed.  <br>![alt text](36.png) <br>- **Selected Text**: The text content displayed when the button is in the selected state.  <br>- **Unselected Text**: The text content displayed when the button is in the unselected state. <br>- **Value**: The value of the state. <br>- **Selected Background**: The background color when the button is in the selected state. <br>- **Unselected Background**: The background color when the button is in the unselected state.   <br>- **Selected Font**: The font color when the button is in the selected state. <br>- **Unselected Font**: The font color when the button is in the unselected state.  <br>- **Selected Border**: The border color when the button is in the selected state. <br>- **Unselected Border**: The border color when the button is in the unselected state.  |
-| Button->Style  | Used to set whether the button is displayed horizontally or vertically.    |
-| Button->Button Gap    | Set the spacing between two adjacent buttons, in units of px.   |
-| Font   | Set the font for text content. Including font type, font size, font color, bold, italic, underline, horizontal alignment, and vertical alignment.   |
+| 名称  | 描述  |
+|:-------------|:----------|
+| 名字 | 此控件的名称。  |
+| X   | 控件左侧距画布左侧的距离，单位px。  |
+| Y   | 控件顶部距画布顶部的距离，单位px。  |
+| W  | 控件的宽度，单位px。  |
+| H  | 控件的高度，单位px。 |
+| ![alt text](40.png) | 控件的圆角曲率。 |
+| 当前值  | 将该值去和"按钮"分类下的状态值进行匹配，根据匹配到的结果，显示对应状态的按钮外观。 |
+| 控制值  | 绑定到一个控制状态的属性。当对应按钮被按下时，当前按钮对应的值会被写入“数据”->“控制值”绑定的属性中。通常情况下，当前值和控制值会绑定同一属性。  |
+| 边框  | 设置控件的边框粗细。 |
+| 按钮->状态 | 设置控件在不同状态值时的外观样式。可以根据需要，自行添加状态。  <br>![alt text](41.png) <br>- **选中文本**：按钮处于选中状态时显示的文本内容。 <br>- **未选中文本**：按钮处于未选中状态时显示的文本内容。 <br>- **值**：按钮对应的值。 <br>- **选中背景色**：按钮处于选中状态时的背景色。 <br>- **未选中背景色**：按钮处于未选中状态时的背景色。 <br>- **选中字体颜色**：按钮处于选中状态时的字体颜色。 <br>- **未选中字体颜色**：按钮处于未选中状态时的字体颜色。     <br>- **选中边框色**：按钮处于选中状态时的边框色。 <br>- **未选中边框色**：按钮处于未选中状态时的边框色。 |
+| 按钮->样式   | 设置按钮是水平显示还是垂直显示。  |
+| 按钮->按钮间距 | 设置相邻2个按钮之间的间距，单位px。 |
+| 字体 | 设置文本内容的字体。包括字体型号、字体大小、粗体、倾斜、水平对齐方式、垂直对齐方式。  |
 
-**Event**
+**动作**
 
-Allows you to perform specific events based on certain conditions. See the full description of each event on the **2D Visualization-> Event** page.
+允许您基于某种条件执行特定的动作。请参阅“[动作](../../event/index.md)”页上各种动作的完整描述。
 
-**Example**
+**示例**
 
-The running status of the device can be obtained through the Multi-State button control.
+可通过Multi-State button控件设备的运行状态。
 
-1. Add a Multi-State button control to the page.
-2. The current value is bound to a numeric tag: "Demo:status". This tag is writable.
-3. The control value is also bound to the tag: "Demo:status".
-4. Button properties are as follows: 
+1. 在画面上添加一个Multi-State button控件
+2. 当前值绑定到一个数值型变量：“Demo:status”。该变量可写。
+3. 控制值也绑定到变量：“Demo:status”
+4. 按钮属性如下：
 
-    ![alt text](37.png)
+    ![alt text](42.png)
 
-5. Click the button on the running page to control the running status of the device and view the button style.
+5. 在运行页面点击按钮来控制设备的运行状态，查看按钮样式。
 
-    ![multi-state-button](../../../assets/images/multi-state-button.gif)
-
-
+    ![alt text](43.gif)
 

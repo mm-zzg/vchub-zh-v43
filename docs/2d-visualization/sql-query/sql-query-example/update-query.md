@@ -1,72 +1,91 @@
 # Update Query
 
-## Example
+## 场景举例
 
-Add new data to the database.
+向数据库中新增数据。
 
-## Steps
+## 步骤
 
-#### Creating a database connection
+#### 创建数据库连接
 
-On the "Databases"->"Database Connection" page, create a new database connection named **TestSQLQuery**. 
+在“数据库”->“数据库连接”页面，新建一个数据库连接,名称为 **TestSQLQuery**。具体步骤请参考 [数据库连接](../../../management-platform/databases/database-connection/index.md)。
 
 ![alt text](1.png)
 
-
-There is a table named `person_management` in the database, which is used to store personnel information. Its structure is as follows:
+数据库中存在表 `person_management`，该表用于记录 `人员` 的信息，其结构如下。
 
 | Id | name          | email               | gender | age |
-|----|---------------|---------------------|--------|-----|
-| 1  | Alice Johnson | `alice@example.com`   | Female | 18  |
-| 2  | Bob Smith     | `bob@example.com`     | Male   | 19  |
-| 3  | Charlie Brown | `charlie@example.com` | Male   | 19  |
-| 4  | Diana White   | `diana@example.com`   | Female | 18  |
-| 5  | Edward Green  | `edward@example.com`  | Female | 20  |
+|:----|:---------------|:---------------------|:--------|:-----|
+| 1  | Alice Johnson | alice@example.com   | Female | 18  |
+| 2  | Bob Smith     | bob@example.com     | Male   | 19  |
+| 3  | Charlie Brown | charlie@example.com | Male   | 19  |
+| 4  | Diana White   | diana@example.com   | Female | 18  |
+| 5  | Edward Green  | edward@example.com  | Female | 20  |
 
-#### Create SQL Query
+#### 创建SQL Query
 
-1. Create the project, click the **Design** button in the action bar to enter the editor.
-2. Create an SQL Query by right-clicking on the SQL Query node in the 2D editor and selecting **Add** button.<br>
-    ![alt text](19.png)
-3. In this example, we set the name of this SQL Query to **UpdateQuery**.
+1. 创建项目，在操作栏点击项目的 **设计** 按钮，进入编辑器。
+2. 在编辑器的“项目”窗口的SQL Query节点上，单击鼠标右键，选择新增，创建一个SQL Query。
+
+    ![alt text](2.png)
+
+3. 在此示例中，我们将该SQL Query的名称设置为 **UpdateQuery**。
+
     ![alt text](20.png)
-     - **Database Connection:** Select an item whose status is "Connected "in the "Databases" ->"Database Connection" list. Here we select the **TestSQLQuery** already created in Step 1.
-     - **Query Type:** In this example, we want to update the table data, so we choose **Scalar Query**.
-     - **SQL Editor:** Write the following SQL statement that adds a new row to the`person_management` table with a parameter.
+
+    **数据库连接**：选择一条在“数据库”->“数据库连接”列表中状态为“已连接”的数据。在此我们选择步骤1中已经创建的 **TestSQLQuery**。
+
+    **查询类型**：在这个例子中，我们要更新表的数据，因此选择‘**Update Query**’。
+
+    **SQL编辑器**：编写如下查询语句，该 SQL 语句通过参数给 `person_management` 表新增记录。
+
     ```sql
     INSERT INTO person_management (name, email, gender, age) 
     VALUES (@name, @email, @gender, @age);
     ```
-    **Parameters:** Create a parameter called age. Acts as a placeholder in an SQL statement to which you can pass concrete values when executing a query.
+    
+    **参数**：在SQL语句中充当占位符，在执行查询时，您可以为其传递具体的值。
+
     ![alt text](21.png)
-4. Click the "Test" button.You can see that Result returns the data 1, which means that the execution was successful, affecting a row of data.<br>
-   **Note**：Executing statements of type '**Update Query**' via the test button will also actually modify the database contents. 
-   ![alt text](22.png)
 
-#### Use Update Query
+4. 点击“测试”按钮，可以看到Result返回数据1，代表执行成功，影响了一行数据。
 
-1. In the Design Page **Tools** window, add 4 Label, 2 Text input, 1 DropDown, 1 NumberInput, and 1 Button to the page.<br>
-    ![alt text](23.png)<br>
-    Compose a simple Add data page as follows.<br>
+    **注意**：通过测试按钮执行‘**Update Query**’类型的语句，也会真正修改数据库内容。 
+
+    ![alt text](22.png)
+
+#### 使用Update Query
+
+1. 在设计页面 **工具** 窗口中，添加4个文本标签，2个文本输入框，1个下拉框，1个数字输入框，1个按钮到画面中。
+
+    ![alt text](23.png)
+
+    组成如下一个简单的添加数据页面。
+
     ![alt text](24.png)
-2. Select the button control and click the icon pointed by the arrow to open the configuration page of the action.
+
+2. 选中按钮控件，点击箭头指的图标，打开动作的配置页面。
+
     ![alt text](25.png)
-3. Configure the **mouse pressed** event for the button.Each time the button is clicked, get the values for the input and drop-down fields, and add the values to the database.
+
+3. 为按钮配置 **鼠标按下** 事件，每次点击按钮时获取输入框和下拉框的值，将值添加到数据库中。
+
     ![alt text](26.png)
+
     ```typescript
-    // Get name
+    // 获取name
     const nameValue = System.Page.getPropertyValue('nameInput#text')
-    // Get email
+    // 获取email
     const emailValue = System.Page.getPropertyValue('emailInput#text')
-    // Get gender
+    // 获取gender
     const genderValue = System.Page.getPropertyValue('genderDropdown#selectedValue')
-    // Get age
+    // 获取age
     const ageValue = System.Page.getPropertyValue('ageInput#value')
-    // Return if any value is missing
+    //如果有任意值不存在就返回
     if (!nameValue || !emailValue || !genderValue || !ageValue) {
         return;
     }
-    // Execute script
+    //执行脚本
     const result = await System.Db.runSqlQuery('UpdateQuery', [
         {
             name: 'name',
@@ -85,24 +104,23 @@ There is a table named `person_management` in the database, which is used to sto
             value: ageValue
         },
     ])
-    // If execution is successful, clear values
+    // 如果执行成功清空值
     if (result) {
-        // Clear name
+        // 清空name
         System.Page.setPropertyValue('nameInput#text', '')
-        // Clear email
+        //清空email
         System.Page.setPropertyValue('emailInput#text', '')
-        // Clear gender
+        // 清空gender
         System.Page.setPropertyValue('genderDropdown#selectedValue', 'Male')
-        // Clear age
+        // 清空age
         System.Page.setPropertyValue('ageInput#value', '')
-        // Refresh table data
-        const table = await System.UI.findControl('Table2')
+        // 表格重新查询数据
+        const table = await System.UI.findControl('表格2')
         table.reload()
     }
-
     ```
-4. Click the preview button on the page, and press the button on the preview page to add data to the database. When the new data is added, the table is reloaded and the new data is displayed.
-    ![update-query](../../../assets/images/update-query.gif)
+ 
+4. 点击画面的预览按钮，在预览页面按下按钮，为数据库添加数据。新增数据后，表格将重新加载，并显示新增的数据。
 
-
+    ![alt text](27.gif)
 

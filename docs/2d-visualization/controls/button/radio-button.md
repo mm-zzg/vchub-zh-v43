@@ -1,45 +1,44 @@
-# Radio Button
+# 单选按钮
 
-The radio button control is used to select one of multiple mutually exclusive options. When the user selects a radio button, the other options will automatically be deselected, ensuring that only one option is selected.
+单选按钮控件用于在多个互斥选项中选择一个，当用户选择一个单选按钮时，其他选项将自动取消选择，确保只有一个选项被选中。
 
-![alt text](23.png)
+![alt text](25.png)
 
-**Properties**
+**属性**
 
-| **Name**       | **Description**  |
-|----------------|-------------|
-| Name           | The name of this control.|
-| X              | The distance between the left side of the control and the left side of the canvas. |
-| Y              | The distance between the top of the control and the top of the canvas.|
-| W              | The width of the contro.  |
-| H              | The height of the control. |
-| Option Name    | The name of the radio button's option. The "name" here corresponds to the "selected text". <br>![alt text](24.png) |
-| Option Value   | The value of the radio button's option. The "name" here corresponds to the "selected value".  <br>![alt text](25.png)  |
-| Selected Text  | The corresponding text content of the current option. |
-| Selected Value | The value of the current option.   <br>**Note:** You can only choose between selected text and selected value. After setting one option, the other option will be disabled. Only after the currently set option value is cleared or unbound, another option becomes editable. |
-| Style          | The layout style for radio buttons. Includes horizontal and vertical.  |
-| Fill           | The fill color of the radio button.  <br>![alt text](26.png)  |
-| Border         | The border color of the radio button.   <br>![alt text](27.png)|
-| Shadow         | Sets the shadow effect of the control. You can set the outer shadow and inner shadow.  <br> **Outer**   <br>**- Enable**: Whether to enable the shadow effect  <br>**- Color**: Used to set the shadow color <br> **- X**: Controls how far the shadow is shifted horizontally.  <br>`X = 10` → shadow moves 10px to the right  <br>`X = -5` → shadow moves 5px to the left <br>**- Y**: Controls how far the shadow is shifted vertically.  <br>`Y = 8` → shadow moves 8px downward  <br>`Y = -3` → shadow moves 3px upward <br> **- Blur**: Controls how soft or sharp the edges of the shadow appear. Higher values make the shadow more blurry and spread out. <br> **Inner**  <br>**- Enable**: Whether to enable the shadow effect  <br>**- Color**: Used to set the shadow color <br>**- X**: Controls how far the shadow is shifted horizontally.  <br>`X = 10` → shadow moves 10px to the right  <br>`X = -5` → shadow moves 5px to the left <br>**- Y**: Controls how far the shadow is shifted vertically.  <br>`Y = 8` → shadow moves 8px downward  <br>`Y = -3` → shadow moves 3px upward <br>**- Blur**: Controls how soft or sharp the edges of the shadow appear. Higher values make the shadow more blurry and spread out. <br>  **- Spread**: Controls how much the shadow **expands or contracts** from the shape.
-|
-| Font           | Set the font for text content. Including font type, font size, font color, bold, italic, and underline.   |
+| 名称 | 描述    |
+|:----------|:------------|
+| 名字     | 此控件的名称。  |
+| X        | 控件左侧距画布左侧的距离，单位px。 |
+| Y        | 控件顶部距画布顶部的距离，单位px。   |
+| W        | 控件的宽度，单位px。   |
+| H        | 控件的高度，单位px。  |
+| 选项名称 | 单选按钮的选项的名称。此处的“名称”和“选中文本”相对应。  <br>![alt text](26.png) |
+| 选项值   | 单选按钮的选项的值。此处的“名称”和“选中值”相对应。 <br>![alt text](27.png) |
+| 选中文本 | 当前选项的对应文本内容。 |
+| 选中值   | 当前选项的值。  <br>**说明**：选中文本和选中值只能二选一，设置一个选项后，另一个选项处于禁用状态。只有将当前设置的选项值清空或者解除绑定后，另一个选项才变为可编辑状态。|
+| 样式     | 单选按钮的布局样式。包含水平和垂直。  |
+| 填充色   | 单选按钮的填充色。  <br>![alt text](28.png)|
+| 边框色   | 单选按钮的边框颜色。 <br>![alt text](29.png)|
+| 阴影     | 设置控件的阴影效果。可以设置外阴影和内阴影。  <br> **外阴影**   <br>- **启用**：是否启用阴影效果  <br>- **颜色**：用于设置阴影颜色  <br>- **X**：控制阴影在水平方向上的偏移量。  <br>`X = 10` → 阴影往右移了10像素  <br>`X = -5` → 阴影往左移了5像素  <br>- **Y**：控制阴影在垂直方向上的偏移量。  <br>`Y = 8` → 阴影往下移了8像素  <br>`Y = -3` → 阴影往上移了3像素   <br>- **模糊**：控制阴影的 **模糊程度**，模糊值越大，边缘越柔和、越“自然”。 <br>**内阴影** <br>- **启用**：是否启用阴影效果 <br>- **颜色**：用于设置阴影颜色  <br>- **X**：控制阴影在水平方向上的偏移量。  <br>`X = 10` → 阴影往右移了10像素  <br>`X = -5` → 阴影往左移了5像素 <br>- **Y**：控制阴影在垂直方向上的偏移量。  <br>`X = 8` → 阴影往下移了8像素  <br>`Y = -3` → 阴影往上移了3像素  <br>- **模糊**：控制阴影的 **模糊程度**，模糊值越大，边缘越柔和、越“自然”。<br>- **扩散**：控制阴影的大小|
+| 字体     | 设置文本内容的字体。包括字体型号、字体大小、字体颜色、粗体、倾斜、下划线。   |
 
-**Event**
+**动作**
 
-Allows you to perform specific events based on certain conditions. See the full description of each event on the **2D Visualization-> Event** page.
+允许您基于某种条件执行特定的动作。请参阅“[动作](../../event/index.md)”页上各种动作的完整描述。
 
-**Example**
+**示例**
 
-Change the device's operating mode via radio buttons.
+通过单选按钮改变设备的工作模式。
 
-![alt text](28.png)
+![alt text](30.png)
 
-| **Property** | **Value**      |
-|--------------|----------|
-| Options      | Set the option name and option value.  <br>![alt text](29.png) |
+| 属性 | 值    |
+|:----------|:--------------------|
+| 选项     | 设置选项名称和选项值。  <br>![alt text](31.png)|
 
-1. Add a radio button control to the page.
-2. Set the value change event of the action attribute and enable tag assignment. Assign the value of the selected radio button to the tag and control the working mode of the device through the tag. 
+1. 在画面上添加一个单选按钮控件。
+2. 设置 **选中变化** 事件，启用 **变量赋值**。将所选的单选按钮的值赋值给变量，通过变量控制设备的工作模式。
 
-    ![alt text](30.png)
+    ![alt text](32.png)
 

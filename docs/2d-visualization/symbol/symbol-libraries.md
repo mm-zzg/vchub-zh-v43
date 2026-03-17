@@ -1,43 +1,44 @@
-# Symbol Libraries
+# 图符库
 
-Manage symbols in the "Symbols" window.
+在”图符“窗口中对图符进行管理。
 
-![alt text](1.png)
+![alt text](16.png)
 
-## Add Symbol Library
+## 新增图符库
 
-Click the "Add" button on the right side of the symbol library to create a new symbol library. After clicking, a new symbol library will be automatically created with the default name: `New Symbol Library`.
+点击图符右侧的新增按钮进行添加，点击后会自动创建一个图符库， 默认名称为：`新建图符库`。
 
-![alt text](2.png)
+![alt text](17.png)
 
-After the new symbol library is successfully created, the library name will be in edit mode, allowing you to modify it. If you need to change it again, double-click the symbol library location to enter the name edit mode.
+新建成功后，库名处于编辑状态，您可以对其名称进行修改。若您需要再次修改，双击图符库名称，即可进入编辑状态。
 
-## Export Symbol Library
+## 导出图符库
 
-Click the `...` icon behind the symbol library. In the dropdown menu, click the "Export" button to export symbol files within that symbol library.
+点击图符库右侧的`...`按钮，在弹出菜单中点击“导出”按钮，可以将此图符库下的所有图符文件导出。
 
-![alt text](3.png)
+![alt text](18.png)
 
-In the export window, you can manually select the symbols you wish to export.
+在导出窗口中，您可以手动选择需要导出的图符文件。
 
-![alt text](4.png)
+![alt text](19.png)
 
-## Import Symbol Library
+## 导入图符库
 
-Click the `...` icon behind the symbol library, and in the dropdown menu, click the "Import" button to import the previously exported files into the current symbol library.
+在图符库后点击`...`图标，在弹出菜单中点击“导入”按钮，可以将已导出的文件导入到当前图符库下。
 
-![alt text](5.png)
+![alt text](20.png)
 
-## Delete Symbol Library
+## 删除图符库
 
-Click the `...` icon behind the symbol library, and in the dropdown menu, click the "Delete" button. This will delete all symbols within that library.
+在图符库后点击`...`图标，在弹出菜单中点击“删除”按钮，会将此库下所有图符全都删除。
 
-![alt text](6.png)
+![alt text](21.png)
 
-A confirmation message is displayed. Click the "OK" button to complete the deletion.
+此时会显示一条确认消息，点击“确认”按钮完成删除操作。
 
-![alt text](7.png)
+![alt text](22.png)
 
-If a symbol from the library has been used, and the library is subsequently deleted, any pages that utilized symbols from that library will display a broken image icon on the runtime page, indicating that the content is missing.
+如果库下的图符已被使用，则库被删除后，使用了该库下图符的画面在运行页面，对应的图符将显示为破裂的图片，表示内容丢失。
 
-![alt text](8.png)
+![alt text](23.png)
+

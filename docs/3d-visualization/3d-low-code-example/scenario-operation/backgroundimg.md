@@ -1,15 +1,15 @@
 # backgroundImg
 
-**Description**: Set background image
+**描述：** 设置背景图片
 
 ```typescript
-const view = await System.UI.findControl('3DViewer1');  // Obtain a 3D viewer control named "3DViewer1" in the page
-view.backgroundImage='a.win10.jpg'; // Set the background image to a Win10.jpg image in Library A
-view.applyChanges(); // Application Tips: After setting the background related settings, you need to call the applyChanges() method
+const view = await System.UI.findControl('3D查看器1'); // 获取画面中名为“3D查看器1”的3DView控件
+view.backgroundImage='a.win10.jpg'; // 设置背景图片为图库a的win10.jpg图片
+view.applyChanges(); // 应用     Tips:背景相关的设置设置了之后需要调用一下需要调用applyChanges()方法
 ```
  
-**Example**:
+**示例：**
 
-Write the above code on the button, click the button to modify the background image of the scene.
+在按钮上编写上述代码，点击按钮，可以修改场景的背景图片。
 
-![3d_lowcode_SOperation_backgroundimg1](../../../assets/images/3d_lowcode_SOperation_backgroundimg1.gif)
+![alt text](2.gif)

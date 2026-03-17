@@ -1,95 +1,98 @@
-# Create Symbol
+# 创建图符
 
-You can create symbols in the "Symbol" editor. Once created, a symbol can be used as a template and then instantiated multiple times across different screens. Each instance will have the same components and properties, but the data can vary. Any changes made to the template will automatically update across all symbol instances.
+您可以在“图符编辑器”中创建图符。图符只要创建一次，即可以作为一个模板，然后在画面中创建多个模板实例。每个实例拥有相同的组件和属性，但是数据是可以不同的。在模板上发生的任意变化，在图符实例中都会自动更新。
 
-## Add Symbol
+## 新增图符
 
-You can expand any symbol library, click the ➕ within the library, and a new window will pop up. Set the name of the symbol and click the "OK" button to create the symbol.
+您可以展开一个图符库，点击库内的新增按钮，弹出新增窗口，设置图符的名称，点击确认按钮创建图符。
 
-![alt text](9.png)
+![alt text](2.png)
 
-After creation, an empty symbol editor will be displayed in the main design space. The initial symbol editor is completely transparent. You can set a background if you want.
+创建完成后，会在编辑器上显示一个空的图符窗口。图符窗口的背景色默认透明。您可以根据需要设置背景色。
 
-![alt text](10.png)
+![alt text](3.png)
 
-**Properties**
+**属性**
+
+![alt text](4.png)
+
+| **名称**   | **描述**  |
+|:------------|:--------|
+| W          | 图符的宽度，单位px。|
+| H          | 图符的高度，单位px。 |
+| 背景       | 图符的背景色，支持 [属性绑定](../property-binding/index.md)。  <br>![alt text](5.png) |
+| 自定义属性 | 您可以像使用任何其他属性一样使用自定义属性。  <br>要配置自定义属性，请执行以下操作：  <br>1. 点击图符编辑器的空白处。 <br>2. 点击“外观”>“自定义属性”。 <br>3. 单击加号图标以添加一行。 <br>4. 输入自定义属性名称、数据类型、初始值。 <br>5. 添加后自定义属性自动保存。 <br> ![alt text](6.png) |
+
+**说明**：图符支持嵌套，可以将一个图符嵌到另一个图符内，但不能嵌套自身。
+
+**如何查看图符窗口属性**
+
+1. 点击图符编辑窗口的空白处
+2. 点击图符窗口对应的 Tab 页名称
+
+    ![alt text](7.png)
+
+3. 点击图符编辑窗口之外的灰色区域，下图红框内区域。
+
+    ![alt text](8.png)
+
+## 编辑图符
+
+和绘制画面的方法相同，在图符窗口中添加组件（如：控件，图片，图符）。一旦更改图符，该图符的所有实例都会更新。
+
+当您的图符创建完成，可以通过以下4种方式打开图符进行编辑：
+
+- **方式1**：双击“图符库”中的图符，会在编辑器上自动打开该图符的编辑窗口；
+- **方式2**：右击图符，在弹出的菜单中点击“编辑”按钮。
+
+    ![alt text](9.png)
+
+- **方式3**：在画面上，双击图符，会自动打开图符编辑窗口。
+- **方式4**：在编辑器中，右击选中该图符的实例，在弹出菜单中选中“编辑”按钮来打开图符。
+
+    ![alt text](10.png)
+
+## 另存图符
+
+当图符创建完成后，点击画面菜单中的“另存为”按钮，设置需要存放的图符库以及图符名称完成创建。
 
 ![alt text](11.png)
 
-| **Name**        | **Description**   |
-|-----------------|-----------|
-| W               | Width of the symbol. |
-| H               | Height of the symbol.   |
-| Background      | Background color of the symbol, supports property binding  <br>![alt text](12.png) |
-| Custom Property | You can use custom properties like any other properties, such as for data binding, scripts, and styles. To configure custom properties, follow these steps:  <br>1. Click on the blank area of the symbol editor. <br>2. Go to "Appearance" > "Custom Property." <br>3. Click the plus (+) icon to add a row. <br>4. Enter the custom property name, data type, and initial value. <br>5. The custom property is automatically saved after you add it.  <br> ![alt text](13.png)|
+## 移动图符
 
-**Note:** Symbols support nesting, allowing one symbol to be embedded within another. However, a symbol cannot be nested within itself.
+您可以通过拖拽的方式改变图符的所属图符库。要将图符移动到其他图符库，请点击该图符并拖动鼠标，将其移动到目标库内释放鼠标即可。
 
-**How to view the properties of the Symbol Editor window**
+![alt text](1.gif)
 
-1. Click on a blank area of the symbol editor
-2. Click on its tab name
+**注意**：如果图符是已打开的状态，您不能执行移动图符的操作。
+
+## 复制/粘贴图符
+
+在图符库中右击图符，点击 **复制** 选项，可以对图符进行复制。
+
+![alt text](12.png)
+
+复制后，点击图符库的...进行粘贴。
+
+![alt text](13.png)
+
+## 实例图符
+
+图符创建完成后，您可以拖动图符到画面或画面模板上创建多个图符实例。实例创建完成后可以像其他控件一样操作其属性。
 
 ![alt text](14.png)
 
-3. click the gray area outside the canvas (the area highlighted in the red box below).
+**实例后的图符属性**
 
-![alt text](15.png)
+| **名称**   | **描述** |
+|:------------|:---------------|
+| 名字       | 此图符实例的名称。|
+| X          | 图符实例左侧距画布左侧的距离，单位px。 |
+| Y          | 图符实例顶部距画布顶部的距离，单位px。|
+| W          | 图符实例的宽度，单位px。 |
+| H          | 图符实例的高度，单位px。 |
+| 路径       | 图符实例的完整路径。 |
+| 自定义属性 | 和图符设置的自定义属性一致，可点击绑定按钮设置 [属性绑定](../property-binding/index.md) <br>![alt text](15.png) |
 
-## Edit Symbol
 
-Just like drawing a screen, you can add components (e.g., controls, images, symbols) in the symbol window. Once a symbol is modified, all instances of that symbol will be updated.
 
-When your symbol creation is complete, you can open the symbol for editing using the following four methods:
-
-1. Double-click the symbol in the "Symbol Library" to automatically open the symbol's editing window in the editor.
-2. Right-click the symbol and select "Edit" from the context menu that appears.
-
-![alt text](16.png)
-
-2. In the editor, double-click the symbol component to open the symbol for editing.
-3. In the editor, right-click the selected symbol component and choose the "Edit" button from the context menu to open the symbol.
-
-![alt text](17.png)
-
-## Save As Symbol
-
-After creating the symbol, click the "Save As" button in the Page menu. Set the desired symbol library and symbol name to complete the creation.
-
-![alt text](18.png)
-
-## Move Symbol
-
-You can change the symbol's associated symbol library by dragging and dropping. To move a symbol to another library, click on the symbol and drag the mouse to the target library, then release the mouse to drop it.
-
-![symbol](../../assets/images/symbol.gif)
-
-**Note:** If the symbol is currently open, you cannot perform the operation of moving the symbol. 
-
-## Copy/Paste Symbol
-
-Right-click on a symbol in the symbol library and select the "Copy" option to duplicate the symbol.
-
-![alt text](19.png)
-
-After copying, click the "..." in the symbol library to paste the symbol.
-
-![alt text](20.png)
-
-## Instance Symbol
-
-Once the symbol is created, you can drag the symbol onto the screen or screen template to create multiple instances of the symbol. After the instances are created, you can manipulate their properties just like any other control.
-
-![alt text](21.png)
-
-**Properties of the Symbol Instance**
-
-| **Name**        | **Description**                                                                                                                  |
-|-----------------|----------------------------------------------------------------------------------------------------------------------------------|
-| Name            | Name of this symbol instance.                                                                                                    |
-| X               | The distance from the left side of the canvas to the left side of the symbol instance.                                           |
-| Y               | The distance from the top of the canvas to the top of the symbol instance.                                                       |
-| W               | The width of the symbol instance.                                                                                                |
-| H               | The height of the symbol instance.                                                                                               |
-| Path            | The complete path of the symbol instance.                                                                                        |
-| Custom Property | These are consistent with the custom properties set for the symbol. You can click the bind button to configure the property binding. |

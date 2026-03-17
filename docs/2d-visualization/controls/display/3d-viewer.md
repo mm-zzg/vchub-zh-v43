@@ -1,108 +1,108 @@
-# 3D Viewer
+# 3D查看器
 
-3D Viewer is used to view and explore 3D models and scenes.
-
-![alt text](60.png)
-
-**Properties**
-
-| **Name**   | **Description**  |
-|------------|---------------|
-| Name       | The name of this control.  |
-| X          | The distance between the left side of the control and the left side of the canvas.|
-| Y          | The distance between the top of the control and the top of the canvas.  |
-| W          | The width of the control.  |
-| H          | The height of the control. |
-| Scene      | Bind the scene to the control.  <br> ![alt text](61.png)  <br>![alt text](62.png) Drop down to select the created scene <br>![alt text](63.png) Refresh button, click to refresh the contents of the drop-down list  <br>![alt text](64.png) Edit button, click to open the editing page of the currently selected scene in a new browser window  <br>![alt text](65.png) Bind button. After clicking, the property binding window will pop up to bind the scene to the control.|
-| Appearance | Set the appearance of the 3D viewer, supporting background color, background image and skybox settings.|
-
-## **Background color setting**
-
-![alt text](66.png)
-
-Select "BackgroundColor" in the drop-down option of Appearance, click the color selector behind the drop-down box, and set the color.
-
-**Preview:**
-
-![alt text](67.png)
-
-
-
-## **Background image settings**
-
-![alt text](68.png)
-
-1. Select "Background Image" in the drop-down option of appearance, click the settings button behind the drop-down box, and the file selection window will pop up. The file selection window displays the entire contents of the library.
-
-    ![alt text](69.png)
-
-2. selecting a picture in png or jpg format , click the confirmation button in the pop-up window to complete the settings.
-
-**Note:** The background image only supports png and jpg formats. 
-
-**Preview:**
-
-![alt text](70.png)
-
-
-
-## **Skybox settings**
-
-![alt text](71.png)
-
-1. Select "Skybox" in the drop-down option of appearance, click the settings button behind the drop-down box, and the skybox settings window will pop up. The system has 4 built-in skybox materials for you to use. You can also upload the skybox materials yourself.
-
-    ![alt text](72.png)
-
-2. In the skybox name list on the left, click a name, and the material picture of the skybox will be automatically displayed on the right.
-3. Click the OK button to complete the settings.
-
-**Preview :**
-
-![alt text](73.png)
-
-## **Create a skybox**
-
-1. In the skybox pop-up window, click the "Add" button, and a skybox will be automatically added. You can set the name of the skybox.
-
-    ![alt text](74.png)
-
-2. Click on the name of the newly added sky box. On the right side of the pop-up window, the six components of the sky box (+x, -x, +y, -y, +z, -z) are displayed.
-3. Move the mouse to a certain area to display the upload prompt. After clicking, a file selection window will pop up and you can select the file to upload.
-4. After all 6 pictures have been uploaded, click the OK button to save.
-
-**Notes:** 
-
-1. The six pictures in the sky box must have the same width and height, and the width and height of each picture must also be the same. 
-2. Skybox pictures only support png and jpg formats. 
-
-## **Rename skybox**
-
-The system's built-in skybox does not support renaming. Right-click the mouse on the skybox created by the user, and click Rename in the pop-up menu to modify the name of the current skybox.
-
-![alt text](75.png)
-
-## **Remove skybox**
-
-The skybox built into the system does not support deletion. Right-click the skybox created by the user and click Delete in the pop-up menu to delete the current skybox.
-
-After the sky box is deleted, all 3D viewers that apply the sky box will no longer display the sky box effect.
+3D查看器用于查看和浏览三维模型和场景。
 
 ![alt text](76.png)
 
-**Event**
+**属性**
 
-Allows you to perform specific events based on certain conditions. See the full description of each event on the **2D Visualization-> Event** page.
+| 名称 | 描述    |
+|:----------|:------------------|
+| 名字     | 此控件的名称。   |
+| X        | 控件左侧距画布左侧的距离，单位px。   |
+| Y        | 控件顶部距画布顶部的距离，单位px。   |
+| W        | 控件的宽度，单位px。   |
+| H        | 控件的高度，单位px。   |
+| 场景     | 为控件绑定场景。  <br>![alt text](77.png)  <br>![alt text](78.png)  下拉选择已创建的场景 <br>![alt text](79.png)  刷新按钮，点击后对下拉列表内容进行刷新 <br>![alt text](80.png)  编辑按钮，点击后在新的浏览器窗口打开当前所选场景的编辑页面 <br>![alt text](81.png)  绑定按钮，点击后弹出属性绑定窗口，为控件绑定场景 |
+| 外观     | 设置3D查看器的外观，支持进行背景色、背景图和天空盒设置。 |
 
-**Example**
+## 背景色设置
 
-View the 3D scene.
+![alt text](82.png)
 
-1. Insert a 3D viewer control on the screen.
-2. Select scene: Park.
-3. Click the preview button on the screen to view the running effect.
+在外观的下拉选项中选择“背景色”，点击下拉框后面的颜色选择器，设置颜色。
 
-    ![alt text](77.png)
+**预览效果：**
+
+![alt text](83.png)
+
+## 背景图设置
+
+![alt text](84.png)
+
+1. 在外观的下拉选项中选择“背景图”，点击下拉框后面的设置按钮，弹出文件选择窗口。文件选择窗口显示图库的所有内容。
+
+    ![alt text](85.png)
+
+2. 选择 png或 jpg格式的图片后，点击弹窗的确认按钮，完成设置。
+
+**说明**：背景图仅支持 png、 jpg格式。
+
+**预览效果：**
+
+![alt text](86.png)
+
+## 天空盒设置
+
+![alt text](87.png)
+
+1. 在外观的下拉选项中选择“天空盒”，点击下拉框后面的设置按钮，弹出天空盒设置窗口。系统内置了4个天空盒素材供您使用，您也可以自行上传天空盒素材。
+
+    ![alt text](88.png)
+
+2. 在左侧的天空盒名称列表中，点击某个名称，右侧会自动显示该天空盒的素材图片。
+
+3. 点击确认按钮，完成设置。
+
+**预览效果：**
+
+![alt text](89.png)
+
+#### 创建天空盒
+
+1. 在天空盒弹窗中，点击“新增”按钮，会自动新增一个天空盒，您可以设置该天空盒名称。
+
+2. 点击新增的天空盒名称，在弹窗右侧，显示天空盒的6个组成部分（+x, -x，+y, -y，+z, -z）。
+
+    ![alt text](90.png)
+
+3. 将鼠标移至某个区域，显示上传提示，点击后弹出文件选择窗口，选择文件进行上传。
+
+4. 6张图全部上传完成，点击确认按钮，进行保存。
+
+**说明：**  
+
+- 天空盒的6张图片宽高需一致，且每张图片的宽高也需一样。 
+
+- 天空盒的图片 仅支持png、jpg格式。
+
+#### 重命名天空盒
+
+系统内置的天空盒不支持重命名。在用户创建的天空盒上右击鼠标，在弹出的菜单中，点击重命名，可以修改当前天空盒的名称。
+
+![alt text](91.png)
+
+#### 删除天空盒
+
+统内置的天空盒不支持删除。在用户创建的天空盒上右击鼠标，在弹出的菜单中，点击删除，即可删除当前天空盒。
+
+天空盒删除后，所有应用了该天空盒的3D查看器，将不再显示该天空盒效果。
+
+![alt text](92.png)
+
+**动作**
+
+允许您基于某种条件执行特定的动作。请参阅“[动作](../../event/index.md)”页上各种动作的完整描述。
+
+**示例**
+
+查看3D场景。
+
+1. 在画面上插入3D查看器控件。
+2. 选择场景：园区。
+3. 点击画面的预览按钮，查看运行效果。
+
+    ![alt text](93.png)
 
 
 

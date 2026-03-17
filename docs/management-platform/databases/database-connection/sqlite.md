@@ -1,27 +1,33 @@
 # SQLite
 
-On this page, we will demonstrate how to connect VC Hub to SQLite.
+在此页面上，我们将演示如何将WAGO SCADA连接到 SQLite。
 
-1. On the "**Databases**" -> "**Database Connection**" page, click the "Add" button. 
+1. 在“**数据库**”->“**数据库连接**”页面，点击“**新增**”按钮。
+
     ![alt text](6.png)
-2. In the following pop-up window, select SQLite and click the Next button.
+
+2. 在弹出的如下窗口中，选择SQLite，点击“下一步”按钮。
+
     ![alt text](16.png)
-3. Enter the following information in the configuration interface (Note: The following data is only an example, please fill in according to the actual situation).
 
-    Since SQLite is an open source embedded relational database that implements a self-contained, serverless, configuration-less, transactional SQL database engine. It is a zero-configuration database.
+3. 在配置界面输入如下信息（说明：以下数据仅为示例，请根据实际情况填写）。
 
-    So creating a SQLite database connection means creating a SQLite file locally. So there is no need for Host, Port, Username, Password, etc. You just need to check where the SQLite file is stored.
+    由于SQLite 是一个开源的嵌入式关系数据库，实现了自给自足的、无服务器的、配置无需的、事务性的 SQL 数据库引擎。它是一个零配置的数据库。
+
+    所以在创建SQLite数据库连接也就意味着在本地创建了SQLite文件。所以无需Host、Port、用户名、密码等信息，只需要确认SQLite文件存放位置即可。
 
     ![alt text](17.png)
 
-     - Name: Demo
-     - Database name: history
-     - Connection timeout(ms): 10000
-     - Maximum Query Points：1000000
-     - Query Timeout(s)：30
+    - 名称：Demo
+    - 数据库名称：history
+    - 连接超时(ms)：10000
+    - 最大查询点数：1000000
+    - 查询超时(s)：30
 
-    **Notes:** The database name is the name of the SQLite file without suffix. 
+    **说明：** 数据库名称是指SQLite文件名称，不需要填写后缀。 
 
-4. Click **"OK"** button, the popup window will be closed and the list of database connections will be displayed. The connection status of the data in the list is "Connected".
+4. 点击“确认”按钮，弹窗关闭，显示数据库连接列表。在列表中该条数据的连接状态显示为“连接成功”。
+
     ![alt text](18.png)
 
+5. 历史库文件存放地址： C:\ProgramData\WAGOSCADA\Workspaces\[工程ID]\database\history\[数据库名称].db

@@ -172,6 +172,7 @@ nav:
         - 产品概述:
                   - overview/index.md
                   - overview/version-update-notes.md
+                  - overview/support-and-assistance.md
                   - overview/system-requirements.md
                   - overview/breaking-changes.md
         - 此版新功能:
@@ -194,7 +195,8 @@ nav:
                   - system-deployment/azure-cloud-deployment.md
         - 管理平台:
                   - management-platform/index.md
-                  - management-platform/license-and-activation.md
+                  - 许可证和激活:
+                            - management-platform/license-and-activation/index.md
                   - 工程:
                             - management-platform/workspaces/index.md
                             - management-platform/workspaces/multi-workspace-management.md
@@ -228,32 +230,39 @@ nav:
                             - WAGO Protocol:
                                       - management-platform/devices/wago-protocol/index.md
                                       - management-platform/devices/wago-protocol/batch-operation.md
+                            - Camera:
+                                      - management-platform/devices/camera/index.md
+                                      - management-platform/devices/camera/deploying.md
+                                      - management-platform/devices/camera/external-network.md
+                                      - management-platform/devices/camera/security-settings.md
+                                      - management-platform/devices/camera/batch-operation.md          
                             - management-platform/devices/usage-of-legacy-protocols.md
-                  - Assets and Tags:
+                  - 资产和变量:
                             - management-platform/assets-and-tags/index.md
-                            - management-platform/assets-and-tags/aggregation-modes.md
-                            - Asset:
+                            - 资产:
                                       - management-platform/assets-and-tags/asset/index.md
-                                      - Models and Instances:
+                                      - 模型和实例:
                                                 - management-platform/assets-and-tags/asset/model-and-instance/index.md
                                                 - management-platform/assets-and-tags/asset/model-and-instance/batch-instantiate-models.md
                                                 - management-platform/assets-and-tags/asset/model-and-instance/referencing-and-override.md
-                                      - Asset Tree:
+                                      - 资产树:
                                                 - management-platform/assets-and-tags/asset/asset-tree/index.md
-                                                - Batch Operation:
+                                                - 批量操做:
                                                           - management-platform/assets-and-tags/asset/asset-tree/batch-operation/index.md
                                                           - management-platform/assets-and-tags/asset/asset-tree/batch-operation/batch-add.md
-                                                          - management-platform/assets-and-tags/asset/asset-tree/batch-operation/batch-update.md
+                                                          - 批量更新:
+                                                                    - management-platform/assets-and-tags/asset/asset-tree/batch-operation/batch-update/index.md
+                                                                    - management-platform/assets-and-tags/asset/asset-tree/batch-operation/batch-update/tag-configuration-excel.md
                                                           - management-platform/assets-and-tags/asset/asset-tree/batch-operation/export-and-import.md
-                            - Tag:
+                            - 变量:
                                       - management-platform/assets-and-tags/tag/index.md
-                                      - Tag Type:
+                                      - 变量类型:
                                                 - management-platform/assets-and-tags/tag/tag-type/index.md
                                                 - management-platform/assets-and-tags/tag/tag-type/system-tag.md
-                                      - Creating Tags:
+                                      - 创建变量:
                                                 - management-platform/assets-and-tags/tag/creating-tags/index.md
                                                 - management-platform/assets-and-tags/tag/creating-tags/io-tag-binding-data-source.md
-                                      - Tag Properties:
+                                      - 变量属性:
                                                 - management-platform/assets-and-tags/tag/tag-properties/index.md
                                                 - management-platform/assets-and-tags/tag/tag-properties/alarm.md
                                                 - management-platform/assets-and-tags/tag/tag-properties/history.md
@@ -264,42 +273,44 @@ nav:
                                                 - management-platform/assets-and-tags/tag/tag-properties/custom.md
                                       - management-platform/assets-and-tags/tag/tag-group.md
                                       - management-platform/assets-and-tags/tag/quality.md
+                            - management-platform/assets-and-tags/aggregation-modes.md          
 
-                  - Alarming:
+                  - 报警:
                             - management-platform/alarming/index.md
                             - management-platform/alarming/stale-alarm.md
                             - management-platform/alarming/history-storage.md
                             - management-platform/alarming/alarm-group.md
-                            - Alarm Notification:
+                            - 报警通知:
                                       - management-platform/alarming/alarm-notification/index.md
-                                      - Services:
+                                      - 通知服务:
                                                 - management-platform/alarming/alarm-notification/services/index.md
                                                 - management-platform/alarming/alarm-notification/services/email.md
-                                                - management-platform/alarming/alarm-notification/services/sms-twilio.md
                                                 - management-platform/alarming/alarm-notification/services/sms-alicloud.md
+                                                - management-platform/alarming/alarm-notification/services/sms-twilio.md
                                                 - management-platform/alarming/alarm-notification/services/wecom.md
                                                 - management-platform/alarming/alarm-notification/services/dingtalk.md
-                                      - Messages:
+                                      - 通知内容:
                                                 - management-platform/alarming/alarm-notification/messages/index.md
                                                 - management-platform/alarming/alarm-notification/messages/email.md
-                                                - management-platform/alarming/alarm-notification/messages/sms-twilio.md
                                                 - management-platform/alarming/alarm-notification/messages/sms-alicloud.md
+                                                - management-platform/alarming/alarm-notification/messages/sms-twilio.md
                                                 - management-platform/alarming/alarm-notification/messages/wecom.md
                                                 - management-platform/alarming/alarm-notification/messages/dingtalk.md
                                       - management-platform/alarming/alarm-notification/schedules.md
                                       - management-platform/alarming/alarm-notification/rules.md
                                       - management-platform/alarming/alarm-notification/failed.md
                                       - management-platform/alarming/alarm-notification/acknowledge-alarm.md
-                  - Scripts:
+                  - 脚本:
                             - management-platform/scripts/index.md
                             - management-platform/scripts/service-script.md
                             - management-platform/scripts/custom-function.md
                             - management-platform/scripts/schedule.md
                             - management-platform/scripts/log-configuration.md
-                  - management-platform/networking.md
-                  - Databases:
+                  - 组网:
+                            - management-platform/networking/index.md
+                  - 数据库:
                             - management-platform/databases/index.md
-                            - Database Connection:
+                            - 数据库连接:
                                       - management-platform/databases/database-connection/index.md
                                       - management-platform/databases/database-connection/mysql.md
                                       - management-platform/databases/database-connection/sql-server.md
@@ -307,28 +318,28 @@ nav:
                                       - management-platform/databases/database-connection/sqlite.md
                                       - management-platform/databases/database-connection/influxdb.md
                                       - management-platform/databases/database-connection/query-exceptions.md
-                            - History Database:
+                            - 历史库:
                                       - management-platform/databases/history-database/index.md
-                                      - Create History Database:
+                                      - 创建历史库:
                                                  - management-platform/databases/history-database/create-history-database/index.md
                                                  - management-platform/databases/history-database/create-history-database/data-partitioning-and-deletion.md
                                                  - management-platform/databases/history-database/create-history-database/pre-processed.md
                                       - management-platform/databases/history-database/create-duplicated-history-database.md
                                       - management-platform/databases/history-database/create-remote-history-database.md
-                            - Database Table Reference:
+                            - 数据库表结构参考:
                                       - management-platform/databases/database-table-reference/index.md
-                                      - Tag Table Reference:
+                                      - 变量历史库:
                                                 - management-platform/databases/database-table-reference/tag-table-reference/index.md
                                                 - management-platform/databases/database-table-reference/tag-table-reference/relational-database-table-schema.md
                                                 - management-platform/databases/database-table-reference/tag-table-reference/influxDB-table-schema.md
 
-                  - Redundancy:
+                  - 冗余:
                             - management-platform/redundancy/index.md
                             - management-platform/redundancy/configuration.md
                             - management-platform/redundancy/synchronization.md
                             - management-platform/redundancy/switch.md
 
-                  - Security:
+                  - 权限:
                             - management-platform/security/index.md
                             - management-platform/security/roles-and-users.md
                             - management-platform/security/user-group.md
@@ -343,69 +354,76 @@ nav:
                                       - management-platform/security/identity-provider/azure-AD-integration.md
                                       - management-platform/security/identity-provider/integrates-with-OAuth0.md
                             - management-platform/security/open-api.md
-                  - management-platform/node-configuration.md
-                  - management-platform/certificate-management.md
-                  - management-platform/mqtt-broker.md
-                  - management-platform/trust-store.md
+                  - 节点配置:
+                            - management-platform/node-configuration/index.md   
+                  - 证书管理:
+                            - management-platform/certificate-management/index.md
+                  - MQTT Broker:
+                            - management-platform/mqtt-broker/index.md                          
+                  - Trust Store:
+                            - management-platform/trust-store/index.md
                   - Open API:
                             - management-platform/open-api/index.md
-                            - management-platform/open-api/api-document(Swagger).md
+                            - management-platform/open-api/api-document-Swagger.md
                             - management-platform/open-api/open-id-connect.md
                             - management-platform/open-api/asset-api-definitions.md
                             - management-platform/open-api/historical-data-api-definitions.md
                             - management-platform/open-api/realtime-data-api-definitions.md
                             - management-platform/open-api/integration-api-definitions.md
-                            - Test With Postman:
+                            - 使用Postman进行测试:
                                       - management-platform/open-api/test-with-postman/index.md
                                       - management-platform/open-api/test-with-postman/get-access-token.md
                                       - management-platform/open-api/test-with-postman/invoke.md
                                       - management-platform/open-api/test-with-postman/subscribe.md 
-
-                  - management-platform/diagnostics.md
-        - 2D Visualization:
+                  - 诊断:
+                            - management-platform/diagnostics/index.md
+        - 2D 组态:
                   - 2d-visualization/index.md
-                  - 2d-visualization/editor-introduction.md
-                  - Page:
+                  - 编辑器介绍:
+                            - 2d-visualization/editor-introduction/index.md
+                  - 画面:
                             - 2d-visualization/page/index.md
                             - 2d-visualization/page/page-type.md
                             - 2d-visualization/page/page-parameter-passing.md
                             - 2d-visualization/page/navigation.md
                             - 2d-visualization/page/resolution-adaptation.md
-                            - 2d-visualization/page/page-permission.md                    
-                  - 2d-visualization/page-template.md
+                            - 2d-visualization/page/page-permission.md
+                  - 画面模板:
+                            - 2d-visualization/page-template/index.md
                   - Sql Query:
                             - 2d-visualization/sql-query/index.md
                             - 2d-visualization/sql-query/create-sql-query.md
-                            - Sql Query Example:
+                            - Sql Query 例子:
                                       - 2d-visualization/sql-query/sql-query-example/index.md
                                       - 2d-visualization/sql-query/sql-query-example/query.md
                                       - 2d-visualization/sql-query/sql-query-example/scalar-query.md
                                       - 2d-visualization/sql-query/sql-query-example/update-query.md
                             - 2d-visualization/sql-query/supported-data-types.md
-                  - Controls:
+                  - 控件:
                             - 2d-visualization/controls/index.md
-                            - Drawing:
+                            - 绘图:
                                       - 2d-visualization/controls/drawing/index.md
                                       - 2d-visualization/controls/drawing/shape.md
                                       - 2d-visualization/controls/drawing/fill-stroke.md
-                            - Input:
+                            - 输入:
                                       - 2d-visualization/controls/input/index.md
                                       - 2d-visualization/controls/input/dropdown.md
                                       - 2d-visualization/controls/input/text-input.md
                                       - 2d-visualization/controls/input/slider.md
                                       - 2d-visualization/controls/input/datetime-input.md
                                       - 2d-visualization/controls/input/number-input.md
-                            - Display:
+                            - 显示:
                                       - 2d-visualization/controls/display/index.md
                                       - 2d-visualization/controls/display/label.md
                                       - 2d-visualization/controls/display/value-display.md
                                       - 2d-visualization/controls/display/led-display.md
+                                      - 2d-visualization/controls/display/camera.md
                                       - 2d-visualization/controls/display/iframe.md
                                       - 2d-visualization/controls/display/rich-text.md
-                                      - 2d-visualization/controls/display/page-container.md
                                       - 2d-visualization/controls/display/3d-viewer.md
+                                      - 2d-visualization/controls/display/page-container.md
                                       - 2d-visualization/controls/display/ruler.md
-                            - Button:
+                            - 按钮:
                                       - 2d-visualization/controls/button/index.md
                                       - 2d-visualization/controls/button/button.md
                                       - 2d-visualization/controls/button/menu.md
@@ -414,7 +432,7 @@ nav:
                                       - 2d-visualization/controls/button/toggle-button.md
                                       - 2d-visualization/controls/button/2-state-button.md
                                       - 2d-visualization/controls/button/multi-state-button.md
-                            - Chart:
+                            - 图表:
                                       - 2d-visualization/controls/chart/index.md
                                       - 2d-visualization/controls/chart/realtime-chart.md
                                       - 2d-visualization/controls/chart/historical-chart.md
@@ -423,50 +441,50 @@ nav:
                                       - 2d-visualization/controls/chart/custom-curve.md
                                       - 2d-visualization/controls/chart/gauge.md
                                       - 2d-visualization/controls/chart/custom-chart.md          
-                            - Alarm:
+                            - 报警:
                                       - 2d-visualization/controls/alarm/index.md
-                                      - Real-time Alarm:
+                                      - 实时报警:
                                                 - 2d-visualization/controls/alarm/real-time-alarm/index.md
                                                 - 2d-visualization/controls/alarm/real-time-alarm/alarm-filter.md
                                                 - 2d-visualization/controls/alarm/real-time-alarm/alarm-ack.md
                                                 - 2d-visualization/controls/alarm/real-time-alarm/shelve-alarm.md
                                                 - 2d-visualization/controls/alarm/real-time-alarm/details.md
-                                      - Historical Alarm:
+                                      - 历史报警:
                                                 - 2d-visualization/controls/alarm/historical-alarm/index.md
                                                 - 2d-visualization/controls/alarm/historical-alarm/filter.md
                                                 - 2d-visualization/controls/alarm/historical-alarm/details.md
-                            - Event:
+                            - 事件:
                                       - 2d-visualization/controls/event/index.md
                                       - 2d-visualization/controls/event/realtime-event.md
                                       - 2d-visualization/controls/event/historical-event.md
-                            - Table:
+                            - 表格:
                                       - 2d-visualization/controls/table/index.md
                                       - 2d-visualization/controls/table/table.md
                                       - 2d-visualization/controls/table/historical-data-table.md
                                       - 2d-visualization/controls/table/tag-list.md
                                       - 2d-visualization/controls/table/report-viewer.md          
                             - 2d-visualization/controls/modify-control-properties.md                           
-                  - Libraries:
+                  - 图库:
                             - 2d-visualization/libraries/index.md
                             - 2d-visualization/libraries/svg-editor.md
-                  - Symbol:
+                  - 图符:
                             - 2d-visualization/symbol/index.md
-                            - 2d-visualization/symbol/symbol-libraries.md
                             - 2d-visualization/symbol/create-symbol.md
+                            - 2d-visualization/symbol/symbol-libraries.md
                             - 2d-visualization/symbol/how-to-use.md
-                  - Report:
+                  - 报表:
                             - 2d-visualization/report/index.md
-                            - Report Designer:
+                            - 2d-visualization/report/create-data-source.md
+                            - 报表设计器:
                                       - 2d-visualization/report/report-designer/index.md
                                       - 2d-visualization/report/report-designer/design-report.md
-                            - 2d-visualization/report/create-data-source.md
                             - 2d-visualization/report/view-report.md
                             - 2d-visualization/report/export-and-import-reports.md
-                  - Function:
+                  - 函数:
                             - 2d-visualization/function/index.md
                             - 2d-visualization/function/expression-function.md
                             - 2d-visualization/function/page-function.md
-                  - Property Binding:
+                  - 属性绑定:
                             - 2d-visualization/property-binding/index.md
                             - 2d-visualization/property-binding/tag.md
                             - 2d-visualization/property-binding/property.md
@@ -475,36 +493,45 @@ nav:
                             - 2d-visualization/property-binding/dynamic-cell.md
                             - 2d-visualization/property-binding/sql-query.md
                             - 2d-visualization/property-binding/bidirectional-bindings.md 
-                  - 2d-visualization/animation.md
-                  - Event:
+                  - 动画:
+                            - 2d-visualization/animation/index.md
+                  - 动作:
                             - 2d-visualization/event/index.md
                             - 2d-visualization/event/navigation.md
                             - 2d-visualization/event/set-value.md
                             - 2d-visualization/event/set-property.md
                             - 2d-visualization/event/script.md
                             - 2d-visualization/event/security-group.md
-                  - Project Properties:
+                  - 项目属性:
                             - 2d-visualization/project-properties/index.md
                             - 2d-visualization/project-properties/customize-login-page.md
-        - 3D Visualization:
+        - 3D 组态:
                   - 3d-visualization/index.md
-                  - 3d-visualization/introduction-to-scene-editor.md
-                  - 3d-visualization/introduction-to-model-editor.md
-                  - 3d-visualization/page-visualization.md
-                  - 3d-visualization/animation.md
-                  - 3d-visualization/event.md
-                  - 3d-visualization/convert-3d-models-to-glb-format.md
-                  - 3d-visualization/lighting-settings.md
-                  - 3D Low Code Example:
+                  - 场景编辑器:
+                            - 3d-visualization/introduction-to-scene-editor/index.md
+                  - 模型编辑器:
+                            - 3d-visualization/introduction-to-model-editor/index.md
+                  - 画面组态:
+                            - 3d-visualization/page-visualization/index.md
+                  - 动画:
+                            - 3d-visualization/animation/index.md
+                  - 动作:          
+                            - 3d-visualization/event/index.md
+                  - 如何将3D模型转换为 GLB 格式:
+                            - 3d-visualization/convert-3d-models-to-glb-format/index.md
+                  - 光源设置:
+                            - 3d-visualization/lighting-settings/index.md
+                  - 3D 低代码示例:
                             - 3d-visualization/3d-low-code-example/index.md
                             - 3d-visualization/3d-low-code-example/find-3dview.md
                             - 3d-visualization/3d-low-code-example/getscene.md
-                            - Scenario Operation:
+                            - 场景操作:
                                       - 3d-visualization/3d-low-code-example/scenario-operation/index.md
                                       - 3d-visualization/3d-low-code-example/scenario-operation/background.md
                                       - 3d-visualization/3d-low-code-example/scenario-operation/backgroundimg.md
                                       - 3d-visualization/3d-low-code-example/scenario-operation/createbasicmesh.md
                                       - 3d-visualization/3d-low-code-example/scenario-operation/createcanvasmarker.md
+                                      - 3d-visualization/3d-low-code-example/scenario-operation/creatediffusion.md
                                       - 3d-visualization/3d-low-code-example/scenario-operation/createfire.md
                                       - 3d-visualization/3d-low-code-example/scenario-operation/createhtmlmarker.md
                                       - 3d-visualization/3d-low-code-example/scenario-operation/createline.md
@@ -546,10 +573,9 @@ nav:
                                       - 3d-visualization/3d-low-code-example/scenario-operation/querywebview.md
                                       - 3d-visualization/3d-low-code-example/scenario-operation/remove.md
                                       - 3d-visualization/3d-low-code-example/scenario-operation/setoutlineoption.md
-                                      - 3d-visualization/3d-low-code-example/scenario-operation/stopfirstpersoncontrols.md
                                       - 3d-visualization/3d-low-code-example/scenario-operation/skybox.md
-                                      - 3d-visualization/3d-low-code-example/scenario-operation/creatediffusion.md
-                            - Camera:          
+                                      - 3d-visualization/3d-low-code-example/scenario-operation/stopfirstpersoncontrols.md
+                            - 摄像机:          
                                       - 3d-visualization/3d-low-code-example/camera/index.md
                                       - 3d-visualization/3d-low-code-example/camera/flypath.md
                                       - 3d-visualization/3d-low-code-example/camera/lookat.md
@@ -558,9 +584,9 @@ nav:
                                       - 3d-visualization/3d-low-code-example/camera/rotate-around.md
                                       - 3d-visualization/3d-low-code-example/camera/pause.md
                                       - 3d-visualization/3d-low-code-example/camera/resume.md
-                            - Object models in the scene:
+                            - 场景中的物体模型:
                                       - 3d-visualization/3d-low-code-example/object-models-in-the-scene/index.md
-                                      - Basic Model:
+                                      - 基础模型:
                                                 - 3d-visualization/3d-low-code-example/object-models-in-the-scene/basic-model/index.md
                                                 - 3d-visualization/3d-low-code-example/object-models-in-the-scene/basic-model/addchildren.md
                                                 - 3d-visualization/3d-low-code-example/object-models-in-the-scene/basic-model/getchildren.md
@@ -572,20 +598,20 @@ nav:
                                                 - 3d-visualization/3d-low-code-example/object-models-in-the-scene/basic-model/position.md
                                                 - 3d-visualization/3d-low-code-example/object-models-in-the-scene/basic-model/userdata.md
                                                 - 3d-visualization/3d-low-code-example/object-models-in-the-scene/basic-model/visible.md
-                                      - Custom Annotations:
+                                      - 自定义标注:
                                                 - 3d-visualization/3d-low-code-example/object-models-in-the-scene/custom-annotations/index.md
                                                 - 3d-visualization/3d-low-code-example/object-models-in-the-scene/custom-annotations/element.md
-                                      - Embedded Page:
+                                      - 内嵌页面:
                                                 - 3d-visualization/3d-low-code-example/object-models-in-the-scene/embedded-page/index.md
-                                                - 3d-visualization/3d-low-code-example/object-models-in-the-scene/embedded-page/src.md
                                                 - 3d-visualization/3d-low-code-example/object-models-in-the-scene/embedded-page/title.md
-                                      - Grid Model:
+                                                - 3d-visualization/3d-low-code-example/object-models-in-the-scene/embedded-page/src.md
+                                      - 网络模型:
                                                 - 3d-visualization/3d-low-code-example/object-models-in-the-scene/grid-model/index.md
-                                                - 3d-visualization/3d-low-code-example/object-models-in-the-scene/grid-model/addoutline.md
                                                 - 3d-visualization/3d-low-code-example/object-models-in-the-scene/grid-model/color.md
                                                 - 3d-visualization/3d-low-code-example/object-models-in-the-scene/grid-model/movepaths.md
                                                 - 3d-visualization/3d-low-code-example/object-models-in-the-scene/grid-model/moveto.md
                                                 - 3d-visualization/3d-low-code-example/object-models-in-the-scene/grid-model/on.md
+                                                - 3d-visualization/3d-low-code-example/object-models-in-the-scene/grid-model/addoutline.md
                                                 - 3d-visualization/3d-low-code-example/object-models-in-the-scene/grid-model/opacity.md
                                                 - 3d-visualization/3d-low-code-example/object-models-in-the-scene/grid-model/removeoutline.md
                                                 - 3d-visualization/3d-low-code-example/object-models-in-the-scene/grid-model/rotateto.md
@@ -594,35 +620,49 @@ nav:
                                                 - 3d-visualization/3d-low-code-example/object-models-in-the-scene/grid-model/scaleto.md
                                                 - 3d-visualization/3d-low-code-example/object-models-in-the-scene/grid-model/stopanimation.md
                                                 - 3d-visualization/3d-low-code-example/object-models-in-the-scene/grid-model/wireframe.md
-                                      - Image Overlays:
+                                      - 图片标注:
                                                 - 3d-visualization/3d-low-code-example/object-models-in-the-scene/image-overlays/index.md
                                                 - 3d-visualization/3d-low-code-example/object-models-in-the-scene/image-overlays/canvas.md
                                                 - 3d-visualization/3d-low-code-example/object-models-in-the-scene/image-overlays/size.md
-                                      - Line:
+                                      - 线:
                                                 - 3d-visualization/3d-low-code-example/object-models-in-the-scene/line/index.md
                                                 - 3d-visualization/3d-low-code-example/object-models-in-the-scene/line/color.md
                                                 - 3d-visualization/3d-low-code-example/object-models-in-the-scene/line/curve.md
                                                 - 3d-visualization/3d-low-code-example/object-models-in-the-scene/line/points.md
-                                      - Lines with textures:
+                                      - 带贴图的线:
                                                 - 3d-visualization/3d-low-code-example/object-models-in-the-scene/lines-with-textures/index.md
                                                 - 3d-visualization/3d-low-code-example/object-models-in-the-scene/lines-with-textures/color.md
                                                 - 3d-visualization/3d-low-code-example/object-models-in-the-scene/lines-with-textures/image.md
                                                 - 3d-visualization/3d-low-code-example/object-models-in-the-scene/lines-with-textures/points.md
                                                 - 3d-visualization/3d-low-code-example/object-models-in-the-scene/lines-with-textures/repeatx.md
                                                 - 3d-visualization/3d-low-code-example/object-models-in-the-scene/lines-with-textures/repeaty.md
-                                      - Surface:
+                                      - 面:
                                                 - 3d-visualization/3d-low-code-example/object-models-in-the-scene/surface/index.md
-                                                - 3d-visualization/3d-low-code-example/object-models-in-the-scene/surface/doubleside.md
                                                 - 3d-visualization/3d-low-code-example/object-models-in-the-scene/surface/image.md
-                                      - Text Annotation:
+                                                - 3d-visualization/3d-low-code-example/object-models-in-the-scene/surface/doubleside.md
+                                      - 文字标注:
                                                 - 3d-visualization/3d-low-code-example/object-models-in-the-scene/text-annotation/index.md
                                                 - 3d-visualization/3d-low-code-example/object-models-in-the-scene/text-annotation/fontcolor.md
                                                 - 3d-visualization/3d-low-code-example/object-models-in-the-scene/text-annotation/fontsize.md
                                                 - 3d-visualization/3d-low-code-example/object-models-in-the-scene/text-annotation/height.md
                                                 - 3d-visualization/3d-low-code-example/object-models-in-the-scene/text-annotation/text.md
-        - Appendix:
+        - 3D 建模:
+                  - 3d-modeling/index.md
+                  - 材质与贴图:
+                            - 3d-modeling/materials-and-textures/index.md
+                  - 建模标准及注意事项:        
+                            - 3d-modeling/modeling-standards-and-precautions/index.md
+                  - 建模标准总结:
+                            - 3d-modeling/summary-of-modeling-standards/index.md
+                  - 导出前的检查:
+                            - 3d-modeling/pre-export-checks/index.md
+                  - 导出模型:          
+                            - 3d-modeling/export-model/index.md
+                  - 模型导入SCADA:
+                            - 3d-modeling/model-import-into-VC-Hub/index.md
+        - 附录:
                   - appendix/index.md
-                  - System Function:
+                  - 系统函数:
                             - appendix/system-function/index.md
                             - System.Alarm:
                                       - appendix/system-function/system-alarm/index.md
@@ -672,10 +712,19 @@ nav:
                                       - appendix/system-function/system-event/index.md
                                       - appendix/system-function/system-event/system-event-fail.md
                                       - appendix/system-function/system-event/system-event-success.md
+                            - System.Library:
+                                      - appendix/system-function/system-library/index.md
+                                      - appendix/system-function/system-library/system-library-getlocalimage.md
+                                      - appendix/system-function/system-library/system-library-getsystemimage.md          
                             - System.Page:
                                       - appendix/system-function/system-page/index.md
                                       - appendix/system-function/system-page/system-page-getpropertyvalue.md
                                       - appendix/system-function/system-page/system-page-setpropertyvalue.md
+                            - System.PTZControl:
+                                      - appendix/system-function/System-PTZControl/index.md
+                                      - appendix/system-function/System-PTZControl/System-PTZControl-move.md
+                                      - appendix/system-function/System-PTZControl/System-PTZControl-setPosition.md
+                                      - appendix/system-function/System-PTZControl/System-PTZControl-stop.md           
                             - System.Security:
                                       - appendix/system-function/system-security/index.md
                                       - appendix/system-function/system-security/system-security-changepassword.md
@@ -709,4 +758,9 @@ nav:
                                       - appendix/system-function/system-utils/index.md
                                       - appendix/system-function/system-utils/system-utils-importscript.md
                                       - appendix/system-function/system-utils/system-utils-importstyle.md
+                  - Demo工程:
+                            - appendix/Demo-workspace/index.md
+                            - appendix/Demo-workspace/home.md
+                            - appendix/Demo-workspace/components.md
+                            - appendix/Demo-workspace/features.md                   
 

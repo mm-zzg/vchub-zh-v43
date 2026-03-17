@@ -1,51 +1,61 @@
-# Custom Chart
+# 自定义图表
 
-Custom charts can display data according to your specific requirements. Through this control, you can realize various charts in **echarts** , and personalize the style, appearance, etc. of the control.
+自定义图表可以根据您的具体要求来展示数据。通过该控件，您可以实现 **echarts** 中的各种图表，并可对控件的样式、外观等进行个性化设置。
 
-This control can only set properties by writing scripts, so to use this control easily, you need to have certain coding skills.
+该控件只能通过编写脚本来进行属性设置，因此要想轻松的使用该控件，您需要具备一定的代码编写能力。
 
-**Note**: echarts is an open source visualization chart library based on JavaScript. For specific charts, please see:  [https://echarts.apache.org/examples/zh/index.html](https://echarts.apache.org/examples/zh/index.html) 
+**注1**：echarts是一个基于 JavaScript 的开源可视化图表库。具体的图表请参见：  [https://echarts.apache.org/examples/zh/index.html](https://echarts.apache.org/examples/zh/index.html) 
 
-![alt text](50.png)
+![alt text](71.png)
 
+**属性**
 
+| 名称 | 描述                         |
+|:----------|:----------------------------------|
+| 名字     | 此控件的名称。                    |
+| X        | 控件左侧距画布左侧的距离，单位px。 |
+| Y        | 控件顶部距画布顶部的距离，单位px。 |
+| W        | 控件的宽度，单位px。               |
+| H        | 控件的高度，单位px。               |
 
-**Properties**
+**动作**
 
-| **Name** | **Description**    |
-|----------|-------|
-| Name     | The name of this control.                                                          |
-| X        | The distance between the left side of the control and the left side of the canvas. |
-| Y        | The distance between the top of the control and the top of the canvas.             |
-| W        | The width of the control.                                                          |
-| H        | The height of the control.                                                         |
+允许您基于某种条件执行特定的动作。请参阅“[动作](../../event/index.md)”页上各种动作的完整描述。
 
+**示例**
 
+使用自定义图表显示一个柱状图，在柱状图上显示生产线的产能。
 
-**Event**
+1. 在echarts的图表分类下，点击柱状图，  
+[https://echarts.apache.org/examples/zh/index.html#chart-type-bar](https://echarts.apache.org/examples/zh/index.html#chart-type-bar) 
 
-Allows you to perform specific events based on certain conditions. See the full description of each event on the **2D Visualization-> Event** page.
+    ![alt text](72.png)
 
-**Example**
+2. 在柱状图分类下，点击基础柱状图，进入柱状图编辑页面。复制左侧的代码。如有需要，也可以直接对此处的代码进行编辑。
 
-Use a custom chart to display a bar chart that displays the production line's capacity on the bar chart.
+    ![alt text](73.png)
 
-1. Under the chart category of echarts, click on the bar chart,  [https://echarts.apache.org/examples/en/index.html#chart-type-bar](https://echarts.apache.org/examples/en/index.html) 
-    ![alt text](51.png)
-2. Under the histogram category, click Basic Histogram to enter the histogram editing page. Copy the code on the left. If necessary, you can also edit the code here directly.
-    ![alt text](52.png)
-3. Insert a "custom chart" control on the desgner page.
-4. Set the action properties for the control and add a "load" action.
-    ![alt text](53.png)
-5. Enter the following script in the script editor. 
+3. 在WAGO SCADA的画面上插入一个“自定义图表”控件。
+
+4. 为控件设置动作属性，添加一个“加载”动作。
+
+    ![alt text](74.png)
+
+5. 在脚本编辑器里输入如下脚本。
+
     ```typescript
-    const myChart = await System.UI.findControl('CustomChart1')
-    const tag = ['@Region:Production Capacity.Line1', '@Region:Production Capacity.Line2', '@Region:Production Capacity.Line3', '@Region:Production Capacity.Line4', '@Region:Production Capacity.Line5', '@Region:Production Capacity.Line6'];
+    // 查找创建的自定义图表控件
+    const myChart = await System.UI.findControl('自定义图表1')
+    // 需要订阅的变量列表
+    const tag = ['@区域:产能.产线1', '@区域:产能.产线2', '@区域:产能.产线3', '@区域:产能.产线4', '@区域:产能.产线5', '@区域:产能.产线6'];
+    // 变量列表初始值
     const tagValue = [0,0,0,0,0,0]
+    // 在 echarts 编辑好的 option 中，将 xAxis 的 data 修改为自己想要显示的 data 对应 tag
+    // series 中的 data 对应变量值 tagValue
     const option = {
         xAxis: {
             type: 'category',
-            data: ['Line1', 'Line2', 'Line3', 'Line4', 'Line5', 'Line6']
+            data: ['产线1', '产线2', '产线3', '产线4', '产线5', '产线6']
         },
         yAxis: {
             type: 'value'
@@ -58,26 +68,32 @@ Use a custom chart to display a bar chart that displays the production line's ca
             }
         ]
     };
-    // subscribe tags
-    System.Tag.subscribe(tag, (data => { 
+    // 订阅变量
+    System.Tag.subscribe(tag, (data => {
+        // 如果当前订阅变量的 path 在变量列表中，找到对应的下标
         const index = tag.findIndex(res => res === data.Path)
+        // 更新变量值列表中的对应下标的变量值
         tagValue[index] = data.Value;
+        // 更新echarts的option
         myChart.setOptions(option)
     }))
     ```
-    ![alt text](54.png)
-6. Click the "Preview" button on the page to view it.
-    ![alt text](55.png)
+    
+    ![alt text](75.png)
 
-**Note:**  
+6. 点击画面的"预览"按钮进行查看。
 
-1. The actual display effect of custom charts can only be seen on the preview or run page. 
-2. Custom charts only support the following three methods in echarts:  
+    ![alt text](76.png)
 
-     - setOption(option); 
-     - clear() 
-     - dispose()  
+**注意**：  
 
-Not all 3D class charts in echarts are supported. 
+1. 自定义图表只有在预览或运行页面，才能看到实际的显示效果。 
 
-![alt text](56.png)
+2. 自定义图表只支持echarts中的以下三种方法:  
+    - setOption(option); 
+    - clear() 
+    - dispose()  不支持echarts中的所有3D类图表。  
+
+    ![alt text](78.png) 
+
+

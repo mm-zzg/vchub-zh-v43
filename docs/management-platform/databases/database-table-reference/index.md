@@ -1,54 +1,42 @@
-# Database Table Reference
+# 数据库表结构参考
 
-VC Hub integrates multiple built-in systems that automatically query data without requiring manual construction of query logic or table structures. These systems autonomously create necessary tables in the database, insert relevant data, and provide appropriate querying methods.
+SCADA内置了许多系统，可以自动查询数据，而无需您手动构建查询和表结构。这些系统会自动在数据库中创建必要的表，插入相关数据，并提供相关查询方法。由于历史数据都存储在数据库表中，因此可以手动访问并查询数据，以自定义您查看数据的方式。
 
-Since historical data is stored within database tables, users have the option to manually access and query the data, enabling customized data views as needed.
+这些表都具有特定的结构，贸然更改表结构可能会导致不可预见的问题，因此不建议您对表结构进行更改和删除。
 
-**Important Note**
-These tables follow specific structural definitions. Unintended modifications to table structures may lead to unpredictable issues. It is strongly advised not to alter or delete existing table structures.
+虽然可以直接手动查询相关表数据，但是我们建议您在进行更改或操作之间备份数据库。并了解更改数据或表结构的风险将由您自行承担。
 
-Although direct manual querying of table data is technically possible, we recommend performing a full database backup prior to making any changes or executing operations. Please note that any risks resulting from modifications to data or table structure will be the responsibility of the user.
+由于SCADA系统支持传统的关系型数据库，也支持时序数据库InfluxDB，所以争对不同类型的数据库，表结构定义也有所差别。
 
-VC Hub supports both traditional relational databases and the time-series database InfluxDB. As a result, table structure definitions vary depending on the type of database in use.
+关系型数据库共享同一套的表结构定义，InlfuxDB单独一套表结构定义。   
 
-- Relational databases share a unified set of table definitions.
-- InfluxDB employs a separate and distinct schema structure.
+## 介绍
 
-## Introduce
+在介绍表结构之前，我们需要先了解相关基础配置。
 
-Before introducing the table structures, it is essential to understand the relevant foundational configurations. These preliminary settings serve as the groundwork for proper database operation and ensure seamless integration with VC Hub’s data management systems.
+## 节点
 
-## Node 
-
-VC Hub includes a node configuration feature, where the node name is by default set to the server’s hostname. Users may modify this name to suit their operational needs.
-
-The node primarily serves as a unique identifier, enabling other VC Hub instances within the network to easily recognize and communicate with it. When historical data is stored, the system also records the name of the node responsible for the data storage process.
+在 SCADA 程序中，有个节点配置功能，节点名称默认采用服务器主机名，用户可以更改为其他名称。节点主要是起唯一标识作用，方便组网中的其他 SCADA 程序识别。历史库存储数据时也会记录当前存储数据节点名称。
 
 ![alt text](1.png)
 
+## 资产
 
-
-## Asset
-
-Within the **Asset** page, users can configure the repository for **Tag History**. When a tag associated with the asset is enabled for historical recording, the system will write data to the designated historical database either upon changes to the database or at predefined intervals.
+在 "变量->资产" 页面，我们可以配置变量的历史存储库，当该变量开启历史记录时，会将变量的历史数据存入对应的历史库中。
 
 ![alt text](2.png)
 
+## 历史库
 
-
-## History Database
-
-Within the **History Database** page, users can configure both the **storage medium** and **storage format** for tag history. This flexibility allows tailored data archiving solutions that align with system requirements and performance preferences.
+在 "数据库->历史库"页面，我们可以配置变量历史的存储介质和存储形式。
 
 ![alt text](3.png)
 
+## 数据库连接
 
-
-## Database Connection
-
-The VC Hub system currently supports five types of databases: **MySQL**, **SQL Server**, **PostgreSQL**, **SQLite**, and **InfluxDB**.
-
-Users can configure the database connection by specifying the appropriate **connection URL**, **username**, and other relevant credentials. These configured databases are then utilized for storing **alarm history** and **tag history** data.
+目前 SCADA 系统支持 MySQL、SQLServer、PostgreSQL、SQLite、InfluxDB 共 5 种数据库类型，在数据库连接中配置对应数据库的连接地址、账号等信息，并提供给报警历史或变量历史使用。
 
 ![alt text](4.png)
+
+
 

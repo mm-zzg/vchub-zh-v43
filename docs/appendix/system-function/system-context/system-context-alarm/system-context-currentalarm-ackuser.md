@@ -3,14 +3,18 @@
 # System.Context.currentAlarm.ackUser
 
 
-## Description
+## 描述
 
-The user who acknowledged the current alarm.
-## Grammar
-System.Context.currentAlarm.ackUser
+当前报警的确认用户。
 
-## Code Example                                                                                                                                                                                                                                                                                                          
-Get the user who acknowledged the current alarm.
+## 语法
+
+**System.Context.currentAlarm.ackUser**
+
+## 代码示例
+
+获取当前报警的确认用户。
+
 ```typescript 
 
 const user = System.Context.currentAlarm.ackUser;

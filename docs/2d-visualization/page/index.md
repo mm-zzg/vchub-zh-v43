@@ -1,12 +1,12 @@
-# Page
+# 画面
 
-Page  plays an important role in the configuration, which provides real-time monitoring, control operation, alarm display, data analysis and interface customization. You can draw different kinds of page s according to the actual needs, which can be a simple page displaying basic information or a complex page  using various controls to draw the whole factory floor.
+画面在组态中扮演着重要的角色，它提供了实时监视、控制操作、报警显示、数据分析和界面定制等功能。您可以根据实际需求绘制各种不同的画面，可以是显示基本信息的简单画面，也可以是使用各种控件绘制出整个工厂车间的复杂画面。
 
- The following are the main functions of the page in the configuration:
+以下是画面在组态中的几个主要作用：
 
-1.  Monitor and display: The page  can be used to monitor and display the status and values of various devices, sensors and process parameters in real time.Operators can observe the screen to understand the current operating conditions, including temperature, pressure, flow, current and other data.
-2.  Control and Operation: The page  can provide controls such as operation buttons,switches, sliders, etc. for operating and controlling the equipment or system.Through the interactive elements on the page , the operator can change the setvalue, start and stop the equipment, switch mode and other operations.
-3.  Alarms:The page  can display alarm messages from the equipment or system in a timely manner so that the operator can respond and handle them quickly. Alarm messages are usually displayed in special colors, flashing or pop-up windows to remind the operator.
-4.  Data logging and analysis: The page  can display historical data, trend graphs and reports to help operators analyze data and diagnose faults. Through the display of graphs and curves, the operator can understand the trend and change of equipment operation.
-5.  Interface customization and personalization: The page  can be designed and customized by graphic editing software to make the interface meet specific application requirements and operating habits. Operators can customize the page  layout, color, font size, etc. as needed to improve work efficiency and comfort.
+1. 监视和显示：画面可以用来实时监视和显示各种设备、传感器和工艺参数的状态和数值。操作员可以通过观察画面来了解当前的运行情况，包括温度、压力、流量、电流等数据。
+2. 控制和操作：画面可以提供操作按钮、开关、滑动条等控件，用于操作和控制设备或系统。通过画面上的交互元素，操作员可以改变设定值、启停设备、切换模式等操作。
+3. 报警：画面可以及时显示设备或系统的报警信息，以便操作员能够快速响应和处理。报警信息通常以特殊的颜色、闪烁或弹窗等方式在画面上提醒操作员。
+4. 数据记录和分析：画面可以显示历史数据、趋势图和报表等信息，帮助操作员进行数据分析和故障诊断。通过图表和曲线的展示，操作员可以了解设备运行的趋势和变化。
+5. 界面定制和个性化：画面可以通过图形编辑软件进行设计和定制，使界面符合特定的应用要求和操作习惯。操作员可以根据需要自定义画面布局、颜色、字体大小等，以提高工作效率和舒适度。
 

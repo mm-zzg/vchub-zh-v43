@@ -1,62 +1,59 @@
-# Page Container
+# 画面容器
 
-Page Container is used to display the pages within this project.
+画面容器用于显示本项目内的画面。
 
-![alt text](52.png)
+![alt text](51.png)
 
-**Properties**
+**属性**
 
-| **Name**            | **Description**  |
-|---------------------|----------|
-| Name                | The name of this control.  |
-| X                   | The distance between the left side of the control and the left side of the canvas. |
-| Y                   | The distance between the top of the control and the top of the canvas.|
-| W                   | The width of the control.|
-| H                   | The height of the control.  |
-| Border              | Set the border of the page container, supporting border color and border thickness.   |
-| Resolution Adaption | Set the resolution adaptation of the page container, supporting options like none, scaled, full. Additionally, the resolution adaptation of the page itself will no longer be effective. |
-| Page                | Bind the page to the control.  <br>![alt text](53.png)  |
+| 名称   | 描述 |
+|:------------|:-------------|
+| 名字       | 此控件的名称。  |
+| X          | 控件左侧距画布左侧的距离，单位px。  |
+| Y          | 控件顶部距画布顶部的距离，单位px。 |
+| W          | 控件的宽度，单位px。   |
+| H          | 控件的高度，单位px。|
+| 边框       | 设置画面容器的边框，支持进行边框色和边框粗细设置。 |
+| 分辨率适配 | 设置画面容器的分辨率适配，支持关闭、宽高等比缩放、铺满缩放等选项，另外要显示在画面容器内的画面本身的分辨率适配将不再生效。   |
+| 画面       | 为控件绑定画面，如果所选画面设置了自定义属性，则将显示所选画面的自定义属性，可以修改自定义属性的值。 <br>![alt text](52.png) <br>![alt text](53.png) 下拉选择当前项目下的画面    <br>![alt text](54.png) 刷新按钮，点击后对下拉列表内容进行刷新 <br>![alt text](55.png)  绑定按钮，点击后弹出属性绑定窗口，为控件绑定画面  <br>![alt text](56.png) | 显示所选画面的自定义属性并可以修改  |
 
-**Event**
+**动作**
 
-Allows you to perform specific events based on certain conditions. See the full description of each event on the **2D Visualization-> Event**  page.
+允许您基于某种条件执行特定的动作。请参阅“[动作](../../event/index.md)”页上各种动作的完整描述。
 
-**Example 1**
+**示例1**
 
-Use a **Page Container** to embed other pages into the current page.
+通过画面容器，将其他画面嵌入到当前画面内。
 
-1. Create a new page and name it Page01.
-2. Add a gauge to Page01.
-3. Create another new page and name it Page02.
-4. Add a Page Container to Page02. Click the page container, and set the "Page" property to "Page01", indicating that Page01will be displayed inside the page container.
-
-    ![alt text](54.png)
-
-5. The display effect is as follows:
-
-    ![alt text](55.png)
-
-**Example 2**
-
-Use a **page container** to monitor multiple devices' statuses simultaneously.
-
-1. Create a new page named **"Motor1"**. Place a motor image and two labels on the page. Set the content of one tlabel to **"Running Status"**, and bind the other label to the tag **Motor1.RunningStatus** to display the current operating status of Motor1.
-
-    ![alt text](56.png)
-
-2. Create a new page named **"Motor2"**. Place a motor image and two labels on the page. Set the content of one tlabel to **"Running Status"**, and bind the other label to the tag **Motor2.RunningStatus** to display the current operating status of Motor2.
+1. 新建一个画面，名称为：画面1。
+2. 在画面1上添加一个仪表盘控件。
+3. 新建一个画面：画面2。
+4. 在画面2上添加一个“画面容器”控件，点击该控件，在属性栏的“画面”属性中选择“画面1”，表示在画面容器中显示画面1的内容。
 
     ![alt text](57.png)
 
-3. Create a new page named **"Home"**. Place a page container and a dropdown on the page. When switching the dropdown selection, the displayed page inside the page container updates accordingly.Set the dropdown options to **"Motor1"** and **"Motor2"**, with the default selection text as **"Motor1"**. Bind the page property of the page container to the **selectedText** property of the dropdown.
+5. 显示效果如下：
 
     ![alt text](58.png)
 
+**示例2**
+
+通过画面容器同时监控多个设备的状态。
+
+1. 新建一个名称为“电机1”的画面，画面上放置一个电机图片和2个文本框，一个文本框内容设置为：运行，另一个文本框绑定到变量：电机1.运行状态，用于显示电机1当前的运行状态。
+
     ![alt text](59.png)
 
+2. 新建一个名称为“电机2”的画面，画面上放置一个电机图片和2个文本框，一个文本框内容设置为：运行，另一个文本框绑定到变量：电机2.运行状态，用于显示电机2当前的运行状态。
 
+    ![alt text](60.png)
 
-4. In the running page, when switching the dropdown selection, the page inside the page container automatically updates.
+3. 新建一个名称为“Home”的画面，画面上放置一个画面容器和一下下拉框。切换下拉框内容时，更新画面容器内显示的画面。下拉框的下拉选项设置为电机1，电机2，默认选择文本：电机1。画面容器的画面属性绑定到下拉框的selectedText属性。
 
-    ![page-container](../../../assets/images/page-container.gif)
+    ![alt text](61.png)
 
+    ![alt text](62.png)
+
+4. 在运行页面，切换下拉框的内容时，画面容器内的画面自动切换。
+
+    ![alt text](63.gif)

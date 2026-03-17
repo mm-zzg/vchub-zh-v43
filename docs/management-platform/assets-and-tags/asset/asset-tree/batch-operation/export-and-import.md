@@ -1,55 +1,55 @@
-# Export and Import
+# 导出、导入
 
-Used for backing up models or instances, and for copying models or instances to other asset trees.
+用于对模型或实例进行备份，将模型或实例复制到其他资产树中。
 
-## **Export**
+## 导出
 
-Export all data under the model or instance tab to a JSON file.
+导出是将模型或实例页签下的所有数据导出到JSON文件中。
 
-**Export Model**
+**导出模型**
 
-In the Model tab, after clicking the Export button, the models in the current asset will be exported as a JSON file.
-
-![alt text](20.png)
-
-![alt text](21.png)
-
-**Export  Instance**
-
-In the Instance tab, after clicking the Export button, the instances in the current asset will be exported as a JSON file.
+在模型页签下，点击导出按钮后，将当前资产中的模型导出为 *Json* 文件。
 
 ![alt text](22.png)
 
 ![alt text](23.png)
 
+**导出实例**
 
-
-## **Import**
-
-Import the exported JSON file.
-
-**Import Model**
-
-In the Model tab, click the Batch Operation button.
+在实例页签下，点击导出按钮后，将当前资产中的实例导出为 *Json* 文件。
 
 ![alt text](24.png)
 
-In the pop-up window, click the "Import" button.
-
 ![alt text](25.png)
 
-**Import Instance**
+## 导入
 
-In the Instance tab, click the Batch Operation button.
+将导出的JSON文件进行导入。
+
+**导入模型**
+
+在模型页签下，点击批量操作按钮。
 
 ![alt text](26.png)
 
-In the pop-up window, click the "Import" button.
+在弹窗中点击“导入”按钮。
 
 ![alt text](27.png)
 
-**Notes:**
+**导入实例**
 
-1. After clicking the More button, the user can choose to import a JSON file that was previously exported. The imported file must match the current tab (Model or Instance); otherwise, an error message will be displayed.<br>
-    ![alt text](28.png)
-2. When importing instance data separately, ensure that the corresponding model objects exist in the current tree; otherwise, the import will fail.
+在实例页签下，点击批量操作按钮。
+
+![alt text](28.png)
+
+在弹窗中点击“导入”按钮。
+
+![alt text](29.png)
+
+说明：
+
+1. 导入的文件必须与当前选项卡匹配，否则会提示错误。
+
+    ![alt text](30.png)
+
+2. 在单独导入实例内容时，请确保导入的树中存在Json中实例对应的模型对象，否则会导入失败。

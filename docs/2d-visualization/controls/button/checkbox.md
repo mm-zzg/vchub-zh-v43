@@ -1,40 +1,40 @@
-# Checkbox
+# 复选框
 
-The checkbox control represents the switching of two states. By setting the check box to the selected or unselected state, the user can easily switch the state of the corresponding function.
+复选框控件表示两种状态的切换，通过将复选框设置为选中或未选中状态，用户可以方便地切换相应功能的状态。
 
-![alt text](18.png)
+![alt text](20.png)
 
-**Properties**
+**属性**
 
-| **Name**     | **Description**  |
-|--------------|------------|
-| Name         | The name of this control. |
-| X            | The distance between the left side of the control and the left side of the canvas.  |
-| Y            | The distance between the top of the control and the top of the canvas.  |
-| W            | The width of the control.  |
-| H            | The height of the control.  |
-| Selected     | The selected state of the control.  |
-| Fill         | The fill color of the control. <br>![alt text](19.png)  <br>The text content displayed by the control.  <br>![alt text](20.png)  |
-| Border Color | The border color of the control.  <br>![alt text](21.png) |
-| Shadow       | Sets the shadow effect of the control. You can set the outer shadow and inner shadow.  <br> **Outer**   <br>**- Enable**: Whether to enable the shadow effect  <br>**- Color**: Used to set the shadow color <br> **- X**: Controls how far the shadow is shifted horizontally.  <br>`X = 10` → shadow moves 10px to the right  <br>`X = -5` → shadow moves 5px to the left <br>**- Y**: Controls how far the shadow is shifted vertically.  <br>`Y = 8` → shadow moves 8px downward  <br>`Y = -3` → shadow moves 3px upward <br> **- Blur**: Controls how soft or sharp the edges of the shadow appear. Higher values make the shadow more blurry and spread out. <br> **Inner**  <br>**- Enable**: Whether to enable the shadow effect  <br>**- Color**: Used to set the shadow color <br>**- X**: Controls how far the shadow is shifted horizontally.  <br>`X = 10` → shadow moves 10px to the right  <br>`X = -5` → shadow moves 5px to the left <br>**- Y**: Controls how far the shadow is shifted vertically.  <br>`Y = 8` → shadow moves 8px downward  <br>`Y = -3` → shadow moves 3px upward <br>**- Blur**: Controls how soft or sharp the edges of the shadow appear. Higher values make the shadow more blurry and spread out. <br>  **- Spread**: Controls how much the shadow **expands or contracts** from the shape. |
-| Font         | Set the font for text content. Including font type, font size, font color, bold, italic, underline, horizontal alignment, and vertical alignment.  |
+| 名称 | 描述 |
+|:----------|:-----------|
+| 名字     | 此控件的名称。  |
+| X        | 控件左侧距画布左侧的距离，单位px。 |
+| Y        | 控件顶部距画布顶部的距离，单位px。   |
+| W        | 控件的宽度，单位px。 |
+| H        | 控件的高度，单位px。  |
+| 选中     | 控件的选中状态。  |
+| 填充     | 控件的填充色。  <br>![alt text](21.png)  <br>控件显示的文本内容。  <br>![alt text](22.png) |
+| 边框色   | 控件的边框色。  <br>![alt text](23.png) |
+| 阴影     | 设置控件的阴影效果。可以设置外阴影和内阴影。   <br> **外阴影**   <br>- **启用**：是否启用阴影效果  <br>- **颜色**：用于设置阴影颜色  <br>- **X**：控制阴影在水平方向上的偏移量。  <br>`X = 10` → 阴影往右移了10像素  <br>`X = -5` → 阴影往左移了5像素  <br>- **Y**：控制阴影在垂直方向上的偏移量。  <br>`Y = 8` → 阴影往下移了8像素  <br>`Y = -3` → 阴影往上移了3像素   <br>- **模糊**：控制阴影的 **模糊程度**，模糊值越大，边缘越柔和、越“自然”。 <br>**内阴影** <br>- **启用**：是否启用阴影效果 <br>- **颜色**：用于设置阴影颜色  <br>- **X**：控制阴影在水平方向上的偏移量。  <br>`X = 10` → 阴影往右移了10像素  <br>`X = -5` → 阴影往左移了5像素 <br>- **Y**：控制阴影在垂直方向上的偏移量。  <br>`X = 8` → 阴影往下移了8像素  <br>`Y = -3` → 阴影往上移了3像素  <br>- **模糊**：控制阴影的 **模糊程度**，模糊值越大，边缘越柔和、越“自然”。<br>- **扩散**：控制阴影的大小|
+| 字体     | 设置文本内容的字体。包括字体型号、字体大小、字体颜色、粗体、倾斜、下划线、水平对齐方式、垂直对齐方式。  |
 
-**Event**
+**动作**
 
-Allows you to perform specific events based on certain conditions. See the full description of each event on the **2D Visualization-> Event** page.
+允许您基于某种条件执行特定的动作。请参阅“[动作](../../event/index.md)”页上各种动作的完整描述。
 
-**Example**
+**示例**
 
-Automatic operation mode of the factory line can be enabled or disabled via checkboxes. When the check box is checked, the device is started; when the check box is unchecked, the device is stopped.
+可通过复选框启用或禁止工厂生产线的自动运行模式。当复选框被选中，启动设备；当复选框取消选中时，停止设备。
 
-![alt text](22.png)
+![alt text](24.png)
 
-1. Add a check box control on the page, and the control name is "Device1".
-2. To set mouse event for this control, write the following script.
+1. 在画面上添加复选框控件，控件名称为”Device1“。
+2. 为该控件设置鼠标动作，编写如下脚本。
 
-    ```typescript
-    const device1 = await System.UI.findControl('Device1');
-    const deviceStatus = device1.selected;
-    System.Tag.writeValue('@device:deviceA', deviceStatus ? 1 : 0)
-    ```
+```js
+const device1 = await System.UI.findControl('Device1');
+const deviceStatus = device1.selected;
+System.Tag.writeValue('@设备:设备A', deviceStatus ? 1 : 0)
+```
  

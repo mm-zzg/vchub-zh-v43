@@ -1,20 +1,16 @@
-# Shelve Alarm
+# 报警搁置
 
-All alarms can be shelved. Alarms that have been shelved are displayed in the shelved list and no longer appear in the real-time list.
+所有报警都可以进行报警搁置。被搁置后的报警显示在搁置列表内，不再显示在实时列表。
 
-When shelving an alarm, the shelve duration needs to be set.
+在搁置报警的时候，需要设置搁置的时间。
+
+![alt text](24.png)
+在搁置列表中查看所有搁置的报警。按报警路径进行搁置，路径相同的报警搁置后，将显示为一条搁置信息。
 
 ![alt text](25.png)
 
-Check all the shelved alarms in the shelved list. Shelve alarms according to the alarm path. After shelving alarms with the same path, they will be displayed as one shelved alarm.
+当到达搁置时间后，无论报警是否需要手动确认，报警都会自动恢复，从搁置列表消失。
 
-![alt text](26.png)
+在到达搁置时间前，也可以在搁置列表中选择报警点击“解除搁置”按钮，进行手动解除。 如果报警不需要确认信息，则自动取消搁置，该数据从搁置列表消失；如果该报警需要确认信息，则弹出确认窗口，填写完确认信息后解除搁置。
 
-When the shelve duration is reached, whether the alarm needs to be acknowledged manually, the alarm will automatically resume and disappear from the shelve list.
-
-Before reaching the shelve duration, you can also select the alarm in the shelving list and click the "Unshelve" button to remove it manually. If the alarm does not need to acknowledge the information, it will be automatically canceled and the data will disappear from the shelved list; if the alarm needs the acknowledge information, the confirmation window will pop up and be released after filling in the confirmation information.
-
-The alarm status of the release will be marked as acknowledged.
-
-
-
+解除搁置的报警状态会标记为已确认。

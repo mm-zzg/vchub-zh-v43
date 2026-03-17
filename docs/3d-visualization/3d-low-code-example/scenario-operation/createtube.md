@@ -1,29 +1,28 @@
 # createTube
 
-**Description**: Create curves that can be mapped
+**描述：** 创建可以贴图的曲线
 
 ```typescript
-const view = await System.UI.findControl('3DViewer1')// Obtain a 3D viewer control named "3DViewer1" in the page
+const view = await System.UI.findControl('3D查看器1')// 获取画面中名为“3D查看器1”的3D查看器控件
 const scene = await view.getScene();
-const linePaths=[
-{x: -20, y: -10, z: 0},
-{x: 60, y: 40, z: 0},
-{x: 60, y: -10, z: 0},
-{x: 60, y: -10, z: 20},
-]// Line vertex coordinates
-const tube = scene.createTube({
-name: 'tube',//Create a line name
-points: linePaths,//Create line vertex coordinates
-color: 'rgba(189,16,224)',//Create line colors
-width: 3,//Create line width (default 1)
-image: 'a.Arrow.png',//Create a line map path
-repeatX: 15,//The number of times the image is repeated in the x-direction (default 1)
-repeatY: 6////The number of times the image is repeated in the y-direction (default 1)
+const linePaths = [
+    { x: -20, y: -10, z: 0 },
+    { x: 60, y: 40, z: 0 },
+    { x: 60, y: -10, z: 0 },
+    { x: 60, y: -10, z: 20 },
+]; //线条顶点坐标
+const tube =scene.createTube({
+    name: 'tube', //创建线条名字
+    points:linePaths, //创建线条顶点坐标
+    color: 'rgba(189, 16,224)', //创建线条颜色
+    width: 3, //创建线条宽度(默认1)
+    image: 'a.箭头.png', //创建线条贴图路径
+   repeatX: 15, //图片在x方向的重复次数(默认1)
+   repeatY: 6 ////图片在y方向的重复次数(默认1)
 })
 ```
- 
-**Example:**
+**示例：**
 
-Write the above code on the button, click the button, and you can create a curve for the texture to the scene
+在按钮上编写上述代码，点击按钮，可以创建贴图的曲线 进入场景中
 
-![3d_lowcode_SOperation_createtextlabel1](../../../assets/images/3d_lowcode_SOperation_createtube1.gif)
+![alt text](22.gif)

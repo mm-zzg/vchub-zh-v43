@@ -1,32 +1,26 @@
 # createSnow
 
-**Description**: Create default snow effects
+**描述：** 创建默认下雪特效
 
 ```typescript
-const view=await System.UI.findControl('3DViewer1')// Obtain a 3D viewer control named "3DViewer1" in the page
-const scene=await view.getScene();
-scene. createSnow({
-name: 'snow',//Create the name of the snow
-position: {x: 0, y: 0, z: 0},//Create the center position for snowfall
-range: {depth: 1000, width: 500, height: 500},//The default range for snowflake falling is (1000500500). The depth value is the range of depth/2 on the y-axis up and depth/2 on the y-axis down
-speed: 1,//falling speed (default 0.5)
-count: 2500//Number of snowflakes (default to 2000)
+const view = await System.UI.findControl('3D查看器1')// 获取画面中名为“3D查看器1”的3D查看器控件
+const scene = await view.getScene();
+scene.createSnow({
+name:'snow', //创建雪的名字
+position:{x:0,y:0,z:0}, //创建下雪的中心位置
+range:{depth:1000,width:500,height:500}, //雪花下落的范围 默认(1000,500,500)     depth值为y轴向上depth/2范围和y轴向下depth/2的范围
+speed:1, //下落速度(默认0.5)
+count:2500 //雪花数量(默认2000)
 });
 ```
  
-**Example:**
+**示例：**
 
-Write the above code on the button, click the button, and you can create a snow effect at the specified location
+在按钮上编写上述代码，点击按钮，可以在指定位置创建下雪特效
 
-![3d_lowcode_SOperation_createsmoke1](../../../assets/images/3d_lowcode_SOperation_createsnow1.gif)
+![alt text](19.gif)
 
- Modify snow effects and turnoff effects:
+修改下雪特效和关闭特效：
 
-![alt text](3d_lowcode_SOperation_createsnow2.png)
-
-
-
-
-
-  
+![alt text](20.png)
 

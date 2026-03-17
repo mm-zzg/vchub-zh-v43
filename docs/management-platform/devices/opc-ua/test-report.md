@@ -1,6 +1,6 @@
 # 常见OPC UA Server测试报告
 
-我们使用以下常见的OPC UA Server，测试其和WAGO VC Hub中的OPC UA驱动之间的通信。
+我们使用以下常见的OPC UA Server，测试其和WAGO SCADA中的OPC UA驱动之间的通信。
 
 ## OPC UA Server
 
@@ -18,7 +18,7 @@
 | Softing  | Y          | Y        |
 | Matrikon | Y          | Y        |
 
-#### 2.WAGO  VC Hub支持OPC UA Server的以下数据类型
+#### 2.WAGO  SCADA支持OPC UA Server的以下数据类型
 
 |                 | Prosys | Softing | Matrikon |
 |-----------------|:--------|:---------|:----------|

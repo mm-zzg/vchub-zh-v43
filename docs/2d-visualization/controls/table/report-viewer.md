@@ -1,46 +1,47 @@
-# Report Viewer
+# 报表查看器
 
-The Report Viewer is used to display reports that have been created in the Report Editor.
-
-![alt text](33.png)
-
-**Interface Elements**
+报表查看器用于显示在报表编辑器中已创建的报表。
 
 ![alt text](34.png)
 
-**Properties**
+**界面元素**
 
-| **Name**    | **Description**   |
-|-------------|-----------------------------------|
-| Name        | The name of this control.  |
-| X           | The distance between the left side of the control and the left side of the canvas.  |
-| Y           | The distance between the top of the control and the top of the canvas. |
-| W           | The width of the contro.   |
-| H           | The height of the control.   |
-| Report      | Select the report data you want to view.  |
-| Background  | Set the background color of the control.   |
-| Border      | Set the border color and border thickness.       |
-| Report List | Set the appearance style of the report list.  <br>- **Show**: Control the display and hiding of the report list. <br>- **Width(px)**: Set the column width of the report list.      <br>You can also set the background and font of the text information in the report list in different selected states. Contains two states: default and selected.  <br>![alt text](35.png) |
-| Tool Bar    | Set the style of the toolbar.   <br>- **Default Show**: Control the display and hiding of the toolbar's default state.  <br>- **Background**: Set the toolbar background color.              <br>- **Button**: Set the color of each button in the toolbar.      |
-| Adaptation  | When turned on, the report content automatically adapts to the size of the control. When it is turned off, if the actual size of the report exceeds the size of the control, scroll bars will be displayed in the corresponding direction.   |
+![alt text](35.png)
 
-**Event**
+**属性**
 
-Allows you to perform specific events based on certain conditions. See the full description of each event on the **2D Visualization-> Event** page.
+| **名称** | **描述** |
+|:----------|:---------------|
+| 名字     | 此控件的名称。 |
+| X        | 控件左侧距画布左侧的距离，单位px。 |
+| Y        | 控件顶部距画布顶部的距离，单位px。 |
+| W        | 控件的宽度，单位px。  |
+| H        | 控件的高度，单位px。  |
+| 数据     | 选择需要查看的报表数据。  |
+| 背景     | 设置控件的背景色。   |
+| 边框     | 设置边框色和边框粗细。  |
+| 报表列表 | 设置报表列表的外观样式。<br>- **显示**：控制报表列表的显示、隐藏。<br>- **宽度(px)**：设置报表列表的列宽。还可以设置报表列表的文本信息在不同选中状态下的背景和字体。包含两种状态：默认和选中。 <br> ![alt text](36.png)  <br>- **背景**：当前状态下的显示背景色。<br>- ![alt text](37.png)：点击后弹出设置窗口。设置字体型号、字体大小、粗体、倾斜、字体颜色。|
+| 工具栏   | 设置工具栏的样式<br>- **默认显示**：控制工具栏默认状态的显示、隐藏。<br>- **背景**：设置工具栏背景色。<br>- **按钮**：设置工具栏内各个按钮的颜色。 |
+| 自适应   | 开启后，报表内容自动适应控件大小。不开启的情况下，如果报表实际尺寸超出控件的尺寸，会在对应的方向上显示滚动条。 |
 
-**Example**
+**动作**
 
-View the report.
+允许您基于某种条件执行特定的动作。请参阅 “[动作](../../event/index.md)” 页上各种动作的完整描述。
 
-1. Insert a "Report Viewer" control on the page. Set the following properties.
+**示例**
 
-| **Property** | **Value**   |
-|--------------|-----|
-| Report List  | - Selected background: 99e699  <br>- Selected Font: Microsoft Yahei, 14, bold, f0672e | 
-| Report       | Line 1   |
+查看已经设计完成的报表。
 
-2.Click the "Preview" button on the page.<br>
+1. 在画面上插入一个“报表查看器”控件。设置如下属性。
 
-3.In the report viewer, click "Line 1" to view the data.
-    ![alt text](36.png)
+    | **属性** | **值** |
+    |:----------|:------------|
+    | 报表列表 |- 选中背景：99e699 <br>- 选中字体：微软雅黑，14，加粗，f0672e |
+    | 报表     | 产线1 |
+
+2. 点击画面的“预览”按钮。
+3. 在报表查看器中，点击“产线1”进行数据查看。
+
+    ![alt text](38.png)
+
 

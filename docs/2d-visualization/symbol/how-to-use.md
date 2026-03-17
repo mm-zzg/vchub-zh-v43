@@ -1,88 +1,91 @@
-# How to use symbol
+# 应用图符
 
-## Example 1: Using Indirect Tag Binding for Multiple Motors
+## 示例 1：使用间接标签绑定管理多个电机
 
-**Scenario:**
-Assume there are three motors with the same configuration, each having three tags: "Running Status" ,"Power", and "Speed". We want to use a single symbol to display the status of these motors. Indirect tag binding can help us achieve this goal.
+**场景**：假设存在3个相同配置的电机，每个电机都有“运行状态”、“功率”、“转速”这3个变量，我们希望使用一个图符来显示这些电机的状态时，动态变量绑定可以帮助我们实现这一目标。
 
-Tag paths：
+这些变量路径分别为：
 
-@Region:Motor1.RunningStatus
+`@区域:电机1.运行状态`
 
-@Region:Motor1.Power
+`@区域:电机1.功率`
 
-@Region:Motor1.Speed
+`@区域:电机1.转速`
 
-@Region:Motor2.RunningStatus
+`@区域:电机2.运行状态`
 
-@Region:Motor2.Power
+`@区域:电机2.功率`
 
-@Region:Motor2.Speed
+`@区域:电机2.转速`
 
-@Region:Motor3.RunningStatus
+`@区域:电机3.运行状态`
 
-@Region:Motor3.Power
+`@区域:电机3.功率`
 
-@Region:Motor3.Speed
+`@区域:电机3.转速`
 
-1. In the Symbol window, create an symbol  library: Library 1.
-2. Click on the Add button of this library to add a symbol named “Motor”.
-3. Add a picture of the motor in the symbol editing window; add three label controls, named : RunningStatus, Power, Speed; add three value display controls, placed behind the labels, for displaying the corresponding values. The drawing effect is as follows:
+1. 在“图符”窗口，创建图符库：库1。
+2. 点击该图符库的新增按钮，添加一个名为“电机”的图符。
+3. 在图符编辑窗口添加一个电机图片；添加3个文本标签控件，分别命名为：运行状态、功率、转速；添加3个值显示控件，放在文本标签后方，用于显示对应值。绘制效果如下：
 
-![alt text](22.png)
+      ![alt text](24.png)
 
-4. Click on a blank space in the symbol window to add the following custom properties.
+4. 点击图符窗口的空白处，为图符添加如下自定义属性。
 
-![alt text](23.png)
+      ![alt text](25.png)
 
-5. In the symbol, bind the text property of the value display control after **RunningStatus** to the symbol's custom property: **RunningStatus**. 
+5. 在图符上
+      - 将 **运行状态** 后面的值显示控件的文本属性绑定到图符的自定义属性：**运行状态**。
 
-Bind the text property of the value display control after **Power** to the symbol's custom property: **Power**. 
+      - 将 **功率** 后面的值显示控件的文本属性绑定到图符的自定义属性：**功率**。
 
-Bind the text property of the value display control after **Speed** to the symbol's custom property: **Speed**.
+      - 将 **转速** 后面的值显示控件的文本属性绑定到图符的自定义属性：**转速**。
 
-6. Add an instance of the motor on Page1, including a label and a dropdown. Set the text of the label to **"Motor:"**, and configure the dropdown list as follows:
+6. 在”画面1“上添加电机的实例，一个文本标签和一个下拉框。文本标签的内容设置为”电机：“，下拉框配置如下：
 
-![alt text](24.png)
+      ![alt text](26.png)
 
-7. On the page, click on the symbol instance to bind its properties so that it displays the corresponding motor parameters based on the selected value from the dropdown.
+7. 在画面上，点击图符实例，为其绑定属性，通过所选的下拉框的值，来显示对应电机的参数。
 
-In its properties, click the **"RunningStatus"** binding button to bind it to the following dynamic tag.
+      - 在其属性中点击“**运行状态**”的绑定按钮，为其绑定如下动态变量。
 
-![alt text](25.png)
+      ![alt text](27.png)
 
-In its properties, click the **"Power"** binding button to bind it to the following dynamic tag.
+      - 在其属性中点击“**功率**”的绑定按钮，为其绑定如下动态变量。
 
-![alt text](26.png)
+      ![alt text](28.png)
 
-In its properties, click the **"Speed"** binding button to bind it to the following dynamic tag.
+      - 在其属性中点击“**转速**”的绑定按钮，为其绑定如下动态变量。
 
-![alt text](27.png)
+      ![alt text](29.png)
 
-8. On the runnning page, switch the value of the dropdown to view the parameter values displayed on the symbol.
+8. 在运行页面，切换下拉框的值，查看图符上显示的参数值。
 
-![symbol1](../../assets/images/symbol1.gif)
+      ![alt text](2.gif)
 
-**Example 2:** Suppose you have a pump, and you want to use a symbol to display the pump's operating status. If the pump is running, the symbol displays as green; if the pump is stopped, the symbol displays as red.
 
-1. In the **"Symbol"** window, create a symbol library called **Library 1**.
-2. Click the **Add** button in the symbol library to add a symbol named **"Indicator Light."**
-3. In the symbol editing window, add a ellipse to represent the pump's operating status indicator light.
-4. Click on the blank area of the symbol to add a custom property named **Color**.
 
-![alt text](28.png)
+**示例2：假设您有一个泵，您希望使用图符来显示泵的运行状态。如果泵在运行，图符显示为绿色；如果泵停止，图符显示为红色。**
 
-5. Click the **binding button** for the fill color of the ellipse and bind it to the symbol's custom property **Color**.
+1. 在“**图符**”窗口，创建图符库：**库1**。
 
-![alt text](29.png)
+2. 点击该图符库的 **新增** 按钮，添加一个名为“**指示灯**”的图符。
 
-6. Add the symbol to the page, click on the symbol, and in its defined properties, click the **binding button** for the **Color** property to bind it to an expression. When the tag value is true, it should display green, and when the tag value is false, it should display red. 
+3. 在图符编辑窗口添加一个圆形，用来表示泵运行状态的指示灯。
 
-      The tag **Demo:IndicatorLight** represents the device's indicator light status and is a bool type tag.
+4. 点击图符的空白处，为图符添加一个名为 **Color** 的自定义属性。
 
-![alt text](30.png)
+      ![alt text](30.png)
 
-7. On the Running page, view the effect of the symbol.
+5. 点击圆形的填充色的 **绑定按钮**，将其绑定到图符的自定义属性 **Color** 上。
 
-![symbol2](../../assets/images/symbol2.gif)
+      ![alt text](31.png)
+
+6. 在画面上添加该图符，点击图符，在其在定义属性中点击 **Color** 属性的 **绑定按钮**，为其绑定一个表达式，当变量值为真时，显示绿色，当变量值为假时，显示红色。其中变量：**区域:指示灯** 表示设备的指示灯的状态，是个布尔型变量。
+
+      ![alt text](32.png)
+
+7. 运行画面，查看图符显示效果。
+
+      ![alt text](3.gif)
 

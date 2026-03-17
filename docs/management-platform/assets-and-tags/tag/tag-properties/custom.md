@@ -1,31 +1,27 @@
-# Custom
+# 自定义属性
 
-Custom property refer to properties that users add to tag to meet their specific application needs, such as color, size, shape, etc., in order to better satisfy their monitoring and control requirements.
+自定义属性指用户为变量自行添加的属性，以满足其特定应用需求的属性，例如颜色、大小、形状等，以便更好地满足其监控和控制需求。
 
-## **How to Enable**
+## 如何启用
 
- Click the Add button to add custom properties. 
+在变量的编辑弹窗中，顶部有 **自定义属性** 的开关，开启后设置自定义属性。
 
 ![alt text](40.png)
 
- Click the Add button to add custom property .
+点击添加按钮，添加自定义属性。
 
 ![alt text](41.png)
 
-| **Name** | **Description**                                                                       |
-|----------|---------------------------------------------------------------------------------------|
-| Name     | Required.The name of the customized property.                                         |
-| Type     | Required.Drop-down selection with Integer, Double, Bool, String, DateTime.            |
-| Value    | Required.Depending on the type of data selected, different input boxes are displayed. |
+| **配置** | **描述**                                                |
+|:----------|:---------------------------------------------------------|
+| 名称     | 必填。自定义属性的名称。                                  |
+| 类型     | 必填。下拉选择，包含Integer、Double、Bool、String、DateTime 。 |
+| 值       | 必填。根据选择的数据类型，显示不同的输入框。               |
 
- In the Assets window,expand t ag and under the Custom node, you can view the custom properties that have been set.
+在资产窗口中，展开变量，在“自定义属性”节点下可以查看已设置的自定义属性。
 
 ![alt text](42.png)
 
- Custom properties are the same as the properties that come with the tag and can be bound.
+自定义属性和变量自带的属性一样，可以进行绑定。
 
 ![alt text](43.png)
-
-
-
-

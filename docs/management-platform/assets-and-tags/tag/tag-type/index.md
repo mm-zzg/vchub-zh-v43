@@ -1,60 +1,60 @@
-# Tag Type
+# 变量类型
 
-The types of tag in VC Hub include:
+WAGO SCADA中的变量类型包括：
 
-- Memory Tag
-- I/O Tag
-- Expression Tag
-- System Tag
+- 内存变量
+- I/O变量
+- 表达式变量
+- 系统变量
 
-Of these, memory tags, I/O tags, and expression tags are allowed to be created, while system tags are built-in and do not support creation.
+其中，内存变量、I/O变量、表达式变量允许创建，系统变量是内置的，不支持创建。
 
-The types of tags that can be created by the user have their own icons in the asset tree:
+用户可创建的变量类型在资产树中都有自己的图标：
 
-| Icon                                                                                                                                                                                                                                  | Tag Type       |
-|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|----------------|
-| ![alt text](1.png) | Memory tag     |
-| ![alt text](2.png) | I/O tag        |
-| ![alt text](3.png) | Expression tag |
+|图标  | 变量类型 |
+|:---------------|:--------------|
+| ![alt text](1.png) | 内存变量     |
+| ![alt text](2.png) | I/O变量      |
+| ![alt text](3.png) | 表达式变量   |
 
-## **Memory Tag**
+#### 内存变量
 
-Memory tag are simple tags that are not polled or updated automatically. They remain the same value until some mechanism created by another user (perhaps a script or binding) changes their value.
+内存变量是简单的变量， 不会自动轮询或更新其值。它们 保持相同的值，直到某个由 其他用户创建的机制（可能是脚本或绑定）改变它们的值 。
 
 ![alt text](4.png)
 
-## **I/O Tag**
+#### I/O变量
 
-Obtain their values by binding to an external device.
+通过绑定外部设备获取其值。
 
 ![alt text](5.png)
 
- I/O tags get their values by binding to a device through a data source property.
+I/O变量通过数据源属性绑定设备。
 
 ![alt text](6.png)
 
-## **Expression Tag**
+#### 表达式变量
 
-Calculates and determines its value by writing an expression.
+通过编写表达式，计算并 确定其值。
 
 ![alt text](7.png)
 
-Expression tags must have the **Data Source Path**, **Expression (Read)**, and **Expression (Write)** set.
+表达式变量必须设置 **源变量路径、表达式（读值）和表达式（写值）**。
 
 ![alt text](8.png)
 
-| **Name**           | **Description**                                                                                                                                                                                       |
-|--------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Data Source Path   | You can enter the tag Path directly or select the tag. Only one tag can be filled in.                                                                                                                 |
-| Expression (Read)  | The default display {Source}, {Source} represents the value of the source tag. You can use the new value obtained from the source tag by expression calculation as the value read by the current tag. |
-| Expression (Write) | The default display {Value}, {Value} represents the original value of the source tag. This expression determines the value that should be written to the current tag.                                 |
+| **属性**     | **描述**  |
+|:--------------|:--------------------|
+| 源变量路径   | 可以直接输入变量Path或选择变量。只可填写 一个变量。    |
+| 表达式（读值） | 默认显示{Source}，{Source}代表源变量的值。可以将源变量通过表达式计算后获取的新值作为当前变量读到的值。 |
+| 表达式（写值） | 默认显示{Value}，{Value}表示源变量的原始值。此表达式确定应写入当前变量的值。 |
 
-**Example**
+**示例**
 
-To convert degrees Fahrenheit to Celsius for display.
+将华氏度转化为摄氏度显示。
 
-1. Create an expression tag with the name: Celsius_Temperature
-2. Set the source tag, select the source tag "Fahrenheit_Temperature", the value of this tag is a Fahrenheit temperature.
-3. Set the Expression (Read) to: ({Source} - 32) × 5/9
-4. Set the Expression (Write) to: ({Value} × 9/5) + 32
+1. 创建一个表达式变量，名称为：摄氏温度
+2. 设置源变量，选择源变量“华氏温度”，该变量的值是个华氏温度。
+3. 设置表达式(读值)为：( {Source} - 32) × 5/9
+4. 设置表达式(写值)为：( {Value} × 9/5) + 32
 

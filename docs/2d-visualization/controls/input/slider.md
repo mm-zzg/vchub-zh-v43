@@ -1,50 +1,46 @@
-# Slider
+# 滑动条
 
-The slider control is used to display the current value and optional range, i.e. to set parameters and select values within a certain value range by sliding the bar.
+滑动条控件用于展示当前值和可选范围，即在一定数值范围内通过滑动条来设置参数，选取数值。
 
-**Properties**
+**属性**
 
-| **Name** | **Description** |
-|----------|-----------------|
-| Name | The name of this control. |
-| X | The distance of the left side of the control from the left side of the canvas. |
-| Y  | The distance from the top of the control to the top of the canvas. |
-| W | The width of the control.  |
-| H| The height of the control. |
-| ![alt text](9.png)| The angle of the control. |
-| Display| Sets the display style of the slider.  <br> - **Reverse**: Sets the direction of the slider, when selected, inverts the slider.  <br> - **Background**: Sets the background color of the entire background bar. <br>![alt text](10.png) <br> - **Slider Color**: Sets the color of the slider section.  <br>![alt text](11.png)  <br>- **Min**: Sets the minimum value of the slider. <br>- **Max**: Sets the maximum value of the slider. <br>- **Value**: Sets the current value of the slider.<br> **Note**: Once a value is bound, the slider is not draggable on the running page. |
-| Tooltip   | Sets the display style of the slider alert message.   <br>- **Show Tip**: Control the display or hiding of tooltip information.<br>- **Background**: Sets the background color of the alert message. <br>- **Border Color**: Sets the border color of the alert message. <br>- **Decimals**: Sets the number of decimal places for the alert value.<br>- **Font**: Sets the font, font size, bold, italic, and font color of the prompt message. |
+| **名称** | **描述**  |
+|:--------------------|:-----------------|
+| 名字   | 此控件的名称。 |
+| X  | 控件左侧距画布左侧的距离，单位px。 |
+| Y  | 控件顶部距画布顶部的距离，单位px。 |
+| W   | 控件的宽度，单位px。 |
+| H  | 控件的高度，单位px。 |
+| ![alt text](10.png) | 控件的角度。  |
+| 显示   | 设置滑动条的显示样式。  <br>- **反向**：设置滑动条的方向，选中后将滑动条置反。   <br>- **背景**：设置整个背景条的背景色。  <br>![alt text](11.png) <br>- **滑块颜色**：设置滑块部分颜色。  <br>![alt text](12.png)  <br>- **最小值**：设置滑动条的最小值。  <br>- **最大值**：设置滑动条的最大值。  <br>- **值**：设置滑动条的当前值。 <br>**说明**：一旦绑定了“值”，则在运行页面滑块不可拖动。 |
+| 提示信息  | 设置滑动块提示信息的显示样式。 <br>- **显示提示**：控制提示信息的显示或隐藏。  <br>- **背景**：设置提示信息的背景色。       <br>- **边框色**：设置提示信息的边框颜色。   <br>- **小数位**：设置提示数值的小数位。 <br>- **字体**：设置提示信息的字体型号、字体大小、粗体、斜体、字体颜色。 |
 
-**Event**
+**动作**
 
-Allows you to perform a specific event based on certain conditions. See the **2D Visualization-> Event** page for a complete description of the various events.
+允许您基于某种条件执行特定的动作。请参阅“[动作](../../event/index.md)”页上各种动作的完整描述。
 
-**Example 1**
+**示例1**
 
-Use a slider to display the liquid level value.
+使用滑动条显示液位值。
 
-![alt text](12.png)
+![alt text](13.png)
 
+1. 画面上插入一个滑动条。
+2. 滑动条的“值”属性绑定变量：液位。
 
+**示例2**
 
-1. A slider is inserted on the screen.
-2. The "value" property of the slider is bound to a tag: liquid level.
+使用滑动条改变变量值。手动拖动滑块改变滑动条的值，松开滑动条时会将滑动条的当前值设置到变量上。
 
-**Example 2**
-
-Use the slider to change the value of a tag. Dragging the slider manually changes the value of the slider, and when the slider is released, the current value of the slider is set to the tag.
-
-1. A slider and a value display control are inserted on the screen.
-2. The value display control is bound to the tag: Level
-3. The value change event is set in the action property of the slider, and the value change is a tag assignment. Assign the value of the slider to the tag "Level".
-
-    ![alt text](13.png)
-
-4. On the running page, change the slider value of the slider, and the value on the value display control is shown as the value when the slider is released.
+1. 画面上插入一个滑动条和一个值显示控件。
+2. 值显示控件绑定变量：液位
+3. 滑动条的动作属性中设置值变化事件，值变化是进行变量赋值。将滑动条的值赋到变量“液位”上。
 
     ![alt text](14.png)
 
+4. 在运行页面，改变滑动条的滑块值，值显示控件上的值显示为松开滑块时的值。
 
+    ![alt text](15.png)
 
 
 

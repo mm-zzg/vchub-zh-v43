@@ -1,114 +1,114 @@
-# Supported Data Types
+# 支持的数据类型
 
-SQL Query in each database only support the following data types.
+SQL Query对于每个数据库，仅支持操作以下数据类型。
 
-## **SQLite**
+## SQLite
 
-| **Data Type** | **Description**                                                       |
-|---------------|-----------------------------------------------------------------------|
-| INTEGER       | Integer type                                                          |
-| NUMERIC       | A general type that can be an integer, floating-point number, or date |
-| REAL          | Floating-point number type                                            |
-| TEXT          | Text data type                                                        |
+| 数据类型| 描述                         |
+|:--------------|:----------------------------------|
+| INTEGER      | 整数类型                         |
+| NUMERIC      | 通用类型，可以为整数、浮点数或日期 |
+| REAL         | 浮点数类型                       |
+| TEXT         | 文本数据类型                     |
 
-## **MySQL**
+## MySQL
 
-| **Data Type**      | **Description**                      |
-|--------------------|--------------------------------------|
-| BIGINT             | Large integer type                   |
-| BIGINT UNSIGNED    | Unsigned large integer type          |
-| BIT                | Bit type                             |
-| BOOL               | Boolean type                         |
-| CHAR               | Fixed-length character type          |
-| DATE               | Date type                            |
-| DATETIME           | Date time type                       |
-| DECIMAL            | Exact decimal type                   |
-| DOUBLE             | Double precision floating-point type |
-| DOUBLE PRECISION   | Double precision floating-point type |
-| ENUM               | Enumeration type                     |
-| FLOAT              | Single precision floating-point type |
-| INT                | Integer type                         |
-| INT UNSIGNED       | Unsigned integer type                |
-| INTEGER            | Integer type                         |
-| INTEGER UNSIGNED   | Unsigned integer type                |
-| LONG VARCHAR       | Long text type                       |
-| LONGTEXT           | Long text type                       |
-| MEDIUMINT          | Medium range integer type            |
-| MEDIUMINT UNSIGNED | Unsigned medium range integer type   |
-| MEDIUMTEXT         | Medium-length text type              |
-| NUMERIC            | Exact decimal type                   |
-| REAL               | Single precision floating-point type |
-| SET                | Set type                             |
-| SMALLINT           | Small integer type                   |
-| SMALLINT UNSIGNED  | Unsigned small integer type          |
-| TEXT               | Variable-length text type            |
-| TIME               | Time type                            |
-| TIMESTAMP          | Timestamp type                       |
-| TINYINT            | Tiny integer type                    |
-| TINYINT UNSIGNED   | Unsigned tiny integer type           |
-| TINYTEXT           | Short text type                      |
-| VARCHAR            | Variable-length string type          |
-| YEAR               | Year type                            |
-| JSON               | JSON data type                       |
+| 数据类型       | 描述               |
+|:--------------------|:------------------------|
+| BIGINT             | 大整数类型             |
+| BIGINT UNSIGNED    | 无符号大整数类型       |
+| BIT                | 位类型                 |
+| BOOL               | 布尔类型               |
+| CHAR               | 定长字符类型           |
+| DATE               | 日期类型               |
+| DATETIME           | 日期时间类型           |
+| DECIMAL            | 精确小数类型           |
+| DOUBLE             | 双精度浮动类型         |
+| DOUBLE PRECISION   | 双精度浮动类型         |
+| ENUM               | 枚举类型               |
+| FLOAT              | 单精度浮动类型         |
+| INT                | 整数类型               |
+| INT UNSIGNED       | 无符号整数类型         |
+| INTEGER            | 整数类型               |
+| INTEGER UNSIGNED   | 无符号整数类型         |
+| LONG VARCHAR       | 长文本类型             |
+| LONGTEXT           | 长文本类型             |
+| MEDIUMINT          | 中等范围整数类型       |
+| MEDIUMINT UNSIGNED | 无符号中等范围整数类型 |
+| MEDIUMTEXT         | 中等长度文本类型       |
+| NUMERIC            | 精确小数类型           |
+| REAL               | 单精度浮动类型         |
+| SET                | 集合类型               |
+| SMALLINT           | 小整数类型             |
+| SMALLINT UNSIGNED  | 无符号小整数类型       |
+| TEXT               | 可变长度文本类型       |
+| TIME               | 时间类型               |
+| TIMESTAMP          | 时间戳类型             |
+| TINYINT            | 小整数类型             |
+| TINYINT UNSIGNED   | 无符号小整数类型       |
+| TINYTEXT           | 短文本类型             |
+| VARCHAR            | 可变长度字符串类型     |
+| YEAR               | 年份类型               |
+| JSON               | JSON  数据类型         |
 
-## **SQL Server**
+## SQL Server
 
-| **Data Type**    | **Description**                         |
-|------------------|-----------------------------------------|
-| bigint           | Large integer type                      |
-| bit              | Bit type                                |
-| char             | Fixed-length character type             |
-| date             | Date type                               |
-| datetime         | Date time type                          |
-| datetime2        | Precise date time type                  |
-| datetimeoffset   | Date time type with time zone awareness |
-| decimal          | Exact decimal type                      |
-| float            | Double precision floating-point type    |
-| int              | Integer type                            |
-| money            | Currency type                           |
-| nchar            | Fixed-length Unicode character type     |
-| ntext            | Large Unicode text type                 |
-| numeric          | Exact decimal type                      |
-| nvarchar         | Variable-length Unicode character type  |
-| real             | Single precision floating-point type    |
-| smalldatetime    | Date time type (with smaller range)     |
-| smallint         | Small integer type                      |
-| smallmoney       | Small range currency type               |
-| sql_variant      | Generic data type                       |
-| sysname          | System object name type                 |
-| text             | Large ASCII text type                   |
-| time             | Time type                               |
-| tinyint          | Tiny integer type                       |
-| uniqueidentifier | Globally unique identifier (GUID)       |
-| varchar          | Variable-length ASCII character type    |
-| xml              | XML type                                |
+| 数据类型     | 描述                    |
+|:------------------|:-----------------------------|
+| bigint           | 大整数类型                  |
+| bit              | 位类型                      |
+| char             | 定长字符类型                |
+| date             | 日期类型                    |
+| datetime         | 日期时间类型                |
+| datetime2        | 精确日期时间类型            |
+| datetimeoffset   | 日期时间类型                |
+| decimal          | 精确小数类型                |
+| float            | 双精度浮动类型              |
+| int              | 整数类型                    |
+| money            | 货币类型                    |
+| nchar            | 定长 Unicode  字符类型      |
+| ntext            | 大型  Unicode  文本类型     |
+| numeric          | 精确小数类型                |
+| nvarchar         | 可变长度  Unicode  字符类型 |
+| real             | 单精度浮动类型              |
+| smalldatetime    | 日期时间类型                |
+| smallint         | 小整数类型                  |
+| smallmoney       | 小范围货币类型              |
+| sql_variant      | 通用数据类型                |
+| sysname          | 系统对象名称类型            |
+| text             | 大型  ASCII  文本类型       |
+| time             | 时间类型                    |
+| tinyint          | 小整数类型                  |
+| uniqueidentifier | 全局唯一标识符（ GUID ）      |
+| varchar          | 可变长度 ASCII 字符类型     |
+| xml              | XML 类型                    |
 
-## **PostgreSQL**
+## PostgreSQL
 
-| **Data Type**                                 | **Description**                                   |
-|-----------------------------------------------|---------------------------------------------------|
-| bigint                                        | Large integer type                                |
-| bigserial                                     | Auto-incrementing large integer type              |
-| boolean                                       | Boolean type                                      |
-| character [ (***n*** ) ]                      | Fixed-length character type                       |
-| character varying [ (***n*** ) ]              | Variable-length character type                    |
-| date                                          | Date type                                         |
-| double precision                              | Double precision floating-point type              |
-| integer                                       | Integer type                                      |
-| json                                          | JSON type                                         |
-| jsonb                                         | Binary JSON type                                  |
-| numeric [ (p, s) ]                            | Exact decimal type                                |
-| real                                          | Single precision floating-point type              |
-| smallint                                      | Small integer type                                |
-| smallserial                                   | Auto-incrementing small integer type              |
-| serial                                        | Auto-incrementing integer type                    |
-| text                                          | Text type                                         |
-| time [ (***p*** ) ] [ without time zone ]     | Time type, without time zone information          |
-| timestamp [ (***p*** ) ] [ without time zone] | Date and time type, without time zone information |
-| timestamp [ (***p*** ) ] with time zone       | Date and time type, with time zone information    |
-| uuid                                          | Universally Unique Identifier (UUID) type         |
-| xml                                           | XML type                                          |
+| 数据类型                                 | 描述                    |
+|:-----------------------------------------------|:-----------------------------|
+| bigint                                        | 大整数类型                  |
+| bigserial                                     | 自增大整数类型              |
+| boolean                                       | 布尔类型                    |
+| character [ (***n*** ) ]                      | 定长字符类型                |
+| character varying [ (***n*** ) ]              | 可变长度字符类型            |
+| date                                          | 日期类型                    |
+| double precision                              | 双精度浮点类型              |
+| integer                                       | 整数类型                    |
+| json                                          | JSON 类型                   |
+| jsonb                                         | 二进制  JSON  类型          |
+| numeric [ (p, s) ]                            | 精确小数类型                |
+| real                                          | 单精度浮点类型              |
+| smallint                                      | 小整数类型                  |
+| smallserial                                   | 自增小整数类型              |
+| serial                                        | 自增整数类型                |
+| text                                          | 文本类型                    |
+| time [ (***p*** ) ] [ without time zone ]     | 时间类型，不包含时区信息     |
+| timestamp [ (***p*** ) ] [ without time zone] | 日期时间类型，不包含时区信息 |
+| timestamp [ (***p*** ) ] with time zone       | 日期时间类型，包含时区信息   |
+| uuid                                          | 通用唯一标识符（ UUID ）类型  |
+| xml                                           | XML  类型                   |
 
-## **InfluxDB**
+## InfluxDB
 
-supports all data types.
+支持所有类型的数据。

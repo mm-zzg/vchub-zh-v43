@@ -1,98 +1,96 @@
-# Alarm
+# 报警
 
-Alarms are used to alert and warn the system of abnormal operating conditions or out of preset ranges.
+报警用于提醒和警示系统运行状态异常或超出预设范围。
 
-VC Hub contains four alarm categories:
+WAGO SCADA 包含4种报警类别：
 
-- Limit Alarms: Alarms are triggered if the value of a tag exceeds or falls below the value specified in the configuration.
-- Equivalent Alarms: An alarm is triggered if the tag value is equal to the value specified in the configuration.
-- Rate-of-Change Alarms: Triggers an alarm if the rate of change of the value of the tag is greater than or equal to the value specified in the configuration during the change cycle.
-- Switch Alarm: The alarm is triggered when the Bool value changes.
+-  限值报警：如果变量值超过或低于 配置中指定的值，则触发报警。
+-  等值报警：如果变量值等于配置中指定的值，则触发报警。
+-  变化率报警：在变化周期内，如果变量的值的变化率大于或等于配置中指定的值，则触发报警。
+-  开关量报警：当布尔值 发生变化时，则触发报警。
 
-Different data types can set different categories of alarms.
+不同的数据类型可以设置不同类别的报警。
 
-| Data Type | Limit Alarm | Equivalent Alarm | Rate-of-Change Alarm | Switch Alarm |
-|-----------|-------------|------------------|----------------------|--------------|
-| Integer   | √           | √                | √                    | X            |
-| Double    | √           | √                | √                    | X            |
-| Bool      | X           | X                | X                    | √            |
-| String    | X           | √                | X                    | X            |
-| DateTime  | X           | X                | X                    | X            |
+| 数据类型 | 限值报警| 等值报警 | 变化率报警 | 开关量报警 |
+|:--------------|:--------------|:--------------|:----------------|:----------|
+| I nteger     | √            | √            | √              | X              |
+| Double       | √            | √            | √              | X              |
+| B ool        | X            | X            | X              | √              |
+| S tring      | X            | √            | X              | X              |
+| D ateTime    | X            | X            | X              | X              |
 
-## **How to enable**
+## 如何启用
 
-In the Add or Edit popup window of the tag, there is an alarm switch at the top, turn it on and set the alarm.
+在变量的编辑弹窗中，顶部有 **报警** 的开关，开启后设置报警。
 
 ![alt text](4.png)
 
-#### **Limit Alarm**
+#### 限值报警
 
 ![alt text](5.png)
 
-Support 8 limit alarms. H4, H3, H2, H, L,  L2, L3, L4. By default all types are in unchecked state. After checking a row, the row is in editable state. Multiple types can be selected.
+支持 8 限报警。高 4 、高 3 、高 2 、高、低、低 2 、低 3 、低 4 。默认所有类型处于未勾选状态。勾选某一行后，该行处于可编辑状态。可以选择多个类型。
 
-| **Name**          | **Description**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
-|-------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Name              | Set the name of this alarm.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
-| Level             | The level of the alarm. Contains 4 levels: Critical High, Medium, and Low.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    |
-| Limit             | A preset value. The alarm occurs when the value of the tag is higher or lower than this value.                                                                                                                                                                                                                                                                                                                                                                                                                                                                |
-| Deadband          | A preset value. A range set to avoid sending alarm messages frequently when an abnormal condition occurs in the equipment or system. Within this range, even if the tag value exceeds the preset upper or lower limit, the system does not trigger the alarm immediately, but waits until the deadband is exceeded.                                                                                                                                                                                                                                           |
-| Ack Mode          | Sets the acknowledgement mode of the alarm. Contains: Automatic, Manual (Require Confirmation), and Manual (No Confirmation).  Selecting Automatic, the system automatically acknowledges the alarm when it resumes;  Select Manual (Require Confirmation), no matter the alarm is recovered or not, you need to acknowledge manually and fill in the acknowledgement information;  Select Manual (No Confirmation) to require manual acknowledgement regardless of whether the alarm is restored or not, without filling in the acknowledgement information. |
-| Notification Rule | Optional. Choose from the data in the "Alarming" -> "Alarm Notifications" -> "Rules" list. After selecting a notification rule, when the alarm occurs, notifications will be sent to the corresponding users according to the chosen notification rule.                                                                                                                                                                                                                                                                                                       |
-| Description       | A description of the alarm.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
-| Inclusive         | Contains both Open Interval and Closed Interval, with Closed Interval selected by default. When Closed Interval is selected, >= is displayed in front of the limit value; when Open Interval is selected, > is displayed in front of the limit value.                                                                                                                                                                                                                                                                                                         |
-| Active Delay      | Unchecked by default. Used to set how long to wait before determining whether the current value is in alarm. The unit is ms.                                                                                                                                                                                                                                                                                                                                                                                                                                  |
-| Resume Delay      | Unchecked by default. Used to set how long to wait before judging whether the current value is in recovery state. The unit is ms.                                                                                                                                                                                                                                                                                                                                                                                                                             |
+| **属性**     | **描述**  |
+|:--------------|:--------------|
+| 名称         | 必填，设置该条 报警的名称。    |
+| 级别         | 报警的级别。 包含4种级别：紧急、高级、中级、低级。     |
+| 限值         | 预设的一个值。当变量值高于或低于该值时，发生报警。   |
+| 死区         | 预设的一个值。当设备或系统出现异常情况时，为避免频繁地发送报警信息而设置的一个范围。在这个范围内，即使变量值超出了预设的上限或下限，系统也不会立即触发报警，而是等待超过死区后再进行报警。|
+| 确认模式     | 设置报警的确认模式 。包含 ：自动、手动（需确认）、手动（无需确认）。   选择自动，当报警恢复时，系统自动进行确认；   选择手动（需确认），不论报警恢复与否，都需要手动进行确认，并填写确认信息 ；   选择手动（无需确认），不论报警恢复与否，都需要手动进行确认，无需填写确认信息 。 |
+| 通知规则     | 非必填。选择在“报警”->"报警通知"->“通知规则”列表中的数据。选择通知规则后，该条报警发生时，按照所选的通知规则给对应用户发送报警通知。 |
+| 描述         | 非必填。对报警的描述。  |
+| 区间包含模式 | 包含开和闭，默认选择闭。当选择闭时，在限值前面显示 >= ；当选择开时，在限值前面显示 > 。|
+| 激活延时     | 默认不勾选。用于设置等待多久后才判断当前值是否处于报警状态。单位ms。  |
+| 恢复延时     | 默认不勾选。用于设置等待多久后才判断当前值是否处于恢复状态。单位ms。  |
 
-**Note:**
- The alarm of each limit value is judged separately. For example, if the value of a tag is greater than both the high limit and the high 1 limit, the tag will display two alarms at the same time in the alarm control, one of type high and one of type high 1. 
+**说明**：每个限值的报警单独判断。例如：一个变量值，既 大于了高的限值，也大于高1的限值，则在报警控件中该变量在同一时刻 会显示2条报警，一条类型为高，一条类型为高1。
 
-#### **Equivalent Alarms**
+#### 等值报警
 
 ![alt text](6.png)
 
-Click the Add button to add data. Multiple rows can be added. After adding, you need to check the configuration to make it effective. Click Delete button to delete the configuration.
+点击添加按钮进行添加数据。可以添加多行。添加后需 勾选该条配置 ，该配置才生效，点击删除按钮，删除该配置。
 
-| **Name**          | **Description**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
-|-------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Name              | Set the name of this alarm.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
-| Level             | The level of the alarm. Contains 4 levels: Critical, High, Medium, and Low.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
-| Value             | Triggers the alarm when the tag value is equal to this value.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 |
-| Ack Mode          | Sets the acknowledgement mode of the alarm. Contains: Automatic, Manual (Require Confirmation), and Manual (No Confirmation).  Selecting Automatic, the system automatically acknowledges the alarm when it resumes;  Select Manual (Require Confirmation), no matter the alarm is recovered or not, you need to acknowledge manually and fill in the acknowledgement information;  Select Manual (No Confirmation) to require manual acknowledgement regardless of whether the alarm is restored or not, without filling in the acknowledgement information. |
-| Notification Rule | Optional. Choose from the data in the "Alarming" -> "Alarm Notifications" -> "Rules" list. After selecting a notification rule, when the alarm occurs, notifications will be sent to the corresponding users according to the chosen notification rule.                                                                                                                                                                                                                                                                                                       |
-| Description       | Non-required. A description of the alarm.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
-| Active Delay      | Unchecked by default. Used to set how long to wait before determining whether the current value is in alarm. The unit is ms.                                                                                                                                                                                                                                                                                                                                                                                                                                  |
-| Resume Delay      | Unchecked by default. Used to set how long to wait before judging whether the current value is in recovery state. The unit is ms.                                                                                                                                                                                                                                                                                                                                                                                                                             |
+| **属性** | **描述**   |
+|----------|----------------|
+| 名称     | 必填，设置该条 报警的名称。  |
+| 级别     | 报警的级别。 包含4种级别：紧急、高级、中级、低级。   |
+| 值       | 当变量值等于该值时，触发报警。   |
+| 确认模式 | 设置报警的确认模式 。包含 ：自动、手动（需确认）、手动（无需确认）。   选择自动，当报警恢复时，系统自动进行确认；   选择手动（需确认），不论报警恢复与否，都需要手动进行确认，并填写确认信息 ；   选择手动（无需确认），不论报警恢复与否，都需要手动进行确认，无需填写确认信息 。 |
+| 通知规则 | 非必填。选择在“报警”->"报警通知"->“通知规则”列表中的数据。选择通知规则后，该条报警发生时，按照所选的通知规则给对应用户发送报警通知。 |
+| 描述     | 非必填。对报警的描述。   |
+| 激活延时 | 默认不勾选。用于设置等待多久后才判断当前值是否处于报警状态。单位ms。|
+| 恢复延时 | 默认不勾选。用于设置等待多久后才判断当前值是否处于恢复状态。单位ms。 |
 
-#### Rate of Change Alarm
+#### 变化率报警
 
 ![alt text](7.png)
 
-Click the Add button to add data. Multiple rows can be added. After adding, you need to check the row for the configuration to take effect. Click the Delete button to delete the configuration.
+点击添加按钮进行添加数据。可以添加多行。添加后需 勾选该条配置 ，该配置才生效，点击删除按钮，删除该配置。
 
-| **Name**          | **Description**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
-|-------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Name              | Set the name of this alarm.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
-| Level             | The level of the alarm. Contains 4 levels: Critical, High, Medium, and Low.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
-| Change Rate(%)    | The **formula** for calculating the rate of change alarm is as follows:  **((current value of the tag - value of the last change of the tag) × 100 × (period value))/((time of the current change of the tag - time of the last change of the tag) × (maximum value of the tag - minimum value of the tag))**  If the period is seconds, the value is the filled-in period value; if the period is minutes, the value is the filled-in period value *60; the result unit of (time of the current change of the tag - time of the last change of the tag) is seconds. |
-| Ack Mode          | Sets the acknowledgement mode of the alarm. Contains: Automatic, Manual (Require Confirmation), and Manual (No Confirmation).  Selecting Automatic, the system automatically acknowledges the alarm when it resumes;  Select Manual (Require Confirmation), no matter the alarm is recovered or not, you need to acknowledge manually and fill in the acknowledgement information;  Select Manual (No Confirmation) to require manual acknowledgement regardless of whether the alarm is restored or not, without filling in the acknowledgement information.        |
-| Notification Rule | Optional. Choose from the data in the "Alarming" -> "Alarm Notifications" -> "Rules" list. After selecting a notification rule, when the alarm occurs, notifications will be sent to the corresponding users according to the chosen notification rule.                                                                                                                                                                                                                                                                                                              |
-| Description       | Non-required. A description of the alarm.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            |
-| Active Delay      | Unchecked by default. Used to set how long to wait before determining whether the current value is in alarm. The unit is ms.                                                                                                                                                                                                                                                                                                                                                                                                                                         |
-| Resume Delay      | Unchecked by default. Used to set how long to wait before judging whether the current value is in recovery state. The unit is ms.                                                                                                                                                                                                                                                                                                                                                                                                                                    |
+| **属性** | **描述** |
+|:----------|:-------------|
+| 名称     | 必填，设置该条 报警的名称。 |
+| 级别     | 报警的级别。 包含4种级别：紧急、高级、中级、低级。  |
+| 变化率   | 当变量值的变化率大于等于 设置的变化率时，产生报警。   <br>变化率报警的 **计算公式** 如下：  <br>**((变量的当前值－变量上一次变化的值)×100×(周期值))/((变量本次变化的时间－变量上一次变化的时间)×(变量的最大值－变量的最小值))**   <br>如果周期为秒，则该值为填写的周期值；如果周期为分，则该值为填写的周期值 *60 ；  ( 变量本次变化的时间－变量上一次变化的时间 ) 的结果单位为秒。 |
+| 确认模式 | 设置报警的确认模式 。包含 ：自动、手动（需确认）、手动（无需确认）。   <br>选择自动，当报警恢复时，系统自动进行确认；   <br>选择手动（需确认），不论报警恢复与否，都需要手动进行确认，并填写确认信息 ；   <br>选择手动（无需确认），不论报警恢复与否，都需要手动进行确认，无需填写确认信息 。 |
+| 通知规则 | 非必填。选择在“报警”->"报警通知"->“通知规则”列表中的数据。选择通知规则后，该条报警发生时，按照所选的通知规则给对应用户发送报警通知。  |
+| 描述     | 非必填。对报警的描述。 |
+| 激活延时 | 默认不勾选。用于设置等待多久后才判断当前值是否处于报警状态。单位ms。 |
+| 恢复延时 | 默认不勾选。用于设置等待多久后才判断当前值是否处于恢复状态。单位ms。|
 
-#### Discrete Alarm
+#### 开关量报警
 
 ![alt text](8.png)
 
-| **Name**          | **Description**                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
-|-------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Name              | Set the name of this alarm.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
-| Level             | The level of the alarm. Contains 4 levels: Critical, High, Medium, and Low.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
-| Ack Mode          | Sets the acknowledgement mode of the alarm. Contains: Automatic, Manual (Require Confirmation), and Manual (No Confirmation).  Selecting Automatic, the system automatically acknowledges the alarm when it resumes;  Select Manual (Require Confirmation), no matter the alarm is recovered or not, you need to acknowledge manually and fill in the acknowledgement information;  Select Manual (No Confirmation) to require manual acknowledgement regardless of whether the alarm is restored or not, without filling in the acknowledgement information. |
-| Notification Rule | Optional. Choose from the data in the "Alarming" -> "Alarm Notifications" -> "Rules" list. After selecting a notification rule, when the alarm occurs, notifications will be sent to the corresponding users according to the chosen notification rule.                                                                                                                                                                                                                                                                                                       |
-| Description       | Non-required. A description of the alarm.                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                     |
-| Active Delay      | Unchecked by default. Used to set how long to wait before determining whether the current value is in alarm. The unit is ms.                                                                                                                                                                                                                                                                                                                                                                                                                                  |
-| Resume Delay      | Unchecked by default. Used to set how long to wait before judging whether the current value is in recovery state. The unit is ms.                                                                                                                                                                                                                                                                                                                                                                                                                             |
-
+| **属性** | **描述**  |
+|:----------|:---------------------------------|
+| 名称     | 必填， 设置该条 报警的名称。 |
+| 级别     | 报警的级别。 包含4 种级别：紧急、高级、中级、低级。 |
+| 确认模式 | 设置报警的确认模式 。包含 ：自动、手动（需确认）、手动（无需确认）。   <br>选择自动，当报警恢复时，系统自动进行确认；   <br>选择手动（需确认），不论报警恢复与否，都需要手动进行确认，并填写确认信息 ；   <br>选择手动（无需确认），不论报警恢复与否，都需要手动进行确认，无需填写确认信息 。 |
+| 通知规则 | 非必填。选择在“报警”->"报警通知"->“通知规则”列表中的数据。选择通知规则后，该条报警发生时，按照所选的通知规则给对应用户发送报警通知。 |
+| 描述     | 非必填。对报警的描述。 |
+| 激活延时 | 默认不勾选。用于设置等待多久后才判断当前值是否处于报警状态。单位ms。|
+| 恢复延时 | 默认不勾选。用于设置等待多久后才判断当前值是否处于恢复状态。单位ms。 |
 

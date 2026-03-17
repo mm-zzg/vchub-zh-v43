@@ -1,74 +1,74 @@
-# Expression
+# 表达式
 
-Value binding is achieved by writing scripts in the script editor.
+通过在脚本编辑器中编写脚本，来实现值绑定。
 
-![alt text](18.png)
+![alt text](20.png)
 
-**Toolbar**
+**工具栏按钮**
 
-| **Icon** | **Description** |
-|-----------|----------------|
-| ![alt text](19.png) | Redo, re-execute the canceled operation, and restore the text to the state before "undo" |
-| ![alt text](20.png) | Undo, cancel the latest editing operation and restore the text to its previous state     |
-| ![alt text](21.png) | Format document |
-| ![alt text](22.png)| Select a tag and a tag selection window will pop up after clicking it.                   |
-| ![alt text](23.png) | Select the property, and the property selection window will pop up after clicking it.    |
-| ![alt text](24.png)| Switch editor theme color                                                                |
-| ![alt text](25.png)| Full-screen display                                                                      |
+|     图标     |      描述    |
+|:-------------|:---------------------------|
+| ![alt text](21.png) | 重做，重新执行被取消的操作，将文本恢复到"撤销"之前的状态 |
+| ![alt text](22.png) | 撤销，取消最近的编辑操作，将文本恢复到之前的状态    |
+| ![alt text](23.png) | 格式化文档  |
+| ![alt text](24.png) | 选择变量，点击后弹出变量选择窗口      |
+| ![alt text](25.png) | 选择属性，点击后弹出属性选择窗口     |
+| ![alt text](26.png) | 切换编辑器主题色   |
+| ![alt text](27.png) | 全屏显示  |
 
-**Example 1**
+**示例1**
 
-Display real-time tag values and its unit on the LED Display.
+在数码管上显示实时变量值及其单位。
 
-1. Draw a LED Display on the page.
-2. Set the fill color and border color of the LED Display to 6ec800 and the font color to ffffff.
-3. Click the binding button of "Text" on the LED Display.
-
-    ![alt text](26.png)
-
-4. Select the expression in the property binding window and write the following expression in the editor.
-
-    ![alt text](27.png)
-
-5. Click the preview button on the page to view the display effect.
+1. 在画面上绘制一个数码管。
+2. 将数码管的填充色和边框色设置为 6ec800，字体颜色设置为 ffffff。
+3. 点击数码管的“文本”的绑定按钮。
 
     ![alt text](28.png)
 
-**Example 2**
-
-The value of the LED Display is half of the value of the slider.
-
-1. Draw a LED Display and a Slider on the page.
-2. Set the fill color and border color of the LED Display to 6ec800 and the font color to ffffff.
-3. Click the binding button of "Text" on the LED Display.
+4. 在属性绑定窗口选择表达式，并在编辑器内编写如下表达式。
 
     ![alt text](29.png)
 
-4. Select the expression in the property binding window and write the following expression in the editor.
+5. 点击画面的运行按钮，查看显示示效果。
 
     ![alt text](30.png)
 
-5. Click the preview button of the page, and on the preview page, manually drag the slider of the slider to change its value and check the display effect of the LED Display. The value of the LED Display is half of the value of the slider.
+**示例2**
 
-    ![expression](../../assets/images/expression.gif)
+数码管的值为滑动条的值的一半。
 
-**Example 3**
-
-Based on the motor name selected from the drop-down box, display the corresponding motor's speed.
-
-1. Draw a value display control and a dropdown control on the page.
-2. The dropdown options of the drop-down box have three values: Motor1, Motor2, and Motor3.
-3. Click the "Text" binding button of the value display control. 
+1. 在画面上绘制一个数码管和一个滑动条。
+2. 将数码管的填充色和边框色设置为 6ec800，字体颜色设置为 ffffff。
+3. 点击数码管的“文本”的绑定按钮。
 
     ![alt text](31.png)
 
-4. Write the following expression in the property binding window.
+4. 在属性绑定窗口选择表达式，并在编辑器内编写如下表达式。
 
     ![alt text](32.png)
 
-5. Click the preview button , then on the running page, select the motor name from the drop-down box, and the corresponding motor speed will be displayed.
+5. 点击画面的预览按钮，在运行页面上，手动拖动滑动条的滑块改变其值，查看数码管的显示效果。数码管的值为滑动条的值的一半。
 
-    ![expression1](../../assets/images/expression1.gif)
+    ![alt text](33.gif)
+
+**示例3**
+
+根据下拉框选择的电机名称，显示对应电机的转速。
+
+1. 在画面上绘制一个值显示控件和一个下拉框控件。
+2. 下拉框的下拉选项设置 3 个值：Motor1，Motor2，Motor3
+3. 点击值显示控件的“文本”的绑定按钮。
+
+    ![alt text](34.png)
+
+4. 在属性绑定窗口中编写如下表达式。
+
+    ![alt text](35.png)
+
+5. 点击画面的预览按钮，在运行页面上，在下拉框中选择电机名称，即可显示对应电机的转速。
+
+    ![alt text](36.gif)
 
 
 

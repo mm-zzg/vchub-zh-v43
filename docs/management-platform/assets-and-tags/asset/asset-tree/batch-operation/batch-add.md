@@ -1,47 +1,48 @@
-# Batch Add
+# 批量新增
 
-In the **Instance** and **Model** tabs, only basic information is added initially. The detailed configuration of tags is then completed through **Batch Update**.
+在 **实例** 和 **模型** 选项卡中，均可进行批量新增操作，批量新增时仅新增 **基本信息**，之后通过“**批量更新**”完成变量的详细设置。
 
-## Download "New Template"
+## 下载“新增模板”
 
-In the **Instance** or **Model** tab, click the **More** button and then select **Batch Operation**.
+1. 在”实例”或者”模型”选项卡中，点击更多按钮，点击批量操作。
 
     ![alt text](7.png)
+
     ![alt text](8.png)
 
-In the **Batch Operation** popup, click **Download "New Template"** to download a blank batch addition excel template in the browser. Users can fill in the required information in the template.
+2. 在批量操作弹窗中，点击 **下载“新增模板”**，将在浏览器端下载一份空的批量新增的Excel模板，用户在模板中填写所需信息。
 
-    ![alt text](9.png)
+    | 批量操作模型  ![alt text](9.png) | 批量操作实例  ![alt text](10.png) |
+    |:--------------------------------------|:------------------------------------------------|
 
+#### 模板介绍
 
-#### "New Template" Introduction
+批量新增的Excel模板中包含两个Sheet，**Sheet0** 和 **重要说明**。
 
-The batch addition Excel template contains two sheets: **Sheet0** and **Important Notes**.
+- Sheet0用于新增数据.
+- 重要说明中说明了如何使用模板创建数据。
 
-- **Sheet0** is used for adding new data.
-- **Important Notes** provides instructions on how to use the template to create data.
+模型和实例的新增模板中字段相同，唯一的区别在于可选类型不同。
 
-The fields in the **model and instance new templates** are the same, with the only difference being the available types:
-
-- In the **instance new template**, the available types are: **Folder, Instance, Tag**.
-- In the **model new template**, the available types are: **Folder, Model, Instance, Collection, Tag**.
-
-![alt text](10.png)
-
-In the **"Important Notes"** sheet, users can find descriptions and examples for each column in **Sheet0** to assist them in filling out the template correctly.
-
-**New Template description of model**
+- 在实例的新增模板中，类型包含：Folder，Instance，Tag；
+- 在模型的新增模板中，类型包含：Folder，Model,  Instance，Collection,  Tag。
 
 ![alt text](11.png)
 
-**New Template description of instance**
+在”重要说明”的Sheet中，用户可查看Sheet0中说明和举例的每列字段的描述，以辅助用户完成填写。
+
+**模型新增模板说明：**
 
 ![alt text](12.png)
 
-## Import "New Template"
-
-After editing the template, click the **Import "New Template"** button to import the newly added information.
+**实例新增模板说明：**
 
 ![alt text](13.png)
 
+## 导入“新增模板”
+
+模板编辑完成后，点击 **导入“新增模板”** 按钮，将新增信息进行导入。
+
+| 批量操作模型 ![alt text](14.png) | 批量操作实例 ![alt text](15.png) |
+|:----------------------------------|:----------------------------|
 

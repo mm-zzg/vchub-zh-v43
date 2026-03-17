@@ -1,53 +1,54 @@
-# Batch Operation
+# 批量操作
 
-When the same or similar operations need to be performed on multiple tags, Especially when working with large amounts of data or performing system configurations, batch operations can significantly improve efficiency while reducing the potential for errors associated with manual tasks.
+当需要对多个变量进行相同或类似的操作时，尤其是在处理大量数据或进行系统配置时，通过批量操作能够显著提高效率, 同时降低手动操作中可能出现的错误。
 
-**Example Scenarios:**
+**使用场景举例：**
 
-- **Batch Creation of Tags**: When there is a need to create multiple tags at once, batch operations can simplify the process. For example, when adding new equipment, you may need to create a set of similar tags for each piece of equipment.
-- **Batch Data Source Binding**: When multiple tags need to be bound to the same data source or different but similar paths, batch operations can quickly complete these settings.
-- **Batch Update of Tag Properties**: When several tags require uniform changes to their properties, such as modifying their tag group, alarm settings, etc., batch operations can save the effort of modifying each one individually.
-- **Batch Import/Export of Tags**: During system migration, backup, or initialization, batch importing or exporting of tag configuration files might be necessary.
+- 批量新增变量: 当需要一次性创建多个变量时，批量操作可以简化流程。例如，在新增设备时，可能需要为每个设备创建一组相似的变量。
+- 批量绑定数据源：当多个变量需要绑定到相同的数据源或不同但相似的路径时，批量操作可以快速完成这些设置。
+- 批量更新变量属性：当多个变量的属性需要统一修改时，例如修改变量的变量组、报警设置等，使用批量操作可以避免逐个修改的繁琐操作。
+- 批量导入/导出变量：在系统迁移、备份或初始化设置时，可能需要批量导入或导出变量的配置文件。
 
-Users can click the "More" button in the Asset window to perform batch operations on "Model" and ”Instance” tabs.
+用户可在资产树编辑器内，点击更多按钮，可对模型和实例进行批量操作。
 
 ![alt text](1.png)
 
 ![alt text](2.png)
 
-## Model
+## 批量操作模型
 
-Select the "Model" tab and click the batch operation button to perform batch operations on models. It supports export, import, batch creation, and batch update.
+选中”模型“选项卡，点击 **批量操作** 按钮，对模型进行批量操作。支持导出、导入，批量新增和批量更新。
 
 ![alt text](3.png)
 
-Batch operation popup:
+批量操作弹窗：
 
 ![alt text](4.png)
 
+## 实例
 
-
-## Instance
-
-When the "Instance" tab is selected and the batch operation button is clicked, batch operations on instances can be performed. The batch operation functions for instances support not only export and import but also batch add and batch update.
+选中”实例“选项卡，点击批量操作按钮，对实例进行批量操作。支持导出、导入，批量新增和批量更新。
 
 ![alt text](5.png)
 
 ![alt text](6.png)
 
-## Function Description
+## 功能描述
 
-#### Batch Add
+#### 批量新增
 
-It only adds basic information, with detailed tag settings to be completed later through the "Batch Update" function.
+仅新增基本信息，之后通过“批量更新”完成变量的详细设置。
 
+[批量新增](batch-add.md)
 
-#### Batch Update
+#### 批量更新
 
-Updates the detailed settings of the tag.
+对变量的详细设置进行更新。
 
+[批量更新](batch-update.md) 
 
-#### Export and Import
+#### 导出、导入
 
-Used for making backups of models and instances, or copying instances to other asset trees.
+用于对模型和实例进行备份、将实例复制到其他资产树中。
 
+[导出、导入](export-and-import.md)

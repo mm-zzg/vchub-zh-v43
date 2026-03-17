@@ -1,21 +1,21 @@
 # createModel
 
-**Description:** Create models from the model library and enter the scene
+**描述：** 创建模型库中的模型进入场景中
 
 ```typescript
-const view=await System.UI.findControl('3DViewer1')// Obtain a 3D viewer control named "3 Viewer1" in the page
-const scene=await view.getScene()// Get the scene in the 3D viewer control
-scene.createModel({
-     path:'models.chariot',  //The address of the model in the model library
-     name: 'Forklift',       //The name after creation
-     position: { x: 0, y: 0, z: 0 }  //The position after creation
-});
+const view = await System.UI.findControl('3D查看器1'); // 获取画面中名为“3D查看器1”的3D查看器控件
+const scene = await view.getScene(); // 获取3D查看器控件中的场景
+scene.createModel({  
+     path:'models.chariot',    //模型在模型库的地址
+     name:'叉车',              //创建后的名字
+     position: { x: 0, y: 0, z: 0 }  //创建后的模型位置
+});   
 ```
- 
-**Example:**
+**示例：**
 
-Write the above code on the button, click the button, and the model named "chariot" in the model library will be added to the scene.
+在按钮上编写上述代码，点击按钮，可以模型库中的模型进入场景中
 
-![alt text](3d_lowcode_SOperation_createmodel1.png)
 
-![3d_lowcode_SOperation_createmodel2](../../../assets/images/3d_lowcode_SOperation_createmodel2.gif)
+![alt text](11.gif)
+
+![alt text](12.png)

@@ -1,5 +1,5 @@
 # System.Datatable
 
-The following function is used to generate datatable.
+以下函数用于生成数据表。
 
-- [​System.Datatable.toDatatable​](system-datatable/system-datatable-todatatable.md)
+- [System.Datatable.toDatatable](system-datatable-todatatable.md)

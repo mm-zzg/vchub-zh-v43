@@ -1,37 +1,46 @@
 # SMS(Ali Cloud)
 
-Used to configure the SMS sending service for alarm notifications.
+用来配置阿里云报警短信通知服务（推荐在中国使用）。通过此配置，可以配置对应的手机短信网络运营商。有关如何申请阿里云短信服务和价格的详细信息，请参阅此 [链接](https://www.aliyun.com/lowcode/promotion/dysms/supervalue?utm_content=se_1018926637)。
 
-## Create SMS (Ali Cloud) Service
+## 创建SMS(Ali Cloud)服务
 
-1. Click "**Alarming**" -> **"Alarm Notifications**" -> "**Services**" to open the "**Services**" list page.
+1. 点击“**报警**”->"**报警通知**"->"**通知服务**"，进入通知服务列表页面。
+
     ![alt text](2.png)
-2. Click the "Add" button. In the new pop-up window, select "SMS(Ali Cloud)".
-    ![alt text](14.png)
-3. Click "Next" to enter the detailed configuration window. 
-    ![alt text](15.png)
-4. Once the setup is complete, click the **"Confirm"** button.
 
- **Properties**
+2. 点击“**新增**”按钮。在新增弹窗中选择SMS(Ali Cloud)。
 
-| **Name**         | **Description**                                                                                                                                                 |
-|------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Name             | Notification service name.                                                                                                                                      |
-| Description      | Notification service description.                                                                                                                               |
-| AccessKey ID     | Alibaba Cloud Service Access Key ID (applied from Alibaba Cloud).                                                                                               |
-| AccessKey Secret | Alibaba Cloud Service Access Key Secret (applied from Alibaba Cloud).                                                                                           |
-| Endpoint         | [SMS Service Region Address](https://www.alibabacloud.com/help/en/sms/developer-reference/api-dysmsapi-2018-05-01-endpoint?spm=a2c63.p38356.0.0.8c161f14S5wtmC) |
+    ![alt text](12.png)
 
-## References
-
- [FAQ about AccessKey pairs - Resource Access Management - Alibaba Cloud Documentation Center](https://www.alibabacloud.com/help/en/ram/support/faq-about-accesskey-pairs?spm=a3c0i.29367734.6737026690.1.39e77d3fRXBxcz)
-
- [Endpoints - Short Message Service - Alibaba Cloud Documentation Center](https://www.alibabacloud.com/help/en/sms/developer-reference/api-dysmsapi-2018-05-01-endpoint?spm=a2c63.p38356.0.0.8c161f14S5wtmC)
-
-## How to use the Ali Cloud Notification Service
-
-1. Click on **"Alarming" -> "Alarm Notifications" -> "Rules"** to enter the notification rules list page.
-2. Click the **"New"** button in the upper right corner of the list.
-3. In the pop-up window, click the **'+SMS'** button to add a new SMS notification rule.In the notification service dropdown, select the previously created notification service.
+3. 点击下一步，进入详细配置界面。
 
     ![alt text](13.png)
+
+4. 设置完成，点击‘**确认**’按钮。
+
+**属性**
+
+| **名称**         | **描述**  |
+|:------------------|:------------------|
+| 名称             | 通知服务名称。 |
+| 描述             | 通知服务描述。  |
+| AccessKey ID     | 阿里云服务访问密钥标识（请在阿里云上进行申请）。|
+| AccessKey Secret | 阿里云服务访问密钥标识密码（请在阿里云上进行申请）。 |
+| Endpoint         | [短信服务区域地址](https://help.aliyun.com/zh/ram/user-guide/create-an-accesskey-pair?spm=a2c4g.11186623.0.0.20632a50VhCDpf) |
+
+## 参考资料
+
+ [API服务接入点](https://help.aliyun.com/zh/sms/developer-reference/api-dysmsapi-2017-05-25-endpoint?spm=a2c4g.11186623.0.0.720a61a5DJ7hH2) [_](https://help.aliyun.com/zh/sms/developer-reference/api-dysmsapi-2017-05-25-endpoint?spm=a2c4g.11186623.0.0.720a61a5DJ7hH2) [短信服务(SMS)-阿里云帮助中心 (aliyun.com)](https://help.aliyun.com/zh/sms/developer-reference/api-dysmsapi-2017-05-25-endpoint?spm=a2c4g.11186623.0.0.720a61a5DJ7hH2)
+
+ [创建阿里云AccessKey](https://help.aliyun.com/zh/ram/user-guide/create-an-accesskey-pair?spm=a2c4g.11186623.0.0.20632a50VhCDpf) [_](https://help.aliyun.com/zh/ram/user-guide/create-an-accesskey-pair?spm=a2c4g.11186623.0.0.20632a50VhCDpf) [访问控制(RAM)-阿里云帮助中心 (aliyun.com)](https://help.aliyun.com/zh/ram/user-guide/create-an-accesskey-pair?spm=a2c4g.11186623.0.0.20632a50VhCDpf)
+
+## 通知服务应用
+
+在报警的 **通知规则** 中将选择通知服务。
+
+1. 点击“**报警**”->"**报警通知**"->"**通知规则**"，进入通知规则列表页面。
+2. 点击列表右上角的“新增“按钮。
+3. 在新增弹窗中点击通知的'**+SMS**'按钮，新增一个短信通知规则，在通知服务选择之前创建好的阿里短信通知服务。
+
+    ![alt text](14.png)
+

@@ -1,103 +1,103 @@
-# Page Type
+# 画面类型
 
-There are 2 page types: page and popup.
+有2种画面类型：**画面**、**弹窗**。
 
-There are the following 3 entrances to create pages.
+有以下3个入口，可以创建画面。
 
-**Entry 1**: The default window of the editor. 
+**入口1：** 编辑器的默认窗口。
 
 ![alt text](1.png)
 
-**Entry 2**: The "Page" menu of the editor.
+**入口2：** 编辑器的“画面”菜单。
 
 ![alt text](2.png)
 
-**Entry 3**: Right-click any node of "Page" in the "Project" window.
+**入口3：** 在“项目”窗口中，右击“画面”的任意节点。
 
 ![alt text](3.png)
 
-## **Page**
+## 画面
 
-FFill the entire window with the page.
+填充整个窗口的画面。
 
-#### **Page Properties**
+#### 画面属性
 
 ![alt text](4.png)
 
-**How to view page properties**
+**如何查看画面属性**
 
-1. Click on a blank area of the page
-2. Click on the page’s tab name
+1. 点击画面区域的空白处
+2. 点击画面的tab页名称
 
     ![alt text](5.png)
 
-3. After zooming the page, click the gray area outside the canvas (the area highlighted in the red box below).
+3. 画面缩放后，点击画布之外的灰色区域，下图红框内区域。
 
     ![alt text](6.png)
 
-**Page Template**
+**画面模板**
 
-You can reference a template directly, so that the style of the template can be directly rendered on the current page. After referencing, editing of the template content is not allowed on the current page.
+画面可以直接引用画面模板，将画面模板的样式直接呈现在当前画面上。引用后，在当前画面上不允许对模板内容进行编辑。
 
 ![alt text](7.png)
 
-**Resolution Adaptation**
+**分辨率适配**
 
-Different devices (e.g. computers, tablets, cell phones, etc.) have different screen sizes and resolutions. If you don't set the appropriate resolution adaptation, the page may be misplaced, overflowed with controls, or incompletely displayed on some devices.
+不同的设备（如计算机、平板电脑、手机等）具有不同的屏幕尺寸和分辨率，如果不进行适当的分辨率适配，可能导致画面在某些设备上出现布局错乱、控件溢出或显示不完整的问题。
 
-Once resolution adaptation is set up, the system will automatically recognize the resolution of the current device and automatically adapt and adjust it when the page is opened on a device with a different resolution.
+设置了分辨率适配后，在不同分辨率的设备上打开画面时，系统会自动识别当前设备的分辨率并自动进行适配和调整。
 
-VC Hub includes 2 resolution adaptation methods, see Resolution Adaptation.
+WAGO SCADA包含2种分辨率适配方式，详见 [分辨率自适应](resolution-adaptation.md)。
 
-| **Adaptation Method**                                                                                                                                                                                                                 | **Description**                                      |
-|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------|
-| ![alt text](8.png) | The aspect ratio remains unchanged.                                   |
-| ![alt text](9.png)| Stretch or zoom the page so that it spreads across the entire window. |
+| **适配方式** | **描述**                         |
+|:----------------------|:----------------------------------|
+| ![alt text](8.png) | 宽高比例保持不变。                |
+| ![alt text](9.png) | 拉伸或缩放画面，使其铺满整个画面。 |
 
-**Custom Properties**
+**自定义属性**
 
-In addition to the basic property settings, you can create custom properties for the page. You can use custom properties like any other property, such as data binding, scripts, and styles.
+除了基本属性设置外，您还可以为画面创建自定义属性。您可以像使用任何其他属性一样使用自定义属性，例如数据绑定、脚本和样式。
 
-Custom properties are important for passing parameters from one page to another. See chapter **Page-> Page Parameter Passing** for details.
+自定义属性对于将参数从一个画面传递到另一个画面非常重要。详见 [画面传参](page-parameter-passing.md)。
 
-To configure custom properties, do the following:
+要配置自定义属性，请执行以下操作：
 
-1. Click on an empty space on the page.
-2. Click Appearance >Page  Custom Property.
-3. Click the plus icon to add a row.
-4. Enter the custom property name, data type, and initial value.
-5. The custom property is automatically saved after you add it. 
+1. 点击画面空白处。
+2. 点击“外观”>“自定义属性”。
+3. 单击加号图标以添加一行。
+4. 输入自定义属性名称、数据类型、初始值。
+5. 添加后自定义属性自动保存。
 
 ![alt text](10.png)
 
-## **Popup Page**
+## 弹窗
 
-A window that appears above the page. On the running page, the popup window can be dragged to change its position. However, you can only drag the popup page within the current window, not outside the window.
+显示在画面之上的窗口。在运行页面，弹窗可以拖动进行位置变更。但只能在当前窗口内拖动，不可以拖动到窗口之外的区域。
 
-#### **Popup Page Properties**
+#### 弹窗属性
 
-A popup page has more properties than a page, such as title bar settings. You can set the title bar style of the popup page in the Appearance property of the popup page according to your specific needs.
+弹窗比画面多了标题栏设置的属性。可以根据特定的需求，在弹窗的外观属性中设置弹窗的标题栏样式。
 
 ![alt text](11.png)
 
-**How to view popup page properties**
+**如何查看弹窗属性**
 
-1. Click on a blank area of the page
-2. Click on the page’s tab name
+1. 点击画面区域的空白处
+2. 点击画面的tab页名称
 
     ![alt text](12.png)
 
-3. Click the gray area outside the canvas
+3. 点击画布之外的灰色区域。
 
     ![alt text](13.png)
 
-#### **Popup Position**
+#### 弹窗位置
 
-You can specify a specific location to open the popup page. 
+可以指定一个特定的位置来打开弹窗。详见 [画面导航](navigation.md)。
 
 ![alt text](14.png)
 
-Example of a popup window style:  
+弹窗样式示例：  
 
 ![alt text](15.png)
 

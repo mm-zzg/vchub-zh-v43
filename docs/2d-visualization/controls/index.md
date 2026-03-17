@@ -1,82 +1,106 @@
-# Controls
+# 控件
 
- This section describes all the built-in controls. After selecting a control, you can change its properties in the “ Properties“  window to change the appearance and behavior of the control.
+本节介绍所有内置的控件。选择控件后，可以在”属性“窗口中更改控件的属性，从而更改控件的外观和行为。
 
-The **Polyline**, **Polygon**, and **Pipeline** controls must be drawn on the page by clicking the control in the toolbar and then dragging the mouse to create the shape. Other controls can be added to the page directly by dragging them with the mouse.
+**折线，多边形，管道** 这 3 个控件，需要在工具栏点击控件后，在画面上拖动鼠标进行绘制；其他控件直接通过鼠标拖拽的方式将其添加到画面上。
 
-![control](../../assets/images/control.gif)
+![alt text](1.gif)
 
-When moving controls on the page with the mouse, if the number of selected controls exceeds 400, the selection box will be automatically cleared after the move.
+在画面上通过鼠标移动控件时，如果选中的控件数量大于400个，则移动后，选中框会自动取消。
 
-To apply animation effects such as rotation to these controls, configure animations for the controls. To make the controls respond to user interaction, configure actions for them.
+若要使这些控件设置动画效果，例如旋转，请为控件配置动画。若要使控件对用户交互做出反应，请为其配置动作。
 
+**绘图**  
 
-**Drawing** 
+- [形状](drawing/shape.md) 
 
-- [Fill,Stroke,Shadow and Pick Color](drawing/fill-stroke.md) 
-- [Shape](drawing/shape.md)
+- [填充、描边、阴影和拾色](drawing/fill-stroke.md) 
 
-**Input**  
+**输入** 
 
-- [Datetime Input](input/datetime-input.md) 
-- [Dropdown](input/dropdown.md) 
-- [Number Input](input/number-input.md) 
-- [Slider](input/slider.md) 
-- [Text Input](input/text-input.md)
+- [下拉框](input/dropdown.md) 
 
-**Display**  
+- [文本输入框](input/text-input.md)
 
-- [3D Viewer](display/3d-viewer.md)
+- [滑动条](input/slider.md)
+
+- [日历](input/datetime-input.md) 
+
+- [数字输入框](input/number-input.md)   
+
+**显示**  
+
+- [文本标签](display/label.md) 
+
+- [值显示](display/value-display.md) 
+
+- [数码管](display/led-display.md) 
+
+- [Camera](display/camera.md)
+
 - [IFrame](display/iframe.md) 
-- [Label](display/label.md) 
-- [LED Display](display/led-display.md) 
-- [Page Container](display/page-container.md) 
-- [Rich Text](display/rich-text.md) 
-- [Ruler](display/ruler.md) 
-- [Value Display](display/value-display.md)
 
+- [富文本](display/rich-text.md) 
 
-**Button**  
+- [3D 查看器](display/3d-viewer.md)
 
-- [2-State Button](button/2-state-button.md)
-- [Button](button/button.md) 
-- [Checkbox](button/checkbox.md) 
-- [Menu](button/menu.md) 
-- [Multi-State Button](button/multi-state-button.md) 
-- [Radio Button](button/radio-button.md) 
+- [画面容器](display/page-container.md) 
+
+- [刻度尺](display/ruler.md) 
+
+**按钮**
+
+- [按钮](button/button.md)
+
+- [导航菜单](button/menu.md)
+
+- [复选框](button/checkbox.md) 
+
+- [单选按钮](button/radio-button.md)
+
 - [Toggle Button](button/toggle-button.md)
 
-**Chart**  
+- [2-State Button](button/2-state-button.md) 
 
-- [Bar Chart](chart/bar-chart.md) 
-- [Custom Chart](chart/custom-chart.md) 
-- [Custom Curve](chart/custom-curve.md) 
-- [Gauge](chart/gauge.md) 
-- [Historical Chart](chart/historical-chart.md) 
-- [Pie Chart](chart/pie-chart.md) 
-- [Real Time Chart](chart/realtime-chart.md)
+- [Multi-State Button](button/multi-state-button.md)
 
-**Alarm**  
+**图表**  
 
-- [Historical Alarm](alarm/historical-alarm/index.md)
-- [Real Time Alarm](alarm/real-time-alarm/index.md)
+- [实时趋势](chart/realtime-chart.md) 
 
+- [历史趋势](chart/historical-chart.md)
 
-**Event**  
+- [柱状图](chart/bar-chart.md)
 
-- [Historical Event](event/historical-event.md) 
-- [Real Time Event ](event/realtime-event.md)
+- [饼图](chart/pie-chart.md)  
 
-**Table**  
+- [自定义曲线](chart/custom-curve.md) 
 
-- [Historical Data Table](table/historical-data-table.md) 
-- [Report Viewer](table/report-viewer.md) 
-- [Table](table/table.md) 
-- [Tag List](table/tag-list.md)
- 
+- [仪表盘](chart/gauge.md) 
 
- 
- 
+- [自定义图表](chart/custom-chart.md)
+
+**报警**  
+
+- [实时报警](alarm/real-time-alarm/index.md)  
+
+- [历史报警](alarm/historical-alarm/index.md) 
+
+**事件**     
+
+- [实时事件](event/realtime-event.md) 
+
+- [历史事件](event/historical-event.md)
+
+**表格**  
+
+- [表格](table/table.md)
+
+- [历史检索](table/historical-data-table.md) 
+
+- [变量列表](table/tag-list.md) 
+
+- [报表查看器](table/report-viewer.md)    
 
 
 

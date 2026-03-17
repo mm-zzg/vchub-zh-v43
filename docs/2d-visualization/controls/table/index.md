@@ -1,9 +1,10 @@
-# Table
-Values can be displayed in various types of tables.
-Contains the following controls:
+# 表格
 
-- [Table](table/table.md) 
-- [Historical Data Table](table/historical-data-table.md) 
-- [Tag List](table/tag-list.md)
-- [Report Viewer](table/report-viewer.md) 
+可以将值显示在各种类型的表格中。
 
+包含以下控件：
+
+- [表格](table.md)
+- [历史检索](historical-data-table.md)
+- [变量列表](tag-list.md)
+- [报表查看器](report-viewer.md)

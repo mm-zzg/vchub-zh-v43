@@ -1,17 +1,17 @@
-# Stale Alarm
+# 陈旧报警
 
- The purpose of stale alarm configuration is to reduce unnecessary alarm interference, and you should try to avoid stale alarms during engineering configuration. 
+陈旧报警配置的目的是减少不必要的报警干扰，在工程配置时，应该尽量避免陈旧报警的产生。 
 
- Stale alarm are mainly for the following 2 situations:
+陈旧报警主要针对以下 2 种情况：
 
-1.  For alarms that have been active for a long time (regardless of whether theyare manually acknowledged or automatically acknowledged), the system will automatically acknowledge the alarm even if the alarm has not disappeared after the stale alarm is set for a longer period of time than the stale alarm. The start of the stale alarm calculation time is the moment the alarm is generated.
-2.  For alarms that require manual acknowledgement, if the user does not acknowledge the alarm for a long time after the alarm returns to normal, the system will automatically acknowledge the alarm after it reaches the length of time set for stale alarm. The stale start time is counted from the time the alarm returns to normal, not from the time the alarm is generated.
+1.  对于长时间处于激活状态的报警（不管是手动确认的还是自动确认的），超过陈旧报警设置的时长后，即便报警仍然没有消失，系统也会进行自动确认。陈旧开始计算时间就是报警产生那一刻开始。
+2.  对于需要手动确认的报警，如果报警恢复正常后，用户长时间不进行确认，在到达陈旧报警设置的时长后，系统会进行自动确认。陈旧开始计算时间是从报警恢复正常开始计时，而不是报警产生开始计时。
 
-   You can set the obsole scence time on the "**Alarming** " -> "**Stale Alarm** " screen. Alarms that reach the configured duration are considered  stale alarms.
+在“报警”->“陈旧报警”页面，设置陈旧时长。到达 配置时长 的报警认为是陈旧报警。
 
-![alt text](5.png)
+![alt text](6.png)
 
-| **Name**                  | **Description**                                                                              |
-|---------------------------|----------------------------------------------------------------------------------------------|
-| Alarm Retention Period(h) | The duration for which an alarm remains active if it is not handled or acknowledged in time. |
+| **名称**     | **描述** |
+|:--------------|:------------------|
+| 报警保留时长 | 报警发生后，如果未能得到及时的处理或确认，报警状态持续存在的时长。 |
 

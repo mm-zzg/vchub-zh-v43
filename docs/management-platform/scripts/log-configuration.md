@@ -1,8 +1,7 @@
-# Log Configuration
+# 日志配置
 
-Used to set the saving policy for scripts. It can be set by level and number of days.
+用于设置脚本的保存策略。可以按等级和天数进行设置。
 
-![alt text](18.png)
+![alt text](20.png)
 
-The script log will be recorded according to the level and number of days you set here. You can click the "View Log" button of the script to view the logged contents.
-
+将按照您此处设置的等级和保存天数，记录脚本日志。您可以点击脚本的“**查看日志**”按钮，查看记录的内容。

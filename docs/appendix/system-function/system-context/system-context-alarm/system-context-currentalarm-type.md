@@ -3,14 +3,16 @@
 # System.Context.currentAlarm.type
 
 
-## Description
+## 描述
 
-The type of the current alarm.
-## Grammar
-System.Context.currentAlarm.type
+当前报警的类型。
 
-## Code Example                                                                                                                   
-Get the type of the current alarm.                                                                                                                                                                                       
+## 语法
+**System.Context.currentAlarm.type**
+
+## 代码示例
+
+获取当前报警的类型。
 
 ```typescript 
 

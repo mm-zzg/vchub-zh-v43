@@ -1,22 +1,22 @@
-# Set Property
+# 属性赋值
 
-Assign the value of one property to another property on the same page.
+将同一画面上的一个属性的值赋给另一个属性。
 
-**Example**
+**示例**
 
-When the mouse clicks on the rectangle control, the fill color of the rectangle is assigned to the ellipse as the fill color of the ellipse.
+鼠标点击矩形控件时，将矩形的填充色赋给椭圆，作为椭圆的背景色。
 
 ![alt text](4.png)
 
-1. Draw a rectangle and an ellipse control on the page. Set the background color of the rectangle to green and the background color of the ellipse to white.
-2. On the rectangular control, set the event and select the mouse pressed event.
-3. Turn on the "Enable" button and select "Set Property" as the operation type.
-4. In "Property", select the background color property of the ellipse.
-5. In New Value, select the background color property of the rectangle.
-6. Security group is not set.
-7. Click the **"OK"** button.
-8. Click the "Preview" button on the screen to view the running effect.
+1. 在画面上绘制一个矩形和一个椭圆控件，矩形的背景色设置为绿色，椭圆的背景色设置为白色。
+2. 在矩形控件上，设置动作，选择鼠标按下事件。
+3. 开启“启用”按钮，操作类型选择“属性赋值”。
+4. 在“属性”中，选择椭圆的背景色属性。
+5. 在“新值”中，选择矩形的背景色属性。
+6. 安全组不设置。
+7. 点击“**确认**”按钮。
+8. 点击画面的“预览”按钮，查看运行效果。
 
-    ![set-property](../../assets/images/set-property.gif)
+![alt text](5.gif)
 
-**Note:** Manual input is also supported in the text boxes for attributes and new values. 
+**说明**：属性和新值的文本框内也支持手动输入内容。

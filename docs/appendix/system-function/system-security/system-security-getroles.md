@@ -1,26 +1,30 @@
 # System.Security.getRoles
 
 
-## Description
-Get roles of the currently logged in user.
+## 描述
 
-## Grammar
-System.Security.getRoles(): string 
+获取当前登录用户的所有角色。
 
-     - Parameter 
+## 语法
 
-        Nothing 
+**System.Security.getRoles(): string** 
 
-     - Return 
+- 参数
 
-        Roles, multiple roles separated by commas.
+    无 
 
-## Code Example                                                                                                                                                                                                                                                                                                          
-Displays the role of the currently logged in person on a  label.
+- 返回 
+
+    角色，多个角色用逗号隔开
+
+## 代码示例
+
+在文本标签上显示当前登录人的角色。
+
 ```typescript 
 
 const roles = System.Security.getRoles();
-const label = await System.UI.findControl('Label1');
+const label = await System.UI.findControl('文本标签1');
 label.text = roles;
 label.applyChanges();
 

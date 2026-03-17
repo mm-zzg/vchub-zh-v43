@@ -1,2 +1,2 @@
-# 3D Low Code Example
-Compared with traditional 3D scene editing, using 3D low code greatly improves the flexibility of configuration, shortens the configuration time and improves the work efficiency.
+# 3D低代码示例
+相比传统的3D场景编辑，使用3D低代码，大大提升了配置的灵活性，缩短配置时间，提高工作效率。

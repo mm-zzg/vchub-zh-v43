@@ -1,62 +1,62 @@
-# Redundancy
+# 冗余
 
-VC Hub supports master and backup, which means that two identical devices are running at the same time, one device is the master node and the other is the backup node. The configuration of the two nodes needs to be identical (you need to manually import the data from the master node to the backup node), see **Redundancy->Redundant configuration synchronization** for details.
+WAGO SCADA支持双机主备，就是两个相同的设备同时运行，一个设备是主节点，另一个是备节点。两个节点的配置需完全相同(需要手动将主节点的数据导入到备份节点)，详见 [冗余配置同步](synchronization.md)。
 
-## **Network communication between master and backup nodes**
+## 主备节点网络通信
 
-The master and backup nodes will communicate with each other via TCP/IP. The master node will listen to port 8099 (8099 is the default port, which is configurable). The backup node establishes a connection to port 8099 on which the master node is listening.
+主备节点会通过TCP/IP相互通信， 主节点会监听8099端口(8099为默认端口，该端口可配置)。备份节点会向主节点监听的8099端口建立连接。
+
+**说明**：冗余和组网共有一个端口，在组网页面的基本信息中，可以修改端口。
 
 ![alt text](1.png)
 
-## **Status Monitoring**
+## 状态监控
 
-You can see the real-time redundancy status in the redundancy configuration interface.
+在冗余的配置界面能够看到实时的冗余状态
 
 ![alt text](2.png)
 
-The status of the current node and the redundant nodes includes the following categories.
+当前节点和冗余节点的状态包含以下几种
 
-| **Node Status** | **Description**                                                                                                                                               |
-|---------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Running             | Running, the default state of the master node.                                                                                                                |
-| Standby             | Standby state, the default state of the standby node, when the master node is down, the standby node will switch to Running state.                            |
-| Faulted             | Faulted state, the state of the redundant node on the standby node when the standby node cannot establish a redundant connection with the master node.        |
-| Unknown             | Unknown state, the state of the redundant node is not obtained, for example, the redundant node is in the startup state.                                      |
-| Disconnected        | The status of the redundant node on the master node will be displayed as 'Disconnected' when the master node starts up and no backup node is connected to it. |
+| **节点状态** | **描述** |
+|:--------------|:-------|
+| Running      | 运行状态，主节点的默认状态。 |
+| Standby      | 待命状态，备节点的默认状态，当主节点宕机后，备节点会切换成Running状态。 |
+| Faulted      | 错误状态，当备节点无法与主节点建立冗余连接时，备节点上的冗余节点状态会显示成Faulted。|
+| Unknown      | 未知状态，未获取到冗余节点状态，比如冗余节点正处于启动状态。  |
+| Disconnected | 连接断开状态，当主节点启动后没有备节点与主节点建立连接时，主节点上的冗余节点状态会显示成Disconnected。 |
 
-Redundant node authorization:
+冗余节点授权：
 
-| **Node Authorization** | **Description**                                                                         |
-|------------------------|-----------------------------------------------------------------------------------------|
-| Unknown                | No authorization information for the redundant node has been obtained.                  |
-| Match                  | The authorization modules of the licenses of the primary and backup nodes match.        |
-| Mismatch               | The authorization modules of the licenses of the primary and backup nodes do not match. |
+| **节点授权** | **描述**                          |
+|:--------------|:-----------------------------------|
+| Unknown      | 未获取到冗余节点的授权信息。       |
+| Match        | 主备节点的许可证的授权模块一致。   |
+| Mismatch     | 主备节点的许可证的授权模块不一致。 |
 
-## **Runtime Data Synchronization**
+## 运行时数据同步
 
-The master and backup nodes synchronize real-time data at runtime, including tags and alarms. The master and backup nodes will first perform a full synchronization when they first establish a connection, and then continue to perform incremental synchronization.
+主备节点运行时会同步实时数据，实时数据包括变量和报警。主备节点初次建立连接时会先进行一次全量同步，然后持续进行增量同步。
 
-## **Switching between master and backup**
+## 主备切换
 
-#### **Automatic switchover**
+#### 自动切换
 
-1. Machine A is set as the primary server and Machine B is set as the backup server. On the Redundancy Configuration page for Machine A, select Automatic for the recovery method.
-2. Machine A and Machine B form a redundancy. The node state of Machine A is Running and the node state of Machine B is Standby.
-3. Machine A goes down during operation, at which time Machine B becomes Running and the state of Machine A becomes Faulted.
-4. Machine A returns to normal, the state of Machine A changes to Running and Machine B is in Standby.
+1. 机器A设置为主服务器，机器B设置为备服务器。机器A的冗余配置页面，恢复方式选择 **自动。**
+2. 机器A和机器B形成冗余。机器A的节点状态为Running，机器B的节点状态为Standby。
+3. 机器A在运行过程中宕机，此时机器B变为Running状态，机器A的状态变为Faulted。
+4. 机器A恢复正常，机器A的状态变为Running，机器B处于Standby状态。
 
-#### **Manual switchover**
+#### 手动切换
 
-1. Machine A is set as the primary server and Machine B is set as the standby server. On the Redundancy Configuration page for Machine A, select Manual for Recovery.
-2. Machine A and Machine B form a redundancy. The node state of Machine A is Running and the node state of Machine B is Standby.
-3. Machine A goes down during operation, at which time Machine B becomes Running and the state of Machine A becomes Faulted.
-4. Machine A returns to normal, but the state of Machine A is still Standby and Machine B is Running.
-5. On the "Networking" -> "Redundancy" page of Machine A, click the "Switch" button.
-    ![alt text](3.png)<br>
-    After the switchover, machine A returns to the Running state and machine B returns to the Standby state.
-6. If you continue to click the "Switch" button at this point, Machine A will change back to Standby state and Machine B will change back to Running state.
+1. 机器A设置为主服务器，机器B设置为备服务器。机器A的冗余配置页面，恢复方式选择 **手动。**
+2. 机器A和机器B形成冗余。机器A的节点状态为Running，机器B的节点状态为Standby。
+3. 机器A在运行过程中宕机，此时机器B变为Running状态，机器A的状态变为Faulted。
+4. 机器A恢复正常，但此时机器A的状态仍为Standby，机器B处于Running状态。
+5. 在机器A的”网络“->”冗余“页面，点击”切换“按钮。
 
-## Important Notes
+    ![alt text](3.png)
 
-1. Since historical data is stored according to the node name, after configuring redundancy for two nodes, the node name of the redundant node must be changed to the node name of the primary node. Otherwise, the standby node will not be able to query the historical data transferred from the primary node.
-2. If a network connection has been established between the primary and standby nodes, it is strongly recommended to remove the network connection between the two nodes to avoid potential unforeseen errors.
+    切换后，机器A重新变为Running状态，机器B变为Standby状态。
+
+6. 如果此时继续点击”切换“按钮，机器A会重新变为Standby状态，机器B变为Running状态。

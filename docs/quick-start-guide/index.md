@@ -1,24 +1,23 @@
 # 快速入门
 
 我们概述了一些简单的步骤来指导您配置项目。您可以在短时间内，运行一个项目。                                                                                               
-
 #### 1.创建项目
 
-在项目列表中点击“新增“按钮来创建项目。
+在项目列表中点击“新增”按钮来创建项目。
 
 ![alt text](1.png)
 
 #### 2.添加数据库
 
-WAGO VC Hub安装后会自动创建一个SQLite数据库，您可以使用该数据库进行入门测试。您也可以点击”数据库“->"数据库连接"页面的“新增“按钮来创建新的数据库连接。详见[数据库连接](../management-platform/databases/database-connection/index.md)。
+WAGO SCADA安装后会自动创建一个SQLite数据库，您可以使用该数据库进行入门测试。您也可以点击“数据库”->“数据库连接”页面的“新增”按钮来创建新的数据库连接。详见 [数据库连接](../management-platform/databases/database-connection/index.md)。
 
 #### 3.添加资产
 
-WAGO VC Hub安装后会自动创建一个Default资产，您可以使用该资产进行入门测试。您也可以点击”变量“->"资产"页面的“新增“按钮来创建新的资产。详见[资产](../management-platform/assets-and-tags/asset/index.md)。
+WAGO SCADA安装后会自动创建一个Default资产，您可以使用该资产进行入门测试。您也可以点击“变量”->“资产”页面的“新增”按钮来创建新的资产。详见 [资产](../management-platform/assets-and-tags/asset/index.md)。
 
 #### 4.打开编辑器
 
-在项目列表页面，点击项目的”设计“按钮。
+在项目列表页面，点击项目的“设计”按钮。
 
 ![alt text](2.png)
 
@@ -28,11 +27,11 @@ WAGO VC Hub安装后会自动创建一个Default资产，您可以使用该资�
 
 #### 5.新建画面
 
-点击”新建画面“，快速创建一个画面。
+点击“新建画面”，快速创建一个画面。
 
 ![alt text](4.png)
 
-在设计器右侧的工具窗口中，在画面上添加”文本标签”,”值显示”,“矩形”，“历史趋势图”控件。
+在设计器右侧的工具窗口中，在画面上添加“文本标签”,“值显示”,“矩形”，“历史趋势图”控件。
 
 ![alt text](5.png)
 
@@ -48,7 +47,7 @@ WAGO VC Hub安装后会自动创建一个Default资产，您可以使用该资�
 
 #### 7.为变量开启历史记录
 
-在变量的编辑页面顶部，开启历史记录，可以将该变量的值进行历史存储。详见[历史记录](../management-platform/assets-and-tags/tag/tag-properties/history.md)。
+在变量的编辑页面顶部，开启历史记录，可以将该变量的值进行历史存储。详见 [历史记录](../management-platform/assets-and-tags/tag/tag-properties/history.md)。
 
 ![alt text](8.png)
 
@@ -58,19 +57,19 @@ WAGO VC Hub安装后会自动创建一个Default资产，您可以使用该资�
 
 1. 将文本标签的显示内容设置为：液位:
 
-![alt text](9.png)
+    ![alt text](9.png)
 
 2. 在矩形的动画中，选择填充动画。点击值的绑定按钮，绑定已创建的变量：液位。
 
-![alt text](10.png)
+    ![alt text](10.png)
 
 3. 在值显示控件中，点击值的绑定按钮，绑定已创建的变量：液位。绑定后，绑定图标会由灰色变为绿色。
 
-![alt text](11.png)
+    ![alt text](11.png)
 
 4. 在历史趋势图上，绑定已创建的变量：液位。
 
-![alt text](12.png)
+    ![alt text](12.png)
 
 #### 9.预览/运行
 

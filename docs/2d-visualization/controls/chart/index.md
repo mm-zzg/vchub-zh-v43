@@ -1,17 +1,19 @@
-# Chart
-Present data in various chart styles.
-Contains the following controls:
+# 图表
 
+将数据以各种图表样式进行呈现。
 
-- [Real Time Chart](chart/realtime-chart.md)
-- [Historical Chart](chart/historical-chart.md) 
-- [Bar Chart](chart/bar-chart.md) 
-- [Pie Chart](chart/pie-chart.md) 
-- [Custom Curve](chart/custom-curve.md) 
-- [Gauge](chart/gauge.md) 
-- [Custom Chart](chart/custom-chart.md) 
+包含以下控件：
 
+- [实时趋势](realtime-chart.md) 
 
+- [历史趋势](historical-chart.md)
 
+- [柱状图](bar-chart.md)
 
+- [饼图](pie-chart.md)  
 
+- [自定义曲线](custom-curve.md) 
+
+- [仪表盘](gauge.md) 
+
+- [自定义图表](custom-chart.md)

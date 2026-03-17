@@ -1,132 +1,134 @@
-# Script
+# 脚本
 
-Allows you to write custom scripts for more flexible configuration.
+允许您编写自定义脚本实现更灵活的配置方式。
 
-The script can change the properties of controls at runtime by accessing the controls on the page.
+脚本可以通过获取页面上的控件，在运行时改变控件的属性。
 
-If you need to perform two or more actions simultaneously (such as navigation, set value, etc.), you can combine these actions in the script editor.
+如果需要同时执行两个或多个操作（导航，变量赋值等操作），则可以在脚本编辑器中组合这两个操作。
 
-## Modify the appearance of controls through a script.
+## 通过脚本修改控件外观
 
-**Example**
+**示例**
 
-Click the button to modify the appearance of the LED display.
+点击按钮，修改数码管的外观样式。
 
-1. Add Label, LED display, and button controls to the page. Set the text of the Label control to "Device Status:". the text of the LED display to "RUNNING", the background color to #0f1b01, and the font color to #6ec800. Set the text of the button to "Alarm", the background color to #ff0000, and the font color to #ffffff.
-2. Click the Alarm button, and in the event window, enable the mouse down event. Select "Script" as the option type.
+1. 在画面上添加 Label、数码管和按钮控件。Label 控件的内容设置为“设备状态：”。数码管的内容设置为“RUNNING”，背景色设置为 #0f1b01，字体颜色设置为 #6ec800,  按钮的内容设置为“报警”，背景色设置为 #ff0000，字体颜色设置为 #ffffff。
 
-    ![alt text](5.png)
-
-3. Enter the following content in the script editor and save it.
-
-    ```typescript
-    const led = await System.UI.findControl('LED Display 1'); // Get the LED display control on the page by its name.
-    led.backgroundColor = '#ff0000'; // Modify background color
-    led.fontColor = '#fff'; // Modify font color
-    led.text = 'Error';  // Modify text
-    led.applyChanges();
-    ```
- 
-4. Click the preview button, then click the alarm button on the preview page to see the style change of the LED display.
-
-    ![event-script](../../assets/images/event-script.gif)
-
-**Note:** After modifying control properties using a script, you need to call the **applyChanges()** method to apply the current modifications. 
-
-## Set a new value to a variable through a script.
-
-**Example**
-
-Click the button to modify the value bound to the LED display.
-
-1. Add Label, LED display, and button controls to the screen. Set the text of the Label control to "Running Status:". the text of the LED display to "true". Set the text of the button to "Status Switch", the background color to #6ec800, and the font color to #ffffff.
-2. In the properties window of the LED display, select the text and bind it to the boolean variable at the path userManual:status.
+2. 点击报警按钮，在动作窗口中，启用鼠标按下事件。操作类型选择“脚本”。
 
     ![alt text](6.png)
 
-3. Click the Status Switch button, and in the event window, enable the mouse down event. Select "Script" as the option type.
-
-    ![alt text](7.png)
-
-4. Enter the following content in the script editor and save it.
+3. 在脚本编辑器中输入如下内容并保存：
 
     ```typescript
-    const ledStatus = await System.Tag.read('@userManual:status');  // read tag
-    const newValue = !ledStatus.value;
-    await System.Tag.writeValue('@userManual:status', newValue); // set new tag
+    const led = await System.UI.findControl('数码管1'); // 通过数码管控件名称获取页面上的数码管控件
+    led.backgroundColor = '#ff0000'; // 修改背景颜色
+    led.fontColor = '#fff'; // 修改字体颜色
+    led.text = 'Error';  // 修改数码管文字信息
+    led.applyChanges(); // 应用修改
     ```
  
-5. Click the preview button, then click the status switch button on the preview page to see the style change of the LED display.
+4. 点击预览按钮，在预览页面点击报警按钮，查看数码管的样式变化。
 
-    ![event-script1](../../assets/images/event-script1.gif)
+    ![alt text](7.gif)
 
-**Note:** System.Tag.read() can read more information about the variable.
+**注意**: 使用脚本修改控件属性后需要调用 **applyChanges()** 方法应用当前修改。
 
-![alt text](8.png)
+## 通过脚本给变量赋值
 
+**示例**
 
+点击按钮，修改数码管绑定的数值。
 
-## Open a popup through a script
+1. 在画面上添加 Label、数码管和按钮控件。Label 控件的内容设置为“运行状态：”。数码管的内容默认为“true”， 按钮的内容设置为“状态切换”，背景色设置为 #6ec800，字体颜色设置为 #ffffff。
 
-**Example**
+2. 在数码管的属性窗口选择文本并绑定路径为 userManual:status 的布尔值变量。
 
-Click the button to display different content in the popup.
+    ![alt text](8.png)
 
-1. Add two Label, two LED display, and two button controls to the screen. Set the text of the Label controls to 'Device A Running Status:', and 'Device B Running Status:',respectively.Set the text of both LED displays to "true". Set the text of both buttons to "Device Details", the background color to #6ec800, and the font color to #ffffff.
-2. Create a new popup page named 'Device Details' to display values passed by scripts.
-3. Bind the text properties of the two digital tubes to the boolean tags userManual:status and userManual:status2, respectively.
-
-     - LED Display 1 :
+3. 点击状态切换按钮，在动作窗口中，启用鼠标按下事件。操作类型选择“脚本”。
 
     ![alt text](9.png)
 
-     - LED Display 2 :
-
-    ![alt text](10.png)
-
-4. Click the Device Details button, and in the event window, enable the mouse down event. Select "Script" as the option type.
-
-    ![alt text](11.png)
-
-5. Enter the following content into the script editor of each button separately and save:
+4. 在脚本编辑器中输入如下内容并保存：
 
     ```typescript
-    // Button 1 script:
-    const ledValue = await System.Tag.read('@userManual:status'); // get device A status
-    System.UI.openPopup('Details', { // popup name
+    const ledStatus = await System.Tag.read('@userManual:status'); // 通过变量路径获取到变量信息
+    const newValue = !ledStatus.value; 
+    await System.Tag.writeValue('@userManual:status', newValue); // 给变量写入新值
+    ```
+ 
+5. 点击预览按钮，在预览页面点击状态切换按钮，查看数码管的内容变化。
+
+    ![alt text](10.gif)
+
+**注意**: System.Tag.read() 可以读取到变量的更多信息。
+
+![alt text](11.png)
+
+## 通过脚本打开弹窗
+
+**示例**
+
+点击按钮，在弹窗中显示不同的内容。
+
+1. 在画面上添加两个 Label、两个数码管和两个按钮控件。Label 控件的内容分别设置为“设备A运行状态：”和“设备B运行状态：”。两个数码管的内容默认为“true”，两个按钮的内容设置为“设备详情”，背景色设置为 #6ec800，字体颜色设置为 #ffffff。
+
+2. 新建一个弹窗页面，名称设置为“设备详情”，用于接收脚本传值展示。
+
+3. 两个数码管的文本属性分别绑定到 userManual:status 和 userManual:status2 这 2 个布尔变量。
+
+    - 数码管1绑定:
+
+    ![alt text](12.png)
+
+    - 数码管2绑定:
+
+    ![alt text](13.png)
+
+4. 点击设备详情按钮，在动作窗口中，启用鼠标按下事件。操作类型选择“脚本”。
+
+    ![alt text](14.png)
+
+5. 分别在两个按钮的脚本编辑器中输入如下内容并保存:
+
+    ```typescript
+    // 按钮1内容
+    const ledValue = await System.Tag.read('@userManual:status'); // 获取当前的设备运行状态
+    System.UI.openPopup('设备详情', { // 打开弹窗
         titleBar:{
-            title: "DeviceDetails"  // popup title
+            title: "设备详情"  // 弹窗标题
         },
         position:{
-            type: "follow" // popup position
+            type: "follow" // 弹窗打开位置
         },
         pageProperties:{
-        custom: { // custom parameters
-            name: 'DeviceA',
+        custom: { // 向弹窗传递的参数
+            name: '设备A',
             status: ledValue.value
         }
         }
     });
 
-    // Button 2 script
-    const ledValue = await System.Tag.read('@userManual:status2'); // get device B status
-    System.UI.openPopup('Details', {
+    // 按钮2内容
+    const ledValue = await System.Tag.read('@userManual:status2'); // 获取当前的设备运行状态
+    System.UI.openPopup('设备详情', { // 打开弹窗
         titleBar:{
-            title: "DeviceDetails"  // popup title
+            title: "设备详情"  // 弹窗标题
         },
         position:{
-            type: "follow" // popup position
+            type: "follow" // 弹窗打开位置
         },
         pageProperties:{
-        custom: { // custom parameters
-            name: 'DeviceB',
+        custom: { // 向弹窗传递的参数
+            name: '设备B',
             status: ledValue.value
         }
         }
     });
     ```
  
-6. Click the preview button, then on the preview page, click both device detail buttons to view the popup content.
+6. 点击预览按钮，在预览页面点击两个设备详情按钮，查看弹窗内容。
 
-    ![event-script2](../../assets/images/event-script2.gif)
+    ![alt text](15.gif)
 

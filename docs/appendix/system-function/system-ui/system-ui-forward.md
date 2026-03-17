@@ -1,35 +1,33 @@
 # System.UI.forward
 
+## 描述
 
-## Description
-Call this function to return to the previous page after System.UI.back().
+使用 System.UI.back() 后可用此函数返回之前页面。
 
-## Grammar
-System.UI.forward(): void
+## 语法
+**System.UI.forward(): void**
 
-     - Parameter
+- 参数
 
-        Nothing
+    无
 
-     - Return
+- 返回
 
-        Nothing
+    无
 
-## Code Example 
+## 代码示例 
 
-Execute the script System.UI.open('B') on Page A to open Page B.
+在画面 A 执行脚本 `System.UI.open('B')` 打开画面 B。
 
 ```typescript 
 
 System.UI.open('B');
 ```  
-Execute the script System.UI.back() on Page B to return to Page A.
+在画面 B 执行脚本 `System.UI.back()` 返回画面A。
 ```typescript 
 System.UI.back();
-
 ```   
-Execute the script System.UI.forward() on Page A to return to Page B.
+在画面 A 执行脚本 `System.UI.forward()` 返回画面B。
 ```typescript 
 System.UI.forward();
-
 ```   

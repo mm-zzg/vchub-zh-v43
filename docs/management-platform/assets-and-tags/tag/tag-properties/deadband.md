@@ -1,24 +1,20 @@
-# Deadband
+# 采集死区
 
- By setting the deadband for tags, you can filter the values of pushed tags to exclude meaningless pushed data.
+通过设置变量的采集死区，可以对推送的变量值进行筛选，排除无意义的推送数据。
 
- Only tags of type Integer and Double can enable this configuration.
+只有Integer和Double型的变量可启用此配置。
 
-## **How to Enable**
+## 如何启用
 
-   In the add or edit  pop-up window of the tag, there is a deadband switch at the top of the popup window, turn it on to set the deadban
+在变量的设置弹窗中，顶部有 **采集死区** 开关，开启后进行采集死区设置。
 
 ![alt text](15.png)
 
- When it is turned on,the popup window will automatically display the deadband  configuration items,users can set the deadband  according to the actual needs, click **"OK"** button after the setting is completed.
+开启后，弹窗中会自动显示采集死区配置项，用户可以根据实际需求，设置采集死区，设置完成后点击“确认“按钮即可。
 
 ![alt text](16.png)
 
-| **Name**       | **Description**                                                                                                                                                                                                                                                                                                                                                                             |
-|----------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Mode           | There  are two modes:  <br> 1. Absolute:The absolute value of **(New Value-Previous Value)**, whether it is greater than the dead zonevalue, if it is greater, it will be collected, if not, it will be ignored.<br> 2.Percent: The absolute value of **(New Value - Previous Value)** is greater than the deadband value * the absolute value of **(Engineering Upper Limit - Engineering Lower Limit)** / 100, if greater, it will be collected, otherwise, it will be ignored. |
-| Deadband Value | Used for the calculation of the acquisition deadband.                                                                                                                                                                                                                                                                                                                                       |
-
-  
-
-
+| **配置** | **描述**   |
+|:----------|:-------------------|
+| 模式     | 模式分为两种：  <br>- 绝对值：(新值-上一笔值)是否大于 **死区值**，大于则采集，反之则忽略。 <br>- 百分比：(新值-上一笔值)是否大于 **死区值(工程上限-工程下限)/100**，大于则采集，反之则忽略。 |
+| 死区值   | 用于采集死区的计算。|

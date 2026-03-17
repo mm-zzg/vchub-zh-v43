@@ -3,31 +3,32 @@
 # System.UI.openNewTab
 
 
-## Description
-Open the page in a new tab.
+## 描述
 
-## Grammar
-System.UI.openNewTab(page: string, pageProperties?: any): void
+在新的浏览器tab打开画面。
 
-     - Parameter
+## 语法
 
-        page - The name of the page that needs to be opened
+**System.UI.openNewTab(page: string, pageProperties?: any): void**
 
-        pageProperties - Properties of page.
+- 参数
 
-     - Return
+     page - 需要打开的画面名称。
 
-        Nothing
+     pageProperties - 画面属性
 
-## Code Example
+- 返回
 
-Open page A on a new browser tab
+     无
+
+## 代码示例
+
+在新的浏览器 tab 打开画面 A。
 
 ```typescript 
 System.UI.openNewTab('A');
-
 ```
-Open page A on a new browser tab and set its page property ID to 'A0003'.
+在新的浏览器 tab 打开画面 A，并将 A 的画面属性 id 设置为"A0003"。
 
 ```typescript 
 
@@ -36,5 +37,4 @@ System.UI.openNewTab('A', {
         id: "A0003"
     }
 });
-
 ```   

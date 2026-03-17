@@ -1,33 +1,28 @@
-# Resolution Adaptation
+# 分辨率自适应
 
-Resolution Adaptation allows web pages to work properly on different devices. Whether on desktop computers, tablets or mobile devices such as cell phones, users can easily access them.
+分辨率自适应可以使网页在不同的设备上正常运行。无论是在桌面电脑、平板还是手机等移动设备上，用户都可以轻松地访问。
 
-**Scenario Example 1**: Accessing the same page on different devices.
+**场景举例一：** 在不同的设备上访问同一个画面。
 
-1. Draw the page and turn on resolution adaption and select aspect ratio scaling. 
+1. 绘制画面，并且开启分辨率自适应，选择宽高等比缩放。
 
-    ![alt text](40.png)
+    ![alt text](44.png)
 
-2. View the running page of the screen on your computer, tablet, and phone.
+2. 分别在电脑、平板和手机上查看该画面的运行页面。
 
-    ![alt text](41.png)
+    ![alt text](45.png)
 
-**Scenario 2**: Enable different resolution methods on the same device and view the running effect of the page.
+**场景举例二：** 在同一设备上启用不同的分辨率方式，查看画面的运行效果。
 
-**Note**: The size of the configuration screen is 1920*1080, and the resolution of the monitor is 1024 * 768.
+**说明**：绘制的组态画面的尺寸为：1920*1080，显示器的分辨率为1024*768。
 
-Editor Page:
+组态画面：
 
-![alt text](42.png)
+![alt text](46.png)
 
-Running Page:
+运行画面：
 
-| **Resolution mode**   | **Screen operation effect**|
-|------|--------|
-| Scaling between width and height           ![alt text](43.png) | After equal scaling, the page is displayed in the center, and the excess part will be left white   (for the sake of identification, the gray area in the figure indicates the white area). ![alt text](44.png)|
-| Stretching the page to fill the entire window| Horizontal and vertical scaling is performed to make the page appear completely within the window.  ![alt text](45.png)|
-
-
-
-
-
+| 分辨率方式 | 画面运行效果   |
+|:-------------|:------------------|
+| 宽高等比缩放  <br>![alt text](47.png) | ![alt text](48.png)  <br>等比缩放后，画面居中显示，多余的部分会留白（为了好辨识，图中的灰色区域表示留白区域）。 |
+| 拉伸画面，铺满整个屏幕  <br>![alt text](49.png) | ![alt text](50.png)  <br>水平和垂直方向都会进行缩放，使画面完全显示在屏幕内。                               |

@@ -1,17 +1,16 @@
-# Pre-Processed
+# 预处理
 
- The history database  has the option to enable "Pre-Processed ". When it is enabled, history will be stored in two different sets of partitions:a normal partition and a summarized "pre-processed " partition.
+**历史库** 可以选择开启“**预处理**”。启用预处理后，历史记录将存储在两组不同的分区中：**普通分区** 和汇总的“**预处理**”分区。
 
- In summary, the "pre-processed " partitions summarize the data stored in the normal partitions and put it into additional tables in the database. Although this takes up more space in the database, it can significantly improve query speed by reducing the number of data points generated. When enabled, tag history queries will use the pre-processed table if data is requested at intervals greater than the specified "pre-processing window size(min)"setting. For example, suppose you select an aggregate (max, min, average) query with a sampling interval of 90 seconds in Controls: Historical Query , and if you set the "p re-processing window size (min) " to be less than 90 seconds (e.g., the default value of 1 minute), the query will use the pre-processed table in the "p re-processing partitions" query.  On the other hand, if the same conditions are used and the sampling interval is set to a value less than the size of the "p re-processing w indow size (min)", the original table will be used. Both examples will retrieve data from the historical database, but the result set of the first query will be less accurate than the query of the second example.
+总的来说，“**预处理**”分区是对存储在 **普通分区** 中的数据进行汇总，然后将其放入数据库中的附加表中。虽然这会占用数据库中的更多空间，但它可以通过减少生成的数据点的数量来显著提高查询速度。启用后，如果以大于指定的“**预处理时间窗口(min)**”设置的时间间隔请求数据，则标签历史记录查询将使用预处理的表。例如，假设在控件：[历史检索](../../../../2d-visualization/controls/table/historical-data-table.md) 中选择 **采样间隔 90秒** 的聚合（最大值、最小值、平均值）查询，如果在历史库设置中将“预处理时间窗口(min)”设置为小于 90 秒（例如默认值 1分钟），则该次查询将在“预处理的分区”中检索记录。另一方面，如果使用相同的条件，并将采样间隔设置为小于“预处理时间窗口(min)”大小的值，则将使用原始表。这两个示例都将从历史数据库中检索数据，但第一个查询的结果集准确率将小于第二个示例的查询。
 
- When pre-Processed is enabled, a new partitioned table will be created to store the preprocessed records. The preprocessing partition will store data as one table per natural month.
+启用预处理后，将创建一个新的分区表来存储预处理的记录。预处理分区将按照 **每个自然月一张表** 的形式存储数据。
 
-**Note**: When InfluxDB is selected , there is no configuration for partitioning, pre-processing, and data cleaning (InfluxDB itself has the above configurations,  VC Hub does not provide this configuration). 
+**说明**：当“数据库连接”选择 **InfluxDB类型** 的数据库时，将无分区、预处理、数据清理配置（InfluxDB自身具有以上配置，WAGO SCADA不提供此配置）。
 
-**ConfigurationDescription**
+**配置说明**
 
-| **ConfigurationItem** | **Description**                                                                                                                                                                                                                                   |
-|------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Enable  Pre-process ed             | Enables or disables preprocessing.                                                                                                                                                                                                                                                      |
-| Pre-Processing Window Size(min)    | The interval of time window when preprocessing historical data. For example, if the time is set to 1min, the preprocessing table will summarize the raw data of 1min, calculate the maximum, minimum and average values within this 1min,and store them to the preprocessing partition. |
-
+| **配置项**          | **说明** |
+|:---------------------|:----------------|
+| 开启预处理          | 是否开启预处理。|
+| 预处理时间窗口(min) | 历史数据预处理时的时间窗口间隔。  例如将时间设置为1min，则预处理表将汇总1分钟的原始数据，计算出这1分钟内的 **最大值**、**最小值**、**平均值**，并存储到预处理分区。 |

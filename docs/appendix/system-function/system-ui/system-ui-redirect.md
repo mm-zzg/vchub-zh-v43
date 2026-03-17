@@ -1,32 +1,35 @@
 # System.UI.redirect
 
 
-## Description
-Redirect the page to a new URL.
+## 描述
 
-## Grammar
-System.UI.redirect(url:string, newTab?: boolean)
+将页面跳转到新的URL。
 
-     - Parameter
+## 语法
 
-        url - The URL path that needs to be opened
+**System.UI.redirect(url:string, newTab?: boolean)**
 
-        newTab - Whether to open as a new tab, default to true, can be left blank
+- 参数
 
-     - Return
+    url - 需要打开的 url 路径
 
-        Nothing
+    newTab - 是否以新 tab 的方式打开，默认 true 可不填
 
-## Code Example
+- 返回
 
-Open google on the new tab. 
+    无
+
+## 代码示例
+
+在新的 tab 页面打开百度。
 
 ```typescript 
 
-System.UI.redirect('https://www.google.com/');
+System.UI.redirect('https://www.baidu.com/');
 ```
-Open google on the current tab. 
+在当前 tab 页面打开百度。
+
 ```typescript 
-System.UI.redirect('https://www.google.com/', false);
+System.UI.redirect('https://www.baidu.com/', false);
 
 ```   

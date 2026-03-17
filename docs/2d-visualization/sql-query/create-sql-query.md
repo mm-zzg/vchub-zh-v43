@@ -1,44 +1,46 @@
-# Create SQL Query
+# 创建SQL Query
 
-To create an SQL Query, right-click the "SQL Query" node and select "Add".
+在“数据请求”的“SQL Query”节点上单击鼠标右键，选择“新增”，可以创建SQL Query。
 
 ![alt text](5.png)
 
 ![alt text](6.png)
 
-**Note**： In use, SQL Query is referred to by name, so all references to the SQL Query need to be updated when renaming. 
-## Basic
+**注意**：SQL Query 在使用过程中，是通过 **名称引用** 的，因此重命名时需对所有引用该SQL Query的地方进行更新。
+
+## 基础属性
 
 ![alt text](7.png)
 
-| **Name**            | **Description**  |
-|---------------------|----------|
-| Name                | The name of the SQL Query, which must be unique.|
-| Description         | Description of the SQL Query. |
-| Database Connection | The dropdown displays database connections that are in the "Connected" state, allowing the user to select one. During database connection verification, only the currently selected database will be validated, without verifying its backup database.|
-| Query Type          | Query types include **Query**,  **Scalar Query**，**Update Query**.  When **Scalar Query** is selected, the fallback value can be set. A fallback value is returned when the query fails.  ![alt text](8.png) |
-| Record Log          | Enable/Disable log recording|
+| **名称**   | **描述** |
+|:------------|:---------------|
+| 名称       | SQL Query的名称，必须唯一。  |
+| 描述       | SQL Query的描述。  |
+| 数据库连接 | 下拉框中显示处于“已连接”状态的 [数据库连接](../../management-platform/databases/database-connection/index.md)，从中选择其一。在进行数据库连接验证时，只针对当前所选的数据库进行连接验证，不验证其备数据库。 |
+| 查询类型   | 查询类型包括 **Query**,  **Scalar Query**，**Update Query**。具体参见 [SQL Query](index.md)。<br>当选择 **Scalar Query** 时，可以设置回退值。当查询出错时，返回回退值。  <br>![alt text](8.png) |
 
-## SQL 
+## SQL语句
 
 ![alt text](9.png)
 
-| **Name**   | **Description** |
-|------------|---|
-| SQL Editor | Write the SQL Query statement in the editor. Based on the database selected in Basic Information, use the corresponding SQL statement. |
-| Parameters | Click the + button on the far right of the parameters list to add the parameters. They act as placeholders for which you can pass concrete values when executing a query.  Each parameter contains three properties:  <br>- Name: The name of the parameter. After SQL Query, you only need to modify the value of the parameter to make the SQL statement execute according to different conditions. <br>- Data Type: The data type of the parameter. <br>- Test Value: This value is used as a parameter value during the result test to test the query.   Note: In SQL statements, the @ symbol is prefixed to the parameter, and the parameter can only be used in a where statement.   <br>**Note**: When the data type is DateTime, the test value will include a UTC option, which is only applicable to PostgreSQL databases. |
+| 名称  | 描述  |
+|:-----------|:--------------|
+| SQL编辑器 | 在编辑器中编写SQL Query语句。根据在“基础信息”中所选的数据库，使用对应的SQL语句。  |
+| 参数      | 点击参数列表最右侧的 + 按钮，添加参数。它们充当占位符，在执行查询时，您可以为其传递具体的值。  <br>每个参数包含如下3个属性：  <br>- 名称：参数的名称。在SQL Query语句中，可以使用参数作为占位符，之后只需修改参数的值，即可使SQL语句按照不同的条件进行执行。 <br>- 数据类型：参数的数据类型。 <br>- 测试值：在进行结果测试的时候，使用该值作为参数的值，进行查询测试。  <br>说明：在SQL语句中，在参数前面会加上 @ 符号，参数只能用于where语句中。  <br>**注意**：当数据类型为 DateTime 时，测试值会提供 UTC 选项，该选项仅适用于 PostgreSQL 数据库。 | 
 
-## Result
+## 结果
 
-Once the SQL Query is written, it can be tested directly on the current page without binding it to a control.
+编写完SQL Query后，无需将其绑定到控件上，可以直接在当前页面进行查询测试。
 
-Click the **Test** button to execute the query.
+点击 **测试** 按钮，执行查询操作。
 
 ![alt text](10.png)
 
-| **Name**  | **Description**|
-|-----------|--------------|
-| Show Most | When enabled, allows you to set the maximum number of rows that a Query will return when testing an SQL Query. This property can be enabled only if the Query type is set to **Query**. |
-| Test      | Tests that SQLQuery executes correctly and displays the query results in the results area. |
-| Export    | Export SQL Query results to CSV files. The exported content is what is displayed in the result.  |
+| 名称 | 描述 |
+|:----------|:--------------------|
+| 最多显示 | 启用后，允许您设置在测试SQL Query时查询将返回的最大行数。仅当 **查询类型** 设置为 **Query** 时，才可以启用此属性。 |
+| 测试     | 测试SQLQuery是否正常执行，并将查询结果显示在结果区域内。  |
+| 导出     | 将SQL Query查询结果导出到CSV文件。导出的内容为结果中显示的内容。   |
+
+
 

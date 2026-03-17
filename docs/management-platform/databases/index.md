@@ -1,12 +1,12 @@
-# Databases
+# 数据库
 
- In VC Hub, the historical data, historical alarms and historical events of tags are eventually stored in a database. By connecting to the database, the stored data can be effectively managed in terms of data management. Using the powerful query and analysis functions of the database, the stored data can be statistically, analytically, and minutely mined, providing the user with more comprehensive and powerful data processing and application development capabilities.
+在WAGO SCADA中，变量的历史数据、历史报警和历史事件，最终会存储在数据库中。通过连接数据库，可以对存储的数据进行有效的数据管理，利用数据库的强大查询和分析功能，对存储的数据进行统计、分析和挖掘，为用户提供更加全面和强大的数据处理和应用开发能力。
 
-**Supported Databases**
+#### 支持的数据库
 
-- MySQL (8.0 or above)
-- SQL Sever (2012 or above)
-- PostgreSQL (9.0 or above)
-- SQLite (3.7 or above)
-- InfluxDB (Enterprise Or OSS V1)
+- [MySQL](database-connection/mysql.md)(8.0 或以上版本)
+- [SQL Server](database-connection/sql-server.md)(2012 或以上版本)
+- [PostgreSQL](database-connection/postgresql.md)(9.0 或以上版本)
+- [SQLite](database-connection/sqlite.md)(3.7 或以上版本)
+- [InfluxDB](database-connection/influxdb.md)(Enterprise 或 OSS V1)
 

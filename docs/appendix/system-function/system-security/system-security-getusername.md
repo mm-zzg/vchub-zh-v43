@@ -3,26 +3,29 @@
 # System.Security.getUsername
 
 
-## Description
+## 描述
 
-Gets the username of the currently logged in user.
-## Grammar
-System.Security.getUsername(): string
+获取当前登录用户的用户名。
 
-     - Parameter
+## 语法
+**System.Security.getUsername(): string**
 
-        Nothing
+- 参数
 
-     - Return
+    无
 
-        Username
+- 返回
 
-## Code Example                                                                                                                                                                                                                                                                                                          
-Displays the username of the currently logged in person on a  label.
+    用户名
+
+## 代码示例
+
+在文本标签上显示当前登录人的用户名。
+
 ```typescript 
 
 const user = System.Security.getUsername();
-const label = await System.UI.findControl('Label1');
+const label = await System.UI.findControl('文本标签1');
 label.text = user;
 label.applyChanges();
 

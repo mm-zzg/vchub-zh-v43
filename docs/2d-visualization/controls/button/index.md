@@ -1,14 +1,19 @@
-# Button
-Button controls give you one-click options for displaying and writing values.
-Contains the following controls:
+# 按钮
 
+按钮控件为您提供了用于显示和写入值的一键式选项。
 
-- [Button](button/button.md)
-- [Menu](button/menu.md)  
-- [Checkbox](button/checkbox.md) 
-- [Radio Button](button/radio-button.md) 
-- [Toggle Button](button/toggle-button.md)
-- [2-State Button](button/2-state-button.md)
-- [Multi-State Button](button/multi-state-button.md) 
+包含以下控件：
 
+- [按钮](button.md)
 
+- [导航菜单](menu.md)
+
+- [复选框](checkbox.md) 
+
+- [单选按钮](radio-button.md)
+
+- [Toggle Button](toggle-button.md)
+
+- [2-State Button](2-state-button.md) 
+
+- [Multi-State Button](multi-state-button.md)

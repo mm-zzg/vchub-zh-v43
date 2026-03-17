@@ -1,50 +1,52 @@
-# Pie Chart
+# 饼图
 
-A pie chart is used to display the proportion of different categories or components within a whole. It is based on a circle, which is divided into several sectors, with each sector's angle corresponding to the proportion of the category or component it represents. Pie charts are particularly suitable for showing percentages and other data relationships relative to the total.
+饼图用于展示不同类别或组成部分在整体中的比例关系。它以圆形为基础，将整个圆分成几个扇形，每个扇形的角度对应于所表示的类别或组成部分的比例。饼图更适合表现数据相对于总数的百分比等关系。
 
-There are two styles: **Pie Chart** and **Ring Chart**.
+有两种样式：饼图和环形图。
 
-![alt text](36.png)
+![alt text](46.png)
 
-**Properties**
+**属性**
 
-| **Name**          | **Description**    |
-|-------------------|------------------|
-| Name              | The name of this control. |
-| X                 | The distance between the left side of the control and the left side of the canvas, in pixels. |
-| Y                 | The distance between the top of the control and the top of the canvas, in pixels.  |
-| W                 | The width of the control, in pixels.  |
-| H                 | The height of the control, in pixels.  |
-| Data              | Click the dataset button to set default data for the pie chart, and click the binding button to bind variables, properties, or write expressions for the cells in the dataset. |
-| Refresh Frequency | The data on the pie chart is refreshed at this frequency.   |
-| Style             | Set the display style of the pie chart. Contains pie and ring charts.  |
-| Background        | The overall background color of the control.   |
-| Border            | The border color of each slice of the pie chart.   |
-| Border thickness  | The border thickness of each slice of the pie chart.   |
-| Section Colors    | Set the colors for different segments of the pie chart, with the default being the colors shown on the color palette.   |
-| Margin            | Set the distance from the center of the pie chart to its selection box, typically used to define the size of the pie chart. When the control style is set to a ring chart, both inner and outer radius need to be specified.  |
-| Legend            | Sets the style for the pie chart legend.   <br>- **Show**: Control the display and hiding of the legend. Default Display.   <br>- **Position**: Set the display position of the legend.                               <br>- **Font**: Set the font, font size, bold, italics, and font color of the legend.    |
-| Label             | Set the name and value of the dataset, and perform variable binding in the cell binding window.  <br>- **Show**: Control the display and hiding of label values. Hidden by default.   <br>- **Position**: Set the display position of the label value.       <br>- **Numeric typ**: Set the data type for the value displayed in the annotation. It can be either the value or the percentage. <br>- **Decimals**: The number of decimal places displayed for label values.Can be a value or a percentage.                 <br>- **Font**: Set the font, font size, bold, italics, and font color of the legend.   |
+|名称 | 描述   |
+|:----------|:---------------|
+| 名字     | 此控件的名称。 |
+| X        | 控件左侧距画布左侧的距离，单位px。 |
+| Y        | 控件顶部距画布顶部的距离，单位px。  |
+| W        | 控件的宽度，单位px。  |
+| H        | 控件的高度，单位px。  |
+| 数据     | 点击数据集按钮为饼图设置默认数据，点击绑定按钮为数据集里的单元格绑定变量、属性或编写表达式。  |
+| 刷新频率 | 按此频率对饼图上的数据进行刷新。 |
+| 样式     | 设置饼图的展现样式。包含饼图和环形图。  |
+| 背景     | 控件的整体背景色。  |
+| 边框     | 饼图的各个扇形区域的边框颜色。 |
+| 边框粗细 | 饼图的各个扇形区域的边框粗细。 |
+| 区块颜色 | 设置饼图不同区块的颜色，默认显示色卡的颜色。  |
+| 半径     | 设置饼图的中心点到饼图选中框的距离。通常用于定义饼图的大小。当控件样式为环图时，需设置内外半径。 |
+| 图例     | 设置饼图的图例的样式。<br>- **显示**:控制图例的显示、隐藏。默认显示。 <br>- **位置**:设置图例的显示位置。<br>- **字体**:设置图例的字体、字体大小、粗体、斜体、字体颜色。 |
+| 标注值   | 设置饼图上各个扇形区域的数值显示样式。<br>- **显示**:控制标注值的显示、隐藏。默认隐藏。<br>- **位置**:设置标注值的显示位置。 <br>- **数值类型**:设置标注值显示的数值类型。可以是值，也可以是百分比。 <br>- **小数位**:标注值显示的小数位数。<br>- **字体**:设置图例的字体、字体大小、粗体、斜体、字体颜色。 |
 
-**Event**
+**动作**
 
-Allows you to perform specific events based on certain conditions. See the full description of each event on the **2D Visualization-> Event** page.
+允许您基于某种条件执行特定的动作。请参阅“[动作](../../event/index.md)”页上各种动作的完整描述。
 
-**Example**
+**示例**
 
-Use a pie chart to display the daily production capacity ratio of different production lines.
+通过饼图来展示不同生产线的每日产能占比。
 
-1. Insert a pie chart on the page.
-2. Set the properties of the pie chart.
+1. 在画面上插入一个饼图。
+2. 设置饼图的属性。
 
-| **Property** | **Value**              |
-|--------------|-------------------------------------------------|
-| Legend       | Display, Microsoft YaHei, font size 14.    |
-| Label        | - **Show**: Turn on     <br>- **Position**: Outside.     <br>- **Numeric type**: Percentage.  <br>- **Decimals**: 1.          <br>- **Font**: Calibri, 14. |
-| Data         | Click the **Dataset** button to configure the dataset. <br>![alt text](37.png) <br>![alt text](38.png)  <br>After completing the setup, click the **Bind** button to perform dynamic cell binding.  ![alt text](39.png) |
+    | 属性 | 值 |
+    |:----------|:-----|
+    | 图例     | 显示，微软雅黑，字体大小14。 |
+    | 标注值   | - **显示**:开启。 <br>- **位置**:外。 <br>- **数值类型**:百分比。 <br>- **小数位**:1。 <br>- **字体**:Calibri，14。|
+    | 数据     | 点击数据集按钮，设置数据集。  <br>![alt text](47.png)  <br>![alt text](48.png)  <br>设置完成后，点击绑定按钮进行 [动态单元格](../../property-binding/dynamic-cell.md) 绑定。 <br>![alt text](49.png) |
 
-3.Click the Preview button to preview.
-    ![alt text](40.png)
+3. 点击预览按钮进行预览。
 
-4.Close the preview and change the style of the pie chart to donut chart . Preview again.
-    ![alt text](41.png)
+    ![alt text](50.png)
+
+4. 关闭预览，在设计页面将饼图的样式改为：环形图。关闭图例的显示，重新预览。
+
+    ![alt text](51.png)

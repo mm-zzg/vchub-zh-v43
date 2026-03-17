@@ -3,36 +3,36 @@
 # System.Tag.writeValue
 
 
-## Description
-Write tag value(s).
+## 描述
 
-## Grammar
-System.Tag.writeValue(path: string, newValue: any): Promise<void>
+对单个或多个变量写值。
 
-System.Tag.writeValue(path: string[], newValue: Array<any>): Promise<void>
+## G语法
 
-     - Parameter
+**System.Tag.writeValue(path: string, newValue: any): Promise`<void>`**
 
-        path - Tag path(s) 
+**System.Tag.writeValue(path: string[], newValue: Array`<any>`): Promise`<void>`**
 
-        newValue - Tag new value(s)
+- 参数
 
-     - Return
+    path - 单个或多个变量路径
 
-        Nothing
+    newValue - 单个或多个变量的新值
 
-## Code Example 
+- 返回
 
-Set 'Device:Start ' to true. 
+    无
+
+## 代码示例 
+
+将 'Device:Start ' 写为 true。
 
 ```typescript 
 
-await System.Tag.writeValue('@Device:Start', true);
+await System.Tag.writeValue('@设备:启动', true);
 ```
-Set 'Device:Start ' to true and 'Device:MaxPower ' to 500.
-
-
+将 'Device:Start ' 和 'Device:MaxPower ' 分别写为 true和500。
 ```typescript 
 
-await System.Tag.writeValue(['@Device:Start', '@Device:MaxPower'], [true, 500]);
+await System.Tag.writeValue(['@设备:启动', '@设备:最大功率'], [true, 500]);
 ```   

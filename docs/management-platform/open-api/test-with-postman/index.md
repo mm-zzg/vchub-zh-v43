@@ -1,4 +1,4 @@
-# Test with postman
+# 使用Postman进行测试
 
-**Postman** is a popular API (Application Programming Interface) development and testing tool. It simplifies the process of creating, testing, documenting, and sharing APIs, making it an essential tool for developers and teams working with web services. Using Postman, we can efficiently test and debug the Open API.  You can download the **Postman** from the offical website  [https://www.postman.com/downloads/](https://www.postman.com/downloads/) 
+Postman 是一种流行的 API（应用程序编程接口）开发和测试工具。它简化了创建、测试、记录和共享 API 的过程，是从事 Web 服务开发的开发人员和团队必不可少的工具。使用 Postman，我们可以高效地测试和调试 Open API。你可以从官方网站下载 Postman： [https://www.postman.com/downloads/。](https://www.postman.com/downloads/。)
 

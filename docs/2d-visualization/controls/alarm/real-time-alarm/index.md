@@ -1,67 +1,83 @@
-# Real Time Alarm
+# 实时报警
 
-The real time alarm control shows the on going alarms, including alarms for the current node and alarms for remote nodes in a networked environment. By default, all alarm information is displayed, and the control only supports displaying the latest 2,000 alarm data. You can also set filters.
+实时报警控件显示正在发生的报警, 包括当前节点的报警以及组网环境下的远端节点的报警。默认情况下，显示所有的报警信息，控件仅支持显示最新的2000条报警数据，您也可以设置筛选条件。
 
-Support operations such as acknowledging, shelving, and filtering for all alarms displayed in the list.
+支持对列表中显示的所有报警进行确认，搁置，筛选等操作。
 
 ![alt text](1.png)
 
-
-**Interface Elements**
+**界面元素**
 
 ![alt text](2.png)
 
-You can set the columns to be displayed by clicking the "Column Setting" button on the preview and running page. Click and drag the margin of the column to adjust its width. You can also sort columns in ascending or descending order by clicking the up or down arrow next to each column header.
+您可以在预览和运行画面上点击“列设置”按钮设置需要显示的列。单击并拖动列的边距以调整其宽度。您还可以按升序或降序对列进行排序，只需单击每个列标题旁边的向上或向下箭头即可。
 
-**Properties**
+**属性**
 
-| **Name**                 | **Description**   |
-|--------------------------|--------------------|
-| Name                     | The name of this control.  |
-| X                        | The distance from the left side of the control from the left side of the canvas.  |
-| Y                        | The distance from the top of the control from the top of the canvas.  |
-| W                        | The width of the control.  |
-| H                        | The height of the control.  |
-| Show                     | Set which buttons are displayed on the control. |
-| Priority Color           | Set the color and flashing effect for each alarm level.  |
-| Border Color             | Set the table line color of the outer border and table body of the control.  |
-| Border Thickness         | Set the thickness of the table line of the outer border of the control and the table body.    |
-| Header                   | Set the background color, font type, font size, bold, italic, and font color of the header.  |
-| Body                     | Set the background color, font type, font size, bold, italic, and font color of the body.   |
-| Tab                      | Set the style of active and shelved tabs.   <br>- **Indicator bar**: After selecting the tab, the color of the indicator bar displayed below the tab.   <br>- **Active**: Set the background color, border color, font type, font size, bold, italic, font color for active tab.  <br>- **Shelved**: Set the background color, border color, font type, font size, bold, italic, font color for shelved tab. | |
-| Alarm Sound              | Set the alarm sound.  <br>- **Enable**: Used to turn the alarm sound on or off.  <br>- **Sound**: With a built-in beep, users can also manually upload alarm sounds, and up to 5 can be uploaded. <br>- **Critical**: Set the alarm sound of the alarm priority of "Critical".                                <br>- **High**: Set the alarm sound of the alarm priority of "High".                                <br>- **Medium**: Set the alarm sound of the alarm priority of "Medium".                                        <br>- **Low**: Set the alarm sound of the alarm priority of "Low".  |
-| Filter Panel             | Set the style of the filter panel. <br>- **Background**: Background color of the filter panel. <br>- **Title Font**: Set the font type, font size, bold, italic, and font color of the panel name.  <br>- **Tag**: After the filter panel is expanded, the style of the tab displayed.  <br>![alt text](3.png) <br>Including the background color, border color, font type, font size, bold, italic, font color displayed when the tab is selected and not selected. | 
-| Button Style             | Set the style of the buttons used on the control. Click the button style settings button to set it up.  <br>![alt text](4.png) Sound Button.Set the color of the sound button.    <br>![alt text](5.png) Setting Button.Set the color of the setting button.        <br>![alt text](6.png) Reset Button.Set the color of the reset button.    <br>![alt text](7.png) Filter Button.Set the color of the filter button.    <br> ![alt text](8.png) Search box.Set the background color, border color of the search box, and the font type, font size, bold, italic, and font color of the search box. <br>![alt text](9.png) Acknowledge Button.Set the background color, border color, font type, font size, bold, italic, font color of the acknowledge button.         <br>![alt text](10.png) Shelve Button: Set the background color, border color, font type, font size, bold, italic, font color of the shelve button.  <br>![alt text](29.png) Unshelve Button: Set the background color, border color, font type, font size, bold, italic, font color of the unshelve button.                      | 
-| Filter                   | Check the required filter criteria.  |
-| Column                   | Set the column  that need to be displayed in the active tab and shelved tab.  |
-| Action                   | Set the operation button and set the trigger operation to be executed when the alarm is triggered.  |
-| Maximum Number of Alarms | Set the maximum number of alarms allowed by the control to display.|
+| **名称** | **描述**  |
+|:----------|:---------------|
+| 名字     | 此控件的名称。   |
+| X        | 控件左侧距画布左侧的距离，单位px。  |
+| Y        | 控件顶部距画布顶部的距离，单位px。|
+| W        | 控件的宽度，单位px。 |
+| H        | 控件的高度，单位px。 |
+| 显示     | 设置控件上显示哪些按钮。 |
+| 等级颜色 | 为每个报警等级设置颜色及其闪烁效果。 |
+| 边框颜色 | 设置控件外边框及表体的表格线颜色。  |
+| 边框粗细 | 设置控件外边框及表体的表格线的粗细。  |
+| 表头     | 设置表头的背景色、字体型号、字体大小、加粗、倾斜、字体颜色。  |
+| 表体     | 设置表体的背景色、字体型号、字体大小、加粗、倾斜、字体颜色。  |
+| 页签     | 设置实时和搁置页签的样式。<br>- **指示条**：选中页签后，页签下方显示的指示条的颜色。<br>- **实时页签**：设置实时页签的背景色、边框色、字体型号、字体大小、加粗、倾斜、字体颜色。<br>- **搁置页签**：设置搁置页签的背景色、边框色、字体型号、字体大小、加粗、倾斜、字体颜色。|
+| 声音     | 设置报警声音。<br>- **启用**：用于开启或关闭报警声音。<br>- **声音**：内置一个蜂鸣声，用户也可以手动上传报警声音，最多支持上传5个。<br>- **紧急**：设置等级为”紧急“的报警的报警声音。<br>- **高级**：设置等级为”高级“的报警的报警声音。<br>- **中级**：设置等级为“中级”的报警的报警声音。<br>- **低级**：设置等级为”低级“的报警的报警声音。|
+| 筛选面板 | 设置筛选面板的样式。<br>- **面板背景色**：筛选面板的背景色。<br>- **面板名称字体**：设置面板名称(筛选)的字体型号、字体大小、加粗、倾斜、字体颜色。<br>- **标签**：筛选面板展开后，显示的页签的样式。  <br>![alt text](3.png)  <br>包括页签选中以及未选择时所显示的背景色、边框色、字体型号、字体大小、加粗、倾斜、字体颜色。|
+| 按钮样式 | 设置控件上使用的按钮的样式。点击按钮样式的设置按钮进行设置。  <br> ![alt text](4.png)声音按钮.声音按钮的颜色。  <br>![alt text](5.png)设置按钮.设置按钮的颜色。 <br>![alt text](6.png)重置按钮.重置按钮的颜色。<br>![alt text](7.png) 筛选按钮.筛选按钮的颜色。<br>![alt text](8.png)搜索.搜索框的背景色、边框色，以及输入的搜索内容的字体型号、字体大小、加粗、倾斜、字体颜色。  <br>![alt text](9.png)确认按钮.确认按钮的背景色、边框色、字体型号、字体大小、加粗、倾斜、字体颜色。<br>![alt text](10.png)搁置按钮.搁置按钮的背景色、边框色、字体型号、字体大小、加粗、倾斜、字体颜色。 <br>![alt text](11.png)解除搁置按钮.解除搁置按钮的背景色、边框色、字体型号、字体大小、加粗、倾斜、字体颜色。 |
+| 筛选条件 | 勾选需要的筛选条件。 |
+| 列设置   | 设置需要显示在实时列表和搁置列表的列名。 |
+| 操作     | 设置操作按钮并设置触发操作，当触发报警时，执行该操作。|
+| 最大条数 | 设置控件允许显示的最大报警条数。 |
 
-**Event**
+**动作**
 
-Allows you to perform a specific event based on certain conditions. See the full description of each event on the **2D Visualization-> Event** page.
+允许您基于某种条件执行特定的动作。请参阅“[动作](../../../event/index.md)”页上各种动作的完整描述。
 
-**Example 1**
+**示例1**
 
-In the designer, you can configure the background color to other colors. In this example, set the color of the Medium alarm to green.
+在设计器中，您可以将等级颜色配置为其他颜色。在此示例中，将中级报警的颜色设置为绿色。
 
-![alt text](30.png)
+![alt text](12.png)
 
-**Example 2**
+**示例2**
 
-On the running page, set the filter criteria in the filter button to filter only the alarm data with high alarm type.
+在运行页面，在筛选按钮中设置筛选条件，仅筛选报警类型为高的报警数据。
 
-![alt text](31.png)
+![alt text](13.png)
 
-**Example 3**
+**示例3**
 
-No buttons are displayed, only alarm information is displayed. In the "Appearance Display" of the property, all options are not selected.
+不显示任何按钮，仅显示报警信息。在属性的“外观显示”中，所有选项都不选择。
 
-![alt text](32.png)
+![alt text](14.png)
 
-The display effect is as follows:
+显示效果如下：
 
-![alt text](33.png)
+![alt text](15.png)
+
+**示例4**
+
+当变量发生报警时，弹出摄像头窗口，查看当前摄像头监控的设备。
+
+预先配置一个弹窗：设备监控。弹窗上放置一个Camera控件，绑定一个Camera设备。详细操作见 [Camera](../../../../management-platform/devices/camera/index.md)。
+
+在报警控件的操作属性中，将文本设置为：查看监控。
+
+点击脚本按钮，编写如下脚本：
+
+```typescript
+const alarm = System.Context.currentAlarm
+await System.UI.openPopup('设备监控') 
+```
+![alt text](1.gif)
+
 
 
 

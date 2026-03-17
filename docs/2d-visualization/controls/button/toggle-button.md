@@ -1,34 +1,34 @@
 # Toggle Button
 
-The toggle button control represents the switching of two states. By setting the selected or unselected state, the user can easily switch the state of the corresponding function.
+Toggle Button控件表示两种状态的切换，通过将Toggle Button设置为选中或未选中状态，用户可以方便地切换相应功能的状态。
 
-![alt text](31.png)
+![alt text](33.png)
 
-**Properties**
+**属性**
 
-| **Name**   | **Description**    |
-|---------------|-------------|
-| Name| The name of this control.   |
-| X   | The distance between the left side of the control and the left side of the canvas.  |
-| Y  | The distance between the top of the control and the top of the canvas.   |
-| W  | The width of the control.  |
-| H | The height of the control.  |
-| ![alt text](32.png)| The rounded corner curvature of the control.  |
-| Selected |
-| Border  | The border width of the control.   |
-|  | Sets the shadow effect of the control. You can set the outer shadow and inner shadow.  <br> **Outer**   <br>**- Enable**: Whether to enable the shadow effect  <br>**- Color**: Used to set the shadow color <br> **- X**: Controls how far the shadow is shifted horizontally.  <br>`X = 10` → shadow moves 10px to the right  <br>`X = -5` → shadow moves 5px to the left <br>**- Y**: Controls how far the shadow is shifted vertically.  <br>`Y = 8` → shadow moves 8px downward  <br>`Y = -3` → shadow moves 3px upward <br> **- Blur**: Controls how soft or sharp the edges of the shadow appear. Higher values make the shadow more blurry and spread out. <br> **Inner**  <br>**- Enable**: Whether to enable the shadow effect  <br>**- Color**: Used to set the shadow color <br>**- X**: Controls how far the shadow is shifted horizontally.  <br>`X = 10` → shadow moves 10px to the right  <br>`X = -5` → shadow moves 5px to the left <br>**- Y**: Controls how far the shadow is shifted vertically.  <br>`Y = 8` → shadow moves 8px downward  <br>`Y = -3` → shadow moves 3px upward <br>**- Blur**: Controls how soft or sharp the edges of the shadow appear. Higher values make the shadow more blurry and spread out. <br>  **- Spread**: Controls how much the shadow **expands or contracts** from the shape. |
-| Color  | Set the background color, border color and font color for the control in both selected and unselected states.  |
-| Font | Set the font for text content. Including font type, font size, font color, bold, italic, underline, horizontal alignment, and vertical alignment.    |
+| 名称  | 描述 |
+|:-------------------|:--------------|
+| 名字   | 此控件的名称。  |
+| X   | 控件左侧距画布左侧的距离，单位px。 |
+| Y  | 控件顶部距画布顶部的距离，单位px。   |
+| W   | 控件的宽度，单位px。 |
+| H   | 控件的高度，单位px。  |
+|![alt text](34.png) | 控件的圆角曲率。 |
+| 选中  | 控件的选中状态。  |
+| 边框   | 控件的边框粗细。|
+| 阴影    | 设置控件的阴影效果。可以设置外阴影和内阴影。  <br> **外阴影**   <br>- **启用**：是否启用阴影效果  <br>- **颜色**：用于设置阴影颜色  <br>- **X**：控制阴影在水平方向上的偏移量。  <br>`X = 10` → 阴影往右移了10像素  <br>`X = -5` → 阴影往左移了5像素  <br>- **Y**：控制阴影在垂直方向上的偏移量。  <br>`Y = 8` → 阴影往下移了8像素  <br>`Y = -3` → 阴影往上移了3像素   <br>- **模糊**：控制阴影的 **模糊程度**，模糊值越大，边缘越柔和、越“自然”。 <br>**内阴影** <br>- **启用**：是否启用阴影效果 <br>- **颜色**：用于设置阴影颜色  <br>- **X**：控制阴影在水平方向上的偏移量。  <br>`X = 10` → 阴影往右移了10像素  <br>`X = -5` → 阴影往左移了5像素 <br>- **Y**：控制阴影在垂直方向上的偏移量。  <br>`X = 8` → 阴影往下移了8像素  <br>`Y = -3` → 阴影往上移了3像素  <br>- **模糊**：控制阴影的 **模糊程度**，模糊值越大，边缘越柔和、越“自然”。<br>- **扩散**：控制阴影的大小 |
+| 颜色 | 设置控件在选择和未选中状态下的背景色，边框色和字体颜色。  |
+| 字体  | 设置文本内容的字体。包括字体型号、字体大小、字体颜色、粗体、倾斜、下划线、水平对齐方式、垂直对齐方式。 |
 
-**Event**
+**动作**
 
-Allows you to perform specific events based on certain conditions. See the full description of each event on the **2D Visualization-> Event** page.
+允许您基于某种条件执行特定的动作。请参阅“[动作](../../event/index.md)”页上各种动作的完整描述。
 
-**Example**
+**示例**
 
-The fan can be turned on or off by using the Toggle Button control. When the Toggle Button is selected, the fan is activated; when the Toggle Button is deselected, the fan is stopped.
+可通过Toggle Button控件开启或关闭风机。当Toggle Button被选中，启动风机；当Toggle Button取消选中时，停止风机。
 
-1. Add a Toggle Button control to the page, with the control name being "Toggle Button1".
-2. Bind the "Selected" property to the tag "Device:status", and enable two-way binding.
-3. On the running page, press the Toggle Button to start the fan, and click the Toggle Button again to deselect, thereby stopping the fan.
+1. 在画面上添加Toggle Button控件，控件名称为“Toggle Button1”。
+2. 为“选中”属性绑定变量：@设备:status，并开启双向绑定。
+3. 在运行页面，按下Toggle Button，启动风机，再次点击Toggle Button，取消选中，停止风机。
 

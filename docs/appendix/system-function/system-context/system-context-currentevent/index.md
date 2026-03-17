@@ -1,6 +1,6 @@
 # System.Context.CurrentEvent
 
-Obtainvarious values that trigger events.
+获取触发事件的各种值。
 
 - [​System.Context.currentEvent.newValue​](system-context-currentevent-newvalue.md) 
 - [​System.Context.currentEvent.offsetX​](system-context-currentevent-offsetx.md) 

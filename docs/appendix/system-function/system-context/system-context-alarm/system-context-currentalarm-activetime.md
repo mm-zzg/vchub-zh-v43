@@ -3,14 +3,15 @@
 # System.Context.currentAlarm.activeTime
 
 
-## Description
-The activation time of the current alarm.
+## 描述
+当前报警的激活时间。
 
-## Grammar
-System.Context.currentAlarm.activeTime
+## 语法
+**System.Context.currentAlarm.activeTime**
 
-## Code Example                                                                                                                                                                                                                                                 
-Get the activation time of the current alarm.                                                        
+## 代码示例
+
+获取当前报警的激活时间。                                                       
 
 ```typescript 
 

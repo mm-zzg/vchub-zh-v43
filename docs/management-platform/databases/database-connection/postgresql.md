@@ -1,42 +1,39 @@
 # PostgreSQL
 
-On this page, we will demonstrate how to connect VC Hub to PostgreSQL.
+在此页面上，我们将演示如何将WAGO SCADA连接到 PostgreSQL。
 
-1. On the "**Databases**" -> "**Database Connection**" page, click the Add button. 
+1. 在“**数据库**”->“**数据库连接**”页面，点击“**新增**”按钮。
+
     ![alt text](6.png)
-2. In the following window, select PostgreSQL and click the Next button. 
-    ![alt text](13.png)
-3. Get the PostgreSQL server connection string information, such as the following two formats:
 
-    User ID=postgres;Password=admin@12345;Host=10.20.1.231;Port=5432;Database=scada-history;Pooling=true;MaxPoolSize=100.
+2. 在弹出的如下窗口中，选择PostgreSQL，点击“下一步”按钮。
+
+    ![alt text](13.png)
+
+3. 获取PostgreSQL服务器连接字符串信息, 例如下面两种格式：
+
+    User ID=postgres;Password=admin@12345;Host=10.20.1.231;Port=5432;Database=scada-history;Pooling=true;MaxPoolSize=100;
 
     jdbc:postgresql://10.20.1.231:5432/scada-history?user=postgres&password=admin@12345&Pooling=true&MaxPoolSize=100;
 
-    Enter the following information in the configuration interface (Note: the following data is only an example, please fill in according to the actual situation).
+    在配置界面输入如下信息（说明：以下数据仅为示例，请根据实际情况填写）。
 
     ![alt text](14.png)
 
-     - Name: Demo
-     - Host: 10.20.1.231
-     - Port: 5432
-     - Database Name: scada-history
-     - Username: postgres
-     - Password: admin@12345 
-     - Extension Properties: Pooling=true;MaxPoolSize=100;
-     - Connect Timeout(ms): 10000
-     - Maximum Query Points：5000000
-     - Query Timeout(s)：30
+    - 名称：Demo
+    - Host: 10.20.1.231
+    - 端口：5432
+    - 数据库名称：scada-history
+    - 用户名：postgres
+    - 密码：admin@12345 
+    - 扩展连接参数：Pooling=true;MaxPoolSize=100;
+    - 连接超时(ms)：10000
+    - 最大查询点数：5000000
+    - 查询超时(s)：30
 
-4. Click the **"OK"** button, the pop-up window closes and the list of database connections is displayed. The connection status of the data in the list is "Connected".
+4. 点击“确认”按钮，弹窗关闭，显示数据库连接列表。在列表中该条数据的连接状态显示为“连接成功”。
+
     ![alt text](15.png)
-
-
-
-
-
-
-
-
 
 
 

@@ -1,69 +1,71 @@
-# Historical Alarm
+# 历史报警
 
-The historical alarm control is used to display the history of alarms, including the historical alarms of the current node and those of remote nodes in a networked environment.
+历史报警控件用于显示报警的历史记录, 包括当前节点的历史报警以及组网环境下的远端节点的历史报警。
 
 ![alt text](1.png)
 
-**Interface Elements**
+**界面元素**
 
 ![alt text](2.png)
 
-Before using the historical alarm control to view the data, you need to configure the history storage on the "Alarm" -> "History Storage" page.
+在使用历史报警控件查看数据之前，需先在“报警”->"历史库"页面配置 [报警历史库](../../../../management-platform/alarming/history-storage.md)。
 
-By default, the control will display the alarm data of the last 12 hours. You can also filter the data according to the filter criteria.
+默认情况下，该控件将显示最近12小时的报警数据。您也可以根据筛选条件进行数据筛选。
 
-You can click the  setting button of column on the preview and running page to set the columns to be displayed. Click and drag the margin of the column to adjust its width. You can also sort the columns in ascending or descending order, just click the up or down arrow next to the title of each column is enough.
+您可以在预览和运行画面上点击“列设置”按钮设置需要显示的列。单击并拖动列的边距以调整其宽度。您还可以按升序或降序对列进行排序，只需单击
 
-Through the export button, the query data can be exported to a excel file, which is convenient for data organization and analysis. Up to 50,000 pieces of data can be exported.
+每个列标题旁边的向上或向下箭头即可。
 
-Historical alarm, no flashing, no alarm sound, no line color.
+通过导出按钮，可以将查询到的数据导出为excel文件，便于对数据进行整理和分析。最多可导出50000条数据。
 
-**Properties**
+ 历史报警无闪烁，无报警声音、无行 颜色。
 
-| **Name**         | **Description** |
-|------------------|-------------------|
-| Name             | The name of this control.  |
-| X                | The distance between the left side of the control and the left side of the canvas.  |
-| Y                | The distance between the top of the control and the top of the canvas.  |
-| W                | The width of the control.  |
-| H                | Height of the control.   |
-| Show             | Set which buttons are displayed on the control.  |
-| Priority Color   | Set the corresponding color for each alarm level. Only the color of the symbol corresponding to the level will be modified, and the color will not be displayed in the whole line.   |
-| Border Color     | Set the outer border of the control and the table line color of the table body.   |
-| Border Thickness | Set the thickness of the outer border of the control and the table line of the table body.   |
-| Header           | Set the background color, font type, font size, bold, italic, and font color of the header.  |
-| Body             | Set the background color, font type, font size, bold, italic, and font color of the body.  |
-| Tab              | Set the style of the history tab.   <br>- **Background**: The filling color of the tab.      <br>- **Border**: The border color of the tab.        <br>- **Font**: Set the font type, font size, bold, italic, and font color of the tab content. | 
-| Filter Panel     | Set the style of the filter panel.   <br>- **Background**: Background color of the filter panel.  <br>- **Title Font**: Set the font type, font size, bold, italic, and font color of the panel name.   <br>- **Tag**: After the filter panel is expanded, the style of the tab displayed.  <br>![alt text](3.png) <br>Including the background color, border color, font type, font size, bold, italic, font color displayed when the tab is selected and not selected. | 
-| Button Style     | Set the style of the buttons used on the control. Click the button-style setting button to set it up.  <br>![alt text](4.png) Calendar.Set the color of the calendar button.    <br>![alt text](5.png) Setting Button.Set the color of the setting button.    <br>![alt text](6.png) Download Button.Set the color of the download button.   <br>![alt text](7.png) Reset Button.Set the color of the reset button.   <br>![alt text](8.png) Filter Button.Set the color of the filter button.     <br>![alt text](9.png)Search box.The background color, border color of the search box, and the font type, font size, bold, italic, and font color of the search box. | 
-| Filter           | Check the required filter criteria.  |
-| Column           | Set the columns displayed in the list.   |
-| Action           | Set the operation button and set the trigger operation to be executed when the alarm is triggered.   |
-| Items Per Page   | Set the number of alarms displayed on each page. |
+**属性**
 
-**Event**
+| **名称** | **描述** |
+|:----------|:---------------------|
+| 名字     | 此控件的名称。|
+| X        | 控件左侧距画布左侧的距离，单位px。 |
+| Y        | 控件顶部距画布顶部的距离，单位px。|
+| W        | 控件的宽度，单位px。 |
+| H        | 控件的高度，单位px。 |
+| 显示     | 设置控件上显示哪些按钮。 |
+| 等级颜色 | 为每个报警等级设置对应颜色。仅修改等级对应的符号的颜色，不会整行显示颜色。 |
+| 边框颜色 | 设置控件外边框及表体的表格线颜色。  |
+| 边框粗细 | 设置控件外边框及表体的表格线的粗细。   |
+| 表头     | 设置表头的背景色、字体型号、字体大小、加粗、倾斜、字体颜色。  |
+| 表体     | 设置表体的背景色、字体型号、字体大小、加粗、倾斜、字体颜色。|
+| 页签     | 设置历史页签的样式。<br>- **背景**：页签的填充颜色。<br>- **边框色**：页签的边框颜色。<br>- **字体**：设置页签内容的字体型号、字体大小、加粗、倾斜、字体颜色。 |
+| 筛选面板 | 设置筛选面板的样式。<br>- **面板背景色**：筛选面板的背景色。<br>- **面板名称字体**：设置面板名称(筛选)的字体型号、字体大小、加粗、倾斜、字体颜色。<br>- **标签**：筛选面板展开后，显示的页签的样式。 <br>![alt text](3.png)  <br>包括页签选中以及未选择时所显示的背景色、边框色、字体型号、字体大小、加粗、倾斜、字体颜色。 |
+| 按钮样式 | 设置控件上使用的按钮的样式。点击按钮样式的设置按钮进行设置。  <br>![alt text](4.png)日历按钮.日历按钮的颜色。 <br>![alt text](5.png)设置按钮.设置按钮的颜色。<br>![alt text](6.png)下载按钮.下载按钮的颜色。<br>![alt text](7.png)重置按钮.重置按钮的颜色。<br>![alt text](8.png)筛选按钮.筛选按钮的颜色。<br>![alt text](9.png)搜索.搜索框的背景色、边框色，以及输入的搜索内容的字体型号、字体大小、加粗、倾斜、字体颜色。 |
+| 筛选条件 | 勾选需要的筛选条件。|
+| 列设置   | 设置列表显示的列。  |
+| 操作     | 设置操作按钮并设置触发操作，当触发报警时，执行该操作。  |
+| 每页条数 | 设置每页显示的报警条数。|
 
-Allow you to perform specific events based on certain conditions. See the full description of each event on the **2D Visualization-> Event** page.
+**动作**
 
-**Example 1**
+允许您基于某种条件执行特定的动作。请参阅“[动作](../../../event/index.md)”页上各种动作的完整描述。
 
-In the editor, you can set the appearance style of the control. For example，set the background to green.
+**示例1**
+
+在设计器中，您可以设置控件的外观样式。
 
 ![alt text](10.png)
 
-**Example 2**
+**示例2**
 
-On the running page, enter the search criteria in the search box and filter the data according to the search content.
+在运行页面，在搜索框中输入搜索条件，按照搜索内容进行数据筛选。
 
 ![alt text](11.png)
 
-**Example 3**
+**示例3**
 
-No buttons are displayed, only the alarm information is displayed. In the "Show" of the property, all options are not selected.
+不显示任何按钮，仅显示报警信息。在属性的“外观显示”中，所有选项都不选择。
 
 ![alt text](12.png)
 
-The display effect is as below:
+显示效果如下：
 
 ![alt text](13.png)
 

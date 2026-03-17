@@ -1,44 +1,42 @@
-# Ruler
+# 刻度尺
 
-Ruler is used to measure and mark lengths, often used with text label controls.
+刻度尺用于测量和标记长度。
 
-![alt text](78.png)
+![alt text](64.png)
 
-**Properties**
+**属性**
 
-| **Name**   | **Description**  |
-|--|-------------------|
-| Name| The name of this control. |
-| X   | The distance between the left side of the control and the left side of the canvas.  |
-| Y | The distance between the top of the control and the top of the canvas.   |
-| W | The width of the control.   |
-| H | The height of the control.   |
-| ![alt text](79.png) | The angle of the control.  |
-| Fill  | The background color of the control.  |
-| Tick  | Sets the appearance style of the tick.  <br> - **Axis**: Set the axis color. The red area in the figure below is the main axis. <br>![alt text](80.png) <br> - **Major Tick**: Set the major tick color, quantity and length. The red area in the figure below is the major tick. <br>![alt text](81.png) <br> - **Minor Tick**: Set the minor tick color, quantity and length. The red area in the figure below is the minor tick.  <br>![alt text](82.png) |
-| Tick Value    | Set the measuring range of the ruler.  <br> - **Show**:  Whether or not to display the value.  <br> - **Reverse**: Displays the maximum and minimum values of the ruler values in reverse.  <br>Before reverse: <br>![alt text](83.png)  <br>After reverse: <br>![alt text](84.png)   <br> - **Min**: Minimum value of the ruler <br> - **Max**: Maximum value of the ruler <br> - **Type**: Contains value and percentage to set the numeric type  <br> - **Decimals**: Sets the number of decimal places for the ruler value.     <br> - **Font**: Sets the font type, font size, bold, italic, and font color for the ruler value.  |
-| Indicator    | Set the style for each indicator on the ruler. Available styles include Arrow, Line, and Wedge.   Click the Settings button to open a dialog where you can configure the indicators and their styles. ![alt text](85.png) <br> - **Indicator Value**: Value corresponding to the indicator   <br> - **Style**: Select the style for the indicator , choosing from arrow,  line, or wedge <br> - **Color**: Set the color of the indicator <br> - **Extend**: When "Line" is selected, the Extend field is disabled.  <br>![alt text](86.png) <br> - **Length**: The overall length of the indicator <br> - **Width**:  <br>When **Wedge** is selected, the Width field is disabled. <br> When **Line** or **Arrow** is selected, the Width value represents the width of the line segment. <br> - **Offset**: Setting the distance between the indicator and the axis <br> - **Label**:  Set a text label for the indicator <br> - **Label Angle**: Set the text’s display orientation <br> - **Label Color**: Set the font color of the text  |
+| 名称 | 描述 |
+|:--------------------|:----------------|
+| 名字   | 此控件的名称。  |
+| X  | 控件左侧距画布左侧的距离，单位px。 |
+| Y   | 控件顶部距画布顶部的距离，单位px。  |
+| W   | 控件的宽度，单位px。  |
+| H  | 控件的高度，单位px。   |
+| ![alt text](65.png)| 控件的角度。 |
+| 填充  | 控件的背景色。   |
+| 刻度    | 设置刻度的外观样式。   <br>- **轴**：设置刻度尺主轴颜色和粗细。下图的红色区域为主轴。 <br>![alt text](66.png) <br>- **主刻度**：设置刻度尺主刻度颜色，粗细，数量和长度。下图的红色区域为主刻度。  <br>![alt text](67.png) <br>- **副刻度**：设置刻度尺副刻度颜色，粗细，数量和长度。下图的红色区域为副刻度。  <br>![alt text](68.png) |
+| 刻度值   | 设置刻度尺的测量范围。  <br>- **显示**：是否显示刻度值。 <br>- **反向**：将刻度值的最大值和最小值反向显示。  <br>反向前： <br>![alt text](69.png)    <br> 反向后：<br>![alt text](70.png)  <br>- **最大值**：刻度尺的最大值     <br>- **最小值**：刻度尺的最小值 <br>- **数值类型**：包含数值和百分比，用于设置刻度值的数值类型。 <br>- **小数位**：设置刻度值的小数位数。<br>- **字体**：设置刻度值的字体类型，字体大小，加粗，倾斜和字体颜色。 |
+| 指示条   | 设置刻度尺上各指示条的样式。样式包含箭头，直线和楔形。 <br>点击设置按钮，在窗口中设置指示条及其样式。  ![alt text](71.png) <br>- **指示值**：指示条对应的值 <br>- **样式**：选择指示条的样式，包含箭头，直线和楔形。<br>- **颜色**：设置指示条的颜色。 <br>- **范围**：选择直线时，范围无效，禁用。  <br>![alt text](72.png) <br>- **长度**：指示条的整体长度。 <br>- **线宽**：<br>选择 **楔形** 时，范围无效，禁用。  <br>选择 **直线** 和 **箭头** 时，表示线段的宽度。<br>- **偏移**：设置指示器与轴之间的距离。 <br>- **文本**：可以为指示条设置文本描述。  <br>- **文本方向**：设置文本的内容显示方向。 <br>- **文本颜色**：设置文本内容的字体颜色。 |
 
-**Event**
+**动作**
 
-Allows you to perform specific events based on certain conditions. See the full description of each event on the **2D Visualization-> Event** page.
+允许您基于某种条件执行特定的动作。请参阅“[动作](../../event/index.md)”页上各种动作的完整描述。
 
-**Example**
+**示例**
 
-Add 3 indicators to the ruler to indicate the max, min and avg values.
+在刻度尺上添加3个指示条，分别表示最大值，最小值和平均值。
 
-1. Insert a ruler control on the page
-2. Click on the control and in the Appearance property of the control click on the setting button of the indicator 
+1. 在画面上插入一个刻度尺控件
+2. 点击该控件，在控件的外观属性中点击指示条的数据集按钮
 
-    ![alt text](87.png)
+    ![alt text](73.png)
 
-3. Make the following settings in the datatable popup window
+3. 在数据集弹窗中进行如下设置
 
-    ![alt text](88.png)
+    ![alt text](74.png)
 
-4. After saving the popup, the ruler is displayed as follow：
+4. 保存弹窗后，刻度尺显示效果如下：
 
-    ![alt text](89.png)
-
-
+    ![alt text](75.png)
 

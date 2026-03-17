@@ -1,55 +1,57 @@
-# Batch Instantiate Models
+# 批量实例化模型
 
-You can batch instantiate models in the following way.
+可以通过以下方式批量实例化模型。
 
-1. In the "Instances" tab, click the "Add" button and select "Instance."
+1. 在“实例”标签中，点击新增按钮，选择“实例”。
+
     ![alt text](21.png)
-2. In the "Instances" tab, right-click on the folder and select "Add Instance" from the context menu.
+
+2. 在“实例”标签中，在文件夹的右键菜单中选择“新增实例”。
+
     ![alt text](22.png)
-3. In the "Models" tab, right-click on the model and select "Add Instance" from the context menu.
+
+3. 在“模型”标签中，在模型的右键菜单中选择“新增实例”。
+
     ![alt text](23.png)
 
+在通过界面新增实例的时候，可以通过点击弹窗上的“生成”按钮一次性生成多个实例，也可以通过导入Excel文件一次性生成多个实例。
 
-## Modify instance properties through the page
+## 通过页面修改实例属性
 
-Click the "Generate" button in the batch instance section, enter the number of instances to generate and the starting sequence number, and generate multiple instances.
+点击批量实例中的“生成”按钮，输入需要生成的实例数量和起始序号，生成多条实例。
 
 ![alt text](24.png)
 
-
-In the custom list, display the generated instances along with their corresponding custom attributes. You can modify the cell content as needed.
+在自定义列表中，显示生成的实例，以及每个实例对应的自定义属性。可以按照需要修改单元格内容。
 
 ![alt text](25.png)
 
+当实例数量较多或者自定义属性较多时，在页面上进行操作可能会存在诸多不便，所以我们还提供了导出导入功能，您可以将数据导出，在excel中编辑好数据之后再将其导入。
 
-When the number of instances or custom attributes is large, performing operations directly on the page may be inconvenient. Therefore, we also provide an export and import function. You can export the data, edit it in Excel, and then import it back.
+## 通过导出文件修改实例属性
 
-## Modify instance attributes through the exported file
+#### 导出
 
-#### Export 
-
-After generating instances, click the **Export** button to export the instances.
+生成了实例后，点击导出按钮，将实例导出。
 
 ![alt text](26.png)
 
-
-After the export is successful, edit the file in Excel according to the exported format. Each row represents an instance. The first column is the instance name, and the remaining columns are the custom parameters of the selected model.The first column is the instance name, and the remaining columns are the custom parameters of the model.Each row corresponds to an instance.
+导出成功后，在Excel按照导出的格式进行编辑。每一行为一个实例。第一列为实例名称，其余列是所选模型的自定义参数。
 
 ![alt text](27.png)
 
+**说明：**  
 
-**Notes:**  
-1. Columns created manually in Excel will not appear in the custom list after import. 
-2. If a custom property column is deleted in Excel, the corresponding values in the custom list will be empty after import. 
+1. 在excel中自行创建的列，导入后，不会显示在自定义属性列表中。 
 
+2. 在excel中删除了某列自定义属性，导入后，在自定义属性列表中，该列的对应值为空。
 
-#### Import 
+#### 导入
 
-After modifying the file, click the "Import" button to import the file.
+文件修改完成后，点击导入按钮将文件导入。
 
 ![alt text](28.png)
 
+导入完成，点击“确认”按钮，在资产树上生成多个实例。
 
-After the import is complete, click the "OK" button to generate multiple instances in the asset tree.
-
-
+![alt text](29.png)

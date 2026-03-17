@@ -1,22 +1,24 @@
+# System.Context.currentEvent.offsetY
 
 
-# System.Context.currentEvent.offsetX
+## 描述
 
+获取事件目标相对于触发事件的元素的水平偏移量。
 
-## Description
-Obtain the horizontal offset of the event target relative to the element that triggers the event.
+## 语法
+**System.Context.currentEvent.offsetY**
 
-## Grammar
-System.Context.currentEvent.offsetX
+## 代码示例
 
-## Code Example                                                                                                                                                                                                                                                                                                          
-Obtain the horizontal offset of the current triggering event.
+获取当前触发事件的水平偏移量。
+
 ```typescript 
-
 const offsetX = System.Context.currentEvent.offsetX;
 console.log(offsetX)
 
 ```   
+
+
 
 
 

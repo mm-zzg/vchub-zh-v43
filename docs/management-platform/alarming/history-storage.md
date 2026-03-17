@@ -1,52 +1,58 @@
-# History Storage
+# 报警历史库
 
-VC Hub allows you to store alarm data in a database. Basic data about the alarms that have occurred, such as path, time, level, status, etc. can be stored.
+WAGO SCADA允许您将报警数据存储到数据库中。可以存储有关已发生的警报的基本数据，例如路径、时间、等级、状态等。
 
-Multiple history database can be created, where you can store a part of the alarms in one database and another part of the alarms in another database. And set different storage policies for each library.
+可以创建多个历史库，可以将一部分报警存储在一个数据库中，而将另一部分报警存储在另一个数据库中。并为每个库设置不同的存储策略。
 
-On the Historical Alarm control, you can select a history bank for data filtering.
+在历史报警控件上，可以选择历史库进行数据筛选。
 
-## **Create a history database**
+## 创建历史库
 
-1. Click "**Alarming**"->"**Alarm History Storage**" to enter the list of history storage.
-    ![alt text](6.png)
-2. Click "Add" button. Set the properties in the Add popup window. 
+1. 点击“报警”->“历史库”，进入历史库列表页面。
+
     ![alt text](7.png)
-    The following is displayed when “Database” is selected as the type:
+
+2. 点击“新增”按钮。在新增弹窗中进行属性设置。
+
     ![alt text](8.png)
 
-**Properties of the Popup**
+    类型选择“数据库”时，显示如下内容：
 
-| **Name**            | **Description**                  |
-|---------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Name                | The name of the alarm history storage.                                                                                                                                                                                                                                                     |
-| Type                | Drop down selections containing: Database and Remote.   When Database is selected for Type, in the Database Connection field, select a locally created database. When Remote is selected, you need to select the remote node as well as the remote alarm history storage.                  |
-| Database Connection | Drop-down list to select the database that has been created in the "Databases" -> "Database Connection" page. Single-select only.  | Note: The drop-down option does not include databases of type InfluxDB. | |-------------------------------------------------------------------------| |
-| Description         | Description of the alarm history storage.                                                                                                                                                                                                                                                  |
-| Retention Days      | The number of days that the alarm data under this alarm history storage will be retained in the database.                                                                                                                                                                                  |
-| Min Priority        | Sets which levels of alarm data are stored. Only alarms with a priority level equal to or higher than the specified priority level are stored.                                                                                                                                             |
-
-The following is displayed when “Remote” is selected as the type:
     ![alt text](9.png)
 
-**Properties of the Popup**
+    **弹窗属性表**
 
-| **Name**             | **Description**                                                                                                                                                                                                                                                                                                                                           |
-|----------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Name                 | The name of the alarm history storage.                                                                                                                                                                                                                                                                                                                    |
-| Type                 | Drop down selections containing: Database and Remote.   When Database is selected for Type, in the Database Connection field, select a locally created database. When Remote is selected, you need to select the remote node as well as the remote alarm history storage.                                                                                 |
-| Remote Node          | Drop down to select a node name that forms a networking with the current node.                                                                                                                                                                                                                                                                            |
-| Remote Alarm Storage | Depending on the remote node selected, the alarm history storage created under that node is displayed.                                                                                                                                                                                                                                                    |
-| Query Only           | Default is turned off. When it is turned on, only remote alarms can be queried, and new alarms generated at the remote node will not be stored in the database; if it is turned off, new alarms generated at the remote node will be stored in the database. The database mentioned here refers to the database used by the remote alarm history storage. |
-| Description          | Description of the alarm history storage.                                                                                                                                                                                                                                                                                                                | 
+    | **名称**   | **描述**    |
+    |:------------|:-------------------------------|
+    | 名称       | 报警历史库的名称。  |
+    | 类型       | 下拉选择，包含：数据库和远程。当类型选择数据库时，在数据库连接字段中，选择一个本地创建的数据库。当选择远程时，需选择远端节点以及远端报警历史库。 |
+    | 数据库连接 | 下拉选择在“数据库”->“数据库连接”页面已经建立的数据库。只能单选。  <br>**说明**：下拉选项中不包括类型为InfluxDB的数据库。 |
+    | 描述       | 报警历史库的描述。|
+    | 保留天数   | 此报警历史库下的报警数据在数据库中的保留天数。 |
+    | 最低优先级 | 设置存储哪些等级的报警数据。仅存储等于或高级指定优先级的报警。 |
 
-3.When the settings are complete, click the OK button.
+    类型选择”远程”时，显示如下内容：
 
-## **History Database Application**
+    ![alt text](10.png)
 
-Select the history storage in the filter criteria of the Historical Alarm control, and the next step will be to filter the data in the selected history storage.
+    **弹窗属性表**
 
-![alt text](10.png)
+    | **名称**       | **描述** |
+    |:----------------|:--------------------|
+    | 名称           | 报警历史库的名称。   |
+    | 类型           | 下拉选择，包含：数据库和远程。当类型选择数据库时，在数据库连接字段中，选择一个本地创建的数据库。当选择远程时，需选择远端节点以及远端报警历史库。   |
+    | 远端节点       | 下拉选择一个和当前节点形成组网的节点名称。 |
+    | 远端报警历史库 | 根据所选的远端节点，显示该节点下创建的报警历史库。|
+    | 仅查询         | 默认不开启。开启后，只能查询远端报警，远端新产生的报警不会存到数据库中；如果不开启，会将远端新产生的报警存到数据库中。此处所说的数据库是指远端报警历史库使用的数据库。 |
+    | 描述           | 报警历史库的描述。  |
 
- 
+3. 设置完成，点击确认按钮。
+
+## 历史库应用
+
+在历史报警控件的筛选条件中选择历史库，接下来将在所选的历史库中进行数据筛选。
+
+![alt text](11.png)
+
+
 

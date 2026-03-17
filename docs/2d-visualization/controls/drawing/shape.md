@@ -1,121 +1,123 @@
-# Shape
+# 形状
 
-Shapes can be changed and edited after they have been drawn using the drawing tools, and contain a variety of shapes, each with a different purpose. 
+使用绘图工具绘制形状后，可以对其进行更改和编辑，包含多种形状，每种形状都有不同的用途。
 
 ![alt text](1.png)
 
-## **Ellipse**
+## 椭圆
 
-Used to create and edit ellipse shapes. To create an ellipse, place the mouse over the control, then hold down the left mouse button, move the mouse to the page, release the mouse and an ellipse will be created on the page. Once created, clicking on the ellipse allows you to adjust the angle and size of the ellipse using the action buttons of the selection box. The size and angle can also be adjusted in the properties window.
+用于创建和编辑椭圆形状。若要创建椭圆，请将鼠标放在该控件上，然后按住鼠标左键，移动鼠标至画布区域，释放鼠标，会在画布上创建一个椭圆。创建后，点击该椭圆，可以通过选中框的操作按钮调整椭圆的角度和大小。也可以在属性栏中调整大小和角度。
 
-Positions 1 to 8, corresponding to the following figure, are used to adjust the size of the ellipse. Position 9, press and hold and move the mouse, you can rotate the ellipse.
+下图1~8对应的位置，用于调整椭圆的大小。位置9，按住后移动鼠标，可以对椭圆进行旋转。
 
 ![alt text](2.png)
 
-## **Rectangle**
+## 矩形
 
-Used to create and edit rectangles. It is used in much the same way as an ellipse. To create a rectangle, place the mouse over the control, then hold down the left mouse button, move the mouse to the page, release the mouse and a rectangle will be created on the page. Once created, clicking on the rectangle,  you can adjust the angle and size of the selection box using the operation buttons. The size and angle can also be adjusted in the properties window.
+用于创建和编辑矩形。它的使用方式与椭圆大致相同。若要创建矩形，请将鼠标放在该控件上，然后按住鼠标左键，移动鼠标至画布区域，释放鼠标，会在画布上创建一个矩形。创建后，点击该矩形，可以通过选中框的操作按钮调整其角度和大小。也可以在属性栏中调整大小和角度。
 
-## **Rounded Rectangle**
+## 圆角矩形
 
-Used to create and edit rounded rectangles. It is used in much the same way as an ellipse. To create a rounded rectangle, place the mouse over the control, then hold down the left mouse button, move the mouse to the page, release the mouse and a rounded rectangle will be created on the page.Once created, clicking on the rounded rectangle, you can adjust the angle and size of the selection box using the operation buttons.The size and angle can also be adjusted in the properties window.
+用于创建和编辑圆角矩形。它的使用方式与椭圆大致相同。若要创建圆角矩形，请将鼠标放在该控件上，然后按住鼠标左键，移动鼠标至画布区域，释放鼠标，会在画布上创建一个圆角矩形。创建后，点击该圆角矩形，可以通过选中框的操作按钮调整其角度和大小。也可以在属性栏中调整大小和角度。
 
-## **Line**
+## 直线
 
-Used to create and edit lines. To create a line, select the control, place the mouse over the control, then hold down the left mouse button, move the mouse to the page, release the mouse and a line will be created on the page. Once created, clicking on the line，you can adjust the angle and size of the selection box using the operation buttons. The length and angle can also be adjusted in the properties window.
+用于创建和编辑直线。若要创建直线，请将鼠标放在该控件上，然后按住鼠标左键，移动鼠标至画布区域，释放鼠标，会在画布上创建一条直线。创建后，点击该直线，可以通过选中框的操作按钮调整其角度和长度。也可以在属性栏中调整长度和角度。
 
-If you want to draw a horizontal or vertical line, select the control, hold down the Shift key, and then drag the mouse across the canvas to automatically draw a horizontal or vertical line.
+## 水平直线
 
-## **Horizontal Line**
+用于创建和编辑水平直线。若要创建水平直线，请将鼠标放在该控件上，然后按住鼠标左键，移动鼠标至画布区域，释放鼠标，会在画布上创建一条水平直线。创建后，点击该直线，可以通过选中框的操作按钮调整其角度和长度。也可以在属性栏中调整长度和角度。
 
-Used for creating and editing horizontal lines. To create a horizontal line, place the mouse over the control, press and hold the left mouse button, move the mouse to the page, and release the button. A horizontal line will be created on the page. After creation, click the line to adjust its angle and length using the selection box's action buttons. You can also modify the length and angle in the properties window.
+## 垂直直线
 
-## **Vertical Line**
+用于创建和编辑垂直直线。若要创建垂直直线，请将鼠标放在该控件上，然后按住鼠标左键，移动鼠标至画布区域，释放鼠标，会在画布上创建一条垂直直线。创建后，点击该直线，可以通过选中框的操作按钮调整其角度和长度。也可以在属性栏中调整长度和角度。
 
-Used for creating and editing vertical lines. To create a vertical line, place the mouse over the control, press and hold the left mouse button, move the mouse to the page, and release the button. A vertical line will be created on the page. After creation, click the line to adjust its angle and height using the selection box's action buttons. You can also modify the length and angle in the properties window.
+## 弧线
 
-## **Arc**
+用于创建和编辑弧线。若要创建弧线，请将鼠标放在该控件上，然后按住鼠标左键，移动鼠标至画布区域，释放鼠标，会在画布上创建一条弧线。创建后，点击该弧线，可以通过选中框的操作按钮调整其角度和大小。也可以在属性栏中调整大小和角度。
 
-Used to create and edit arcs. To create an arc, place the mouse over the control, then hold down the left mouse button, move the mouse to the page, release the mouse and an arc will be created on the page . Once created, clicking on the arc ，you can adjust the angle and size of the selection box using the operation buttons.  The size and angle can also be adjusted in the properties window.
+双击该弧线，弧线处于编辑状态，可以通过鼠标移动弧线的起点和终点的位置，改变弧线的外形。
 
-Double-click the arc, the arc is in the editing state, you can use the mouse to move the position of the start point and end point of the arc, to change the shape of the arc.
+![alt text](3.gif)
 
-![arc](../../../assets/images/arc.gif)
+## 箭头
 
-## **Arrow**
+用于创建单侧或双侧箭头形状。若要创建箭头，请将鼠标放在该控件上，然后按住鼠标左键，移动鼠标至画布区域，释放鼠标，会在画布上创建一个箭头。可以在属性中选择单侧箭头或双侧箭头。创建后，点击该箭头，可以通过选中框的操作按钮调整其角度和大小。也可以在属性栏中调整大小和角度。
 
-Used to create one or two-sided arrow. To create an arrow, place the mouse over the control, then hold down the left mouse button, move the mouse to the page, release the mouse and a arrow will be created on the page. You can select either a unilateral arrow or a bilateral arrow in the properties. Once created, clicking on the arrow, you can adjust the angle and size of the selection box using the operation buttons. The size and angle can also be adjusted in the properties window.
+![alt text](4.png)
 
-## **Polyline**
+## 折线
 
-Used to create and edit polylines. To create a polyline, click the control, then click and drag the mouse within the page to draw a line segment, release the mouse to complete the line segment, press and drag the mouse again to continue to draw the next segment, and click the left mouse button to determine the end point when you are finished. After that, double-click the left mouse button or click the right mouse button to exit the editing state. After creation, click on the line, you can adjust the angle and size by checking the box action buttons. The size and angle can also be adjusted in the properties window.
+用于创建和编辑折线。若要创建折线，请选择该控件，然后在窗口内单击并拖动鼠标以绘制一条线段，松开鼠标完成一条线段的绘制，再次按下并拖动鼠标，继续绘制下一个线段，绘制完成时单击鼠标左键确定终点位置。之后再双击鼠标左键或者单击鼠标右键退出编辑状态。创建后，点击该折线，可以通过选中框的操作按钮调整其角度和大小。也可以在属性栏中调整大小和角度。
 
-If you want to draw a horizontal or vertical line segment line, you can hold down the Shift key during the drawing process and drag the mouse on the page afterward to automatically draw horizontal or vertical line segments.
+若想绘制水平或者垂直的线段线，可以在绘制过程中，按住Shift键，之后在画布上拖动鼠标，自动绘制水平或者垂线段。
 
-Double-click the line, the line is in the editing state, through the mouse to move the various vertices of the line (the position of the following figure 1 ~ 5), to adjust the style of the line.
+双击该折线，折线处于编辑状态，通过鼠标移动折线的各个顶点（下图1~5所处位置），对折线样式进行调整。
 
-![alt text](3.png)
+![alt text](5.png)
 
-![polyline](../../../assets/images/polyline.gif)
+![alt text](6.gif)
 
-## **Polygon**
+## 多边形
 
-Used to create and edit polygons. Each time you want to create a polygon, click the control, then click on the page and then move the mouse, at this time between the click point and the current position of the mouse to draw a line. Click the left mouse button to determine the position of the current edge. After that, continue to hold down the left mouse button and move the mouse, in accordance with the order in which the points are drawn, the first point is connected to the next point, and the last point is then connected to the starting point to form the shape. Double-click the left mouse button or click the right mouse button to complete the drawing.
+用于创建和编辑多边形。每次要制作多边形时，选中该控件， 在画面上单击后移动鼠标，此时在单击点与鼠标当前位置之间画出一条线。单击鼠标左键，确定当前边的位置。之后继续按住鼠标左键并移动鼠标，按照点的绘制顺序，前一个点和后一个点连接，最后一个点再和起点连接，形成图形。双击鼠标左键或者单击鼠标右键完成绘制。
 
-Once created, clicking on the polygon ,you can adjust the angle and size of the selection box using the operation buttons. The size and angle can also be adjusted in the properties window.
+创建后，点击该多边形，可以通过选中框的操作按钮调整其角度和大小。也可以在属性栏中调整大小和角度。
 
-Double-click the polygon with the mouse, the polygon is in the selected state, and each vertex shows the selected effect. Left-click any vertex with the mouse and drag the mouse on the page, the vertex position follows the change of the mouse position, and the graphic changes according to the change of the vertex position.
+ 鼠标双击多边形，多边形处于选中状态，每个顶 点显示选中效果，鼠标左键点击任意顶 点，在页面上拖动鼠标，顶 点位置跟随鼠标位置的变化而变化，图形按照顶 点位置的变动而改变。
 
-![polygon](../../../assets/images/polygon.gif)
+![alt text](7.gif)
 
-## **Pipe**
+## 管道
 
-Used to create pipes. It is drawn in much the same way as a polyline. To create a pipe, click the control, then click and drag the mouse within the page to draw, release the mouse to finish drawing a pipe, press and drag the mouse again to continue drawing the next section of the pipe, double-click the left mouse button or click the right mouse button to finish drawing. You can set the style of the pipe in the properties. Once created, clicking on the pipe, you can adjust the angle and size of the selection box using the operation buttons.The size and angle can also be adjusted in the properties window.
+用于创建管道。它的绘制方式与折线大致相同。若要创建管道，请选择该控件，然后在窗口内单击并拖动鼠标进行绘制，松开鼠标完成一条管道的绘制，再次按下并拖动鼠标，继续绘制下一段管道，双击鼠标左键或者单击鼠标右键完成绘制。可以在属性中设置管道的样式。创建后，点击该管道，可以通过选中框的操作按钮调整其角度和大小。也可以在属性栏中调整大小和角度。
 
-When you double-click the pipe, the pipe sector is in the editing state, and you can change the shape of the pipe by moving the position of any end point of the pipe with the mouse.
+双击该管道，管道扇形处于编辑状态，可以通过鼠标移动管道的任意端点的位置，改变管道的外形。
 
-![pipe](../../../assets/images/pipe.gif)
+![alt text](8.gif)
 
-You can also set the style of the pipe in the property window.
+还可以在属性窗口中对管道的样式进行设置。
 
-**Property**
+**属性**
 
-| **Name** | **Description**          |
-|------------------------|--------|
-| Name | The name of this control.|
-| X | The distance of the left side of the control from the left side of the canvas.|
-| Y| The distance from the top of the control to the top of the canvas. |
-| W| The width of the control. |
-| H| The height of the control. |
-|![alt text](4.png) | The angle of the pipe.  |
-| Pipe | Set the style for the ends of the pipe as well as the corners.  <br>![alt text](5.png)  Square Head Square Corner <br>![alt text](6.png)Round corner with square head <br>![alt text](7.png)  Square corner with round head <br>![alt text](8.png) Round corner with round head|
-| Background| The background color of the pipe. |
-| Diameter | The diameter of the pipe. | 
-|Fluid | Sets the style of the fluid in the pipe.  <br>- **Style**: Sets the style of the fluid. Includes: None, Triangle, Rectangle, Arrow.  You can also click the settings button next to the style and select an SVG image from the library to use as the fluid style.<br>- **Width**: The width of the fluid.<br>- **Height**: The height of the fluid.<br>- **Color**: The color of the fluid. <br>- **Space**: The distance between adjacent fluids.<br>- **Flow Rate**: Contains 4 options: 0,1, 2, 3. 0 represents stationary, and 3 represents the fastest flow. <br>- **Flow Direction**: The direction of flow of the fluid. Flow from the start point to the end point is forward, and flow from the end point to the start point is reverse.  <br>**Note**: The start point is the position where you start plotting and the end point is the position where you end plotting.|
+| **名称**  | **描述**  |
+|:------------------|:-----------|
+| 名字  | 此控件的名称。  |
+| X   | 控件左侧距画布左侧的距离，单位px。|
+| Y    | 控件顶部距画布顶部的距离，单位px。 |
+| W    | 控件的宽度，单位px。 |
+| H    | 控件的高度，单位px。|
+| ![alt text](9.png) | 管道的倾斜角度。|
+| 管道样式    | 设置管道的两端以及拐角的样式。  <br>![alt text](10.png)  方头方拐角  <br>![alt text](11.png)  方头圆拐角 <br>![alt text](12.png)  圆头方拐角  <br>![alt text](13.png)  圆头圆拐角  |
+| 背景     | 管道的背景色。|
+| 直径  | 管道的直径。  |
+| 流体    | 设置管道内流体的样式。  <br>- **样式**：设置流体的样式。包括：无、三角形、矩形、箭头。也可以点击样式后面的设置按钮，从图库中选择svg格式的图片作为流体样式。 <br>- **宽度**：流体的宽度。<br>- **高度**：流体的高度。<br>- **颜色**：流体的颜色。 <br>- **间距**：相邻流体间的距离，单位px。<br>- **流速**：包含4个选项：0、1、2、3。0表示静止，3流动最快。<br>- **流向**：流体的流动方向。从起点流向终点为正向，从终点流向起点为反向。  <br>**说明**：起点是指开始绘制的位置，终点是指结束绘制的位置。 |
 
-## Notes
+## 说明
 
-1. Horizontal lines have a height of 0. Changing their height through property values or scripts will not have any effect.
-
-    ![alt text](9.png)
-
-2. Vertical lines have a height of 0. Changing their weight through property values or scripts will not have any effect.
-
-    ![alt text](10.png)
-
-3. When the height of a horizontal polyline is 0, modifying its height through property values or scripts will not take effect.
-
-    ![alt text](11.png)
-
-4. When the width of a vertical polyline is 0, modifying its width through property values or scripts will not take effect.
-
-    ![alt text](12.png)
-
-5. When the height of a pipe is 0, modifying its height through property values or scripts will not take effect.
-
-    ![alt text](13.png)
-    
-6. When the width of a pipe is 0, modifying its width through property values or scripts will not take effect.
+1. 水平直线的高度为0，通过属性写值或脚本修改其高度将不会生效；
 
     ![alt text](14.png)
+
+2. 垂直直线的宽度为0，通过属性写值或脚本修改其宽度将不会生效；
+
+    ![alt text](15.png)
+
+3. 水平折线的高度为0时，通过属性写值或脚本修改折线的高度将不会生效；
+
+    ![alt text](16.png)
+
+4. 垂直折线的宽度为0时，通过属性写值或脚本修改折线的宽度将不会生效；
+
+    ![alt text](17.png)
+
+5. 水平管道的高度为0时，通过属性写值或脚本修改管道的高度将不会生效；
+
+    ![alt text](18.png)
+
+6. 垂直管道的宽度为0时，通过属性写值或脚本修改管道的宽度将不会生效；
+
+    ![alt text](19.png)
+
+
 

@@ -1,42 +1,42 @@
-# Scripts
+# 脚本
 
-## **What is script?**
+## 什么是脚本？
 
-Most of the time, when we talk about "scripts" in VC Hub, we mainly refer to JavaScript (JS). JavaScript ("JS") is a function-first, lightweight, interpreted or just-in-time compiled programming language. Although it is known as a scripting language for developing web pages, it is also used in many non-browser environments. JavaScript is based on prototypical programming, a multi-paradigm dynamic scripting language, and supports object-oriented, imperative, declarative, and functional programming paradigms.
+大多数时候，当我们在WAGO SCADA中谈论“脚本”时，我们主要指的是JavaScript（JS）脚本。JavaScript（简称“JS”）是一种具有函数优先的轻量级，解释型或即时编译型的编程语言。虽然它是作为开发Web页面的脚本语言而出名，但是它也被用到了很多非浏览器环境中，JavaScript基于原型编程、多范式的动态脚本语言，并且支持面向对象、命令式、声明式、函数式编程范式。
 
-In VC Hub, you will mix the core JS language with references to other components and various built-in system functions.
+在WAGO SCADA中，您将把核心JS 语言与对其他组件和各种内置系统函数的引用混合在一起。
 
-You can create various types of scripts under the "Scripts" menu. 
+您可以在“**脚本**”菜单下，创建各种类型的脚本。
 
 ![alt text](1.png)
 
-## Security of Script
+## 脚本的安全性
 
-In VC Hub, scripting is an advanced feature that offers maximum flexibility and convenience for complex configuration scenarios, such as performing intricate logical operations or handling local resources (e.g., reading and writing files). This openness, however, introduces potential security risks, such as a configuration engineer accidentally writing malicious code. Whatever, only legitimate users of VC Hub can write scripts in the system. Therefore, you can consider that VC Hub merely provides a scripting tool, and whether malicious code is written depends on the person writing the code, VC Hub itself does not control the script content. 
+在WAGO SCADA中，脚本是一种高级功能，可以为复杂的组态场景提供最大的灵活性和便利性，比如需要进行复杂的逻辑运算或者操作本地资源（读写文件等）。正是其这种开放的能力，导致其可能存在一定的安全风险，比如组态工程师不小心编写了一段恶意代码。但不管如何，能在WAGO SCADA中编写脚本的一定是WAGO SCADA的合法用户，所以您可以认为WAGO SCADA仅提供了一个脚本编程工具，而是否会编写出恶意代码，取决于编写代码的人，WAGO SCADA自身不会对脚本内容进行管控。
 
-The scripting feature allows users to customize logic, data processing, event handling, and UI interactions, greatly enhancing the system’s flexibility and automation capabilities. However, if not properly managed, it may introduce serious security and operational risks. Therefore, we recommend:
+脚本功能允许用户自定义逻辑、数据处理、事件响应和界面交互，极大提升了系统的灵活性和自动化能力。但若管理不当，也可能带来严重的安全和运行风险，所以我们建议：
 
-1. Grant script editing permissions only to trusted users (via role-based access control).
-2. Review all scripts before deployment to prevent malicious or erroneous code from being executed.
-3. Do not grant script editing rights to guest accounts or low-privilege users.
-4. Establish a formal review and approval workflow, and conduct regular audits to detect unauthorized script modifications.
-5. Whenever possible, validate script behavior in a test environment before deploying to production.
-6. Leverage AI-powered tools to assist in identifying potential security risks within scripts.
+1. 仅授权可信用户编辑脚本权限（可通过角色权限控制）
+2. 部署前必须审查脚本内容，防止恶意或错误代码
+3. 不要向访客或低权限账户开放脚本编辑权限
+4. 建立审查和修改批准流程，定期审计脚本是否被修改
+5. 尽可能先在测试环境验证脚本行为
+6. 结合AI工具辅助判断是否存在安全风险
 
-## **Is it easy to use?**
+## 它易于使用吗？
 
-Fortunately, JS is a simple language to get started with. We provide a large number of functions in VC Hub that accomplish common tasks in a single line of code. These system functions are available at the time of typing. Just start with "System" and press "." to see the list of available functions. The list will filter itself as you continue typing.
+幸运的是，JS 是一种简单的入门语言。我们在 WAGO SCADA 中提供了大量函数，可以在一行代码中完成一些常见任务。这些系统功能在键入时可用。只需从“System”开始，然后按“.”即可查看可用功能列表。当您继续键入时，该列表将自行过滤。
 
-![script](../../assets/images/script.gif)
+![alt text](2.gif)
 
-## **Where are the scripts used?**
+## 脚本在哪里使用？
 
-JS is used in many locations within VC Hub. Each location has its own events that trigger scripts to run and add functionality to the project in different ways.
+JS 在WAGO SCADA的许多地方都有使用。每个位置都有自己的事件，这些事件会触发脚本运行，并以不同的方式向项目添加功能。
 
-The following are common usage scenarios:
+以下是常用的使用场景：
 
-- Controls: Add actions to controls such as buttons, customize the appearance of charts and tables, and even set up custom navigation architectures.
-- Lifecycle: Trigger scripts to run when controls or screens are loaded/unloaded.
-- Schedule: Execute scripts at regular intervals.
-- Custom Functions: Allow users to define their own functions to be used as shortcut selections in scripts.
+- **控件**：向按钮等控件添加动作，自定义图表和表格的外观，甚至设置自定义导航架构。
+- **生命周期**：在控件或者画面加载/卸载的时候触发脚本运行。
+- **时间表**：定时执行脚本。
+- **自定义函数**：允许用户自己定义函数，来在脚本中快捷选择函数来使用。
 

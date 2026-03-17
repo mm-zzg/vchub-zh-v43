@@ -1,47 +1,50 @@
-# Button
+# 按钮
 
-Buttons are used to initiate an event when pressed and can also be used to display status.
+按钮用于在按下时启动某种操作，也可以用于显示状态。
 
 ![alt text](1.png)
 
-**Properties**
+**属性**
 
-| **Name**   | **Description**      |
-|-----------|-----------------------|
-| Name  | The name of this control.   |
-| X  | The distance between the left side of the control and the left side of the canvas.  |
-| Y   | The distance between the top of the control and the top of the canvas.   |
-| W | The width of the control.  |
-| H   | The height of the control.  |
-| ![alt text](2.png) | The rounded curvature of the four corners of the button. |
-| Fill   | The content displayed by the control.  <br>![alt text](3.png)  <br>![alt text](4.png) <br>The button's background image. Only JPG, GIF, PNG, SVG, and JPEG formats are supported.  |
-| Border  | The color and  thickness of the border.   |
-| Shadow    | Sets the shadow effect of the control. You can set the outer shadow and inner shadow.  <br> **Outer**   <br>**- Enable**: Whether to enable the shadow effect  <br>**- Color**: Used to set the shadow color <br> **- X**: Controls how far the shadow is shifted horizontally.  <br>`X = 10` → shadow moves 10px to the right  <br>`X = -5` → shadow moves 5px to the left <br>**- Y**: Controls how far the shadow is shifted vertically.  <br>`Y = 8` → shadow moves 8px downward  <br>`Y = -3` → shadow moves 3px upward <br> **- Blur**: Controls how soft or sharp the edges of the shadow appear. Higher values make the shadow more blurry and spread out. <br> **Inner**  <br>**- Enable**: Whether to enable the shadow effect  <br>**- Color**: Used to set the shadow color <br>**- X**: Controls how far the shadow is shifted horizontally.  <br>`X = 10` → shadow moves 10px to the right  <br>`X = -5` → shadow moves 5px to the left <br>**- Y**: Controls how far the shadow is shifted vertically.  <br>`Y = 8` → shadow moves 8px downward  <br>`Y = -3` → shadow moves 3px upward <br>**- Blur**: Controls how soft or sharp the edges of the shadow appear. Higher values make the shadow more blurry and spread out. <br>  **- Spread**: Controls how much the shadow **expands or contracts** from the shape. |
-| Color   | Set the color effects for different operational states of a control. The states include: default, hover, and pressed.   You can set the background color, border color, and font color for each state.  ![alt text](5.png)   |
-| Font     | Set the font for text content. Including font style, font size, font color, bold, italic, horizontal alignment, and vertical alignment.  |
+| 名称  | 描述  |
+|:---------------------------|:-------------------|
+| 名字  | 此控件的名称。|
+| X  | 控件左侧距画布左侧的距离，单位px。   |
+| Y  | 控件顶部距画布顶部的距离，单位px。  |
+| W    | 控件的宽度，单位px。  |
+| H  | 控件的高度，单位px。 |
+| ![alt text](2.png) | 按钮四个角的圆角曲率。 |
+| 填充文本  | 控件显示的内容。 <br>![alt text](3.png) |
+| 填充背景图    | 控件的背景图，仅支持JPG、GIF、PNG、SVG、JPEG格式。  |
+| 边框粗细  | 边框的线条粗细。 |
+| 阴影  | 设置控件的阴影效果。可以设置外阴影和内阴影。   <br> **外阴影**   <br>- **启用**：是否启用阴影效果  <br>- **颜色**：用于设置阴影颜色  <br>- **X**：控制阴影在水平方向上的偏移量。  <br>`X = 10` → 阴影往右移了10像素  <br>`X = -5` → 阴影往左移了5像素  <br>- **Y**：控制阴影在垂直方向上的偏移量。  <br>`Y = 8` → 阴影往下移了8像素  <br>`Y = -3` → 阴影往上移了3像素   <br>- **模糊**：控制阴影的 **模糊程度**，模糊值越大，边缘越柔和、越“自然”。 <br>**内阴影** <br>- **启用**：是否启用阴影效果 <br>- **颜色**：用于设置阴影颜色  <br>- **X**：控制阴影在水平方向上的偏移量。  <br>`X = 10` → 阴影往右移了10像素  <br>`X = -5` → 阴影往左移了5像素 <br>- **Y**：控制阴影在垂直方向上的偏移量。  <br>`X = 8` → 阴影往下移了8像素  <br>`Y = -3` → 阴影往上移了3像素  <br>- **模糊**：控制阴影的 **模糊程度**，模糊值越大，边缘越柔和、越“自然”。<br>- **扩散**：控制阴影的大小|
+| 颜色 | 设置控件不同操作状态下的颜色效果。状态包括：默认、悬浮、按下。  <br>可以为每种状态设置背景色、边框颜色、字体颜色。  <br>![alt text](4.png)  |
+| 字体  | 设置文本内容的字体。包括字体型号、字体大小、加粗、倾斜、水平对齐方式、垂直对齐方式。  |
 
-**Event**
+**动作**
 
-Allows you to perform specific events based on certain conditions. See the full description of each event on the **2D Visualization-> Event** page.
+允许您基于某种条件执行特定的动作。请参阅“[动作](../../event/index.md)”页上各种动作的完整描述。
 
-**Example**
+**示例**
 
-Click the button to navigate to other page.
+点击按钮导航到其他画面。
 
-![alt text](6.png)
+![alt text](5.png)
 
-| **Property**  | **Value**     |
-|---------------|---------------|
-| W   | 80                                                    |
-| H   | 32                                                    |
-| ![alt text](7.png) | 4       |
-| Background    | 1c1c88                              |
-| Text     | < Back          |
-| Font    | Calibri, 22, horizontal centering, vertical centering |
+| 名称  | 描述                        |
+|:---------------|:---------------------------------|
+| W   | 80                              |
+| H   | 32                              |
+| ![alt text](6.png) | 4                               |
+| 背景  | 1c1c88                          |
+| 文本 | < Back                          |
+| 字体  | Calibri, 22, 水平居中, 垂直居中 |
 
-On the button, add a press event, select 'Navigation' as the operation type, choose 'Page1' as the page, and select 'Replace ' as the open position. On the runtime page, clicking this button will navigate to Page1.
+在按钮上添加按下动作，操作类型选择“导航”，画面选择“画面1”，打开位置选择“替换画面”。
 
-![button](../../../assets/images/button.gif)
+在运行页面，点击该按钮后，将导航到画面1。
+
+![alt text](7.gif)
 
 
 

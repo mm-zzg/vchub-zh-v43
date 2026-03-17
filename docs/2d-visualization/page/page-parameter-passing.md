@@ -1,63 +1,60 @@
-# Page Parameter Passing
+# 画面传参
 
-Page parameter passing allows you to pass parameters from one page to another.
+画面传参允许您将参数从一个画面传递到另一个画面中。
 
-Scenario example: There are two motors: motor 1 and motor 2. when you click button 1 on a page, information about motor 1 is displayed in a popup window; when you click button 2, information about motor 2 is displayed in a popup page. The number of the motor can be passed to the popup page via a parameter.
+场景举例：有两个电机：电机 1 和电机2。在画面上点击按钮1时，在弹窗中显示电机1的信息；点击按钮2时，在弹窗中显示电机2的信息。可以通过参数将电机的编号传递到弹窗中。
 
-## **Drawing a popup page**
+## 绘制弹窗
 
-1. Create a new popup page: Motor_Details. 
+1. 新建一个弹窗：电机详情。
 
     ![alt text](17.png)
 
-2. Drag in a motor and a  label into the popup window. 
+2. 在弹窗中拖入一个电机和一个文本标签。
 
     ![alt text](18.png)
 
-3. Set a custom property on the popup window: number. 
+3. 在弹窗上设置自定义属性：编号。
 
     ![alt text](19.png)
 
-4. Click on the label, then click the binding button next to its text property, and write the following expression. The content displayed in the label will change with the change of 'custom.No'.
+4. 点击文本标签，在其文本属性后面点击绑定按钮，编写如下表达式。文本标签中显示的内容将随着“custom.编号”的变化而变化。
 
     ![alt text](20.png)
 
-## **Drawing a Page**
+## 绘制画面
 
-1. Create a new page: Motor.
-2. Draw two buttons on the page, Motor 1 and Motor 2. 
+1. 新建一个画面：电机。
+2. 在画面上绘制2个按钮，电机1和电机2。
 
     ![alt text](21.png)
 
-3. Set the press script in the "Action" of Motor 1. When the button is clicked, open the "Motor_Details" popup page, it centered display, and set the value of the custom property "Number" on the "Motor_Details" popup page to 1. 
+3. 在电机1的 [动作](../event/index.md) 中设置按下脚本。当点击该按钮时，打开“电机详情”弹窗，弹窗居中显示，并且将“电机详情”弹窗上的自定义属性“编号”的值设置为1。
 
-```typescript
-System.UI.openPopup("Motor_Details", {
-    position: {
-        type: 'center',
-    },
-    pageProperties: {
-        'custom.No': '1'
-    }
-});
-```
+    ```typescript
+    System.UI.openPopup("电机详情", {
+        position: {
+            type: 'center',
+        },
+        pageProperties: {
+            'custom.编号': '1'
+        }
+    });
+    ```
  
-4.Click on the "Motor 2" button and set the same script in the "Action" to change the value of the incoming parameter from 1 to 2. 
+4. 点击“电机2”按钮，在 [动作](../event/index.md) 中设置相同的脚本，将传入的参数值从 **1** 变为 **2**。
 
-```typescript
-System.UI.openPopup("Motor_Details", {
-    position: {
-        type: 'center',
-    },
-    pageProperties: {
-        'custom.No': '2'
-    }
-});
-```
+    ```typescript
+    System.UI.openPopup("电机详情", {
+        position: {
+            type: 'center',
+        },
+        pageProperties: {
+            'custom.编号': '2'
+        }
+    });
+    ```
  
-5.Click the Preview button . On the preview page, click the button "Motor 1" to open a popup page with the text "Motor 1"; click the button "Motor 2" to open a popup page with the text "Motor 2". 
+5. 点击画面的预览按钮进行预览。在预览页面，点击按钮“电机1”，打开弹窗，弹窗中文本内容显示为“电机1”；点击按钮“电机2”，打开弹窗，弹窗中文本内容显示为“电机2”。
 
-    ![page-parameter-passing](../../assets/images/page-parameter-passing.gif)
-
-
-
+    ![alt text](22.gif)

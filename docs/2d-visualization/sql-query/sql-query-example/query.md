@@ -1,60 +1,84 @@
 # Query
 
-## Example
+## 场景举例
 
-According to the age entered by the user, the corresponding person is queried in the database, and the query result is displayed through the table.
+按照用户输入的年龄，在数据库中查询对应人员，并通过表格显示查询结果。
 
-## Steps
+## 步骤
 
-#### Creating a database connection
+#### 创建数据库连接
 
-On the "Databases"->"Database Connection" page, create a new database connection named **TestSQLQuery**.
+在“数据库”->“数据库连接”页面，新建一个数据库连接,名称为 **TestSQLQuery**。具体步骤请参考 [数据库连接](../../../management-platform/databases/database-connection/index.md)。
 
 ![alt text](1.png)
 
-There is a table named `person_management` in the database, which is used to store personnel information. Its structure is as follows:
+数据库中存在表 `person_management`，该表用于记录 `人员` 的信息，其结构如下。
 
 | Id | name          | email               | gender | age |
 |----|---------------|---------------------|--------|-----|
-| 1  | Alice Johnson | `alice@example.com`  | Female | 18  |
-| 2  | Bob Smith     | `bob@example.com`     | Male   | 19  |
-| 3  | Charlie Brown | `charlie@example.com` | Male   | 19  |
-| 4  | Diana White   | `diana@example.com`   | Female | 18  |
-| 5  | Edward Green  | `edward@example.com`  | Female | 20  |
+| 1  | Alice Johnson | alice@example.com   | Female | 18  |
+| 2  | Bob Smith     | bob@example.com     | Male   | 19  |
+| 3  | Charlie Brown | charlie@example.com | Male   | 19  |
+| 4  | Diana White   | diana@example.com   | Female | 18  |
+| 5  | Edward Green  | edward@example.com  | Female | 20  |
 
-#### Create SQL Query
+#### 创建SQL Query
 
-1. Create the project, click the  **Design** button in the action bar to enter the editor.
-2. Create an SQL Query by right-clicking on the SQL Query node in the 2D editor and selecting **Add** button.<br>
+1. 创建项目，在操作栏点击项目的 **设计** 按钮，进入编辑器。
+2. 在编辑器的“项目”窗口的SQL Query节点上，单击鼠标右键，选择新增，创建一个SQL Query。
+
     ![alt text](2.png)
-3. In this example, we set the name of this SQL Query to **Query**.
+
+3. 在此示例中，我们将该SQL Query的名称设置为 **Query**。
+
     ![alt text](3.png)
-     - **Database Connection:** Select an item whose status is "Connected "in the "Databases" ->"Database Connection" list. Here we select the **TestSQLQuery** already created in Step 1.
-     - **Query Type:** Select **Query**.
-     - **SQL Editor:** Write the following query that searches the `person_management` table against the value of age. Where "age" denotes the parameter.
+
+    **数据库连接**：选择一条在”数据库“->"数据库连接"列表中状态为”已连接“的数据。在此我们选择步骤1中已经创建的 **TestSQLQuery**。
+
+    **查询类型**：选择 **Query**。
+
+    **SQL编辑器**：编写如下查询语句，该语句根据age的值，在`person_management` 表中进行查询匹配数据。其中 @age表示参数。
+
     ```sql
-    SELECT * FROM person_management WHERE age = @age;
+    SELECT * FROM person_management  WHERE 	age = @age;
     ```
-     - **Parameters:** Create a parameter called age. Acts as a placeholder in an SQL statement to which you can pass concrete values when executing a query.
-4. Click the "Test" button to see the results.
+    
+    **参数**：创建一个名称为age的参数。在SQL语句中充当占位符，在执行查询时，您可以为其传递具体的值。
+
+4. 点击“测试”按钮，查看结果。
+
     ![alt text](4.png)
 
-#### **Use Query**
+#### 使用Query
 
-1. Find the '**Table**' control in the **Tools** window of the 2D design page and drag it to the page.
+1. 在设计页面的 **工具** 窗口中找到‘**表格**’控件，拖动到画面中。
+
     ![alt text](5.png)
-2. Select the table control, in the property bar, click the binding button of the "Table" property, and bind an SQL Query for it.
+
+2. 选中表格控件，在属性栏中，点击“表格”属性的绑定按钮，为其绑定一个SQL Query。
+
     ![alt text](6.png)
-3. After selecting **SQL Query**, choose the newly created query **"Query"** from the **Name** dropdown list.
+
+3. 选中 SQL Query 后，在“名称”下拉框中选择刚刚创建的数据 “Query”。
+
     ![alt text](7.png)
-4. Click the bind button for the parameter "age".
+
+4. 点击参数"age"的绑定按钮，
+
     ![alt text](8.png)
-    The property binding window pops up and binds it to the value property of **NumberInput1**. When NumberInput1 enters different values, the query is performed according to different ages.
+
+    弹出属性绑定窗口，将其绑定到数字输入框的value属性。当数字输入框输入不同的数值时，按照不同的年龄进行查询。
+
     ![alt text](9.png)
-5. Transform allow you to add, modify, or remove columns from the query again.
-    When the Test button is clicked, the result is as follows:
+
+5. 转换功能支持对查询到的数据再次进行新增、修改或删除列。
+
+    点击测试按钮后，结果如下。
+
     ![alt text](10.png)
-    If we want to hide the **id** column, we can write the following script in the transformation.
+
+    如果我们想隐藏id列，可以在转换中，编写如下脚本。
+
     ```typescript
     function transform(data: Table){
         data.forEach(res=>{
@@ -63,10 +87,16 @@ There is a table named `person_management` in the database, which is used to sto
         return data;
     };
     ```
-6. Click the Test button again.In the results list, the **id** column is no longer displayed.
+ 
+6. 再次点击测试按钮，在结果列表中，将不再显示 `id` 列。
+
     ![alt text](11.png)
-7. Finally, we want to make sure that polling mode is set to off. This means that the query will not run continuously, but only when the parameters change, such as when a new value is entered inside NumberInput1.
+
+7. 最后，我们要确保轮询模式设置为 **关闭**。这意味着查询不会连续运行，而只会在参数发生变化时运行，例如在数字输入框内输入了新值。
+
     ![alt text](12.png)
-8. Click the "OK" button to finish binding, and click the preview of the page for testing. Enter the age to query in the " NumberInput1" of the preview screen to retrieve the matching data and display the query results in the table.
-    ![query](../../../assets/images/query.gif)
+
+8. 点击“确定“按钮完成绑定，并点击画面的预览进行测试。在预览画面的“数字输入框”中输入要查询的年龄，即可检索匹配的数据，并将查询结果显示在表格中。
+
+    ![alt text](13.gif)
 

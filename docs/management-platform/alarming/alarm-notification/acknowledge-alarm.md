@@ -1,20 +1,27 @@
-# Acknowledge Alarm
+# 报警确认
 
-When a user receives an email or SMS containing an alarm acknowledgement link (which is configured as a parameter item in the notification message), the user can acknowledge the alarm by clicking on the link. After clicking the link in the email or SMS, the user acknowledges the alarm on the acknowledgement page.
+当用户收到包含报警确认链接（该链接在通知内容中作为一个参数项进行配置）的邮件或短信时，可以通过点击链接来进行报警确认。用户点击邮件或短信中的链接后，在确认页面对报警进行确认。
 
-## Acked an Alarm via Email
+## 通过邮件确认警报
 
-1. When you receive an alarm notification e-mail from the system, open the email to view the details.
+1. 当您收到系统发出的报警通知邮件时，打开该邮件查看详情。
+
     ![alt text](19.png)
-2. After clicking the confirmation link, a new window will open displaying detailed data related to the alarm. If you need to confirm the alarm (as shown in the example below), please enter the necessary confirmation information on the page to process and record the alarm.
+
+2. 点击邮件中报警确认地址的链接后，将会打开一个新窗口，显示与报警相关的详细数据。如果需要确认报警（如下图示例所示），请在页面上输入必要的确认信息，以便对该报警进行处理和记录。
+
     ![alt text](20.png)
-3. Fill out the form and click the “Acknowledge” button to complete the alarm acknowledgement.
 
-## Acked an Alarm by SMS 
+3. 填写完成，点击“**确认**”按钮，完成报警确认。
 
-1. When you receive an alarm message , open the message to view the details.
+## 通过短信确认警报
+
+1. 当您收到系统发出的报警短信时，打开该短信查看详情。
+
     ![alt text](21.png)
-2. Clicking the link in the SMS will open the alarm confirmation page in the browser. If confirmation of the alarm is required, please fill in the necessary confirmation information on the page (as shown in the image below).
-    ![alt text](22.png)
-3. Fill out the form and click the “Acknowledge” button to complete the alarm acknowledgement.
 
+2. 点击短信中的链接，会在浏览器中打开报警确认页面。如果需要确认报警，请在页面上（如下图所示）填写必要的确认信息。
+
+    ![alt text](22.png)
+
+3. 填写完成，点击“**确认**”按钮，完成报警确认。

@@ -3,19 +3,19 @@
 # System.Context.currentAlarm.state
 
 
-## Description
-The state of the current alarm.
+## 描述
+当前报警的状态。
 
-## Grammar
-System.Context.currentAlarm.state
+## 语法
+**System.Context.currentAlarm.state**
 
-## Code Example                                                                                                                 
-Get the state of the current alarm.                                                                                                                                                                                         
+## 代码示例  
+
+获取当前报警的状态。
 
 ```typescript 
 const state = System.Context.currentAlarm.state;
 console.log(state);
-
 
 ```   
 

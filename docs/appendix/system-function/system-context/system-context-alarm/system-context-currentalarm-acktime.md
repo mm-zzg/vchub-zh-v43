@@ -1,13 +1,15 @@
 # System.Context.currentAlarm.ackTime
 
-## Description
-The acknowledgment time of the current alarm.
+## 描述
 
-## Grammar
-System.Context.currentAlarm.ackTime
+当前报警的确认时间。
 
-## Code Example                                                                                                                                                                                                                                                                                                          
-Get the acknowledgment time of the current alarm.
+## 语法
+**System.Context.currentAlarm.ackTime**
+
+## 代码示例
+
+获取当前报警的确认时间。
 
 ```typescript 
 const time = System.Context.currentAlarm.ackTime;

@@ -1,14 +1,15 @@
 # System.Context.currentEvent.oldValue
 
 
-## Description
-If it is triggered by a value change, obtain the old value.
+## 描述
+如果是值变化触发的获取旧值。
 
-## Grammar
-System.Context.currentEvent.oldValue
+## 语法
+**System.Context.currentEvent.oldValue**
 
-## Code Example                                                                                                                                                                                                                                                                                                          
-Get the old value of the current triggering event.
+## 代码示例
+
+获取当前触发事件的旧值。
 ```typescript 
 
 const oldValue = System.Context.currentEvent.oldValue;

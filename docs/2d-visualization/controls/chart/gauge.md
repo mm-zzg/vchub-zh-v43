@@ -1,59 +1,57 @@
-# Gauge
+# 仪表盘
 
-A gauge contains pointer and dials that allow the user to set multiple value intervals and a corresponding color for each interval.
+仪表盘包含指针和刻度盘，用户可以设置多个数值区间，并为每个区间设置对应的颜色。
 
-![alt text](57.png)
+![alt text](61.png)
 
-**Properties**
+**属性**
 
-| **Name**          | **Description**        |
-|-------------------|------------------------|
-| Name              | The name of this control.  |
-| X                 | The distance between the left side of the control and the left side of the canvas.     |
-| Y                 | The distance between the top of the control and the top of the canvas.   |
-| W                 | The width of the control.    |
-| H                 | The height of the control.     |
-| Start Angle       | The starting angle of the dial.   |
-| End Angle         | The ending angle of the dial.    |
-| Pointer           | - **Display Pointer**: Control whether the  pointer is displayed.   <br>- **Value**: The value displayed on the control.<br>- **Unit**: The unit of the current value.<br>- **Pointer Length(%)**: The length of the pointer  <br>- **Background**: The color of the pointer  <br>- **Border**: The border color of the pointer <br>- **Border Width**: The border width of the pointer <br>- **Font**: The font of the value and the unit. Includes font type, font size ,font color, bold and italic settings.  |
-| Measurement Range | The measuring range of the gauge. Default is 0~100.     |
-| Tick              | - **Major Tick**: The number of major ticks.      <br>- **Major Color**: The color of the major ticks.         <br>- **Minor Tick**: The number of minor ticks.       <br>- **Minor Color**: The color of the minor ticks.                                    <br>- **Decimals**: The number of decimals displayed on the dial and the pointer value. |  
-| Dial              | - **Color**: Background color of the dial scale  <br>![alt text](58.png) <br>- **Width**: Width of the scale  <br>![alt text](59.png)    <br>- **Display Progress**: Whether a progress bar should appear in the scale  <br>![alt text](60.png)  <br>- **Progress Color**: Tick progress bar color    <br>- **Font**: The font for the scale values on the dial. Includes font type, font size, font color, bold and italic settings.  <br>![alt text](61.png)  <br>- **Dial Interval Color**: Colors corresponding to different numerical ranges on the dial.  <br>![alt text](62.png) |
+| 名称 | 描述     |
+|:----------|:------------------|
+| 名字     | 此控件的名称。  |
+| X        | 控件左侧距画布左侧的距离，单位px。 |
+| Y        | 控件顶部距画布顶部的距离，单位px。   |
+| W        | 控件的宽度，单位px。   |
+| H        | 控件的高度，单位px。 |
+| 起始角度 | 表盘的起始角度。    |
+| 结束角度 | 表盘的结束角度。 |
+| 指针     | - **显示指针**：设置指针是否显示。 <br>- **值**：仪表盘的值。<br>- **单位**：当前值的单位。 <br>- **指针长度**：指针的长度。 <br>- **背景**：指针的背景色。 <br>- **边框**：指针的边框颜色。<br>- **边框粗细**：指针的边框粗细。 <br>- **字体**：设置指针值和单位的字体、字体大小、粗体、斜体、字体颜色。  |
+| 测量范围 | 仪表盘的测量范围。默认0~100。 |
+| 刻度     | - **主刻度值**：主刻度的数量。<br>- **主刻度颜色**：主刻度的颜色。<br>- **副刻度值**：相邻两个主刻度之间的副刻度线个数。<br>- **副刻度颜色**：副刻度的颜色。   <br>- **小数位**：刻度值和指针值上显示的数值的小数位个数。  |
+| 表盘     | <br>- **颜色**：表盘刻度的背景色  <br>![alt text](62.png)  <br>- **宽度**：刻度的宽度 <br>![alt text](63.png) <br>- **显示进度**：是否将值显示为进度条  <br>![alt text](64.png) <br>- **进度颜色**：进度条颜色   <br>- **字体**：设置刻度值的字体、字体大小、粗体、斜体、字体颜色。 <br>![alt text](65.png) <br>- **表盘区间颜色**：表盘上不同的数值区间对应的颜色。<br>![alt text](66.png)    |
 
-**Note:** If both interval colors and "Diaplay Progress" are enabled, the progress bar color will override the interval colors corresponding to the values. 
+**说明**：如果既设置了区间颜色又开启了“显示进度”，则进度条颜色会覆盖对应数值内的区间颜色。例如下图所示，0~30内的区间颜色被进度颜色覆盖。
 
-For example, in the image below, the interval color for 0-30 is covered by the progress color.
+![alt text](67.png)
 
-![alt text](63.png)
+**动作**
 
-**Event**
+允许您基于某种条件执行特定的动作。请参阅“[动作](../../event/index.md)”页上各种动作的完整描述。
 
-Allows you to perform specific events based on certain conditions. See the full description of each event on the **2D Visualization-> Event** page.
+**示例1  进度仪表盘**
 
-**Example 1  Progress gauge**
+通过进度仪表盘显示当前设备的温度。
 
-Display the current device temperature through the gauge.
+![alt text](68.gif)
 
-![gauge](../../../assets/images/gauge.gif)
+| 属性 | 值    |
+|:----------|:----------------|
+| 起始角度 | 180°  |
+| 结束角度 | 0° |
+| 指针     | - **值**：变量(@设备:温度)  <br>- **单位**：℃  <br>- **指针长度**：50   <br>- **指针背景**：rgba(112,193,117,100)  <br>- **指针边框**：rgba(112,193,117,60)   <br>- **宽度边框**：2   <br>- **指针字体**：Calibri, 18 , 加粗，斜体，rgba(51,51,51,100) | |
+| 表盘     | - **表盘颜色**：rgba(234,235,246,100) <br>- **表盘宽度**：18  <br>- **显示进度**：启用   <br>- **进度颜色**：rgba(110,200,0,80)  <br>- **表盘字体**：Calibri, 14, rgba(78,89,105,100) <br>- **颜色区间**：空 |
 
-| **Property** | **Value**  |
-|--------------|---------|
-| Start Angle  | 180°   |
-| End Angle    | 0°    |
-| Pointer      | - **Value**: Tag(Device:Temperature)                  <br>- **Unit**: ℃                <br>- **Pointer Length(%)**: 50                       <br>- **Background**: rgba(112,193,117,100)               <br>- **Border**: rgba(112,193,117,60)                   <br>- **Border Width**: 2   | Font              | Calibri, 18 , Bold，Italic，rgba(51,51,51,100) | |
-| Dial         | - **Color**: rgba(234,235,246,100)    <br>- **Width**: 18       <br>- **Display Progress**: Turn on          <br>- **Progress Color**: rgba(110,200,0,80)         <br>- **Font**: Calibri, 14, rgba(78,89,105,100) <br>- **Dial Interval Color**: None  |
+**示例2  区间仪表盘**
 
-**Example 2 Range gauge**
+通过仪表盘显示当前设备的温度。
 
+![alt text](69.gif)
 
-
-| **Property** | **Value**  |
-|--------------|-----|
-| Start Angle  | 225° |
-| End Angle    | 315° |
-| Pointer      | - **Value**:Tag(Device:Temperature)           <br>- **Unit**: ℃             <br>- **Pointer Length(%)**: 50                             <br>- **Background**: rgba(112,193,117,100)                <br>- **Border**: rgba(112,193,117,60)                    <br>- **Border Width**: 2              <br>- **Font**: Calibri, 18 , Bold，Italic，rgba(51,51,51,100) |
-| Tick         | - **Major Color**: The color of the major ticks. <br>- **Minor Color**: The color of the minor ticks. |  
-| Dial         | - **Color**: rgba(234,235,246,100)    <br>- **Width**: 25  <br>- **Font**: Calibri, 14, rgba(78,89,105,100)  <br>- **Dial Interval Color**: <br>0-30 rgba(128,128,128,100)；  <br>30-40 rgba(110,200,0,100)；  <br>40-100 rgba(255,0,0,100)；  <br>![alt text](64.png) |
-
-
+| 属性 | 值   |
+|:----------|:---------------------|
+| 起始角度 | 225°  |
+| 结束角度 | 315°  |
+| 指针     | - **值**：绑定变量(设备:温度)  <br>- **单位**：℃   <br>- **指针长度**：50   <br>- **指针背景**：rgba(112,193,117,100) <br>- **指针边框**：rgba(112,193,117,60)  <br>- **宽度边框**：2   <br>- **指针字体**：Calibri, 18 , 加粗，斜体，rgba(51,51,51,100) |
+| 刻度     |<br>- **主刻度颜色**：rgba(0,0,0,100) <br>- **副刻度颜色**：rgba(0,0,0,100) ||
+| 表盘     | - **表盘颜色**：rgba(234,235,246,100) <br>- **表盘宽度**：25  <br>- **表盘字体**：Calibri, 14, rgba(78,89,105,100) <br>- **颜色区间**：<br>0-30 rgba(128,128,128,100)；  <br>30-40 rgba(110,200,0,100)；  <br>40-100 rgba(255,0,0,100)；  <br>![alt text](70.png) |
 

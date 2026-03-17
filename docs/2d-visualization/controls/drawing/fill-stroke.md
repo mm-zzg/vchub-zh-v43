@@ -1,66 +1,60 @@
-# Fill, Stroke, Shadow and Pick Color
+# 填充、描边、阴影和拾色
 
-You can change the appearance style of a control by setting its fill color, border color, border type, and border thickness.
+通过设置控件的填充色、边框色、边框类型、边框粗细、阴影效果，可以改变其外观样式。
 
-## **Fill**
+## 填充
 
-Includes 2 fill styles: solid and gradient. In the “Appearance“ property of the control, click the color selector of the fill to set the fill.
-
-![alt text](15.png)
-
-#### **Solid**
-
-Examples:
-
-![alt text](16.png)
-
-## **Gradient**
-
-1. Select "Gradient" in the Color Editor.
-2. Select Linear or Radial.
-3. You will see two stops: white and black. Click on each stop and select a different color.
-4. If you want to add additional stops, left-click on the color bar and select a stop color. You can also delete added stops. 
-
-![alt text](17.png)
-
-Examples:
-
-![alt text](18.png)
-
-## **Stroke**
-
-Borders are also commonly used to set the shape of the control. This includes the border color, border type, and border thickness. The border color is set similarly to the fill. In the Appearance property of the control, click the color selector of the border to set the color.
-
-Type primarily controls the style of the line drawn, for example, with a dotted line. The Thickness setting is in pixels. On thick lines, you can more easily observe their effect.
-
-![alt text](19.png)
-
-Examples:
+包含2中填充样式：单色、渐变。在控件的外观属性中，点击填充的颜色选择器，进行填充设置。
 
 ![alt text](20.png)
 
-## **Shadow**
+**单色**
 
-By applying shadow effects to components, you can enhance the sense of depth and layering in the user interface.
-
-This makes the UI look less flat and improves its overall visual appeal and professionalism.
-
-Examples:
+单色填充示例：
 
 ![alt text](21.png)
 
-## **Pick color**
+**渐变**
 
-Click the Color Pickup button on the Color Picker to pick up the color.
+1. 在颜色编辑器中选择“渐变”。
+2. 选择“线性”或“径向”。
+3. 您将看到两个停靠点：白色和黑色。单击每个停止点并选择不同的颜色。
+4. 如果要添加其他停止点，请左键单击颜色栏，然后选择停靠点颜色。您还可以删除添加的停止点。
 
 ![alt text](22.png)
 
-1. Draw two rectangles on the page: Rectangle 1 and Rectangle 2. The fill color of Rectangle 1 is set to red and the fill color of Rectangle 2 is white.
-2. Set the fill color for Rectangle 2 and click the color picker button on the open color picker.
-3. Move the color picker cursor and place it in the fill area of Rectangle 1 to pick up the fill color (red) of Rectangle 1.
-4. Click the left mouse button to complete the color picking operation. At this point, Rectangle 2 is automatically filled with the fill color of Rectangle 1.
+渐变填充示例：
 
+![alt text](23.png)
 
+## 描边
 
+边框也常用来设置控件的外形。包含边框色、边框类型和边框粗细。边框色的设置与填充类似。在控件的外观属性中，点击边框的颜色选择器，进行颜色设置。
 
+类型主要控制所绘制线条的样式，例如用虚线来绘制。粗细设置以像素为单位。在粗线条上，您可以更容易地观察到它们的效果。
+
+![alt text](24.png)
+
+描边样式示例：
+
+![alt text](25.png)
+
+## 阴影
+
+通过为控件设置阴影效果， 可以增加深度感和层次感，使用户界面看起来不那么扁平，提高界面的整体视觉吸引力和专业性。
+
+阴影效果：
+
+![alt text](26.png)
+
+## 拾色
+
+在颜色选择器上点击拾色按钮进行拾色。
+
+![alt text](27.png)
+
+1. 在画面上绘制两个矩形：矩形1、矩形2。矩形1 的填充色设置位红色，矩形2的填充色为白色。
+2. 对矩形2进行填充 设置，在打开的颜色选择器上点击拾色按钮。
+3.  移动拾色光标，将其放在矩形1的填充区域，从而 吸取矩形1的填充 色（红色）。
+4. 点击鼠标左键， 完成拾色操作。此时矩形2自动填充 矩形1的填充 色。
 

@@ -1,15 +1,16 @@
-# Alarm Details
+# 报警详情
 
-On the running page, you can click the view button in the list to view the detailed alarm configuration.
+在运行页面，可以在列表中点击详情的查看按钮，查看详细的报警配置。
 
-**Premise:** In the column settings, "Detail" is selected. 
+**前提**：在列设置中，选择了“详情”。  
 
 ![alt text](20.png)
 
-
-On the running page, click the view button of details to view.
+在运行页面，点击详情的查看按钮进行查看。
 
 ![alt text](21.png)
 
 ![alt text](22.png)
+
+
 

@@ -1,36 +1,33 @@
-# User Grants
+# 用户授权
 
-User Grants is a method of directly assigning users to access levels. It essentially overrides the original rules of security levels.
+用户授权是一种直接将用户分配到Access Level的方法。用户授权实质上是对安全级别原始规则的覆盖。
 
-You can authorize users through the **Security-> Identity Provider** list by clicking the **User Grants** button. Users can be added, allowing you to later assign them specific access levels.
+可以通过 **权限- > Identity Provider** 列表的 **用户授权** 按钮，对用户进行授权。可以添加用户，以便随后向他们授予 Security Levels。
 
-**Note:** Adding or removing users in User Grants does not affect the users within the **Identity Provider**.
+**注意**：在用户授权中添加和删除用户时，并不会对Identity Provider内的用户产生影响。
+通过用户名，为这些用户分配任意数量的Access Levels。选择一个级别将自动选择其上方的所有级别。用户授权只能在用户使用Identity Provider进行身份验证后应用于用户。
 
-You can assign any number of access levels to these users by their **username**. Selecting a level will automatically select all levels above it.
+**注意**：系统无法根据Identity Provider 中的实际用户验证此处创建的任何用户。相反，用户名需要 **准确** 输入，包括区分大小写，当用户登录时，系统将检查他们是否与任何配置的用户名匹配，以授予用户授权。
 
-User Grants can only be applied to users after they authenticate through the Identity Provider.
+#### 配置用户授权
 
-**Note:** The system cannot verify any users created here based on the actual users in the Identity Provider. Instead, the **username** needs to be entered **accurately**, including case sensitivity. When users log in, the system will check if their username matches any of the configured usernames to grant user authorization.
+配置用户授权分为两部分：添加用户, 为用户分配Access Level。
 
-## Configuring User Grants
+1. 点击“Security”->“Identity Provider”菜单。
 
-Configuring user grants is divided into two parts: adding users, assigning access levels to users.
+    ![alt text](14.png)
 
-1. Click the **"Security" → "Identity Provider"** menu.
+2. 在Identity Provider列表的操作栏中，点击某一条数据的“用户授权“。
 
-    ![alt text](../1.png)
+    ![alt text](15.png)
 
-2. In the **Identity Provider** list, click the **"User Grants"** in the action column for a specific entry.
+3. 在弹窗中，点击添加按钮，添加用户名。
 
-    ![alt text](36.png)
+    ![alt text](16.png)
 
-3. In the pop-up window, click the **"Add"** button to add a username.
+4. 选择用户，为右侧页面为该用户设置access level。当前选中的用户会处于高亮状态。
 
-    ![alt text](37.png)
+    ![alt text](17.png)
 
-4. Select a user, and set the access levels for that user on the right-side panel. The currently selected user will be highlighted.
-
-    ![alt text](38.png)
-
-5. After setting the access levels for one user, continue selecting the next user to configure their access levels. Once all users have been configured, click the **"OK"** button to save the settings.
+5. 为一个用户设置完access level后，继续选择下一个用户进行access level的设置。所有用户全部设置完成后，点击”确认“按钮，进行整体保存。
 

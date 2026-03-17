@@ -3,14 +3,17 @@
 # System.Context.currentAlarm.name
 
 
-## Description
+## 描述
 
-The name of the current alarm.
-## Grammar
-System.Context.currentAlarm.name
+当前报警的名称。
 
-## Code Example                                                                                                                                                                                                                                                                                                          
-Get the name of the current alarm.
+## 语法
+**System.Context.currentAlarm.name**
+
+## 代码示例      
+
+获取当前报警的名称。
+
 ```typescript 
 
 const name = System.Context.currentAlarm.name;

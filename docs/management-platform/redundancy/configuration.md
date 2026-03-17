@@ -1,128 +1,123 @@
-# Configuration Redundancy
+# 配置冗余
 
-In the "Networking"->"Redundancy" page, configure redundancy.
+在“节点”->“冗余”页面，进行冗余配置。
 
-***When the redundant node is running, it needs to load the same configuration data of the master node, so you need to import the project of the master node to the backup node before configuring redundancy.***
+***冗余节点运行时需要加载主节点相同的组态配置数据，所以配置冗余之前需要先把主节点的工程导入到备节点上。***
 
-You need to pay attention to the following 3 points when configuring redundancy:
+配置冗余时需要注意以下3点：
 
-1. All devices, databases, and networking nodes configured on the master node should be accessible on the backup node. Avoid using localhost when configuring the network address, because the actual address of localhost on the master and backup nodes is different.
-2. The firewall of the server on the master node needs to open port **8099**, which can be modified in the network configuration page.
-3. You need to modify the node name on the standby node, the node name and the master node to maintain the same, if the standby node to import the master node's project contains the master node's system configuration can be ignored this step.
+1. 主节点上配置的所有设备，数据库，组网节点在备节点上应该也能够访问。配置网络地址时需要避免使用localhost, 因为主备节点上的localhost的实际地址是不一样的。
+2. 主节点的服务器的防火墙需要开放 **8099** 端口，这个端口可以在组网配置页面修改。
+3. 需要修改备节点上的节点名称，节点名称与主节点保持一致，如果备节点导入主节点的工程时包含了主节点的系统配置可以忽略这一步。
 
-There are three modes: Independent, Master, Backup.
+有三种模式，独立、主服务器、备服务器。
 
-- **Independent**: Redundancy is not enabled. This node operates as a standalone server.
-- **Master**: Operates as the primary server, running all backend tasks by default and responding to heartbeat signals from the backup server.
-- **Backup**:Operates as the backup server, periodically sending heartbeat signals to the primary server. If the primary server is detected to be down, the backup server will take over its operations.
+- **独立**：未启用冗余，此节点作为独立节点运行。
+- **主服务器**：作为主服务运行，默认直接运行所有的后台任务，并接受备服务器的心跳并响应。
+- **备服务器**：作为备服务器运行，会周期性向主服务器发送心跳，一旦发现主服务器宕机，备服务器会接管主服务器的工作。
 
-## **Independent Mode**
+## 独立模式
 
 ![alt text](4.png)
 
-## **Master Server**
+## 主服务器
 
 ![alt text](5.png)
 
-## **Backup Server**
+## 备服务器
 
 ![alt text](6.png)
 
-| **Mode Setting**            |                                                                                                                                                                                                                                                                                                                                                    |
-|-------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| Mode                          | Selects the mode of the current server. Includes Independent, Master, and Backup.                                                                                                                                                                                                                                                                  |
-| Standby Activity Level        | Contains cold and warm. If cold standby, no data collection is performed. If warm standby, performs number acquisition, but does not process the data.                                                                                                                                                                                             |
-| Failover Time(ms)             | The duration in milliseconds of a failure before the standby node takes over the workload of the master node.                                                                                                                                                                                                                                      |
-| Connection wait time(ms)      | When the master node starts up can not directly determine the running state, because there may be running spare nodes, the master node will wait for the spare node to connect up, if timeout this configured time, the master node will ignore the existence of the spare node directly set its own running state to Running, unit milliseconds . |
-| **Master Node Configuration** |                                                                                                                                                                                                                                                                                                                                                    |
-| Recovery Mode                 | There are two types of recovery modes: Manual and Automatic, and the default is Automatic. When the master node starts up, if the recovery mode is automatic, the master node will ignore the current running state of that backup node and directly set the running state to Running.                                                             |
-| **Backup Node Configuration** |                                                                                                                                                                                                                                                                                                                                                    |
-| Master Node Host              | The network address of the master server.                                                                                                                                                                                                                                                                                                          |
-| Master Node Port              | The network listening port of the master server, which can be modified in the network configuration page of the master server.                                                                                                                                                                                                                     |
-| Ping Rate(ms)                 | How often the master and backup nodes send heartbeats, in milliseconds.                                                                                                                                                                                                                                                                            |
-| Ping Timeout(ms)              | The timeout for heartbeats of the master and backup nodes, in milliseconds.                                                                                                                                                                                                                                                                        |
-| Missed Pings                  | When the number of consecutive heartbeat failures exceeds the maximum number, the system determines that the redundant node is not available.                                                                                                                                                                                                      |
-| Http Connect Timeout(ms)      | The connection timeout for http requests sent by the primary and backup nodes, in milliseconds.                                                                                                                                                                                                                                                    |
-| Websocket Timeout(ms)         | The timeout for the master node to establish a websocket connection, in milliseconds.                                                                                                                                                                                                                                                              |
-| **Redundancy Status**         |                                                                                                                                                                                                                                                                                                                                                    |
-| Current Node Status           | The operational status of the current node.                                                                                                                                                                                                                                                                                                        |
-| Redundant Node Status         | The operational status of the redundant node.                                                                                                                                                                                                                                                                                                      |
-| Redundant Node License        | Displays whether the authorization modules for the licenses of the master and backup nodes are the same.                                                                                                                                                                                                                                           |
+| **模式设置**     |  |
+|:------------------|:----------------------|
+| 模式             | 选择当前服务器的模式。包含独立、主服务器、备服务器。   |
+| 冗余等级         | 包含冷备和热备。如果是冷备，不进行数据采集。如果是热备，进行数采，但是对数据不做处理。|
+| 故障转移时间     | 备节点接管主节点的工作任务之前故障的持续时间，单位毫秒。   |
+| 连接等待时间     | 当主节点启动时无法直接确定运行状态，因为可能存在运行中的备节点，主节点会等待备节点连接上来，如果超时这个配置的时间，主节点就会无视备节点是否存在直接将自己的运行状态设置为Running，单位毫秒 。 |
+| **主节点配置**   |  |
+| 恢复方式         | 分为手动和自动，默认自动。主节点启动时，如果恢复模式是自动，主节点会无视那备份节点当前的运行状态，直接将运行状态设置成Running。                                                                |
+| **备节点配置**   | |
+| 主服务器地址     | 主服务器的网络地址。 |
+| 主服务器端口     | 主服务器的组网监听端口，填写主服务器的 **组网->通用配置** 页面设置的端口。 |
+| 心跳频率         | 主备节点发送心跳的频率，单位毫秒。   |
+| 心跳超时         | 主备节点心跳的超时时间，单位毫秒。|
+| 心跳最大失败次数 | 当心跳连续失败的次数超过最大次数后，系统判定冗余节点不可用。 |
+| Http连接超时     | 主备节点发送http请求的连接超时时间，单位毫秒。 |
+| Websocket超时    | 主节点建立websocket连接的超时时间，单位毫秒。 |
+| **冗余状态**     | |
+| 当前节点状态     | 当前节点的运行状态。   |
+| 冗余节点状态     | 冗余节点的运行状态。   |
+| 冗余节点授权     | 显示主、备节点的许可证的授权模块是否一致。   |
 
-## **Configuring Redundancy**
+## 配置冗余
 
-#### Configure Node Redundancy Mode
+首先在主备服务器上进行通用配置，详细信息如下：
 
-**Master Server**
+#### 配置节点的冗余模式
 
-1. On the "Networking"-> "Redundancy" page, select Master for the mode.
-2. Set the following parameters.
+**主服务器**
 
-     - Standby Activity Level: Warm
-      Failover Time(ms): 10000
-     - Connection wait time(ms): 10000
-     - Recovery Mode: Manual
+1. 在“网络”->“冗余”页面，模式选择“主服务器”。
+2. 设置以下参数:
 
-3. Click the "OK" button to save the settings.
+    - 冗余等级：热备
+    - 故障转移时间(ms)：10000
+    - 连接等待时间(ms)：10000
+    - 恢复方式：手动
 
-**Backup Server**
+3. 点击“确认”按钮，保存设置的内容。
 
-1. On the "Networking" -> "Redundancy" page, select Backup for the mode.
-2. Set the following parameters.
+**备服务器**
 
-     - Master Node Host: The machine name or IP address of the primary server.
-     - Master Node Port: Port of the primary server
-     - Use SSL: Enable
-     - Ping Rate(ms): 1000
-     - Ping Timeout(ms): 3000
-     - Missed Pings: 3
-     - Http Connect Timeout(ms): 10000
-     - Websocket Timeout(ms): 10000
+1. 在“网络”->“冗余”页面，模式选择“备服务器”。
+2. 设置以下参数:
 
-3. Click the "OK" button to save the settings.
-4. Check the redundancy status of the master and backup servers.
+    - 主服务器地址：主服务器的机器名或 IP 地址
+    - 主服务器端口：主服务器的端口 (填写主服务器组网->通用配置中的端口)
+    - 使用TLS：开启
+    - 心跳频率(ms)：1000
+    - 心跳超时(ms)：3000
+    - 心跳失败最大次数：3
+    - Http连接超时(ms)：10000
+    - Websocket超时(ms)：10000
 
-The redundancy status displayed on the master server is as follows:
+3. 点击“确认“按钮，保存设置的内容。
+4. 查看主服务器和备服务器的冗余状态。
 
-- Current Node Status: Running
-- Redundant Node Status: Standby
-- Redundant Node License: Match
+#### 信任节点证书
 
-The redundancy status displayed on the backup server is as follows:
+完成主备的通用配置后，此时并未形成冗余，还需信任对方的证书，具体步骤如下：
 
-- Current Node Status: Standby
-- Redundant Node Status: Running
-- Redundant Node License: Match     
+1. 在备节点的冗余连接页面，冗余连接列表中，主节点的状态显示为 **Faulted**, 在证书列表中，点击“允许”按钮，允许主节点的证书。
 
-######  Trust the Peer Node's Certificate
-
-After completing the general configuration for master and backup nodes, the redundancy is not yet established. 
-
-You must first trust the peer node’s certificate by following these steps:
-
-1. On the backup node, go to the **Redundancy Connections** page. In the redundancy connection list, the master node's status will appear as **Faulted**.  In the certificates list, click the “Approve" button to trust it.
     ![alt text](7.png)
-2. At this point, on the **Redundancy Connections** page of the master node, the certificate list will display the backup node's certificate. Click the “Approve" button to trust the backup node's certificate.
+
+2. 此时在主节点的冗余连接页面，在证书列表中显示备节点的证书，点击“允许”，允许备节点的证书。
+
     ![alt text](8.png)
-3. After approving the backup node’s certificate, the redundancy connection list on the master node will display the backup node’s information.
+
+3. 允许备节点的证书后，该主节点的冗余连接列表中，显示备节点的信息。
+
     ![alt text](9.png)
-4. Click the “Approve" button to complete the redundancy setup.
 
-#### View Redundancy Status
+4. 点击允许，完成冗余设置。
 
-On the **Master Server**, the redundancy status is displayed as:
+#### 查看冗余状态
 
-- Current Node Status: Running
-- Redundant Node Status: Standby
-- Redundant Node License: Match
+**主服务器** 上显示的冗余状态如下：
 
-On the **Backup Server**, the redundancy status is displayed as:
+- 当前节点状态：Running
+- 冗余节点状态：Standby
+- 冗余节点授权：Match
 
-- Current Node Status: Standby
-- Redundant Node Status: Running
-- Redundant Node License: Match
+**备服务器** 上显示的冗余状态如下：
 
-## Notes
+- 当前节点状态：Standby
+- 冗余节点状态：Running
+- 冗余节点授权：Match
 
-1. Redundancy and networking share the same port. Therefore, networking must be enabled when configuring redundancy.
-2. Historical data is stored based on the node name. After setting up redundancy between two nodes, the node name of the backup server must be changed to match the master server. Otherwise, the backup server will not be able to access historical data synchronized from the master node.
+## 注意事项
+
+1. 因冗余和组网共用一个端口，在配置冗余时，需开启组网功能。
+2. 因为历史数据是按照节点名称进行存储的，所以两个节点配置冗余后需要将冗余节点的节点名称改成主节点的节点名称，否则会导致备节点无法查询从主节点同步过来的历史数据。
+

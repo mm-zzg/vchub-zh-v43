@@ -1,52 +1,52 @@
-# Tag
+# 变量
 
-Tag binding is to bind a property directly to a tag property, usually the tag value, but also other properties of the tag. Each time a property of the selected tag changes, the new value is pushed to the bound property. If you select a tag rather than a specific property of that tag, then it is considered to bind to the 'value' property of the tag.
+变量绑定是将属性直接绑定到变量上，通常是值，也可以是变量的其他属性。每次所选变量的属性发生变化时，都会将新值推送到绑定的属性中。如果选择树中的变量，而不是该变量的特定属性，则认为是绑定该变量的 value 属性。
 
-## Binding
+## 绑定
 
-**Example 1**
+**示例1**
 
-Display the value of the tag on the LED Display  in real time.
+在数码管上实时显示变量的值。
 
-1. Draw a LED Display on the page.
-2. Set the fill color of the LED Display to 6ec800 and the font color to ffffff.
-3. Click the "Text" binding button.
-4. After selecting the tag in the properties pop-up window, click the OK button to complete the binding.
+1. 在画面上绘制一个数码管。
 
-    ![alt text](9.png)
+2. 将数码管的填充色设置为 6ec800，字体颜色设置为 ffffff。
+
+3. 点击“文本”的绑定按钮。
+
+4. 在属性弹窗中选择变量后，点击确认按钮，完成绑定。
 
     ![alt text](10.png)
 
-**Example 2**
-
-Capacity values are displayed in real time on a pie chart.
-
-1. Draw a realtime chart on the page.
-2. Click the "Data" binding button.
-3. Click the "Select Tags" button to select tags.
-
     ![alt text](11.png)
 
-4. Set the appearance of each line.
+**示例2**
+
+在饼图上实时显示产能值。
+
+1. 在画面上绘制一个饼图。
+2. 点击“值”的绑定按钮。
+3. 在属性弹窗中双击变量进行选中。
+4. 点击确认按钮完成绑定。
 
     ![alt text](12.png)
 
+5. 设置饼图每个区域的颜色。
+
     ![alt text](13.png)
-
-**Example 3**
-
-Displays the tag's quality code within a label.
-
-1. Draw a label on the page.
-2. Click the "Text" binding button.
 
     ![alt text](14.png)
 
-3. Bind the alarm property of the tag to check whether the tag is currently alarming, true means alarming.
+**示例3**
+
+在文本标签内显示变量的质量位。
+
+1. 在画面上绘制一个文本标签。
+2. 点击“文本”的绑定按钮。
 
     ![alt text](15.png)
 
+3. 绑定变量的报警属性，查看变量当前是否在报警。true表示在报警。
 
-
- 
+    ![alt text](16.png)
 

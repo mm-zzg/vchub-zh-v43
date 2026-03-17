@@ -1,46 +1,47 @@
 # System.Utils.importStyle
 
 
-## Description
-Import a CSS style file.
+## 描述
 
-## Grammar
-System.Utils.importStyle(styleFileUrl: string): Promise<void> 
+导入一份 css 样式文件。
 
-     - Parameter 
+## 语法
 
-        styleFileUrl - Style file path  
+**System.Utils.importStyle(styleFileUrl: string): Promise`<void>`**
 
-     - Return 
+- 参数
+        
+    styleFileUrl - 样式文件路径
 
-        Nothing
+- 返回
+        
+    无
 
-## Code Example
+## 代码示例
 
-Create a table using Vue+element-ui.
+使用 vue+element-ui 创建一个表格。
 
 ```typescript 
 await System.Utils.importStyle('https://unpkg.com/element-ui/lib/theme-chalk/index.css');
 await System.Utils.importScript('https://unpkg.com/vue@2/dist/vue.js');
 await System.Utils.importScript('https://unpkg.com/element-ui/lib/index.js');
-// Execute before Vue initialization
 document.body.innerHTML = `<div id='app'>
     <el-table
       :data="tableData"
       style="width: 500px">
       <el-table-column
         prop="date"
-        label="date"
+        label="日期"
         width="180">
       </el-table-column>
       <el-table-column
         prop="name"
-        label="name"
+        label="姓名"
         width="180">
       </el-table-column>
       <el-table-column
         prop="address"
-        label="address">
+        label="地址">
       </el-table-column>
     </el-table>
 </div>`;
@@ -52,24 +53,22 @@ new Vue({
         return {
             tableData: [{
                 date: '2016-05-02',
-                name: 'WAGO VC Hub',
-                address: ' Jinshajiang Road, Putuo District, Shanghai'
+                name: 'WAGO SCADA',
+                address: '上海市普陀区金沙江路 1518'
             }, {
                 date: '2016-05-04',
-                name: 'WAGO VC Hub',
-                address: ' Jinshajiang Road, Putuo District, Shanghai'
+                name: 'WAGO SCADA',
+                address: '上海市普陀区金沙江路 1517'
             }, {
                 date: '2016-05-01',
-                name: 'WAGO VC Hub',
-                address: ' Jinshajiang Road, Putuo District, Shanghai'
+                name: 'WAGO SCADA',
+                address: '上海市普陀区金沙江路 1519'
             }, {
                 date: '2016-05-03',
-                name: 'WAGO VC Hub',
-                address: ' Jinshajiang Road, Putuo District, Shanghai'
+                name: 'WAGO SCADA',
+                address: '上海市普陀区金沙江路 1516'
             }]
         }
     }
 });
-
-
 ```
