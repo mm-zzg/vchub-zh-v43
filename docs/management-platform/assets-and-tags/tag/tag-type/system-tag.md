@@ -36,7 +36,6 @@ Server：安装了WAGO SCADA的设备。
 | ActiveAcked  | 当前处于 **激活，已确认** 状态的报警条数。   | Integer      |
 | ActiveUnacked | 当前处于 **激活，未确认** 状态的报警条数。  | Integer      |
 | ClearAcked      | 当前处于 **已清除，已确认** 状态的报警条数。   | Integer      |
-| ClearUnacked   | 当前处于 **已清除，未确认** 状态的报警条数。 | Integer      |
 | **Devices**(每个设备类型一个独立文件夹。每个设备类型文件夹下，每个设备显示为一个独立文件夹，在设备文件夹下显示2个系统变量：Connected，Enabled。)|   |              |
 | Connected   | 当前设备的连接状态，已连接显示为true，未连接显示为false。  | Bool         |
 | Enabled  | 当前设备的启用状态，已启用接显示为true，禁用显示为false。可以在设备列表的“启用状态”一列，进行启用和禁用。  <br>MQTT Native和WAGO Protocol设备只有Enabled变量。   | Bool         |

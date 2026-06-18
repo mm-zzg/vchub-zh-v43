@@ -14,10 +14,10 @@ WAGO SCADA一直在不断地发展和更新中，每一个版本都会出现一�
 ![alt text](10.png)
 
 - 所见即所得组态编辑器：WAGO SCADA提供了一个所见即所得 [编辑器介绍](../2d-visualization/editor-introduction/index.md)，方便您实时预览组态效果。
-- 标准化报警：WAGO SCADA提供标准化 [报警](../management-platform/alarming/index.md) 功能，包括各类限值报警、变化速率报警以及等值报警等，并且提供相应的实时和历史组态控件。
+- 标准化报警：WAGO SCADA提供标准化 [报警](../management-platform/alarming/index.md) 功能，包括各类限值报警、变化率报警以及等值报警等，并且提供相应的实时和历史组态控件。
 - 对象化：WAGO SCADA支持直接创建变量，也支持对象化方式创建变量，通过 [资产](../management-platform/assets-and-tags/asset/index.md) 的概念组建您的现场应用。
-- 多数据库：WAGO SCADA支持配置多种 [数据库](../management-platform/databases/index.md) 行历史数据存储，比如MySQL、SQL Server等。
-- 组网和冗余：WAGO SCADA支持大规模组态已经高可用场景，您可以通过多套SCADA [组网](../management-platform/networking/index.md) 构建您的复杂现场组态项目。
+- 多数据库：WAGO SCADA支持配置多种 [数据库](../management-platform/databases/index.md) 进行历史数据存储，比如MySQL、SQL Server等。
+- 组网和冗余：WAGO SCADA支持大规模组态以及高可用场景，您可以通过多套SCADA [组网](../management-platform/networking/index.md) 构建您的复杂现场组态项目。
 - 3D数字孪生：WAGO SCADA支持3D组态，类似于2D组态，您可以构建您的数字孪生场景，同时其提供了大量的 [3D低代码示例](../3d-visualization/3d-low-code-example/index.md) 供您组态出更高级和复杂的数字孪生应用。
 
 #### 新功能
@@ -29,7 +29,7 @@ WAGO SCADA一直在不断地发展和更新中，每一个版本都会出现一�
 - **2-State Button**：表示两种明确的状态，通常是 ON / OFF 或 Start / Stop。可以为每种状态设置特定的外观样式。
 - **Multi-State Button**：包含多种状态，可以在多个状态之间切换。可以为每种状态设置特定的外观样式。
 - **变量的历史数据支持存储原始值**：在对变量进行历史数据存储时，可以存储变量的原始历史值。
-- **画面函数和表达式函数**：通过编写画面函数或者表达式函数，可以集中管理共用逻辑，避免在每个控件件中重复编写，一处修改，全局生效，减少维护成本。
+- **画面函数和表达式函数**：通过编写画面函数或者表达式函数，可以集中管理共用逻辑，避免在每个控件中重复编写，一处修改，全局生效，减少维护成本。
 - **动画的启用和禁用支持绑定**：为控件配置动画时，可以通过属性绑定，控制动画的开启和关闭。
 
 ###### 4.2.X

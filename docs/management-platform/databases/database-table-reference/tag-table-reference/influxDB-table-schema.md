@@ -4,13 +4,13 @@ InflxuDB由于其与传统的关系型数据库结构不一致，所以其表结
 
 ## **Measurement结构** 说明
 
-在配置InlfuxDB的数据库连接并在历史库中使用后，当变量开启历史数据时，会向InflxuDB写入数据。SCADA系统内部会自动的创建相关 **Measurement**
+在配置InfluxDB的数据库连接并在历史库中使用后，当变量开启历史数据时，会向InflxuDB写入数据。SCADA系统内部会自动的创建相关 **Measurement**
 
 ## **tag_{HistoryDatabaseName}_{NodeName}**
 
 变量历史库的Measurement名称以 **tag_** 开头，其中HistoryDatabaseName 是该变量绑定的资产所配置历史库的历史库名称，NodeName是该历史数据产生的节点的节点名称  
 
-例如变量名称为 **HistoryAsset:Device.record，** 这个变量所绑定的资产名称是 **HistoryAsset，** 查看HistoryAsset所配置的历史库，这个历史库名称假设为 **InfluxDbHisotry**，SCADA系统的节点名称为 **PC-SZ-JJG，** 那么在InlfuxDb中 **Measurement** 的名称就是 **tag_InfluxDbHisotry_PC-SZ-JJG**
+例如变量名称为 **HistoryAsset:Device.record，** 这个变量所绑定的资产名称是 **HistoryAsset，** 查看HistoryAsset所配置的历史库，这个历史库名称假设为 **InfluxDbHisotry**，SCADA系统的节点名称为 **PC-SZ-JJG，** 那么在InfluxDB中 **Measurement** 的名称就是 **tag_InfluxDbHisotry_PC-SZ-JJG**
 
 ![alt text](2.png)
 

@@ -5,8 +5,8 @@
 #### Breaking Change 1: 角色上不再进行权限设置。
 
 - **影响范围** ：角色为非 Admin 的用户。这些用户登录后，可能会出现部分菜单不显示，或者部分功能无法使用的问题。
-- **变更说明** ：从 4.2 版本开始，角色上不再设置权限。改为在 AccessLevel 页面维护权限。之后在 Permission 页面，对各个模块进行权限配置。
-- **解决方案** ：请使用角色为 Admin 的用户账号登录，在 Access level 页面创建添加角色。
+- **变更说明** ：从 4.2 版本开始，角色上不再设置权限。改为在 Access Level 页面维护权限。之后在 Permission 页面，对各个模块进行权限配置。
+- **解决方案** ：请使用角色为 Admin 的用户账号登录，在 Access Level 页面创建角色。
 
 ![alt text](5.png)
 
@@ -20,7 +20,7 @@
 
 - **影响范围** ：角色为 Admin 和 Configurator 之外的用户。
 - **变更说明** ：从 4.2 版本开始，默认只有角色为 Admin 或 Configurator 的用户有权限进行项目的新增，复制和导入操作。其他用户无法执行这些操作。
-- **解决方案** ：如果用户需要创建项目的权限，请使用角色为 Admin 的用户账号登录，在 Accesslevel 页面创建对应的角色，之后在 Permission 页面的 CreateProject Permission 配置项中，添加对应的角色。
+- **解决方案** ：如果用户需要创建项目的权限，请使用角色为 Admin 的用户账号登录，在 Access Level 页面创建对应的角色，之后在 Permission 页面的 CreateProject Permission 配置项中，添加对应的角色。
 
 ![alt text](7.png)
 
@@ -31,34 +31,34 @@
 - **影响范围** ：角色为 Admin ， Configurator 和 Operator 之外的用户。
 - **变更说明** ：从 4.2 版本开始，默认只有角色为 Admin,Configurator 或 Operator 的用户有权限设计和删除项目。其他用户无法执行这些操作。
 - **解决方案** ：如果用户需要项目的设计和删除权限，请使用角色为 Admin 的用户账号登录。
-   -  首先在 Access level 页面创建对应的角色
+   -  首先在 Access Level 页面创建对应的角色
    -  在项目列表中，点击需要设计权限的项目的设计按钮，进入编辑器
-   -  点击编辑器的操作栏中的设置按钮，在弹窗中为“设计项目”和“删除项目”添加对应的 access level 。
+   -  点击编辑器的操作栏中的设置按钮，在弹窗中为“设计项目”和“删除项目”添加对应的 Access Level 。
 ![alt text](8.png)
 
  详见：[​项目属性​](../2d-visualization/project-properties/index.md)
 
 #### Breaking Change 4: 移除了贝塞尔曲线。
 
-- **影响范围** ：使用到了贝塞尔曲线的画面。
+- **影响范围** ：使用了贝塞尔曲线的画面。
 - **变更说明** ：从 4.2 版本开始，工具窗口中移除了贝塞尔曲线。如果画面上用到了这个控件，控件的对应区域将显示空白。
 - **解决方案** ：您可以使用直线和弧线作为替代，绘制类似扇形的形状。
 
 #### Breaking Change 5: 移除了扇形控件。
 
-- **影响范围** ：使用到了扇形的画面。
+- **影响范围** ：使用了扇形的画面。
 - **变更说明** ：从 4.2 版本开始，工具窗口中移除了扇形控件。如果画面上用到了这个控件，控件的对应区域将显示空白。
 - **解决方案** ：您可以在其他系统中绘制好贝塞尔曲线后，将其作为图片上传至WAGO SCADA, 之后将图片添加到画面上。
 
 #### Breaking Change 6: 移除了 XY 曲线控件。
 
-- **影响范围** ：使用到了 XY 曲线的画面。
+- **影响范围** ：使用了 XY 曲线的画面。
 - **变更说明** ：从 4.2 版本开始，工具窗口中移除了 XY 曲线控件。如果画面上用到了这个控件，控件的对应区域将显示空白。
 - **解决方案** ：您可以使用自定义图表控件绘制出 XY 曲线的效果。
 
 #### Breaking Change 7: 移除了散点图控件。
 
-- **影响范围** ：使用到了散点图的画面。
+- **影响范围** ：使用了散点图的画面。
 - **变更说明** ：从 4.2 版本开始，工具窗口中移除了散点图控件。如果画面上用到了这个控件，控件的对应区域将显示空白。
 - **解决方案** ：您可以使用自定义图表控件绘制出散点图的效果。
 
@@ -334,16 +334,16 @@ INNER JOIN public."ScadaTagMapping" d ON c."TagId" = d."Id" AND c."ProviderId" =
 #### Breaking Change 11: 通过 WebRTC Streamer 配置摄像头
 
 - **影响范围** ： Camera 设备
-- **变更说明** ：从 4.2 版本开始，不再支持直接添加 Camera 设备，需先创建 WebRtc-Streamer ，之后在 WebRtc-Streamer 下创建 camera 设备。
-- **解决方案** ：先部署 WebRtc-Streamer 服务，在 Camera 列表中创建 WebRtc-Streamer 。将原来的 camera 设备的 Rtsp 地址填写到对应的 WebRtc-Streamer 下，之后在 WebRtc-Streamer 下创建 camera 。
+- **变更说明** ：从 4.2 版本开始，不再支持直接添加 Camera 设备，需先创建 WebRtc-Streamer ，之后在 WebRtc-Streamer 下创建 Camera 设备。
+- **解决方案** ：先部署 WebRtc-Streamer 服务，在 Camera 列表中创建 WebRtc-Streamer 。将原来的 camera 设备的 Rtsp 地址填写到对应的 WebRtc-Streamer 下，之后在 WebRtc-Streamer 下创建 Camera 。
 
  详见：[Camera](../management-platform/devices/camera/index.md) 
  
-#### Breaking Change 12: 由于创建 camera 的方式发生了变更， Camera 控件需重新选择 camera 设备后才能正常播放监控画面
+#### Breaking Change 12: 由于创建 Camera 的方式发生了变更， Camera 控件需重新选择 Camera 设备后才能正常播放监控画面
 
 - **影响范围** ：画面上的 Camera 控件
-- **变更说明** ：因为从 4.2 版本开始， Camera 设备的添加方式发生了变化，所以需要在 camera 控件上重新选择需要播放的设备。且运行时不再支持切换设备，不再支持历史视频的播放。
-- **解决方案** ：在编辑画面上，为  camera 控件上重新选择 camera 设备。
+- **变更说明** ：因为从 4.2 版本开始， Camera 设备的添加方式发生了变化，所以需要在 Camera 控件上重新选择需要播放的设备。且运行时不再支持切换设备，不再支持历史视频的播放。
+- **解决方案** ：在编辑画面上，为  Camera 控件上重新选择 Camera 设备。
 
  详见：[Camera](../2d-visualization/controls/display/camera.md) 
 
@@ -371,7 +371,7 @@ INNER JOIN public."ScadaTagMapping" d ON c."TagId" = d."Id" AND c."ProviderId" =
 
 #### Breaking Change 16: 系统函数System.UI.openPopup参数修改
 
-- **影响范围：** 画面中使用到 System.UI.openPopup 相关函数的脚本
+- **影响范围：** 画面中使用System.UI.openPopup 相关函数的脚本
 - **变更说明：** 从 4.2 版本开始 System.UI.openPopup 函数的参数结构进行了调整：
    -  新增 titleBar 参数用于设置弹窗标题；
    -  原本用于设置弹窗位置参数需统一放入 options 对象中；
@@ -382,8 +382,8 @@ INNER JOIN public."ScadaTagMapping" d ON c."TagId" = d."Id" AND c."ProviderId" =
 
 #### Breaking Change 17: 脚本中，实时趋势的 yAxis 下的 series  修改为  axes
 
-- **影响范围** ：画面中通过脚本对到实时趋势的 y 轴进行修改的地方。
-- **变更说明** ：从 4.2 版本开始 ,yAxis 下的 series  修改为  axes 
+- **影响范围** ：画面中通过脚本对实时趋势的 y 轴进行修改的地方。
+- **变更说明** ：从 4.2 版本开始,yAxis 下的 series  修改为  axes 
 - **解决方案** ：脚本执行不会出错，但在脚本编辑器中会提示错误，需要手动将属性名称由  series  修改为 axes 。
 
 #### Breaking Change 18: 脚本中，柱状图的 refreshRate 参数修改为 refreshFrequency
@@ -456,7 +456,7 @@ INNER JOIN public."ScadaTagMapping" d ON c."TagId" = d."Id" AND c."ProviderId" =
 
 - **影响范围** : 集成OpenAPI的历史报警接口的第三方应用程序
 - **变更说明** : 从4.2版本开始，报警类型、等级、状态做了调整
-- **解决方案** : 在第三应用程序集成SCADA报警的代码中将报警类型、等级、状态按照下面的对照表进行调整
+- **解决方案** : 在第三方应用程序集成SCADA报警的代码中将报警类型、等级、状态按照下面的对照表进行调整
 
 | 原类型     | 现类型       |
 |:----------|:-------------|

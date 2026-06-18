@@ -18,7 +18,7 @@ Open API提供了用于实时数据访问的WebSocket API。通过使用WebSocke
 
     ![alt text](14.png)
 
-5. 在Params中输入access_token, 注意websocket的access_token前面不需要添加Brear
+5. 在Params中输入access_token, 注意websocket的access_token前面不需要添加Bearer
 
     ![alt text](15.png)
 
