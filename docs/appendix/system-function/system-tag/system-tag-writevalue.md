@@ -25,13 +25,13 @@
 
 ## 代码示例 
 
-将 'Device:Start ' 写为 true。
+将 “Device:Start” 写为 true。
 
 ```typescript 
 
 await System.Tag.writeValue('@设备:启动', true);
 ```
-将 'Device:Start ' 和 'Device:MaxPower ' 分别写为 true和500。
+将 “Device:Start” 和 “Device:MaxPower” 分别写为 true和500。
 ```typescript 
 
 await System.Tag.writeValue(['@设备:启动', '@设备:最大功率'], [true, 500]);

@@ -21,12 +21,12 @@
 
 ## 代码示例 
 
-获取变量"设备:温度"的值。
+获取变量“设备:温度”的值。
 ```typescript 
 const tagValue = await System.Tag.readValue('@设备:温度');
 console.log(tagValue);
 ```   
-获取变量"设备:温度、设备:功率"的路径及其对应的值。
+获取变量“设备:温度”、“设备:功率”的路径及其对应的值。
 
 ```typescript 
 const tags = await System.Tag.readValue(['@设备:温度','@设备:功率']);

@@ -25,7 +25,7 @@
 const tagProperty = await System.Tag.getPropertyValues('@设备:温度#Name');
 console.log(tagProperty);
 ``` 
-获取节点"设备:温度"和"设备:功率"的路径以及Name属性的值。
+获取节点“设备:温度”和“设备:功率”的路径以及Name属性的值。
 
 ```typescript 
 const tagProperties = await System.Tag.getPropertyValues(['@设备:温度#Name', '@设备:功率#Name']);

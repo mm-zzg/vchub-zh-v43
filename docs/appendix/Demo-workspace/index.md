@@ -4,12 +4,12 @@ Demo 工程旨在演示 WAGO SCADA 的各种功能、操作流程和界面布局
 
 ### 下载Demo工程
 
-您可以在我们的官网上 [https://www.wagoscada.cn](https://www.wagoscada.cn)，进入软件下载页面，下载 demo 工程。该 Demo 用于展示 WAGO SCADA 中各种控件的运行效果。
+您可以在我们的官网上 [https://www.wagoscada.cn](https://www.wagoscada.cn)，进入软件下载页面，下载 Demo 工程。该 Demo 用于展示 WAGO SCADA 中各种控件的运行效果。
 
 ### 导入Demo工程
 
 1. 安装 WAGO SCADA
-2. 解压已下载的demo工程文件
+2. 解压已下载的Demo工程文件
 
     ![alt text](1.png)
 

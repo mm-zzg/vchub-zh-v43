@@ -25,9 +25,9 @@
 <br>priority? -  单个或多个等级，可选值为“Low”，“Medium”，“High”，“Critical”
 <br>state? - 单个或多个状态，可选值为“Active”，“Unacked”，“Acked”，“Cleared”
 <br>path? - 单个或多个报警路径
-<br>type? - 单个或多个类型，可选值为"H"，"H2"，"H3"，"H4"，"L"，"L2"，"L3"，"L4"，<br>"RateOfChange"，"Equivalent"，"TrueToFalse"，"FalseToTrue"
+<br>type? - 单个或多个类型，可选值为“H”，“H2”，“H3”，“H4”，“L”，“L2”，“L3”，“L4”，<br>“RateOfChange”，“Equivalent”，“TrueToFalse”，"FalseToTrue"
 <br>asset? - 单个或多个资产
-<br>expression? - 表达式，例1：priority == "Low"，例2：path.Contains("Device")，例<br>3：state.HasFlag("Active") && stae.HasFlag("“Unacked")
+<br>expression? - 表达式，例1：priority == "Low"，例2：path.Contains("Device")，例<br>3：state.HasFlag("Active") && state.HasFlag("Unacked")
 }
 <br>-返回
 <br>[
@@ -60,7 +60,7 @@
 const value = await System.Alarm.queryHistory("Default");
 console.log(value);
 ```   
-查询历史存储为"Default"，时间范围为“2025-03-10 00:00:00”至“2025-03-11 00:00:00”，报警等级为“High”，类型为“H”或“H2”，且状态为 "Active,Unacked"的历史报警。
+查询历史存储为“Default”，时间范围为“2025-03-10 00:00:00”至“2025-03-11 00:00:00”，报警等级为“High”，类型为“H”或“H2”，且状态为“Active,Unacked”的历史报警。
 
 ```typescript
 const value = await System.Alarm.queryHistory("Default",{startTime:'2025-03-10 00:00:00',endTime:'2025-03-11 00:00:00',priority:"High",type:["H","H2"],expression:'state.HasFlag("Active") && state.HasFlag("Unacked")'});

@@ -41,7 +41,7 @@ Server：安装了WAGO SCADA的设备。
 | Enabled  | 当前设备的启用状态，已启用接显示为true，禁用显示为false。可以在设备列表的“启用状态”一列，进行启用和禁用。  <br>MQTT Native和WAGO Protocol设备只有Enabled变量。   | Bool         |
 | **Performance**  |    |              |
 | AvailableDiskSpace   | 当前系统所在磁盘的可用空间，单位为M(兆)，精确到小数点后1位。如1200.5，表示1200.5M。  | Double       |
-| CPUUtilization  | 当前系统的CPU使用率，精确到小数点后3位。如：0.043，表示4.3%。     | Double       |
+| CPUAverageUtilization  | 当前系统的CPU使用率，精确到小数点后3位。如：0.043，表示4.3%。     | Double       |
 | DiskUtilization  | 当前系统的磁盘使用率，精确到小数点后3位。如：0.028，表示2.8%。    | Double       |
 | MaxMemory    | 当前系统所在服务器的最大运行内存，单位为M(兆)，精确到小数点后1位。如15986，表示15986M。 | Double       |
 | MemoryUsage    | 当前系统已使用的内存，单位为M，精确到小数点后1位。如1899，表示1899M。   | Double       |

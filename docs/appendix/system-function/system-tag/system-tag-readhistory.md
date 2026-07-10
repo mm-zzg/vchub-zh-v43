@@ -65,10 +65,10 @@ Parameter
 | end            | Date or string       | 结束时间         |
 | tag            | string or `Array<string>`   | 查询的标签或者标签列表 |
 | queryMode      | QueryMode           |查询类型   |
-| aggregationMode  | AggregationMode or `Array<AggregationMode`> |单个或多个变量聚合模式。<br>当查询方式为"FixedPoints"、"Periodic"时需指定 |
-| points      | number | 点数，当查询方式为"FixedPoints"时需指定 query modes  |
-| period        | number          | 周期，当查询方式为"Periodic"时需指定  |
-| periodMode    | PeriodMode      | 周期单位，当查询方式为"Periodic"时需指定|
+| aggregationMode  | AggregationMode or `Array<AggregationMode`> |单个或多个变量聚合模式。<br>当查询方式为“FixedPoints”、“Periodic”时需指定 |
+| points      | number | 点数，当查询方式为“FixedPoints”时需指定 query modes  |
+| period        | number          | 周期，当查询方式为“Periodic”时需指定  |
+| periodMode    | PeriodMode      | 周期单位，当查询方式为“Periodic”时需指定|
 | extraOption.timeout | number    | 查询超时时间，单位为秒|
 | extraOption.noInterpolation   | boolean | 是否不启用插值|
 | extraOption.ignoreBadQuality  | boolean | 查询原始数据是否忽略坏质量位的数据|
@@ -77,7 +77,7 @@ Parameter
 
 ## 代码示例
 
-获取变量"设备:温度"在2024-08-14 00:00:00~2024-08-15 00:00:00之间原始值的历史记录。
+获取变量“设备:温度”在2024-08-14 00:00:00~2024-08-15 00:00:00之间原始值的历史记录。
 
 ```typescript 
 const value = await System.Tag.readHistory('2024-08-14 00:00:00', '2024-08-15 00:00:00', '@设备:温度','Raw'，{
@@ -85,7 +85,7 @@ const value = await System.Tag.readHistory('2024-08-14 00:00:00', '2024-08-15 00
 });
 console.log(value);
 ```
-获取变量"设备:温度"在2024-08-14 00:00:00~2024-08-15 00:00:00之间,查询方式为"FixedPoints"，聚合模式为"Avg"，点数为30的历史记录。
+获取变量“设备:温度”在2024-08-14 00:00:00~2024-08-15 00:00:00之间,查询方式为“FixedPoints”，聚合模式为“Avg”，点数为30的历史记录。
 
 ```typescript 
 const value = await System.Tag.readHistory('2024-08-14 00:00:00', '2024-08-15 00:00:00', '@设备:温度','FixedPoints','Avg',30, {
@@ -96,7 +96,7 @@ const value = await System.Tag.readHistory('2024-08-14 00:00:00', '2024-08-15 00
 });
 console.log(value);
 ```   
-获取变量"设备:温度"在2024-08-14 00:00:00~2024-08-15 00:00:00之间,查询方式为"Periodic"，聚合模式为"Max"，周期为1，周期单位为"Minute"的历史记录。
+获取变量“设备:温度”在2024-08-14 00:00:00~2024-08-15 00:00:00之间,查询方式为“Periodic”，聚合模式为“Max”，周期为1，周期单位为“Minute”的历史记录。
 
 ```typescript 
 const value = await System.Tag.readHistory('2024-08-14 00:00:00', '2024-08-15 00:00:00', '@设备:温度','Periodic','Max',1,'Minute', {

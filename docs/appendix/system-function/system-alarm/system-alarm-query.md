@@ -1,4 +1,4 @@
-# sSystem.Alarm.query
+# System.Alarm.query
 
 ## 描述
  查询实时报警。
@@ -19,10 +19,10 @@ params - 查询条件对象，可选参数
 {             
 priority? -  单个或多个等级，可选值为“Low”，“Medium”，“High”，“Critical”             state? - 单个或多个状态，可选值为“Active”，“Unacked”，“Acked”，“Cleared”             path? - 单个或多个报警路径             
 type? - 单个或多个类型，可选值为
-"H"，"H2"，"H3"，"H4"，"L"，"L2"，"L3"，"L4"，"RateOfChange"，"Equivalent"，"TrueToFalse"，"FalseToTrue"             
+“H”，“H2”，“H3”，“H4”，“L”，“L2”，“L3”，“L4”，“RateOfChange”，“Equivalent”，“TrueToFalse”，“FalseToTrue”             
 group? - 单个或多个报警组             
 asset? - 单个或多个资产             
-expression? - 表达式，例1：priority == "Low"，例2：path.Contains("Device")，例3：state.HasFlag("Active") && stae.HasFlag("“Unacked")        
+expression? - 表达式，例1：priority == "Low"，例2：path.Contains("Device")，例3：state.HasFlag("Active") && state.HasFlag("“Unacked")        
 }  
 -返回  
 [           
@@ -54,7 +54,7 @@ activeTime: string //激活时间
 ```typescript 
 const value = await System.Alarm.query(); console.log(value); 
 ```   
-查询报警等级为 High，类型为 H 或 H2，报警组为Default，且状态为 "Active,Unacked" 的实时报警。 
+查询报警等级为“High”，类型为“H”或“H2”，报警组为“Default”，且状态为“Active,Unacked”的实时报警。 
 ```typescript 
 const value = await System.Alarm.query({priority:"High",type:["H","H2"],group:'Default',expression:               
 'state.HasFlag("Active") && state.HasFlag("Unacked")'}); 

@@ -13,7 +13,7 @@
 **Path: string;**
 **Value: any;**
 **Quality: number;**
-**}=>void): () => void**
+**})=>void): () => void**
 
 - 参数
 

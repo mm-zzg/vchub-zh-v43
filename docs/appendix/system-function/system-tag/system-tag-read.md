@@ -18,13 +18,13 @@
 
 ## 代码示例
 
-获取变量"设备:温度"的值、路径、质量位、时间。
+获取变量“设备:温度”的值、路径、质量位、时间。
 
 ```typescript 
 const tag = await System.Tag.read('@设备:温度');
 console.log(tag.value);
 ```   
-获取变量"设备:温度"和"设备:功率"的值、路径、质量位、时间。
+获取变量“设备:温度”和“设备:功率”的值、路径、质量位、时间。
 
 ```typescript 
 const tags = await System.Tag.read(['@设备:温度', '@设备:功率']);
